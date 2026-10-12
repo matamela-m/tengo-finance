@@ -138,6 +138,8 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
       deleteData: async () => {
         const id = requireId();
         const receipt = await repository.deletePersona(id);
+        // Leave the persona first so no screen tries to render without data.
+        useSession.getState().setActivePersona(null);
         opened.current.delete(id);
         setRecord(null);
         setConsentState(null);

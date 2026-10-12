@@ -31,7 +31,7 @@ export default function App() {
             <Route path="inbox" element={<InboxPage />} />
             <Route path="privacy/*" element={<PrivacyPage />} />
             <Route path="me" element={<MePage />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<NotFound embedded />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

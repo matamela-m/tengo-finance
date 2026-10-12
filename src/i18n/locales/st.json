@@ -77,7 +77,9 @@
     "personas": "People",
     "enterAs": "Enter as {{name}}",
     "continueAs": "Continue as {{name}}",
-    "backHome": "Tengo home"
+    "backHome": "Tengo home",
+    "deletedTitle": "{{name}}'s data was deleted",
+    "deletedBody": "Receipt {{ref}}, {{date}}. Removed {{count}} transactions and {{audit}} audit entries. Choose a person to start again."
   },
   "personas": {
     "fictional": "Fictional composite",
@@ -139,7 +141,159 @@
     "notNow": "Not now"
   },
   "privacy": {
-    "simulated": "Simulated privacy controls. Not a compliance certification."
+    "simulated": "Simulated privacy controls. Not a compliance certification.",
+    "title": "Privacy",
+    "lead": "See, change, export or delete what Tengo holds about this person.",
+    "consentTitle": "Your consent",
+    "coreEffect": "Needed for Tengo to work. Turning it off pauses the forecast.",
+    "messagesEffect": "A short daily update in the Inbox. Turning it off hides the Inbox preview.",
+    "lastChanged": "Last changed {{date}}",
+    "minimisation": "What the forecast uses",
+    "uses": "Uses",
+    "neverUses": "Never uses",
+    "used": {
+      "date": "Transaction date",
+      "amount": "Transaction amount",
+      "description": "Transaction description, to spot repeat bills",
+      "balance": "Your current balance"
+    },
+    "unused": {
+      "name": "Your name",
+      "id": "ID number",
+      "location": "Location",
+      "contacts": "Contacts",
+      "account": "Account or card numbers",
+      "merchant": "Who you pay, beyond the description"
+    },
+    "security": "How data is protected",
+    "securityItems": {
+      "transit": "In a real deployment, data is encrypted in transit and at rest.",
+      "rest": "In this demo, data stays in this browser's local storage and never leaves the device.",
+      "access": "Access is limited to you. Staff access would be logged and reviewed.",
+      "test": "Only fictional test data is used here."
+    },
+    "rightsNav": "Your rights",
+    "links": {
+      "data": {
+        "title": "See my data",
+        "body": "Everything held, and export it"
+      },
+      "audit": {
+        "title": "Audit log",
+        "body": "Every access and change, with times"
+      },
+      "review": {
+        "title": "Question this result",
+        "body": "Ask a person to check your date"
+      },
+      "breach": {
+        "title": "Breach notice",
+        "body": "A sample of what we would send"
+      },
+      "delete": {
+        "title": "Delete my data",
+        "body": "Remove this person's records"
+      }
+    },
+    "retention": "How long we keep it",
+    "retentionRule": "Kept for 12 months, then removed.",
+    "nextRemoval": "Next removal {{date}}, for records from {{from}}.",
+    "nothingStored": "Nothing stored yet.",
+    "crossBorder": "Where data is processed",
+    "crossBorderBody": "On this device only. In this demo nothing is sent to a server, inside or outside South Africa.",
+    "officer": "Information Officer",
+    "officerName": "Name",
+    "officerEmail": "Email",
+    "placeholderName": "To be appointed",
+    "placeholderNote": "Placeholder details. Not a real contact.",
+    "complaints": "If you are not happy with how your data is handled, you can complain to the Information Regulator of South Africa.",
+    "dataLead": "Everything Tengo holds about this person on this device.",
+    "exportJson": "Export JSON",
+    "exportCsv": "Export CSV",
+    "held": "Held about this person",
+    "heldPersona": "Person",
+    "heldBalance": "Balance",
+    "heldTransactions": "Transactions",
+    "heldSource": "Source",
+    "heldConsent": "Consent given",
+    "heldAudit": "Audit entries",
+    "heldReviews": "Review requests",
+    "heldWhere": "Stored",
+    "heldWhereValue": "This browser only",
+    "source": {
+      "seed": "Sample data",
+      "import": "Imported statement",
+      "edited": "Sample data, corrected"
+    },
+    "correctHint": "Something wrong? Correct or recategorise any transaction from the Money page.",
+    "auditLead": "A simulated log of access and changes, newest first.",
+    "auditEmpty": "No entries yet.",
+    "auditActor": "By you, on this device",
+    "reviewLead": "The date is worked out by fixed rules. If it looks wrong, ask a person to check it.",
+    "reviewFormTitle": "Request a human review",
+    "reviewAbout": "About: {{result}}",
+    "reviewReason": "What looks wrong",
+    "reasons": {
+      "date": "The date looks wrong",
+      "income": "Income is missing or wrong",
+      "bill": "A bill is wrong",
+      "other": "Something else"
+    },
+    "reviewDetails": "Tell us more (optional)",
+    "reviewPlaceholder": "For example, I get paid on the 25th, not on Mondays.",
+    "reviewContact": "How should we reply",
+    "contact": {
+      "inbox": "In my Tengo Inbox",
+      "none": "No reply needed"
+    },
+    "reviewSubmit": "Send request",
+    "reviewSimulated": "Simulated. No request leaves this device.",
+    "reviewSent": "Request received",
+    "reviewRef": "Reference {{ref}}",
+    "reviewNext": "In a real service, a person would check the inputs and reply within 5 working days. Until then the forecast keeps working as normal.",
+    "reviewAnother": "Send another",
+    "reviewPast": "Your requests",
+    "reviewNone": "No requests yet.",
+    "reviewStatus": "Received",
+    "breachLead": "If personal data were ever exposed, this is the kind of notice users would get.",
+    "breachSample": "Sample only. There has been no breach.",
+    "sampleStamp": "Sample",
+    "breachDate": "Date of notice: [date]",
+    "breachHeading": "Important: a security incident affecting your Tengo data",
+    "breach": {
+      "happened": {
+        "title": "What happened",
+        "body": "On [date], we found that [describe the incident]. We stopped it on [date]."
+      },
+      "data": {
+        "title": "What data was involved",
+        "body": "[List the data, for example transaction dates, amounts and descriptions]. Your ID number and passwords were not involved."
+      },
+      "doing": {
+        "title": "What we are doing",
+        "body": "We have [steps taken] and told the Information Regulator. We are working with [security partner] to stop this happening again."
+      },
+      "you": {
+        "title": "What you can do",
+        "body": "Watch for messages that ask for your PIN or password. Tengo will never ask for them. You can delete your data at any time in Privacy."
+      },
+      "contact": {
+        "title": "Contact us",
+        "body": "Our Information Officer is at [contact details]. You can also complain to the Information Regulator."
+      }
+    },
+    "deleteLead": "Remove {{name}}'s records from this device.",
+    "deleteWhat": "What will be removed",
+    "deleteTx_one": "{{count}} transaction and the balance",
+    "deleteTx_other": "{{count}} transactions and the balance",
+    "deleteConsent": "Consent choices and review requests",
+    "deleteAudit_one": "{{count}} audit log entry",
+    "deleteAudit_other": "{{count}} audit log entries",
+    "deleteReceipt": "A deletion receipt is kept, with no transaction details.",
+    "deleteStart": "Delete my data",
+    "deleteWarn": "This cannot be undone. You will go back to the start.",
+    "deleteCheck": "I understand this removes the data for good",
+    "deleteConfirm": "Yes, delete everything"
   },
   "home": {
     "greeting": "Hi {{name}}",
@@ -377,5 +531,17 @@
     "amountHint": "Negative for money out, for example -250.",
     "category": "Type",
     "auditNote": "Saving adds an entry to your audit log."
+  },
+  "audit": {
+    "session_opened": "Opened Tengo",
+    "consent_given": "Gave consent. Messages {{messages}}, analytics {{analytics}}",
+    "consent_changed": "Changed consent: {{item}} {{value}}",
+    "data_viewed": "Viewed all data",
+    "data_exported": "Exported data as {{format}}",
+    "statement_imported": "Imported a statement with {{rows}} transactions",
+    "transaction_edited": "Corrected {{name}}: {{fields}}",
+    "review_requested": "Asked for a human review",
+    "forecast_paused": "Paused the forecast",
+    "forecast_resumed": "Resumed the forecast"
   }
 }

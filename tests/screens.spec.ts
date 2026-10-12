@@ -35,6 +35,10 @@ const SHOTS: Shot[] = [
       await page.getByRole('button', { name: 'Use sample statement' }).click();
     },
   },
+  { name: 'privacy', path: '/app/privacy', persona: 'thabo' },
+  { name: 'privacy-data', path: '/app/privacy/data', persona: 'thabo' },
+  { name: 'privacy-review', path: '/app/privacy/review', persona: 'thabo' },
+  { name: 'privacy-breach', path: '/app/privacy/breach', persona: 'thabo' },
   {
     name: 'why-drawer',
     path: '/app',

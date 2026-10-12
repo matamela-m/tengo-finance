@@ -49,7 +49,7 @@ export function TransactionEditor({ tx, onClose }: { tx: Transaction | null; onC
       title={t('edit.title')}
       footer={
         <div className="flex gap-3">
-          <button type="button" className="btn-primary flex-1" disabled={!valid || saving} onClick={() => void save()}>
+          <button type="submit" form="edit-form" className="btn-primary flex-1" disabled={!valid || saving}>
             {saving ? t('common.saving') : t('common.save')}
           </button>
           <button type="button" className="btn-secondary" onClick={onClose}>
@@ -59,6 +59,7 @@ export function TransactionEditor({ tx, onClose }: { tx: Transaction | null; onC
       }
     >
       <form
+        id="edit-form"
         className="space-y-5"
         onSubmit={(e) => {
           e.preventDefault();
@@ -97,9 +98,6 @@ export function TransactionEditor({ tx, onClose }: { tx: Transaction | null; onC
           </div>
         </fieldset>
         <Notice>{t('edit.auditNote')}</Notice>
-        <button type="submit" className="sr-only">
-          {t('common.save')}
-        </button>
       </form>
     </Drawer>
   );

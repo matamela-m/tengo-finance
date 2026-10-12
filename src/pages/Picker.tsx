@@ -1,4 +1,9 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { Notice } from '../components/Feedback';
+import type { DeletionReceipt } from '../data/repository';
+import { getPersona } from '../data/seed/personas';
+import { useDates } from '../lib/useLang';
 import { useTranslation } from 'react-i18next';
 import { Avatar } from '../components/Avatar';
 import { CoverBars } from '../components/CoverBars';
@@ -20,6 +25,15 @@ export default function Picker() {
   const active = useSession((s) => s.activePersonaId);
   const setActive = useSession((s) => s.setActivePersona);
   const bg = useIsDark() ? 'dark' : 'light';
+  const d = useDates();
+  const [params] = useSearchParams();
+  const deletedId = params.get('deleted');
+  const [receipt, setReceipt] = useState<DeletionReceipt | null>(null);
+
+  useEffect(() => {
+    if (!deletedId) return;
+    void repository.getDeletionReceipts().then((all) => setReceipt(all.find((r) => r.id === deletedId) ?? null));
+  }, [deletedId]);
 
   const choose = async (p: PersonaProfile) => {
     setActive(p.id);
@@ -39,6 +53,14 @@ export default function Picker() {
       <main id="main" className="mx-auto w-full max-w-[1440px] px-5 pb-16 pt-4 sm:px-8 lg:px-12 lg:pt-8">
         <h1 className="font-display text-[40px] font-extrabold leading-[1.02] tracking-tight sm:text-[56px]">{t('picker.title')}</h1>
         <p className="mt-3 max-w-2xl text-lg text-muted">{t('picker.lead')}</p>
+        {receipt && (
+          <Notice tone="ok" icon="receipt" className="mt-6 max-w-3xl">
+            <p className="font-semibold">{t('picker.deletedTitle', { name: getPersona(receipt.personaId)?.name ?? '' })}</p>
+            <p className="num mt-1">
+              {t('picker.deletedBody', { ref: receipt.id, date: d.stamp(receipt.at), count: receipt.transactionsRemoved, audit: receipt.auditEntriesRemoved })}
+            </p>
+          </Notice>
+        )}
 
         <section aria-labelledby="persona-heading" className="mt-10">
           <h2 id="persona-heading" className="sr-only">

@@ -1,0 +1,26 @@
+{
+  "common": {
+    "demoChip": "Demo | Fictional Data",
+    "skipToContent": "Skip to content"
+  },
+  "nav": {
+    "label": "Main",
+    "home": "Home",
+    "plan": "Plan",
+    "money": "Money",
+    "inbox": "Inbox",
+    "privacy": "Privacy",
+    "me": "Me"
+  },
+  "state": {
+    "enough": "Enough",
+    "tight": "Tight",
+    "short": "Short",
+    "gauge": "Cover: {{state}}, {{level}} of 3 bars"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "This page does not exist in the demo.",
+    "cta": "Back to start"
+  }
+}

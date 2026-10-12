@@ -1,0 +1,26 @@
+// Fails if any locale file is missing a key from en.json or has keys en.json does not have.
+import { readFileSync } from 'node:fs';
+
+const dir = 'src/i18n/locales';
+const codes = ['en', 'af', 've', 'ts', 'zu', 'st'];
+
+function flatten(obj, prefix = '') {
+  return Object.entries(obj).flatMap(([k, v]) =>
+    typeof v === 'object' && v !== null ? flatten(v, `${prefix}${k}.`) : [`${prefix}${k}`],
+  );
+}
+
+const sets = Object.fromEntries(
+  codes.map((c) => [c, new Set(flatten(JSON.parse(readFileSync(`${dir}/${c}.json`, 'utf8'))))]),
+);
+const base = sets.en;
+let problems = 0;
+for (const code of codes.slice(1)) {
+  const missing = [...base].filter((k) => !sets[code].has(k));
+  const extra = [...sets[code]].filter((k) => !base.has(k));
+  if (missing.length) console.error(`${code}: missing ${missing.length} key(s): ${missing.slice(0, 10).join(', ')}`);
+  if (extra.length) console.error(`${code}: ${extra.length} extra key(s): ${extra.slice(0, 10).join(', ')}`);
+  problems += missing.length + extra.length;
+}
+if (problems) process.exit(1);
+console.log(`All ${codes.length} locales have the same ${base.size} keys.`);

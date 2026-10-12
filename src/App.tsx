@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import { Preferences } from './components/Preferences';
 import { PersonaProvider } from './data/PersonaProvider';
 import { AppGate } from './layouts/AppGate';
@@ -16,6 +17,7 @@ import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
+    <ErrorBoundary>
     <BrowserRouter>
       <Preferences />
       <PersonaProvider>
@@ -37,5 +39,6 @@ export default function App() {
         </Routes>
       </PersonaProvider>
     </BrowserRouter>
+    </ErrorBoundary>
   );
 }

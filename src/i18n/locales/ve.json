@@ -297,7 +297,9 @@
   },
   "home": {
     "greeting": "Hi {{name}}",
-    "heroLabel": "Your date"
+    "heroLabel": "Your date",
+    "emptyTitle": "No money history yet",
+    "emptyBody": "Import a statement with at least 14 days of transactions to see your date."
   },
   "hero": {
     "enoughUntil": "Enough until",
@@ -395,12 +397,47 @@
     "delete": "Delete my data"
   },
   "me": {
-    "switchPersona": "Switch person"
+    "switchPersona": "Switch person",
+    "title": "Me",
+    "persona": "Who you are in the demo",
+    "current": "Current",
+    "theme": "Theme",
+    "themes": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "about": "About Tengo",
+    "nameTitle": "The name",
+    "nameBody": "Tengo comes from mutengo, the Tshivenda word for value. This meaning was supplied by the founder and is still to be confirmed by a Tshivenda speaker.",
+    "howTitle": "How the forecast works",
+    "how": {
+      "1": "It splits your history into income, regular bills and everyday spending.",
+      "2": "It works out your usual daily spend from the last 60 days, plus a light week and a heavy week.",
+      "3": "It finds when your next money usually lands and how much it usually is.",
+      "4": "It runs your balance down day by day, taking off bills on their dates, until it reaches zero. That day is your date.",
+      "5": "It compares that date with your next money to set your cover: Enough, Tight or Short."
+    },
+    "simTitle": "What is simulated",
+    "sim": {
+      "data": "All people and money are fictional composites.",
+      "bank": "There is no bank connection and no open banking.",
+      "messages": "Messages are previews. Nothing is sent.",
+      "privacy": "Privacy controls show good practice. They are not a compliance certification.",
+      "translations": "Translations are on the way. Every language shows English for now."
+    },
+    "reset": "Reset demo data",
+    "resetBody": "Clears every person, consent choice and log on this device and starts fresh.",
+    "resetWarn": "This removes everything the demo stored on this device.",
+    "resetConfirm": "Yes, reset everything"
   },
   "errors": {
     "loadTitle": "Could not load your data",
     "loadBody": "Something went wrong reading this device's storage.",
-    "retry": "Try again"
+    "retry": "Try again",
+    "crashTitle": "Something went wrong",
+    "crashBody": "This screen hit an error. Your data on this device is safe.",
+    "crashCta": "Back to start"
   },
   "notFound": {
     "title": "Page not found",
@@ -543,5 +580,54 @@
     "review_requested": "Asked for a human review",
     "forecast_paused": "Paused the forecast",
     "forecast_resumed": "Resumed the forecast"
+  },
+  "inbox": {
+    "title": "Inbox",
+    "lead": "A preview of the daily message Tengo would send.",
+    "simulated": "Simulated. No message is sent.",
+    "offTitle": "Daily messages are off",
+    "offBody": "You turned off daily messages, so there is nothing to preview. Turn them on here or in Privacy.",
+    "turnOn": "Turn on daily messages",
+    "preview": "Today's message",
+    "channel": "Channel",
+    "channels": {
+      "whatsapp": "WhatsApp",
+      "sms": "SMS"
+    },
+    "todayAt": "Today",
+    "smsCount": "{{count}} of {{limit}} characters",
+    "language": "Message language",
+    "languageHint": "Messages can use a different language from the app.",
+    "to": "To {{name}}",
+    "schedule": "Every morning at 07:00",
+    "facts": {
+      "what": "Only your date, cover and safe to spend figure.",
+      "never": "Never your balance or transactions.",
+      "stop": "Turn off any time in Privacy."
+    },
+    "manage": "Manage messages"
+  },
+  "messages": {
+    "whatsapp": {
+      "greeting": "Hi {{name}}.",
+      "enough": "Your money should last until *{{date}}*. Cover: {{state}}.",
+      "tight": "Your money should last until *{{date}}* on a normal week. Cover: {{state}}.",
+      "short_one": "Your money may run out on *{{date}}*, {{count}} day before your next money. Cover: {{state}}.",
+      "short_other": "Your money may run out on *{{date}}*, {{count}} days before your next money. Cover: {{state}}.",
+      "sts": "Safe to spend today: *{{sts}}*.",
+      "next": "Next money: around {{next}}.",
+      "noNext": "No regular income found yet.",
+      "tip": {
+        "enough": "You are covered. A good week to put a little aside.",
+        "tight": "Keep spending close to the safe figure until your next money.",
+        "short": "Check Plan in Tengo to see what helps most."
+      }
+    },
+    "sms": {
+      "enough": "Tengo: Hi {{name}}, money lasts until {{date}} ({{state}}). Safe today {{sts}}.",
+      "tight": "Tengo: Hi {{name}}, money lasts until {{date}} ({{state}}). Safe today {{sts}}.",
+      "short": "Tengo: Hi {{name}}, money may run out {{date}} ({{state}}). Safe today {{sts}}.",
+      "next": "Next money about {{next}}."
+    }
   }
 }

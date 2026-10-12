@@ -39,6 +39,9 @@ const SHOTS: Shot[] = [
   { name: 'privacy-data', path: '/app/privacy/data', persona: 'thabo' },
   { name: 'privacy-review', path: '/app/privacy/review', persona: 'thabo' },
   { name: 'privacy-breach', path: '/app/privacy/breach', persona: 'thabo' },
+  { name: 'inbox', path: '/app/inbox', persona: 'lerato' },
+  { name: 'inbox-off', path: '/app/inbox', persona: 'ayanda', messages: false },
+  { name: 'me', path: '/app/me', persona: 'ayanda' },
   {
     name: 'why-drawer',
     path: '/app',

@@ -22,5 +22,19 @@ for (const code of codes.slice(1)) {
   if (extra.length) console.error(`${code}: ${extra.length} extra key(s): ${extra.slice(0, 10).join(', ')}`);
   problems += missing.length + extra.length;
 }
+// UI copy rule: no exclamation marks.
+function values(obj, prefix = '') {
+  return Object.entries(obj).flatMap(([k, v]) =>
+    typeof v === 'object' && v !== null ? values(v, `${prefix}${k}.`) : [[`${prefix}${k}`, String(v)]],
+  );
+}
+for (const code of codes) {
+  for (const [key, value] of values(JSON.parse(readFileSync(`${dir}/${code}.json`, 'utf8')))) {
+    if (value.includes('!')) {
+      console.error(`${code}: exclamation mark in ${key}`);
+      problems++;
+    }
+  }
+}
 if (problems) process.exit(1);
 console.log(`All ${codes.length} locales have the same ${base.size} keys.`);

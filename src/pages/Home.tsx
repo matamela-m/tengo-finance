@@ -11,12 +11,29 @@ import { StateChip } from '../components/StateChip';
 import { useReadyPersona } from '../data/PersonaProvider';
 import { usePageTitle } from '../lib/usePageTitle';
 import { Avatar } from '../components/Avatar';
+import { EmptyState } from '../components/Feedback';
+import { Link } from 'react-router-dom';
 
 export default function HomePage() {
   const { t } = useTranslation();
   const { forecast, record, profile } = useReadyPersona();
   const [whyOpen, setWhyOpen] = useState(false);
   usePageTitle(t('nav.home'));
+
+  if (record.transactions.length === 0) {
+    return (
+      <EmptyState
+        icon="upload"
+        title={t('home.emptyTitle')}
+        body={t('home.emptyBody')}
+        action={
+          <Link to="/app/money/import" className="btn-primary">
+            {t('money.import')}
+          </Link>
+        }
+      />
+    );
+  }
 
   return (
     <>

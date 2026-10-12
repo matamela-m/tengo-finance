@@ -1,7 +1,18 @@
 {
   "common": {
     "demoChip": "Demo | Fictional Data",
-    "skipToContent": "Skip to content"
+    "skipToContent": "Skip to content",
+    "loading": "Loading",
+    "saving": "Saving",
+    "close": "Close",
+    "cancel": "Cancel",
+    "save": "Save",
+    "today": "Today",
+    "rangeDates": "{{from}} to {{to}}",
+    "rangeAmounts": "{{low}} to {{high}}",
+    "on": "On",
+    "off": "Off",
+    "back": "Back"
   },
   "nav": {
     "label": "Main",
@@ -17,6 +28,225 @@
     "tight": "Tight",
     "short": "Short",
     "gauge": "Cover: {{state}}, {{level}} of 3 bars"
+  },
+  "confidence": {
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low"
+  },
+  "category": {
+    "income": "Income",
+    "spend": "Spend",
+    "bill": "Bill"
+  },
+  "language": {
+    "label": "Language",
+    "pending": "Translations are on the way. For now this language shows English text."
+  },
+  "landing": {
+    "title": "Money you can plan around",
+    "eyebrow": "For people with irregular income",
+    "headline": "Money you can plan around.",
+    "pitch": "A balance tells you what you have. Tengo tells you until when.",
+    "cta": "Explore Tengo",
+    "ctaNote": "No sign up. Fictional data only.",
+    "previewLabel": "Live preview of Tengo",
+    "previewWho": "Thabo, e-hailing driver",
+    "previewCaption": "Built live from a fictional persona's 90 day history.",
+    "howTitle": "How it works",
+    "steps": {
+      "history": {
+        "title": "Add your money history",
+        "body": "Use a sample person or bring a bank statement as a CSV file. It stays on your device."
+      },
+      "last": {
+        "title": "See how long it lasts",
+        "body": "Tengo works out the day your money runs out and when your next money usually lands."
+      },
+      "plan": {
+        "title": "Plan around the date",
+        "body": "Try a what-if, check a loan to family, and see what is safe to spend today."
+      }
+    },
+    "tagline": "Money you can plan around.",
+    "fictional": "All people, places and amounts in this demo are fictional. No bank connection."
+  },
+  "picker": {
+    "title": "Choose a person",
+    "lead": "Each person is a fictional composite with a different way of earning. Pick one to see Tengo with their money.",
+    "personas": "People",
+    "enterAs": "Enter as {{name}}",
+    "continueAs": "Continue as {{name}}",
+    "backHome": "Tengo home"
+  },
+  "personas": {
+    "fictional": "Fictional composite",
+    "thabo": {
+      "role": "E-hailing driver",
+      "situation": "Cash fares most days and an app payout on Mondays. Fuel and the car instalment come first."
+    },
+    "lerato": {
+      "role": "Hairdresser",
+      "situation": "Saturdays carry the week. Product restocks every two weeks and rent on the 1st."
+    },
+    "ayanda": {
+      "role": "Spaza shop owner",
+      "situation": "Cash takings come in lumps. Big stock runs and prepaid electricity in between."
+    }
+  },
+  "consent": {
+    "title": "Before you start",
+    "as": "Entering as {{name}}",
+    "lead": "Here is what Tengo uses, why, and what you can change.",
+    "notice": {
+      "what": {
+        "title": "What we use",
+        "body": "Transaction dates, amounts and descriptions, plus your current balance. Nothing else."
+      },
+      "why": {
+        "title": "Why",
+        "body": "To work out how long your money lasts and when your next money is likely. Not for marketing or credit scoring."
+      },
+      "who": {
+        "title": "Who can see it",
+        "body": "Only you, on this device. No one at Tengo can see it in this demo."
+      },
+      "where": {
+        "title": "Where it is processed",
+        "body": "In your browser, on this device. Nothing is sent to a server."
+      },
+      "how": {
+        "title": "How long we keep it",
+        "body": "12 months, then it is removed. You can delete it any time."
+      }
+    },
+    "choices": "Your choices",
+    "required": "Required",
+    "core": {
+      "title": "Forecast",
+      "body": "Needed to use Tengo. Withdraw any time and the forecast pauses."
+    },
+    "messages": {
+      "title": "Daily messages",
+      "body": "A short daily update with your date. Simulated, nothing is sent."
+    },
+    "analytics": {
+      "title": "Product analytics",
+      "body": "Helps improve Tengo. Off by default. No analytics runs in this demo."
+    },
+    "changeLater": "You can change these any time in Privacy.",
+    "agree": "Agree and continue",
+    "notNow": "Not now"
+  },
+  "privacy": {
+    "simulated": "Simulated privacy controls. Not a compliance certification."
+  },
+  "home": {
+    "greeting": "Hi {{name}}",
+    "heroLabel": "Your date"
+  },
+  "hero": {
+    "enoughUntil": "Enough until",
+    "enoughBeyond": "Enough beyond",
+    "shortFrom": "Short from",
+    "gap_one": "{{count}} day before your next money",
+    "gap_other": "{{count}} days before your next money"
+  },
+  "band": {
+    "between": "Likely between {{from}} and {{to}}",
+    "single": "Likely {{date}}",
+    "lowConfidence": "Low confidence",
+    "legendDate": "Your date",
+    "legendRange": "Likely range",
+    "legendNext": "Next money, {{date}}"
+  },
+  "sts": {
+    "title": "Safe to spend today",
+    "withBills": "Each day until {{date}}, after {{bills}} in bills.",
+    "noBills": "Each day until {{date}}. No bills due before then."
+  },
+  "stateCard": {
+    "title": "Cover",
+    "enough": "Covered until your next money, even on a heavier week.",
+    "tight": "Covered on a normal week. A heavier week runs out before your next money.",
+    "short_one": "Runs out {{count}} day before your next money is likely.",
+    "short_other": "Runs out {{count}} days before your next money is likely."
+  },
+  "next": {
+    "title": "Next money",
+    "around": "Around {{date}}",
+    "window": "Likely window",
+    "amount": "Usual amount",
+    "patternWeekday": "Usually lands on a {{day}}.",
+    "patternInterval_one": "Usually lands every {{count}} day.",
+    "patternInterval_other": "Usually lands every {{count}} days.",
+    "unknown": "No regular income found yet. Tengo plans 30 days ahead."
+  },
+  "recent": {
+    "title": "Recent activity",
+    "all": "See all",
+    "empty": "No transactions yet."
+  },
+  "scrubber": {
+    "title": "Next 30 days",
+    "subtitle": "If money lands as usual",
+    "label": "Pick a day in the next 30 days",
+    "valueText": "{{date}}, about {{amount}}, {{state}}",
+    "range": "Likely {{low}} to {{high}}",
+    "expectedIncome": "Expected money",
+    "billDue": "{{name}} due"
+  },
+  "why": {
+    "open": "Why this date",
+    "title": "Why this date",
+    "plain": "We start with your balance today, take off bills on their due dates, and spend at your usual daily rate until the money reaches zero. That day is your date. Money you have not received yet is not counted.",
+    "chartLabel": "How the balance runs down on a normal, light and heavy week",
+    "lineCentral": "Normal week",
+    "lineLight": "Light week",
+    "lineHeavy": "Heavy week",
+    "lineNext": "Next money, {{date}}",
+    "inputs": "What went in",
+    "balance": "Balance today",
+    "dailySpend": "Usual daily spend",
+    "dailySpendHint": "Light to heavy week: {{low}} to {{high}} a day",
+    "perDay": "{{amount}} a day",
+    "bills": "Bills before next money",
+    "noBills": "None due",
+    "income": "Expected next money",
+    "incomeValue": "{{amount}}, {{date}}",
+    "history": "History used",
+    "historyHint_one": "From {{count}} day on record",
+    "historyHint_other": "From {{count}} days on record",
+    "historyValue_one": "Last {{count}} day",
+    "historyValue_other": "Last {{count}} days",
+    "confidence": "Confidence",
+    "confidenceHint": {
+      "high": "60 or more days of history",
+      "medium": "28 to 59 days of history",
+      "low": "Under 28 days. The range is wider."
+    },
+    "rulesTitle": "How the cover is set",
+    "rule": {
+      "enough": "Even a heavy week lasts until the latest likely next money.",
+      "tight": "A normal week lasts until the usual next money. A heavy week does not.",
+      "short": "A normal week runs out before the usual next money."
+    },
+    "question": "Question this result",
+    "notAdvice": "This is an estimate from past patterns, not financial advice."
+  },
+  "paused": {
+    "title": "Forecast paused",
+    "body": "You withdrew consent for the forecast, so Tengo is not using your data. Resume to see your date again, or delete your data.",
+    "resume": "Resume forecast",
+    "delete": "Delete my data"
+  },
+  "me": {
+    "switchPersona": "Switch person"
+  },
+  "errors": {
+    "loadTitle": "Could not load your data",
+    "loadBody": "Something went wrong reading this device's storage.",
+    "retry": "Try again"
   },
   "notFound": {
     "title": "Page not found",

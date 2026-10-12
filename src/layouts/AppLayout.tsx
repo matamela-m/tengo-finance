@@ -89,7 +89,7 @@ export function AppLayout({ personaSlot, children }: { personaSlot?: ReactNode; 
                 >
                   {({ isActive }) => (
                     <>
-                      <span className={`flex h-7 w-12 items-center justify-center rounded-full transition-colors ${isActive ? 'bg-mint/70 text-charcoal' : ''}`}>
+                      <span className={`flex h-7 w-12 items-center justify-center rounded-full transition-colors ${isActive ? 'bg-mint/70 dark:bg-mint text-charcoal' : ''}`}>
                         <Icon name={item.icon} size={20} />
                       </span>
                       <span className="max-w-full truncate">{t(`nav.${item.key}`)}</span>

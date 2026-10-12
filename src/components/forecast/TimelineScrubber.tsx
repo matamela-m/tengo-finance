@@ -150,7 +150,7 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
       {(day.billsToday.length > 0 || day.incomeToday > 0) && (
         <ul className="mt-4 space-y-2">
           {day.incomeToday > 0 && (
-            <li className="flex items-center justify-between gap-3 rounded-2xl bg-mint/40 px-4 py-2.5 text-sm">
+            <li className="flex items-center justify-between gap-3 rounded-2xl bg-mint/40 px-4 py-2.5 text-sm text-charcoal dark:bg-mint">
               <span className="flex items-center gap-2 font-medium">
                 <Icon name="arrowDown" size={16} />
                 {t('scrubber.expectedIncome')}

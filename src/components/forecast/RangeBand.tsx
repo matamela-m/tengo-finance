@@ -26,7 +26,7 @@ export function RangeBand({ forecast }: { forecast: Forecast }) {
           </span>
         )}
       </div>
-      <div className="relative mt-5 h-12" aria-hidden>
+      <div className="relative mt-5 h-14" aria-hidden>
         <div className="absolute inset-x-0 top-5 h-2 rounded-full bg-surface-2" />
         <div
           className="absolute top-3.5 h-5 rounded-full border-2"
@@ -47,7 +47,7 @@ export function RangeBand({ forecast }: { forecast: Forecast }) {
         )}
         <span className="absolute left-0 top-9 text-xs font-medium text-muted">{t('common.today')}</span>
       </div>
-      <ul className="mt-1 flex flex-wrap gap-x-5 gap-y-1 text-xs text-muted">
+      <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-xs text-muted">
         <li className="flex items-center gap-1.5">
           <span className="h-3 w-3 rounded-full" style={{ background: `var(--c-${state}-text)` }} />
           {t('band.legendDate')}

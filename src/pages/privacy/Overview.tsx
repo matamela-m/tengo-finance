@@ -14,7 +14,7 @@ function Card({ icon, title, children, className = '' }: { icon: IconName; title
   return (
     <section className={`card p-6 ${className}`}>
       <div className="flex items-center gap-2.5">
-        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-mint/50 text-charcoal">
+        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-mint/50 dark:bg-mint text-charcoal">
           <Icon name={icon} size={18} />
         </span>
         <h2 className="text-lg font-semibold">{title}</h2>
@@ -57,7 +57,7 @@ export default function PrivacyOverview() {
         <div className="flex min-w-0 flex-col gap-6 lg:col-span-2">
           <section className="card p-6" aria-labelledby="consent-title">
             <div className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-mint/50 text-charcoal">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-mint/50 dark:bg-mint text-charcoal">
                 <Icon name="check" size={18} />
               </span>
               <h2 id="consent-title" className="text-lg font-semibold">

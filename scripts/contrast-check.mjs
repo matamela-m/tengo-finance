@@ -19,6 +19,20 @@ const c = {
   enoughSoft: '#DDF3E4',
   tightSoft: '#FBEBD2',
   shortSoft: '#F6DDD7',
+  // Dark theme
+  darkBg: '#161616',
+  darkSurface: '#1E1E1E',
+  darkSurface2: '#262624',
+  darkInk: '#EEEBE6',
+  darkMuted: '#B9B5AE',
+  darkBrandInk: '#B6DFB2',
+  darkEnoughText: '#6FD59B',
+  darkTightText: '#F2C27A',
+  darkShortText: '#EF9A87',
+  darkEnoughSoft: '#1D3A29',
+  darkTightSoft: '#3D2F18',
+  darkShortSoft: '#43231C',
+  waChat: '#E7DFD4',
 };
 
 // [label, foreground, background, minimum ratio]
@@ -56,6 +70,22 @@ const pairs = [
   ['Short fill as UI icon on white', 'short', 'white', 3],
   ['Short fill as UI icon on charcoal', 'short', 'charcoal', 3],
   ['Enough vs deep green (distinct hue check)', 'enough', 'deepGreen', 1.5],
+  ['Avatar: mint initials on deep green', 'mint', 'deepGreen', 3],
+  ['Avatar: charcoal initials on sage', 'charcoal', 'sage', 3],
+  ['WhatsApp bubble text on white', 'charcoal', 'white', 4.5],
+  ['WhatsApp date pill text on chat bg', 'muted', 'waChat', 4.5],
+  ['Dark: body text on background', 'darkInk', 'darkBg', 4.5],
+  ['Dark: body text on surface', 'darkInk', 'darkSurface', 4.5],
+  ['Dark: muted text on surface', 'darkMuted', 'darkSurface', 4.5],
+  ['Dark: muted text on surface 2', 'darkMuted', 'darkSurface2', 4.5],
+  ['Dark: brand text on surface', 'darkBrandInk', 'darkSurface', 4.5],
+  ['Dark: charcoal on sage (active nav, buttons)', 'charcoal', 'sage', 4.5],
+  ['Dark: Enough text on surface', 'darkEnoughText', 'darkSurface', 4.5],
+  ['Dark: Tight text on surface', 'darkTightText', 'darkSurface', 4.5],
+  ['Dark: Short text on surface', 'darkShortText', 'darkSurface', 4.5],
+  ['Dark: Enough text on soft enough', 'darkEnoughText', 'darkEnoughSoft', 4.5],
+  ['Dark: Tight text on soft tight', 'darkTightText', 'darkTightSoft', 4.5],
+  ['Dark: Short text on soft short', 'darkShortText', 'darkShortSoft', 4.5],
 ];
 
 function lum(hex) {

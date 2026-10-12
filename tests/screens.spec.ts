@@ -13,6 +13,7 @@ interface Shot {
   /** Enter the app as this persona with consent already given. */
   persona?: string;
   consent?: boolean;
+  theme?: 'light' | 'dark';
   messages?: boolean;
   setup?: (page: Page) => Promise<void>;
   fullPage?: boolean;
@@ -42,6 +43,8 @@ const SHOTS: Shot[] = [
   { name: 'inbox', path: '/app/inbox', persona: 'lerato' },
   { name: 'inbox-off', path: '/app/inbox', persona: 'ayanda', messages: false },
   { name: 'me', path: '/app/me', persona: 'ayanda' },
+  { name: 'dark-home', path: '/app', persona: 'ayanda', theme: 'dark' },
+  { name: 'dark-plan', path: '/app/plan', persona: 'thabo', theme: 'dark' },
   {
     name: 'why-drawer',
     path: '/app',
@@ -57,12 +60,12 @@ const SHOTS: Shot[] = [
 async function prime(page: Page, shot: Shot) {
   await page.goto('/404-prime');
   await page.evaluate(
-    ({ persona, consent, messages }) => {
+    ({ persona, consent, messages, theme }) => {
       localStorage.clear();
       if (!persona) return;
       localStorage.setItem(
         'tengo.session.v1',
-        JSON.stringify({ state: { language: 'en', theme: 'light', activePersonaId: persona }, version: 0 }),
+        JSON.stringify({ state: { language: 'en', theme, activePersonaId: persona }, version: 0 }),
       );
       if (consent) {
         const now = new Date().toISOString();
@@ -75,7 +78,7 @@ async function prime(page: Page, shot: Shot) {
         );
       }
     },
-    { persona: shot.persona, consent: shot.consent ?? true, messages: shot.messages ?? true },
+    { persona: shot.persona, consent: shot.consent ?? true, messages: shot.messages ?? true, theme: shot.theme ?? 'light' },
   );
 }
 

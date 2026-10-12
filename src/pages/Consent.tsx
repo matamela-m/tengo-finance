@@ -65,7 +65,7 @@ export default function Consent() {
               <ul className="mt-6 space-y-3">
                 {NOTICE.map((n) => (
                   <li key={n.key} className="card flex gap-4 p-5">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-mint/50 text-charcoal">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-mint/50 dark:bg-mint text-charcoal">
                       <Icon name={n.icon} size={20} />
                     </span>
                     <div>

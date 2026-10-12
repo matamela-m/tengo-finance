@@ -147,7 +147,7 @@ export default function MoneyPage() {
               {t('money.last30')}
             </h2>
             <dl className="mt-3 grid grid-cols-2 gap-3">
-              <div className="rounded-2xl bg-mint/40 p-4">
+              <div className="rounded-2xl bg-mint/40 p-4 dark:bg-mint">
                 <dt className="flex items-center gap-1.5 text-xs font-semibold text-charcoal">
                   <Icon name="arrowDown" size={14} />
                   {t('money.in')}

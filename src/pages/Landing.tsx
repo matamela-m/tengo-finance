@@ -68,7 +68,7 @@ function Preview() {
           </div>
         </div>
         <div className="mt-5 grid grid-cols-2 gap-3">
-          <div className="rounded-2xl bg-mint/50 p-4">
+          <div className="rounded-2xl bg-mint/50 p-4 dark:bg-mint">
             <p className="text-xs font-semibold text-charcoal/80">{t('sts.title')}</p>
             <p className="num mt-1 font-display text-3xl font-extrabold text-charcoal">{formatZAR(f.safeToSpendToday)}</p>
           </div>
@@ -130,7 +130,7 @@ export default function Landing() {
               {STEPS.map((s, i) => (
                 <li key={s.key} className="card flex flex-col gap-4 p-6 sm:p-7">
                   <div className="flex items-center justify-between">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-mint/60 text-charcoal">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-mint/60 dark:bg-mint text-charcoal">
                       <Icon name={s.icon} size={22} />
                     </span>
                     <span className="num font-display text-3xl font-extrabold text-line">0{i + 1}</span>

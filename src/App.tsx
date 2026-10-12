@@ -8,6 +8,7 @@ import Consent from './pages/Consent';
 import HomePage from './pages/Home';
 import PlanPage from './pages/Plan';
 import MoneyPage from './pages/Money';
+import ImportPage from './pages/Import';
 import InboxPage from './pages/Inbox';
 import PrivacyPage from './pages/Privacy';
 import MePage from './pages/Me';
@@ -26,6 +27,7 @@ export default function App() {
             <Route index element={<HomePage />} />
             <Route path="plan" element={<PlanPage />} />
             <Route path="money" element={<MoneyPage />} />
+            <Route path="money/import" element={<ImportPage />} />
             <Route path="inbox" element={<InboxPage />} />
             <Route path="privacy/*" element={<PrivacyPage />} />
             <Route path="me" element={<MePage />} />

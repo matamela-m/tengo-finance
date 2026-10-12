@@ -25,6 +25,16 @@ const SHOTS: Shot[] = [
   { name: 'home-thabo', path: '/app', persona: 'thabo' },
   { name: 'home-lerato', path: '/app', persona: 'lerato' },
   { name: 'home-ayanda', path: '/app', persona: 'ayanda' },
+  { name: 'plan', path: '/app/plan', persona: 'thabo' },
+  { name: 'money', path: '/app/money', persona: 'lerato' },
+  {
+    name: 'import',
+    path: '/app/money/import',
+    persona: 'lerato',
+    setup: async (page) => {
+      await page.getByRole('button', { name: 'Use sample statement' }).click();
+    },
+  },
   {
     name: 'why-drawer',
     path: '/app',

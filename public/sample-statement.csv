@@ -1,0 +1,63 @@
+Date,Description,Amount,Balance
+28/08/2026,"Client payment, Waterkloof",506.00,2346.00
+28/08/2026,Airtime,-59.00,2287.00
+29/08/2026,Groceries,-305.00,1982.00
+30/08/2026,Taxi fare,-32.50,1949.50
+31/08/2026,Bread and milk,-35.50,1914.00
+01/09/2026,"Client payment, Mrs K",389.00,2303.00
+01/09/2026,Bread and milk,-29.50,2273.50
+02/09/2026,Room rent,-1500.00,773.50
+02/09/2026,Airtime,-24.00,749.50
+03/09/2026,"Ironing, piece job",154.00,903.50
+03/09/2026,Bread and milk,-44.50,859.00
+04/09/2026,"Client payment, Waterkloof",472.00,1331.00
+04/09/2026,Taxi fare,-29.50,1301.50
+05/09/2026,Taxi fare,-24.00,1277.50
+05/09/2026,Groceries,-355.00,922.50
+06/09/2026,Taxi fare,-49.50,873.00
+08/09/2026,"Client payment, Mrs K",397.00,1270.00
+08/09/2026,Airtime,-35.00,1235.00
+09/09/2026,Bread and milk,-59.00,1176.00
+10/09/2026,Airtime,-56.00,1120.00
+11/09/2026,"Client payment, Waterkloof",484.00,1604.00
+11/09/2026,Taxi fare,-56.00,1548.00
+not a date,Broken row,12.00,
+12/09/2026,Groceries,-272.00,1276.00
+13/09/2026,Airtime,-22.50,1253.50
+14/09/2026,Taxi fare,-34.50,1219.00
+15/09/2026,"Client payment, Mrs K",398.00,1617.00
+15/09/2026,Phone contract,-99.00,1518.00
+15/09/2026,Taxi fare,-32.50,1485.50
+16/09/2026,Airtime,-52.00,1433.50
+17/09/2026,"Ironing, piece job",248.00,1681.50
+17/09/2026,Bread and milk,-56.00,1625.50
+18/09/2026,"Client payment, Waterkloof",466.00,2091.50
+19/09/2026,Groceries,-351.00,1740.50
+22/09/2026,"Client payment, Mrs K",413.00,2153.50
+22/09/2026,Bread and milk,-25.50,2128.00
+23/09/2026,Taxi fare,-22.50,2105.50
+25/09/2026,"Client payment, Waterkloof",505.00,2610.50
+25/09/2026,Airtime,-51.00,2559.50
+26/09/2026,Taxi fare,-32.50,2527.00
+26/09/2026,Groceries,-392.00,2135.00
+27/09/2026,Airtime,-58.00,2077.00
+29/09/2026,"Client payment, Mrs K",394.00,2471.00
+29/09/2026,Bread and milk,-40.00,2431.00
+29/09/2026,Card fee,n/a,
+30/09/2026,Taxi fare,-58.00,2373.00
+01/10/2026,"Ironing, piece job",213.00,2586.00
+01/10/2026,Bread and milk,-45.50,2540.50
+02/10/2026,"Client payment, Waterkloof",496.00,3036.50
+02/10/2026,Room rent,-1500.00,1536.50
+02/10/2026,Taxi fare,-42.50,1494.00
+03/10/2026,Groceries,-384.00,1110.00
+04/10/2026,Taxi fare,-28.50,1081.50
+05/10/2026,Taxi fare,-23.00,1058.50
+06/10/2026,"Client payment, Mrs K",384.00,1442.50
+07/10/2026,Taxi fare,-53.00,1389.50
+08/10/2026,Airtime,-40.00,1349.50
+09/10/2026,"Client payment, Waterkloof",503.00,1852.50
+09/10/2026,Bread and milk,-35.00,1817.50
+10/10/2026,Airtime,-53.50,1764.00
+10/10/2026,Groceries,-267.00,1497.00
+11/10/2026,Bread and milk,-36.00,1461.00

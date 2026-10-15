@@ -1,5 +1,5 @@
 import { useSession } from '../store/session';
-import { formatDayShort, formatDayMonth, formatDateLong, formatTimestamp, formatWeekday } from './format';
+import { formatDayLong, formatDayShort, formatDayMonth, formatDateLong, formatTimestamp, formatWeekday } from './format';
 
 /** Date formatters bound to the current language. */
 export function useDates() {
@@ -10,6 +10,7 @@ export function useDates() {
     dayMonth: (iso: string) => formatDayMonth(iso, lang),
     long: (iso: string) => formatDateLong(iso, lang),
     weekday: (iso: string) => formatWeekday(iso, lang),
+    weekdayLong: (iso: string) => formatDayLong(iso, lang),
     stamp: (iso: string) => formatTimestamp(iso, lang),
   };
 }

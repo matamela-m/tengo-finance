@@ -33,6 +33,12 @@ export function formatDayShort(iso: string, lang: LanguageCode): string {
   return `${p.weekday} ${p.day} ${p.month}`;
 }
 
+/** "Thursday 23 October", for screen readers and long labels. */
+export function formatDayLong(iso: string, lang: LanguageCode): string {
+  const p = parts(iso, lang, { weekday: 'long', day: 'numeric', month: 'long' });
+  return `${p.weekday} ${p.day} ${p.month}`;
+}
+
 /** "23 Oct" */
 export function formatDayMonth(iso: string, lang: LanguageCode): string {
   const p = parts(iso, lang, { day: 'numeric', month: 'short' });

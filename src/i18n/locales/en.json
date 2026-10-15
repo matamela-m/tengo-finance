@@ -350,7 +350,20 @@
     "valueText": "{{date}}, about {{amount}}, {{state}}",
     "range": "Likely {{low}} to {{high}}",
     "expectedIncome": "Expected money",
-    "billDue": "{{name}} due"
+    "billDue": "{{name}} due",
+    "summary": "Projected balance for the next 30 days if money lands as usual. Lowest point {{low}} on {{date}}.",
+    "legend": "Chart key",
+    "legendExpected": "Expected balance",
+    "legendRange": "Likely range",
+    "legendIncome": "Money in",
+    "legendBill": "Bill due",
+    "showTable": "Show numbers",
+    "hideTable": "Hide numbers",
+    "tableCaption": "Projected balance and cover for each of the next 30 days",
+    "colDay": "Day",
+    "colExpected": "Expected",
+    "colRange": "Likely range",
+    "colCover": "Cover"
   },
   "why": {
     "open": "Why this date",

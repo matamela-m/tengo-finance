@@ -14,9 +14,6 @@ export function AppLayout({ personaSlot, children }: { personaSlot?: ReactNode; 
 
   return (
     <div className="min-h-dvh lg:flex">
-      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded-full focus:bg-surface focus:px-4 focus:py-2 focus:shadow-lift">
-        {t('common.skipToContent')}
-      </a>
 
       {/* Desktop sidebar */}
       <aside className="sticky top-0 hidden h-dvh w-[264px] shrink-0 flex-col border-r border-line bg-surface/70 px-5 py-6 backdrop-blur lg:flex">

@@ -26,8 +26,7 @@
   "state": {
     "enough": "Enough",
     "tight": "Tight",
-    "short": "Short",
-    "gauge": "Cover: {{state}}, {{level}} of 3 bars"
+    "short": "Short"
   },
   "confidence": {
     "high": "High",
@@ -494,7 +493,11 @@
     "enterAmount": "Enter an amount to see the effect.",
     "ifLend": "If you lend {{amount}} today",
     "afterLoan": "After the loan",
-    "stateDrops": "This drops your cover from {{from}} to {{to}}."
+    "stateDrops": "This drops your cover from {{from}} to {{to}}.",
+    "amountError": "Enter an amount above zero, for example 250.",
+    "whatIfSpoken": "With these changes: {{label}} {{date}}, {{state}}, {{change}}.",
+    "loanSpoken_one": "If you lend {{amount}}: {{label}} {{date}}, {{state}}, {{count}} day less cover.",
+    "loanSpoken_other": "If you lend {{amount}}: {{label}} {{date}}, {{state}}, {{count}} days less cover."
   },
   "money": {
     "title": "Money",
@@ -644,5 +647,14 @@
       "short": "Tengo: Hi {{name}}, money may run out {{date}} ({{state}}). Safe today {{sts}}.",
       "next": "Next money about {{next}}."
     }
+  },
+  "a11y": {
+    "moneyIn": "money in, {{amount}}",
+    "moneyOut": "money out, {{amount}}",
+    "saved": "Transaction saved",
+    "noChanges": "No changes made",
+    "exported": "Data exported as {{format}}",
+    "consentSaved": "Consent updated",
+    "paused": "Consent withdrawn. The forecast is paused."
   }
 }

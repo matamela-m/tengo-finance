@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { A11yProvider, SkipLink } from './components/A11y';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { Preferences } from './components/Preferences';
 import { PersonaProvider } from './data/PersonaProvider';
@@ -20,6 +21,8 @@ export default function App() {
     <ErrorBoundary>
     <BrowserRouter>
       <Preferences />
+      <SkipLink />
+      <A11yProvider>
       <PersonaProvider>
         <Routes>
           <Route path="/" element={<Landing />} />
@@ -38,6 +41,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </PersonaProvider>
+      </A11yProvider>
     </BrowserRouter>
     </ErrorBoundary>
   );

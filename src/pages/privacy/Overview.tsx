@@ -9,6 +9,7 @@ import { usePersona, useReadyPersona } from '../../data/PersonaProvider';
 import type { ConsentRecord } from '../../data/repository';
 import { useDates } from '../../lib/useLang';
 import { retention } from './retention';
+import { useAnnounce } from '../../components/A11y';
 
 function Card({ icon, title, children, className = '' }: { icon: IconName; title: string; children: ReactNode; className?: string }) {
   return (
@@ -38,12 +39,15 @@ export default function PrivacyOverview() {
   const { record } = useReadyPersona();
   const { consent, setConsent } = usePersona();
   const keep = retention(record.transactions);
+  const announce = useAnnounce();
 
   const change = (key: keyof Omit<ConsentRecord, 'decidedAt'>, value: boolean) => {
     if (!consent) return;
     const next = { core: consent.core, messages: consent.messages, analytics: consent.analytics, [key]: value };
     const type = key === 'core' ? (value ? 'forecast.resumed' : 'forecast.paused') : 'consent.changed';
-    void setConsent(next, type, { item: t(`consent.${key}.title`), value: value ? t('common.on') : t('common.off') });
+    void setConsent(next, type, { item: t(`consent.${key}.title`), value: value ? t('common.on') : t('common.off') }).then(() =>
+      announce(key === 'core' && !value ? t('a11y.paused') : t('a11y.consentSaved')),
+    );
   };
 
   return (

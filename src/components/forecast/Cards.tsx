@@ -107,7 +107,10 @@ export function TransactionRow({ tx, compact = false }: { tx: Transaction; compa
           {d.dayShort(tx.date)} · {t(`category.${tx.category}`)}
         </p>
       </div>
-      <p className={`num shrink-0 text-[15px] font-semibold ${tx.amount > 0 ? 'text-enough-text' : 'text-ink'}`}>{formatZAR(tx.amount, { sign: true })}</p>
+      <p className={`num shrink-0 text-[15px] font-semibold ${tx.amount > 0 ? 'text-enough-text' : 'text-ink'}`}>
+        <span aria-hidden>{formatZAR(tx.amount, { sign: true })}</span>
+        <span className="sr-only">{t(tx.amount > 0 ? 'a11y.moneyIn' : 'a11y.moneyOut', { amount: formatZAR(Math.abs(tx.amount)) })}</span>
+      </p>
     </div>
   );
 }

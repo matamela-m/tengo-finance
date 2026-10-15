@@ -133,7 +133,7 @@ export default function Landing() {
                     <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-mint/60 dark:bg-mint text-charcoal">
                       <Icon name={s.icon} size={22} />
                     </span>
-                    <span className="num font-figures text-3xl font-extrabold text-line">0{i + 1}</span>
+                    <span aria-hidden className="num font-figures text-3xl font-extrabold text-muted">0{i + 1}</span>
                   </div>
                   <h3 className="text-xl font-semibold">{t(`landing.steps.${s.key}.title`)}</h3>
                   <p className="text-[15px] text-muted">{t(`landing.steps.${s.key}.body`)}</p>

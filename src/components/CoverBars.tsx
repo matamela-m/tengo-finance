@@ -1,9 +1,9 @@
-import { useTranslation } from 'react-i18next';
 import type { CoverState } from '../engine/types';
 
 /**
  * Three upright bars that light up with cover: 3 Enough, 2 Tight, 1 Short.
  * A separate UI gauge, deliberately unlike the slanted logo mark.
+ * Decorative: it always sits beside a StateChip, which gives the state in words.
  */
 const LEVEL: Record<CoverState, 1 | 2 | 3> = { short: 1, tight: 2, enough: 3 };
 
@@ -14,7 +14,6 @@ interface CoverBarsProps {
 }
 
 export function CoverBars({ state, size = 24, className }: CoverBarsProps) {
-  const { t } = useTranslation();
   const level = LEVEL[state];
   const fill = `var(--c-${state})`;
   const stroke = `var(--c-${state}-text)`;
@@ -28,8 +27,8 @@ export function CoverBars({ state, size = 24, className }: CoverBarsProps) {
       width={w}
       height={h}
       viewBox={`0 0 ${w} ${h}`}
-      role="img"
-      aria-label={t('state.gauge', { state: t(`state.${state}`), level })}
+      aria-hidden
+      focusable="false"
       className={className}
     >
       {bars.map((ratio, i) => {

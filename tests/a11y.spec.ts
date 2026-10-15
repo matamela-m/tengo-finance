@@ -1,0 +1,67 @@
+import AxeBuilder from '@axe-core/playwright';
+import { test, expect, type Page } from '@playwright/test';
+
+// Automated WCAG 2.1 A and AA checks with axe-core on every main screen, light and dark.
+
+const PAGES = ['/', '/start', '/app', '/app/plan', '/app/money', '/app/money/import', '/app/inbox', '/app/privacy', '/app/privacy/data', '/app/privacy/audit', '/app/privacy/review', '/app/privacy/breach', '/app/privacy/delete', '/app/me'];
+
+async function enter(page: Page, theme: 'light' | 'dark') {
+  await page.goto('/404-prime');
+  await page.evaluate((theme) => {
+    localStorage.clear();
+    localStorage.setItem('tengo.session.v1', JSON.stringify({ state: { language: 'en', theme, activePersonaId: 'thabo' }, version: 0 }));
+    localStorage.setItem(
+      'tengo.data.v1',
+      JSON.stringify({ personas: { thabo: { consent: { core: true, messages: true, analytics: false, decidedAt: new Date().toISOString() }, audit: [], reviews: [] } }, receipts: [] }),
+    );
+  }, theme);
+}
+
+async function scan(page: Page) {
+  await page.waitForLoadState('networkidle');
+  await page.waitForTimeout(300);
+  const result = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
+  const problems = result.violations.map(
+    (v) =>
+      `${v.id} (${v.impact}): ${v.help}\n  ${v.nodes
+        .slice(0, 4)
+        .map((n) => `${n.target.join(' ')} :: ${n.html.slice(0, 120)} :: ${(n.any[0]?.message ?? n.failureSummary ?? '').slice(0, 160)}`)
+        .join('\n  ')}`,
+  );
+  expect(problems, problems.join('\n')).toEqual([]);
+}
+
+for (const theme of ['light', 'dark'] as const) {
+  for (const path of PAGES) {
+    test(`axe ${theme} ${path}`, async ({ page }) => {
+      await page.emulateMedia({ reducedMotion: 'reduce' });
+      await enter(page, theme);
+      await page.goto(path);
+      await scan(page);
+    });
+  }
+}
+
+test('axe consent screen', async ({ page }) => {
+  await page.goto('/start');
+  await page.evaluate(() => localStorage.clear());
+  await page.goto('/start');
+  await page.getByRole('button', { name: /Thabo/ }).click();
+  await page.waitForURL(/consent/);
+  await scan(page);
+});
+
+test('axe Why this date drawer', async ({ page }) => {
+  await enter(page, 'light');
+  await page.goto('/app');
+  await page.getByRole('button', { name: 'Why this date' }).first().click();
+  await page.getByRole('dialog').waitFor();
+  await scan(page);
+});
+
+test('route change moves focus to main content', async ({ page }) => {
+  await enter(page, 'light');
+  await page.goto('/app');
+  await page.getByRole('link', { name: 'Plan' }).first().click();
+  await expect(page.locator('#main')).toBeFocused();
+});

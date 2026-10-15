@@ -4,6 +4,7 @@ import { CoverBars } from '../components/CoverBars';
 import { Notice } from '../components/Feedback';
 import { Icon } from '../components/Icon';
 import { PageHeader } from '../components/PageHeader';
+import { Segmented } from '../components/Segmented';
 import { StateChip } from '../components/StateChip';
 import { useReadyPersona } from '../data/PersonaProvider';
 import { addDays } from '../engine/dates';
@@ -51,6 +52,7 @@ function Outcome({ label, f }: { label: string; f: Forecast }) {
 
 function WhatIf() {
   const { t } = useTranslation();
+  const d = useDates();
   const { record, today } = useReadyPersona();
   const tomorrow = addDays(today, 1);
   const [items, setItems] = useState<Item[]>([{ id: 1, kind: 'expense', amount: '500', date: tomorrow, label: '' }]);
@@ -87,20 +89,12 @@ function WhatIf() {
             <fieldset>
               <legend className="sr-only">{t('plan.itemLabel', { n: idx + 1 })}</legend>
               <div className="flex items-center justify-between gap-3">
-                <div role="radiogroup" aria-label={t('plan.kind')} className="flex rounded-full bg-surface-2 p-1">
-                  {(['income', 'expense'] as const).map((k) => (
-                    <button
-                      key={k}
-                      type="button"
-                      role="radio"
-                      aria-checked={item.kind === k}
-                      onClick={() => update(item.id, { kind: k })}
-                      className={`min-h-[36px] rounded-full px-4 text-sm font-semibold ${item.kind === k ? 'bg-surface text-ink shadow-card' : 'text-muted'}`}
-                    >
-                      {t(`plan.${k}`)}
-                    </button>
-                  ))}
-                </div>
+                <Segmented
+                  label={t('plan.kind')}
+                  value={item.kind}
+                  onChange={(k) => update(item.id, { kind: k })}
+                  options={(['income', 'expense'] as const).map((k) => ({ value: k, label: t(`plan.${k}`) }))}
+                />
                 <button
                   type="button"
                   onClick={() => setItems((l) => l.filter((i) => i.id !== item.id))}
@@ -115,7 +109,20 @@ function WhatIf() {
                   <label className="label" htmlFor={`amt-${item.id}`}>
                     {t('plan.amount')}
                   </label>
-                  <input id={`amt-${item.id}`} inputMode="decimal" className="field num" value={item.amount} onChange={(e) => update(item.id, { amount: e.target.value })} />
+                  <input
+                    id={`amt-${item.id}`}
+                    inputMode="decimal"
+                    className="field num"
+                    value={item.amount}
+                    onChange={(e) => update(item.id, { amount: e.target.value })}
+                    aria-invalid={item.amount !== '' && !(parseAmount(item.amount)! > 0)}
+                    aria-describedby={item.amount !== '' && !(parseAmount(item.amount)! > 0) ? `amt-err-${item.id}` : undefined}
+                  />
+                  {item.amount !== '' && !(parseAmount(item.amount)! > 0) && (
+                    <p id={`amt-err-${item.id}`} className="mt-1 text-xs font-medium text-short-text">
+                      {t('plan.amountError')}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label className="label" htmlFor={`date-${item.id}`}>
@@ -147,7 +154,15 @@ function WhatIf() {
         {t('plan.add')}
       </button>
 
-      <div className="mt-6 border-t border-line pt-5" aria-live="polite">
+      <div className="mt-6 border-t border-line pt-5">
+        <p className="sr-only" aria-live="polite" aria-atomic="true">
+          {t('plan.whatIfSpoken', {
+            label: result.after.state === 'short' ? t('hero.shortFrom') : t('hero.enoughUntil'),
+            date: d.weekdayLong(result.after.headlineDate),
+            state: t(`state.${result.after.state}`),
+            change: result.deltaDays === 0 ? t('plan.noChange') : result.deltaDays > 0 ? t('plan.daysMore', { count: result.deltaDays }) : t('plan.daysLess', { count: -result.deltaDays }),
+          })}
+        </p>
         <div className="flex flex-wrap items-center justify-between gap-3">
           <h3 className="font-semibold">{t('plan.result')}</h3>
           <DeltaBadge days={result.deltaDays} />
@@ -166,6 +181,7 @@ function WhatIf() {
 
 function LoanCheck() {
   const { t } = useTranslation();
+  const d = useDates();
   const { record, today } = useReadyPersona();
   const [amount, setAmount] = useState('300');
   const value = parseAmount(amount);
@@ -195,8 +211,21 @@ function LoanCheck() {
         </label>
         <div className="relative">
           <span className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 font-semibold text-muted">R</span>
-          <input id="loan-amount" inputMode="decimal" className="field num pl-8 text-lg font-semibold" value={amount} onChange={(e) => setAmount(e.target.value)} aria-invalid={!valid && amount !== ''} />
+          <input
+            id="loan-amount"
+            inputMode="decimal"
+            className="field num pl-8 text-lg font-semibold"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            aria-invalid={!valid && amount !== ''}
+            aria-describedby={!valid && amount !== '' ? 'loan-err' : undefined}
+          />
         </div>
+        {!valid && amount !== '' && (
+          <p id="loan-err" className="mt-1 text-xs font-medium text-short-text">
+            {t('plan.amountError')}
+          </p>
+        )}
         <div className="mt-3 flex flex-wrap gap-2">
           {[200, 500, 1000].map((v) => (
             <button key={v} type="button" className="num min-h-[40px] rounded-full bg-surface-2 px-4 text-sm font-semibold hover:bg-line" onClick={() => setAmount(String(v))}>
@@ -211,7 +240,18 @@ function LoanCheck() {
         </div>
       </div>
 
-      <div className="mt-6 border-t border-line pt-5" aria-live="polite">
+      <div className="mt-6 border-t border-line pt-5">
+        <p className="sr-only" aria-live="polite" aria-atomic="true">
+          {valid
+            ? t('plan.loanSpoken', {
+                amount: formatZAR(value),
+                label: result.after.state === 'short' ? t('hero.shortFrom') : t('hero.enoughUntil'),
+                date: d.weekdayLong(result.after.headlineDate),
+                state: t(`state.${result.after.state}`),
+                count: result.daysOff,
+              })
+            : ''}
+        </p>
         {!valid ? (
           <p className="text-sm text-muted">{t('plan.enterAmount')}</p>
         ) : (

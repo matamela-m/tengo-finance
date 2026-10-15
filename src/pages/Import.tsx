@@ -123,7 +123,7 @@ export default function ImportPage() {
         </section>
 
         {/* Step 2: map and confirm */}
-        <section className="card min-w-0 p-6 sm:p-7" aria-labelledby="map-title" aria-live="polite">
+        <section className="card min-w-0 p-6 sm:p-7" aria-labelledby="map-title">
           <h2 id="map-title" className="text-lg font-semibold">
             {t('import.step2')}
           </h2>
@@ -139,7 +139,7 @@ export default function ImportPage() {
             </div>
           ) : (
             <>
-              <p className="mt-1 text-sm text-muted">
+              <p className="mt-1 text-sm text-muted" role="status">
                 {fileName} · {t('import.rowsRead', { count: file.rows.length })}
               </p>
               <fieldset className="mt-5">
@@ -208,7 +208,7 @@ export default function ImportPage() {
               )}
 
               {result && (
-                <div className="mt-5 space-y-3">
+                <div className="mt-5 space-y-3" role="status">
                   {result.skipped > 0 && <Notice tone="warn">{t('import.skipped', { count: result.skipped })}</Notice>}
                   {result.error === 'tooShort' && <Notice tone="danger">{t('import.tooShort', { count: result.days })}</Notice>}
                   {result.error === 'noRows' && <Notice tone="danger">{t('import.noRows')}</Notice>}

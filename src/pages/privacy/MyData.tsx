@@ -8,12 +8,14 @@ import { formatZAR } from '../../lib/format';
 import { downloadText } from '../../lib/sampleStatement';
 import { useDates } from '../../lib/useLang';
 import { SubPage } from './Sub';
+import { useAnnounce } from '../../components/A11y';
 
 export default function MyData() {
   const { t } = useTranslation();
   const d = useDates();
   const { record, profile, consent, audit, reviews, log } = useReadyPersona();
   const logged = useRef(false);
+  const announce = useAnnounce();
 
   useEffect(() => {
     if (logged.current) return;
@@ -36,11 +38,13 @@ export default function MyData() {
     };
     downloadText(`tengo-${profile.id}-${stamp}.json`, JSON.stringify(payload, null, 2), 'application/json');
     void log('data.exported', { format: 'JSON' });
+    announce(t('a11y.exported', { format: 'JSON' }));
   };
   const exportCsv = () => {
     const rows = [['date', 'description', 'amount', 'category'], ...record.transactions.map((x) => [x.date, x.description, x.amount.toFixed(2), x.category])];
     downloadText(`tengo-${profile.id}-${stamp}.csv`, toCsv(rows) + '\n');
     void log('data.exported', { format: 'CSV' });
+    announce(t('a11y.exported', { format: 'CSV' }));
   };
 
   const sorted = [...record.transactions].sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -90,7 +94,7 @@ export default function MyData() {
           <h2 id="tx-title" className="text-lg font-semibold">
             {t('privacy.heldTransactions')}
           </h2>
-          <ul className="mt-2 max-h-[640px] divide-y divide-line overflow-y-auto pr-1">
+          <ul tabIndex={0} aria-labelledby="tx-title" className="mt-2 max-h-[640px] divide-y divide-line overflow-y-auto rounded-xl pr-1">
             {sorted.map((tx) => (
               <li key={tx.id}>
                 <TransactionRow tx={tx} compact />

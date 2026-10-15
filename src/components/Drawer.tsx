@@ -24,6 +24,9 @@ export function Drawer({ open, onClose, title, children, footer }: DrawerProps) 
     returnTo.current = document.activeElement;
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+    const root = document.getElementById('root');
+    root?.setAttribute('inert', '');
+    root?.setAttribute('aria-hidden', 'true');
     panel.current?.querySelector<HTMLElement>('[data-autofocus]')?.focus();
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -45,6 +48,8 @@ export function Drawer({ open, onClose, title, children, footer }: DrawerProps) 
     return () => {
       document.removeEventListener('keydown', onKey);
       document.body.style.overflow = prevOverflow;
+      root?.removeAttribute('inert');
+      root?.removeAttribute('aria-hidden');
       (returnTo.current as HTMLElement | null)?.focus?.();
     };
   }, [open, onClose]);
@@ -68,7 +73,9 @@ export function Drawer({ open, onClose, title, children, footer }: DrawerProps) 
             <Icon name="x" />
           </button>
         </div>
-        <div className="flex-1 overflow-y-auto px-6 py-5">{children}</div>
+        <div tabIndex={0} role="region" aria-labelledby="drawer-title" className="flex-1 overflow-y-auto px-6 py-5">
+          {children}
+        </div>
         {footer && <div className="border-t border-line px-6 py-4">{footer}</div>}
       </div>
     </div>,

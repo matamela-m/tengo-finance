@@ -5,6 +5,7 @@ import { TransactionRow } from '../components/forecast/Cards';
 import { EmptyState } from '../components/Feedback';
 import { Icon } from '../components/Icon';
 import { PageHeader } from '../components/PageHeader';
+import { Segmented } from '../components/Segmented';
 import { TransactionEditor } from '../components/TransactionEditor';
 import { useReadyPersona } from '../data/PersonaProvider';
 import { addDays } from '../engine/dates';
@@ -74,23 +75,16 @@ export default function MoneyPage() {
             {t('money.history')}
           </h2>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div role="radiogroup" aria-label={t('money.filter')} className="flex flex-wrap gap-2">
-              {FILTERS.map((f) => (
-                <button
-                  key={f}
-                  type="button"
-                  role="radio"
-                  aria-checked={filter === f}
-                  onClick={() => {
-                    setFilter(f);
-                    setShown(PAGE);
-                  }}
-                  className={`min-h-[40px] rounded-full px-4 text-sm font-semibold transition-colors ${filter === f ? 'bg-charcoal text-off-white' : 'bg-surface-2 text-ink hover:bg-line'}`}
-                >
-                  {f === 'all' ? t('money.all') : t(`money.filters.${f}`)}
-                </button>
-              ))}
-            </div>
+            <Segmented
+              label={t('money.filter')}
+              variant="pills"
+              value={filter}
+              onChange={(f) => {
+                setFilter(f);
+                setShown(PAGE);
+              }}
+              options={FILTERS.map((f) => ({ value: f, label: f === 'all' ? t('money.all') : t(`money.filters.${f}`) }))}
+            />
             <div className="relative sm:w-56">
               <label htmlFor="money-search" className="sr-only">
                 {t('money.search')}

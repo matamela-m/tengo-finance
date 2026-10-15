@@ -127,7 +127,7 @@
   }
 
   .btn-danger {
-    @apply btn bg-short-text text-white;
+    @apply btn bg-short-text text-white dark:text-charcoal;
   }
 
   .field {
@@ -183,6 +183,6 @@
     text-transform: uppercase;
     letter-spacing: 0.01em;
     /* The font's own space is very narrow in capitals. */
-    word-spacing: 0.3em;
+    word-spacing: 0.22em;
   }
 }

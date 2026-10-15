@@ -5,6 +5,7 @@ import { Avatar } from '../components/Avatar';
 import { LoadingBlock, Notice } from '../components/Feedback';
 import { Icon } from '../components/Icon';
 import { PageHeader } from '../components/PageHeader';
+import { Segmented } from '../components/Segmented';
 import { TengoLogo } from '../components/TengoLogo';
 import { usePersona, useReadyPersona } from '../data/PersonaProvider';
 import type { LanguageCode } from '../i18n/languages';
@@ -83,27 +84,26 @@ export default function InboxPage() {
               <h2 id="preview-title" className="font-semibold">
                 {t('inbox.preview')}
               </h2>
-              <div role="radiogroup" aria-label={t('inbox.channel')} className="flex rounded-full bg-surface-2 p-1">
-                {(['whatsapp', 'sms'] as const).map((c) => (
-                  <button
-                    key={c}
-                    type="button"
-                    role="radio"
-                    aria-checked={channel === c}
-                    onClick={() => setChannel(c)}
-                    className={`flex min-h-[40px] items-center gap-1.5 rounded-full px-4 text-sm font-semibold ${channel === c ? 'bg-surface text-ink shadow-card' : 'text-muted'}`}
-                  >
-                    <Icon name={c === 'sms' ? 'phone' : 'inbox'} size={16} />
-                    {t(`inbox.channels.${c}`)}
-                  </button>
-                ))}
-              </div>
+              <Segmented
+                label={t('inbox.channel')}
+                value={channel}
+                onChange={setChannel}
+                options={(['whatsapp', 'sms'] as const).map((c) => ({
+                  value: c,
+                  label: (
+                    <>
+                      <Icon name={c === 'sms' ? 'phone' : 'inbox'} size={16} />
+                      {t(`inbox.channels.${c}`)}
+                    </>
+                  ),
+                }))}
+              />
             </div>
 
             <div className={`px-4 py-8 sm:px-8 ${channel === 'whatsapp' ? 'bg-[#E7DFD4]' : 'bg-surface-2'}`}>
               <div className="mx-auto max-w-md">
                 <div className="mb-4 flex items-center justify-center gap-2">
-                  <span className="rounded-full bg-surface/80 px-3 py-1 text-xs font-medium text-muted">{t('inbox.todayAt')}</span>
+                  <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-[#5A5A55]">{t('inbox.todayAt')}</span>
                 </div>
                 <div className="flex items-end gap-2">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white p-1">
@@ -113,7 +113,6 @@ export default function InboxPage() {
                     className={`relative min-w-0 max-w-[85%] rounded-2xl rounded-bl-md px-4 py-3 text-[15px] leading-relaxed shadow-card ${
                       channel === 'whatsapp' ? 'bg-white text-charcoal' : 'bg-surface text-ink'
                     }`}
-                    aria-live="polite"
                   >
                     <p className="mb-1 text-xs font-semibold text-deep-green">Tengo</p>
                     {message ? (
@@ -123,7 +122,7 @@ export default function InboxPage() {
                     ) : (
                       <LoadingBlock lines={3} />
                     )}
-                    <p className="mt-1 text-right text-[11px] text-charcoal/60">07:00</p>
+                    <p className="mt-1 text-right text-[11px] text-[#5A5A55]">07:00</p>
                   </div>
                 </div>
               </div>

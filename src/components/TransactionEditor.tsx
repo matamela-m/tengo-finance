@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { usePersona } from '../data/PersonaProvider';
+import { useAnnounce } from './A11y';
 import type { Category, Transaction } from '../engine/types';
 import { parseAmount } from '../lib/csv';
 import { Drawer } from './Drawer';
@@ -12,6 +13,7 @@ const CATEGORIES: Category[] = ['income', 'spend', 'bill'];
 export function TransactionEditor({ tx, onClose }: { tx: Transaction | null; onClose: () => void }) {
   const { t } = useTranslation();
   const { updateTransaction } = usePersona();
+  const announce = useAnnounce();
   const [description, setDescription] = useState('');
   const [amount, setAmount] = useState('');
   const [category, setCategory] = useState<Category>('spend');
@@ -39,6 +41,7 @@ export function TransactionEditor({ tx, onClose }: { tx: Transaction | null; onC
       await updateTransaction(tx.id, { description: description.trim(), amount: parsed, category }, { name: tx.description, fields: changes.join(', ') });
     }
     setSaving(false);
+    announce(changes.length ? t('a11y.saved') : t('a11y.noChanges'));
     onClose();
   };
 

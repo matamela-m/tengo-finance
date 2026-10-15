@@ -59,7 +59,7 @@ export default function MePage() {
                       type="button"
                       onClick={() => void switchTo(p.id)}
                       aria-current={active ? 'true' : undefined}
-                      className={`flex min-h-[64px] w-full items-center gap-3 rounded-2xl border px-3 py-2 text-left ${active ? 'border-brand bg-mint/30' : 'border-line hover:bg-surface-2'}`}
+                      className={`flex min-h-[64px] w-full items-center gap-3 rounded-2xl border px-3 py-2 text-left ${active ? 'border-brand bg-mint/30 dark:bg-surface-2' : 'border-line hover:bg-surface-2'}`}
                     >
                       <Avatar persona={p} size={44} />
                       <span className="min-w-0 flex-1">

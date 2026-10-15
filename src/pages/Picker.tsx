@@ -52,9 +52,9 @@ export default function Picker() {
 
       <main id="main" className="mx-auto w-full max-w-[1440px] px-5 pb-16 pt-4 sm:px-8 lg:px-12 lg:pt-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="min-w-0 max-w-2xl lg:flex-1">
+          <div className="min-w-0 lg:flex-1">
             <h1 className="font-display text-[32px] font-extrabold leading-[1.05] sm:text-[46px]">{t('picker.title')}</h1>
-            <p className="mt-3 text-lg text-muted">{t('picker.lead')}</p>
+            <p className="mt-3 max-w-2xl text-lg text-muted">{t('picker.lead')}</p>
           </div>
           <LanguageSelector className="w-full shrink-0 sm:max-w-sm lg:w-80" />
         </div>
@@ -74,10 +74,8 @@ export default function Picker() {
           <ul className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {PERSONAS.map((p) => (
               <li key={p.id}>
-                <button
-                  type="button"
-                  onClick={() => void choose(p)}
-                  className={`group card flex h-full w-full flex-col p-6 text-left transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-lift sm:p-7 ${
+                <article
+                  className={`group card relative flex h-full w-full flex-col p-6 transition-[transform,box-shadow] duration-200 focus-within:ring-[3px] focus-within:ring-[var(--c-focus)] hover:-translate-y-0.5 hover:shadow-lift sm:p-7 ${
                     active === p.id ? 'ring-2 ring-brand' : ''
                   }`}
                 >
@@ -88,19 +86,23 @@ export default function Picker() {
                       <CoverBars state={p.startState} size={28} />
                     </div>
                   </div>
-                  <p className="mt-6 font-display text-[30px] font-extrabold leading-none">{p.name}</p>
+                  <h3 className="mt-6 font-display text-[30px] font-extrabold leading-none">{p.name}</h3>
                   <p className="mt-2 text-[15px] font-semibold">
                     {t(`personas.${p.id}.role`)}, {p.place}
                   </p>
                   <p className="mt-3 flex-1 text-[15px] text-muted">{t(`personas.${p.id}.situation`)}</p>
                   <div className="mt-6 flex w-full items-center justify-between gap-3 border-t border-line pt-4">
                     <span className="text-xs font-medium text-muted">{t('personas.fictional')}</span>
-                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-brand-ink">
+                    <button
+                      type="button"
+                      onClick={() => void choose(p)}
+                      className="inline-flex min-h-[44px] items-center gap-1 text-sm font-semibold text-brand-ink after:absolute after:inset-0 after:rounded-3xl after:content-[''] focus-visible:outline-none"
+                    >
                       {active === p.id ? t('picker.continueAs', { name: p.name }) : t('picker.enterAs', { name: p.name })}
                       <Icon name="arrowRight" size={16} className="transition-transform group-hover:translate-x-0.5" />
-                    </span>
+                    </button>
                   </div>
-                </button>
+                </article>
               </li>
             ))}
           </ul>

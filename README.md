@@ -27,7 +27,9 @@ npm run dev          # http://localhost:5173
 | `npm run i18n:check` | Fails if any locale is missing a key, has extra keys, or uses an exclamation mark |
 | `npm run contrast` | WCAG contrast check of every text and surface pair the UI uses |
 | `npm run screens` | Playwright: screenshots at 390, 768, 1280 and 1600px into `screenshots/`, plus end to end flow tests |
-| `npm run icons` | Rebuilds favicons from the supplied mark (macOS, uses `sips`) |
+| `npm run icons` | Rebuilds the round favicons and app icons from the supplied mark (needs Python with Pillow: `pip install pillow`) |
+
+**On your phone (same Wi-Fi):** run `npm run dev:phone`, then open the "Network" address it prints (for example `http://192.168.1.20:5173`) in your phone's browser. If macOS asks whether Node may accept incoming connections, choose Allow.
 
 Playwright needs a browser once: `npx playwright install chromium`. Set `SCREENS=home-thabo,landing` or `WIDTHS=390` to capture a subset.
 
@@ -63,10 +65,11 @@ The "Why this date" drawer on Home shows every input behind the date and doubles
 
 ## Brand, type and licences
 
-- Logos in `public/brand/` are the founder supplied PNGs, copied unchanged from `assets/brand/`. `<TengoLogo />` only chooses a file. Favicons and app icons are the light mark, scaled and padded. The `<CoverBars />` gauge is a separate UI element, upright bars unlike the slanted logo mark.
+- Logos in `public/brand/` are the founder supplied PNGs, copied unchanged from `assets/brand/`. `<TengoLogo />` only chooses a file. Favicons and app icons are the light mark, scaled onto a round off-white disc (the Apple touch icon stays square, since iOS rounds it itself). The `<CoverBars />` gauge is a separate UI element, upright bars unlike the slanted logo mark.
 - Inter Variable is self-hosted through `@fontsource-variable/inter`.
 - **Public Stunt licence.** The free Public Stunt version is for personal use only. A commercial licence is required before public launch.
-- **Public Stunt file is missing.** No font file was supplied (there was no `assets/fonts/` folder). `@font-face` points to `public/fonts/public-stunt.woff2` (and `.woff`). Until the file is added there, display text falls back to Inter. If the supplied file is OTF or TTF, convert it with `woff2_compress` (from Google's woff2 tools) first.
+- **Public Stunt.** The supplied OTF files (regular and italic) were converted to woff2 with fontTools and live in `public/fonts/`. The source folder `public_stunt/` is kept out of git.
+- **Watermarked digits.** The personal use version replaces the digits 0 to 9 with a "PERSONAL USE ONLY" watermark. The `@font-face` rules use `unicode-range` to leave digits out, so any number falls back to Inter and the watermark can never show. Big money figures and dates use the `font-figures` family (Inter) so a figure is never split across two fonts. With the licensed font: delete the two `unicode-range` lines in `src/styles/index.css` and point `figures` in `tailwind.config.js` at the display stack.
 - No third-party requests at runtime and no analytics scripts. A Playwright test checks this.
 
 ## Name origin
@@ -133,13 +136,14 @@ State colours are bright fills (Enough #2FB36B, Tight #E8A33D, Short #C8553D). T
 
 ## Translations
 
-Six locale files with identical keys: English, Afrikaans, Tshivenda, Xitsonga, isiZulu and Sesotho (`en af ve ts zu st`). Every non-English file currently holds the English strings, waiting for a human translator. `node scripts/i18n-sync.mjs` copies new English keys into the other files without touching existing translations. Dates use `Intl.DateTimeFormat` with a locale map that resolves every language to `en-ZA` for now. Public Stunt is never relied on for translated headings, since it lacks Tshivenda letters such as ḓ ḽ ṅ ṋ ṱ. The font stack falls back to Inter.
+Six locale files with identical keys: English, Afrikaans, Tshivenda, Xitsonga, isiZulu and Sesotho (`en af ve ts zu st`). Every non-English file currently holds the English strings, waiting for a human translator. `node scripts/i18n-sync.mjs` copies new English keys into the other files without touching existing translations. Dates use `Intl.DateTimeFormat` with a locale map that resolves every language to `en-ZA` for now. Public Stunt is never relied on for translated headings. The brief expected it to lack Tshivenda letters such as ḓ ḽ ṅ ṋ ṱ; the supplied file does include ḓ and ṱ, but the stack still falls back to Inter for anything it lacks.
 
 ## Decisions
 
 Choices made where the brief left room:
 
-- **Asset locations.** The brief pointed at `docs/BRIEF.md`, `assets/brand/` and `assets/fonts/`. The brief was at the root and the logos came as `tengo-brand-trimmed.zip`, extracted to `assets/brand/`. No font file was supplied (see above).
+- **Asset locations.** The brief pointed at `docs/BRIEF.md`, `assets/brand/` and `assets/fonts/`. The brief was at the root, the logos came as `tengo-brand-trimmed.zip` (extracted to `assets/brand/`), and the font arrived later in `public_stunt/`.
+- **Display type and numbers.** The brief puts the date hero and the Safe to spend figure in Public Stunt. The personal use font has watermarked digits, so those use Inter until the licensed font is in place (see Brand, type and licences). Headings, the landing headline and persona names use Public Stunt. Display sizes are smaller than with Inter because Public Stunt is much wider.
 - **Spend paths.** The central path uses the median of rolling 7 day spend divided by 7 (not the median single day), so it uses the same basis as the 20th and 80th percentile paths and copes with lumpy spending such as stock runs.
 - **What counts as next money.** Deposits of at least 10% of typical monthly income. Smaller daily income (cash fares, card sales) is not "next money". The scrubber still includes it as background income (full rate on the normal and light paths, half on the heavy path).
 - **Weekday payouts.** At least 3 qualifying deposits with 60% on one weekday. The latest plausible date is one day after the typical one. Next money is always after today, since anything that landed today is already in the balance.
@@ -158,11 +162,11 @@ Choices made where the brief left room:
 
 ## Known limitations
 
-- The Public Stunt font file is not included, so display text renders in Inter until it is added.
+- Dates and money figures show in Inter, not Public Stunt, until the commercially licensed font (with real digits) is added.
 - Translations are placeholders in English.
 - The forecast is statistical and simple by design. It does not model seasonality, month-end effects or income that is changing over time.
 - Recurring bill detection needs at least two monthly occurrences. A new bill shows as spend until the user recategorises it.
 - CSV import handles common South African formats (day first dates, R amounts, debit and credit columns). It does not handle multi-currency files or PDF statements. PDF is shown as "coming next".
 - Data lives in one browser's local storage. Clearing site data removes it.
-- Favicon generation uses macOS `sips`. The generated icons are committed.
+- Icon generation needs Python with Pillow. The generated icons are committed.
 - Privacy features are a simulation and have not been reviewed by a lawyer.

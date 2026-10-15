@@ -27,6 +27,8 @@ export default {
       fontFamily: {
         sans: ['"Inter Variable"', 'Inter', 'system-ui', 'sans-serif'],
         display: ['"Public Stunt"', '"Inter Variable"', 'Inter', 'system-ui', 'sans-serif'],
+        // Big money figures. Inter until the licensed Public Stunt (with real digits) is in place.
+        figures: ['"Inter Variable"', 'Inter', 'system-ui', 'sans-serif'],
       },
       borderRadius: { xl: '1rem', '2xl': '1.25rem', '3xl': '1.75rem' },
       boxShadow: {

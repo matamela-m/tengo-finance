@@ -1,12 +1,25 @@
+/*
+ * Public Stunt: display only. The free version is personal use only and a commercial licence
+ * is needed before launch. Its digits 0 to 9 are watermark glyphs, so unicode-range leaves
+ * them out and numbers fall back to Inter. With the licensed font, drop the unicode-range
+ * lines and set --font-figures to the display stack.
+ */
 @font-face {
   font-family: 'Public Stunt';
-  src:
-    local('Public Stunt'),
-    local('PublicStunt'),
-    url('/fonts/public-stunt.woff2') format('woff2'),
-    url('/fonts/public-stunt.woff') format('woff');
-  font-display: swap;
+  src: url('/fonts/public-stunt.woff2') format('woff2');
+  font-style: normal;
   font-weight: 400 900;
+  font-display: swap;
+  unicode-range: U+0000-002F, U+003A-10FFFF;
+}
+
+@font-face {
+  font-family: 'Public Stunt';
+  src: url('/fonts/public-stunt-italic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+  unicode-range: U+0000-002F, U+003A-10FFFF;
 }
 
 @tailwind base;
@@ -181,5 +194,16 @@
   .scrubber:focus-visible::-moz-range-thumb {
     outline: 3px solid var(--c-focus);
     outline-offset: 2px;
+  }
+}
+
+/* Public Stunt's lowercase v and y are nearly identical ("Privacy" reads as "Priyacy").
+   Display text is set in capitals, which are distinct and match the TENGO wordmark. */
+@layer utilities {
+  .font-display {
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    /* The font's own space is very narrow in capitals. */
+    word-spacing: 0.3em;
   }
 }

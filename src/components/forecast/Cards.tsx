@@ -16,7 +16,7 @@ export function SafeToSpendCard({ forecast }: { forecast: Forecast }) {
       <h2 id="sts-title" className="text-sm font-semibold text-muted">
         {t('sts.title')}
       </h2>
-      <p key={forecast.safeToSpendToday} className="num mt-1 animate-fade font-display text-[48px] font-extrabold leading-none tracking-tight sm:text-[56px]">
+      <p key={forecast.safeToSpendToday} className="num mt-1 animate-fade font-figures text-[48px] font-extrabold leading-none tracking-tight sm:text-[56px]">
         {formatZAR(forecast.safeToSpendToday)}
       </p>
       <p className="mt-3 text-sm text-muted">

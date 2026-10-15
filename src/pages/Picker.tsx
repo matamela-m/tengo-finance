@@ -51,7 +51,7 @@ export default function Picker() {
       </header>
 
       <main id="main" className="mx-auto w-full max-w-[1440px] px-5 pb-16 pt-4 sm:px-8 lg:px-12 lg:pt-8">
-        <h1 className="font-display text-[40px] font-extrabold leading-[1.02] tracking-tight sm:text-[56px]">{t('picker.title')}</h1>
+        <h1 className="font-display text-[32px] font-extrabold leading-[1.05] sm:text-[46px]">{t('picker.title')}</h1>
         <p className="mt-3 max-w-2xl text-lg text-muted">{t('picker.lead')}</p>
         {receipt && (
           <Notice tone="ok" icon="receipt" className="mt-6 max-w-3xl">
@@ -83,7 +83,7 @@ export default function Picker() {
                       <CoverBars state={p.startState} size={28} />
                     </div>
                   </div>
-                  <p className="mt-6 font-display text-[34px] font-extrabold leading-none tracking-tight">{p.name}</p>
+                  <p className="mt-6 font-display text-[30px] font-extrabold leading-none">{p.name}</p>
                   <p className="mt-2 text-[15px] font-semibold">
                     {t(`personas.${p.id}.role`)}, {p.place}
                   </p>

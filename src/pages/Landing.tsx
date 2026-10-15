@@ -70,7 +70,7 @@ function Preview() {
         <div className="mt-5 grid grid-cols-2 gap-3">
           <div className="rounded-2xl bg-mint/50 p-4 dark:bg-mint">
             <p className="text-xs font-semibold text-charcoal/80">{t('sts.title')}</p>
-            <p className="num mt-1 font-display text-3xl font-extrabold text-charcoal">{formatZAR(f.safeToSpendToday)}</p>
+            <p className="num mt-1 font-figures text-3xl font-extrabold text-charcoal">{formatZAR(f.safeToSpendToday)}</p>
           </div>
           <div className="rounded-2xl bg-surface-2 p-4">
             <p className="text-xs font-semibold text-muted">{t('next.title')}</p>
@@ -106,7 +106,7 @@ export default function Landing() {
         <section className="mx-auto grid w-full max-w-[1440px] items-center gap-12 px-5 pb-16 pt-6 sm:px-8 md:pt-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16 lg:px-12 lg:pb-24 lg:pt-16">
           <div className="animate-rise">
             <p className="eyebrow">{t('landing.eyebrow')}</p>
-            <h1 className="mt-4 font-display text-[44px] font-extrabold leading-[0.98] tracking-tight sm:text-[64px] xl:text-[88px]">{t('landing.headline')}</h1>
+            <h1 className="mt-4 font-display text-[38px] font-extrabold leading-[1.02] sm:text-[54px] xl:text-[68px]">{t('landing.headline')}</h1>
             <p className="mt-6 max-w-xl text-lg text-muted sm:text-xl">{t('landing.pitch')}</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link to="/start" className="btn-primary min-h-[52px] px-7 text-base">
@@ -123,7 +123,7 @@ export default function Landing() {
 
         <section className="border-y border-line bg-surface/60" aria-labelledby="how-title">
           <div className="mx-auto w-full max-w-[1440px] px-5 py-16 sm:px-8 lg:px-12 lg:py-20">
-            <h2 id="how-title" className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+            <h2 id="how-title" className="font-display text-[28px] font-extrabold sm:text-[34px]">
               {t('landing.howTitle')}
             </h2>
             <ol className="mt-10 grid gap-5 md:grid-cols-3">
@@ -133,7 +133,7 @@ export default function Landing() {
                     <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-mint/60 dark:bg-mint text-charcoal">
                       <Icon name={s.icon} size={22} />
                     </span>
-                    <span className="num font-display text-3xl font-extrabold text-line">0{i + 1}</span>
+                    <span className="num font-figures text-3xl font-extrabold text-line">0{i + 1}</span>
                   </div>
                   <h3 className="text-xl font-semibold">{t(`landing.steps.${s.key}.title`)}</h3>
                   <p className="text-[15px] text-muted">{t(`landing.steps.${s.key}.body`)}</p>

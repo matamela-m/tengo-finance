@@ -70,7 +70,7 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
       <div className="mt-4 flex flex-wrap items-end justify-between gap-3" aria-live="polite">
         <div>
           <p className="text-sm font-medium text-muted">{index === 0 ? t('common.today') : d.dayShort(day.date)}</p>
-          <p className="num font-display text-[34px] font-extrabold leading-none tracking-tight">{formatZAR(Math.round(day.central))}</p>
+          <p className="num font-figures text-[34px] font-extrabold leading-none tracking-tight">{formatZAR(Math.round(day.central))}</p>
           <p className="num mt-1 text-sm text-muted">
             {t('scrubber.range', { low: formatZAR(Math.round(day.pessimistic)), high: formatZAR(Math.round(day.optimistic)) })}
           </p>

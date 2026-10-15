@@ -57,7 +57,7 @@ export default function Consent() {
                 <Avatar persona={profile} size={44} />
                 <p className="text-sm font-medium text-muted">{t('consent.as', { name: profile.name })}</p>
               </div>
-              <h1 className="mt-5 font-display text-[36px] font-extrabold leading-[1.05] tracking-tight sm:text-[48px]">{t('consent.title')}</h1>
+              <h1 className="mt-5 font-display text-[30px] font-extrabold leading-[1.08] sm:text-[40px]">{t('consent.title')}</h1>
               <p className="mt-3 text-lg text-muted">{t('consent.lead')}</p>
               <Notice tone="warn" icon="shield" className="mt-6">
                 {t('privacy.simulated')}

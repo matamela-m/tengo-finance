@@ -111,7 +111,7 @@ export default function MePage() {
 
         <div className="flex min-w-0 flex-col gap-6">
           <section className="card p-6 sm:p-7" aria-labelledby="about-title">
-            <h2 id="about-title" className="font-display text-3xl font-extrabold tracking-tight">
+            <h2 id="about-title" className="font-display text-[26px] font-extrabold">
               {t('me.about')}
             </h2>
             <h3 className="mt-5 font-semibold">{t('me.nameTitle')}</h3>

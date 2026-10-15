@@ -40,7 +40,7 @@ function Outcome({ label, f }: { label: string; f: Forecast }) {
     <div className="min-w-0 rounded-2xl bg-surface-2 p-4">
       <p className="text-xs font-semibold text-muted">{label}</p>
       <p className="num mt-1 text-sm text-muted">{f.state === 'short' ? t('hero.shortFrom') : t('hero.enoughUntil')}</p>
-      <p className="num font-display text-[22px] font-extrabold leading-tight sm:text-[28px]">{d.dayShort(f.headlineDate)}</p>
+      <p className="num font-figures text-[22px] font-extrabold leading-tight tracking-tight sm:text-[26px]">{d.dayShort(f.headlineDate)}</p>
       <div className="mt-2 flex items-center gap-2">
         <StateChip state={f.state} size="sm" />
         <CoverBars state={f.state} size={20} />
@@ -185,7 +185,7 @@ function LoanCheck() {
 
       <div className="mt-5 rounded-3xl bg-mint/40 p-5 dark:bg-mint">
         <p className="text-sm font-semibold text-charcoal">{t('plan.safeToLend')}</p>
-        <p className="num mt-1 font-display text-[40px] font-extrabold leading-none text-charcoal">{formatZAR(result.safeToLend)}</p>
+        <p className="num mt-1 font-figures text-[40px] font-extrabold leading-none text-charcoal">{formatZAR(result.safeToLend)}</p>
         <p className="mt-2 text-sm text-charcoal/80">{result.before.state === 'short' ? t('plan.safeToLendShort') : t('plan.safeToLendHint', { state: t(`state.${result.before.state}`) })}</p>
       </div>
 

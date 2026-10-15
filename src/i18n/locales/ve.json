@@ -41,7 +41,9 @@
   },
   "language": {
     "label": "Language",
-    "pending": "Translations are on the way. For now this language shows English text."
+    "pending": "Translation on the way. This language shows English for now.",
+    "machine": "Machine translated with Google Translate. A first-language speaker still needs to check it.",
+    "reviewed": "Translated and checked by a first-language speaker."
   },
   "landing": {
     "title": "Money you can plan around",
@@ -437,7 +439,7 @@
       "bank": "There is no bank connection and no open banking.",
       "messages": "Messages are previews. Nothing is sent.",
       "privacy": "Privacy controls show good practice. They are not a compliance certification.",
-      "translations": "Translations are on the way. Every language shows English for now."
+      "translations": "Translations into the other 10 official languages are machine made or on the way, and still need checking by first-language speakers."
     },
     "reset": "Reset demo data",
     "resetBody": "Clears every person, consent choice and log on this device and starts fresh.",

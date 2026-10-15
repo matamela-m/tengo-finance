@@ -51,8 +51,13 @@ export default function Picker() {
       </header>
 
       <main id="main" className="mx-auto w-full max-w-[1440px] px-5 pb-16 pt-4 sm:px-8 lg:px-12 lg:pt-8">
-        <h1 className="font-display text-[32px] font-extrabold leading-[1.05] sm:text-[46px]">{t('picker.title')}</h1>
-        <p className="mt-3 max-w-2xl text-lg text-muted">{t('picker.lead')}</p>
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="min-w-0 max-w-2xl lg:flex-1">
+            <h1 className="font-display text-[32px] font-extrabold leading-[1.05] sm:text-[46px]">{t('picker.title')}</h1>
+            <p className="mt-3 text-lg text-muted">{t('picker.lead')}</p>
+          </div>
+          <LanguageSelector className="w-full shrink-0 sm:max-w-sm lg:w-80" />
+        </div>
         {receipt && (
           <Notice tone="ok" icon="receipt" className="mt-6 max-w-3xl">
             <p className="font-semibold">{t('picker.deletedTitle', { name: getPersona(receipt.personaId)?.name ?? '' })}</p>
@@ -101,9 +106,6 @@ export default function Picker() {
           </ul>
         </section>
 
-        <section className="card mt-8 p-6 sm:p-7" aria-label={t('language.label')}>
-          <LanguageSelector />
-        </section>
       </main>
     </div>
   );

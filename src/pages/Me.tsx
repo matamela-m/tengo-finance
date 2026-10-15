@@ -85,7 +85,7 @@ export default function MePage() {
           </section>
 
           <section className="card p-6" aria-label={t('language.label')}>
-            <LanguageSelector compact />
+            <LanguageSelector />
           </section>
 
           <section className="card p-6">

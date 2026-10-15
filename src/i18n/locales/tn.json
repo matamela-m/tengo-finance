@@ -1,0 +1,648 @@
+{
+  "common": {
+    "demoChip": "Demo | Fictional Data",
+    "skipToContent": "Skip to content",
+    "loading": "Loading",
+    "saving": "Saving",
+    "close": "Close",
+    "cancel": "Cancel",
+    "save": "Save",
+    "today": "Today",
+    "rangeDates": "{{from}} to {{to}}",
+    "rangeAmounts": "{{low}} to {{high}}",
+    "on": "On",
+    "off": "Off",
+    "back": "Back"
+  },
+  "nav": {
+    "label": "Main",
+    "home": "Home",
+    "plan": "Plan",
+    "money": "Money",
+    "inbox": "Inbox",
+    "privacy": "Privacy",
+    "me": "Me"
+  },
+  "state": {
+    "enough": "Enough",
+    "tight": "Tight",
+    "short": "Short",
+    "gauge": "Cover: {{state}}, {{level}} of 3 bars"
+  },
+  "confidence": {
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low"
+  },
+  "category": {
+    "income": "Income",
+    "spend": "Spend",
+    "bill": "Bill"
+  },
+  "language": {
+    "label": "Language",
+    "pending": "Translation on the way. This language shows English for now.",
+    "machine": "Machine translated with Google Translate. A first-language speaker still needs to check it.",
+    "reviewed": "Translated and checked by a first-language speaker."
+  },
+  "landing": {
+    "title": "Money you can plan around",
+    "eyebrow": "For people with irregular income",
+    "headline": "Money you can plan around.",
+    "pitch": "A balance tells you what you have. Tengo tells you until when.",
+    "cta": "Explore Tengo",
+    "ctaNote": "No sign up. Fictional data only.",
+    "previewLabel": "Live preview of Tengo",
+    "previewWho": "Thabo, e-hailing driver",
+    "previewCaption": "Built live from a fictional persona's 90 day history.",
+    "howTitle": "How it works",
+    "steps": {
+      "history": {
+        "title": "Add your money history",
+        "body": "Use a sample person or bring a bank statement as a CSV file. It stays on your device."
+      },
+      "last": {
+        "title": "See how long it lasts",
+        "body": "Tengo works out the day your money runs out and when your next money usually lands."
+      },
+      "plan": {
+        "title": "Plan around the date",
+        "body": "Try a what-if, check a loan to family, and see what is safe to spend today."
+      }
+    },
+    "tagline": "Money you can plan around.",
+    "fictional": "All people, places and amounts in this demo are fictional. No bank connection."
+  },
+  "picker": {
+    "title": "Choose a person",
+    "lead": "Each person is a fictional composite with a different way of earning. Pick one to see Tengo with their money.",
+    "personas": "People",
+    "enterAs": "Enter as {{name}}",
+    "continueAs": "Continue as {{name}}",
+    "backHome": "Tengo home",
+    "deletedTitle": "{{name}}'s data was deleted",
+    "deletedBody": "Receipt {{ref}}, {{date}}. Removed {{count}} transactions and {{audit}} audit entries. Choose a person to start again."
+  },
+  "personas": {
+    "fictional": "Fictional composite",
+    "thabo": {
+      "role": "E-hailing driver",
+      "situation": "Cash fares most days and an app payout on Mondays. Fuel and the car instalment come first."
+    },
+    "lerato": {
+      "role": "Hairdresser",
+      "situation": "Saturdays carry the week. Product restocks every two weeks and rent on the 1st."
+    },
+    "ayanda": {
+      "role": "Spaza shop owner",
+      "situation": "Cash takings come in lumps. Big stock runs and prepaid electricity in between."
+    }
+  },
+  "consent": {
+    "title": "Before you start",
+    "as": "Entering as {{name}}",
+    "lead": "Here is what Tengo uses, why, and what you can change.",
+    "notice": {
+      "what": {
+        "title": "What we use",
+        "body": "Transaction dates, amounts and descriptions, plus your current balance. Nothing else."
+      },
+      "why": {
+        "title": "Why",
+        "body": "To work out how long your money lasts and when your next money is likely. Not for marketing or credit scoring."
+      },
+      "who": {
+        "title": "Who can see it",
+        "body": "Only you, on this device. No one at Tengo can see it in this demo."
+      },
+      "where": {
+        "title": "Where it is processed",
+        "body": "In your browser, on this device. Nothing is sent to a server."
+      },
+      "how": {
+        "title": "How long we keep it",
+        "body": "12 months, then it is removed. You can delete it any time."
+      }
+    },
+    "choices": "Your choices",
+    "required": "Required",
+    "core": {
+      "title": "Forecast",
+      "body": "Needed to use Tengo. Withdraw any time and the forecast pauses."
+    },
+    "messages": {
+      "title": "Daily messages",
+      "body": "A short daily update with your date. Simulated, nothing is sent."
+    },
+    "analytics": {
+      "title": "Product analytics",
+      "body": "Helps improve Tengo. Off by default. No analytics runs in this demo."
+    },
+    "changeLater": "You can change these any time in Privacy.",
+    "agree": "Agree and continue",
+    "notNow": "Not now"
+  },
+  "privacy": {
+    "simulated": "Simulated privacy controls. Not a compliance certification.",
+    "title": "Privacy",
+    "lead": "See, change, export or delete what Tengo holds about this person.",
+    "consentTitle": "Your consent",
+    "coreEffect": "Needed for Tengo to work. Turning it off pauses the forecast.",
+    "messagesEffect": "A short daily update in the Inbox. Turning it off hides the Inbox preview.",
+    "lastChanged": "Last changed {{date}}",
+    "minimisation": "What the forecast uses",
+    "uses": "Uses",
+    "neverUses": "Never uses",
+    "used": {
+      "date": "Transaction date",
+      "amount": "Transaction amount",
+      "description": "Transaction description, to spot repeat bills",
+      "balance": "Your current balance"
+    },
+    "unused": {
+      "name": "Your name",
+      "id": "ID number",
+      "location": "Location",
+      "contacts": "Contacts",
+      "account": "Account or card numbers",
+      "merchant": "Who you pay, beyond the description"
+    },
+    "security": "How data is protected",
+    "securityItems": {
+      "transit": "In a real deployment, data is encrypted in transit and at rest.",
+      "rest": "In this demo, data stays in this browser's local storage and never leaves the device.",
+      "access": "Access is limited to you. Staff access would be logged and reviewed.",
+      "test": "Only fictional test data is used here."
+    },
+    "rightsNav": "Your rights",
+    "links": {
+      "data": {
+        "title": "See my data",
+        "body": "Everything held, and export it"
+      },
+      "audit": {
+        "title": "Audit log",
+        "body": "Every access and change, with times"
+      },
+      "review": {
+        "title": "Question this result",
+        "body": "Ask a person to check your date"
+      },
+      "breach": {
+        "title": "Breach notice",
+        "body": "A sample of what we would send"
+      },
+      "delete": {
+        "title": "Delete my data",
+        "body": "Remove this person's records"
+      }
+    },
+    "retention": "How long we keep it",
+    "retentionRule": "Kept for 12 months, then removed.",
+    "nextRemoval": "Next removal {{date}}, for records from {{from}}.",
+    "nothingStored": "Nothing stored yet.",
+    "crossBorder": "Where data is processed",
+    "crossBorderBody": "On this device only. In this demo nothing is sent to a server, inside or outside South Africa.",
+    "officer": "Information Officer",
+    "officerName": "Name",
+    "officerEmail": "Email",
+    "placeholderName": "To be appointed",
+    "placeholderNote": "Placeholder details. Not a real contact.",
+    "complaints": "If you are not happy with how your data is handled, you can complain to the Information Regulator of South Africa.",
+    "dataLead": "Everything Tengo holds about this person on this device.",
+    "exportJson": "Export JSON",
+    "exportCsv": "Export CSV",
+    "held": "Held about this person",
+    "heldPersona": "Person",
+    "heldBalance": "Balance",
+    "heldTransactions": "Transactions",
+    "heldSource": "Source",
+    "heldConsent": "Consent given",
+    "heldAudit": "Audit entries",
+    "heldReviews": "Review requests",
+    "heldWhere": "Stored",
+    "heldWhereValue": "This browser only",
+    "source": {
+      "seed": "Sample data",
+      "import": "Imported statement",
+      "edited": "Sample data, corrected"
+    },
+    "correctHint": "Something wrong? Correct or recategorise any transaction from the Money page.",
+    "auditLead": "A simulated log of access and changes, newest first.",
+    "auditEmpty": "No entries yet.",
+    "auditActor": "By you, on this device",
+    "reviewLead": "The date is worked out by fixed rules. If it looks wrong, ask a person to check it.",
+    "reviewFormTitle": "Request a human review",
+    "reviewAbout": "About: {{result}}",
+    "reviewReason": "What looks wrong",
+    "reasons": {
+      "date": "The date looks wrong",
+      "income": "Income is missing or wrong",
+      "bill": "A bill is wrong",
+      "other": "Something else"
+    },
+    "reviewDetails": "Tell us more (optional)",
+    "reviewPlaceholder": "For example, I get paid on the 25th, not on Mondays.",
+    "reviewContact": "How should we reply",
+    "contact": {
+      "inbox": "In my Tengo Inbox",
+      "none": "No reply needed"
+    },
+    "reviewSubmit": "Send request",
+    "reviewSimulated": "Simulated. No request leaves this device.",
+    "reviewSent": "Request received",
+    "reviewRef": "Reference {{ref}}",
+    "reviewNext": "In a real service, a person would check the inputs and reply within 5 working days. Until then the forecast keeps working as normal.",
+    "reviewAnother": "Send another",
+    "reviewPast": "Your requests",
+    "reviewNone": "No requests yet.",
+    "reviewStatus": "Received",
+    "breachLead": "If personal data were ever exposed, this is the kind of notice users would get.",
+    "breachSample": "Sample only. There has been no breach.",
+    "sampleStamp": "Sample",
+    "breachDate": "Date of notice: [date]",
+    "breachHeading": "Important: a security incident affecting your Tengo data",
+    "breach": {
+      "happened": {
+        "title": "What happened",
+        "body": "On [date], we found that [describe the incident]. We stopped it on [date]."
+      },
+      "data": {
+        "title": "What data was involved",
+        "body": "[List the data, for example transaction dates, amounts and descriptions]. Your ID number and passwords were not involved."
+      },
+      "doing": {
+        "title": "What we are doing",
+        "body": "We have [steps taken] and told the Information Regulator. We are working with [security partner] to stop this happening again."
+      },
+      "you": {
+        "title": "What you can do",
+        "body": "Watch for messages that ask for your PIN or password. Tengo will never ask for them. You can delete your data at any time in Privacy."
+      },
+      "contact": {
+        "title": "Contact us",
+        "body": "Our Information Officer is at [contact details]. You can also complain to the Information Regulator."
+      }
+    },
+    "deleteLead": "Remove {{name}}'s records from this device.",
+    "deleteWhat": "What will be removed",
+    "deleteTx_one": "{{count}} transaction and the balance",
+    "deleteTx_other": "{{count}} transactions and the balance",
+    "deleteConsent": "Consent choices and review requests",
+    "deleteAudit_one": "{{count}} audit log entry",
+    "deleteAudit_other": "{{count}} audit log entries",
+    "deleteReceipt": "A deletion receipt is kept, with no transaction details.",
+    "deleteStart": "Delete my data",
+    "deleteWarn": "This cannot be undone. You will go back to the start.",
+    "deleteCheck": "I understand this removes the data for good",
+    "deleteConfirm": "Yes, delete everything"
+  },
+  "home": {
+    "greeting": "Hi {{name}}",
+    "heroLabel": "Your date",
+    "emptyTitle": "No money history yet",
+    "emptyBody": "Import a statement with at least 14 days of transactions to see your date."
+  },
+  "hero": {
+    "enoughUntil": "Enough until",
+    "enoughBeyond": "Enough beyond",
+    "shortFrom": "Short from",
+    "gap_one": "{{count}} day before your next money",
+    "gap_other": "{{count}} days before your next money"
+  },
+  "band": {
+    "between": "Likely between {{from}} and {{to}}",
+    "single": "Likely {{date}}",
+    "lowConfidence": "Low confidence",
+    "legendDate": "Your date",
+    "legendRange": "Likely range",
+    "legendNext": "Next money, {{date}}"
+  },
+  "sts": {
+    "title": "Safe to spend today",
+    "withBills": "Each day until {{date}}, after {{bills}} in bills.",
+    "noBills": "Each day until {{date}}. No bills due before then."
+  },
+  "stateCard": {
+    "title": "Cover",
+    "enough": "Covered until your next money, even on a heavier week.",
+    "tight": "Covered on a normal week. A heavier week runs out before your next money.",
+    "short_one": "Runs out {{count}} day before your next money is likely.",
+    "short_other": "Runs out {{count}} days before your next money is likely."
+  },
+  "next": {
+    "title": "Next money",
+    "around": "Around {{date}}",
+    "window": "Likely window",
+    "amount": "Usual amount",
+    "patternWeekday": "Usually lands on a {{day}}.",
+    "patternInterval_one": "Usually lands every {{count}} day.",
+    "patternInterval_other": "Usually lands every {{count}} days.",
+    "unknown": "No regular income found yet. Tengo plans 30 days ahead."
+  },
+  "recent": {
+    "title": "Recent activity",
+    "all": "See all",
+    "empty": "No transactions yet."
+  },
+  "scrubber": {
+    "title": "Next 30 days",
+    "subtitle": "If money lands as usual",
+    "label": "Pick a day in the next 30 days",
+    "valueText": "{{date}}, about {{amount}}, {{state}}",
+    "range": "Likely {{low}} to {{high}}",
+    "expectedIncome": "Expected money",
+    "billDue": "{{name}} due",
+    "summary": "Projected balance for the next 30 days if money lands as usual. Lowest point {{low}} on {{date}}.",
+    "legend": "Chart key",
+    "legendExpected": "Expected balance",
+    "legendRange": "Likely range",
+    "legendIncome": "Money in",
+    "legendBill": "Bill due",
+    "showTable": "Show numbers",
+    "hideTable": "Hide numbers",
+    "tableCaption": "Projected balance and cover for each of the next 30 days",
+    "colDay": "Day",
+    "colExpected": "Expected",
+    "colRange": "Likely range",
+    "colCover": "Cover"
+  },
+  "why": {
+    "open": "Why this date",
+    "title": "Why this date",
+    "plain": "We start with your balance today, take off bills on their due dates, and spend at your usual daily rate until the money reaches zero. That day is your date. Money you have not received yet is not counted.",
+    "chartLabel": "How the balance runs down on a normal, light and heavy week",
+    "lineCentral": "Normal week",
+    "lineLight": "Light week",
+    "lineHeavy": "Heavy week",
+    "lineNext": "Next money, {{date}}",
+    "inputs": "What went in",
+    "balance": "Balance today",
+    "dailySpend": "Usual daily spend",
+    "dailySpendHint": "Light to heavy week: {{low}} to {{high}} a day",
+    "perDay": "{{amount}} a day",
+    "bills": "Bills before next money",
+    "noBills": "None due",
+    "income": "Expected next money",
+    "incomeValue": "{{amount}}, {{date}}",
+    "history": "History used",
+    "historyHint_one": "From {{count}} day on record",
+    "historyHint_other": "From {{count}} days on record",
+    "historyValue_one": "Last {{count}} day",
+    "historyValue_other": "Last {{count}} days",
+    "confidence": "Confidence",
+    "confidenceHint": {
+      "high": "60 or more days of history",
+      "medium": "28 to 59 days of history",
+      "low": "Under 28 days. The range is wider."
+    },
+    "rulesTitle": "How the cover is set",
+    "rule": {
+      "enough": "Even a heavy week lasts until the latest likely next money.",
+      "tight": "A normal week lasts until the usual next money. A heavy week does not.",
+      "short": "A normal week runs out before the usual next money."
+    },
+    "question": "Question this result",
+    "notAdvice": "This is an estimate from past patterns, not financial advice."
+  },
+  "paused": {
+    "title": "Forecast paused",
+    "body": "You withdrew consent for the forecast, so Tengo is not using your data. Resume to see your date again, or delete your data.",
+    "resume": "Resume forecast",
+    "delete": "Delete my data"
+  },
+  "me": {
+    "switchPersona": "Switch person",
+    "title": "Me",
+    "persona": "Who you are in the demo",
+    "current": "Current",
+    "theme": "Theme",
+    "themes": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "about": "About Tengo",
+    "nameTitle": "The name",
+    "nameBody": "Tengo comes from mutengo, the Tshivenda word for value. This meaning was supplied by the founder and is still to be confirmed by a Tshivenda speaker.",
+    "howTitle": "How the forecast works",
+    "how": {
+      "1": "It splits your history into income, regular bills and everyday spending.",
+      "2": "It works out your usual daily spend from the last 60 days, plus a light week and a heavy week.",
+      "3": "It finds when your next money usually lands and how much it usually is.",
+      "4": "It runs your balance down day by day, taking off bills on their dates, until it reaches zero. That day is your date.",
+      "5": "It compares that date with your next money to set your cover: Enough, Tight or Short."
+    },
+    "simTitle": "What is simulated",
+    "sim": {
+      "data": "All people and money are fictional composites.",
+      "bank": "There is no bank connection and no open banking.",
+      "messages": "Messages are previews. Nothing is sent.",
+      "privacy": "Privacy controls show good practice. They are not a compliance certification.",
+      "translations": "Translations into the other 10 official languages are machine made or on the way, and still need checking by first-language speakers."
+    },
+    "reset": "Reset demo data",
+    "resetBody": "Clears every person, consent choice and log on this device and starts fresh.",
+    "resetWarn": "This removes everything the demo stored on this device.",
+    "resetConfirm": "Yes, reset everything"
+  },
+  "errors": {
+    "loadTitle": "Could not load your data",
+    "loadBody": "Something went wrong reading this device's storage.",
+    "retry": "Try again",
+    "crashTitle": "Something went wrong",
+    "crashBody": "This screen hit an error. Your data on this device is safe.",
+    "crashCta": "Back to start"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "This page does not exist in the demo.",
+    "cta": "Back to start"
+  },
+  "plan": {
+    "title": "Plan",
+    "lead": "Try a change before you make it. Everything here is a test and nothing is saved.",
+    "whatIf": "What-if",
+    "whatIfLead": "Add or remove a one-off amount and see your date move.",
+    "itemLabel": "Change {{n}}",
+    "kind": "Money in or out",
+    "income": "Money in",
+    "expense": "Money out",
+    "remove": "Remove change {{n}}",
+    "amount": "Amount",
+    "date": "Date",
+    "label": "Note (optional)",
+    "labelPlaceholder": "For example, school trip",
+    "add": "Add a change",
+    "noItems": "No changes yet. Add one to see the effect.",
+    "result": "Result",
+    "now": "Now",
+    "withChanges": "With these changes",
+    "noChange": "No change",
+    "daysMore_one": "{{count}} day more",
+    "daysMore_other": "{{count}} days more",
+    "daysLess_one": "{{count}} day less",
+    "daysLess_other": "{{count}} days less",
+    "stsChange": "Safe to spend today: {{before}} now, {{after}} with these changes.",
+    "loan": "Loan check",
+    "loanLead": "Someone asked to borrow money. See what it does to your cover first.",
+    "safeToLend": "Safe to lend up to",
+    "safeToLendHint": "Lending up to this keeps you at {{state}}.",
+    "safeToLendShort": "You are already short before your next money, so no amount is safe to lend.",
+    "loanAmount": "Amount to lend",
+    "useSafe": "Use {{amount}}",
+    "enterAmount": "Enter an amount to see the effect.",
+    "ifLend": "If you lend {{amount}} today",
+    "afterLoan": "After the loan",
+    "stateDrops": "This drops your cover from {{from}} to {{to}}."
+  },
+  "money": {
+    "title": "Money",
+    "lead": "Every transaction Tengo uses, with the bills it found.",
+    "history": "Transaction history",
+    "import": "Import statement",
+    "filter": "Show",
+    "all": "All",
+    "filters": {
+      "income": "Income",
+      "spend": "Spend",
+      "bill": "Bills"
+    },
+    "search": "Search",
+    "count_one": "{{count}} transaction",
+    "count_other": "{{count}} transactions",
+    "emptyTitle": "Nothing to show",
+    "emptyBodyNone": "No transactions yet. Import a statement to get started.",
+    "emptyBodyFilter": "No transactions match this filter.",
+    "editLabel": "Edit {{name}}, {{date}}",
+    "more": "Show {{count}} more",
+    "last30": "Last 30 days",
+    "in": "Money in",
+    "out": "Money out",
+    "balance": "Balance today: {{amount}}",
+    "bills": "Recurring bills",
+    "billsRule": "Same description and a similar amount, about a month apart.",
+    "noBills": "No recurring bills found.",
+    "billNext_one": "Next {{date}} · seen {{count}} time",
+    "billNext_other": "Next {{date}} · seen {{count}} times",
+    "importTitle": "Bring your own statement",
+    "importBody": "Upload a CSV bank statement. It is read on this device and replaces this person's history."
+  },
+  "import": {
+    "title": "Import statement",
+    "lead": "Use a CSV bank statement to replace this person's history. It never leaves your browser.",
+    "step1": "1. Choose a file",
+    "useSample": "Use sample statement",
+    "chooseCsv": "Choose a CSV file",
+    "pdf": "PDF statement (coming next)",
+    "pdfNote": "PDF statements are not supported yet.",
+    "downloadSample": "Download sample-statement.csv",
+    "local": "Processed on your device. Nothing leaves your browser.",
+    "formatTitle": "What the file needs",
+    "formatBody": "A date, a description and an amount (negative for money out), or separate debit and credit columns. At least 14 days.",
+    "step2": "2. Check and confirm",
+    "readError": "This file could not be read as a CSV.",
+    "empty": "Choose a file or use the sample statement to see a preview here.",
+    "rowsRead_one": "{{count}} row read",
+    "rowsRead_other": "{{count}} rows read",
+    "mapping": "Columns",
+    "mappingHint": "We guessed these from the headers. Change any that look wrong.",
+    "field": {
+      "date": "Date",
+      "description": "Description",
+      "amount": "Amount",
+      "debit": "Debit",
+      "credit": "Credit",
+      "balance": "Balance"
+    },
+    "none": "Not used",
+    "needMapping": "Pick a date, a description, and either an amount or debit and credit columns.",
+    "previewCaption": "The last rows of the statement",
+    "type": "Type",
+    "previewNote_one": "Showing the last rows of {{count}} transaction.",
+    "previewNote_other": "Showing the last rows of {{count}} transactions.",
+    "skipped_one": "{{count}} row skipped because the date, description or amount could not be read.",
+    "skipped_other": "{{count}} rows skipped because the date, description or amount could not be read.",
+    "tooShort": "This statement covers {{count}} days. Tengo needs at least 14.",
+    "noRows": "No usable rows found with these columns.",
+    "wideRange": "Only {{count}} days of history. The forecast will work, but the range will be wide.",
+    "shifted_one": "Dates moved forward by {{count}} day so the statement ends yesterday.",
+    "shifted_other": "Dates moved forward by {{count}} days so the statement ends yesterday.",
+    "days": "Days",
+    "balance": "Current balance",
+    "balanceFromFile": "Taken from the last balance in the file: {{amount}}. Type to change it.",
+    "balanceKept": "No balance column. Keeping the current balance of {{amount}}. Type to change it.",
+    "result": "Forecast with this statement",
+    "confirm": "Replace history and see my date",
+    "replaceNote": "This replaces this person's history on this device and adds an entry to the audit log."
+  },
+  "edit": {
+    "title": "Edit transaction",
+    "description": "Description",
+    "amount": "Amount",
+    "amountHint": "Negative for money out, for example -250.",
+    "category": "Type",
+    "auditNote": "Saving adds an entry to your audit log."
+  },
+  "audit": {
+    "session_opened": "Opened Tengo",
+    "consent_given": "Gave consent. Messages {{messages}}, analytics {{analytics}}",
+    "consent_changed": "Changed consent: {{item}} {{value}}",
+    "data_viewed": "Viewed all data",
+    "data_exported": "Exported data as {{format}}",
+    "statement_imported": "Imported a statement with {{rows}} transactions",
+    "transaction_edited": "Corrected {{name}}: {{fields}}",
+    "review_requested": "Asked for a human review",
+    "forecast_paused": "Paused the forecast",
+    "forecast_resumed": "Resumed the forecast"
+  },
+  "inbox": {
+    "title": "Inbox",
+    "lead": "A preview of the daily message Tengo would send.",
+    "simulated": "Simulated. No message is sent.",
+    "offTitle": "Daily messages are off",
+    "offBody": "You turned off daily messages, so there is nothing to preview. Turn them on here or in Privacy.",
+    "turnOn": "Turn on daily messages",
+    "preview": "Today's message",
+    "channel": "Channel",
+    "channels": {
+      "whatsapp": "WhatsApp",
+      "sms": "SMS"
+    },
+    "todayAt": "Today",
+    "smsCount": "{{count}} of {{limit}} characters",
+    "language": "Message language",
+    "languageHint": "Messages can use a different language from the app.",
+    "to": "To {{name}}",
+    "schedule": "Every morning at 07:00",
+    "facts": {
+      "what": "Only your date, cover and safe to spend figure.",
+      "never": "Never your balance or transactions.",
+      "stop": "Turn off any time in Privacy."
+    },
+    "manage": "Manage messages"
+  },
+  "messages": {
+    "whatsapp": {
+      "greeting": "Hi {{name}}.",
+      "enough": "Your money should last until *{{date}}*. Cover: {{state}}.",
+      "tight": "Your money should last until *{{date}}* on a normal week. Cover: {{state}}.",
+      "short_one": "Your money may run out on *{{date}}*, {{count}} day before your next money. Cover: {{state}}.",
+      "short_other": "Your money may run out on *{{date}}*, {{count}} days before your next money. Cover: {{state}}.",
+      "sts": "Safe to spend today: *{{sts}}*.",
+      "next": "Next money: around {{next}}.",
+      "noNext": "No regular income found yet.",
+      "tip": {
+        "enough": "You are covered. A good week to put a little aside.",
+        "tight": "Keep spending close to the safe figure until your next money.",
+        "short": "Check Plan in Tengo to see what helps most."
+      }
+    },
+    "sms": {
+      "enough": "Tengo: Hi {{name}}, money lasts until {{date}} ({{state}}). Safe today {{sts}}.",
+      "tight": "Tengo: Hi {{name}}, money lasts until {{date}} ({{state}}). Safe today {{sts}}.",
+      "short": "Tengo: Hi {{name}}, money may run out {{date}} ({{state}}). Safe today {{sts}}.",
+      "next": "Next money about {{next}}."
+    }
+  }
+}

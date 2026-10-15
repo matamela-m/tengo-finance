@@ -20,10 +20,12 @@ test('enter as a persona, give consent, see the date', async ({ page }) => {
 
 test('language choice persists and sets html lang', async ({ page }) => {
   await page.goto('/start');
-  await page.getByText('isiZulu').click();
+  await page.getByLabel('Language').selectOption('zu');
   await expect(page.locator('html')).toHaveAttribute('lang', 'zu');
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('lang', 'zu');
+  await page.getByLabel('Language').selectOption('nso');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'nso');
 });
 
 test('withdrawing core consent pauses the forecast and resume brings it back', async ({ page }) => {

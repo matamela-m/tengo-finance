@@ -7,7 +7,8 @@ import { Icon } from '../components/Icon';
 import { PageHeader } from '../components/PageHeader';
 import { TengoLogo } from '../components/TengoLogo';
 import { usePersona, useReadyPersona } from '../data/PersonaProvider';
-import { LANGUAGES, isLanguageCode, type LanguageCode } from '../i18n/languages';
+import type { LanguageCode } from '../i18n/languages';
+import { LanguageSelect } from '../components/LanguageSelector';
 import { SMS_LIMIT, type Channel, type DailyMessage } from '../messages/MessageWriter';
 import { messageWriter } from '../messages/templates';
 import { useSession } from '../store/session';
@@ -133,25 +134,8 @@ export default function InboxPage() {
           </section>
 
           <div className="flex min-w-0 flex-col gap-6">
-            <section className="card p-6" aria-labelledby="msg-lang">
-              <label id="msg-lang" htmlFor="msg-language" className="flex items-center gap-2 text-lg font-semibold">
-                <Icon name="globe" size={18} />
-                {t('inbox.language')}
-              </label>
-              <p className="mt-1 text-sm text-muted">{t('inbox.languageHint')}</p>
-              <select
-                id="msg-language"
-                className="field mt-3"
-                value={language}
-                onChange={(e) => isLanguageCode(e.target.value) && setLanguage(e.target.value)}
-              >
-                {LANGUAGES.map((l) => (
-                  <option key={l.code} value={l.code} lang={l.code}>
-                    {l.native}
-                  </option>
-                ))}
-              </select>
-              {language !== 'en' && <p className="mt-2 text-xs text-muted">{t('language.pending')}</p>}
+            <section className="card p-6">
+              <LanguageSelect value={language} onChange={setLanguage} label={t('inbox.language')} hint={t('inbox.languageHint')} />
             </section>
             <section className="card p-6">
               <div className="flex items-center gap-3">

@@ -11,6 +11,8 @@
     "test": "vitest run",
     "lint": "eslint . && node scripts/check-dashes.mjs",
     "i18n:check": "node scripts/i18n-check.mjs",
+    "i18n:sync": "node scripts/i18n-sync.mjs",
+    "i18n:translate": "node scripts/translate.mjs",
     "contrast": "node scripts/contrast-check.mjs",
     "icons": "python3 scripts/make-icons.py",
     "screens": "playwright test"

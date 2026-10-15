@@ -1,20 +1,28 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Icon } from './Icon';
 
-type Announce = (message: string) => void;
+type Announce = (message: string, options?: { toast?: boolean }) => void;
 const AnnounceCtx = createContext<Announce>(() => undefined);
 
 /**
  * One polite live region for the whole app, plus route change handling:
  * after navigation, focus moves to the main content and the new page title is announced.
+ * Action messages also show as a short visual toast.
  */
 export function A11yProvider({ children }: { children: ReactNode }) {
   const [message, setMessage] = useState('');
-  const announce = useCallback<Announce>((m) => {
+  const [toast, setToast] = useState<{ text: string; id: number } | null>(null);
+  const timer = useRef<number | undefined>(undefined);
+  const announce = useCallback<Announce>((m, options) => {
     // Clear first so the same message twice is still read out.
     setMessage('');
     window.setTimeout(() => setMessage(m), 60);
+    if (options?.toast === false) return;
+    setToast({ text: m, id: Date.now() });
+    window.clearTimeout(timer.current);
+    timer.current = window.setTimeout(() => setToast(null), 2800);
   }, []);
   return (
     <AnnounceCtx.Provider value={announce}>
@@ -23,6 +31,14 @@ export function A11yProvider({ children }: { children: ReactNode }) {
       <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
         {message}
       </div>
+      {toast && (
+        <div aria-hidden className="pointer-events-none fixed inset-x-0 bottom-[88px] z-[70] flex justify-center px-4 lg:bottom-8">
+          <div key={toast.id} className="flex animate-rise items-center gap-2 rounded-full bg-charcoal px-5 py-3 text-sm font-semibold text-off-white shadow-lift dark:bg-off-white dark:text-charcoal">
+            <Icon name="checkCircle" size={18} />
+            {toast.text}
+          </div>
+        </div>
+      )}
     </AnnounceCtx.Provider>
   );
 }
@@ -43,7 +59,7 @@ function RouteFocus({ announce }: { announce: Announce }) {
         main.focus({ preventScroll: true });
       }
       window.scrollTo({ top: 0 });
-      announce(document.title.replace(' | Tengo', ''));
+      announce(document.title.replace(' | Tengo', ''), { toast: false });
     }, 120);
     return () => window.clearTimeout(id);
   }, [pathname, announce]);

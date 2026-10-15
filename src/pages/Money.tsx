@@ -7,6 +7,7 @@ import { Icon } from '../components/Icon';
 import { PageHeader } from '../components/PageHeader';
 import { Segmented } from '../components/Segmented';
 import { TransactionEditor } from '../components/TransactionEditor';
+import { SpendingCard } from '../components/SpendingCard';
 import { useReadyPersona } from '../data/PersonaProvider';
 import { addDays } from '../engine/dates';
 import type { Category, Transaction } from '../engine/types';
@@ -74,7 +75,7 @@ export default function MoneyPage() {
           <h2 id="history-title" className="sr-only">
             {t('money.history')}
           </h2>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
             <Segmented
               label={t('money.filter')}
               variant="pills"
@@ -85,7 +86,7 @@ export default function MoneyPage() {
               }}
               options={FILTERS.map((f) => ({ value: f, label: f === 'all' ? t('money.all') : t(`money.filters.${f}`) }))}
             />
-            <div className="relative sm:w-56">
+            <div className="relative xl:w-56">
               <label htmlFor="money-search" className="sr-only">
                 {t('money.search')}
               </label>
@@ -158,6 +159,8 @@ export default function MoneyPage() {
             </dl>
             <p className="num mt-4 text-sm text-muted">{t('money.balance', { amount: formatZAR(record.balance) })}</p>
           </section>
+
+          <SpendingCard transactions={record.transactions} today={today} />
 
           <section className="card p-6" aria-labelledby="bills-title">
             <div className="flex items-center gap-2">

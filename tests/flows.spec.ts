@@ -127,3 +127,26 @@ test('no third party requests', async ({ page }) => {
   await page.waitForLoadState('networkidle');
   expect(external).toEqual([]);
 });
+
+test('works offline after the first visit', async ({ page, context }) => {
+  await page.goto('/');
+  await page.evaluate(async () => {
+    const reg = await navigator.serviceWorker.ready;
+    return reg.active?.state;
+  });
+  await page.reload();
+  await page.waitForLoadState('networkidle');
+  await context.setOffline(true);
+  await page.reload();
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await context.setOffline(false);
+});
+
+test('What helps most offers a way up for a Short persona', async ({ page }) => {
+  await page.goto('/start');
+  await page.getByRole('button', { name: /Ayanda/ }).click();
+  await page.getByRole('button', { name: 'Agree and continue' }).click();
+  const help = page.getByRole('region', { name: 'What helps most' });
+  await expect(help).toBeVisible();
+  await expect(help.getByText(/less a day until/)).toBeVisible();
+});

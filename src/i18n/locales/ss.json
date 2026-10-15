@@ -155,7 +155,7 @@
     "used": {
       "date": "Transaction date",
       "amount": "Transaction amount",
-      "description": "Transaction description, to spot repeat bills",
+      "description": "Transaction description, to spot repeat bills and group spending",
       "balance": "Your current balance"
     },
     "unused": {
@@ -656,5 +656,30 @@
     "exported": "Data exported as {{format}}",
     "consentSaved": "Consent updated",
     "paused": "Consent withdrawn. The forecast is paused."
+  },
+  "help": {
+    "title": "What helps most",
+    "toReach": "To reach",
+    "lead": "Any one of these gets you there. Worked out with the same rules as your date.",
+    "moveBill": "Pay {{name}} ({{amount}}) after {{date}} instead of before.",
+    "dailyCut": "Spend about {{amount}} less a day until {{date}}.",
+    "extra": "Bring in {{amount}} more before {{date}}.",
+    "tryInPlan": "Try it in Plan",
+    "coveredTitle": "You are covered",
+    "setAside": "You could set aside up to {{amount}} today and still be Enough until your next money.",
+    "coveredBody": "Your money should last until your next money, even on a heavier week."
+  },
+  "spending": {
+    "title": "Where everyday money goes",
+    "lead": "Last 30 days, not counting bills.",
+    "empty": "No everyday spending in the last 30 days.",
+    "groups": {
+      "food": "Food and groceries",
+      "transport": "Fuel and transport",
+      "airtime": "Airtime and data",
+      "stock": "Stock and supplies",
+      "energy": "Electricity and fuel at home",
+      "other": "Other"
+    }
   }
 }

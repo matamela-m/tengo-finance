@@ -24,7 +24,10 @@ npm run dev          # http://localhost:5173
 | `npm run build` | Type checks and builds to `dist/` |
 | `npm run test` | Vitest unit tests (engine, seeds, CSV, messages, repository, formatting) |
 | `npm run lint` | ESLint plus a check that no em or en dash appears anywhere |
-| `npm run i18n:check` | Fails if any locale is missing a key, has extra keys, or uses an exclamation mark |
+| `npm run i18n:check` | Fails if any of the 11 locales is missing a key, has extra keys, or uses an exclamation mark |
+| `npm run i18n:sync` | Copies new or changed English strings into the other locale files |
+| `npm run i18n:translate` | Machine translates the locale files with the Google Cloud Translation API (needs `GOOGLE_TRANSLATE_API_KEY`) |
+| `npm run a11y` | axe-core accessibility checks (WCAG 2.1 A and AA) on every main page, light and dark |
 | `npm run contrast` | WCAG contrast check of every text and surface pair the UI uses |
 | `npm run screens` | Playwright: screenshots at 390, 768, 1280 and 1600px into `screenshots/`, plus end to end flow tests |
 | `npm run icons` | Rebuilds the round favicons and app icons from the supplied mark (needs Python with Pillow: `pip install pillow`) |
@@ -136,7 +139,38 @@ State colours are bright fills (Enough #2FB36B, Tight #E8A33D, Short #C8553D). T
 
 ## Translations
 
-Six locale files with identical keys: English, Afrikaans, Tshivenda, Xitsonga, isiZulu and Sesotho (`en af ve ts zu st`). Every non-English file currently holds the English strings, waiting for a human translator. `node scripts/i18n-sync.mjs` copies new English keys into the other files without touching existing translations. Dates use `Intl.DateTimeFormat` with a locale map that resolves every language to `en-ZA` for now. Public Stunt is never relied on for translated headings. The brief expected it to lack Tshivenda letters such as ḓ ḽ ṅ ṋ ṱ; the supplied file does include ḓ and ṱ, but the stack still falls back to Inter for anything it lacks.
+All 11 official written languages of South Africa: English, Afrikaans, isiNdebele, isiXhosa, isiZulu, Sepedi, Sesotho, Setswana, siSwati, Tshivenda and Xitsonga (`en af nr xh zu nso st tn ss ve ts`). Every file has the same keys. South African Sign Language is also an official language. It cannot be written as text, so it is out of scope for the locale files.
+
+The language picker is a single labelled select showing the native and English name of each language. It says whether a language is still in English, machine translated, or checked by a first-language speaker (`src/i18n/status.json`).
+
+**Machine translation with Google.** `npm run i18n:translate` sends the English strings to the Google Cloud Translation API and writes the results into the locale files. This happens at build time only. The app never calls Google while it runs, so the no-third-party-requests rule still holds.
+
+1. In Google Cloud, create a project, enable the Cloud Translation API, and create an API key restricted to that API. A billing account is required, but the first 500,000 characters each month are free. All 10 languages take about 155,000 characters.
+2. Run `GOOGLE_TRANSLATE_API_KEY=your-key npm run i18n:translate` (or name languages, for example `-- zu xh`).
+3. Check with `npm run i18n:check` and commit the locale files.
+
+The script protects `{{placeholders}}`, *bold* markers and names such as Tengo and WhatsApp. It keeps the demo chip exactly "Demo | Fictional Data", and replaces any em dash, en dash or exclamation mark the translation brings in. Any string whose placeholders change stays in English. It remembers which English text each translation came from (`src/i18n/translated-from.json`), so only new or changed strings are sent next time. Machine translations still need checking by first-language speakers. Mark a language `reviewed` in `status.json` once that is done.
+
+Dates use `Intl.DateTimeFormat` with a locale map that resolves every language to `en-ZA` for now. Public Stunt is never relied on for translated headings. The brief expected it to lack Tshivenda letters such as ḓ ḽ ṅ ṋ ṱ. The supplied file does include ḓ and ṱ, but the stack still falls back to Inter for anything it lacks.
+
+## Accessibility
+
+- Every page passes axe-core WCAG 2.1 A and AA checks in light and dark themes (`npm run a11y`).
+- A skip link. Route changes move focus to the main content and announce the new page.
+- One polite live region announces saves, exports and consent changes, with a matching visual toast.
+- Choice rows (filters, money in or out, WhatsApp or SMS) are native radio groups, so arrow keys work.
+- The 30 day chart is a native slider with a full spoken value ("Tuesday 20 October, about R1 250, Tight"), plus a "Show numbers" table.
+- Dates are read in full and amounts as "money in" or "money out". Decorative gauges and icons are hidden from screen readers. Every state has a word and an icon, not just a colour.
+- Drawers trap focus, close on Escape and hide the page behind them. Form errors are shown in text and linked to their fields.
+- Visible focus, 44px touch targets, reduced motion respected, contrast checked by script and by axe.
+
+## Premium features
+
+- **What helps most** (Home): for Short or Tight, the smallest extra amount, the daily spending cut, or a bill to move that would lift the cover one level. For Enough, how much could be set aside. Uses the same engine as the date (`src/engine/help.ts`).
+- **Where everyday money goes** (Money): last 30 days of spending in plain groups, by simple keyword rules (`src/engine/spending.ts`).
+- **Installable and offline**: a small service worker (`public/sw.js`) caches the app after the first visit. It is same-origin only.
+- **Motion**: the Safe to spend figure counts up and the date hero animates in. Both respect reduced motion.
+- **Phone testing**: `npm run dev:phone` serves the app on your local network.
 
 ## Decisions
 
@@ -156,6 +190,8 @@ Choices made where the brief left room:
 - **Mobile navigation.** The bottom bar has five tabs (Home, Plan, Money, Inbox, Me). Privacy is the shield icon in the top bar and is linked from Me, Inbox and the consent flow. The desktop sidebar has all six.
 - **Paused forecast.** With core consent withdrawn, Privacy and Me stay open so people can still see, export or delete their data. Every other page shows "Forecast paused".
 - **Picker states.** Persona cards show each persona's designed starting state.
+- **Spending groups.** Descriptions are now also used to group everyday spending. The data minimisation panel says so.
+- **Premium suggestions.** "What helps most" aims one level up: Short to Tight, Tight to Enough. A bill is only suggested if moving it alone is enough.
 - **Message templates.** Template strings live in the locale files under `messages.*`, so the i18n check covers them. `src/messages/templates.ts` composes them.
 - **Retention.** The next removal date is the oldest stored transaction plus 12 months.
 - **Dark theme.** Built as the stretch goal on the same tokens, selectable in Me.
@@ -163,7 +199,7 @@ Choices made where the brief left room:
 ## Known limitations
 
 - Dates and money figures show in Inter, not Public Stunt, until the commercially licensed font (with real digits) is added.
-- Translations are placeholders in English.
+- Translations stay in English until the translate script is run with a Google API key, and machine translations still need review by first-language speakers.
 - The forecast is statistical and simple by design. It does not model seasonality, month-end effects or income that is changing over time.
 - Recurring bill detection needs at least two monthly occurrences. A new bill shows as spend until the user recategorises it.
 - CSV import handles common South African formats (day first dates, R amounts, debit and credit columns). It does not handle multi-currency files or PDF statements. PDF is shown as "coming next".

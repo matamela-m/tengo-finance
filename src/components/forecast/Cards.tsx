@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import type { Forecast, Transaction } from '../../engine/types';
 import { formatZAR } from '../../lib/format';
+import { useCountUp } from '../../lib/useCountUp';
 import { useDates } from '../../lib/useLang';
 import { CoverBars } from '../CoverBars';
 import { Icon } from '../Icon';
@@ -11,13 +12,15 @@ export function SafeToSpendCard({ forecast }: { forecast: Forecast }) {
   const { t } = useTranslation();
   const d = useDates();
   const until = forecast.nextMoney?.latest ?? forecast.today;
+  const shown = useCountUp(forecast.safeToSpendToday);
   return (
     <section className="card p-6" aria-labelledby="sts-title">
       <h2 id="sts-title" className="text-sm font-semibold text-muted">
         {t('sts.title')}
       </h2>
-      <p key={forecast.safeToSpendToday} className="num mt-1 animate-fade font-figures text-[48px] font-extrabold leading-none tracking-tight sm:text-[56px]">
-        {formatZAR(forecast.safeToSpendToday)}
+      <p className="num mt-1 font-figures text-[48px] font-extrabold leading-none tracking-tight sm:text-[56px]">
+        <span aria-hidden>{formatZAR(shown)}</span>
+        <span className="sr-only">{formatZAR(forecast.safeToSpendToday)}</span>
       </p>
       <p className="mt-3 text-sm text-muted">
         {forecast.billsTotalBeforeNextMoney > 0

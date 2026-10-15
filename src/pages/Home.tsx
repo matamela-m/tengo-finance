@@ -6,6 +6,7 @@ import { NextMoneyCard, RecentActivity, SafeToSpendCard, StateCard } from '../co
 import { RangeBand } from '../components/forecast/RangeBand';
 import { TimelineScrubber } from '../components/forecast/TimelineScrubber';
 import { WhyDrawer } from '../components/forecast/WhyDrawer';
+import { HelpCard } from '../components/forecast/HelpCard';
 import { Icon } from '../components/Icon';
 import { StateChip } from '../components/StateChip';
 import { useReadyPersona } from '../data/PersonaProvider';
@@ -69,7 +70,7 @@ export default function HomePage() {
             </button>
           </section>
 
-          <div className="card order-4 p-6 sm:p-8 lg:order-none">
+          <div className="card order-5 p-6 sm:p-8 lg:order-none">
             <TimelineScrubber forecast={forecast} />
           </div>
         </div>
@@ -81,10 +82,13 @@ export default function HomePage() {
           <div className="order-3 lg:order-none">
             <StateCard forecast={forecast} onWhy={() => setWhyOpen(true)} />
           </div>
-          <div className="order-5 lg:order-none">
-            <NextMoneyCard forecast={forecast} />
+          <div className="order-4 lg:order-none">
+            <HelpCard />
           </div>
           <div className="order-6 lg:order-none">
+            <NextMoneyCard forecast={forecast} />
+          </div>
+          <div className="order-7 lg:order-none">
             <RecentActivity transactions={record.transactions} />
           </div>
         </div>

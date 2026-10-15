@@ -49,7 +49,7 @@ function Preview() {
   }, []);
   return (
     <figure className="relative" aria-label={t('landing.previewLabel')}>
-      <div className="absolute -inset-6 rounded-[44px] bg-gradient-to-br from-mint/70 via-sage/30 to-transparent blur-2xl" aria-hidden />
+      <div className="absolute -inset-2 rounded-[40px] bg-gradient-to-br sm:-inset-6 sm:rounded-[44px] from-mint/70 via-sage/30 to-transparent blur-2xl" aria-hidden />
       <div className="relative rounded-[32px] border border-line bg-surface p-6 shadow-lift sm:p-8">
         <div className="flex items-center justify-between gap-3">
           <p className="text-sm font-semibold text-muted">{t('landing.previewWho')}</p>

@@ -77,6 +77,14 @@
     text-rendering: optimizeLegibility;
   }
 
+  /* Never let the page pan sideways on phones. clip (not hidden) keeps sticky headers working. */
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-x: clip;
+    overscroll-behavior-x: none;
+  }
+
   body {
     @apply bg-bg font-sans text-ink antialiased;
     font-feature-settings: 'cv11', 'ss01';
@@ -131,7 +139,7 @@
   }
 
   .field {
-    @apply min-h-[44px] w-full rounded-xl border border-line bg-surface px-3.5 text-[15px] text-ink placeholder:text-muted focus-visible:border-brand;
+    @apply min-h-[44px] w-full rounded-xl border border-line bg-surface px-3.5 text-base text-ink placeholder:text-muted focus-visible:border-brand sm:text-[15px];
   }
 
   .label {

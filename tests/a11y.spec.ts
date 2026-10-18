@@ -32,8 +32,9 @@ async function scan(page: Page) {
 }
 
 for (const theme of ['light', 'dark'] as const) {
-  for (const path of PAGES) {
-    test(`axe ${theme} ${path}`, async ({ page }) => {
+  for (const width of [390, 1280]) for (const path of PAGES) {
+    test(`axe ${theme} ${width} ${path}`, async ({ page }) => {
+      await page.setViewportSize({ width, height: width < 768 ? 844 : 900 });
       await page.emulateMedia({ reducedMotion: 'reduce' });
       await enter(page, theme);
       await page.goto(path);
@@ -64,4 +65,13 @@ test('route change moves focus to main content', async ({ page }) => {
   await page.goto('/app');
   await page.getByRole('link', { name: 'Plan' }).first().click();
   await expect(page.locator('#main')).toBeFocused();
+});
+
+test('axe command palette', async ({ page }) => {
+  await enter(page, 'dark');
+  await page.goto('/app');
+  await page.getByRole('heading', { level: 1 }).waitFor();
+  await page.keyboard.press('Control+k');
+  await page.getByRole('combobox', { name: 'Search commands' }).waitFor();
+  await scan(page);
 });

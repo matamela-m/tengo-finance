@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { A11yProvider, SkipLink } from './components/A11y';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { CommandPalette } from './components/CommandPalette';
 import { Preferences } from './components/Preferences';
 import { PersonaProvider } from './data/PersonaProvider';
 import { AppGate } from './layouts/AppGate';
@@ -24,6 +25,7 @@ export default function App() {
       <SkipLink />
       <A11yProvider>
       <PersonaProvider>
+        <CommandPalette />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/start" element={<Picker />} />

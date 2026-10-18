@@ -41,18 +41,30 @@ Playwright needs a browser once: `npx playwright install chromium`. Set `SCREENS
 
 ## Redesign
 
-A restyle of the existing app: same engine, data, routes, i18n, consent and privacy logic, PWA and tests, with a new visual system.
+A restyle of the existing app: the same engine, data, routes, i18n, consent and privacy logic, PWA and tests, with a new visual system. Calm and confident: quiet neutrals, hairline borders, generous space, almost no shadows, big tightly tracked headings, pill buttons, status-dot badges and tiny uppercase labels on data cards. Dark is the default theme. Light is equally finished.
 
-**Baseline (before the redesign).** Tokens lived in `src/styles/index.css` as CSS variables (`--c-bg`, `--c-surface`, state colours) plus a fixed brand palette in `tailwind.config.js` (white, off-white, mint, sage, deep green, charcoal) used directly in about 60 class names. The old logo PNGs were used through `TengoLogo` in the app shell, landing, picker, consent, inbox and not-found pages. Public Stunt was used for display text through the `font-display` class in 10 files. A few colours were hard-coded (theme-color meta, Inbox chat, landing sparkline, Why drawer chart). The suite was green: build, 66 unit tests, lint, i18n check and 129 Playwright tests, including axe.
+**What changed**
+- **Tokens.** Every colour is defined once in `src/styles/index.css`, for dark and light, and exposed to Tailwind (`bg`, `surface`, `surface-2`, `surface-3`, `line`, `line-strong`, `ink`, `muted`, `subtle`, `accent`, `accent-soft`, `on-accent`, `enough`, `tight`, `short` and their soft fills). The old palette (white, off-white, mint, sage, deep green, charcoal) is gone and components hard-code no colours. The accent is one token, `--accent`, and is deliberately not green so it can never be mistaken for Enough.
+- **Theme.** Light, Dark or System, remembered. An inline script in `index.html` sets the theme and language before first paint, so the wrong theme never flashes. A Playwright test blocks the app bundle and checks the inline script alone gets it right.
+- **Brand.** The old logo is archived. `src/components/Brand.tsx` is the only place the brand is drawn (see Brand and type).
+- **Primitives.** Card (with optional corner brackets), section label, icon tile, badge with status dot, stat tile, state chip, slim three-segment cover gauge, quiet inputs, switch with an On or Off dot, segmented control, drawer, toast, data table, empty state and skeleton.
+- **Pages.** A new landing page with a framed live preview, a Notion-style sidebar that collapses to icons, a rebuilt Home (greeting banner, large date hero, stat tiles, restyled chart) and every other page on the shared primitives.
+- **Command menu.** Ctrl or Cmd plus K (or "Search or jump to" in the sidebar) jumps to a page, switches person, changes language or theme.
 
-**Plan.**
-1. Baseline and this plan.
-2. New tokens for dark and light, Figtree and Inter, a three-way theme toggle with no flash on load, the old logo and Public Stunt removed, one `Brand` component, contrast checks for both themes.
-3. Shared primitives: card, button, badge, state chip, cover gauge, stat tile, section label, icon tile, inputs, toast, drawer, table, empty state, skeleton.
-4. Landing and picker.
-5. App shell and Home, including the chart.
-6. Plan, Money, Import, Inbox, Privacy, Me.
-7. Polish, motion, screenshots in both themes, README.
+**Type rules**
+- Figtree (600 to 700) for headings, display numbers, buttons and nav, tracked about -0.03em at display sizes and -0.01em at heading sizes. Inter for body, labels, inputs and tables. Money and dates always use tabular numbers.
+- Fluid scale: display up to 88px on desktop and 44px on phones, h1 40, h2 28, h3 20, body 16, small 14, caption 12. Nothing smaller than 12px.
+- The heading font is the CSS variable `--font-heading`. For Tshivenda (`html[lang="ve"]`) it switches to Inter, because Figtree has none of ḓ ḽ ṅ ṋ ṱ. Every other language keeps Figtree, with Inter as the fallback. A test checks both.
+
+**Placeholders to replace**
+- `src/components/Brand.tsx`: the text wordmark and the T mark. Swap in the final logo here and nowhere else.
+- `public/icons/*`: favicons, the SVG favicon, the Apple touch icon and the PWA icons, made from the T mark by `npm run icons`.
+- `public/manifest.webmanifest`: `theme_color` and `background_color` follow the dark theme. Update them with the final brand.
+
+**Known limitations of the redesign**
+- Hairline borders on inputs and cards are below 3:1 against their surface. Fields are identified by their visible label and their filled background, and focus shows a 2px accent ring that passes 3:1.
+- A web app manifest takes one theme colour, so installed app chrome uses the dark background. The page itself follows the chosen theme through the `theme-color` meta tags.
+- The shortcut hint reads "Ctrl K". Cmd plus K works on a Mac too.
 
 ## How the forecast works, in plain words
 
@@ -98,59 +110,143 @@ Tengo comes from "mutengo", Tshivenda for value. This was supplied by the founde
 
 ## Colour and contrast
 
-State colours are bright fills (Enough #2FB36B, Tight #E8A33D, Short #C8553D). Text and icons on light surfaces use darker variants (#17703F, #8A5300, #A33A25). Every state shows a colour, a word and an icon. The Short fill never carries small text: charcoal on it is 3.83:1, enough only for large text and icons. Run `npm run contrast` for the full check. Final pairs:
+| Token | Dark | Light |
+| --- | --- | --- |
+| bg | #0B0B0C | #FBFBFA |
+| surface-1 / 2 / 3 | #121214 / #18181B / #1F1F23 | #FFFFFF / #F4F3F1 / #ECEAE6 |
+| border / border-strong | #26262B / #34343A | #E7E5E1 / #D6D3CD |
+| text / muted / subtle | #F4F4F5 / #A1A1AA / #8B8B94 | #1C1B19 / #66635D / #6C6963 |
+| accent / on-accent | #7291FF / #0B0B0C | #3755CC / #FFFFFF |
+| enough / tight / short | #34D399 / #FBBF24 / #F97362 | #046E50 / #9B4708 / #A9390A |
+| soft fills | state colour at 13%, accent at 14% | state colour at 10%, accent at 10% |
 
-| Pair | Foreground | Background | Ratio | Target |
-| --- | --- | --- | --- | --- |
-| Body text on off-white | #1E1E1E | #EEEBE6 | 14.02:1 | 4.5:1 |
-| Body text on white | #1E1E1E | #FFFFFF | 16.67:1 | 4.5:1 |
-| Off-white text on charcoal | #EEEBE6 | #1E1E1E | 14.02:1 | 4.5:1 |
-| Muted text on off-white | #5A5A55 | #EEEBE6 | 5.83:1 | 4.5:1 |
-| Muted text on white | #5A5A55 | #FFFFFF | 6.93:1 | 4.5:1 |
-| Muted text on charcoal | #B9B5AE | #1E1E1E | 8.16:1 | 4.5:1 |
-| Deep green text on off-white | #125747 | #EEEBE6 | 7.12:1 | 4.5:1 |
-| Deep green text on white | #125747 | #FFFFFF | 8.47:1 | 4.5:1 |
-| White text on deep green (buttons) | #FFFFFF | #125747 | 8.47:1 | 4.5:1 |
-| Mint text on charcoal | #B6DFB2 | #1E1E1E | 11.26:1 | 4.5:1 |
-| Charcoal text on mint | #1E1E1E | #B6DFB2 | 11.26:1 | 4.5:1 |
-| Charcoal text on sage (large/UI only) | #1E1E1E | #7AAB88 | 6.36:1 | 3:1 |
-| Enough text on off-white | #17703F | #EEEBE6 | 5.16:1 | 4.5:1 |
-| Enough text on white | #17703F | #FFFFFF | 6.13:1 | 4.5:1 |
-| Enough text on soft enough | #17703F | #DDF3E4 | 5.26:1 | 4.5:1 |
-| Tight text on off-white | #8A5300 | #EEEBE6 | 5.32:1 | 4.5:1 |
-| Tight text on white | #8A5300 | #FFFFFF | 6.33:1 | 4.5:1 |
-| Tight text on soft tight | #8A5300 | #FBEBD2 | 5.40:1 | 4.5:1 |
-| Short text on off-white | #A33A25 | #EEEBE6 | 5.54:1 | 4.5:1 |
-| Short text on white | #A33A25 | #FFFFFF | 6.58:1 | 4.5:1 |
-| Short text on soft short | #A33A25 | #F6DDD7 | 5.09:1 | 4.5:1 |
-| Charcoal text on Enough fill | #1E1E1E | #2FB36B | 6.18:1 | 4.5:1 |
-| Charcoal text on Tight fill | #1E1E1E | #E8A33D | 7.73:1 | 4.5:1 |
-| Charcoal large text on Short fill | #1E1E1E | #C8553D | 3.83:1 | 3:1 |
-| Enough icon (text variant) on white | #17703F | #FFFFFF | 6.13:1 | 3:1 |
-| Tight icon (text variant) on white | #8A5300 | #FFFFFF | 6.33:1 | 3:1 |
-| Gauge outline (enough) on off-white | #17703F | #EEEBE6 | 5.16:1 | 3:1 |
-| Enough fill as UI icon on charcoal | #2FB36B | #1E1E1E | 6.18:1 | 3:1 |
-| Tight fill as UI icon on charcoal | #E8A33D | #1E1E1E | 7.73:1 | 3:1 |
-| Short fill as UI icon on off-white | #C8553D | #EEEBE6 | 3.66:1 | 3:1 |
-| Short fill as UI icon on white | #C8553D | #FFFFFF | 4.35:1 | 3:1 |
-| Short fill as UI icon on charcoal | #C8553D | #1E1E1E | 3.83:1 | 3:1 |
-| Enough vs deep green (distinct hue check) | #2FB36B | #125747 | 3.14:1 | 1.5:1 |
-| Avatar: mint initials on deep green | #B6DFB2 | #125747 | 5.72:1 | 3:1 |
-| Avatar: charcoal initials on sage | #1E1E1E | #7AAB88 | 6.36:1 | 3:1 |
-| WhatsApp bubble text on white | #1E1E1E | #FFFFFF | 16.67:1 | 4.5:1 |
-| WhatsApp date pill text on chat bg | #5A5A55 | #E7DFD4 | 5.25:1 | 4.5:1 |
-| Dark: body text on background | #EEEBE6 | #161616 | 15.22:1 | 4.5:1 |
-| Dark: body text on surface | #EEEBE6 | #1E1E1E | 14.02:1 | 4.5:1 |
-| Dark: muted text on surface | #B9B5AE | #1E1E1E | 8.16:1 | 4.5:1 |
-| Dark: muted text on surface 2 | #B9B5AE | #262624 | 7.42:1 | 4.5:1 |
-| Dark: brand text on surface | #B6DFB2 | #1E1E1E | 11.26:1 | 4.5:1 |
-| Dark: charcoal on sage (active nav, buttons) | #1E1E1E | #7AAB88 | 6.36:1 | 4.5:1 |
-| Dark: Enough text on surface | #6FD59B | #1E1E1E | 9.26:1 | 4.5:1 |
-| Dark: Tight text on surface | #F2C27A | #1E1E1E | 10.14:1 | 4.5:1 |
-| Dark: Short text on surface | #EF9A87 | #1E1E1E | 7.65:1 | 4.5:1 |
-| Dark: Enough text on soft enough | #6FD59B | #1D3A29 | 6.91:1 | 4.5:1 |
-| Dark: Tight text on soft tight | #F2C27A | #3D2F18 | 7.89:1 | 4.5:1 |
-| Dark: Short text on soft short | #EF9A87 | #43231C | 6.45:1 | 4.5:1 |
+The proposed light values were adjusted where a pair failed: subtle text, the three state colours and the accent are each a few percent darker in light, and the dark accent a touch lighter, so that state text passes 4.5:1 on every surface and on its own soft fill. Every state shows a colour, a word and an icon.
+
+`npm run contrast` checks every text and UI pair the interface uses, in both themes, blending translucent fills over the surface they sit on first. It runs as part of `npm run test`. Body and small text need 4.5:1, large text and non-text UI 3:1. The empty gauge segment is decorative, since the state word is always shown beside it.
+
+<details>
+<summary>All 116 checked pairs</summary>
+
+| Theme | Pair | Foreground | Background | Ratio | Target |
+| --- | --- | --- | --- | --- | --- |
+| dark | Text on bg | #F4F4F5 | #0B0B0C | 17.90:1 | 4.5:1 |
+| dark | Muted text on bg | #A1A1AA | #0B0B0C | 7.68:1 | 4.5:1 |
+| dark | Subtle text on bg | #8B8B94 | #0B0B0C | 5.83:1 | 4.5:1 |
+| dark | enough text on bg | #34D399 | #0B0B0C | 10.23:1 | 4.5:1 |
+| dark | tight text on bg | #FBBF24 | #0B0B0C | 11.79:1 | 4.5:1 |
+| dark | short text on bg | #F97362 | #0B0B0C | 7.17:1 | 4.5:1 |
+| dark | Text on surface-1 | #F4F4F5 | #121214 | 17.02:1 | 4.5:1 |
+| dark | Muted text on surface-1 | #A1A1AA | #121214 | 7.30:1 | 4.5:1 |
+| dark | Subtle text on surface-1 | #8B8B94 | #121214 | 5.54:1 | 4.5:1 |
+| dark | enough text on surface-1 | #34D399 | #121214 | 9.73:1 | 4.5:1 |
+| dark | tight text on surface-1 | #FBBF24 | #121214 | 11.21:1 | 4.5:1 |
+| dark | short text on surface-1 | #F97362 | #121214 | 6.82:1 | 4.5:1 |
+| dark | Text on surface-2 | #F4F4F5 | #18181B | 16.12:1 | 4.5:1 |
+| dark | Muted text on surface-2 | #A1A1AA | #18181B | 6.91:1 | 4.5:1 |
+| dark | Subtle text on surface-2 | #8B8B94 | #18181B | 5.25:1 | 4.5:1 |
+| dark | enough text on surface-2 | #34D399 | #18181B | 9.22:1 | 4.5:1 |
+| dark | tight text on surface-2 | #FBBF24 | #18181B | 10.61:1 | 4.5:1 |
+| dark | short text on surface-2 | #F97362 | #18181B | 6.46:1 | 4.5:1 |
+| dark | Text on surface-3 | #F4F4F5 | #1F1F23 | 14.94:1 | 4.5:1 |
+| dark | Muted text on surface-3 | #A1A1AA | #1F1F23 | 6.41:1 | 4.5:1 |
+| dark | Subtle text on surface-3 | #8B8B94 | #1F1F23 | 4.86:1 | 4.5:1 |
+| dark | enough text on surface-3 | #34D399 | #1F1F23 | 8.54:1 | 4.5:1 |
+| dark | tight text on surface-3 | #FBBF24 | #1F1F23 | 9.84:1 | 4.5:1 |
+| dark | short text on surface-3 | #F97362 | #1F1F23 | 5.99:1 | 4.5:1 |
+| dark | Accent link on bg | #7291FF | #0B0B0C | 6.75:1 | 4.5:1 |
+| dark | Accent link on surface-1 | #7291FF | #121214 | 6.42:1 | 4.5:1 |
+| dark | Accent link on surface-2 | #7291FF | #18181B | 6.08:1 | 4.5:1 |
+| dark | Accent text on accent-soft over bg | #7291FF | #191E2E | 5.69:1 | 4.5:1 |
+| dark | Text on accent-soft over bg | #F4F4F5 | #191E2E | 15.09:1 | 4.5:1 |
+| dark | enough text on enough-soft over bg | #34D399 | #10251E | 8.37:1 | 4.5:1 |
+| dark | tight text on tight-soft over bg | #FBBF24 | #2A220F | 9.43:1 | 4.5:1 |
+| dark | short text on short-soft over bg | #F97362 | #2A1917 | 6.13:1 | 4.5:1 |
+| dark | Accent text on accent-soft over surface-1 | #7291FF | #1F2435 | 5.29:1 | 4.5:1 |
+| dark | Text on accent-soft over surface-1 | #F4F4F5 | #1F2435 | 14.03:1 | 4.5:1 |
+| dark | enough text on enough-soft over surface-1 | #34D399 | #162B25 | 7.77:1 | 4.5:1 |
+| dark | tight text on tight-soft over surface-1 | #FBBF24 | #302816 | 8.73:1 | 4.5:1 |
+| dark | short text on short-soft over surface-1 | #F97362 | #301F1E | 5.71:1 | 4.5:1 |
+| dark | Accent text on accent-soft over surface-2 | #7291FF | #25293B | 4.94:1 | 4.5:1 |
+| dark | Text on accent-soft over surface-2 | #F4F4F5 | #25293B | 13.09:1 | 4.5:1 |
+| dark | enough text on enough-soft over surface-2 | #34D399 | #1C302B | 7.25:1 | 4.5:1 |
+| dark | tight text on tight-soft over surface-2 | #FBBF24 | #362E1C | 8.04:1 | 4.5:1 |
+| dark | short text on short-soft over surface-2 | #F97362 | #352424 | 5.36:1 | 4.5:1 |
+| dark | Accent text on accent-soft over surface-3 | #7291FF | #2B2F42 | 4.54:1 | 4.5:1 |
+| dark | Text on accent-soft over surface-3 | #F4F4F5 | #2B2F42 | 12.03:1 | 4.5:1 |
+| dark | enough text on enough-soft over surface-3 | #34D399 | #223632 | 6.65:1 | 4.5:1 |
+| dark | tight text on tight-soft over surface-3 | #FBBF24 | #3C3423 | 7.37:1 | 4.5:1 |
+| dark | short text on short-soft over surface-3 | #F97362 | #3B2A2B | 4.93:1 | 4.5:1 |
+| dark | Primary pill: background-colour label on text-colour fill | #0B0B0C | #F4F4F5 | 17.90:1 | 4.5:1 |
+| dark | On-accent on accent (mark, selected) | #0B0B0C | #7291FF | 6.75:1 | 4.5:1 |
+| dark | On-accent on short (destructive button) | #0B0B0C | #F97362 | 7.17:1 | 4.5:1 |
+| dark | Dimmed headline half (display size) on bg | #A1A1AA | #0B0B0C | 7.68:1 | 3:1 |
+| dark | Focus ring and handle (accent) on bg | #7291FF | #0B0B0C | 6.75:1 | 3:1 |
+| dark | Focus ring and handle (accent) on surface-1 | #7291FF | #121214 | 6.42:1 | 3:1 |
+| dark | Focus ring and handle (accent) on surface-2 | #7291FF | #18181B | 6.08:1 | 3:1 |
+| dark | enough gauge segment on surface-1 | #34D399 | #121214 | 9.73:1 | 3:1 |
+| dark | tight gauge segment on surface-1 | #FBBF24 | #121214 | 11.21:1 | 3:1 |
+| dark | short gauge segment on surface-1 | #F97362 | #121214 | 6.82:1 | 3:1 |
+| dark | Gauge empty segment (surface-3) vs lit is decorative: state word always shown | #1F1F23 | #121214 | 1.14:1 | 1:1 |
+| light | Text on bg | #1C1B19 | #FBFBFA | 16.62:1 | 4.5:1 |
+| light | Muted text on bg | #66635D | #FBFBFA | 5.78:1 | 4.5:1 |
+| light | Subtle text on bg | #6C6963 | #FBFBFA | 5.28:1 | 4.5:1 |
+| light | enough text on bg | #046E50 | #FBFBFA | 6.05:1 | 4.5:1 |
+| light | tight text on bg | #9B4708 | #FBFBFA | 6.15:1 | 4.5:1 |
+| light | short text on bg | #A9390A | #FBFBFA | 6.19:1 | 4.5:1 |
+| light | Text on surface-1 | #1C1B19 | #FFFFFF | 17.21:1 | 4.5:1 |
+| light | Muted text on surface-1 | #66635D | #FFFFFF | 5.99:1 | 4.5:1 |
+| light | Subtle text on surface-1 | #6C6963 | #FFFFFF | 5.47:1 | 4.5:1 |
+| light | enough text on surface-1 | #046E50 | #FFFFFF | 6.27:1 | 4.5:1 |
+| light | tight text on surface-1 | #9B4708 | #FFFFFF | 6.37:1 | 4.5:1 |
+| light | short text on surface-1 | #A9390A | #FFFFFF | 6.41:1 | 4.5:1 |
+| light | Text on surface-2 | #1C1B19 | #F4F3F1 | 15.52:1 | 4.5:1 |
+| light | Muted text on surface-2 | #66635D | #F4F3F1 | 5.40:1 | 4.5:1 |
+| light | Subtle text on surface-2 | #6C6963 | #F4F3F1 | 4.93:1 | 4.5:1 |
+| light | enough text on surface-2 | #046E50 | #F4F3F1 | 5.65:1 | 4.5:1 |
+| light | tight text on surface-2 | #9B4708 | #F4F3F1 | 5.74:1 | 4.5:1 |
+| light | short text on surface-2 | #A9390A | #F4F3F1 | 5.78:1 | 4.5:1 |
+| light | Text on surface-3 | #1C1B19 | #ECEAE6 | 14.32:1 | 4.5:1 |
+| light | Muted text on surface-3 | #66635D | #ECEAE6 | 4.98:1 | 4.5:1 |
+| light | Subtle text on surface-3 | #6C6963 | #ECEAE6 | 4.55:1 | 4.5:1 |
+| light | enough text on surface-3 | #046E50 | #ECEAE6 | 5.22:1 | 4.5:1 |
+| light | tight text on surface-3 | #9B4708 | #ECEAE6 | 5.30:1 | 4.5:1 |
+| light | short text on surface-3 | #A9390A | #ECEAE6 | 5.33:1 | 4.5:1 |
+| light | Accent link on bg | #3755CC | #FBFBFA | 6.08:1 | 4.5:1 |
+| light | Accent link on surface-1 | #3755CC | #FFFFFF | 6.30:1 | 4.5:1 |
+| light | Accent link on surface-2 | #3755CC | #F4F3F1 | 5.68:1 | 4.5:1 |
+| light | Accent text on accent-soft over bg | #3755CC | #E7EAF5 | 5.24:1 | 4.5:1 |
+| light | Text on accent-soft over bg | #1C1B19 | #E7EAF5 | 14.33:1 | 4.5:1 |
+| light | enough text on enough-soft over bg | #046E50 | #E2EDE9 | 5.23:1 | 4.5:1 |
+| light | tight text on tight-soft over bg | #9B4708 | #F1E9E2 | 5.30:1 | 4.5:1 |
+| light | short text on short-soft over bg | #A9390A | #F3E8E2 | 5.33:1 | 4.5:1 |
+| light | Accent text on accent-soft over surface-1 | #3755CC | #EBEEFA | 5.44:1 | 4.5:1 |
+| light | Text on accent-soft over surface-1 | #1C1B19 | #EBEEFA | 14.87:1 | 4.5:1 |
+| light | enough text on enough-soft over surface-1 | #046E50 | #E6F1EE | 5.43:1 | 4.5:1 |
+| light | tight text on tight-soft over surface-1 | #9B4708 | #F5EDE6 | 5.50:1 | 4.5:1 |
+| light | short text on short-soft over surface-1 | #A9390A | #F6EBE7 | 5.48:1 | 4.5:1 |
+| light | Accent text on accent-soft over surface-2 | #3755CC | #E1E3ED | 4.92:1 | 4.5:1 |
+| light | Text on accent-soft over surface-2 | #1C1B19 | #E1E3ED | 13.45:1 | 4.5:1 |
+| light | enough text on enough-soft over surface-2 | #046E50 | #DCE6E1 | 4.91:1 | 4.5:1 |
+| light | tight text on tight-soft over surface-2 | #9B4708 | #EBE2DA | 4.98:1 | 4.5:1 |
+| light | short text on short-soft over surface-2 | #A9390A | #EDE0DA | 4.97:1 | 4.5:1 |
+| light | Accent text on accent-soft over surface-3 | #3755CC | #DADBE3 | 4.57:1 | 4.5:1 |
+| light | Text on accent-soft over surface-3 | #1C1B19 | #DADBE3 | 12.48:1 | 4.5:1 |
+| light | enough text on enough-soft over surface-3 | #046E50 | #D5DED7 | 4.55:1 | 4.5:1 |
+| light | tight text on tight-soft over surface-3 | #9B4708 | #E4DAD0 | 4.62:1 | 4.5:1 |
+| light | short text on short-soft over surface-3 | #A9390A | #E5D8D0 | 4.60:1 | 4.5:1 |
+| light | Primary pill: background-colour label on text-colour fill | #FBFBFA | #1C1B19 | 16.62:1 | 4.5:1 |
+| light | On-accent on accent (mark, selected) | #FFFFFF | #3755CC | 6.30:1 | 4.5:1 |
+| light | On-accent on short (destructive button) | #FFFFFF | #A9390A | 6.41:1 | 4.5:1 |
+| light | Dimmed headline half (display size) on bg | #66635D | #FBFBFA | 5.78:1 | 3:1 |
+| light | Focus ring and handle (accent) on bg | #3755CC | #FBFBFA | 6.08:1 | 3:1 |
+| light | Focus ring and handle (accent) on surface-1 | #3755CC | #FFFFFF | 6.30:1 | 3:1 |
+| light | Focus ring and handle (accent) on surface-2 | #3755CC | #F4F3F1 | 5.68:1 | 3:1 |
+| light | enough gauge segment on surface-1 | #046E50 | #FFFFFF | 6.27:1 | 3:1 |
+| light | tight gauge segment on surface-1 | #9B4708 | #FFFFFF | 6.37:1 | 3:1 |
+| light | short gauge segment on surface-1 | #A9390A | #FFFFFF | 6.41:1 | 3:1 |
+| light | Gauge empty segment (surface-3) vs lit is decorative: state word always shown | #ECEAE6 | #FFFFFF | 1.20:1 | 1:1 |
+
+</details>
 
 ## Translations
 
@@ -170,7 +266,7 @@ Dates use `Intl.DateTimeFormat` with a locale map that resolves every language t
 
 ## Accessibility
 
-- Every page passes axe-core WCAG 2.1 A and AA checks in light and dark themes (`npm run a11y`).
+- Every main page passes axe-core WCAG 2.1 A and AA checks in light and dark themes, at 390 and 1280px wide, plus the drawer and command menu (`npm run a11y`).
 - A skip link. Route changes move focus to the main content and announce the new page.
 - One polite live region announces saves, exports and consent changes, with a matching visual toast.
 - Choice rows (filters, money in or out, WhatsApp or SMS) are native radio groups, so arrow keys work.
@@ -186,11 +282,14 @@ Dates use `Intl.DateTimeFormat` with a locale map that resolves every language t
 - **Installable and offline**: a small service worker (`public/sw.js`) caches the app after the first visit. It is same-origin only.
 - **Motion**: the Safe to spend figure counts up and the date hero animates in. Both respect reduced motion.
 - **Phone testing**: `npm run dev:phone` serves the app on your local network.
+- **Command menu**: Ctrl or Cmd plus K to jump anywhere, switch person, language or theme.
 
 ## Decisions
 
 Choices made where the brief left room:
 
+- **Light colours adjusted.** The redesign brief's proposed light state colours, subtle text and accent failed 4.5:1 on the darker surfaces and on their own soft fills. Each was darkened the smallest amount that passes everywhere.
+- **Sidebar collapse.** Collapsing hides labels visually but keeps them for screen readers, with a tooltip on hover.
 - **Redesign references.** The redesign brief points at reference screenshots in `assets/reference/`. That folder does not exist, so the style follows the brief's written description only.
 
 - **Asset locations.** The first brief pointed at `docs/BRIEF.md`, `assets/brand/` and `assets/fonts/`. The brief was at the root and the logos came as `tengo-brand-trimmed.zip`. Those logos are now archived (see Brand and type).

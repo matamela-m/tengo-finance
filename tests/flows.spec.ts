@@ -150,3 +150,50 @@ test('What helps most offers a way up for a Short persona', async ({ page }) => 
   await expect(help).toBeVisible();
   await expect(help.getByText(/less a day until/)).toBeVisible();
 });
+
+test('command palette jumps to a page and changes theme and language', async ({ page }) => {
+  await page.goto('/start');
+  await page.getByRole('button', { name: /Thabo/ }).click();
+  await page.getByRole('button', { name: 'Agree and continue' }).click();
+  await page.keyboard.press('Control+k');
+  const box = page.getByRole('combobox', { name: 'Search commands' });
+  await expect(box).toBeFocused();
+  await box.fill('plan');
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL(/\/app\/plan$/);
+  await page.keyboard.press('Control+k');
+  await page.getByRole('combobox', { name: 'Search commands' }).fill('light theme');
+  await page.keyboard.press('Enter');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+  await page.keyboard.press('Control+k');
+  await page.getByRole('combobox', { name: 'Search commands' }).fill('zulu');
+  await page.keyboard.press('Enter');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'zu');
+});
+
+test('theme is set before the app loads, so there is no flash', async ({ page }) => {
+  await page.goto('/');
+  await page.evaluate(() =>
+    localStorage.setItem('tengo.session.v1', JSON.stringify({ state: { language: 'en', theme: 'light', activePersonaId: null }, version: 0 })),
+  );
+  // Block the app bundle: only the inline script in index.html can set the theme now.
+  await page.route('**/assets/*.js', (route) => route.abort());
+  await page.goto('/');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+});
+
+test('Tshivenda headings use Inter so words never mix fonts', async ({ page }) => {
+  await page.goto('/');
+  await page.evaluate(() =>
+    localStorage.setItem('tengo.session.v1', JSON.stringify({ state: { language: 've', theme: 'dark', activePersonaId: null }, version: 0 })),
+  );
+  await page.goto('/start');
+  const heading = await page.getByRole('heading', { level: 1 }).evaluate((el) => getComputedStyle(el).fontFamily);
+  expect(heading.startsWith('"Inter Variable"')).toBe(true);
+  await page.evaluate(() =>
+    localStorage.setItem('tengo.session.v1', JSON.stringify({ state: { language: 'zu', theme: 'dark', activePersonaId: null }, version: 0 })),
+  );
+  await page.goto('/start');
+  const zulu = await page.getByRole('heading', { level: 1 }).evaluate((el) => getComputedStyle(el).fontFamily);
+  expect(zulu.startsWith('"Figtree Variable"')).toBe(true);
+});

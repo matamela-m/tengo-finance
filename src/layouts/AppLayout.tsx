@@ -92,8 +92,22 @@ export function AppLayout({ children }: { children?: ReactNode }) {
             </button>
           )}
         </div>
-        <div className="mt-4">
+        <div className="mt-4 flex flex-col gap-2">
           <PersonaRow collapsed={collapsed} />
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event('tengo:palette'))}
+            title={collapsed ? t('palette.open') : undefined}
+            className={`flex min-h-[44px] items-center gap-2.5 rounded-xl px-2.5 text-sm text-subtle transition-colors hover:bg-surface-2 hover:text-ink ${collapsed ? 'justify-center' : ''}`}
+          >
+            <Icon name="filter" size={16} />
+            <span className={collapsed ? 'sr-only' : 'flex-1 text-left'}>{t('palette.open')}</span>
+            {!collapsed && (
+              <kbd aria-hidden className="rounded-md border border-line px-1.5 py-0.5 font-sans text-xs text-subtle">
+                {t('palette.shortcut')}
+              </kbd>
+            )}
+          </button>
         </div>
         <nav aria-label={t('nav.label')} className="mt-5 flex flex-1 flex-col">
           <ul className="flex flex-col gap-0.5">

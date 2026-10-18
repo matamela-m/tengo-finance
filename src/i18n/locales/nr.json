@@ -739,5 +739,25 @@
       "energy": "Electricity and fuel at home",
       "other": "Other"
     }
+  },
+  "palette": {
+    "title": "Command menu",
+    "open": "Search or jump to",
+    "shortcut": "Ctrl K",
+    "search": "Search commands",
+    "placeholder": "Go to a page, switch person, change language",
+    "results": "Commands",
+    "empty": "Nothing matches.",
+    "help": "Arrow keys to move, Enter to choose, Esc to close.",
+    "switchTo": "Switch to {{name}}",
+    "theme": "{{name}} theme",
+    "languageSet": "Language set to {{name}}",
+    "themeSet": "{{name}} theme on",
+    "groups": {
+      "pages": "Pages",
+      "people": "People",
+      "language": "Language",
+      "theme": "Theme"
+    }
   }
 }

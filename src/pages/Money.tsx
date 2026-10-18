@@ -75,7 +75,7 @@ export default function MoneyPage() {
           <h2 id="history-title" className="sr-only">
             {t('money.history')}
           </h2>
-          <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
+          <div className="flex flex-col gap-3 2xl:flex-row 2xl:items-center 2xl:justify-between">
             <Segmented
               label={t('money.filter')}
               variant="pills"
@@ -86,7 +86,7 @@ export default function MoneyPage() {
               }}
               options={FILTERS.map((f) => ({ value: f, label: f === 'all' ? t('money.all') : t(`money.filters.${f}`) }))}
             />
-            <div className="relative xl:w-56">
+            <div className="relative 2xl:w-56">
               <label htmlFor="money-search" className="sr-only">
                 {t('money.search')}
               </label>

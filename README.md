@@ -38,6 +38,21 @@ Playwright needs a browser once: `npx playwright install chromium`. Set `SCREENS
 
 `vercel.json` has an SPA rewrite, so the build deploys to Vercel as is.
 
+## Redesign
+
+A restyle of the existing app: same engine, data, routes, i18n, consent and privacy logic, PWA and tests, with a new visual system.
+
+**Baseline (before the redesign).** Tokens lived in `src/styles/index.css` as CSS variables (`--c-bg`, `--c-surface`, state colours) plus a fixed brand palette in `tailwind.config.js` (white, off-white, mint, sage, deep green, charcoal) used directly in about 60 class names. The old logo PNGs were used through `TengoLogo` in the app shell, landing, picker, consent, inbox and not-found pages. Public Stunt was used for display text through the `font-display` class in 10 files. A few colours were hard-coded (theme-color meta, Inbox chat, landing sparkline, Why drawer chart). The suite was green: build, 66 unit tests, lint, i18n check and 129 Playwright tests, including axe.
+
+**Plan.**
+1. Baseline and this plan.
+2. New tokens for dark and light, Figtree and Inter, a three-way theme toggle with no flash on load, the old logo and Public Stunt removed, one `Brand` component, contrast checks for both themes.
+3. Shared primitives: card, button, badge, state chip, cover gauge, stat tile, section label, icon tile, inputs, toast, drawer, table, empty state, skeleton.
+4. Landing and picker.
+5. App shell and Home, including the chart.
+6. Plan, Money, Import, Inbox, Privacy, Me.
+7. Polish, motion, screenshots in both themes, README.
+
 ## How the forecast works, in plain words
 
 All of it lives in `src/engine/`: pure TypeScript, no UI imports, unit tested.
@@ -175,6 +190,8 @@ Dates use `Intl.DateTimeFormat` with a locale map that resolves every language t
 ## Decisions
 
 Choices made where the brief left room:
+
+- **Redesign references.** The redesign brief points at reference screenshots in `assets/reference/`. That folder does not exist, so the style follows the brief's written description only.
 
 - **Asset locations.** The brief pointed at `docs/BRIEF.md`, `assets/brand/` and `assets/fonts/`. The brief was at the root, the logos came as `tengo-brand-trimmed.zip` (extracted to `assets/brand/`), and the font arrived later in `public_stunt/`.
 - **Display type and numbers.** The brief puts the date hero and the Safe to spend figure in Public Stunt. The personal use font has watermarked digits, so those use Inter until the licensed font is in place (see Brand, type and licences). Headings, the landing headline and persona names use Public Stunt. Display sizes are smaller than with Inter because Public Stunt is much wider.

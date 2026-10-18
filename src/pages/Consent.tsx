@@ -4,8 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { Avatar } from '../components/Avatar';
 import { DemoChip } from '../components/DemoChip';
 import { Notice, PageLoading } from '../components/Feedback';
-import { Icon, type IconName } from '../components/Icon';
+import type { IconName } from '../components/Icon';
 import { Toggle } from '../components/Toggle';
+import { IconTile } from '../components/ui';
 import { Brand } from '../components/Brand';
 import { usePersona } from '../data/PersonaProvider';
 import { usePageTitle } from '../lib/usePageTitle';
@@ -41,11 +42,13 @@ export default function Consent() {
 
   return (
     <div className="min-h-dvh">
-      <header className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-4 px-5 py-5 sm:px-8 lg:px-12">
-        <Brand size={24} />
-        <DemoChip />
+      <header className="sticky top-0 z-40 border-b border-line/70 bg-bg/75 backdrop-blur-xl">
+        <div className="mx-auto flex h-16 w-full max-w-[1280px] items-center justify-between gap-3 px-5 sm:px-8">
+          <Brand size={22} />
+          <DemoChip />
+        </div>
       </header>
-      <main id="main" className="mx-auto w-full max-w-[1200px] px-5 pb-16 pt-2 sm:px-8">
+      <main id="main" className="mx-auto w-full max-w-[1280px] px-5 pb-16 pt-8 sm:px-8">
         {status !== 'ready' ? (
           <PageLoading />
         ) : (
@@ -55,7 +58,8 @@ export default function Consent() {
                 <Avatar persona={profile} size={44} />
                 <p className="text-sm font-medium text-muted">{t('consent.as', { name: profile.name })}</p>
               </div>
-              <h1 className="mt-5 font-heading text-[30px] font-extrabold leading-[1.08] sm:text-[40px]">{t('consent.title')}</h1>
+              <p className="eyebrow mt-6">{t('consent.step')}</p>
+              <h1 className="mt-3 font-heading text-h1 text-ink">{t('consent.title')}</h1>
               <p className="mt-3 text-lg text-muted">{t('consent.lead')}</p>
               <Notice tone="warn" icon="shield" className="mt-6">
                 {t('privacy.simulated')}
@@ -63,11 +67,9 @@ export default function Consent() {
               <ul className="mt-6 space-y-3">
                 {NOTICE.map((n) => (
                   <li key={n.key} className="card flex gap-4 p-5">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-soft text-ink">
-                      <Icon name={n.icon} size={20} />
-                    </span>
+                    <IconTile name={n.icon} />
                     <div>
-                      <h2 className="font-semibold">{t(`consent.notice.${n.key}.title`)}</h2>
+                      <h2 className="font-heading text-[17px] font-semibold text-ink">{t(`consent.notice.${n.key}.title`)}</h2>
                       <p className="mt-1 text-[15px] text-muted">{t(`consent.notice.${n.key}.body`)}</p>
                     </div>
                   </li>
@@ -77,7 +79,7 @@ export default function Consent() {
 
             <section className="lg:sticky lg:top-6 lg:self-start" aria-labelledby="choices-title">
               <div className="card p-6 sm:p-7">
-                <h2 id="choices-title" className="text-xl font-semibold">
+                <h2 id="choices-title" className="font-heading text-h3 text-ink">
                   {t('consent.choices')}
                 </h2>
                 <div className="mt-4 divide-y divide-line">

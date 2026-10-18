@@ -78,7 +78,7 @@ export default function ImportPage() {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
         {/* Step 1: choose */}
         <section className="card h-fit min-w-0 p-6 sm:p-7" aria-labelledby="pick-title">
-          <h2 id="pick-title" className="text-lg font-semibold">
+          <h2 id="pick-title" className="font-heading text-h3 text-ink">
             {t('import.step1')}
           </h2>
           <div className="mt-4 space-y-3">
@@ -124,7 +124,7 @@ export default function ImportPage() {
 
         {/* Step 2: map and confirm */}
         <section className="card min-w-0 p-6 sm:p-7" aria-labelledby="map-title">
-          <h2 id="map-title" className="text-lg font-semibold">
+          <h2 id="map-title" className="font-heading text-h3 text-ink">
             {t('import.step2')}
           </h2>
           {readError && (
@@ -172,32 +172,32 @@ export default function ImportPage() {
 
               {result && !result.error && result.transactions.length > 0 && (
                 <>
-                  <div className="mt-6 overflow-x-auto rounded-2xl border border-line">
-                    <table className="w-full min-w-[520px] text-left text-sm">
+                  <div className="mt-6 overflow-x-auto rounded-xl border border-line">
+                    <table className="data-table min-w-[520px]">
                       <caption className="sr-only">{t('import.previewCaption')}</caption>
-                      <thead className="bg-surface-2 text-xs uppercase tracking-wide text-muted">
+                      <thead>
                         <tr>
-                          <th scope="col" className="px-4 py-2.5 font-semibold">
+                          <th scope="col" className="font-semibold">
                             {t('import.field.date')}
                           </th>
-                          <th scope="col" className="px-4 py-2.5 font-semibold">
+                          <th scope="col" className="font-semibold">
                             {t('import.field.description')}
                           </th>
-                          <th scope="col" className="px-4 py-2.5 text-right font-semibold">
+                          <th scope="col" className="text-right font-semibold">
                             {t('import.field.amount')}
                           </th>
-                          <th scope="col" className="px-4 py-2.5 font-semibold">
+                          <th scope="col" className="font-semibold">
                             {t('import.type')}
                           </th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-line">
+                      <tbody>
                         {result.transactions.slice(-8).map((tx) => (
                           <tr key={tx.id}>
-                            <td className="num whitespace-nowrap px-4 py-2.5">{d.dayMonth(tx.date)}</td>
-                            <td className="max-w-[220px] truncate px-4 py-2.5">{tx.description}</td>
-                            <td className={`num whitespace-nowrap px-4 py-2.5 text-right font-semibold ${tx.amount > 0 ? 'text-enough' : ''}`}>{formatZAR(tx.amount, { sign: true })}</td>
-                            <td className="px-4 py-2.5">{t(`category.${tx.category}`)}</td>
+                            <td className="num whitespace-nowrap">{d.dayMonth(tx.date)}</td>
+                            <td className="max-w-[220px] truncate">{tx.description}</td>
+                            <td className={`num whitespace-nowrap text-right font-semibold ${tx.amount > 0 ? 'text-enough' : ''}`}>{formatZAR(tx.amount, { sign: true })}</td>
+                            <td>{t(`category.${tx.category}`)}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -226,9 +226,9 @@ export default function ImportPage() {
                       [t('category.spend'), String(counts.spend)],
                       [t('category.bill'), String(counts.bill)],
                     ].map(([k, v]) => (
-                      <div key={k} className="rounded-2xl bg-surface-2 px-4 py-3">
-                        <dt className="text-xs text-muted">{k}</dt>
-                        <dd className="num text-xl font-bold">{v}</dd>
+                      <div key={k} className="rounded-xl border border-line bg-surface-2 px-4 py-3">
+                        <dt className="eyebrow">{k}</dt>
+                        <dd className="num mt-1 font-heading text-[24px] font-bold leading-none tracking-[-0.02em] text-ink">{v}</dd>
                       </div>
                     ))}
                   </dl>

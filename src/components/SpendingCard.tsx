@@ -10,7 +10,7 @@ export function SpendingCard({ transactions, today }: { transactions: Transactio
   const slices = useMemo(() => spendingBreakdown(transactions, today), [transactions, today]);
   return (
     <section className="card p-6" aria-labelledby="spend-title">
-      <h2 id="spend-title" className="text-lg font-semibold">
+      <h2 id="spend-title" className="font-heading text-h3 text-ink">
         {t('spending.title')}
       </h2>
       <p className="mt-1 text-sm text-muted">{t('spending.lead')}</p>

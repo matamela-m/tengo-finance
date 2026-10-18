@@ -5,6 +5,7 @@ import { Notice } from '../../components/Feedback';
 import { Icon, type IconName } from '../../components/Icon';
 import { PageHeader } from '../../components/PageHeader';
 import { Toggle } from '../../components/Toggle';
+import { IconTile } from '../../components/ui';
 import { usePersona, useReadyPersona } from '../../data/PersonaProvider';
 import type { ConsentRecord } from '../../data/repository';
 import { useDates } from '../../lib/useLang';
@@ -13,12 +14,10 @@ import { useAnnounce } from '../../components/A11y';
 
 function Card({ icon, title, children, className = '' }: { icon: IconName; title: string; children: ReactNode; className?: string }) {
   return (
-    <section className={`card p-6 ${className}`}>
-      <div className="flex items-center gap-2.5">
-        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-soft text-ink">
-          <Icon name={icon} size={18} />
-        </span>
-        <h2 className="text-lg font-semibold">{title}</h2>
+    <section className={`card p-5 sm:p-6 ${className}`}>
+      <div className="flex items-center gap-3">
+        <IconTile name={icon} />
+        <h2 className="font-heading text-h3 text-ink">{title}</h2>
       </div>
       <div className="mt-4 text-[15px]">{children}</div>
     </section>
@@ -59,12 +58,10 @@ export default function PrivacyOverview() {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div className="flex min-w-0 flex-col gap-6 lg:col-span-2">
-          <section className="card p-6" aria-labelledby="consent-title">
-            <div className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-soft text-ink">
-                <Icon name="check" size={18} />
-              </span>
-              <h2 id="consent-title" className="text-lg font-semibold">
+          <section className="card p-5 sm:p-6" aria-labelledby="consent-title">
+            <div className="flex items-center gap-3">
+              <IconTile name="check" tone="accent" />
+              <h2 id="consent-title" className="font-heading text-h3 text-ink">
                 {t('privacy.consentTitle')}
               </h2>
             </div>
@@ -78,7 +75,7 @@ export default function PrivacyOverview() {
 
           <Card icon="filter" title={t('privacy.minimisation')}>
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl bg-enough-soft p-4 text-enough">
+              <div className="rounded-xl border border-enough/25 bg-enough-soft p-4 text-enough">
                 <p className="flex items-center gap-1.5 font-semibold">
                   <Icon name="checkCircle" size={18} />
                   {t('privacy.uses')}
@@ -89,7 +86,7 @@ export default function PrivacyOverview() {
                   ))}
                 </ul>
               </div>
-              <div className="rounded-2xl bg-surface-2 p-4">
+              <div className="rounded-xl border border-line bg-surface-2 p-4">
                 <p className="flex items-center gap-1.5 font-semibold">
                   <Icon name="x" size={18} />
                   {t('privacy.neverUses')}
@@ -125,9 +122,7 @@ export default function PrivacyOverview() {
               {LINKS.map((l) => (
                 <li key={l.to}>
                   <Link to={l.to} className="flex min-h-[56px] items-center gap-3 rounded-2xl px-3 py-2 hover:bg-surface-2">
-                    <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${l.key === 'delete' ? 'bg-short-soft text-short' : 'bg-surface-2'}`}>
-                      <Icon name={l.icon} size={18} />
-                    </span>
+                    <IconTile name={l.icon} tone={l.key === 'delete' ? 'short' : 'neutral'} />
                     <span className="min-w-0 flex-1">
                       <span className="block font-semibold">{t(`privacy.links.${l.key}.title`)}</span>
                       <span className="block text-xs text-muted">{t(`privacy.links.${l.key}.body`)}</span>

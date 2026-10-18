@@ -1,4 +1,6 @@
 import { useId, type ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Badge } from './ui';
 
 interface ToggleProps {
   checked: boolean;
@@ -12,12 +14,16 @@ interface ToggleProps {
 /** A labelled switch. Uses a checkbox with role="switch" so it reads as on or off. */
 export function Toggle({ checked, onChange, label, description, disabled, badge }: ToggleProps) {
   const id = useId();
+  const { t } = useTranslation();
   return (
     <div className="flex items-start justify-between gap-4 py-4">
       <div className="min-w-0">
         <label htmlFor={id} className="flex flex-wrap items-center gap-2 font-semibold">
           {label}
-          {badge && <span className="rounded-full bg-surface-2 px-2 py-0.5 text-xs font-semibold text-muted">{badge}</span>}
+          {badge && <Badge>{badge}</Badge>}
+          <span aria-hidden>
+            <Badge dot tone={checked ? 'enough' : 'neutral'}>{checked ? t('common.on') : t('common.off')}</Badge>
+          </span>
         </label>
         {description && (
           <p id={`${id}-desc`} className="mt-1 text-sm text-muted">

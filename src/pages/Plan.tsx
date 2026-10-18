@@ -5,6 +5,7 @@ import { Notice } from '../components/Feedback';
 import { Icon } from '../components/Icon';
 import { PageHeader } from '../components/PageHeader';
 import { Segmented } from '../components/Segmented';
+import { IconTile } from '../components/ui';
 import { StateChip } from '../components/StateChip';
 import { useReadyPersona } from '../data/PersonaProvider';
 import { addDays } from '../engine/dates';
@@ -38,9 +39,9 @@ function Outcome({ label, f }: { label: string; f: Forecast }) {
   const { t } = useTranslation();
   const d = useDates();
   return (
-    <div className="min-w-0 rounded-2xl bg-surface-2 p-4">
-      <p className="text-xs font-semibold text-muted">{label}</p>
-      <p className="num mt-1 text-sm text-muted">{f.state === 'short' ? t('hero.shortFrom') : t('hero.enoughUntil')}</p>
+    <div className="min-w-0 rounded-xl border border-line bg-surface-2 p-4">
+      <p className="eyebrow">{label}</p>
+      <p className="num mt-2 text-sm text-muted">{f.state === 'short' ? t('hero.shortFrom') : t('hero.enoughUntil')}</p>
       <p className="num font-heading text-[22px] font-extrabold leading-tight tracking-tight sm:text-[26px]">{d.dayShort(f.headlineDate)}</p>
       <div className="mt-2 flex items-center gap-2">
         <StateChip state={f.state} size="sm" />
@@ -74,10 +75,10 @@ function WhatIf() {
   const update = (id: number, patch: Partial<Item>) => setItems((list) => list.map((i) => (i.id === id ? { ...i, ...patch } : i)));
 
   return (
-    <section className="card p-6 sm:p-7" aria-labelledby="whatif-title">
-      <div className="flex items-center gap-2">
-        <Icon name="sliders" size={20} className="text-accent" />
-        <h2 id="whatif-title" className="text-xl font-semibold">
+    <section className="card p-5 sm:p-7" aria-labelledby="whatif-title">
+      <div className="flex items-center gap-3">
+        <IconTile name="sliders" tone="accent" />
+        <h2 id="whatif-title" className="font-heading text-h3 text-ink">
           {t('plan.whatIf')}
         </h2>
       </div>
@@ -85,7 +86,7 @@ function WhatIf() {
 
       <ul className="mt-5 space-y-3">
         {items.map((item, idx) => (
-          <li key={item.id} className="rounded-2xl border border-line p-4">
+          <li key={item.id} className="rounded-xl border border-line bg-surface-2/50 p-4">
             <fieldset>
               <legend className="sr-only">{t('plan.itemLabel', { n: idx + 1 })}</legend>
               <div className="flex items-center justify-between gap-3">
@@ -190,18 +191,18 @@ function LoanCheck() {
   const worse = result.after.state !== result.before.state;
 
   return (
-    <section className="card p-6 sm:p-7" aria-labelledby="loan-title">
-      <div className="flex items-center gap-2">
-        <Icon name="scale" size={20} className="text-accent" />
-        <h2 id="loan-title" className="text-xl font-semibold">
+    <section className="card p-5 sm:p-7" aria-labelledby="loan-title">
+      <div className="flex items-center gap-3">
+        <IconTile name="scale" tone="accent" />
+        <h2 id="loan-title" className="font-heading text-h3 text-ink">
           {t('plan.loan')}
         </h2>
       </div>
       <p className="mt-1 text-sm text-muted">{t('plan.loanLead')}</p>
 
-      <div className="mt-5 rounded-3xl bg-accent-soft p-5">
-        <p className="text-sm font-semibold text-ink">{t('plan.safeToLend')}</p>
-        <p className="num mt-1 font-heading text-[40px] font-extrabold leading-none text-ink">{formatZAR(result.safeToLend)}</p>
+      <div className="relative mt-5 overflow-hidden rounded-xl border border-accent/25 bg-accent-soft p-5">
+        <p className="eyebrow">{t('plan.safeToLend')}</p>
+        <p className="num mt-2 font-heading text-[44px] font-bold leading-none tracking-[-0.035em] text-ink">{formatZAR(result.safeToLend)}</p>
         <p className="mt-2 text-sm text-muted">{result.before.state === 'short' ? t('plan.safeToLendShort') : t('plan.safeToLendHint', { state: t(`state.${result.before.state}`) })}</p>
       </div>
 
@@ -228,12 +229,12 @@ function LoanCheck() {
         )}
         <div className="mt-3 flex flex-wrap gap-2">
           {[200, 500, 1000].map((v) => (
-            <button key={v} type="button" className="num min-h-[40px] rounded-full bg-surface-2 px-4 text-sm font-semibold hover:bg-line" onClick={() => setAmount(String(v))}>
+            <button key={v} type="button" className="num min-h-[44px] rounded-full border border-line px-4 text-sm font-medium text-ink transition-colors hover:border-line-strong hover:bg-surface-2" onClick={() => setAmount(String(v))}>
               {formatZAR(v)}
             </button>
           ))}
           {result.safeToLend > 0 && (
-            <button type="button" className="num min-h-[40px] rounded-full border border-accent px-4 text-sm font-semibold text-accent" onClick={() => setAmount(String(result.safeToLend))}>
+            <button type="button" className="num min-h-[44px] rounded-full border border-accent/40 bg-accent-soft px-4 text-sm font-medium text-accent" onClick={() => setAmount(String(result.safeToLend))}>
               {t('plan.useSafe', { amount: formatZAR(result.safeToLend) })}
             </button>
           )}

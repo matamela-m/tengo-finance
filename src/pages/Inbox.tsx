@@ -100,18 +100,16 @@ export default function InboxPage() {
               />
             </div>
 
-            <div className={`px-4 py-8 sm:px-8 ${channel === 'whatsapp' ? 'bg-surface-3' : 'bg-surface-2'}`}>
+            <div className="bg-bg px-4 py-8 sm:px-8" style={{ backgroundImage: 'radial-gradient(rgb(var(--border)) 1px, transparent 1px)', backgroundSize: '18px 18px' }}>
               <div className="mx-auto max-w-md">
                 <div className="mb-4 flex items-center justify-center gap-2">
-                  <span className="rounded-full bg-surface px-3 py-1 text-xs font-medium text-muted">{t('inbox.todayAt')}</span>
+                  <span className="rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-muted">{t('inbox.todayAt')}</span>
                 </div>
                 <div className="flex items-end gap-2">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full bg-surface p-1">
-                    <Brand variant="mark" size={20} decorative />
-                  </span>
+                  <Brand variant="mark" size={30} decorative className="rounded-full" />
                   <div
-                    className={`relative min-w-0 max-w-[85%] rounded-2xl rounded-bl-md px-4 py-3 text-[15px] leading-relaxed shadow-card ${
-                      channel === 'whatsapp' ? 'bg-surface text-ink' : 'bg-surface text-ink'
+                    className={`relative min-w-0 max-w-[85%] rounded-[18px] rounded-bl-[6px] px-4 py-3 text-[15px] leading-relaxed text-ink ${
+                      channel === 'whatsapp' ? 'border border-line bg-surface' : 'bg-surface-3'
                     }`}
                   >
                     <p className="mb-1 text-xs font-semibold text-accent">Tengo</p>
@@ -122,7 +120,7 @@ export default function InboxPage() {
                     ) : (
                       <LoadingBlock lines={3} />
                     )}
-                    <p className="mt-1 text-right text-[11px] text-muted">07:00</p>
+                    <p className="num mt-1 text-right text-xs text-subtle">07:00</p>
                   </div>
                 </div>
               </div>

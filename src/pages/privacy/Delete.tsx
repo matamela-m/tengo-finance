@@ -24,7 +24,7 @@ export default function Delete() {
   return (
     <SubPage title={t('privacy.links.delete.title')} lead={t('privacy.deleteLead', { name: profile.name })}>
       <section className="card mx-auto max-w-2xl p-6 sm:p-8">
-        <h2 className="text-lg font-semibold">{t('privacy.deleteWhat')}</h2>
+        <h2 className="font-heading text-h3 text-ink">{t('privacy.deleteWhat')}</h2>
         <ul className="mt-3 space-y-2 text-[15px]">
           <li className="flex gap-2">
             <Icon name="trash" size={18} className="mt-0.5 text-short" />

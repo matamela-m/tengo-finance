@@ -189,7 +189,8 @@
     },
     "changeLater": "You can change these any time in Privacy.",
     "agree": "Agree and continue",
-    "notNow": "Not now"
+    "notNow": "Not now",
+    "step": "Step 2 of 2"
   },
   "privacy": {
     "simulated": "Simulated privacy controls. Not a compliance certification.",
@@ -499,7 +500,8 @@
     "reset": "Reset demo data",
     "resetBody": "Clears every person, consent choice and log on this device and starts fresh.",
     "resetWarn": "This removes everything the demo stored on this device.",
-    "resetConfirm": "Yes, reset everything"
+    "resetConfirm": "Yes, reset everything",
+    "themeHint": "Dark is the default. System follows your device."
   },
   "errors": {
     "loadTitle": "Could not load your data",

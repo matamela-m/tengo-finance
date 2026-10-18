@@ -32,7 +32,7 @@ export default function Review() {
     <SubPage title={t('privacy.links.review.title')} lead={t('privacy.reviewLead')}>
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
         <section className="card min-w-0 p-6 sm:p-7" aria-labelledby="review-form">
-          <h2 id="review-form" className="text-lg font-semibold">
+          <h2 id="review-form" className="font-heading text-h3 text-ink">
             {t('privacy.reviewFormTitle')}
           </h2>
           <p className="mt-1 text-sm text-muted">{t('privacy.reviewAbout', { result: headline })}</p>
@@ -93,7 +93,7 @@ export default function Review() {
           )}
         </section>
         <section className="card h-fit min-w-0 p-6" aria-labelledby="past-reviews">
-          <h2 id="past-reviews" className="text-lg font-semibold">
+          <h2 id="past-reviews" className="font-heading text-h3 text-ink">
             {t('privacy.reviewPast')}
           </h2>
           {reviews.length === 0 ? (

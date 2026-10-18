@@ -68,7 +68,7 @@ export default function MyData() {
     >
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
         <section className="card h-fit min-w-0 p-6" aria-labelledby="held-title">
-          <h2 id="held-title" className="text-lg font-semibold">
+          <h2 id="held-title" className="font-heading text-h3 text-ink">
             {t('privacy.held')}
           </h2>
           <dl className="mt-3 divide-y divide-line text-sm">
@@ -91,7 +91,7 @@ export default function MyData() {
           <p className="mt-4 text-sm text-muted">{t('privacy.correctHint')}</p>
         </section>
         <section className="card min-w-0 p-6" aria-labelledby="tx-title">
-          <h2 id="tx-title" className="text-lg font-semibold">
+          <h2 id="tx-title" className="font-heading text-h3 text-ink">
             {t('privacy.heldTransactions')}
           </h2>
           <ul tabIndex={0} aria-labelledby="tx-title" className="mt-2 max-h-[640px] divide-y divide-line overflow-y-auto rounded-xl pr-1">

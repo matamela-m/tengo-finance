@@ -107,7 +107,7 @@ export default function MoneyPage() {
             <div className="mt-2">
               {groups.map((g) => (
                 <div key={g.month}>
-                  <h3 className="sticky top-[57px] z-10 -mx-2 bg-surface px-2 pb-1 pt-4 text-xs font-semibold uppercase tracking-wide text-muted lg:top-0">{monthLabel(g.month)}</h3>
+                  <h3 className="eyebrow sticky top-[56px] z-10 -mx-2 bg-surface px-2 pb-1.5 pt-5 lg:top-0">{monthLabel(g.month)}</h3>
                   <ul className="divide-y divide-line">
                     {g.items.map((tx) => (
                       <li key={tx.id} className="flex items-center gap-2">
@@ -137,24 +137,24 @@ export default function MoneyPage() {
         </section>
 
         <div className="order-first flex flex-col gap-6 lg:order-none">
-          <section className="card p-6" aria-labelledby="summary-title">
-            <h2 id="summary-title" className="text-sm font-semibold text-muted">
+          <section className="card p-5 sm:p-6" aria-labelledby="summary-title">
+            <h2 id="summary-title" className="eyebrow">
               {t('money.last30')}
             </h2>
             <dl className="mt-3 grid grid-cols-2 gap-3">
-              <div className="rounded-2xl bg-accent-soft p-4">
-                <dt className="flex items-center gap-1.5 text-xs font-semibold text-ink">
+              <div className="rounded-xl border border-enough/25 bg-enough-soft p-4">
+                <dt className="flex items-center gap-1.5 text-xs font-medium text-muted">
                   <Icon name="arrowDown" size={14} />
                   {t('money.in')}
                 </dt>
-                <dd className="num mt-1 text-xl font-bold text-ink">{formatZAR(Math.round(last30.income))}</dd>
+                <dd className="num mt-2 font-heading text-[26px] font-bold leading-none tracking-[-0.03em] text-ink">{formatZAR(Math.round(last30.income))}</dd>
               </div>
-              <div className="rounded-2xl bg-surface-2 p-4">
+              <div className="rounded-xl border border-line bg-surface-2 p-4">
                 <dt className="flex items-center gap-1.5 text-xs font-semibold text-muted">
                   <Icon name="arrowUp" size={14} />
                   {t('money.out')}
                 </dt>
-                <dd className="num mt-1 text-xl font-bold">{formatZAR(Math.round(last30.out))}</dd>
+                <dd className="num mt-2 font-heading text-[26px] font-bold leading-none tracking-[-0.03em] text-ink">{formatZAR(Math.round(last30.out))}</dd>
               </div>
             </dl>
             <p className="num mt-4 text-sm text-muted">{t('money.balance', { amount: formatZAR(record.balance) })}</p>
@@ -165,7 +165,7 @@ export default function MoneyPage() {
           <section className="card p-6" aria-labelledby="bills-title">
             <div className="flex items-center gap-2">
               <Icon name="repeat" size={18} className="text-accent" />
-              <h2 id="bills-title" className="text-lg font-semibold">
+              <h2 id="bills-title" className="font-heading text-h3 text-ink">
                 {t('money.bills')}
               </h2>
             </div>
@@ -188,7 +188,7 @@ export default function MoneyPage() {
           </section>
 
           <section className="card hidden p-6 lg:block" aria-labelledby="import-title">
-            <h2 id="import-title" className="text-lg font-semibold">
+            <h2 id="import-title" className="font-heading text-h3 text-ink">
               {t('money.importTitle')}
             </h2>
             <p className="mt-1 text-sm text-muted">{t('money.importBody')}</p>

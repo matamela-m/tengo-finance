@@ -142,14 +142,14 @@ export default function MoneyPage() {
               {t('money.last30')}
             </h2>
             <dl className="mt-3 grid grid-cols-2 gap-3">
-              <div className="rounded-xl border border-enough/25 bg-enough-soft p-4">
+              <div className="rounded-xl bg-enough-soft p-4">
                 <dt className="flex items-center gap-1.5 text-xs font-medium text-muted">
                   <Icon name="arrowDown" size={14} />
                   {t('money.in')}
                 </dt>
                 <dd className="num mt-2 font-heading text-[26px] font-bold leading-none tracking-[-0.03em] text-ink">{formatZAR(Math.round(last30.income))}</dd>
               </div>
-              <div className="rounded-xl border border-line bg-surface-2 p-4">
+              <div className="rounded-xl bg-surface-2 p-4">
                 <dt className="flex items-center gap-1.5 text-xs font-semibold text-muted">
                   <Icon name="arrowUp" size={14} />
                   {t('money.out')}

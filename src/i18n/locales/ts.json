@@ -370,14 +370,12 @@
     "between": "Likely between {{from}} and {{to}}",
     "single": "Likely {{date}}",
     "lowConfidence": "Low confidence",
-    "legendDate": "Your date",
-    "legendRange": "Likely range",
-    "legendNext": "Next money, {{date}}"
+    "legendNext": "Next money around {{date}}"
   },
   "sts": {
     "title": "Safe to spend today",
-    "withBills": "Each day until {{date}}, after {{bills}} in bills.",
-    "noBills": "Each day until {{date}}. No bills due before then."
+    "withBills": "Until {{date}}, after {{bills}} in bills.",
+    "noBills": "Until {{date}}. No bills due."
   },
   "stateCard": {
     "title": "Cover",
@@ -410,18 +408,14 @@
     "expectedIncome": "Expected money",
     "billDue": "{{name}} due",
     "summary": "Projected balance for the next 30 days if money lands as usual. Lowest point {{low}} on {{date}}.",
-    "legend": "Chart key",
-    "legendExpected": "Expected balance",
-    "legendRange": "Likely range",
-    "legendIncome": "Money in",
-    "legendBill": "Bill due",
     "showTable": "Show numbers",
     "hideTable": "Hide numbers",
     "tableCaption": "Projected balance and cover for each of the next 30 days",
     "colDay": "Day",
     "colExpected": "Expected",
     "colRange": "Likely range",
-    "colCover": "Cover"
+    "colCover": "Cover",
+    "key": "Line: expected balance. Shading: likely range. Filled dots: money in. Hollow dots: bills."
   },
   "why": {
     "open": "Why this date",
@@ -717,15 +711,17 @@
   },
   "help": {
     "title": "What helps most",
-    "toReach": "To reach",
-    "lead": "Any one of these gets you there. Worked out with the same rules as your date.",
     "moveBill": "Pay {{name}} ({{amount}}) after {{date}} instead of before.",
     "dailyCut": "Spend about {{amount}} less a day until {{date}}.",
     "extra": "Bring in {{amount}} more before {{date}}.",
     "tryInPlan": "Try it in Plan",
     "coveredTitle": "You are covered",
     "setAside": "You could set aside up to {{amount}} today and still be Enough until your next money.",
-    "coveredBody": "Your money should last until your next money, even on a heavier week."
+    "coveredBody": "Your money should last until your next money, even on a heavier week.",
+    "toReachState": "To reach {{state}}",
+    "more_one": "{{count}} more way",
+    "more_other": "{{count}} more ways",
+    "fewer": "Show fewer"
   },
   "spending": {
     "title": "Where everyday money goes",
@@ -759,5 +755,8 @@
       "language": "Language",
       "theme": "Theme"
     }
+  },
+  "theme": {
+    "button": "Theme: {{current}}. Switch to {{next}}"
   }
 }

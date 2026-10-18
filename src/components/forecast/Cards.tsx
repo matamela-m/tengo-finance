@@ -136,8 +136,8 @@ export function RecentActivity({ transactions }: { transactions: Transaction[] }
         <p className="mt-3 text-sm text-muted">{t('recent.empty')}</p>
       ) : (
         <ul className="mt-2 divide-y divide-line">
-          {recent.map((tx) => (
-            <li key={tx.id}>
+          {recent.map((tx, i) => (
+            <li key={tx.id} className={i >= 3 ? 'hidden sm:block' : undefined}>
               <TransactionRow tx={tx} compact />
             </li>
           ))}

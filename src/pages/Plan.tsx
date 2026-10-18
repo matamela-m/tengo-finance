@@ -39,7 +39,7 @@ function Outcome({ label, f }: { label: string; f: Forecast }) {
   const { t } = useTranslation();
   const d = useDates();
   return (
-    <div className="min-w-0 rounded-xl border border-line bg-surface-2 p-4">
+    <div className="min-w-0 rounded-xl bg-surface-2 p-4">
       <p className="eyebrow">{label}</p>
       <p className="num mt-2 text-sm text-muted">{f.state === 'short' ? t('hero.shortFrom') : t('hero.enoughUntil')}</p>
       <p className="num font-heading text-[22px] font-extrabold leading-tight tracking-tight sm:text-[26px]">{d.dayShort(f.headlineDate)}</p>
@@ -86,7 +86,7 @@ function WhatIf() {
 
       <ul className="mt-5 space-y-3">
         {items.map((item, idx) => (
-          <li key={item.id} className="rounded-xl border border-line bg-surface-2/50 p-4">
+          <li key={item.id} className="rounded-xl bg-surface-2/60 p-4">
             <fieldset>
               <legend className="sr-only">{t('plan.itemLabel', { n: idx + 1 })}</legend>
               <div className="flex items-center justify-between gap-3">
@@ -200,7 +200,7 @@ function LoanCheck() {
       </div>
       <p className="mt-1 text-sm text-muted">{t('plan.loanLead')}</p>
 
-      <div className="relative mt-5 overflow-hidden rounded-xl border border-accent/25 bg-accent-soft p-5">
+      <div className="relative mt-5 overflow-hidden rounded-xl bg-accent-soft p-5">
         <p className="eyebrow">{t('plan.safeToLend')}</p>
         <p className="num mt-2 font-heading text-[44px] font-bold leading-none tracking-[-0.035em] text-ink">{formatZAR(result.safeToLend)}</p>
         <p className="mt-2 text-sm text-muted">{result.before.state === 'short' ? t('plan.safeToLendShort') : t('plan.safeToLendHint', { state: t(`state.${result.before.state}`) })}</p>

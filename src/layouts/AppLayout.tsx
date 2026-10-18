@@ -5,7 +5,7 @@ import { Avatar } from '../components/Avatar';
 import { Brand } from '../components/Brand';
 import { DemoChip } from '../components/DemoChip';
 import { Icon } from '../components/Icon';
-import { ThemeToggle } from '../components/ThemeToggle';
+import { ThemeButton } from '../components/ThemeToggle';
 import { usePersona } from '../data/PersonaProvider';
 import { useSession } from '../store/session';
 import { NAV, type NavItem } from './nav';
@@ -19,21 +19,14 @@ function SideLink({ item, collapsed }: { item: NavItem; collapsed: boolean }) {
       end={item.end}
       title={collapsed ? label : undefined}
       className={({ isActive }) =>
-        `group flex min-h-[44px] items-center gap-3 rounded-xl px-2 text-[15px] font-medium transition-colors duration-150 ${
-          isActive ? 'bg-surface-2 text-ink' : 'text-muted hover:bg-surface-2 hover:text-ink'
+        `group flex min-h-[44px] items-center gap-3 rounded-lg px-2.5 text-[15px] transition-colors duration-150 ${
+          isActive ? 'bg-surface-2 font-medium text-ink' : 'text-muted hover:bg-surface-2/60 hover:text-ink'
         } ${collapsed ? 'justify-center' : ''}`
       }
     >
       {({ isActive }) => (
         <>
-          <span
-            aria-hidden
-            className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-[9px] border transition-colors ${
-              isActive ? 'border-accent/30 bg-accent-soft text-accent' : 'border-line bg-surface text-muted group-hover:text-ink'
-            }`}
-          >
-            <Icon name={item.icon} size={17} />
-          </span>
+          <Icon name={item.icon} size={18} className={`shrink-0 ${isActive ? 'text-accent' : 'text-subtle group-hover:text-ink'}`} />
           <span className={collapsed ? 'sr-only' : 'truncate'}>{label}</span>
         </>
       )}
@@ -127,20 +120,23 @@ export function AppLayout({ children }: { children?: ReactNode }) {
         </nav>
         <div className={`mt-3 flex flex-col gap-3 border-t border-line pt-3 ${collapsed ? 'items-center' : ''}`}>
           {collapsed ? (
-            <button
-              type="button"
-              onClick={() => setCollapsed(false)}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-subtle transition-colors hover:bg-surface-2 hover:text-ink"
-              aria-label={t('nav.expand')}
-              aria-expanded={false}
-            >
-              <Icon name="sidebar" size={18} />
-            </button>
-          ) : (
             <>
-              <ThemeToggle />
-              <DemoChip className="self-start" />
+              <ThemeButton />
+              <button
+                type="button"
+                onClick={() => setCollapsed(false)}
+                className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-subtle transition-colors hover:bg-surface-2 hover:text-ink"
+                aria-label={t('nav.expand')}
+                aria-expanded={false}
+              >
+                <Icon name="sidebar" size={18} />
+              </button>
             </>
+          ) : (
+            <div className="flex items-center justify-between gap-2">
+              <DemoChip />
+              <ThemeButton />
+            </div>
           )}
         </div>
       </aside>

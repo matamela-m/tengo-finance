@@ -21,3 +21,16 @@ export function StateChip({ state, size = 'md', className = '' }: { state: Cover
     </span>
   );
 }
+
+const TEXT: Record<CoverState, string> = { enough: 'text-enough', tight: 'text-tight', short: 'text-short' };
+
+/** Quiet inline state: icon and word in the state colour, no pill. For secondary mentions. */
+export function StateText({ state, className = '' }: { state: CoverState; className?: string }) {
+  const { t } = useTranslation();
+  return (
+    <span className={`inline-flex items-center gap-1 text-sm font-medium ${TEXT[state]} ${className}`}>
+      <Icon name={STATE_ICON[state]} size={15} strokeWidth={2.2} />
+      {t(`state.${state}`)}
+    </span>
+  );
+}

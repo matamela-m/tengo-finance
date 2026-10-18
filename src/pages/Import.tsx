@@ -226,7 +226,7 @@ export default function ImportPage() {
                       [t('category.spend'), String(counts.spend)],
                       [t('category.bill'), String(counts.bill)],
                     ].map(([k, v]) => (
-                      <div key={k} className="rounded-xl border border-line bg-surface-2 px-4 py-3">
+                      <div key={k} className="rounded-xl bg-surface-2 px-4 py-3">
                         <dt className="eyebrow">{k}</dt>
                         <dd className="num mt-1 font-heading text-[24px] font-bold leading-none tracking-[-0.02em] text-ink">{v}</dd>
                       </div>

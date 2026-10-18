@@ -4,7 +4,7 @@ import type { DayProjection, Forecast } from '../../engine/types';
 import { formatZAR } from '../../lib/format';
 import { useDates } from '../../lib/useLang';
 import { Icon } from '../Icon';
-import { StateChip } from '../StateChip';
+import { StateChip, StateText } from '../StateChip';
 
 const PAD = { top: 12, right: 12, bottom: 8, left: 52 };
 
@@ -102,27 +102,21 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
       <div className="mt-5 flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="text-sm font-medium text-muted">{index === 0 ? t('common.today') : d.dayShort(day.date)}</p>
-          <p className="num mt-1 font-heading text-[36px] font-bold leading-none tracking-[-0.03em] text-ink">{formatZAR(Math.round(day.central))}</p>
+          <p className="num mt-1 font-heading text-[26px] font-bold leading-none tracking-[-0.025em] text-ink">{formatZAR(Math.round(day.central))}</p>
           <p className="num mt-1.5 text-sm text-muted">
             {t('scrubber.range', { low: formatZAR(Math.round(day.pessimistic)), high: formatZAR(Math.round(day.optimistic)) })}
           </p>
         </div>
-        <StateChip state={day.state} className="shrink-0" />
+        <StateText state={day.state} className="shrink-0" />
       </div>
-      <div className="mt-3 flex min-h-[28px] flex-wrap gap-2" aria-hidden>
-        {day.incomeToday > 0 && (
-          <span className="num inline-flex items-center gap-1.5 rounded-full border border-accent/25 bg-accent-soft px-3 py-1 text-xs font-medium text-ink">
-            <span className="h-2 w-2 rounded-full bg-accent" />
-            {t('scrubber.expectedIncome')} {formatZAR(day.incomeToday, { sign: true })}
-          </span>
-        )}
-        {day.billsToday.map((b) => (
-          <span key={b.description} className="num inline-flex items-center gap-1.5 rounded-full border border-line bg-surface-2 px-3 py-1 text-xs font-medium">
-            <span className="h-2 w-2 rounded-full border-2 border-short" />
-            {t('scrubber.billDue', { name: b.description })} {formatZAR(-b.amount)}
-          </span>
-        ))}
-      </div>
+      <p className="num mt-2 min-h-[20px] text-xs text-subtle" aria-hidden>
+        {[
+          day.incomeToday > 0 ? `${t('scrubber.expectedIncome')} ${formatZAR(day.incomeToday, { sign: true })}` : '',
+          ...day.billsToday.map((b) => `${t('scrubber.billDue', { name: b.description })} ${formatZAR(-b.amount)}`),
+        ]
+          .filter(Boolean)
+          .join(' · ')}
+      </p>
 
       {/* Plot. The range input covers it, so the chart itself is the slider. */}
       <div ref={plotRef} className="scrub-plot relative mt-2 rounded-2xl" style={{ height }}>
@@ -172,6 +166,15 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
             <circle cx={geo.x(index)} cy={geo.y(day.central)} r={5.5} fill="var(--color-accent)" stroke="var(--color-surface-1)" strokeWidth={2} />
           </svg>
         )}
+        {width > 0 && (
+          <span
+            aria-hidden
+            className="num pointer-events-none absolute -translate-x-1/2 -translate-y-full whitespace-nowrap rounded-md border border-line bg-surface px-1.5 py-0.5 text-xs font-medium text-ink"
+            style={{ left: Math.min(Math.max(geo.x(index), PAD.left + 28), width - 34), top: geo.y(day.central) - 12 }}
+          >
+            {index === 0 ? t('common.today') : d.dayMonth(day.date)}
+          </span>
+        )}
         <label htmlFor={`${id}-range`} className="sr-only">
           {t('scrubber.label')}
         </label>
@@ -206,26 +209,9 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
           ))}
       </div>
 
-      <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-4">
-        <ul className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-muted" aria-label={t('scrubber.legend')}>
-          <li className="flex items-center gap-1.5">
-            <span aria-hidden className="h-[3px] w-4 rounded bg-accent" />
-            {t('scrubber.legendExpected')}
-          </li>
-          <li className="flex items-center gap-1.5">
-            <span aria-hidden className="h-3 w-4 rounded-sm" style={{ background: 'var(--color-band)' }} />
-            {t('scrubber.legendRange')}
-          </li>
-          <li className="flex items-center gap-1.5">
-            <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-accent" />
-            {t('scrubber.legendIncome')}
-          </li>
-          <li className="flex items-center gap-1.5">
-            <span aria-hidden className="h-2.5 w-2.5 rounded-full border-2 border-short" />
-            {t('scrubber.legendBill')}
-          </li>
-        </ul>
-        <button type="button" className="btn-ghost -mr-3 min-h-[44px] px-3 text-sm" aria-expanded={showTable} aria-controls={`${id}-table`} onClick={() => setShowTable((v) => !v)}>
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+        <p className="text-xs text-subtle">{t('scrubber.key')}</p>
+        <button type="button" className="btn-ghost -mr-3 min-h-[44px] px-3 text-sm text-muted" aria-expanded={showTable} aria-controls={`${id}-table`} onClick={() => setShowTable((v) => !v)}>
           <Icon name={showTable ? 'chevronDown' : 'chevronRight'} size={16} />
           {showTable ? t('scrubber.hideTable') : t('scrubber.showTable')}
         </button>

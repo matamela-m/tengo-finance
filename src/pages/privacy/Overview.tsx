@@ -75,7 +75,7 @@ export default function PrivacyOverview() {
 
           <Card icon="filter" title={t('privacy.minimisation')}>
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl border border-enough/25 bg-enough-soft p-4 text-enough">
+              <div className="rounded-xl bg-enough-soft p-4 text-enough">
                 <p className="flex items-center gap-1.5 font-semibold">
                   <Icon name="checkCircle" size={18} />
                   {t('privacy.uses')}
@@ -86,7 +86,7 @@ export default function PrivacyOverview() {
                   ))}
                 </ul>
               </div>
-              <div className="rounded-xl border border-line bg-surface-2 p-4">
+              <div className="rounded-xl bg-surface-2 p-4">
                 <p className="flex items-center gap-1.5 font-semibold">
                   <Icon name="x" size={18} />
                   {t('privacy.neverUses')}

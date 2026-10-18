@@ -84,16 +84,16 @@ function ProductPreview() {
             </div>
           </div>
           <div className="grid min-w-0 grid-cols-2 content-start gap-3 md:grid-cols-1">
-            <div className="rounded-2xl border border-line bg-surface-2 p-4">
+            <div className="rounded-2xl bg-surface-2 p-4">
               <p className="num font-heading text-[30px] font-bold leading-none tracking-[-0.03em]">{formatZAR(f.safeToSpendToday)}</p>
               <p className="mt-2 text-xs text-muted">{t('sts.title')}</p>
             </div>
-            <div className="rounded-2xl border border-line bg-surface-2 p-4">
+            <div className="rounded-2xl bg-surface-2 p-4">
               <p className="num font-heading text-[22px] font-bold leading-none tracking-[-0.02em]">{f.nextMoney ? d.dayShort(f.nextMoney.typical) : '-'}</p>
               <p className="mt-2 text-xs text-muted">{t('next.title')}</p>
             </div>
           </div>
-          <div className="min-w-0 rounded-2xl border border-line bg-surface-2 px-3 pt-3 md:col-span-2">
+          <div className="min-w-0 rounded-2xl bg-surface-2 px-3 pt-3 md:col-span-2">
             <MiniChart forecast={f} />
           </div>
         </div>

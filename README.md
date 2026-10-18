@@ -49,6 +49,7 @@ A restyle of the existing app: the same engine, data, routes, i18n, consent and 
 - **Brand.** The old logo is archived. `src/components/Brand.tsx` is the only place the brand is drawn (see Brand and type).
 - **Primitives.** Card (with optional corner brackets), section label, icon tile, badge with status dot, stat tile, state chip, slim three-segment cover gauge, quiet inputs, switch with an On or Off dot, segmented control, drawer, toast, data table, empty state and skeleton.
 - **Pages.** A new landing page with a framed live preview, a Notion-style sidebar that collapses to icons, a rebuilt Home (greeting banner, large date hero, stat tiles, restyled chart) and every other page on the shared primitives.
+- **Sleek pass.** Only outer cards are outlined; inner tiles and notices use soft fills. Each screen has one hero number (the date on Home). The state is shown loudly once and quietly elsewhere. Legends became single lines, the sidebar uses plain icons with one theme button, icons come from Lucide, pages fade in, and the landing page has one explainer section under a larger tilted preview.
 - **Command menu.** Ctrl or Cmd plus K (or "Search or jump to" in the sidebar) jumps to a page, switches person, changes language or theme.
 
 **Type rules**

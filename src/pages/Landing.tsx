@@ -9,7 +9,7 @@ import { RangeBand } from '../components/forecast/RangeBand';
 import { Icon, type IconName } from '../components/Icon';
 import { Reveal } from '../components/Reveal';
 import { StateChip } from '../components/StateChip';
-import { ThemeToggle } from '../components/ThemeToggle';
+import { ThemeButton } from '../components/ThemeToggle';
 import { Badge, IconTile, SectionLabel } from '../components/ui';
 import { seedRecord } from '../data/localRepository';
 import { localToday } from '../engine/dates';
@@ -103,12 +103,6 @@ function ProductPreview() {
   );
 }
 
-const FEATURES: { key: string; icon: IconName }[] = [
-  { key: 'date', icon: 'calendar' },
-  { key: 'range', icon: 'sliders' },
-  { key: 'private', icon: 'lock' },
-];
-
 const STEPS: { key: string; icon: IconName }[] = [
   { key: 'history', icon: 'upload' },
   { key: 'last', icon: 'calendar' },
@@ -116,9 +110,9 @@ const STEPS: { key: string; icon: IconName }[] = [
 ];
 
 const FOOTER = [
-  { group: 'product', links: [['features', '#features'], ['how', '#how'], ['explore', '/start']] },
+  { group: 'product', links: [['how', '#how'], ['explore', '/start']] },
   { group: 'privacy', links: [['privacyCentre', '/start'], ['fictional', '#privacy']] },
-  { group: 'about', links: [['name', '/start'], ['hackathon', '#features']] },
+  { group: 'about', links: [['name', '/start'], ['hackathon', '#how']] },
 ] as const;
 
 export default function Landing() {
@@ -140,14 +134,14 @@ export default function Landing() {
             <Brand size={22} />
           </Link>
           <div className="hidden items-center gap-1 md:flex">
-            {(['features', 'how', 'privacy'] as const).map((k) => (
+            {(['how', 'privacy'] as const).map((k) => (
               <a key={k} href={`#${k}`} className="inline-flex min-h-[44px] items-center rounded-full px-3 text-sm text-muted transition-colors hover:text-ink">
                 {t(`landing.nav.${k}`)}
               </a>
             ))}
           </div>
           <div className="flex items-center gap-2">
-            <ThemeToggle className="hidden sm:block" />
+            <ThemeButton />
             <Link to="/start" className="btn-primary px-4 text-sm">
               {t('landing.cta')}
             </Link>
@@ -176,44 +170,14 @@ export default function Landing() {
             </div>
             <p className="mt-4 text-sm text-subtle">{t('landing.ctaNote')}</p>
           </div>
-          <Reveal className="mx-auto mt-14 max-w-5xl md:mt-20" delay={80}>
-            <ProductPreview />
+          <Reveal className="mx-auto mt-14 max-w-6xl md:mt-20 md:[perspective:1800px]" delay={80}>
+            <div className="origin-top transition-transform duration-700 ease-out md:[transform:rotateX(8deg)] md:hover:[transform:none]">
+              <ProductPreview />
+            </div>
           </Reveal>
         </section>
 
-        <section id="features" aria-labelledby="features-title" className="mx-auto w-full max-w-[1280px] scroll-mt-20 px-5 py-16 sm:px-8 lg:py-24">
-          <Reveal>
-            <SectionLabel as="p">{t('landing.nav.features')}</SectionLabel>
-            <h2 id="features-title" className="mt-3 max-w-2xl font-heading text-h1 text-ink">
-              {t('landing.featuresTitle')}
-            </h2>
-          </Reveal>
-          <ul className="mt-10 grid gap-4 md:grid-cols-3">
-            {FEATURES.map((f, i) => (
-              <li key={f.key}>
-                <Reveal delay={i * 60} className="h-full">
-                  <div className="card-interactive h-full p-6">
-                    <IconTile name={f.icon} tone="accent" />
-                    <h3 className="mt-5 font-heading text-h3 text-ink">{t(`landing.features.${f.key}.title`)}</h3>
-                    <p className="mt-2 text-[15px] text-muted">{t(`landing.features.${f.key}.body`)}</p>
-                  </div>
-                </Reveal>
-              </li>
-            ))}
-          </ul>
-          <Reveal>
-            <ul className="mt-4 grid grid-cols-2 gap-4 lg:grid-cols-4">
-              {stats.map((s) => (
-                <li key={s.label} className="card p-6">
-                  <p className="num font-heading text-[44px] font-bold leading-none tracking-[-0.03em] text-ink sm:text-[52px]">{s.value}</p>
-                  <p className="mt-3 text-sm text-muted">{s.label}</p>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-        </section>
-
-        <section id="how" aria-labelledby="how-title" className="scroll-mt-16 border-y border-line bg-surface/50">
+        <section id="how" aria-labelledby="how-title" className="scroll-mt-16 border-y border-line">
           <div className="mx-auto w-full max-w-[1280px] px-5 py-16 sm:px-8 lg:py-24">
             <Reveal>
               <SectionLabel as="p">{t('landing.nav.how')}</SectionLabel>
@@ -221,13 +185,13 @@ export default function Landing() {
                 {t('landing.howTitle')}
               </h2>
             </Reveal>
-            <ol className="mt-10 grid gap-4 md:grid-cols-3">
+            <ol className="mt-10 grid gap-10 md:grid-cols-3 md:gap-8">
               {STEPS.map((s, i) => (
                 <li key={s.key}>
                   <Reveal delay={i * 60} className="h-full">
-                    <div className="card h-full p-6">
+                    <div className="h-full">
                       <div className="flex items-center justify-between">
-                        <IconTile name={s.icon} />
+                        <IconTile name={s.icon} tone="accent" />
                         <span aria-hidden className="num font-heading text-sm font-semibold text-subtle">
                           0{i + 1}
                         </span>
@@ -239,6 +203,16 @@ export default function Landing() {
                 </li>
               ))}
             </ol>
+            <Reveal>
+              <ul className="mt-12 grid grid-cols-2 border-t border-line lg:grid-cols-4">
+                {stats.map((st, i) => (
+                  <li key={st.label} className={`py-6 pr-4 ${i % 2 === 1 ? 'border-l border-line pl-6' : ''} ${i >= 2 ? 'border-t border-line lg:border-t-0' : ''} ${i === 2 ? 'lg:border-l lg:pl-6' : ''}`}>
+                    <p className="num font-heading text-[40px] font-bold leading-none tracking-[-0.03em] text-ink">{st.value}</p>
+                    <p className="mt-2 text-sm text-muted">{st.label}</p>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
         </section>
 
@@ -267,7 +241,6 @@ export default function Landing() {
             <Brand size={22} />
             <p className="mt-3 max-w-xs text-sm text-muted">{t('landing.tagline')}</p>
             <DemoChip className="mt-5" />
-            <ThemeToggle className="mt-5" />
           </div>
           {FOOTER.map(({ group, links }) => (
             <nav key={group} aria-label={t(`landing.footer.${group}`)}>

@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { Avatar } from '../components/Avatar';
 import { CoverBars } from '../components/CoverBars';
 import { DemoChip } from '../components/DemoChip';
-import { ThemeToggle } from '../components/ThemeToggle';
+import { ThemeButton } from '../components/ThemeToggle';
 import { Badge } from '../components/ui';
 import { Icon } from '../components/Icon';
 import { LanguageSelector } from '../components/LanguageSelector';
@@ -49,7 +49,7 @@ export default function Picker() {
             <Brand size={22} />
           </Link>
           <div className="flex items-center gap-2">
-            <ThemeToggle className="hidden sm:block" />
+            <ThemeButton />
             <DemoChip />
           </div>
         </div>

@@ -54,7 +54,7 @@
     "previewLabel": "Live preview of Tengo",
     "previewWho": "Thabo, e-hailing driver. Fictional.",
     "previewCaption": "Preview of Tengo for a fictional driver: enough until {{date}}, cover {{state}}, safe to spend {{amount}} today.",
-    "howTitle": "How it works",
+    "howTitle": "Three steps to a date you can plan around.",
     "steps": {
       "history": {
         "title": "Add your money history",
@@ -74,7 +74,6 @@
     "navLabel": "Tengo",
     "home": "home",
     "nav": {
-      "features": "Features",
       "how": "How it works",
       "privacy": "Privacy"
     },
@@ -82,21 +81,6 @@
     "headlineLead": "Money you can",
     "headlineDim": "plan around.",
     "ctaSecondary": "See how it works",
-    "featuresTitle": "One answer you can plan around: how long your money lasts.",
-    "features": {
-      "date": {
-        "title": "Date first",
-        "body": "Not a balance. The day your money runs out, next to the day your next money usually lands."
-      },
-      "range": {
-        "title": "A range, not a guess",
-        "body": "A normal, light and heavy week give a likely range. Thin history widens it and says so."
-      },
-      "private": {
-        "title": "Private by design",
-        "body": "Everything runs on your device. Consent, export and delete all work. Simulated for this demo."
-      }
-    },
     "stats": {
       "history": "Days of history per person",
       "states": "Cover states: Enough, Tight, Short",
@@ -110,7 +94,6 @@
       "privacy": "Privacy",
       "about": "About",
       "links": {
-        "features": "Features",
         "how": "How it works",
         "explore": "Explore Tengo",
         "privacyCentre": "Privacy centre",

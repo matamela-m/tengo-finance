@@ -7,6 +7,7 @@ import { formatZAR } from '../../lib/format';
 import { useDates } from '../../lib/useLang';
 import { Icon, type IconName } from '../Icon';
 import { StateChip } from '../StateChip';
+import { IconTile } from '../ui';
 
 /** Concrete ways to move up one cover state, or how much is free to set aside when covered. */
 export function HelpCard() {
@@ -17,12 +18,10 @@ export function HelpCard() {
 
   if (!plan.target) {
     return (
-      <section className="card p-6" aria-labelledby="help-title">
-        <div className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-enough-soft text-enough">
-            <Icon name="sparkle" size={18} />
-          </span>
-          <h2 id="help-title" className="text-lg font-semibold">
+      <section className="card p-5 sm:p-6" aria-labelledby="help-title">
+        <div className="flex items-center gap-3">
+          <IconTile name="sparkle" tone="enough" />
+          <h2 id="help-title" className="font-heading text-h3 text-ink">
             {t('help.coveredTitle')}
           </h2>
         </div>
@@ -46,9 +45,9 @@ export function HelpCard() {
   if (plan.extraNeeded > 0) ideas.push({ icon: 'plus', text: t('help.extra', { amount: formatZAR(plan.extraNeeded), date: until }) });
 
   return (
-    <section className="card p-6" aria-labelledby="help-title">
+    <section className="card p-5 sm:p-6" aria-labelledby="help-title">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h2 id="help-title" className="text-lg font-semibold">
+        <h2 id="help-title" className="font-heading text-h3 text-ink">
           {t('help.title')}
         </h2>
         <span className="flex items-center gap-1.5 text-sm text-muted">
@@ -59,10 +58,8 @@ export function HelpCard() {
       <p className="mt-1 text-sm text-muted">{t('help.lead')}</p>
       <ul className="mt-4 space-y-2.5">
         {ideas.map((idea) => (
-          <li key={idea.text} className="flex items-start gap-3 rounded-2xl bg-surface-2 px-4 py-3 text-[15px]">
-            <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-surface text-accent">
-              <Icon name={idea.icon} size={16} />
-            </span>
+          <li key={idea.text} className="flex items-start gap-3 rounded-xl border border-line bg-surface-2 px-3.5 py-3 text-[15px]">
+            <IconTile name={idea.icon} tone="accent" size={30} />
             <span className="num">{idea.text}</span>
           </li>
         ))}

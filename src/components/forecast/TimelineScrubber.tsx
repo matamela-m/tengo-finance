@@ -71,7 +71,9 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
       .reverse()
       .map(([px, py]) => `L${px.toFixed(1)},${py.toFixed(1)}`)
       .join(' ');
-    return { x, y, ticks, band: `${line((p) => p.optimistic)} ${lower} Z`, central: line((p) => p.central), zeroY: y(0), bottom: PAD.top + h, lo };
+    const central = line((p) => p.central);
+    const area = `${central} L${x(days.length - 1).toFixed(1)},${(PAD.top + h).toFixed(1)} L${x(0).toFixed(1)},${(PAD.top + h).toFixed(1)} Z`;
+    return { x, y, ticks, band: `${line((p) => p.optimistic)} ${lower} Z`, central, area, zeroY: y(0), bottom: PAD.top + h, lo };
   }, [days, forecast.balance, width, height]);
 
   const xLabels = useMemo(() => (width < 400 ? [0, 14, days.length - 1] : [0, 7, 14, 21, days.length - 1]), [days.length, width]);
@@ -87,10 +89,10 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
   return (
     <section aria-labelledby={`${id}-title`} aria-describedby={`${id}-summary`}>
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <h2 id={`${id}-title`} className="text-lg font-semibold">
+        <h2 id={`${id}-title`} className="eyebrow">
           {t('scrubber.title')}
         </h2>
-        <p className="text-sm text-muted">{t('scrubber.subtitle')}</p>
+        <p className="text-xs text-subtle">{t('scrubber.subtitle')}</p>
       </div>
       <p id={`${id}-summary`} className="sr-only">
         {summary}
@@ -100,7 +102,7 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
       <div className="mt-5 flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="text-sm font-medium text-muted">{index === 0 ? t('common.today') : d.dayShort(day.date)}</p>
-          <p className="num mt-0.5 font-heading text-[34px] font-extrabold leading-none tracking-tight">{formatZAR(Math.round(day.central))}</p>
+          <p className="num mt-1 font-heading text-[36px] font-bold leading-none tracking-[-0.03em] text-ink">{formatZAR(Math.round(day.central))}</p>
           <p className="num mt-1.5 text-sm text-muted">
             {t('scrubber.range', { low: formatZAR(Math.round(day.pessimistic)), high: formatZAR(Math.round(day.optimistic)) })}
           </p>
@@ -109,13 +111,13 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
       </div>
       <div className="mt-3 flex min-h-[28px] flex-wrap gap-2" aria-hidden>
         {day.incomeToday > 0 && (
-          <span className="num inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-3 py-1 text-xs font-semibold text-ink">
+          <span className="num inline-flex items-center gap-1.5 rounded-full border border-accent/25 bg-accent-soft px-3 py-1 text-xs font-medium text-ink">
             <span className="h-2 w-2 rounded-full bg-accent" />
             {t('scrubber.expectedIncome')} {formatZAR(day.incomeToday, { sign: true })}
           </span>
         )}
         {day.billsToday.map((b) => (
-          <span key={b.description} className="num inline-flex items-center gap-1.5 rounded-full bg-surface-2 px-3 py-1 text-xs font-semibold">
+          <span key={b.description} className="num inline-flex items-center gap-1.5 rounded-full border border-line bg-surface-2 px-3 py-1 text-xs font-medium">
             <span className="h-2 w-2 rounded-full border-2 border-short" />
             {t('scrubber.billDue', { name: b.description })} {formatZAR(-b.amount)}
           </span>
@@ -126,7 +128,13 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
       <div ref={plotRef} className="scrub-plot relative mt-2 rounded-2xl" style={{ height }}>
         {width > 0 && (
           <svg width={width} height={height} className="block" aria-hidden>
-            {geo.lo < 0 && <rect x={PAD.left} y={geo.zeroY} width={width - PAD.left - PAD.right} height={geo.bottom - geo.zeroY} fill="var(--color-short-soft)" opacity="0.55" />}
+            <defs>
+              <linearGradient id={`${id}-area`} x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stopColor="var(--color-accent)" stopOpacity="0.22" />
+                <stop offset="100%" stopColor="var(--color-accent)" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+            {geo.lo < 0 && <rect x={PAD.left} y={geo.zeroY} width={width - PAD.left - PAD.right} height={geo.bottom - geo.zeroY} fill="var(--color-short-soft)" opacity="0.6" />}
             {geo.ticks.map((v) => (
               <g key={v}>
                 <line
@@ -135,31 +143,33 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
                   y1={geo.y(v)}
                   y2={geo.y(v)}
                   stroke={v === 0 ? 'var(--color-short)' : 'var(--color-border)'}
-                  strokeDasharray={v === 0 ? '5 5' : undefined}
-                  strokeWidth={v === 0 ? 1.5 : 1}
+                  strokeDasharray={v === 0 ? '4 4' : undefined}
+                  strokeWidth={1}
                 />
-                <text x={PAD.left - 10} y={geo.y(v) + 4} textAnchor="end" className="num" fontSize="11" fontWeight={v === 0 ? 700 : 500} fill={v === 0 ? 'var(--color-short)' : 'var(--color-text-muted)'}>
+                <text x={PAD.left - 10} y={geo.y(v) + 4} textAnchor="end" className="num" fontSize="12" fontWeight={v === 0 ? 600 : 500} fill={v === 0 ? 'var(--color-short)' : 'var(--color-text-subtle)'}>
                   {compactZAR(v)}
                 </text>
               </g>
             ))}
             <path d={geo.band} fill="var(--color-band)" />
-            <path d={geo.central} fill="none" stroke="var(--color-accent)" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
-            <line x1={geo.x(index)} x2={geo.x(index)} y1={PAD.top} y2={geo.bottom} stroke="var(--color-text)" strokeOpacity="0.25" strokeWidth="1.5" />
+            <path d={geo.area} fill={`url(#${id}-area)`} />
+            <path d={geo.central} fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
+            <line x1={geo.x(index)} x2={geo.x(index)} y1={PAD.top} y2={geo.bottom} stroke="var(--color-text)" strokeOpacity="0.2" strokeWidth="1" />
             {days.map((p, i) =>
               p.incomeToday > 0 || p.billsToday.length > 0 ? (
                 <circle
                   key={p.date}
                   cx={geo.x(i)}
                   cy={geo.y(p.central)}
-                  r={4.5}
+                  r={3.5}
                   fill={p.incomeToday > 0 ? 'var(--color-accent)' : 'var(--color-surface-1)'}
                   stroke={p.billsToday.length > 0 ? 'var(--color-short)' : 'var(--color-surface-1)'}
-                  strokeWidth={2}
+                  strokeWidth={1.5}
                 />
               ) : null,
             )}
-            <circle cx={geo.x(index)} cy={geo.y(day.central)} r={8} fill="var(--color-accent)" stroke="var(--color-surface-1)" strokeWidth={3} />
+            <circle cx={geo.x(index)} cy={geo.y(day.central)} r={10} fill="var(--color-accent)" opacity="0.18" />
+            <circle cx={geo.x(index)} cy={geo.y(day.central)} r={5.5} fill="var(--color-accent)" stroke="var(--color-surface-1)" strokeWidth={2} />
           </svg>
         )}
         <label htmlFor={`${id}-range`} className="sr-only">
@@ -223,9 +233,9 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
 
       {showTable && (
         <div id={`${id}-table`} className="mt-3 max-h-[360px] overflow-auto rounded-2xl border border-line">
-          <table className="w-full min-w-[460px] text-left text-sm">
+          <table className="data-table min-w-[460px]">
             <caption className="sr-only">{t('scrubber.tableCaption')}</caption>
-            <thead className="sticky top-0 bg-surface-2 text-xs uppercase tracking-wide text-muted">
+            <thead className="sticky top-0">
               <tr>
                 <th scope="col" className="px-4 py-2 font-semibold">
                   {t('scrubber.colDay')}
@@ -241,7 +251,7 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-line">
+            <tbody>
               {days.map((p) => (
                 <tr key={p.date}>
                   <th scope="row" className="num whitespace-nowrap px-4 py-2 font-medium">

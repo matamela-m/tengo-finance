@@ -11,15 +11,15 @@ export function DateHero({ forecast, as: Tag = 'h1', size = 'xl' }: { forecast: 
   const spoken = d.weekdayLong(forecast.headlineDate);
   return (
     <Tag className="flex flex-col">
-      <span className="text-base font-semibold text-muted sm:text-lg">
+      <span className="text-[15px] font-medium text-muted sm:text-base">
         {label}
         <span className="sr-only"> {spoken}</span>
       </span>
       <span
         key={`${forecast.headlineDate}-${forecast.state}`}
         aria-hidden
-        className={`num animate-rise font-heading font-extrabold leading-[0.95] tracking-tight text-ink ${
-          size === 'xl' ? 'mt-1 text-[52px] sm:text-[68px] xl:text-[80px]' : 'mt-0.5 text-[40px] sm:text-[44px]'
+        className={`num animate-rise font-heading font-bold leading-[0.95] tracking-[-0.04em] text-ink ${
+          size === 'xl' ? 'mt-2 text-[56px] sm:text-[72px] xl:text-[88px]' : 'mt-1 text-[38px] sm:text-[44px]'
         }`}
       >
         {date}

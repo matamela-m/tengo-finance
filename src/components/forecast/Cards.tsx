@@ -98,15 +98,15 @@ export function TransactionRow({ tx, compact = false }: { tx: Transaction; compa
   const { t } = useTranslation();
   const d = useDates();
   const icon = tx.category === 'income' ? 'arrowDown' : tx.category === 'bill' ? 'receipt' : 'arrowUp';
-  const tone = tx.category === 'income' ? 'bg-accent-soft text-ink' : tx.category === 'bill' ? 'bg-tight-soft text-tight' : 'bg-surface-2 text-ink';
+  const tone = tx.category === 'income' ? 'border-enough/25 bg-enough-soft text-enough' : tx.category === 'bill' ? 'border-tight/25 bg-tight-soft text-tight' : 'border-line bg-surface-2 text-muted';
   return (
     <div className={`flex items-center gap-3 ${compact ? 'py-2.5' : 'py-3'}`}>
-      <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${tone}`}>
+      <span aria-hidden className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] border ${tone}`}>
         <Icon name={icon} size={18} />
       </span>
       <div className="min-w-0 flex-1">
         <p className="truncate text-[15px] font-medium">{tx.description}</p>
-        <p className="num text-xs text-muted">
+        <p className="num text-xs text-subtle">
           {d.dayShort(tx.date)} · {t(`category.${tx.category}`)}
         </p>
       </div>
@@ -122,12 +122,12 @@ export function RecentActivity({ transactions }: { transactions: Transaction[] }
   const { t } = useTranslation();
   const recent = [...transactions].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0)).slice(0, 6);
   return (
-    <section className="card p-6" aria-labelledby="recent-title">
+    <section className="card p-5 sm:p-6" aria-labelledby="recent-title">
       <div className="flex items-center justify-between gap-3">
-        <h2 id="recent-title" className="text-lg font-semibold">
+        <h2 id="recent-title" className="eyebrow">
           {t('recent.title')}
         </h2>
-        <Link to="/app/money" className="btn-ghost -mr-3 min-h-[44px] px-3 text-sm">
+        <Link to="/app/money" className="btn-ghost -mr-3 min-h-[44px] px-3 text-sm text-muted">
           {t('recent.all')}
           <Icon name="chevronRight" size={16} />
         </Link>

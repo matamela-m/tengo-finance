@@ -8,9 +8,11 @@ interface SessionState {
   language: LanguageCode;
   theme: ThemePref;
   activePersonaId: string | null;
+  sidebarCollapsed: boolean;
   setLanguage: (language: LanguageCode) => void;
   setTheme: (theme: ThemePref) => void;
   setActivePersona: (id: string | null) => void;
+  setSidebarCollapsed: (collapsed: boolean) => void;
 }
 
 /** UI preferences only. Persona records go through the repository in src/data. */
@@ -20,9 +22,11 @@ export const useSession = create<SessionState>()(
       language: 'en',
       theme: 'dark',
       activePersonaId: null,
+      sidebarCollapsed: false,
       setLanguage: (language) => set({ language }),
       setTheme: (theme) => set({ theme }),
       setActivePersona: (activePersonaId) => set({ activePersonaId }),
+      setSidebarCollapsed: (sidebarCollapsed) => set({ sidebarCollapsed }),
     }),
     { name: 'tengo.session.v1', storage: createJSONStorage(() => localStorage) },
   ),

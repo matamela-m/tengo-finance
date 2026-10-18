@@ -26,10 +26,10 @@ export function RangeBand({ forecast }: { forecast: Forecast }) {
           </span>
         )}
       </div>
-      <div className="relative mt-5 h-14" aria-hidden>
-        <div className="absolute inset-x-0 top-5 h-2 rounded-full bg-surface-2" />
+      <div className="relative mt-5 h-12" aria-hidden>
+        <div className="absolute inset-x-0 top-[22px] h-1 rounded-full bg-surface-3" />
         <div
-          className="absolute top-3.5 h-5 rounded-full border-2"
+          className="absolute top-[17px] h-3.5 rounded-full border"
           style={{
             left: pct(band.from),
             width: `max(14px, calc(${pct(band.to)} - ${pct(band.from)}))`,
@@ -37,29 +37,29 @@ export function RangeBand({ forecast }: { forecast: Forecast }) {
             borderColor: `var(--color-${state})`,
           }}
         />
-        <div className="absolute top-2.5 h-7 w-7 -translate-x-1/2 rounded-full border-[3px] border-surface shadow-card" style={{ left: pct(headlineDate), background: `var(--color-${state})` }} />
         {nextMoney && nextMoney.pattern !== 'unknown' && (
-          <div className="absolute top-0 flex -translate-x-1/2 flex-col items-center" style={{ left: pct(nextMoney.typical) }}>
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent text-on-accent">
-              <Icon name="arrowDown" size={14} strokeWidth={2.5} />
-            </span>
+          <div className="absolute top-1 flex -translate-x-1/2 flex-col items-center" style={{ left: pct(nextMoney.typical) }}>
+            <span className="h-2.5 w-2.5 rounded-full bg-accent" />
+            <span className="h-5 w-px bg-accent" />
           </div>
         )}
-        <span className="absolute left-0 top-9 text-xs font-medium text-muted">{t('common.today')}</span>
+        <div className="absolute top-[16px] h-4 w-4 -translate-x-1/2 rounded-full ring-[3px] ring-surface" style={{ left: pct(headlineDate), background: `var(--color-${state})` }} />
+        <span className="absolute left-0 top-8 text-xs font-medium text-subtle">{t('common.today')}</span>
       </div>
       <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-xs text-muted">
         <li className="flex items-center gap-1.5">
-          <span className="h-3 w-3 rounded-full" style={{ background: `var(--color-${state})` }} />
+          <span className="h-2.5 w-2.5 rounded-full" style={{ background: `var(--color-${state})` }} />
           {t('band.legendDate')}
         </li>
         <li className="flex items-center gap-1.5">
-          <span className="h-3 w-5 rounded-full border-2" style={{ background: `var(--color-${state}-soft)`, borderColor: `var(--color-${state})` }} />
+          <span className="h-2.5 w-5 rounded-full border" style={{ background: `var(--color-${state}-soft)`, borderColor: `var(--color-${state})` }} />
           {t('band.legendRange')}
         </li>
         {nextMoney && nextMoney.pattern !== 'unknown' && (
           <li className="flex items-center gap-1.5">
-            <span className="flex h-4 w-4 items-center justify-center rounded-full bg-accent text-on-accent">
-              <Icon name="arrowDown" size={10} strokeWidth={3} />
+            <span className="flex h-3 w-2.5 flex-col items-center">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              <span className="h-1.5 w-px bg-accent" />
             </span>
             {t('band.legendNext', { date: d.dayShort(nextMoney.typical) })}
           </li>

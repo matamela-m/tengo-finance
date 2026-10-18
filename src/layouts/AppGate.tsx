@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { EmptyState, PageLoading } from '../components/Feedback';
 import { usePersona } from '../data/PersonaProvider';
 import { AppLayout } from './AppLayout';
-import { PersonaSwitch } from './PersonaSwitch';
 import { ForecastPaused } from '../pages/ForecastPaused';
 
 /** Pages that still work while the forecast is paused, so people can see or delete their data. */
@@ -39,5 +38,5 @@ export function AppGate() {
     content = <Outlet />;
   }
 
-  return <AppLayout personaSlot={<PersonaSwitch />}>{content}</AppLayout>;
+  return <AppLayout>{content}</AppLayout>;
 }

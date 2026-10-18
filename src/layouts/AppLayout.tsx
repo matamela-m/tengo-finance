@@ -1,53 +1,149 @@
-import { NavLink, Outlet, Link } from 'react-router-dom';
+import type { ReactNode } from 'react';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Avatar } from '../components/Avatar';
+import { Brand } from '../components/Brand';
 import { DemoChip } from '../components/DemoChip';
 import { Icon } from '../components/Icon';
-import { Brand } from '../components/Brand';
-import { NAV } from './nav';
-import type { ReactNode } from 'react';
+import { ThemeToggle } from '../components/ThemeToggle';
+import { usePersona } from '../data/PersonaProvider';
+import { useSession } from '../store/session';
+import { NAV, type NavItem } from './nav';
 
-export function AppLayout({ personaSlot, children }: { personaSlot?: ReactNode; children?: ReactNode }) {
+function SideLink({ item, collapsed }: { item: NavItem; collapsed: boolean }) {
   const { t } = useTranslation();
+  const label = t(`nav.${item.key}`);
+  return (
+    <NavLink
+      to={item.to}
+      end={item.end}
+      title={collapsed ? label : undefined}
+      className={({ isActive }) =>
+        `group flex min-h-[44px] items-center gap-3 rounded-xl px-2 text-[15px] font-medium transition-colors duration-150 ${
+          isActive ? 'bg-surface-2 text-ink' : 'text-muted hover:bg-surface-2 hover:text-ink'
+        } ${collapsed ? 'justify-center' : ''}`
+      }
+    >
+      {({ isActive }) => (
+        <>
+          <span
+            aria-hidden
+            className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-[9px] border transition-colors ${
+              isActive ? 'border-accent/30 bg-accent-soft text-accent' : 'border-line bg-surface text-muted group-hover:text-ink'
+            }`}
+          >
+            <Icon name={item.icon} size={17} />
+          </span>
+          <span className={collapsed ? 'sr-only' : 'truncate'}>{label}</span>
+        </>
+      )}
+    </NavLink>
+  );
+}
+
+function PersonaRow({ collapsed }: { collapsed: boolean }) {
+  const { t } = useTranslation();
+  const { profile } = usePersona();
+  if (!profile) return null;
+  return (
+    <Link
+      to="/start"
+      title={collapsed ? t('me.switchPersona') : undefined}
+      className={`flex min-h-[48px] items-center gap-2.5 rounded-xl border border-line px-2 py-1.5 transition-colors hover:border-line-strong hover:bg-surface-2 ${collapsed ? 'justify-center' : ''}`}
+    >
+      <Avatar persona={profile} size={30} />
+      <span className={collapsed ? 'sr-only' : 'min-w-0 flex-1'}>
+        <span className="block truncate text-sm font-semibold text-ink">{profile.name}</span>
+        <span className="block truncate text-xs text-subtle">{t('me.switchPersona')}</span>
+      </span>
+      {!collapsed && <Icon name="refresh" size={15} className="shrink-0 text-subtle" />}
+    </Link>
+  );
+}
+
+export function AppLayout({ children }: { children?: ReactNode }) {
+  const { t } = useTranslation();
+  const collapsed = useSession((s) => s.sidebarCollapsed);
+  const setCollapsed = useSession((s) => s.setSidebarCollapsed);
+  const main = NAV.filter((n) => !n.secondary);
+  const secondary = NAV.filter((n) => n.secondary);
 
   return (
     <div className="min-h-dvh lg:flex">
-
       {/* Desktop sidebar */}
-      <aside className="sticky top-0 hidden h-dvh w-[264px] shrink-0 flex-col border-r border-line bg-surface/70 px-5 py-6 backdrop-blur lg:flex">
-        <Link to="/app" className="mb-8 inline-flex w-fit rounded-lg px-1" aria-label={`Tengo, ${t('nav.home')}`}>
-          <Brand size={26} />
-        </Link>
-        <nav aria-label={t('nav.label')} className="flex flex-col gap-1">
-          {NAV.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              end={item.end}
-              className={({ isActive }) =>
-                `flex min-h-[44px] items-center gap-3 rounded-2xl px-3.5 text-[15px] font-medium transition-colors ${
-                  isActive ? 'bg-accent text-on-accent shadow-card' : 'text-ink hover:bg-surface-2'
-                }`
-              }
+      <aside
+        className={`sticky top-0 hidden h-dvh shrink-0 flex-col border-r border-line bg-surface/60 px-3 py-4 backdrop-blur-xl transition-[width] duration-200 lg:flex ${
+          collapsed ? 'w-[76px]' : 'w-[260px]'
+        }`}
+      >
+        <div className={`flex items-center px-1.5 ${collapsed ? 'justify-center' : 'justify-between'}`}>
+          <Link to="/app" className="inline-flex min-h-[44px] items-center rounded-md" aria-label={`Tengo, ${t('nav.home')}`}>
+            {collapsed ? <Brand variant="mark" size={30} decorative /> : <Brand size={22} decorative />}
+          </Link>
+          {!collapsed && (
+            <button
+              type="button"
+              onClick={() => setCollapsed(true)}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-subtle transition-colors hover:bg-surface-2 hover:text-ink"
+              aria-label={t('nav.collapse')}
+              aria-expanded
             >
-              <Icon name={item.icon} />
-              {t(`nav.${item.key}`)}
-            </NavLink>
-          ))}
+              <Icon name="sidebar" size={18} />
+            </button>
+          )}
+        </div>
+        <div className="mt-4">
+          <PersonaRow collapsed={collapsed} />
+        </div>
+        <nav aria-label={t('nav.label')} className="mt-5 flex flex-1 flex-col">
+          <ul className="flex flex-col gap-0.5">
+            {main.map((item) => (
+              <li key={item.to}>
+                <SideLink item={item} collapsed={collapsed} />
+              </li>
+            ))}
+          </ul>
+          <ul className="mt-auto flex flex-col gap-0.5 border-t border-line pt-3">
+            {secondary.map((item) => (
+              <li key={item.to}>
+                <SideLink item={item} collapsed={collapsed} />
+              </li>
+            ))}
+          </ul>
         </nav>
-        <div className="mt-auto">{personaSlot}</div>
+        <div className={`mt-3 flex flex-col gap-3 border-t border-line pt-3 ${collapsed ? 'items-center' : ''}`}>
+          {collapsed ? (
+            <button
+              type="button"
+              onClick={() => setCollapsed(false)}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-subtle transition-colors hover:bg-surface-2 hover:text-ink"
+              aria-label={t('nav.expand')}
+              aria-expanded={false}
+            >
+              <Icon name="sidebar" size={18} />
+            </button>
+          ) : (
+            <>
+              <ThemeToggle />
+              <DemoChip className="self-start" />
+            </>
+          )}
+        </div>
       </aside>
 
       <div className="flex min-w-0 flex-1 flex-col">
         {/* Mobile and tablet top bar */}
-        <header className="sticky top-0 z-30 flex items-center justify-between gap-3 border-b border-line/70 bg-bg/85 px-4 py-2.5 backdrop-blur-md sm:px-6 lg:hidden">
-          <Link to="/app" className="rounded-lg" aria-label={`Tengo, ${t('nav.home')}`}>
-            <Brand size={20} />
+        <header className="sticky top-0 z-30 flex h-14 items-center justify-between gap-3 border-b border-line bg-bg/80 px-4 backdrop-blur-xl sm:px-6 lg:hidden">
+          <Link to="/app" className="inline-flex min-h-[44px] items-center rounded-md" aria-label={`Tengo, ${t('nav.home')}`}>
+            <Brand size={20} decorative />
           </Link>
           <div className="flex items-center gap-1">
             <DemoChip />
             <NavLink
               to="/app/privacy"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink hover:bg-surface"
+              className={({ isActive }) =>
+                `inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors hover:bg-surface-2 ${isActive ? 'text-accent' : 'text-muted'}`
+              }
               aria-label={t('nav.privacy')}
             >
               <Icon name="shield" />
@@ -55,20 +151,13 @@ export function AppLayout({ personaSlot, children }: { personaSlot?: ReactNode; 
           </div>
         </header>
 
-        {/* Desktop header */}
-        <header className="hidden items-center justify-end gap-3 px-10 pt-6 lg:flex">
-          <DemoChip />
-        </header>
-
-        <main id="main" className="mx-auto w-full max-w-app flex-1 px-4 pb-28 pt-5 sm:px-6 md:px-8 lg:px-10 lg:pb-16 lg:pt-4">
+        {/* Desktop: the demo chip sits in the sidebar, so the page starts straight away. */}
+        <main id="main" className="mx-auto w-full max-w-app flex-1 px-4 pb-28 pt-5 sm:px-6 md:px-8 lg:px-10 lg:pb-16 lg:pt-8">
           {children ?? <Outlet />}
         </main>
 
         {/* Mobile and tablet bottom tab bar */}
-        <nav
-          aria-label={t('nav.label')}
-          className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-surface/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md lg:hidden"
-        >
+        <nav aria-label={t('nav.label')} className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-bg/85 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl lg:hidden">
           <ul className="mx-auto grid max-w-2xl grid-cols-5">
             {NAV.filter((n) => n.mobile).map((item) => (
               <li key={item.to}>
@@ -76,16 +165,13 @@ export function AppLayout({ personaSlot, children }: { personaSlot?: ReactNode; 
                   to={item.to}
                   end={item.end}
                   className={({ isActive }) =>
-                    `flex min-h-[60px] flex-col items-center justify-center gap-1 px-1 text-[11px] font-semibold ${
-                      isActive ? 'text-accent' : 'text-muted'
-                    }`
+                    `relative flex min-h-[60px] flex-col items-center justify-center gap-1 px-1 text-[12px] font-medium transition-colors ${isActive ? 'text-ink' : 'text-subtle hover:text-ink'}`
                   }
                 >
                   {({ isActive }) => (
                     <>
-                      <span className={`flex h-7 w-12 items-center justify-center rounded-full transition-colors ${isActive ? 'bg-accent-soft text-ink' : ''}`}>
-                        <Icon name={item.icon} size={20} />
-                      </span>
+                      <span aria-hidden className={`absolute top-0 h-0.5 w-8 rounded-full transition-colors ${isActive ? 'bg-accent' : 'bg-transparent'}`} />
+                      <Icon name={item.icon} size={20} className={isActive ? 'text-accent' : ''} />
                       <span className="max-w-full truncate">{t(`nav.${item.key}`)}</span>
                     </>
                   )}

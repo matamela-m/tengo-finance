@@ -21,7 +21,9 @@
     "money": "Money",
     "inbox": "Inbox",
     "privacy": "Privacy",
-    "me": "Me"
+    "me": "Me",
+    "collapse": "Collapse sidebar",
+    "expand": "Expand sidebar"
   },
   "state": {
     "enough": "Enough",
@@ -345,10 +347,16 @@
     "deleteConfirm": "Yes, delete everything"
   },
   "home": {
-    "greeting": "Hi {{name}}",
+    "greeting": {
+      "morning": "Good morning, {{name}}.",
+      "afternoon": "Good afternoon, {{name}}.",
+      "evening": "Good evening, {{name}}."
+    },
     "heroLabel": "Your date",
     "emptyTitle": "No money history yet",
-    "emptyBody": "Import a statement with at least 14 days of transactions to see your date."
+    "emptyBody": "Import a statement with at least 14 days of transactions to see your date.",
+    "greetingLabel": "Greeting",
+    "unknownShort": "Not found yet"
   },
   "hero": {
     "enoughUntil": "Enough until",

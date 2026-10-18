@@ -11,6 +11,7 @@ interface SegmentedProps<T extends string> {
   options: Option<T>[];
   onChange: (value: T) => void;
   variant?: 'pills' | 'track';
+  size?: 'sm' | 'md';
   className?: string;
 }
 
@@ -18,7 +19,7 @@ interface SegmentedProps<T extends string> {
  * A row of choices built on native radio buttons, so screen readers announce "1 of 3"
  * and arrow keys move between options, exactly like a standard radio group.
  */
-export function Segmented<T extends string>({ label, value, options, onChange, variant = 'track', className = '' }: SegmentedProps<T>) {
+export function Segmented<T extends string>({ label, value, options, onChange, variant = 'track', size = 'md', className = '' }: SegmentedProps<T>) {
   const name = useId();
   return (
     <fieldset className={className}>
@@ -37,7 +38,7 @@ export function Segmented<T extends string>({ label, value, options, onChange, v
           return (
             <label
               key={o.value}
-              className={`relative flex min-h-[40px] cursor-pointer items-center gap-1.5 rounded-full px-4 text-sm font-semibold transition-colors focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[var(--color-focus)] ${look}`}
+              className={`relative flex cursor-pointer items-center justify-center gap-1.5 rounded-full text-sm ${size === 'sm' ? 'min-h-[44px] min-w-[44px] px-2.5' : 'min-h-[40px] px-4'} font-semibold transition-colors focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[var(--color-focus)] ${look}`}
             >
               <input type="radio" name={name} value={o.value} checked={active} onChange={() => onChange(o.value)} className="sr-only" />
               {o.label}

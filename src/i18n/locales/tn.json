@@ -46,14 +46,12 @@
   },
   "landing": {
     "title": "Money you can plan around",
-    "eyebrow": "For people with irregular income",
-    "headline": "Money you can plan around.",
     "pitch": "A balance tells you what you have. Tengo tells you until when.",
     "cta": "Explore Tengo",
     "ctaNote": "No sign up. Fictional data only.",
     "previewLabel": "Live preview of Tengo",
-    "previewWho": "Thabo, e-hailing driver",
-    "previewCaption": "Built live from a fictional persona's 90 day history.",
+    "previewWho": "Thabo, e-hailing driver. Fictional.",
+    "previewCaption": "Preview of Tengo for a fictional driver: enough until {{date}}, cover {{state}}, safe to spend {{amount}} today.",
     "howTitle": "How it works",
     "steps": {
       "history": {
@@ -70,7 +68,56 @@
       }
     },
     "tagline": "Money you can plan around.",
-    "fictional": "All people, places and amounts in this demo are fictional. No bank connection."
+    "fictional": "All people, places and amounts in this demo are fictional. No bank connection.",
+    "navLabel": "Tengo",
+    "home": "home",
+    "nav": {
+      "features": "Features",
+      "how": "How it works",
+      "privacy": "Privacy"
+    },
+    "badge": "Built for the FNB App of the Year hackathon",
+    "headlineLead": "Money you can",
+    "headlineDim": "plan around.",
+    "ctaSecondary": "See how it works",
+    "featuresTitle": "One answer you can plan around: how long your money lasts.",
+    "features": {
+      "date": {
+        "title": "Date first",
+        "body": "Not a balance. The day your money runs out, next to the day your next money usually lands."
+      },
+      "range": {
+        "title": "A range, not a guess",
+        "body": "A normal, light and heavy week give a likely range. Thin history widens it and says so."
+      },
+      "private": {
+        "title": "Private by design",
+        "body": "Everything runs on your device. Consent, export and delete all work. Simulated for this demo."
+      }
+    },
+    "stats": {
+      "history": "Days of history per person",
+      "states": "Cover states: Enough, Tight, Short",
+      "languages": "Official languages",
+      "logins": "Bank logins needed"
+    },
+    "closingTitle": "See how long your money lasts.",
+    "closingBody": "Pick a fictional person and explore. No sign up, nothing leaves your browser.",
+    "footer": {
+      "product": "Product",
+      "privacy": "Privacy",
+      "about": "About",
+      "links": {
+        "features": "Features",
+        "how": "How it works",
+        "explore": "Explore Tengo",
+        "privacyCentre": "Privacy centre",
+        "fictional": "Fictional data only",
+        "name": "The name Tengo",
+        "hackathon": "Hackathon entry"
+      }
+    },
+    "status": "Demo environment. Fictional data."
   },
   "picker": {
     "title": "Choose a person",
@@ -78,9 +125,10 @@
     "personas": "People",
     "enterAs": "Enter as {{name}}",
     "continueAs": "Continue as {{name}}",
-    "backHome": "Tengo home",
+    "backHome": "home",
     "deletedTitle": "{{name}}'s data was deleted",
-    "deletedBody": "Receipt {{ref}}, {{date}}. Removed {{count}} transactions and {{audit}} audit entries. Choose a person to start again."
+    "deletedBody": "Receipt {{ref}}, {{date}}. Removed {{count}} transactions and {{audit}} audit entries. Choose a person to start again.",
+    "step": "Step 1 of 2"
   },
   "personas": {
     "fictional": "Fictional composite",

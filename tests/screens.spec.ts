@@ -6,6 +6,7 @@ import { test, expect, type Page } from '@playwright/test';
 const WIDTHS = [390, 768, 1280, 1600];
 const ONLY = process.env.SCREENS?.split(',');
 const ONLY_WIDTHS = process.env.WIDTHS?.split(',').map(Number);
+const THEMES = (process.env.THEMES?.split(',') ?? ['dark', 'light']) as ('dark' | 'light')[];
 
 interface Shot {
   name: string;
@@ -43,8 +44,6 @@ const SHOTS: Shot[] = [
   { name: 'inbox', path: '/app/inbox', persona: 'lerato' },
   { name: 'inbox-off', path: '/app/inbox', persona: 'ayanda', messages: false },
   { name: 'me', path: '/app/me', persona: 'ayanda' },
-  { name: 'dark-home', path: '/app', persona: 'ayanda', theme: 'dark' },
-  { name: 'dark-plan', path: '/app/plan', persona: 'thabo', theme: 'dark' },
   {
     name: 'why-drawer',
     path: '/app',
@@ -62,12 +61,11 @@ async function prime(page: Page, shot: Shot) {
   await page.evaluate(
     ({ persona, consent, messages, theme }) => {
       localStorage.clear();
-      if (!persona) return;
       localStorage.setItem(
         'tengo.session.v1',
-        JSON.stringify({ state: { language: 'en', theme, activePersonaId: persona }, version: 0 }),
+        JSON.stringify({ state: { language: 'en', theme, activePersonaId: persona ?? null }, version: 0 }),
       );
-      if (consent) {
+      if (persona && consent) {
         const now = new Date().toISOString();
         localStorage.setItem(
           'tengo.data.v1',
@@ -84,18 +82,18 @@ async function prime(page: Page, shot: Shot) {
 
 for (const shot of SHOTS) {
   if (ONLY && !ONLY.includes(shot.name)) continue;
-  for (const width of WIDTHS) {
+  for (const theme of THEMES) for (const width of WIDTHS) {
     if (ONLY_WIDTHS && !ONLY_WIDTHS.includes(width)) continue;
-    test(`${shot.name} at ${width}`, async ({ page }) => {
+    test(`${shot.name} ${theme} at ${width}`, async ({ page }) => {
       await page.setViewportSize({ width, height: width < 768 ? 844 : 900 });
       await page.emulateMedia({ reducedMotion: 'reduce' });
-      await prime(page, shot);
+      await prime(page, { ...shot, theme });
       await page.goto(shot.path);
       await page.waitForLoadState('networkidle');
       await page.waitForTimeout(400);
       if (shot.setup) await shot.setup(page);
       await page.waitForTimeout(300);
-      await page.screenshot({ path: `screenshots/${shot.name}-${width}.png`, fullPage: shot.fullPage ?? true });
+      await page.screenshot({ path: `screenshots/${shot.name}-${theme}-${width}.png`, fullPage: shot.fullPage ?? true });
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
       expect(overflow, 'no horizontal scroll').toBeLessThanOrEqual(0);
     });

@@ -43,7 +43,7 @@ export function StateCard({ forecast, onWhy }: { forecast: Forecast; onWhy: () =
           </h2>
           <StateChip state={state} size="lg" className="mt-2" />
         </div>
-        <CoverBars state={state} size={44} />
+        <CoverBars state={state} size={72} />
       </div>
       <p className="mt-4 text-[15px] text-ink">{t(`stateCard.${state}`, { count: forecast.gapDays })}</p>
       <button type="button" onClick={onWhy} className="btn-secondary mt-5 w-full sm:w-auto">

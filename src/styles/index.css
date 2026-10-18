@@ -212,3 +212,20 @@
     outline-offset: 4px;
   }
 }
+
+@layer components {
+  /* Quiet data tables: hairline rows, tiny uppercase headers. */
+  .data-table {
+    @apply w-full text-left text-sm;
+  }
+  .data-table thead {
+    @apply bg-surface-2 text-xs uppercase tracking-[0.06em] text-subtle;
+  }
+  .data-table th,
+  .data-table td {
+    @apply px-4 py-2.5;
+  }
+  .data-table tbody tr {
+    @apply border-t border-line;
+  }
+}

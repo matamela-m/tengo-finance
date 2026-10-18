@@ -44,7 +44,7 @@ function Outcome({ label, f }: { label: string; f: Forecast }) {
       <p className="num font-heading text-[22px] font-extrabold leading-tight tracking-tight sm:text-[26px]">{d.dayShort(f.headlineDate)}</p>
       <div className="mt-2 flex items-center gap-2">
         <StateChip state={f.state} size="sm" />
-        <CoverBars state={f.state} size={20} />
+        <CoverBars state={f.state} size={48} />
       </div>
     </div>
   );

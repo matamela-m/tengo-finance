@@ -81,7 +81,7 @@ export default function Picker() {
                     <Avatar persona={p} size={64} />
                     <div className="flex items-center gap-2">
                       <StateChip state={p.startState} />
-                      <CoverBars state={p.startState} size={28} />
+                      <CoverBars state={p.startState} size={56} />
                     </div>
                   </div>
                   <h3 className="mt-6 font-heading text-[30px] font-extrabold leading-none">{p.name}</h3>

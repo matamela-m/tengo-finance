@@ -38,11 +38,11 @@ export function Toggle({ checked, onChange, label, description, disabled, badge 
         />
         <span
           aria-hidden
-          className={`pointer-events-none flex h-7 w-12 items-center rounded-full p-1 transition-colors peer-focus-visible:outline peer-focus-visible:outline-[3px] peer-focus-visible:outline-offset-2 peer-focus-visible:outline-[var(--color-focus)] ${
-            checked ? 'bg-accent' : 'bg-line'
+          className={`pointer-events-none flex h-6 w-11 items-center rounded-full border p-0.5 transition-colors duration-150 peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-[var(--color-focus)] ${
+            checked ? 'border-accent bg-accent' : 'border-line-strong bg-surface-3'
           } ${disabled ? 'opacity-60' : ''}`}
         >
-          <span className={`h-5 w-5 rounded-full bg-surface shadow transition-transform ${checked ? 'translate-x-5' : ''}`} />
+          <span className={`h-[18px] w-[18px] rounded-full transition-transform duration-150 ${checked ? 'translate-x-5 bg-on-accent' : 'bg-muted'}`} />
         </span>
       </span>
     </div>

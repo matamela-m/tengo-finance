@@ -1,54 +1,20 @@
 import type { CoverState } from '../engine/types';
 
 /**
- * Three upright bars that light up with cover: 3 Enough, 2 Tight, 1 Short.
- * A separate UI gauge, deliberately unlike the slanted logo mark.
+ * Cover gauge: a slim three-segment bar. 3 lit for Enough, 2 for Tight, 1 for Short.
  * Decorative: it always sits beside a StateChip, which gives the state in words.
  */
 const LEVEL: Record<CoverState, 1 | 2 | 3> = { short: 1, tight: 2, enough: 3 };
+const FILL: Record<CoverState, string> = { enough: 'bg-enough', tight: 'bg-tight', short: 'bg-short' };
 
-interface CoverBarsProps {
-  state: CoverState;
-  size?: number;
-  className?: string;
-}
-
-export function CoverBars({ state, size = 24, className }: CoverBarsProps) {
+export function CoverBars({ state, size = 72, className = '' }: { state: CoverState; size?: number; className?: string }) {
   const level = LEVEL[state];
-  const fill = `var(--color-${state})`;
-  const stroke = `var(--color-${state})`;
-  const bars = [0.45, 0.72, 1];
-  const w = size;
-  const h = size;
-  const bw = w / 4.2;
-  const gap = (w - bw * 3) / 2;
   return (
-    <svg
-      width={w}
-      height={h}
-      viewBox={`0 0 ${w} ${h}`}
-      aria-hidden
-      focusable="false"
-      className={className}
-    >
-      {bars.map((ratio, i) => {
-        const bh = h * ratio;
-        const lit = i < level;
-        return (
-          <rect
-            key={i}
-            x={i * (bw + gap) + 0.75}
-            y={h - bh + 0.75}
-            width={bw - 1.5}
-            height={bh - 1.5}
-            rx={Math.min(3, bw / 3)}
-            fill={lit ? fill : 'var(--color-border)'}
-            stroke={lit ? stroke : 'none'}
-            strokeWidth={lit ? 1.5 : 0}
-          />
-        );
-      })}
-    </svg>
+    <span aria-hidden className={`inline-flex shrink-0 gap-1 ${className}`} style={{ width: size }}>
+      {[0, 1, 2].map((i) => (
+        <span key={i} className={`h-1.5 flex-1 rounded-full ${i < level ? FILL[state] : 'bg-surface-3'}`} />
+      ))}
+    </span>
   );
 }
 

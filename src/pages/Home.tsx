@@ -55,7 +55,7 @@ export default function HomePage() {
               <DateHero forecast={forecast} />
               <div className="flex items-center gap-3">
                 <StateChip state={forecast.state} size="lg" />
-                <CoverBars state={forecast.state} size={36} />
+                <CoverBars state={forecast.state} size={80} />
               </div>
             </div>
             {forecast.state === 'short' && (

@@ -56,7 +56,7 @@ function Preview() {
         </div>
         <div className="mt-5 flex items-end justify-between gap-4">
           <DateHero forecast={f} as="p" size="md" />
-          <CoverBars state={f.state} size={40} />
+          <CoverBars state={f.state} size={64} />
         </div>
         <p className="num mt-3 text-sm text-muted">{t('band.between', { from: d.dayShort(f.band.from), to: d.dayShort(f.band.to) })}</p>
         <div className="mt-5 rounded-2xl bg-surface-2 px-3 pb-2 pt-3">

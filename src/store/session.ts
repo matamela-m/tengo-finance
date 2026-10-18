@@ -18,7 +18,7 @@ export const useSession = create<SessionState>()(
   persist(
     (set) => ({
       language: 'en',
-      theme: 'light',
+      theme: 'dark',
       activePersonaId: null,
       setLanguage: (language) => set({ language }),
       setTheme: (theme) => set({ theme }),

@@ -86,7 +86,7 @@ export default function ImportPage() {
               <Icon name="sparkle" size={18} />
               {t('import.useSample')}
             </button>
-            <label className="btn-secondary w-full cursor-pointer focus-within:outline focus-within:outline-[3px] focus-within:outline-offset-2 focus-within:outline-[var(--c-focus)]">
+            <label className="btn-secondary w-full cursor-pointer focus-within:outline focus-within:outline-[3px] focus-within:outline-offset-2 focus-within:outline-[var(--color-focus)]">
               <Icon name="upload" size={18} />
               {t('import.chooseCsv')}
               <input
@@ -196,7 +196,7 @@ export default function ImportPage() {
                           <tr key={tx.id}>
                             <td className="num whitespace-nowrap px-4 py-2.5">{d.dayMonth(tx.date)}</td>
                             <td className="max-w-[220px] truncate px-4 py-2.5">{tx.description}</td>
-                            <td className={`num whitespace-nowrap px-4 py-2.5 text-right font-semibold ${tx.amount > 0 ? 'text-enough-text' : ''}`}>{formatZAR(tx.amount, { sign: true })}</td>
+                            <td className={`num whitespace-nowrap px-4 py-2.5 text-right font-semibold ${tx.amount > 0 ? 'text-enough' : ''}`}>{formatZAR(tx.amount, { sign: true })}</td>
                             <td className="px-4 py-2.5">{t(`category.${tx.category}`)}</td>
                           </tr>
                         ))}

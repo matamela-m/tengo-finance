@@ -27,7 +27,7 @@ export function SpendingCard({ transactions, today }: { transactions: Transactio
                 </span>
               </div>
               <div className="mt-1.5 h-2.5 overflow-hidden rounded-full bg-surface-2" aria-hidden>
-                <div className="h-full rounded-full bg-sage" style={{ width: `${Math.max(3, s.share * 100)}%` }} />
+                <div className="h-full rounded-full bg-accent" style={{ width: `${Math.max(3, s.share * 100)}%` }} />
               </div>
             </li>
           ))}

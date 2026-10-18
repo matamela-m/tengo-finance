@@ -18,7 +18,9 @@ export function Preferences() {
     const apply = () => {
       const dark = theme === 'dark' || (theme === 'system' && media.matches);
       root.dataset.theme = dark ? 'dark' : 'light';
-      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#161616' : '#EEEBE6');
+      // Browser chrome follows the page background token.
+      const bg = getComputedStyle(root).getPropertyValue('--color-bg').trim();
+      document.querySelectorAll('meta[name="theme-color"]').forEach((m) => m.setAttribute('content', bg));
     };
     apply();
     media.addEventListener('change', apply);
@@ -26,10 +28,4 @@ export function Preferences() {
   }, [theme]);
 
   return null;
-}
-
-export function useIsDark(): boolean {
-  const theme = useSession((s) => s.theme);
-  if (theme === 'system') return typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  return theme === 'dark';
 }

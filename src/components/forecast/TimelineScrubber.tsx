@@ -100,7 +100,7 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
       <div className="mt-5 flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="text-sm font-medium text-muted">{index === 0 ? t('common.today') : d.dayShort(day.date)}</p>
-          <p className="num mt-0.5 font-figures text-[34px] font-extrabold leading-none tracking-tight">{formatZAR(Math.round(day.central))}</p>
+          <p className="num mt-0.5 font-heading text-[34px] font-extrabold leading-none tracking-tight">{formatZAR(Math.round(day.central))}</p>
           <p className="num mt-1.5 text-sm text-muted">
             {t('scrubber.range', { low: formatZAR(Math.round(day.pessimistic)), high: formatZAR(Math.round(day.optimistic)) })}
           </p>
@@ -109,14 +109,14 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
       </div>
       <div className="mt-3 flex min-h-[28px] flex-wrap gap-2" aria-hidden>
         {day.incomeToday > 0 && (
-          <span className="num inline-flex items-center gap-1.5 rounded-full bg-mint/50 px-3 py-1 text-xs font-semibold text-charcoal dark:bg-mint">
-            <span className="h-2 w-2 rounded-full bg-deep-green" />
+          <span className="num inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-3 py-1 text-xs font-semibold text-ink">
+            <span className="h-2 w-2 rounded-full bg-accent" />
             {t('scrubber.expectedIncome')} {formatZAR(day.incomeToday, { sign: true })}
           </span>
         )}
         {day.billsToday.map((b) => (
           <span key={b.description} className="num inline-flex items-center gap-1.5 rounded-full bg-surface-2 px-3 py-1 text-xs font-semibold">
-            <span className="h-2 w-2 rounded-full border-2 border-short-text" />
+            <span className="h-2 w-2 rounded-full border-2 border-short" />
             {t('scrubber.billDue', { name: b.description })} {formatZAR(-b.amount)}
           </span>
         ))}
@@ -126,7 +126,7 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
       <div ref={plotRef} className="scrub-plot relative mt-2 rounded-2xl" style={{ height }}>
         {width > 0 && (
           <svg width={width} height={height} className="block" aria-hidden>
-            {geo.lo < 0 && <rect x={PAD.left} y={geo.zeroY} width={width - PAD.left - PAD.right} height={geo.bottom - geo.zeroY} fill="var(--c-short-soft)" opacity="0.55" />}
+            {geo.lo < 0 && <rect x={PAD.left} y={geo.zeroY} width={width - PAD.left - PAD.right} height={geo.bottom - geo.zeroY} fill="var(--color-short-soft)" opacity="0.55" />}
             {geo.ticks.map((v) => (
               <g key={v}>
                 <line
@@ -134,18 +134,18 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
                   x2={width - PAD.right}
                   y1={geo.y(v)}
                   y2={geo.y(v)}
-                  stroke={v === 0 ? 'var(--c-short-text)' : 'var(--c-line)'}
+                  stroke={v === 0 ? 'var(--color-short)' : 'var(--color-border)'}
                   strokeDasharray={v === 0 ? '5 5' : undefined}
                   strokeWidth={v === 0 ? 1.5 : 1}
                 />
-                <text x={PAD.left - 10} y={geo.y(v) + 4} textAnchor="end" className="num" fontSize="11" fontWeight={v === 0 ? 700 : 500} fill={v === 0 ? 'var(--c-short-text)' : 'var(--c-muted)'}>
+                <text x={PAD.left - 10} y={geo.y(v) + 4} textAnchor="end" className="num" fontSize="11" fontWeight={v === 0 ? 700 : 500} fill={v === 0 ? 'var(--color-short)' : 'var(--color-text-muted)'}>
                   {compactZAR(v)}
                 </text>
               </g>
             ))}
-            <path d={geo.band} fill="var(--c-band)" />
-            <path d={geo.central} fill="none" stroke="var(--c-brand)" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
-            <line x1={geo.x(index)} x2={geo.x(index)} y1={PAD.top} y2={geo.bottom} stroke="var(--c-ink)" strokeOpacity="0.25" strokeWidth="1.5" />
+            <path d={geo.band} fill="var(--color-band)" />
+            <path d={geo.central} fill="none" stroke="var(--color-accent)" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
+            <line x1={geo.x(index)} x2={geo.x(index)} y1={PAD.top} y2={geo.bottom} stroke="var(--color-text)" strokeOpacity="0.25" strokeWidth="1.5" />
             {days.map((p, i) =>
               p.incomeToday > 0 || p.billsToday.length > 0 ? (
                 <circle
@@ -153,13 +153,13 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
                   cx={geo.x(i)}
                   cy={geo.y(p.central)}
                   r={4.5}
-                  fill={p.incomeToday > 0 ? 'var(--c-brand)' : 'var(--c-surface)'}
-                  stroke={p.billsToday.length > 0 ? 'var(--c-short-text)' : 'var(--c-surface)'}
+                  fill={p.incomeToday > 0 ? 'var(--color-accent)' : 'var(--color-surface-1)'}
+                  stroke={p.billsToday.length > 0 ? 'var(--color-short)' : 'var(--color-surface-1)'}
                   strokeWidth={2}
                 />
               ) : null,
             )}
-            <circle cx={geo.x(index)} cy={geo.y(day.central)} r={8} fill="var(--c-brand)" stroke="var(--c-surface)" strokeWidth={3} />
+            <circle cx={geo.x(index)} cy={geo.y(day.central)} r={8} fill="var(--color-accent)" stroke="var(--color-surface-1)" strokeWidth={3} />
           </svg>
         )}
         <label htmlFor={`${id}-range`} className="sr-only">
@@ -199,19 +199,19 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-4">
         <ul className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-muted" aria-label={t('scrubber.legend')}>
           <li className="flex items-center gap-1.5">
-            <span aria-hidden className="h-[3px] w-4 rounded bg-brand" />
+            <span aria-hidden className="h-[3px] w-4 rounded bg-accent" />
             {t('scrubber.legendExpected')}
           </li>
           <li className="flex items-center gap-1.5">
-            <span aria-hidden className="h-3 w-4 rounded-sm" style={{ background: 'var(--c-band)' }} />
+            <span aria-hidden className="h-3 w-4 rounded-sm" style={{ background: 'var(--color-band)' }} />
             {t('scrubber.legendRange')}
           </li>
           <li className="flex items-center gap-1.5">
-            <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-brand" />
+            <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-accent" />
             {t('scrubber.legendIncome')}
           </li>
           <li className="flex items-center gap-1.5">
-            <span aria-hidden className="h-2.5 w-2.5 rounded-full border-2 border-short-text" />
+            <span aria-hidden className="h-2.5 w-2.5 rounded-full border-2 border-short" />
             {t('scrubber.legendBill')}
           </li>
         </ul>

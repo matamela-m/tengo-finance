@@ -22,7 +22,7 @@ npm run dev          # http://localhost:5173
 | Command | What it does |
 | --- | --- |
 | `npm run build` | Type checks and builds to `dist/` |
-| `npm run test` | Vitest unit tests (engine, seeds, CSV, messages, repository, formatting) |
+| `npm run test` | Contrast check for both themes, then Vitest unit tests (engine, seeds, CSV, messages, repository, formatting) |
 | `npm run lint` | ESLint plus a check that no em or en dash appears anywhere |
 | `npm run i18n:check` | Fails if any of the 11 locales is missing a key, has extra keys, or uses an exclamation mark |
 | `npm run i18n:sync` | Copies new or changed English strings into the other locale files |
@@ -30,7 +30,8 @@ npm run dev          # http://localhost:5173
 | `npm run a11y` | axe-core accessibility checks (WCAG 2.1 A and AA) on every main page, light and dark |
 | `npm run contrast` | WCAG contrast check of every text and surface pair the UI uses |
 | `npm run screens` | Playwright: screenshots at 390, 768, 1280 and 1600px into `screenshots/`, plus end to end flow tests |
-| `npm run icons` | Rebuilds the round favicons and app icons from the supplied mark (needs Python with Pillow: `pip install pillow`) |
+| `npm run icons` | Rebuilds the placeholder favicons and app icons (needs Python with Pillow: `pip install pillow`) |
+| `npm run fonts:check` | Checks every locale string against Inter (fails on gaps) and Figtree (warns on gaps) |
 
 **On your phone (same Wi-Fi):** run `npm run dev:phone`, then open the "Network" address it prints (for example `http://192.168.1.20:5173`) in your phone's browser. If macOS asks whether Node may accept incoming connections, choose Allow.
 
@@ -81,13 +82,12 @@ The "Why this date" drawer on Home shows every input behind the date and doubles
 - **Storage.** Everything is in this browser's local storage. All data access goes through the `TengoRepository` interface in `src/data/repository.ts`. Swap `LocalRepository` in `src/data/index.ts` for a hosted one (for example Supabase) without touching UI code.
 - **Messages writer.** `MessageWriter` in `src/messages/` has a template implementation. An LLM-backed writer can implement the same interface.
 
-## Brand, type and licences
+## Brand and type
 
-- Logos in `public/brand/` are the founder supplied PNGs, copied unchanged from `assets/brand/`. `<TengoLogo />` only chooses a file. Favicons and app icons are the light mark, scaled onto a round off-white disc (the Apple touch icon stays square, since iOS rounds it itself). The `<CoverBars />` gauge is a separate UI element, upright bars unlike the slanted logo mark.
-- Inter Variable is self-hosted through `@fontsource-variable/inter`.
-- **Public Stunt licence.** The free Public Stunt version is for personal use only. A commercial licence is required before public launch.
-- **Public Stunt.** The supplied OTF files (regular and italic) were converted to woff2 with fontTools and live in `public/fonts/`. The source folder `public_stunt/` is kept out of git.
-- **Watermarked digits.** The personal use version replaces the digits 0 to 9 with a "PERSONAL USE ONLY" watermark. The `@font-face` rules use `unicode-range` to leave digits out, so any number falls back to Inter and the watermark can never show. Big money figures and dates use the `font-figures` family (Inter) so a figure is never split across two fonts. With the licensed font: delete the two `unicode-range` lines in `src/styles/index.css` and point `figures` in `tailwind.config.js` at the display stack.
+- **Logo: placeholder.** The founder is replacing the logo. The old PNGs are archived in `assets/archive/old-brand/` (not served, not bundled). Every place the brand appears uses one component, `src/components/Brand.tsx`: a "Tengo" wordmark in Figtree 700, and a `mark` variant (a rounded accent square with a bold T). Swap that one file for the final logo.
+- **Icons: placeholders.** Favicons, the SVG favicon and the PWA icons are the T mark in the accent colour, made by `npm run icons` (Python with Pillow). Replace them with the final logo.
+- **Fonts.** Figtree for headings, display numbers, buttons and nav. Inter for body text, labels, inputs and tables. Both are self-hosted through `@fontsource-variable`. Money and dates use tabular numbers.
+- **Tshivenda.** Figtree has no Tshivenda letters (ḓ ḽ ṅ ṋ ṱ). The heading font is a CSS variable, and when the language is Tshivenda (`html[lang="ve"]`) headings switch to Inter, so a word never mixes two fonts. `npm run fonts:check` scans every locale string against both fonts: it fails if Inter lacks a character and warns about Figtree gaps.
 - No third-party requests at runtime and no analytics scripts. A Playwright test checks this.
 
 ## Name origin
@@ -166,7 +166,7 @@ The language picker is a single labelled select showing the native and English n
 
 The script protects `{{placeholders}}`, *bold* markers and names such as Tengo and WhatsApp. It keeps the demo chip exactly "Demo | Fictional Data", and replaces any em dash, en dash or exclamation mark the translation brings in. Any string whose placeholders change stays in English. It remembers which English text each translation came from (`src/i18n/translated-from.json`), so only new or changed strings are sent next time. Machine translations still need checking by first-language speakers. Mark a language `reviewed` in `status.json` once that is done.
 
-Dates use `Intl.DateTimeFormat` with a locale map that resolves every language to `en-ZA` for now. Public Stunt is never relied on for translated headings. The brief expected it to lack Tshivenda letters such as ḓ ḽ ṅ ṋ ṱ. The supplied file does include ḓ and ṱ, but the stack still falls back to Inter for anything it lacks.
+Dates use `Intl.DateTimeFormat` with a locale map that resolves every language to `en-ZA` for now. Headings switch from Figtree to Inter for Tshivenda (see Brand and type).
 
 ## Accessibility
 
@@ -193,8 +193,7 @@ Choices made where the brief left room:
 
 - **Redesign references.** The redesign brief points at reference screenshots in `assets/reference/`. That folder does not exist, so the style follows the brief's written description only.
 
-- **Asset locations.** The brief pointed at `docs/BRIEF.md`, `assets/brand/` and `assets/fonts/`. The brief was at the root, the logos came as `tengo-brand-trimmed.zip` (extracted to `assets/brand/`), and the font arrived later in `public_stunt/`.
-- **Display type and numbers.** The brief puts the date hero and the Safe to spend figure in Public Stunt. The personal use font has watermarked digits, so those use Inter until the licensed font is in place (see Brand, type and licences). Headings, the landing headline and persona names use Public Stunt. Display sizes are smaller than with Inter because Public Stunt is much wider.
+- **Asset locations.** The first brief pointed at `docs/BRIEF.md`, `assets/brand/` and `assets/fonts/`. The brief was at the root and the logos came as `tengo-brand-trimmed.zip`. Those logos are now archived (see Brand and type).
 - **Spend paths.** The central path uses the median of rolling 7 day spend divided by 7 (not the median single day), so it uses the same basis as the 20th and 80th percentile paths and copes with lumpy spending such as stock runs.
 - **What counts as next money.** Deposits of at least 10% of typical monthly income. Smaller daily income (cash fares, card sales) is not "next money". The scrubber still includes it as background income (full rate on the normal and light paths, half on the heavy path).
 - **Weekday payouts.** At least 3 qualifying deposits with 60% on one weekday. The latest plausible date is one day after the typical one. Next money is always after today, since anything that landed today is already in the balance.
@@ -215,7 +214,7 @@ Choices made where the brief left room:
 
 ## Known limitations
 
-- Dates and money figures show in Inter, not Public Stunt, until the commercially licensed font (with real digits) is added.
+- The logo and app icons are placeholders until the founder's new logo is ready.
 - Translations stay in English until the translate script is run with a Google API key, and machine translations still need review by first-language speakers.
 - The forecast is statistical and simple by design. It does not model seasonality, month-end effects or income that is changing over time.
 - Recurring bill detection needs at least two monthly occurrences. A new bill shows as spend until the user recategorises it.

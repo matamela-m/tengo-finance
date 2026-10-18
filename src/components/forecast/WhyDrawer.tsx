@@ -35,33 +35,33 @@ function RunwayChart({ forecast }: { forecast: Forecast }) {
   return (
     <figure>
       <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full" role="img" aria-label={t('why.chartLabel')}>
-        <line x1="0" x2={W} y1={H - 8} y2={H - 8} stroke="var(--c-short-text)" strokeDasharray="4 4" />
+        <line x1="0" x2={W} y1={H - 8} y2={H - 8} stroke="var(--color-short)" strokeDasharray="4 4" />
         {nextMoney && nextMoney.pattern !== 'unknown' && (
           <g>
-            <rect x={x(daysBetween(today, nextMoney.earliest))} width={Math.max(4, x(daysBetween(nextMoney.earliest, nextMoney.latest) + 1))} y="0" height={H} fill="var(--c-brand)" opacity="0.1" />
-            <line x1={x(daysBetween(today, nextMoney.typical))} x2={x(daysBetween(today, nextMoney.typical))} y1="0" y2={H} stroke="var(--c-brand)" strokeWidth="2" />
+            <rect x={x(daysBetween(today, nextMoney.earliest))} width={Math.max(4, x(daysBetween(nextMoney.earliest, nextMoney.latest) + 1))} y="0" height={H} fill="var(--color-accent)" opacity="0.1" />
+            <line x1={x(daysBetween(today, nextMoney.typical))} x2={x(daysBetween(today, nextMoney.typical))} y1="0" y2={H} stroke="var(--color-accent)" strokeWidth="2" />
           </g>
         )}
-        <path d={line(rates.optimistic)} fill="none" stroke="#7AAB88" strokeWidth="2" strokeDasharray="5 4" />
-        <path d={line(rates.pessimistic)} fill="none" stroke="var(--c-short-text)" strokeWidth="2" strokeDasharray="5 4" />
-        <path d={line(rates.central)} fill="none" stroke="var(--c-brand)" strokeWidth="3" />
+        <path d={line(rates.optimistic)} fill="none" stroke="var(--color-text-subtle)" strokeWidth="2" strokeDasharray="5 4" />
+        <path d={line(rates.pessimistic)} fill="none" stroke="var(--color-short)" strokeWidth="2" strokeDasharray="5 4" />
+        <path d={line(rates.central)} fill="none" stroke="var(--color-accent)" strokeWidth="3" />
       </svg>
       <figcaption className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted">
         <span className="flex items-center gap-1.5">
-          <span className="h-[3px] w-4 rounded bg-brand" />
+          <span className="h-[3px] w-4 rounded bg-accent" />
           {t('why.lineCentral')}
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="h-[2px] w-4 border-t-2 border-dashed border-sage" />
+          <span className="h-[2px] w-4 border-t-2 border-dashed border-subtle" />
           {t('why.lineLight')}
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="h-[2px] w-4 border-t-2 border-dashed border-short-text" />
+          <span className="h-[2px] w-4 border-t-2 border-dashed border-short" />
           {t('why.lineHeavy')}
         </span>
         {nextMoney && nextMoney.pattern !== 'unknown' && (
           <span className="flex items-center gap-1.5">
-            <span className="h-3 w-[2px] bg-brand" />
+            <span className="h-3 w-[2px] bg-accent" />
             {t('why.lineNext', { date: d.dayShort(nextMoney.typical) })}
           </span>
         )}

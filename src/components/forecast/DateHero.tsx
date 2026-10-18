@@ -18,7 +18,7 @@ export function DateHero({ forecast, as: Tag = 'h1', size = 'xl' }: { forecast: 
       <span
         key={`${forecast.headlineDate}-${forecast.state}`}
         aria-hidden
-        className={`num animate-rise font-figures font-extrabold leading-[0.95] tracking-tight text-ink ${
+        className={`num animate-rise font-heading font-extrabold leading-[0.95] tracking-tight text-ink ${
           size === 'xl' ? 'mt-1 text-[52px] sm:text-[68px] xl:text-[80px]' : 'mt-0.5 text-[40px] sm:text-[44px]'
         }`}
       >

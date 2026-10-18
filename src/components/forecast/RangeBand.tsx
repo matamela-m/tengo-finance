@@ -20,7 +20,7 @@ export function RangeBand({ forecast }: { forecast: Forecast }) {
           {sameDay ? t('band.single', { date: d.dayShort(band.from) }) : t('band.between', { from: d.dayShort(band.from), to: d.dayShort(band.to) })}
         </p>
         {confidence === 'low' && (
-          <span className="inline-flex items-center gap-1 rounded-full bg-tight-soft px-2.5 py-0.5 text-xs font-semibold text-tight-text">
+          <span className="inline-flex items-center gap-1 rounded-full bg-tight-soft px-2.5 py-0.5 text-xs font-semibold text-tight">
             <Icon name="info" size={14} />
             {t('band.lowConfidence')}
           </span>
@@ -33,14 +33,14 @@ export function RangeBand({ forecast }: { forecast: Forecast }) {
           style={{
             left: pct(band.from),
             width: `max(14px, calc(${pct(band.to)} - ${pct(band.from)}))`,
-            background: `var(--c-${state}-soft)`,
-            borderColor: `var(--c-${state}-text)`,
+            background: `var(--color-${state}-soft)`,
+            borderColor: `var(--color-${state})`,
           }}
         />
-        <div className="absolute top-2.5 h-7 w-7 -translate-x-1/2 rounded-full border-[3px] border-surface shadow-card" style={{ left: pct(headlineDate), background: `var(--c-${state}-text)` }} />
+        <div className="absolute top-2.5 h-7 w-7 -translate-x-1/2 rounded-full border-[3px] border-surface shadow-card" style={{ left: pct(headlineDate), background: `var(--color-${state})` }} />
         {nextMoney && nextMoney.pattern !== 'unknown' && (
           <div className="absolute top-0 flex -translate-x-1/2 flex-col items-center" style={{ left: pct(nextMoney.typical) }}>
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand text-on-brand">
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent text-on-accent">
               <Icon name="arrowDown" size={14} strokeWidth={2.5} />
             </span>
           </div>
@@ -49,16 +49,16 @@ export function RangeBand({ forecast }: { forecast: Forecast }) {
       </div>
       <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-xs text-muted">
         <li className="flex items-center gap-1.5">
-          <span className="h-3 w-3 rounded-full" style={{ background: `var(--c-${state}-text)` }} />
+          <span className="h-3 w-3 rounded-full" style={{ background: `var(--color-${state})` }} />
           {t('band.legendDate')}
         </li>
         <li className="flex items-center gap-1.5">
-          <span className="h-3 w-5 rounded-full border-2" style={{ background: `var(--c-${state}-soft)`, borderColor: `var(--c-${state}-text)` }} />
+          <span className="h-3 w-5 rounded-full border-2" style={{ background: `var(--color-${state}-soft)`, borderColor: `var(--color-${state})` }} />
           {t('band.legendRange')}
         </li>
         {nextMoney && nextMoney.pattern !== 'unknown' && (
           <li className="flex items-center gap-1.5">
-            <span className="flex h-4 w-4 items-center justify-center rounded-full bg-brand text-on-brand">
+            <span className="flex h-4 w-4 items-center justify-center rounded-full bg-accent text-on-accent">
               <Icon name="arrowDown" size={10} strokeWidth={3} />
             </span>
             {t('band.legendNext', { date: d.dayShort(nextMoney.typical) })}

@@ -1,75 +1,88 @@
-/*
- * Public Stunt: display only. The free version is personal use only and a commercial licence
- * is needed before launch. Its digits 0 to 9 are watermark glyphs, so unicode-range leaves
- * them out and numbers fall back to Inter. With the licensed font, drop the unicode-range
- * lines and set --font-figures to the display stack.
- */
-@font-face {
-  font-family: 'Public Stunt';
-  src: url('/fonts/public-stunt.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 400 900;
-  font-display: swap;
-  unicode-range: U+0000-002F, U+003A-10FFFF;
-}
-
-@font-face {
-  font-family: 'Public Stunt';
-  src: url('/fonts/public-stunt-italic.woff2') format('woff2');
-  font-style: italic;
-  font-weight: 400 900;
-  font-display: swap;
-  unicode-range: U+0000-002F, U+003A-10FFFF;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Design tokens. Every colour is defined once here, for dark and light.
+ * Channels (--text: r g b) feed Tailwind with alpha support; --color-* are full colours for
+ * inline styles and SVG. Change the accent in one place: --accent.
+ */
 @layer base {
-  :root {
-    --c-bg: #eeebe6;
-    --c-surface: #ffffff;
-    --c-surface-2: #f7f5f1;
-    --c-ink: #1e1e1e;
-    --c-muted: #5a5a55;
-    --c-line: #e0dcd5;
-    --c-brand: #125747;
-    --c-brand-ink: #125747;
-    --c-on-brand: #ffffff;
-    --c-enough: #2fb36b;
-    --c-enough-text: #17703f;
-    --c-enough-soft: #ddf3e4;
-    --c-tight: #e8a33d;
-    --c-tight-text: #8a5300;
-    --c-tight-soft: #fbebd2;
-    --c-short: #c8553d;
-    --c-short-text: #a33a25;
-    --c-short-soft: #f6ddd7;
-    --c-focus: #125747;
-    --c-band: rgba(122, 171, 136, 0.28);
+  :root,
+  [data-theme='dark'] {
+    --bg: 11 11 12;
+    --surface-1: 18 18 20;
+    --surface-2: 24 24 27;
+    --surface-3: 31 31 35;
+    --border: 38 38 43;
+    --border-strong: 52 52 58;
+    --text: 244 244 245;
+    --text-muted: 161 161 170;
+    --text-subtle: 139 139 148;
+    --accent: 114 145 255;
+    --on-accent: 11 11 12;
+    --enough: 52 211 153;
+    --tight: 251 191 36;
+    --short: 249 115 98;
+    --accent-soft-a: 0.14;
+    --state-soft-a: 0.13;
+    --scrim: 0 0 0;
+    --scrim-a: 0.6;
+    color-scheme: dark;
+  }
+
+  [data-theme='light'] {
+    --bg: 251 251 250;
+    --surface-1: 255 255 255;
+    --surface-2: 244 243 241;
+    --surface-3: 236 234 230;
+    --border: 231 229 225;
+    --border-strong: 214 211 205;
+    --text: 28 27 25;
+    --text-muted: 102 99 93;
+    --text-subtle: 108 105 99;
+    --accent: 55 85 204;
+    --on-accent: 255 255 255;
+    --enough: 4 110 80;
+    --tight: 155 71 8;
+    --short: 169 57 10;
+    --accent-soft-a: 0.1;
+    --state-soft-a: 0.1;
+    --scrim: 28 27 25;
+    --scrim-a: 0.35;
     color-scheme: light;
   }
 
-  [data-theme='dark'] {
-    --c-bg: #161616;
-    --c-surface: #1e1e1e;
-    --c-surface-2: #262624;
-    --c-ink: #eeebe6;
-    --c-muted: #b9b5ae;
-    --c-line: #34332f;
-    --c-brand: #7aab88;
-    --c-brand-ink: #b6dfb2;
-    --c-on-brand: #1e1e1e;
-    --c-enough-text: #6fd59b;
-    --c-enough-soft: #1d3a29;
-    --c-tight-text: #f2c27a;
-    --c-tight-soft: #3d2f18;
-    --c-short-text: #ef9a87;
-    --c-short-soft: #43231c;
-    --c-focus: #b6dfb2;
-    --c-band: rgba(122, 171, 136, 0.3);
-    color-scheme: dark;
+  :root {
+    --color-bg: rgb(var(--bg));
+    --color-surface-1: rgb(var(--surface-1));
+    --color-surface-2: rgb(var(--surface-2));
+    --color-surface-3: rgb(var(--surface-3));
+    --color-border: rgb(var(--border));
+    --color-border-strong: rgb(var(--border-strong));
+    --color-text: rgb(var(--text));
+    --color-text-muted: rgb(var(--text-muted));
+    --color-text-subtle: rgb(var(--text-subtle));
+    --color-accent: rgb(var(--accent));
+    --color-accent-soft: rgb(var(--accent) / var(--accent-soft-a));
+    --color-on-accent: rgb(var(--on-accent));
+    --color-enough: rgb(var(--enough));
+    --color-enough-soft: rgb(var(--enough) / var(--state-soft-a));
+    --color-tight: rgb(var(--tight));
+    --color-tight-soft: rgb(var(--tight) / var(--state-soft-a));
+    --color-short: rgb(var(--short));
+    --color-short-soft: rgb(var(--short) / var(--state-soft-a));
+    --color-band: rgb(var(--accent) / 0.16);
+    --color-focus: rgb(var(--accent));
+
+    /* Headings use Figtree. Inter is the safety net for any glyph Figtree lacks. */
+    --font-heading: 'Figtree Variable', 'Inter Variable', system-ui, sans-serif;
+    --font-body: 'Inter Variable', system-ui, sans-serif;
+  }
+
+  /* Figtree has no Tshivenda letters (ḓ ḽ ṅ ṋ ṱ). Use Inter for headings so a word never mixes fonts. */
+  html[lang='ve'] {
+    --font-heading: 'Inter Variable', system-ui, sans-serif;
   }
 
   html {
@@ -86,14 +99,25 @@
   }
 
   body {
-    @apply bg-bg font-sans text-ink antialiased;
+    @apply bg-bg font-sans text-base text-ink antialiased;
     font-feature-settings: 'cv11', 'ss01';
   }
 
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+  }
+
   :focus-visible {
-    outline: 3px solid var(--c-focus);
+    outline: 2px solid var(--color-focus);
     outline-offset: 2px;
     border-radius: 6px;
+  }
+
+  ::selection {
+    background: rgb(var(--accent) / 0.3);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -109,56 +133,61 @@
 }
 
 @layer components {
+  /* Money figures and dates line up. */
   .num {
     font-variant-numeric: tabular-nums;
     font-feature-settings: 'tnum';
   }
 
   .card {
-    @apply rounded-3xl bg-surface shadow-card;
+    @apply rounded-2xl border border-line bg-surface;
+  }
+
+  .card-interactive {
+    @apply card transition-colors duration-150 hover:border-line-strong;
   }
 
   .btn {
-    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-5 text-[15px] font-semibold transition-[transform,background-color,box-shadow] duration-150 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-5 font-heading text-[15px] font-semibold transition-[transform,background-color,border-color,opacity] duration-150 ease-out active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
   }
 
+  /* Inverted pill: text colour as fill. */
   .btn-primary {
-    @apply btn bg-brand text-on-brand shadow-card hover:shadow-lift;
+    @apply btn bg-ink text-bg hover:opacity-90;
   }
 
   .btn-secondary {
-    @apply btn border border-line bg-surface text-ink hover:bg-surface-2;
+    @apply btn border border-line-strong bg-transparent text-ink hover:bg-surface-2;
   }
 
   .btn-ghost {
-    @apply btn text-brand-ink hover:bg-surface-2;
+    @apply btn text-ink hover:bg-surface-2;
   }
 
   .btn-danger {
-    @apply btn bg-short-text text-white dark:text-charcoal;
+    @apply btn bg-short text-on-accent hover:opacity-90;
   }
 
   .field {
-    @apply min-h-[44px] w-full rounded-xl border border-line bg-surface px-3.5 text-base text-ink placeholder:text-muted focus-visible:border-brand sm:text-[15px];
+    @apply min-h-[44px] w-full rounded-xl border border-line bg-surface px-3.5 text-base text-ink transition-colors placeholder:text-subtle hover:border-line-strong focus-visible:border-accent sm:text-[15px];
   }
 
   .label {
     @apply mb-1.5 block text-sm font-medium text-ink;
   }
 
+  /* Section label: tiny uppercase card header. */
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.08em] text-muted;
+    @apply text-xs font-semibold uppercase tracking-[0.06em] text-subtle;
   }
 
   .skeleton {
     @apply rounded-xl;
-    background: linear-gradient(90deg, var(--c-surface-2) 25%, var(--c-line) 50%, var(--c-surface-2) 75%);
+    background: linear-gradient(90deg, var(--color-surface-2) 25%, var(--color-surface-3) 50%, var(--color-surface-2) 75%);
     background-size: 200% 100%;
     animation: shimmer 1.4s linear infinite;
   }
-}
 
-@layer components {
   /* The chart is the slider: an invisible native range input sits over the plot. */
   .scrub-input {
     -webkit-appearance: none;
@@ -179,18 +208,7 @@
     border: 0;
   }
   .scrub-plot:has(.scrub-input:focus-visible) {
-    outline: 3px solid var(--c-focus);
+    outline: 2px solid var(--color-focus);
     outline-offset: 4px;
-  }
-}
-
-/* Public Stunt's lowercase v and y are nearly identical ("Privacy" reads as "Priyacy").
-   Display text is set in capitals, which are distinct and match the TENGO wordmark. */
-@layer utilities {
-  .font-display {
-    text-transform: uppercase;
-    letter-spacing: 0.01em;
-    /* The font's own space is very narrow in capitals. */
-    word-spacing: 0.22em;
   }
 }

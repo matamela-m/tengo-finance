@@ -15,8 +15,8 @@ interface CoverBarsProps {
 
 export function CoverBars({ state, size = 24, className }: CoverBarsProps) {
   const level = LEVEL[state];
-  const fill = `var(--c-${state})`;
-  const stroke = `var(--c-${state}-text)`;
+  const fill = `var(--color-${state})`;
+  const stroke = `var(--color-${state})`;
   const bars = [0.45, 0.72, 1];
   const w = size;
   const h = size;
@@ -42,7 +42,7 @@ export function CoverBars({ state, size = 24, className }: CoverBarsProps) {
             width={bw - 1.5}
             height={bh - 1.5}
             rx={Math.min(3, bw / 3)}
-            fill={lit ? fill : 'var(--c-line)'}
+            fill={lit ? fill : 'var(--color-border)'}
             stroke={lit ? stroke : 'none'}
             strokeWidth={lit ? 1.5 : 0}
           />

@@ -50,7 +50,7 @@ export default function HomePage() {
       <div className="flex flex-col gap-4 sm:gap-5 lg:flex-row lg:items-start lg:gap-6">
         <div className="contents lg:flex lg:w-[58%] lg:flex-col lg:gap-6">
           <section className="card relative order-1 overflow-hidden p-6 sm:p-8 lg:order-none" aria-label={t('home.heroLabel')}>
-            <div className="pointer-events-none absolute right-0 top-0 h-56 w-56 -translate-y-1/4 translate-x-1/4 rounded-full bg-mint/40 blur-2xl" aria-hidden />
+            <div className="pointer-events-none absolute right-0 top-0 h-56 w-56 -translate-y-1/4 translate-x-1/4 rounded-full bg-accent-soft blur-2xl" aria-hidden />
             <div className="relative flex flex-wrap items-start justify-between gap-4">
               <DateHero forecast={forecast} />
               <div className="flex items-center gap-3">
@@ -59,7 +59,7 @@ export default function HomePage() {
               </div>
             </div>
             {forecast.state === 'short' && (
-              <p className="relative mt-3 text-[15px] font-semibold text-short-text">{t('hero.gap', { count: forecast.gapDays })}</p>
+              <p className="relative mt-3 text-[15px] font-semibold text-short">{t('hero.gap', { count: forecast.gapDays })}</p>
             )}
             <div className="relative mt-6 border-t border-line pt-5">
               <RangeBand forecast={forecast} />

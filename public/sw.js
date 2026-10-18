@@ -1,8 +1,8 @@
 // Tengo service worker: makes the demo installable and usable offline.
 // Pages: network first, so a new build is picked up straight away. Hashed assets: cache first.
 // Everything is same-origin; nothing third party is fetched or cached.
-const CACHE = 'tengo-v1';
-const SHELL = ['/', '/manifest.webmanifest', '/icons/icon-192.png', '/brand/tengo-horizontal-on-light.png', '/brand/tengo-mark-on-light.png'];
+const CACHE = 'tengo-v2';
+const SHELL = ['/', '/manifest.webmanifest', '/icons/icon-192.png', '/icons/favicon.svg'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));

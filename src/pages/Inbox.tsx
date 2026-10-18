@@ -6,7 +6,7 @@ import { LoadingBlock, Notice } from '../components/Feedback';
 import { Icon } from '../components/Icon';
 import { PageHeader } from '../components/PageHeader';
 import { Segmented } from '../components/Segmented';
-import { TengoLogo } from '../components/TengoLogo';
+import { Brand } from '../components/Brand';
 import { usePersona, useReadyPersona } from '../data/PersonaProvider';
 import type { LanguageCode } from '../i18n/languages';
 import { LanguageSelect } from '../components/LanguageSelector';
@@ -100,21 +100,21 @@ export default function InboxPage() {
               />
             </div>
 
-            <div className={`px-4 py-8 sm:px-8 ${channel === 'whatsapp' ? 'bg-[#E7DFD4]' : 'bg-surface-2'}`}>
+            <div className={`px-4 py-8 sm:px-8 ${channel === 'whatsapp' ? 'bg-surface-3' : 'bg-surface-2'}`}>
               <div className="mx-auto max-w-md">
                 <div className="mb-4 flex items-center justify-center gap-2">
-                  <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-[#5A5A55]">{t('inbox.todayAt')}</span>
+                  <span className="rounded-full bg-surface px-3 py-1 text-xs font-medium text-muted">{t('inbox.todayAt')}</span>
                 </div>
                 <div className="flex items-end gap-2">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white p-1">
-                    <TengoLogo variant="mark" height={20} decorative />
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full bg-surface p-1">
+                    <Brand variant="mark" size={20} decorative />
                   </span>
                   <div
                     className={`relative min-w-0 max-w-[85%] rounded-2xl rounded-bl-md px-4 py-3 text-[15px] leading-relaxed shadow-card ${
-                      channel === 'whatsapp' ? 'bg-white text-charcoal' : 'bg-surface text-ink'
+                      channel === 'whatsapp' ? 'bg-surface text-ink' : 'bg-surface text-ink'
                     }`}
                   >
-                    <p className="mb-1 text-xs font-semibold text-deep-green">Tengo</p>
+                    <p className="mb-1 text-xs font-semibold text-accent">Tengo</p>
                     {message ? (
                       <p lang={message.language} className="num break-words">
                         {channel === 'whatsapp' ? <WhatsAppText text={message.text} /> : message.text}
@@ -122,7 +122,7 @@ export default function InboxPage() {
                     ) : (
                       <LoadingBlock lines={3} />
                     )}
-                    <p className="mt-1 text-right text-[11px] text-[#5A5A55]">07:00</p>
+                    <p className="mt-1 text-right text-[11px] text-muted">07:00</p>
                   </div>
                 </div>
               </div>
@@ -147,7 +147,7 @@ export default function InboxPage() {
               <ul className="mt-4 space-y-2 text-sm">
                 {(['what', 'never', 'stop'] as const).map((k) => (
                   <li key={k} className="flex gap-2">
-                    <Icon name="check" size={16} className="mt-0.5 shrink-0 text-enough-text" />
+                    <Icon name="check" size={16} className="mt-0.5 shrink-0 text-enough" />
                     {t(`inbox.facts.${k}`)}
                   </li>
                 ))}

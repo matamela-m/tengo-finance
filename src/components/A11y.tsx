@@ -33,7 +33,7 @@ export function A11yProvider({ children }: { children: ReactNode }) {
       </div>
       {toast && (
         <div aria-hidden className="pointer-events-none fixed inset-x-0 bottom-[88px] z-[70] flex justify-center px-4 lg:bottom-8">
-          <div key={toast.id} className="flex animate-rise items-center gap-2 rounded-full bg-charcoal px-5 py-3 text-sm font-semibold text-off-white shadow-lift dark:bg-off-white dark:text-charcoal">
+          <div key={toast.id} className="flex animate-rise items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-bg shadow-lift">
             <Icon name="checkCircle" size={18} />
             {toast.text}
           </div>

@@ -5,9 +5,9 @@ import { Icon, type IconName } from './Icon';
 export const STATE_ICON: Record<CoverState, IconName> = { enough: 'checkCircle', tight: 'alert', short: 'shortCircle' };
 
 const STYLES: Record<CoverState, string> = {
-  enough: 'bg-enough-soft text-enough-text',
-  tight: 'bg-tight-soft text-tight-text',
-  short: 'bg-short-soft text-short-text',
+  enough: 'bg-enough-soft text-enough',
+  tight: 'bg-tight-soft text-tight',
+  short: 'bg-short-soft text-short',
 };
 
 /** Colour, word and icon together, so colour is never the only signal. */

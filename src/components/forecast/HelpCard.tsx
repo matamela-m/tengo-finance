@@ -19,7 +19,7 @@ export function HelpCard() {
     return (
       <section className="card p-6" aria-labelledby="help-title">
         <div className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-enough-soft text-enough-text">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-enough-soft text-enough">
             <Icon name="sparkle" size={18} />
           </span>
           <h2 id="help-title" className="text-lg font-semibold">
@@ -60,7 +60,7 @@ export function HelpCard() {
       <ul className="mt-4 space-y-2.5">
         {ideas.map((idea) => (
           <li key={idea.text} className="flex items-start gap-3 rounded-2xl bg-surface-2 px-4 py-3 text-[15px]">
-            <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-surface text-brand-ink">
+            <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-surface text-accent">
               <Icon name={idea.icon} size={16} />
             </span>
             <span className="num">{idea.text}</span>

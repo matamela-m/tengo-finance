@@ -1,39 +1,42 @@
 /** @type {import('tailwindcss').Config} */
+const ch = (name) => `rgb(var(--${name}) / <alpha-value>)`;
+
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     extend: {
+      // Every colour comes from the tokens in src/styles/index.css. No fixed palette.
       colors: {
-        white: '#FFFFFF',
-        'off-white': '#EEEBE6',
-        mint: '#B6DFB2',
-        sage: '#7AAB88',
-        'deep-green': '#125747',
-        charcoal: '#1E1E1E',
-        bg: 'var(--c-bg)',
-        surface: 'var(--c-surface)',
-        'surface-2': 'var(--c-surface-2)',
-        ink: 'var(--c-ink)',
-        muted: 'var(--c-muted)',
-        line: 'var(--c-line)',
-        brand: 'var(--c-brand)',
-        'brand-ink': 'var(--c-brand-ink)',
-        'on-brand': 'var(--c-on-brand)',
-        enough: { DEFAULT: 'var(--c-enough)', text: 'var(--c-enough-text)', soft: 'var(--c-enough-soft)' },
-        tight: { DEFAULT: 'var(--c-tight)', text: 'var(--c-tight-text)', soft: 'var(--c-tight-soft)' },
-        short: { DEFAULT: 'var(--c-short)', text: 'var(--c-short-text)', soft: 'var(--c-short-soft)' },
+        bg: ch('bg'),
+        surface: { DEFAULT: ch('surface-1'), 2: ch('surface-2'), 3: ch('surface-3') },
+        line: { DEFAULT: ch('border'), strong: ch('border-strong') },
+        ink: ch('text'),
+        muted: ch('text-muted'),
+        subtle: ch('text-subtle'),
+        accent: { DEFAULT: ch('accent'), soft: 'var(--color-accent-soft)' },
+        'on-accent': ch('on-accent'),
+        enough: { DEFAULT: ch('enough'), soft: 'var(--color-enough-soft)' },
+        tight: { DEFAULT: ch('tight'), soft: 'var(--color-tight-soft)' },
+        short: { DEFAULT: ch('short'), soft: 'var(--color-short-soft)' },
+        scrim: 'rgb(var(--scrim) / var(--scrim-a))',
       },
       fontFamily: {
-        sans: ['"Inter Variable"', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['"Public Stunt"', '"Inter Variable"', 'Inter', 'system-ui', 'sans-serif'],
-        // Big money figures. Inter until the licensed Public Stunt (with real digits) is in place.
-        figures: ['"Inter Variable"', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-body)'],
+        heading: ['var(--font-heading)'],
       },
-      borderRadius: { xl: '1rem', '2xl': '1.25rem', '3xl': '1.75rem' },
+      fontSize: {
+        // Fluid type scale. Never below 12px.
+        display: ['clamp(2.75rem, 1.6rem + 4.6vw, 5.5rem)', { lineHeight: '1', letterSpacing: '-0.03em', fontWeight: '700' }],
+        h1: ['clamp(2rem, 1.6rem + 1.4vw, 2.5rem)', { lineHeight: '1.1', letterSpacing: '-0.025em', fontWeight: '700' }],
+        h2: ['clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem)', { lineHeight: '1.2', letterSpacing: '-0.015em', fontWeight: '650' }],
+        h3: ['1.25rem', { lineHeight: '1.3', letterSpacing: '-0.01em', fontWeight: '600' }],
+        caption: ['0.75rem', { lineHeight: '1.4' }],
+      },
+      borderRadius: { xl: '0.75rem', '2xl': '1rem', '3xl': '1.5rem' },
       boxShadow: {
-        card: '0 1px 2px rgba(30,30,30,0.04), 0 4px 16px rgba(30,30,30,0.05)',
-        lift: '0 2px 4px rgba(30,30,30,0.05), 0 12px 32px rgba(30,30,30,0.09)',
+        card: 'none',
+        lift: '0 12px 32px -12px rgb(0 0 0 / 0.25)',
       },
       maxWidth: { app: '1360px' },
       keyframes: {
@@ -45,9 +48,9 @@ export default {
       },
       animation: {
         rise: 'rise 420ms cubic-bezier(0.2, 0.8, 0.2, 1) both',
-        fade: 'fade 300ms ease-out both',
-        'slide-in': 'slideIn 320ms cubic-bezier(0.2, 0.8, 0.2, 1) both',
-        'slide-up': 'slideUp 320ms cubic-bezier(0.2, 0.8, 0.2, 1) both',
+        fade: 'fade 200ms ease-out both',
+        'slide-in': 'slideIn 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both',
+        'slide-up': 'slideUp 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both',
         shimmer: 'shimmer 1.4s linear infinite',
       },
     },

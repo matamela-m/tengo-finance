@@ -15,7 +15,7 @@ function Card({ icon, title, children, className = '' }: { icon: IconName; title
   return (
     <section className={`card p-6 ${className}`}>
       <div className="flex items-center gap-2.5">
-        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-mint/50 dark:bg-mint text-charcoal">
+        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-soft text-ink">
           <Icon name={icon} size={18} />
         </span>
         <h2 className="text-lg font-semibold">{title}</h2>
@@ -61,7 +61,7 @@ export default function PrivacyOverview() {
         <div className="flex min-w-0 flex-col gap-6 lg:col-span-2">
           <section className="card p-6" aria-labelledby="consent-title">
             <div className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-mint/50 dark:bg-mint text-charcoal">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-soft text-ink">
                 <Icon name="check" size={18} />
               </span>
               <h2 id="consent-title" className="text-lg font-semibold">
@@ -78,7 +78,7 @@ export default function PrivacyOverview() {
 
           <Card icon="filter" title={t('privacy.minimisation')}>
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl bg-enough-soft p-4 text-enough-text">
+              <div className="rounded-2xl bg-enough-soft p-4 text-enough">
                 <p className="flex items-center gap-1.5 font-semibold">
                   <Icon name="checkCircle" size={18} />
                   {t('privacy.uses')}
@@ -107,7 +107,7 @@ export default function PrivacyOverview() {
             <ul className="space-y-2">
               {(['transit', 'rest', 'access', 'test'] as const).map((k) => (
                 <li key={k} className="flex items-start gap-2">
-                  <Icon name="check" size={18} className="mt-0.5 shrink-0 text-enough-text" />
+                  <Icon name="check" size={18} className="mt-0.5 shrink-0 text-enough" />
                   {t(`privacy.securityItems.${k}`)}
                 </li>
               ))}
@@ -125,7 +125,7 @@ export default function PrivacyOverview() {
               {LINKS.map((l) => (
                 <li key={l.to}>
                   <Link to={l.to} className="flex min-h-[56px] items-center gap-3 rounded-2xl px-3 py-2 hover:bg-surface-2">
-                    <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${l.key === 'delete' ? 'bg-short-soft text-short-text' : 'bg-surface-2'}`}>
+                    <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${l.key === 'delete' ? 'bg-short-soft text-short' : 'bg-surface-2'}`}>
                       <Icon name={l.icon} size={18} />
                     </span>
                     <span className="min-w-0 flex-1">
@@ -159,7 +159,7 @@ export default function PrivacyOverview() {
                 <dd className="font-semibold">privacy@example.org</dd>
               </div>
             </dl>
-            <p className="mt-3 rounded-xl bg-tight-soft px-3 py-2 text-xs font-semibold text-tight-text">{t('privacy.placeholderNote')}</p>
+            <p className="mt-3 rounded-xl bg-tight-soft px-3 py-2 text-xs font-semibold text-tight">{t('privacy.placeholderNote')}</p>
             <p className="mt-3 text-sm text-muted">{t('privacy.complaints')}</p>
           </Card>
         </div>

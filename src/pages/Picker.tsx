@@ -10,9 +10,8 @@ import { CoverBars } from '../components/CoverBars';
 import { DemoChip } from '../components/DemoChip';
 import { Icon } from '../components/Icon';
 import { LanguageSelector } from '../components/LanguageSelector';
-import { useIsDark } from '../components/Preferences';
 import { StateChip } from '../components/StateChip';
-import { TengoLogo } from '../components/TengoLogo';
+import { Brand } from '../components/Brand';
 import { repository } from '../data';
 import { PERSONAS, type PersonaProfile } from '../data/seed/personas';
 import { usePageTitle } from '../lib/usePageTitle';
@@ -24,7 +23,6 @@ export default function Picker() {
   const navigate = useNavigate();
   const active = useSession((s) => s.activePersonaId);
   const setActive = useSession((s) => s.setActivePersona);
-  const bg = useIsDark() ? 'dark' : 'light';
   const d = useDates();
   const [params] = useSearchParams();
   const deletedId = params.get('deleted');
@@ -45,7 +43,7 @@ export default function Picker() {
     <div className="min-h-dvh">
       <header className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-4 px-5 py-5 sm:px-8 lg:px-12">
         <Link to="/" className="rounded-lg" aria-label={t('picker.backHome')}>
-          <TengoLogo variant="horizontal" background={bg} height={26} />
+          <Brand size={24} />
         </Link>
         <DemoChip />
       </header>
@@ -53,7 +51,7 @@ export default function Picker() {
       <main id="main" className="mx-auto w-full max-w-[1440px] px-5 pb-16 pt-4 sm:px-8 lg:px-12 lg:pt-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="min-w-0 lg:flex-1">
-            <h1 className="font-display text-[32px] font-extrabold leading-[1.05] sm:text-[46px]">{t('picker.title')}</h1>
+            <h1 className="font-heading text-[32px] font-extrabold leading-[1.05] sm:text-[46px]">{t('picker.title')}</h1>
             <p className="mt-3 max-w-2xl text-lg text-muted">{t('picker.lead')}</p>
           </div>
           <LanguageSelector className="w-full shrink-0 sm:max-w-sm lg:w-80" />
@@ -75,8 +73,8 @@ export default function Picker() {
             {PERSONAS.map((p) => (
               <li key={p.id}>
                 <article
-                  className={`group card relative flex h-full w-full flex-col p-6 transition-[transform,box-shadow] duration-200 focus-within:ring-[3px] focus-within:ring-[var(--c-focus)] hover:-translate-y-0.5 hover:shadow-lift sm:p-7 ${
-                    active === p.id ? 'ring-2 ring-brand' : ''
+                  className={`group card relative flex h-full w-full flex-col p-6 transition-[transform,box-shadow] duration-200 focus-within:ring-[3px] focus-within:ring-[var(--color-focus)] hover:-translate-y-0.5 hover:shadow-lift sm:p-7 ${
+                    active === p.id ? 'ring-2 ring-accent' : ''
                   }`}
                 >
                   <div className="flex w-full items-start justify-between gap-4">
@@ -86,7 +84,7 @@ export default function Picker() {
                       <CoverBars state={p.startState} size={28} />
                     </div>
                   </div>
-                  <h3 className="mt-6 font-display text-[30px] font-extrabold leading-none">{p.name}</h3>
+                  <h3 className="mt-6 font-heading text-[30px] font-extrabold leading-none">{p.name}</h3>
                   <p className="mt-2 text-[15px] font-semibold">
                     {t(`personas.${p.id}.role`)}, {p.place}
                   </p>
@@ -96,7 +94,7 @@ export default function Picker() {
                     <button
                       type="button"
                       onClick={() => void choose(p)}
-                      className="inline-flex min-h-[44px] items-center gap-1 text-sm font-semibold text-brand-ink after:absolute after:inset-0 after:rounded-3xl after:content-[''] focus-visible:outline-none"
+                      className="inline-flex min-h-[44px] items-center gap-1 text-sm font-semibold text-accent after:absolute after:inset-0 after:rounded-3xl after:content-[''] focus-visible:outline-none"
                     >
                       {active === p.id ? t('picker.continueAs', { name: p.name }) : t('picker.enterAs', { name: p.name })}
                       <Icon name="arrowRight" size={16} className="transition-transform group-hover:translate-x-0.5" />

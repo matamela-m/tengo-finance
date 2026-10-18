@@ -90,8 +90,8 @@ export function TransactionEditor({ tx, onClose }: { tx: Transaction | null; onC
             {CATEGORIES.map((c) => (
               <label
                 key={c}
-                className={`flex min-h-[44px] cursor-pointer items-center justify-center rounded-xl border text-sm font-semibold focus-within:outline focus-within:outline-[3px] focus-within:outline-offset-2 focus-within:outline-[var(--c-focus)] ${
-                  category === c ? 'border-brand bg-brand text-on-brand' : 'border-line bg-surface'
+                className={`flex min-h-[44px] cursor-pointer items-center justify-center rounded-xl border text-sm font-semibold focus-within:outline focus-within:outline-[3px] focus-within:outline-offset-2 focus-within:outline-[var(--color-focus)] ${
+                  category === c ? 'border-accent bg-accent text-on-accent' : 'border-line bg-surface'
                 }`}
               >
                 <input type="radio" name="category" className="sr-only" checked={category === c} onChange={() => setCategory(c)} />

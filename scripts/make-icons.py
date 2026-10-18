@@ -1,8 +1,7 @@
-"""Builds favicons and app icons from the supplied light mark.
+"""Builds placeholder favicons and app icons: the "T" mark from the Brand component.
 
-The mark is only scaled and placed on a background; it is never redrawn.
-Favicons and manifest icons are round (off-white circle, transparent corners).
-The Apple touch icon stays square because iOS applies its own rounded mask.
+A rounded square in the accent colour with a bold T. Placeholders until the new logo lands;
+replace the files in public/icons (and the Brand component) when it does.
 
 Run: pip install pillow && python3 scripts/make-icons.py
 """
@@ -10,46 +9,54 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
-SRC = Path('assets/brand/tengo-mark-on-light.png')
 OUT = Path('public/icons')
-BG = (238, 235, 230, 255)  # off-white #EEEBE6
-SUPERSAMPLE = 4
+ACCENT = (114, 145, 255, 255)  # dark theme --accent
+ON_ACCENT = (11, 11, 12, 255)  # dark theme --on-accent
+SS = 4  # supersample for smooth edges
 
 
-def place_mark(canvas: Image.Image, mark: Image.Image, width_ratio: float) -> None:
-    """Scales the mark to a share of the canvas width and centres it."""
-    size = canvas.width
-    w = round(size * width_ratio)
-    h = round(mark.height * w / mark.width)
-    scaled = mark.resize((w, h), Image.LANCZOS)
-    canvas.alpha_composite(scaled, ((size - w) // 2, (size - h) // 2))
+def t_glyph(draw: ImageDraw.ImageDraw, size: int, scale: float) -> None:
+    """A geometric bold T, centred. scale is the T height as a share of the canvas."""
+    h = size * scale
+    w = h * 0.86
+    bar = h * 0.24
+    stem = h * 0.27
+    x0 = (size - w) / 2
+    y0 = (size - h) / 2
+    r = bar * 0.22
+    draw.rounded_rectangle((x0, y0, x0 + w, y0 + bar), radius=r, fill=ON_ACCENT)
+    sx = (size - stem) / 2
+    draw.rounded_rectangle((sx, y0, sx + stem, y0 + h), radius=r, fill=ON_ACCENT)
 
 
-def round_icon(mark: Image.Image, size: int) -> Image.Image:
-    big = size * SUPERSAMPLE
-    canvas = Image.new('RGBA', (big, big), (0, 0, 0, 0))
-    disc = Image.new('L', (big, big), 0)
-    ImageDraw.Draw(disc).ellipse((0, 0, big - 1, big - 1), fill=255)
-    canvas.paste(Image.new('RGBA', (big, big), BG), (0, 0), disc)
-    # A circle has less room in the corners, so the mark sits a little smaller than on a square.
-    place_mark(canvas, mark, 0.6)
-    return canvas.resize((size, size), Image.LANCZOS)
-
-
-def square_icon(mark: Image.Image, size: int) -> Image.Image:
-    big = size * SUPERSAMPLE
-    canvas = Image.new('RGBA', (big, big), BG)
-    place_mark(canvas, mark, 0.7)
-    return canvas.resize((size, size), Image.LANCZOS).convert('RGB')
+def icon(size: int, rounded: bool, scale: float) -> Image.Image:
+    big = size * SS
+    img = Image.new('RGBA', (big, big), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    if rounded:
+        d.rounded_rectangle((0, 0, big - 1, big - 1), radius=big * 0.28, fill=ACCENT)
+    else:
+        d.rectangle((0, 0, big, big), fill=ACCENT)
+    t_glyph(d, big, scale)
+    return img.resize((size, size), Image.LANCZOS)
 
 
 def main() -> None:
-    mark = Image.open(SRC).convert('RGBA')
     OUT.mkdir(parents=True, exist_ok=True)
     for name, size in {'favicon-32.png': 32, 'favicon-64.png': 64, 'icon-192.png': 192, 'icon-512.png': 512}.items():
-        round_icon(mark, size).save(OUT / name, optimize=True)
-    square_icon(mark, 180).save(OUT / 'apple-touch-icon.png', optimize=True)
-    print(f'Icons written to {OUT}')
+        icon(size, rounded=True, scale=0.52).save(OUT / name, optimize=True)
+    # Full bleed: iOS and Android apply their own mask. Keep the T inside the safe zone.
+    icon(180, rounded=False, scale=0.5).convert('RGB').save(OUT / 'apple-touch-icon.png', optimize=True)
+    icon(512, rounded=False, scale=0.42).convert('RGB').save(OUT / 'icon-maskable-512.png', optimize=True)
+    svg = (
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
+        '<rect width="64" height="64" rx="18" fill="#7291FF"/>'
+        '<rect x="17.7" y="15.4" width="28.6" height="8" rx="1.8" fill="#0B0B0C"/>'
+        '<rect x="27.5" y="15.4" width="9" height="33.3" rx="1.8" fill="#0B0B0C"/>'
+        '</svg>\n'
+    )
+    (OUT / 'favicon.svg').write_text(svg)
+    print(f'Placeholder icons written to {OUT}')
 
 
 if __name__ == '__main__':

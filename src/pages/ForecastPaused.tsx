@@ -10,10 +10,10 @@ export function ForecastPaused() {
   usePageTitle(t('paused.title'));
   return (
     <section className="card mx-auto max-w-2xl p-8 text-center sm:p-12">
-      <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-tight-soft text-tight-text">
+      <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-tight-soft text-tight">
         <Icon name="pause" size={30} />
       </span>
-      <h1 className="mt-5 font-display text-4xl font-extrabold">{t('paused.title')}</h1>
+      <h1 className="mt-5 font-heading text-4xl font-extrabold">{t('paused.title')}</h1>
       <p className="mx-auto mt-3 max-w-md text-muted">{t('paused.body')}</p>
       <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
         <button

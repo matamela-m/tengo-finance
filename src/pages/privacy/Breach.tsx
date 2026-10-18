@@ -11,7 +11,7 @@ export default function Breach() {
         <strong>{t('privacy.breachSample')}</strong>
       </Notice>
       <article className="card relative mx-auto max-w-3xl overflow-hidden p-6 sm:p-10">
-        <span aria-hidden className="pointer-events-none mb-4 inline-block rotate-3 sm:absolute sm:right-6 sm:top-6 sm:mb-0 sm:rotate-6 rounded-lg border-2 border-tight-text px-3 py-1 text-sm font-extrabold uppercase tracking-widest text-tight-text">
+        <span aria-hidden className="pointer-events-none mb-4 inline-block rotate-3 sm:absolute sm:right-6 sm:top-6 sm:mb-0 sm:rotate-6 rounded-lg border-2 border-tight px-3 py-1 text-sm font-extrabold uppercase tracking-widest text-tight">
           {t('privacy.sampleStamp')}
         </span>
         <p className="text-sm text-muted">{t('privacy.breachDate')}</p>

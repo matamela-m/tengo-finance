@@ -8,13 +8,14 @@ export interface PersonaProfile {
   /** i18n keys under personas.<id> hold role, place and situation. */
   place: string;
   startState: CoverState;
-  avatar: { bg: string; fg: string };
+  /** Avatar tone, drawn from the theme tokens. */
+  avatar: 'accent' | 'neutral' | 'inverse';
 }
 
 export const PERSONAS: PersonaProfile[] = [
-  { id: 'thabo', name: 'Thabo', place: 'Tshwane', startState: 'tight', avatar: { bg: '#125747', fg: '#B6DFB2' } },
-  { id: 'lerato', name: 'Lerato', place: 'Mamelodi', startState: 'enough', avatar: { bg: '#B6DFB2', fg: '#1E1E1E' } },
-  { id: 'ayanda', name: 'Ayanda', place: 'Tembisa', startState: 'short', avatar: { bg: '#7AAB88', fg: '#1E1E1E' } },
+  { id: 'thabo', name: 'Thabo', place: 'Tshwane', startState: 'tight', avatar: 'accent' },
+  { id: 'lerato', name: 'Lerato', place: 'Mamelodi', startState: 'enough', avatar: 'neutral' },
+  { id: 'ayanda', name: 'Ayanda', place: 'Tembisa', startState: 'short', avatar: 'inverse' },
 ];
 
 export function getPersona(id: string | null | undefined): PersonaProfile | undefined {

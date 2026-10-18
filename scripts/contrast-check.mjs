@@ -1,100 +1,58 @@
-// Checks WCAG contrast for every text and surface pair the UI uses.
-// Run: npm run contrast. Exits non-zero if any pair fails its target.
+// WCAG contrast check for every text and UI pair the interface uses, in both themes.
+// Translucent fills (soft state and accent tints) are blended over the surface they sit on first.
+// Run: npm run contrast (also runs as part of npm run test). Add --md for a README table.
+// Keep the values in step with src/styles/index.css.
 
-const c = {
-  white: '#FFFFFF',
-  offWhite: '#EEEBE6',
-  mint: '#B6DFB2',
-  sage: '#7AAB88',
-  deepGreen: '#125747',
-  charcoal: '#1E1E1E',
-  muted: '#5A5A55',
-  mutedOnDark: '#B9B5AE',
-  enough: '#2FB36B',
-  tight: '#E8A33D',
-  short: '#C8553D',
-  enoughText: '#17703F',
-  tightText: '#8A5300',
-  shortText: '#A33A25',
-  enoughSoft: '#DDF3E4',
-  tightSoft: '#FBEBD2',
-  shortSoft: '#F6DDD7',
-  // Dark theme
-  darkBg: '#161616',
-  darkSurface: '#1E1E1E',
-  darkSurface2: '#262624',
-  darkInk: '#EEEBE6',
-  darkMuted: '#B9B5AE',
-  darkBrandInk: '#B6DFB2',
-  darkEnoughText: '#6FD59B',
-  darkTightText: '#F2C27A',
-  darkShortText: '#EF9A87',
-  darkEnoughSoft: '#1D3A29',
-  darkTightSoft: '#3D2F18',
-  darkShortSoft: '#43231C',
-  waChat: '#E7DFD4',
+const THEMES = {
+  dark: {
+    bg: '#0B0B0C',
+    'surface-1': '#121214',
+    'surface-2': '#18181B',
+    'surface-3': '#1F1F23',
+    text: '#F4F4F5',
+    'text-muted': '#A1A1AA',
+    'text-subtle': '#8B8B94',
+    accent: '#7291FF',
+    'on-accent': '#0B0B0C',
+    enough: '#34D399',
+    tight: '#FBBF24',
+    short: '#F97362',
+    accentSoftA: 0.14,
+    stateSoftA: 0.13,
+  },
+  light: {
+    bg: '#FBFBFA',
+    'surface-1': '#FFFFFF',
+    'surface-2': '#F4F3F1',
+    'surface-3': '#ECEAE6',
+    text: '#1C1B19',
+    'text-muted': '#66635D',
+    'text-subtle': '#6C6963',
+    accent: '#3755CC',
+    'on-accent': '#FFFFFF',
+    enough: '#046E50',
+    tight: '#9B4708',
+    short: '#A9390A',
+    accentSoftA: 0.1,
+    stateSoftA: 0.1,
+  },
 };
 
-// [label, foreground, background, minimum ratio]
-const pairs = [
-  ['Body text on off-white', 'charcoal', 'offWhite', 4.5],
-  ['Body text on white', 'charcoal', 'white', 4.5],
-  ['Off-white text on charcoal', 'offWhite', 'charcoal', 4.5],
-  ['Muted text on off-white', 'muted', 'offWhite', 4.5],
-  ['Muted text on white', 'muted', 'white', 4.5],
-  ['Muted text on charcoal', 'mutedOnDark', 'charcoal', 4.5],
-  ['Deep green text on off-white', 'deepGreen', 'offWhite', 4.5],
-  ['Deep green text on white', 'deepGreen', 'white', 4.5],
-  ['White text on deep green (buttons)', 'white', 'deepGreen', 4.5],
-  ['Mint text on charcoal', 'mint', 'charcoal', 4.5],
-  ['Charcoal text on mint', 'charcoal', 'mint', 4.5],
-  ['Charcoal text on sage (large/UI only)', 'charcoal', 'sage', 3],
-  ['Enough text on off-white', 'enoughText', 'offWhite', 4.5],
-  ['Enough text on white', 'enoughText', 'white', 4.5],
-  ['Enough text on soft enough', 'enoughText', 'enoughSoft', 4.5],
-  ['Tight text on off-white', 'tightText', 'offWhite', 4.5],
-  ['Tight text on white', 'tightText', 'white', 4.5],
-  ['Tight text on soft tight', 'tightText', 'tightSoft', 4.5],
-  ['Short text on off-white', 'shortText', 'offWhite', 4.5],
-  ['Short text on white', 'shortText', 'white', 4.5],
-  ['Short text on soft short', 'shortText', 'shortSoft', 4.5],
-  ['Charcoal text on Enough fill', 'charcoal', 'enough', 4.5],
-  ['Charcoal text on Tight fill', 'charcoal', 'tight', 4.5],
-  ['Charcoal large text on Short fill', 'charcoal', 'short', 3],
-  ['Enough icon (text variant) on white', 'enoughText', 'white', 3],
-  ['Tight icon (text variant) on white', 'tightText', 'white', 3],
-  ['Gauge outline (enough) on off-white', 'enoughText', 'offWhite', 3],
-  ['Enough fill as UI icon on charcoal', 'enough', 'charcoal', 3],
-  ['Tight fill as UI icon on charcoal', 'tight', 'charcoal', 3],
-  ['Short fill as UI icon on off-white', 'short', 'offWhite', 3],
-  ['Short fill as UI icon on white', 'short', 'white', 3],
-  ['Short fill as UI icon on charcoal', 'short', 'charcoal', 3],
-  ['Enough vs deep green (distinct hue check)', 'enough', 'deepGreen', 1.5],
-  ['Avatar: mint initials on deep green', 'mint', 'deepGreen', 3],
-  ['Avatar: charcoal initials on sage', 'charcoal', 'sage', 3],
-  ['WhatsApp bubble text on white', 'charcoal', 'white', 4.5],
-  ['WhatsApp date pill text on chat bg', 'muted', 'waChat', 4.5],
-  ['Dark: body text on background', 'darkInk', 'darkBg', 4.5],
-  ['Dark: body text on surface', 'darkInk', 'darkSurface', 4.5],
-  ['Dark: muted text on surface', 'darkMuted', 'darkSurface', 4.5],
-  ['Dark: muted text on surface 2', 'darkMuted', 'darkSurface2', 4.5],
-  ['Dark: brand text on surface', 'darkBrandInk', 'darkSurface', 4.5],
-  ['Dark: charcoal on sage (active nav, buttons)', 'charcoal', 'sage', 4.5],
-  ['Dark: Enough text on surface', 'darkEnoughText', 'darkSurface', 4.5],
-  ['Dark: Tight text on surface', 'darkTightText', 'darkSurface', 4.5],
-  ['Dark: Short text on surface', 'darkShortText', 'darkSurface', 4.5],
-  ['Dark: Enough text on soft enough', 'darkEnoughText', 'darkEnoughSoft', 4.5],
-  ['Dark: Tight text on soft tight', 'darkTightText', 'darkTightSoft', 4.5],
-  ['Dark: Short text on soft short', 'darkShortText', 'darkShortSoft', 4.5],
-];
+const SURFACES = ['bg', 'surface-1', 'surface-2', 'surface-3'];
+const STATES = ['enough', 'tight', 'short'];
 
-function lum(hex) {
-  const n = parseInt(hex.slice(1), 16);
-  const ch = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((v) => {
-    const s = v / 255;
-    return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
-  });
-  return 0.2126 * ch[0] + 0.7152 * ch[1] + 0.0722 * ch[2];
+const rgb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
+const hex = (c) => '#' + c.map((v) => Math.round(v).toString(16).padStart(2, '0')).join('').toUpperCase();
+/** Colour `fg` at alpha `a` laid over `bg`. */
+const blend = (fg, bg, a) => hex(rgb(fg).map((v, i) => v * a + rgb(bg)[i] * (1 - a)));
+
+function lum(h) {
+  return rgb(h)
+    .map((v) => {
+      const s = v / 255;
+      return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+    })
+    .reduce((acc, v, i) => acc + v * [0.2126, 0.7152, 0.0722][i], 0);
 }
 
 export function ratio(a, b) {
@@ -102,21 +60,56 @@ export function ratio(a, b) {
   return (l1 + 0.05) / (l2 + 0.05);
 }
 
-let failed = 0;
-const rows = pairs.map(([label, fg, bg, min]) => {
-  const r = ratio(c[fg], c[bg]);
-  const ok = r >= min;
-  if (!ok) failed++;
-  return { label, fg: c[fg], bg: c[bg], ratio: r.toFixed(2), min, result: ok ? 'pass' : 'FAIL' };
-});
+function pairsFor(t) {
+  const out = [];
+  const add = (label, fg, bg, min) => out.push({ label, fg, bg, min });
+  for (const s of SURFACES) {
+    add(`Text on ${s}`, t.text, t[s], 4.5);
+    add(`Muted text on ${s}`, t['text-muted'], t[s], 4.5);
+    add(`Subtle text on ${s}`, t['text-subtle'], t[s], 4.5);
+    for (const st of STATES) add(`${st} text on ${s}`, t[st], t[s], 4.5);
+  }
+  for (const s of ['bg', 'surface-1', 'surface-2']) add(`Accent link on ${s}`, t.accent, t[s], 4.5);
+  for (const s of SURFACES) {
+    const soft = blend(t.accent, t[s], t.accentSoftA);
+    add(`Accent text on accent-soft over ${s}`, t.accent, soft, 4.5);
+    add(`Text on accent-soft over ${s}`, t.text, soft, 4.5);
+    for (const st of STATES) add(`${st} text on ${st}-soft over ${s}`, t[st], blend(t[st], t[s], t.stateSoftA), 4.5);
+  }
+  add('Primary pill: background-colour label on text-colour fill', t.bg, t.text, 4.5);
+  add('On-accent on accent (mark, selected)', t['on-accent'], t.accent, 4.5);
+  add('On-accent on short (destructive button)', t['on-accent'], t.short, 4.5);
+  add('Dimmed headline half (display size) on bg', t['text-muted'], t.bg, 3);
+  for (const s of ['bg', 'surface-1', 'surface-2']) add(`Focus ring and handle (accent) on ${s}`, t.accent, t[s], 3);
+  for (const st of STATES) add(`${st} gauge segment on surface-1`, t[st], t['surface-1'], 3);
+  add('Gauge empty segment (surface-3) vs lit is decorative: state word always shown', t['surface-3'], t['surface-1'], 1);
+  return out;
+}
 
-console.table(rows);
+let failed = 0;
+const tables = [];
+for (const [name, t] of Object.entries(THEMES)) {
+  const rows = pairsFor(t).map((p) => {
+    const r = ratio(p.fg, p.bg);
+    const ok = r >= p.min;
+    if (!ok) failed++;
+    return { theme: name, pair: p.label, fg: p.fg, bg: p.bg, ratio: r.toFixed(2), min: p.min, result: ok ? 'pass' : 'FAIL' };
+  });
+  tables.push(...rows);
+}
+
+const fails = tables.filter((r) => r.result === 'FAIL');
 if (process.argv.includes('--md')) {
-  console.log('| Pair | Foreground | Background | Ratio | Target |');
-  console.log('| --- | --- | --- | --- | --- |');
-  rows.forEach((r) => console.log(`| ${r.label} | ${r.fg} | ${r.bg} | ${r.ratio}:1 | ${r.min}:1 |`));
+  console.log('| Theme | Pair | Foreground | Background | Ratio | Target |');
+  console.log('| --- | --- | --- | --- | --- | --- |');
+  tables.forEach((r) => console.log(`| ${r.theme} | ${r.pair} | ${r.fg} | ${r.bg} | ${r.ratio}:1 | ${r.min}:1 |`));
+} else if (process.argv.includes('--all')) {
+  console.table(tables);
+} else {
+  console.log(`Contrast: ${tables.length - fails.length} of ${tables.length} pairs pass across dark and light.`);
 }
 if (failed) {
+  console.table(fails);
   console.error(`${failed} pair(s) failed.`);
   process.exit(1);
 }

@@ -44,9 +44,9 @@ export function PageLoading() {
 export function Notice({ tone = 'info', icon, children, className = '' }: { tone?: 'info' | 'warn' | 'danger' | 'ok'; icon?: IconName; children: ReactNode; className?: string }) {
   const styles = {
     info: 'bg-surface-2 text-ink border-line',
-    warn: 'bg-tight-soft text-tight-text border-transparent',
-    danger: 'bg-short-soft text-short-text border-transparent',
-    ok: 'bg-enough-soft text-enough-text border-transparent',
+    warn: 'bg-tight-soft text-tight border-transparent',
+    danger: 'bg-short-soft text-short border-transparent',
+    ok: 'bg-enough-soft text-enough border-transparent',
   }[tone];
   const defaultIcon: IconName = tone === 'warn' ? 'alert' : tone === 'danger' ? 'shortCircle' : tone === 'ok' ? 'checkCircle' : 'info';
   return (

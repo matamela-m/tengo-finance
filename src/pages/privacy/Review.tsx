@@ -78,7 +78,7 @@ export default function Review() {
                 <div className="space-y-2">
                   {(['inbox', 'none'] as const).map((c) => (
                     <label key={c} className="flex min-h-[44px] cursor-pointer items-center gap-3 rounded-xl border border-line px-4 text-[15px]">
-                      <input type="radio" name="contact" checked={contact === c} onChange={() => setContact(c)} className="h-4 w-4 accent-[var(--c-brand)]" />
+                      <input type="radio" name="contact" checked={contact === c} onChange={() => setContact(c)} className="h-4 w-4 accent-[var(--color-accent)]" />
                       {t(`privacy.contact.${c}`)}
                     </label>
                   ))}

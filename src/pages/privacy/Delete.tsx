@@ -27,15 +27,15 @@ export default function Delete() {
         <h2 className="text-lg font-semibold">{t('privacy.deleteWhat')}</h2>
         <ul className="mt-3 space-y-2 text-[15px]">
           <li className="flex gap-2">
-            <Icon name="trash" size={18} className="mt-0.5 text-short-text" />
+            <Icon name="trash" size={18} className="mt-0.5 text-short" />
             {t('privacy.deleteTx', { count: record.transactions.length })}
           </li>
           <li className="flex gap-2">
-            <Icon name="trash" size={18} className="mt-0.5 text-short-text" />
+            <Icon name="trash" size={18} className="mt-0.5 text-short" />
             {t('privacy.deleteConsent')}
           </li>
           <li className="flex gap-2">
-            <Icon name="trash" size={18} className="mt-0.5 text-short-text" />
+            <Icon name="trash" size={18} className="mt-0.5 text-short" />
             {t('privacy.deleteAudit', { count: audit.length })}
           </li>
           <li className="flex gap-2">
@@ -52,7 +52,7 @@ export default function Delete() {
           <div className="mt-6 space-y-4">
             <Notice tone="danger">{t('privacy.deleteWarn')}</Notice>
             <label className="flex min-h-[44px] cursor-pointer items-center gap-3 text-[15px]">
-              <input type="checkbox" checked={understood} onChange={(e) => setUnderstood(e.target.checked)} className="h-5 w-5 accent-[var(--c-short-text)]" />
+              <input type="checkbox" checked={understood} onChange={(e) => setUnderstood(e.target.checked)} className="h-5 w-5 accent-[var(--color-short)]" />
               {t('privacy.deleteCheck')}
             </label>
             <div className="flex flex-col gap-3 sm:flex-row">

@@ -21,7 +21,7 @@ export class ErrorBoundary extends Component<{ children: ReactNode }, State> {
     if (!this.state.failed) return this.props.children;
     return (
       <main className="flex min-h-dvh flex-col items-center justify-center gap-4 px-6 text-center">
-        <h1 className="font-display text-3xl font-extrabold">{i18n.t('errors.crashTitle')}</h1>
+        <h1 className="font-heading text-3xl font-extrabold">{i18n.t('errors.crashTitle')}</h1>
         <p className="max-w-md text-muted">{i18n.t('errors.crashBody')}</p>
         <button type="button" className="btn-primary" onClick={() => window.location.assign('/')}>
           {i18n.t('errors.crashCta')}

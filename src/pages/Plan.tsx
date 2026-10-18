@@ -27,7 +27,7 @@ function DeltaBadge({ days }: { days: number }) {
   if (days === 0) return <span className="rounded-full bg-surface-2 px-3 py-1 text-sm font-semibold text-muted">{t('plan.noChange')}</span>;
   const up = days > 0;
   return (
-    <span className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm font-semibold ${up ? 'bg-enough-soft text-enough-text' : 'bg-short-soft text-short-text'}`}>
+    <span className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm font-semibold ${up ? 'bg-enough-soft text-enough' : 'bg-short-soft text-short'}`}>
       <Icon name={up ? 'arrowUp' : 'arrowDown'} size={14} strokeWidth={2.4} />
       {up ? t('plan.daysMore', { count: days }) : t('plan.daysLess', { count: -days })}
     </span>
@@ -41,7 +41,7 @@ function Outcome({ label, f }: { label: string; f: Forecast }) {
     <div className="min-w-0 rounded-2xl bg-surface-2 p-4">
       <p className="text-xs font-semibold text-muted">{label}</p>
       <p className="num mt-1 text-sm text-muted">{f.state === 'short' ? t('hero.shortFrom') : t('hero.enoughUntil')}</p>
-      <p className="num font-figures text-[22px] font-extrabold leading-tight tracking-tight sm:text-[26px]">{d.dayShort(f.headlineDate)}</p>
+      <p className="num font-heading text-[22px] font-extrabold leading-tight tracking-tight sm:text-[26px]">{d.dayShort(f.headlineDate)}</p>
       <div className="mt-2 flex items-center gap-2">
         <StateChip state={f.state} size="sm" />
         <CoverBars state={f.state} size={20} />
@@ -76,7 +76,7 @@ function WhatIf() {
   return (
     <section className="card p-6 sm:p-7" aria-labelledby="whatif-title">
       <div className="flex items-center gap-2">
-        <Icon name="sliders" size={20} className="text-brand-ink" />
+        <Icon name="sliders" size={20} className="text-accent" />
         <h2 id="whatif-title" className="text-xl font-semibold">
           {t('plan.whatIf')}
         </h2>
@@ -119,7 +119,7 @@ function WhatIf() {
                     aria-describedby={item.amount !== '' && !(parseAmount(item.amount)! > 0) ? `amt-err-${item.id}` : undefined}
                   />
                   {item.amount !== '' && !(parseAmount(item.amount)! > 0) && (
-                    <p id={`amt-err-${item.id}`} className="mt-1 text-xs font-medium text-short-text">
+                    <p id={`amt-err-${item.id}`} className="mt-1 text-xs font-medium text-short">
                       {t('plan.amountError')}
                     </p>
                   )}
@@ -192,17 +192,17 @@ function LoanCheck() {
   return (
     <section className="card p-6 sm:p-7" aria-labelledby="loan-title">
       <div className="flex items-center gap-2">
-        <Icon name="scale" size={20} className="text-brand-ink" />
+        <Icon name="scale" size={20} className="text-accent" />
         <h2 id="loan-title" className="text-xl font-semibold">
           {t('plan.loan')}
         </h2>
       </div>
       <p className="mt-1 text-sm text-muted">{t('plan.loanLead')}</p>
 
-      <div className="mt-5 rounded-3xl bg-mint/40 p-5 dark:bg-mint">
-        <p className="text-sm font-semibold text-charcoal">{t('plan.safeToLend')}</p>
-        <p className="num mt-1 font-figures text-[40px] font-extrabold leading-none text-charcoal">{formatZAR(result.safeToLend)}</p>
-        <p className="mt-2 text-sm text-charcoal/80">{result.before.state === 'short' ? t('plan.safeToLendShort') : t('plan.safeToLendHint', { state: t(`state.${result.before.state}`) })}</p>
+      <div className="mt-5 rounded-3xl bg-accent-soft p-5">
+        <p className="text-sm font-semibold text-ink">{t('plan.safeToLend')}</p>
+        <p className="num mt-1 font-heading text-[40px] font-extrabold leading-none text-ink">{formatZAR(result.safeToLend)}</p>
+        <p className="mt-2 text-sm text-muted">{result.before.state === 'short' ? t('plan.safeToLendShort') : t('plan.safeToLendHint', { state: t(`state.${result.before.state}`) })}</p>
       </div>
 
       <div className="mt-5">
@@ -222,7 +222,7 @@ function LoanCheck() {
           />
         </div>
         {!valid && amount !== '' && (
-          <p id="loan-err" className="mt-1 text-xs font-medium text-short-text">
+          <p id="loan-err" className="mt-1 text-xs font-medium text-short">
             {t('plan.amountError')}
           </p>
         )}
@@ -233,7 +233,7 @@ function LoanCheck() {
             </button>
           ))}
           {result.safeToLend > 0 && (
-            <button type="button" className="num min-h-[40px] rounded-full border border-brand px-4 text-sm font-semibold text-brand-ink" onClick={() => setAmount(String(result.safeToLend))}>
+            <button type="button" className="num min-h-[40px] rounded-full border border-accent px-4 text-sm font-semibold text-accent" onClick={() => setAmount(String(result.safeToLend))}>
               {t('plan.useSafe', { amount: formatZAR(result.safeToLend) })}
             </button>
           )}

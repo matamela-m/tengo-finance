@@ -18,7 +18,7 @@ export function SafeToSpendCard({ forecast }: { forecast: Forecast }) {
       <h2 id="sts-title" className="text-sm font-semibold text-muted">
         {t('sts.title')}
       </h2>
-      <p className="num mt-1 font-figures text-[48px] font-extrabold leading-none tracking-tight sm:text-[56px]">
+      <p className="num mt-1 font-heading text-[48px] font-extrabold leading-none tracking-tight sm:text-[56px]">
         <span aria-hidden>{formatZAR(shown)}</span>
         <span className="sr-only">{formatZAR(forecast.safeToSpendToday)}</span>
       </p>
@@ -68,7 +68,7 @@ export function NextMoneyCard({ forecast }: { forecast: Forecast }) {
       ) : (
         <>
           <p className="mt-1 flex items-center gap-2 text-2xl font-bold">
-            <Icon name="calendar" size={22} className="text-brand-ink" />
+            <Icon name="calendar" size={22} className="text-accent" />
             <span className="num">{t('next.around', { date: d.dayShort(n.typical) })}</span>
           </p>
           <dl className="mt-4 grid grid-cols-2 gap-4 text-sm">
@@ -98,7 +98,7 @@ export function TransactionRow({ tx, compact = false }: { tx: Transaction; compa
   const { t } = useTranslation();
   const d = useDates();
   const icon = tx.category === 'income' ? 'arrowDown' : tx.category === 'bill' ? 'receipt' : 'arrowUp';
-  const tone = tx.category === 'income' ? 'bg-mint/60 dark:bg-mint text-charcoal' : tx.category === 'bill' ? 'bg-tight-soft text-tight-text' : 'bg-surface-2 text-ink';
+  const tone = tx.category === 'income' ? 'bg-accent-soft text-ink' : tx.category === 'bill' ? 'bg-tight-soft text-tight' : 'bg-surface-2 text-ink';
   return (
     <div className={`flex items-center gap-3 ${compact ? 'py-2.5' : 'py-3'}`}>
       <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${tone}`}>
@@ -110,7 +110,7 @@ export function TransactionRow({ tx, compact = false }: { tx: Transaction; compa
           {d.dayShort(tx.date)} · {t(`category.${tx.category}`)}
         </p>
       </div>
-      <p className={`num shrink-0 text-[15px] font-semibold ${tx.amount > 0 ? 'text-enough-text' : 'text-ink'}`}>
+      <p className={`num shrink-0 text-[15px] font-semibold ${tx.amount > 0 ? 'text-enough' : 'text-ink'}`}>
         <span aria-hidden>{formatZAR(tx.amount, { sign: true })}</span>
         <span className="sr-only">{t(tx.amount > 0 ? 'a11y.moneyIn' : 'a11y.moneyOut', { amount: formatZAR(Math.abs(tx.amount)) })}</span>
       </p>

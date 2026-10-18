@@ -5,9 +5,8 @@ import { Avatar } from '../components/Avatar';
 import { DemoChip } from '../components/DemoChip';
 import { Notice, PageLoading } from '../components/Feedback';
 import { Icon, type IconName } from '../components/Icon';
-import { useIsDark } from '../components/Preferences';
 import { Toggle } from '../components/Toggle';
-import { TengoLogo } from '../components/TengoLogo';
+import { Brand } from '../components/Brand';
 import { usePersona } from '../data/PersonaProvider';
 import { usePageTitle } from '../lib/usePageTitle';
 
@@ -27,7 +26,6 @@ export default function Consent() {
   const [messages, setMessages] = useState(true);
   const [analytics, setAnalytics] = useState(false);
   const [saving, setSaving] = useState(false);
-  const bg = useIsDark() ? 'dark' : 'light';
 
   if (!personaId || !profile) return <Navigate to="/start" replace />;
   if (status === 'ready' && consent) return <Navigate to="/app" replace />;
@@ -44,7 +42,7 @@ export default function Consent() {
   return (
     <div className="min-h-dvh">
       <header className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-4 px-5 py-5 sm:px-8 lg:px-12">
-        <TengoLogo variant="horizontal" background={bg} height={26} />
+        <Brand size={24} />
         <DemoChip />
       </header>
       <main id="main" className="mx-auto w-full max-w-[1200px] px-5 pb-16 pt-2 sm:px-8">
@@ -57,7 +55,7 @@ export default function Consent() {
                 <Avatar persona={profile} size={44} />
                 <p className="text-sm font-medium text-muted">{t('consent.as', { name: profile.name })}</p>
               </div>
-              <h1 className="mt-5 font-display text-[30px] font-extrabold leading-[1.08] sm:text-[40px]">{t('consent.title')}</h1>
+              <h1 className="mt-5 font-heading text-[30px] font-extrabold leading-[1.08] sm:text-[40px]">{t('consent.title')}</h1>
               <p className="mt-3 text-lg text-muted">{t('consent.lead')}</p>
               <Notice tone="warn" icon="shield" className="mt-6">
                 {t('privacy.simulated')}
@@ -65,7 +63,7 @@ export default function Consent() {
               <ul className="mt-6 space-y-3">
                 {NOTICE.map((n) => (
                   <li key={n.key} className="card flex gap-4 p-5">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-mint/50 dark:bg-mint text-charcoal">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-soft text-ink">
                       <Icon name={n.icon} size={20} />
                     </span>
                     <div>

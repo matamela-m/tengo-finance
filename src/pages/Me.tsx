@@ -59,7 +59,7 @@ export default function MePage() {
                       type="button"
                       onClick={() => void switchTo(p.id)}
                       aria-current={active ? 'true' : undefined}
-                      className={`flex min-h-[64px] w-full items-center gap-3 rounded-2xl border px-3 py-2 text-left ${active ? 'border-brand bg-mint/30 dark:bg-surface-2' : 'border-line hover:bg-surface-2'}`}
+                      className={`flex min-h-[64px] w-full items-center gap-3 rounded-2xl border px-3 py-2 text-left ${active ? 'border-accent bg-accent-soft dark:bg-surface-2' : 'border-line hover:bg-surface-2'}`}
                     >
                       <Avatar persona={p} size={44} />
                       <span className="min-w-0 flex-1">
@@ -69,7 +69,7 @@ export default function MePage() {
                         </span>
                       </span>
                       {active ? (
-                        <span className="flex items-center gap-1 text-sm font-semibold text-brand-ink">
+                        <span className="flex items-center gap-1 text-sm font-semibold text-accent">
                           <Icon name="check" size={16} />
                           {t('me.current')}
                         </span>
@@ -95,8 +95,8 @@ export default function MePage() {
                 {THEMES.map((th) => (
                   <label
                     key={th.value}
-                    className={`flex min-h-[48px] cursor-pointer items-center justify-center gap-2 rounded-2xl border text-sm font-semibold focus-within:outline focus-within:outline-[3px] focus-within:outline-offset-2 focus-within:outline-[var(--c-focus)] ${
-                      theme === th.value ? 'border-brand bg-brand text-on-brand' : 'border-line bg-surface hover:bg-surface-2'
+                    className={`flex min-h-[48px] cursor-pointer items-center justify-center gap-2 rounded-2xl border text-sm font-semibold focus-within:outline focus-within:outline-[3px] focus-within:outline-offset-2 focus-within:outline-[var(--color-focus)] ${
+                      theme === th.value ? 'border-accent bg-accent text-on-accent' : 'border-line bg-surface hover:bg-surface-2'
                     }`}
                   >
                     <input type="radio" name="theme" className="sr-only" checked={theme === th.value} onChange={() => setTheme(th.value)} />
@@ -111,7 +111,7 @@ export default function MePage() {
 
         <div className="flex min-w-0 flex-col gap-6">
           <section className="card p-6 sm:p-7" aria-labelledby="about-title">
-            <h2 id="about-title" className="font-display text-[26px] font-extrabold">
+            <h2 id="about-title" className="font-heading text-[26px] font-extrabold">
               {t('me.about')}
             </h2>
             <h3 className="mt-5 font-semibold">{t('me.nameTitle')}</h3>

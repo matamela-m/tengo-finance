@@ -142,12 +142,12 @@ export default function MoneyPage() {
               {t('money.last30')}
             </h2>
             <dl className="mt-3 grid grid-cols-2 gap-3">
-              <div className="rounded-2xl bg-mint/40 p-4 dark:bg-mint">
-                <dt className="flex items-center gap-1.5 text-xs font-semibold text-charcoal">
+              <div className="rounded-2xl bg-accent-soft p-4">
+                <dt className="flex items-center gap-1.5 text-xs font-semibold text-ink">
                   <Icon name="arrowDown" size={14} />
                   {t('money.in')}
                 </dt>
-                <dd className="num mt-1 text-xl font-bold text-charcoal">{formatZAR(Math.round(last30.income))}</dd>
+                <dd className="num mt-1 text-xl font-bold text-ink">{formatZAR(Math.round(last30.income))}</dd>
               </div>
               <div className="rounded-2xl bg-surface-2 p-4">
                 <dt className="flex items-center gap-1.5 text-xs font-semibold text-muted">
@@ -164,7 +164,7 @@ export default function MoneyPage() {
 
           <section className="card p-6" aria-labelledby="bills-title">
             <div className="flex items-center gap-2">
-              <Icon name="repeat" size={18} className="text-brand-ink" />
+              <Icon name="repeat" size={18} className="text-accent" />
               <h2 id="bills-title" className="text-lg font-semibold">
                 {t('money.bills')}
               </h2>

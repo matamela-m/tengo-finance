@@ -144,7 +144,7 @@
   }
 
   .card-interactive {
-    @apply card transition-colors duration-150 hover:border-line-strong;
+    @apply card transition-colors duration-200 hover:bg-surface-2/60;
   }
 
   .btn {

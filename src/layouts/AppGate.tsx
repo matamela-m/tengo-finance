@@ -35,7 +35,12 @@ export function AppGate() {
   } else if (consent && !consent.core && !OPEN_WHEN_PAUSED.some((p) => pathname.startsWith(p))) {
     content = <ForecastPaused />;
   } else {
-    content = <Outlet />;
+    // Fades in on every page change and when loading finishes, instead of snapping.
+    content = (
+      <div key={pathname} className="animate-page">
+        <Outlet />
+      </div>
+    );
   }
 
   return <AppLayout>{content}</AppLayout>;

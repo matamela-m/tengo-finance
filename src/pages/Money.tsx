@@ -90,7 +90,7 @@ export default function MoneyPage() {
               <label htmlFor="money-search" className="sr-only">
                 {t('money.search')}
               </label>
-              <Icon name="filter" size={16} className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-muted" />
+              <Icon name="search" size={16} className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-muted" />
               <input id="money-search" type="search" className="field pl-9" placeholder={t('money.search')} value={query} onChange={(e) => setQuery(e.target.value)} />
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function MoneyPage() {
                   <h3 className="eyebrow sticky top-[56px] z-10 -mx-2 bg-surface px-2 pb-1.5 pt-5 lg:top-0">{monthLabel(g.month)}</h3>
                   <ul className="divide-y divide-line">
                     {g.items.map((tx) => (
-                      <li key={tx.id} className="flex items-center gap-2">
+                      <li key={tx.id} className="-mx-2 flex items-center gap-2 rounded-lg px-2 transition-colors duration-150 hover:bg-surface-2/60">
                         <div className="min-w-0 flex-1">
                           <TransactionRow tx={tx} />
                         </div>

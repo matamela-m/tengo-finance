@@ -42,6 +42,7 @@ export default {
       keyframes: {
         rise: { '0%': { opacity: '0', transform: 'translateY(8px)' }, '100%': { opacity: '1', transform: 'none' } },
         fade: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+        page: { '0%': { opacity: '0', transform: 'translateY(4px)' }, '100%': { opacity: '1', transform: 'none' } },
         slideIn: { '0%': { transform: 'translateX(100%)' }, '100%': { transform: 'none' } },
         slideUp: { '0%': { transform: 'translateY(100%)' }, '100%': { transform: 'none' } },
         shimmer: { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } },
@@ -49,6 +50,7 @@ export default {
       animation: {
         rise: 'rise 420ms cubic-bezier(0.2, 0.8, 0.2, 1) both',
         fade: 'fade 200ms ease-out both',
+        page: 'page 220ms cubic-bezier(0.2, 0.8, 0.2, 1) both',
         'slide-in': 'slideIn 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both',
         'slide-up': 'slideUp 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both',
         shimmer: 'shimmer 1.4s linear infinite',

@@ -49,7 +49,7 @@ function PersonaRow({ collapsed }: { collapsed: boolean }) {
         <span className="block truncate text-sm font-semibold text-ink">{profile.name}</span>
         <span className="block truncate text-xs text-subtle">{t('me.switchPersona')}</span>
       </span>
-      {!collapsed && <Icon name="refresh" size={15} className="shrink-0 text-subtle" />}
+      {!collapsed && <Icon name="switch" size={15} className="shrink-0 text-subtle" />}
     </Link>
   );
 }
@@ -93,7 +93,7 @@ export function AppLayout({ children }: { children?: ReactNode }) {
             title={collapsed ? t('palette.open') : undefined}
             className={`flex min-h-[44px] items-center gap-2.5 rounded-xl px-2.5 text-sm text-subtle transition-colors hover:bg-surface-2 hover:text-ink ${collapsed ? 'justify-center' : ''}`}
           >
-            <Icon name="filter" size={16} />
+            <Icon name="search" size={16} />
             <span className={collapsed ? 'sr-only' : 'flex-1 text-left'}>{t('palette.open')}</span>
             {!collapsed && (
               <kbd aria-hidden className="rounded-md border border-line px-1.5 py-0.5 font-sans text-xs text-subtle">

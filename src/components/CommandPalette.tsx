@@ -135,7 +135,7 @@ export function CommandPalette() {
       <div className="absolute inset-0 animate-fade bg-scrim backdrop-blur-sm" onClick={() => setOpen(false)} aria-hidden />
       <div role="dialog" aria-modal="true" aria-label={t('palette.title')} className="relative w-full max-w-xl animate-rise overflow-hidden rounded-2xl border border-line bg-surface shadow-lift">
         <div className="flex items-center gap-3 border-b border-line px-4">
-          <Icon name="filter" size={18} className="shrink-0 text-subtle" />
+          <Icon name="search" size={18} className="shrink-0 text-subtle" />
           <input
             ref={input}
             role="combobox"

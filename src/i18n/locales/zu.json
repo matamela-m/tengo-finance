@@ -195,7 +195,7 @@
   "privacy": {
     "simulated": "Simulated privacy controls. Not a compliance certification.",
     "title": "Privacy",
-    "lead": "See, change, export or delete what Tengo holds about this person.",
+    "lead": "See, change, export or delete this person's data.",
     "consentTitle": "Your consent",
     "coreEffect": "Needed for Tengo to work. Turning it off pauses the forecast.",
     "messagesEffect": "A short daily update in the Inbox. Turning it off hides the Inbox preview.",
@@ -379,10 +379,10 @@
   },
   "stateCard": {
     "title": "Cover",
-    "enough": "Covered until your next money, even on a heavier week.",
-    "tight": "Covered on a normal week. A heavier week runs out before your next money.",
-    "short_one": "Runs out {{count}} day before your next money is likely.",
-    "short_other": "Runs out {{count}} days before your next money is likely."
+    "enough": "Covered until your next money, even on a heavy week.",
+    "tight": "Covered on a normal week, not on a heavy one.",
+    "short_one": "Runs out {{count}} day before your next money.",
+    "short_other": "Runs out {{count}} days before your next money."
   },
   "next": {
     "title": "Next money",
@@ -512,9 +512,9 @@
   },
   "plan": {
     "title": "Plan",
-    "lead": "Try a change before you make it. Everything here is a test and nothing is saved.",
+    "lead": "Test a change before you make it. Nothing is saved.",
     "whatIf": "What-if",
-    "whatIfLead": "Add or remove a one-off amount and see your date move.",
+    "whatIfLead": "Add a one-off amount and see your date move.",
     "itemLabel": "Change {{n}}",
     "kind": "Money in or out",
     "income": "Money in",
@@ -536,7 +536,7 @@
     "daysLess_other": "{{count}} days less",
     "stsChange": "Safe to spend today: {{before}} now, {{after}} with these changes.",
     "loan": "Loan check",
-    "loanLead": "Someone asked to borrow money. See what it does to your cover first.",
+    "loanLead": "See what lending money does to your cover first.",
     "safeToLend": "Safe to lend up to",
     "safeToLendHint": "Lending up to this keeps you at {{state}}.",
     "safeToLendShort": "You are already short before your next money, so no amount is safe to lend.",
@@ -553,7 +553,7 @@
   },
   "money": {
     "title": "Money",
-    "lead": "Every transaction Tengo uses, with the bills it found.",
+    "lead": "Every transaction Tengo uses, and the bills it found.",
     "history": "Transaction history",
     "import": "Import statement",
     "filter": "Show",
@@ -653,7 +653,7 @@
   },
   "inbox": {
     "title": "Inbox",
-    "lead": "A preview of the daily message Tengo would send.",
+    "lead": "The daily message Tengo would send.",
     "simulated": "Simulated. No message is sent.",
     "offTitle": "Daily messages are off",
     "offBody": "You turned off daily messages, so there is nothing to preview. Turn them on here or in Privacy.",

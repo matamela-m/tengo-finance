@@ -8,6 +8,7 @@ import { Icon } from '../components/Icon';
 import { ThemeButton } from '../components/ThemeToggle';
 import { usePersona } from '../data/PersonaProvider';
 import { useSession } from '../store/session';
+import { StorageBanner } from '../components/StorageBanner';
 import { NAV, type NavItem } from './nav';
 
 function SideLink({ item, collapsed }: { item: NavItem; collapsed: boolean }) {
@@ -163,6 +164,7 @@ export function AppLayout({ children }: { children?: ReactNode }) {
 
         {/* Desktop: the demo chip sits in the sidebar, so the page starts straight away. */}
         <main id="main" className="mx-auto w-full max-w-app flex-1 px-4 pb-28 pt-5 sm:px-6 md:px-8 lg:px-10 lg:pb-16 lg:pt-8">
+          <StorageBanner />
           {children ?? <Outlet />}
         </main>
 

@@ -1,18 +1,26 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import en from './locales/en.json';
 
-// Every locale file is bundled, so switching language never makes a network request.
-const files = import.meta.glob<{ default: Record<string, unknown> }>('./locales/*.json', { eager: true });
-const resources = Object.fromEntries(
-  Object.entries(files).map(([path, mod]) => [path.replace(/^.*\/(.+)\.json$/, '$1'), { translation: mod.default }]),
-);
+// English is bundled. Every other language is its own small file, loaded the first time it is chosen
+// and then cached by the service worker, so switching works offline after the first visit.
+const loaders = import.meta.glob<{ default: Record<string, unknown> }>(['./locales/*.json', '!./locales/en.json']);
 
 void i18n.use(initReactI18next).init({
-  resources,
+  resources: { en: { translation: en } },
   lng: 'en',
   fallbackLng: 'en',
   interpolation: { escapeValue: false },
   returnNull: false,
 });
+
+/** Loads a language's strings if they are not loaded yet. Unknown codes fall back to English. */
+export async function loadLanguage(code: string): Promise<void> {
+  if (i18n.hasResourceBundle(code, 'translation')) return;
+  const load = loaders[`./locales/${code}.json`];
+  if (!load) return;
+  const mod = await load();
+  i18n.addResourceBundle(code, 'translation', mod.default, true, true);
+}
 
 export default i18n;

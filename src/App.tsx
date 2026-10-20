@@ -5,17 +5,21 @@ import { CommandPalette } from './components/CommandPalette';
 import { Preferences } from './components/Preferences';
 import { PersonaProvider } from './data/PersonaProvider';
 import { AppGate } from './layouts/AppGate';
+import { lazy, Suspense } from 'react';
+import { PageLoading } from './components/Feedback';
 import Landing from './pages/Landing';
-import Picker from './pages/Picker';
-import Consent from './pages/Consent';
-import HomePage from './pages/Home';
-import PlanPage from './pages/Plan';
-import MoneyPage from './pages/Money';
-import ImportPage from './pages/Import';
-import InboxPage from './pages/Inbox';
-import PrivacyPage from './pages/Privacy';
-import MePage from './pages/Me';
-import NotFound from './pages/NotFound';
+
+// Every page except the landing page is its own chunk, loaded when first visited.
+const Picker = lazy(() => import('./pages/Picker'));
+const Consent = lazy(() => import('./pages/Consent'));
+const HomePage = lazy(() => import('./pages/Home'));
+const PlanPage = lazy(() => import('./pages/Plan'));
+const MoneyPage = lazy(() => import('./pages/Money'));
+const ImportPage = lazy(() => import('./pages/Import'));
+const InboxPage = lazy(() => import('./pages/Inbox'));
+const PrivacyPage = lazy(() => import('./pages/Privacy'));
+const MePage = lazy(() => import('./pages/Me'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 export default function App() {
   return (
@@ -26,6 +30,7 @@ export default function App() {
       <A11yProvider>
       <PersonaProvider>
         <CommandPalette />
+        <Suspense fallback={<PageLoading />}>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/start" element={<Picker />} />
@@ -42,6 +47,7 @@ export default function App() {
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
       </PersonaProvider>
       </A11yProvider>
     </BrowserRouter>

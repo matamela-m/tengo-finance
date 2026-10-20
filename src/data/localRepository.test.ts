@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { LocalRepository, type KeyValueStore } from './localRepository';
+import { CORRUPT_KEY, LocalRepository, migrate, SCHEMA_VERSION, StorageError, type KeyValueStore } from './localRepository';
 
 class MemoryStore implements KeyValueStore {
   private map = new Map<string, string>();
@@ -80,5 +80,61 @@ describe('LocalRepository', () => {
     expect(await repo.getConsent('thabo')).toBeNull();
     expect(await repo.getAudit('thabo')).toEqual([]);
     expect(await repo.getDeletionReceipts()).toHaveLength(1);
+  });
+
+  it('stamps the schema version on every write', async () => {
+    const store = new MemoryStore();
+    const r = new LocalRepository(store);
+    await r.setConsent('thabo', { core: true, messages: false, analytics: false });
+    expect(JSON.parse(store.getItem('tengo.data.v1')!).schema).toBe(SCHEMA_VERSION);
+  });
+});
+
+describe('storage failures and migrations', () => {
+  it('migrates build 1 audit entries so they no longer hold descriptions', () => {
+    const v1 = {
+      personas: { thabo: { audit: [{ id: 'a', at: 'x', type: 'transaction.edited' as const, params: { name: 'Mrs K payment', fields: 'amount' } }], reviews: [] } },
+      receipts: [],
+    };
+    const out = migrate(v1);
+    expect(out.schema).toBe(2);
+    expect(out.personas.thabo!.audit[0]!.params).toEqual({ fields: 'amount' });
+  });
+
+  it('keeps unreadable data aside and reports it, instead of wiping it', async () => {
+    const store = new MemoryStore();
+    store.setItem('tengo.data.v1', '{not json');
+    const r = new LocalRepository(store);
+    await expect(r.getConsent('thabo')).rejects.toMatchObject({ kind: 'corrupt' });
+    expect(store.getItem(CORRUPT_KEY)).toBe('{not json');
+    expect(store.getItem('tengo.data.v1')).toBe('{not json');
+    await r.startFresh();
+    expect(await r.getConsent('thabo')).toBeNull();
+    expect(store.getItem(CORRUPT_KEY)).toBe('{not json');
+  });
+
+  it('reports a full store as a quota problem', async () => {
+    class FullStore extends MemoryStore {
+      setItem() {
+        const e = new Error('full');
+        e.name = 'QuotaExceededError';
+        throw e;
+      }
+    }
+    const r = new LocalRepository(new FullStore());
+    const err = await r.setConsent('thabo', { core: true, messages: false, analytics: false }).catch((e: unknown) => e);
+    expect(err).toBeInstanceOf(StorageError);
+    expect((err as StorageError).kind).toBe('quota');
+  });
+
+  it('reports blocked storage as unavailable', async () => {
+    const blocked: KeyValueStore = {
+      getItem: () => {
+        throw new Error('blocked');
+      },
+      setItem: () => undefined,
+      removeItem: () => undefined,
+    };
+    await expect(new LocalRepository(blocked).getConsent('thabo')).rejects.toMatchObject({ kind: 'unavailable' });
   });
 });

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import i18n from '../i18n';
+import i18n, { loadLanguage } from '../i18n';
 import { contentLanguage } from '../i18n/languages';
 import { useSession } from '../store/session';
 
@@ -9,7 +9,7 @@ export function Preferences() {
   const theme = useSession((s) => s.theme);
 
   useEffect(() => {
-    void i18n.changeLanguage(language);
+    void loadLanguage(language).then(() => i18n.changeLanguage(language));
     // The page language is the language of the text actually shown: English while a translation is pending.
     document.documentElement.lang = contentLanguage(language);
     document.documentElement.dataset.uiLanguage = language;

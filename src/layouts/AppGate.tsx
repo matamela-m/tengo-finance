@@ -10,14 +10,27 @@ const OPEN_WHEN_PAUSED = ['/app/privacy', '/app/me'];
 
 export function AppGate() {
   const { t } = useTranslation();
-  const { personaId, status, consent, record, reload } = usePersona();
+  const { personaId, status, consent, record, reload, storageProblem, startFresh } = usePersona();
   const { pathname } = useLocation();
 
   if (!personaId) return <Navigate to="/start" replace />;
   if (status === 'ready' && !consent) return <Navigate to="/consent" replace />;
 
   let content;
-  if (status === 'error') {
+  if (status === 'error' && storageProblem === 'corrupt') {
+    content = (
+      <EmptyState
+        icon="alert"
+        title={t('storage.corrupt.title')}
+        body={t('storage.corrupt.body')}
+        action={
+          <button type="button" className="btn-primary" onClick={() => void startFresh()}>
+            {t('storage.corrupt.action')}
+          </button>
+        }
+      />
+    );
+  } else if (status === 'error') {
     content = (
       <EmptyState
         icon="alert"

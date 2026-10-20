@@ -15,16 +15,62 @@ import { generateHistory, startingBalance } from './seed/generate';
 import { getPersona, type PersonaId } from './seed/personas';
 
 const KEY = 'tengo.data.v1';
+/** Where unreadable data is kept, so a bad write never silently wipes it. */
+export const CORRUPT_KEY = 'tengo.data.unreadable';
 const MAX_AUDIT = 200;
 
-interface PersonaSlot {
+/**
+ * Stored data carries a schema version. Each migration moves data one version up when it is read.
+ * 1: build 1. 2: build 2, audit entries hold no descriptions (SEC-07) and records gain optional fields.
+ */
+export const SCHEMA_VERSION = 2;
+
+export type StorageProblem = 'quota' | 'unavailable' | 'corrupt';
+
+/** A storage failure the person needs to see, with what kind it was. */
+export class StorageError extends Error {
+  constructor(
+    readonly kind: StorageProblem,
+    message: string,
+  ) {
+    super(message);
+    this.name = 'StorageError';
+  }
+}
+
+function isQuota(e: unknown): boolean {
+  const err = e as { name?: string; code?: number };
+  return err?.name === 'QuotaExceededError' || err?.name === 'NS_ERROR_DOM_QUOTA_REACHED' || err?.code === 22 || err?.code === 1014;
+}
+
+/** Brings stored data up to SCHEMA_VERSION. Pure, so it is tested on its own. */
+export function migrate(data: Stored): Stored {
+  let d = data;
+  if ((d.schema ?? 1) < 2) {
+    for (const slot of Object.values(d.personas)) {
+      if (!slot) continue;
+      slot.audit = (slot.audit ?? []).map((a) => {
+        if (a.type !== 'transaction.edited' || !a.params) return a;
+        const { name: _name, ...rest } = a.params;
+        void _name;
+        return { ...a, params: rest };
+      });
+      slot.reviews = slot.reviews ?? [];
+    }
+    d = { ...d, schema: 2 };
+  }
+  return d;
+}
+
+export interface PersonaSlot {
   record?: PersonaRecord;
   consent?: ConsentRecord;
   audit: AuditEntry[];
   reviews: ReviewRequest[];
 }
 
-interface Stored {
+export interface Stored {
+  schema?: number;
   personas: Partial<Record<PersonaId, PersonaSlot>>;
   receipts: DeletionReceipt[];
 }
@@ -57,17 +103,35 @@ export class LocalRepository implements TengoRepository {
   ) {}
 
   private read(): Stored {
+    let raw: string | null;
     try {
-      const raw = this.store.getItem(KEY);
-      if (raw) return JSON.parse(raw) as Stored;
+      raw = this.store.getItem(KEY);
     } catch {
-      // Corrupt or unavailable storage: start fresh.
+      throw new StorageError('unavailable', 'Storage cannot be read on this device');
     }
-    return { personas: {}, receipts: [] };
+    if (!raw) return { schema: SCHEMA_VERSION, personas: {}, receipts: [] };
+    let parsed: Stored;
+    try {
+      parsed = JSON.parse(raw) as Stored;
+      if (!parsed || typeof parsed !== 'object' || !parsed.personas) throw new Error('shape');
+    } catch {
+      // Keep the unreadable copy rather than overwrite it, and tell the person.
+      try {
+        this.store.setItem(CORRUPT_KEY, raw);
+      } catch {
+        // Nothing more can be done; the error below still reaches the person.
+      }
+      throw new StorageError('corrupt', 'Stored data could not be read');
+    }
+    return migrate(parsed);
   }
 
   private write(data: Stored) {
-    this.store.setItem(KEY, JSON.stringify(data));
+    try {
+      this.store.setItem(KEY, JSON.stringify({ ...data, schema: SCHEMA_VERSION }));
+    } catch (e) {
+      throw new StorageError(isQuota(e) ? 'quota' : 'unavailable', 'Could not save on this device');
+    }
   }
 
   private slot(data: Stored, id: PersonaId): PersonaSlot {
@@ -236,7 +300,12 @@ export class LocalRepository implements TengoRepository {
     return [...this.read().receipts].reverse();
   }
 
+  async startFresh(): Promise<void> {
+    this.store.removeItem(KEY);
+  }
+
   async resetAll(): Promise<void> {
     this.store.removeItem(KEY);
+    this.store.removeItem(CORRUPT_KEY);
   }
 }

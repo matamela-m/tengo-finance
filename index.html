@@ -7,20 +7,8 @@
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0B0B0C" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FBFBFA" />
     <meta name="color-scheme" content="dark light" />
-    <!-- Sets the theme and language before first paint, so the wrong theme never flashes. -->
-    <script>
-      (function () {
-        var root = document.documentElement;
-        var theme = 'dark';
-        try {
-          var s = (JSON.parse(localStorage.getItem('tengo.session.v1') || '{}').state) || {};
-          theme = s.theme || 'dark';
-          if (s.language) root.lang = s.language;
-        } catch (e) {}
-        if (theme === 'system') theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-        root.setAttribute('data-theme', theme);
-      })();
-    </script>
+    <!-- Sets the theme before first paint, so the wrong theme never flashes. -->
+    <script src="/theme-init.js"></script>
     <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="64x64" href="/icons/favicon-64.png" />

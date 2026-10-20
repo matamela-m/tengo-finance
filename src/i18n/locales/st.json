@@ -915,5 +915,21 @@
     "save": "Save balance",
     "saved": "Balance saved",
     "error": "Enter an amount, for example 1250 or -300."
+  },
+  "storage": {
+    "quota": {
+      "title": "Could not save on this device",
+      "body": "This browser's storage is full, so your last change was not kept. Export your data, then free some space or delete old data."
+    },
+    "unavailable": {
+      "title": "Could not save on this device",
+      "body": "This browser is blocking storage, for example in a private window, so your last change was not kept."
+    },
+    "export": "Export my data",
+    "corrupt": {
+      "title": "Your saved data could not be read",
+      "body": "Something went wrong with the data saved in this browser. A copy has been kept on this device. Start fresh to keep using Tengo.",
+      "action": "Start fresh"
+    }
   }
 }

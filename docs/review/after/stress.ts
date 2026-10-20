@@ -70,7 +70,7 @@ const out = cases.map(({ id, scenario, input }) => {
     roomToLend: roomToLend(input),
     rates: `${R(f.rates.optimistic)} / ${R(f.rates.central)} / ${R(f.rates.pessimistic)}`,
     notices: v.notices.map((n) => n.kind).join(', '),
-    help: h.target === null ? `covered, set aside up to R${h.canSetAside}` : `to ${h.target}: extra R${h.extraNeeded}`,
+    help: f.status === 'unclear' ? 'nothing suggested' : h.target === null ? `covered, set aside up to R${h.canSetAside}` : `to ${h.target}: ${h.suggestions.map((s) => s.kind).join(', ')}`,
   };
 });
 

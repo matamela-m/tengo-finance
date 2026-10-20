@@ -21,5 +21,7 @@ jobs:
       - run: npm run fonts:check
       - run: npm test
       - run: npm run build
+      - run: npm run budget
+      - run: npm audit --omit=dev --audit-level=high
       - run: npx playwright install --with-deps chromium
       - run: npx playwright test

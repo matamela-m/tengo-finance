@@ -1,4 +1,4 @@
-import i18n from '../i18n';
+import i18n, { loadLanguage } from '../i18n';
 import { homeView } from '../engine/view';
 import { formatDayShort, formatZAR } from '../lib/format';
 import type { DailyMessage, MessageContext, MessageWriter } from './MessageWriter';
@@ -9,6 +9,7 @@ import type { DailyMessage, MessageContext, MessageWriter } from './MessageWrite
  */
 export class TemplateMessageWriter implements MessageWriter {
   async write({ name, forecast: f, language, channel, discreet = false }: MessageContext): Promise<DailyMessage> {
+    await loadLanguage(language);
     const t = i18n.getFixedT(language);
     // Every message names the sender and says how to stop (POPIA s69, WASPA). Discreet ones carry no figures.
     if (discreet) {

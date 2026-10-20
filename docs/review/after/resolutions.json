@@ -3,6 +3,10 @@
   "status": "Fixed",
   "resolution": "Phase 3: html lang follows contentLanguage(): English while a language is not translated; Playwright checks it."
  },
+ "A11Y-02": {
+  "status": "Fixed",
+  "resolution": "Phase 4: offline works straight after the first visit (tests/flows.spec.ts cold-profile tests)."
+ },
  "A11Y-03": {
   "status": "Fixed",
   "resolution": "Phase 1: slider value text includes the assumption, likely range, balance level, bills and income; no cover state word per day."
@@ -10,6 +14,10 @@
  "A11Y-05": {
   "status": "Partly fixed",
   "resolution": "Phase 1: contradictions removed and fewer dates on Home. A low-numeracy test is in the research kit (Phase 9)."
+ },
+ "A11Y-14": {
+  "status": "Fixed",
+  "resolution": "Phase 4: no untranslated locale JSON is parsed at start; initial JavaScript is 119 KB gzipped."
  },
  "BEH-01": {
   "status": "Partly fixed",
@@ -75,6 +83,10 @@
   "status": "Prepared for human action",
   "resolution": "Phase 3: name story off by default; name confirmation and logo are human actions."
  },
+ "INV-12": {
+  "status": "Fixed",
+  "resolution": "Phase 4: no production advisories, bundle split and budgeted."
+ },
  "JUDGE-01": {
   "status": "Fixed",
   "resolution": "Phase 1: homeView() in src/engine/view.ts drives every Home element; view.test.ts checks every persona on 60 days, balance sweeps and edge cases for consistency."
@@ -90,6 +102,10 @@
  "JUDGE-04": {
   "status": "Fixed",
   "resolution": "Phase 2: paused income, no-income state, payday-today rule, stale-balance handling and data age, each with unit tests; stress cases S01 to S13 are permanent tests (src/engine/stress.test.ts)."
+ },
+ "JUDGE-09": {
+  "status": "Fixed",
+  "resolution": "Phase 4: the whole build is precached at install from a build-time manifest; offline fallback page; Playwright tests go offline straight after a cold first load with no reload."
  },
  "JUDGE-10": {
   "status": "Fixed",
@@ -134,6 +150,10 @@
  "L10N-12": {
   "status": "Prepared for human action",
   "resolution": "Phase 3: the name story is behind VITE_SHOW_NAME_STORY, off by default, with a TODO to confirm with two Tshivenda speakers."
+ },
+ "L10N-14": {
+  "status": "Fixed",
+  "resolution": "Phase 4: only English is bundled; other locales load when chosen."
  },
  "LEGAL-01": {
   "status": "Fixed",
@@ -231,6 +251,10 @@
   "status": "Fixed",
   "resolution": "Phase 3: long numbers in imported descriptions are masked (scrubDescription, tested) and the copy no longer claims names are never used."
  },
+ "SEC-04": {
+  "status": "Partly fixed",
+  "resolution": "Phase 4: security headers and dependency upgrades are done. Auth, encrypted server storage and row-level security follow in Phase 8; device data stays in browser storage by design."
+ },
  "SEC-06": {
   "status": "Partly fixed",
   "resolution": "Phase 1: messages no longer pre-ticked. Provable server consent records follow in Phase 8."
@@ -238,6 +262,10 @@
  "SEC-07": {
   "status": "Partly fixed",
   "resolution": "Phase 3: audit entries no longer store transaction descriptions. A tamper-evident server log follows in Phase 8."
+ },
+ "SEC-09": {
+  "status": "Fixed",
+  "resolution": "Phase 4: the service worker never caches anything outside the app's own build files and ignores cross-origin requests."
  },
  "SEC-13": {
   "status": "Fixed",
@@ -247,9 +275,45 @@
   "status": "Fixed",
   "resolution": "Phase 2: imports are forecast as of the statement end with a notice and a balance prompt; confidence drops after 3 days and the state is hidden after 14."
  },
+ "TECH-02": {
+  "status": "Partly fixed",
+  "resolution": "Phase 4: storage failures are now visible. Error boundaries, a local diagnostic panel and a logging plan follow in Phase 6."
+ },
+ "TECH-04": {
+  "status": "Fixed",
+  "resolution": "Phase 4: storage writes are guarded; quota and blocked storage show a visible message; unreadable data is kept aside with a start-fresh path; schema versioning with migrations; all tested."
+ },
+ "TECH-05": {
+  "status": "Fixed",
+  "resolution": "Phase 4: precache from a manifest, cache first only for app files, network only for everything else, cross-origin untouched, old caches removed; documented in sw.js and README."
+ },
+ "TECH-06": {
+  "status": "Fixed",
+  "resolution": "Phase 4: locales load on demand and pages are split by route; initial JavaScript 119 KB gzipped against a 142 KB budget enforced by npm run budget in CI."
+ },
+ "TECH-07": {
+  "status": "Fixed",
+  "resolution": "Phase 4: data-layer and failure-path unit tests; unit coverage across src is 43 percent with a 40 percent floor (npm run coverage), up from 20 percent; Playwright covers every route."
+ },
+ "TECH-08": {
+  "status": "Fixed",
+  "resolution": "Phase 4: react-router-dom 7.18.4 and vitest 5.0.5; npm audit shows no advisories in production dependencies. Remaining dev advisories come from Tailwind 3 at build time only."
+ },
+ "TECH-09": {
+  "status": "Fixed",
+  "resolution": "Phase 4: profiled at about 0.5 ms per forecast and 11 ms per help plan, so it stays on the main thread, memoised; documented in README."
+ },
+ "TECH-10": {
+  "status": "Fixed",
+  "resolution": "Phase 4: the artificial repository delay runs in development only."
+ },
  "TECH-11": {
   "status": "Fixed",
   "resolution": "Phase 2: today is rechecked on visibility change and every minute, so the forecast moves on after midnight."
+ },
+ "TECH-12": {
+  "status": "Fixed",
+  "resolution": "Phase 4: CSP, frame ancestors, referrer, permissions, HSTS and cache headers in vercel.json, checked on the built app with no CSP violations (tests/headers.spec.ts)."
  },
  "UX-01": {
   "status": "Fixed",

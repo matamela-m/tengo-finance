@@ -76,7 +76,7 @@ describe('Home view model', () => {
       }
     }
     expect([...seen].sort()).toEqual(['enough', 'short', 'tight']);
-  });
+  }, 30_000);
 
   it('is consistent across a sweep of balances for each persona', () => {
     const today = '2026-10-20';

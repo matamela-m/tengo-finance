@@ -118,4 +118,6 @@ export interface TengoRepository {
 
   /** Removes everything this demo stored. */
   resetAll(): Promise<void>;
+  /** Clears the main store after it could not be read, keeping any unreadable copy aside. */
+  startFresh(): Promise<void>;
 }

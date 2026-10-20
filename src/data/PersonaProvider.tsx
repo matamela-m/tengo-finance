@@ -4,6 +4,7 @@ import { forecast as runForecast } from '../engine/forecast';
 import type { BillDecision, Forecast, ForecastInput, ISODate, Transaction } from '../engine/types';
 import { useSession } from '../store/session';
 import { repository } from './index';
+import { StorageError, type StorageProblem } from './localRepository';
 import type { AuditEntry, AuditType, ConsentRecord, DeletionReceipt, PersonaRecord, PlanSettings, ReviewRequest, TransactionPatch } from './repository';
 import { getPersona, type PersonaId, type PersonaProfile } from './seed/personas';
 
@@ -22,6 +23,11 @@ interface PersonaContextValue {
   audit: AuditEntry[];
   reviews: ReviewRequest[];
   reload: () => Promise<void>;
+  /** A storage failure to show the person, or null. */
+  storageProblem: StorageProblem | null;
+  dismissStorageProblem: () => void;
+  /** After unreadable data: start with empty storage. The unreadable copy is kept on the device. */
+  startFresh: () => Promise<void>;
   log: (type: AuditType, params?: AuditEntry['params']) => Promise<void>;
   setConsent: (c: Omit<ConsentRecord, 'decidedAt'>, type?: AuditType, params?: AuditEntry['params']) => Promise<void>;
   replaceHistory: (transactions: Transaction[], balance: number, rows: number, balanceDate?: ISODate) => Promise<void>;
@@ -56,6 +62,7 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
   const [audit, setAudit] = useState<AuditEntry[]>([]);
   const [reviews, setReviews] = useState<ReviewRequest[]>([]);
   const opened = useRef<Set<string>>(new Set());
+  const [problem, setProblem] = useState<StorageProblem | null>(null);
 
   const load = useCallback(
     async (id: PersonaId, quiet = false) => {
@@ -72,7 +79,8 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
         setAudit(a);
         setReviews(rv);
         setStatus('ready');
-      } catch {
+      } catch (e) {
+        if (e instanceof StorageError) setProblem(e.kind);
         setStatus('error');
       }
     },
@@ -107,7 +115,20 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
       return personaId;
     };
     const refreshAudit = async (id: PersonaId) => setAudit(await repository.getAudit(id));
-    return {
+    // Every write goes through this, so a full or blocked storage shows a visible message (TECH-04).
+    const guard =
+      <A extends unknown[], R>(fn: (...args: A) => Promise<R>) =>
+      async (...args: A): Promise<R> => {
+        try {
+          const out = await fn(...args);
+          setProblem(null);
+          return out;
+        } catch (e) {
+          if (e instanceof StorageError) setProblem(e.kind);
+          throw e;
+        }
+      };
+    const plain: Omit<PersonaContextValue, 'storageProblem' | 'dismissStorageProblem' | 'startFresh'> = {
       personaId,
       profile,
       today,
@@ -190,7 +211,20 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
         return receipt;
       },
     };
-  }, [personaId, profile, today, status, record, consent, input, forecast, audit, reviews, load]);
+    const wrapped = Object.fromEntries(
+      Object.entries(plain).map(([k, v]) => [k, typeof v === 'function' && !['reload'].includes(k) ? guard(v as (...a: unknown[]) => Promise<unknown>) : v]),
+    ) as typeof plain;
+    return {
+      ...wrapped,
+      storageProblem: problem,
+      dismissStorageProblem: () => setProblem(null),
+      startFresh: async () => {
+        await repository.startFresh();
+        setProblem(null);
+        if (personaId) await load(personaId);
+      },
+    };
+  }, [personaId, profile, today, status, record, consent, input, forecast, audit, reviews, load, problem]);
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

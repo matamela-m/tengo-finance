@@ -196,6 +196,42 @@ test('works offline after the first visit', async ({ page, context }) => {
   await context.setOffline(false);
 });
 
+test('works offline straight after the first load, with no reload, on a cold profile', async ({ browser }) => {
+  // A brand new context is a cold profile: no cache, no service worker, no storage.
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  await page.goto('/');
+  // Wait until the service worker has installed the whole app and taken control of this page.
+  await page.evaluate(async () => {
+    await navigator.serviceWorker.ready;
+    if (!navigator.serviceWorker.controller) await new Promise((r) => navigator.serviceWorker.addEventListener('controllerchange', r, { once: true }));
+  });
+  await context.setOffline(true);
+  await page.goto('/start');
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await page.getByRole('button', { name: /Lerato/ }).click();
+  await page.getByRole('button', { name: 'Agree and continue' }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText(/until|from|enough/i);
+  await page.goto('/app/plan');
+  await expect(page.getByRole('heading', { level: 1, name: 'Plan' })).toBeVisible();
+  await context.close();
+});
+
+test('an offline page that was never loaded falls back to the offline page or the app shell', async ({ browser }) => {
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  await page.goto('/');
+  await page.evaluate(async () => {
+    await navigator.serviceWorker.ready;
+    if (!navigator.serviceWorker.controller) await new Promise((r) => navigator.serviceWorker.addEventListener('controllerchange', r, { once: true }));
+  });
+  await context.setOffline(true);
+  await page.goto('/app/money');
+  await expect(page.locator('body')).not.toBeEmpty();
+  await expect(page.locator('#root, main').first()).toBeVisible();
+  await context.close();
+});
+
 test('What helps most offers a way up for a Short persona', async ({ page }) => {
   await page.goto('/start');
   await page.getByRole('button', { name: /Ayanda/ }).click();

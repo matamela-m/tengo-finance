@@ -14,8 +14,35 @@ test('enter as a persona, give consent, see the date', async ({ page }) => {
   await expect(page.getByText('Simulated privacy controls. Not a compliance certification.')).toBeVisible();
   await page.getByRole('button', { name: 'Agree and continue' }).click();
   await expect(page).toHaveURL(/\/app$/);
-  await expect(page.getByRole('heading', { level: 1 })).toContainText(/Enough until|Short from/);
+  // Thabo is Tight, so the headline says Tight until (it said Enough until before the Home rule).
+  await expect(page.getByRole('heading', { level: 1 })).toContainText(/Tight until/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+});
+
+test('Home follows one rule when Short: no budget figure, chart labelled as the usual case', async ({ page }) => {
+  await page.goto('/start');
+  await page.getByRole('button', { name: /Ayanda/ }).click();
+  await page.getByRole('button', { name: 'Agree and continue' }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText(/Short from/);
+  const budget = page.locator('section[aria-labelledby="sts-title"]');
+  await expect(budget.getByText('Not advised', { exact: true })).toBeVisible();
+  await expect(budget).toContainText('An estimate from your own history, not advice.');
+  await expect(page.getByText('If money lands as usual').first()).toBeVisible();
+  // The chart never repeats the cover state words.
+  const readout = page.locator('.scrub-plot').locator('..');
+  await expect(readout.getByText(/^(Enough|Tight|Short)$/)).toHaveCount(0);
+  await expect(page.locator('body')).not.toContainText(/safe to spend/i);
+});
+
+test('Tight shows a daily budget with what is kept back and the usual spend', async ({ page }) => {
+  await page.goto('/start');
+  await page.getByRole('button', { name: /Thabo/ }).click();
+  await page.getByRole('button', { name: 'Agree and continue' }).click();
+  const budget = page.locator('section[aria-labelledby="sts-title"]');
+  await expect(budget.getByRole('heading', { name: 'Daily budget' })).toBeVisible();
+  await expect(budget).toContainText(/R\s?\d/);
+  await expect(budget).toContainText(/Your usual spend is R/);
+  await expect(budget).toContainText(/(Keeps R.* back|nothing extra is kept back)/);
 });
 
 test('language choice persists and sets html lang', async ({ page }) => {
@@ -40,13 +67,34 @@ test('withdrawing core consent pauses the forecast and resume brings it back', a
   await expect(page.getByRole('heading', { level: 1 })).toContainText(/Enough until/);
 });
 
-test('messages off hides the inbox preview', async ({ page }) => {
+test('messages are off by default and the inbox shows nothing until opted in', async ({ page }) => {
+  // Messages used to default on; they now stay off until the person opts in.
+  await page.goto('/start');
+  await page.getByRole('button', { name: /Ayanda/ }).click();
+  await expect(page.getByRole('switch', { name: 'Daily messages' })).not.toBeChecked();
+  await page.getByRole('button', { name: 'Agree and continue' }).click();
+  await page.goto('/app/inbox');
+  await expect(page.getByText('Daily messages are off')).toBeVisible();
+});
+
+test('opting in to messages at consent shows the preview', async ({ page }) => {
   await page.goto('/start');
   await page.getByRole('button', { name: /Ayanda/ }).click();
   await page.getByRole('switch', { name: 'Daily messages' }).click();
   await page.getByRole('button', { name: 'Agree and continue' }).click();
   await page.goto('/app/inbox');
-  await expect(page.getByText('Daily messages are off')).toBeVisible();
+  await expect(page.getByText('Daily budget: not advised until your next money.')).toBeVisible();
+});
+
+test('Plan opens with a labelled example and Room to lend', async ({ page }) => {
+  await page.goto('/start');
+  await page.getByRole('button', { name: /Lerato/ }).click();
+  await page.getByRole('button', { name: 'Agree and continue' }).click();
+  await page.goto('/app/plan');
+  await expect(page.getByText(/An example to start with/)).toBeVisible();
+  await expect(page.getByText('Room to lend', { exact: true })).toBeVisible();
+  await expect(page.getByText(/Only lend what you could manage without getting back/)).toBeVisible();
+  await expect(page.locator('body')).not.toContainText(/safe to lend/i);
 });
 
 test('import the sample statement and land on Home', async ({ page }) => {

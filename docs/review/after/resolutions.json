@@ -1,0 +1,106 @@
+{
+ "A11Y-03": {
+  "status": "Fixed",
+  "resolution": "Phase 1: slider value text includes the assumption, likely range, balance level, bills and income; no cover state word per day."
+ },
+ "A11Y-05": {
+  "status": "Partly fixed",
+  "resolution": "Phase 1: contradictions removed and fewer dates on Home. A low-numeracy test is in the research kit (Phase 9)."
+ },
+ "BEH-01": {
+  "status": "Partly fixed",
+  "resolution": "Phase 1: usual spend shown beside the budget and the next large bill just after next money is kept back and named."
+ },
+ "BEH-03": {
+  "status": "Partly fixed",
+  "resolution": "Phase 1: Room to lend keeps the reserve and leaves a budget above zero; Help says it is the same room, not extra. No repayment date yet."
+ },
+ "BEH-04": {
+  "status": "Fixed",
+  "resolution": "Phase 1: one daily number per state, chart labelled as the if-usual case, What helps uses the same typical next-money date."
+ },
+ "INV-03": {
+  "status": "Fixed",
+  "resolution": "Phase 1: one rule per screen enforced by the Home view model and its tests."
+ },
+ "JUDGE-01": {
+  "status": "Fixed",
+  "resolution": "Phase 1: homeView() in src/engine/view.ts drives every Home element; view.test.ts checks every persona on 60 days, balance sweeps and edge cases for consistency."
+ },
+ "JUDGE-10": {
+  "status": "Fixed",
+  "resolution": "Phase 1: labelled Plan example, messages off by default, neutral icons with In this demo and Planned sections on Privacy, distinct amber Tight."
+ },
+ "LEGAL-02": {
+  "status": "Partly fixed",
+  "resolution": "Phase 1: Safe to spend is now Daily budget with a buffer line and a not-advice line on Home; Plan, Help and legal pass follow in Phase 3."
+ },
+ "LEGAL-03": {
+  "status": "Partly fixed",
+  "resolution": "Phase 1: messages default off. Sender identity and STOP wording in every message follow in Phase 3."
+ },
+ "LEGAL-08": {
+  "status": "Fixed",
+  "resolution": "Phase 1: Enough is used only for the Enough state; Tight until for Tight."
+ },
+ "PROD-03": {
+  "status": "Fixed",
+  "resolution": "Phase 1: state-specific headline (Enough until, Tight until, Short from); daily budget follows the state; chart readout labelled If money lands as usual."
+ },
+ "RISK-02": {
+  "status": "Partly fixed",
+  "resolution": "Phase 1: bills within a week after next money, less a low next payment, are reserved before the daily budget and Enough becomes Tight when a heavy week would eat into them. More engine work in Phase 2."
+ },
+ "RISK-04": {
+  "status": "Fixed",
+  "resolution": "Phase 1: no budget figure when Short, usual spend shown, disclaimer beside the figure on Home."
+ },
+ "RISK-11": {
+  "status": "Fixed",
+  "resolution": "Phase 1: renamed Room to lend, keeps the reserve, adds Only lend what you could manage without getting back."
+ },
+ "SEC-01": {
+  "status": "Fixed",
+  "resolution": "Phase 1: 12 month retention is enforced on open in LocalRepository.getRecord (src/data/retention.ts, with tests)."
+ },
+ "SEC-02": {
+  "status": "Partly fixed",
+  "resolution": "Phase 1: Privacy overview ticks removed, split into In this demo and Planned. Mode-conditional copy everywhere follows in Phase 3."
+ },
+ "SEC-06": {
+  "status": "Partly fixed",
+  "resolution": "Phase 1: messages no longer pre-ticked. Provable server consent records follow in Phase 8."
+ },
+ "UX-01": {
+  "status": "Fixed",
+  "resolution": "Phase 1: Short shows Not advised with the usual daily spend and the gap, never a figure; Room to lend explains why it is R0."
+ },
+ "UX-02": {
+  "status": "Fixed",
+  "resolution": "Phase 1: chart readout no longer uses cover state words; it says If money lands as usual and Above R0, Could reach R0 or Below R0."
+ },
+ "UX-03": {
+  "status": "Fixed",
+  "resolution": "Phase 1: Tight uses Tight until (hero.tightUntil) on Home, Plan, Import, Review and the Why drawer via headlineKey()."
+ },
+ "UX-04": {
+  "status": "Fixed",
+  "resolution": "Phase 1: one next-money date on Home (typical); the budget line and range legend no longer carry dates; the range is in the Why drawer."
+ },
+ "UX-05": {
+  "status": "Fixed",
+  "resolution": "Phase 1: light Tight is amber #855700, Short is red #B42318; contrast-check now also fails if their hues are under 25 degrees apart."
+ },
+ "UX-06": {
+  "status": "Fixed",
+  "resolution": "Phase 1: per BUILD2 the Plan is never empty; the what-if starts with a clearly labelled example (R200 school trip) and the loan amount starts empty with quick picks."
+ },
+ "UX-07": {
+  "status": "Fixed",
+  "resolution": "Phase 1: range band has a legend for Your date, Likely range and Next money."
+ },
+ "UX-09": {
+  "status": "Fixed",
+  "resolution": "Phase 1: daily messages default off at consent; Playwright checks the switch is unchecked."
+ }
+}

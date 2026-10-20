@@ -24,7 +24,8 @@ export default function Consent() {
   usePageTitle(t('consent.title'));
   const navigate = useNavigate();
   const { personaId, profile, status, consent, setConsent } = usePersona();
-  const [messages, setMessages] = useState(true);
+  // Messages stay off until the person opts in.
+  const [messages, setMessages] = useState(false);
   const [analytics, setAnalytics] = useState(false);
   const [saving, setSaving] = useState(false);
 

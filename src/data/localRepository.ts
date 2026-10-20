@@ -9,6 +9,7 @@ import type {
   TengoRepository,
   TransactionPatch,
 } from './repository';
+import { applyRetention } from './retention';
 import { generateHistory, startingBalance } from './seed/generate';
 import { getPersona, type PersonaId } from './seed/personas';
 
@@ -86,6 +87,12 @@ export class LocalRepository implements TengoRepository {
     const slot = this.slot(data, personaId);
     if (!slot.record || (slot.record.source === 'seed' && slot.record.seededOn !== today)) {
       slot.record = seedRecord(personaId, today);
+      this.write(data);
+    }
+    // Retention is enforced here, not only described: records older than 12 months are removed on open.
+    const { kept, removed } = applyRetention(slot.record.transactions, today);
+    if (removed > 0) {
+      slot.record = { ...slot.record, transactions: kept, updatedAt: new Date().toISOString() };
       this.write(data);
     }
     return slot.record;

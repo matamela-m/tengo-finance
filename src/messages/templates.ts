@@ -1,4 +1,5 @@
 import i18n from '../i18n';
+import { homeView } from '../engine/view';
 import { formatDayShort, formatZAR } from '../lib/format';
 import type { DailyMessage, MessageContext, MessageWriter } from './MessageWriter';
 
@@ -9,13 +10,15 @@ import type { DailyMessage, MessageContext, MessageWriter } from './MessageWrite
 export class TemplateMessageWriter implements MessageWriter {
   async write({ name, forecast: f, language, channel }: MessageContext): Promise<DailyMessage> {
     const t = i18n.getFixedT(language);
-    const date = formatDayShort(f.headlineDate, language);
-    const next = f.nextMoney && f.nextMoney.pattern !== 'unknown' ? formatDayShort(f.nextMoney.typical, language) : null;
+    // Messages follow the same Home rule as the screen: one next-money date, no budget figure when Short.
+    const v = homeView(f);
+    const date = formatDayShort(v.headline.date, language);
+    const next = v.nextMoney ? formatDayShort(v.nextMoney.date, language) : null;
     const vars = {
       name,
       date,
-      state: t(`state.${f.state}`),
-      sts: formatZAR(f.safeToSpendToday),
+      state: t(`state.${v.state}`),
+      sts: v.budget.kind === 'amount' ? formatZAR(v.budget.amount) : '',
       next: next ?? '',
       count: f.gapDays,
     };
@@ -28,7 +31,7 @@ export class TemplateMessageWriter implements MessageWriter {
     const lines = [
       t('messages.whatsapp.greeting', vars),
       t(`messages.whatsapp.${f.state}`, vars),
-      t('messages.whatsapp.sts', vars),
+      v.budget.kind === 'amount' ? t('messages.whatsapp.sts', vars) : t('messages.whatsapp.stsNotAdvised', vars),
       next ? t('messages.whatsapp.next', vars) : t('messages.whatsapp.noNext'),
       t(`messages.whatsapp.tip.${f.state}`, vars),
     ];

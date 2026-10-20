@@ -20,6 +20,20 @@ describe('LocalRepository', () => {
     repo = new LocalRepository(new MemoryStore());
   });
 
+  it('removes transactions older than 12 months when the record is opened', async () => {
+    await repo.replaceHistory(
+      'lerato',
+      [
+        { id: 'old', date: '2025-10-11', description: 'Old', amount: -10, category: 'spend' },
+        { id: 'edge', date: '2025-10-12', description: 'Edge', amount: -10, category: 'spend' },
+        { id: 'new', date: '2026-10-01', description: 'New', amount: -10, category: 'spend' },
+      ],
+      500,
+    );
+    const r = await repo.getRecord('lerato', '2026-10-12');
+    expect(r.transactions.map((t) => t.id)).toEqual(['edge', 'new']);
+  });
+
   it('seeds a persona on first read and keeps it for the day', async () => {
     const a = await repo.getRecord('lerato', '2026-10-12');
     expect(a.source).toBe('seed');

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { addDays, daysBetween } from '../../engine/dates';
 import type { Forecast } from '../../engine/types';
+import { headlineKey } from '../../engine/view';
 import { formatZAR } from '../../lib/format';
 import { useDates } from '../../lib/useLang';
 import { Drawer } from '../Drawer';
@@ -102,10 +103,11 @@ export function WhyDrawer({ forecast, open, onClose }: { forecast: Forecast; ope
       <div className="flex flex-wrap items-center gap-3">
         <StateChip state={forecast.state} />
         <p className="num text-[15px] font-semibold">
-          {forecast.state === 'short' ? t('hero.shortFrom') : t('hero.enoughUntil')} {d.dayShort(forecast.headlineDate)}
+          {t(headlineKey(forecast))} {d.dayShort(forecast.headlineDate)}
         </p>
       </div>
       <p className="mt-4 text-[15px] leading-relaxed">{t('why.plain')}</p>
+      {known && forecast.state !== 'short' && <p className="num mt-2 text-sm text-muted">{t('why.budgetSpread', { date: d.dayShort(n.latest) })}</p>}
 
       <div className="mt-5 rounded-2xl bg-surface-2 p-4">
         <RunwayChart forecast={forecast} />
@@ -128,6 +130,11 @@ export function WhyDrawer({ forecast, open, onClose }: { forecast: Forecast; ope
           label={t('why.income')}
           hint={known ? t('common.rangeDates', { from: d.dayMonth(n.earliest), to: d.dayMonth(n.latest) }) : t('next.unknown')}
           value={known ? t('why.incomeValue', { amount: formatZAR(n.amountTypical), date: d.dayShort(n.typical) }) : '-'}
+        />
+        <Row
+          label={t('why.reserve')}
+          hint={forecast.reserveBills.map((b) => `${b.description}, ${d.dayMonth(b.date)}`).join('; ') || t('why.reserveNone')}
+          value={formatZAR(forecast.reserve)}
         />
         <Row label={t('why.history')} hint={t('why.historyHint', { count: forecast.historyDays })} value={t('why.historyValue', { count: forecast.windowDays })} />
         <Row label={t('why.confidence')} hint={t(`why.confidenceHint.${forecast.confidence}`)} value={t(`confidence.${forecast.confidence}`)} />

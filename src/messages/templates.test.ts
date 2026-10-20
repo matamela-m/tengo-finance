@@ -23,4 +23,22 @@ describe('TemplateMessageWriter', () => {
       expect(wa.text).not.toMatch(/[!\u2013\u2014]/);
     });
   }
+
+  it('never gives a budget figure when Short, on either channel', async () => {
+    const f = forecast({ transactions: history, balance: 300, today });
+    const wa = await writer.write({ name: 'Ayanda', forecast: f, language: 'en', channel: 'whatsapp' });
+    const sms = await writer.write({ name: 'Ayanda', forecast: f, language: 'en', channel: 'sms' });
+    expect(wa.text).toContain('Daily budget: not advised');
+    expect(sms.text).toContain('Daily budget not advised');
+    expect(wa.text).not.toMatch(/safe/i);
+    expect(sms.text).not.toMatch(/safe/i);
+  });
+
+  it('uses the typical next-money date, the same one Home shows', async () => {
+    const f = forecast({ transactions: history, balance: 700, today });
+    const wa = await writer.write({ name: 'Lerato', forecast: f, language: 'en', channel: 'whatsapp' });
+    // Pay lands on Fridays: typical Fri 16 Oct, latest Sat 17 Oct.
+    expect(wa.text).toContain('Fri 16 Oct');
+    expect(wa.text).not.toContain('17 Oct');
+  });
 });

@@ -14,6 +14,7 @@ import { Badge, IconTile, SectionLabel } from '../components/ui';
 import { seedRecord } from '../data/localRepository';
 import { localToday } from '../engine/dates';
 import { forecast as runForecast } from '../engine/forecast';
+import { headlineKey, homeView } from '../engine/view';
 import type { Forecast } from '../engine/types';
 import { LANGUAGES } from '../i18n/languages';
 import { formatZAR } from '../lib/format';
@@ -56,10 +57,13 @@ function ProductPreview() {
     const r = seedRecord('thabo', today);
     return runForecast({ transactions: r.transactions, balance: r.balance, today });
   }, []);
+  const v = homeView(f);
+  const budget = v.budget.kind === 'amount' ? formatZAR(v.budget.amount) : t('sts.notAdvised');
   const summary = t('landing.previewCaption', {
+    label: t(headlineKey(f)).toLowerCase(),
     date: d.weekdayLong(f.headlineDate),
     state: t(`state.${f.state}`),
-    amount: formatZAR(f.safeToSpendToday),
+    amount: budget,
   });
   return (
     <figure className="relative">
@@ -85,11 +89,11 @@ function ProductPreview() {
           </div>
           <div className="grid min-w-0 grid-cols-2 content-start gap-3 md:grid-cols-1">
             <div className="rounded-2xl bg-surface-2 p-4">
-              <p className="num font-heading text-[30px] font-bold leading-none tracking-[-0.03em]">{formatZAR(f.safeToSpendToday)}</p>
+              <p className="num font-heading text-[30px] font-bold leading-none tracking-[-0.03em]">{budget}</p>
               <p className="mt-2 text-xs text-muted">{t('sts.title')}</p>
             </div>
             <div className="rounded-2xl bg-surface-2 p-4">
-              <p className="num font-heading text-[22px] font-bold leading-none tracking-[-0.02em]">{f.nextMoney ? d.dayShort(f.nextMoney.typical) : '-'}</p>
+              <p className="num font-heading text-[22px] font-bold leading-none tracking-[-0.02em]">{v.nextMoney ? d.dayShort(v.nextMoney.date) : '-'}</p>
               <p className="mt-2 text-xs text-muted">{t('next.title')}</p>
             </div>
           </div>

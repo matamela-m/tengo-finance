@@ -8,9 +8,10 @@ import { Segmented } from '../components/Segmented';
 import { IconTile } from '../components/ui';
 import { StateChip } from '../components/StateChip';
 import { useReadyPersona } from '../data/PersonaProvider';
-import { addDays } from '../engine/dates';
+import { addDays, weekday } from '../engine/dates';
 import { loanCheck, whatIf } from '../engine/forecast';
 import type { Forecast } from '../engine/types';
+import { headlineKey } from '../engine/view';
 import { parseAmount } from '../lib/csv';
 import { formatZAR } from '../lib/format';
 import { useDates } from '../lib/useLang';
@@ -41,7 +42,7 @@ function Outcome({ label, f }: { label: string; f: Forecast }) {
   return (
     <div className="min-w-0 rounded-xl bg-surface-2 p-4">
       <p className="eyebrow">{label}</p>
-      <p className="num mt-2 text-sm text-muted">{f.state === 'short' ? t('hero.shortFrom') : t('hero.enoughUntil')}</p>
+      <p className="num mt-2 text-sm text-muted">{t(headlineKey(f))}</p>
       <p className="num font-heading text-[22px] font-extrabold leading-tight tracking-tight sm:text-[26px]">{d.dayShort(f.headlineDate)}</p>
       <div className="mt-2 flex items-center gap-2">
         <StateChip state={f.state} size="sm" />
@@ -51,12 +52,22 @@ function Outcome({ label, f }: { label: string; f: Forecast }) {
   );
 }
 
+function nextFriday(today: string): string {
+  let date = addDays(today, 1);
+  while (weekday(date) !== 5) date = addDays(date, 1);
+  return date;
+}
+
 function WhatIf() {
   const { t } = useTranslation();
+  // The daily budget follows the Home rule: no number when Short.
+  const budgetText = (f: Forecast) => (f.state === 'short' ? t('plan.notAdvised') : formatZAR(f.dailyBudget));
   const d = useDates();
   const { record, today } = useReadyPersona();
   const tomorrow = addDays(today, 1);
-  const [items, setItems] = useState<Item[]>([{ id: 1, kind: 'expense', amount: '500', date: tomorrow, label: '' }]);
+  // A labelled example so the page is never empty on a first visit: a R200 school trip next Friday.
+  const [items, setItems] = useState<Item[]>(() => [{ id: 1, kind: 'expense', amount: '200', date: nextFriday(today), label: t('plan.labelPlaceholderValue') }]);
+  const [example, setExample] = useState(true);
   const [nextId, setNextId] = useState(2);
 
   const parsed = items
@@ -72,7 +83,10 @@ function WhatIf() {
     [record, today, JSON.stringify(parsed)],
   );
 
-  const update = (id: number, patch: Partial<Item>) => setItems((list) => list.map((i) => (i.id === id ? { ...i, ...patch } : i)));
+  const update = (id: number, patch: Partial<Item>) => {
+    setExample(false);
+    setItems((list) => list.map((i) => (i.id === id ? { ...i, ...patch } : i)));
+  };
 
   return (
     <section className="card p-5 sm:p-7" aria-labelledby="whatif-title">
@@ -83,6 +97,12 @@ function WhatIf() {
         </h2>
       </div>
       <p className="mt-1 text-sm text-muted">{t('plan.whatIfLead')}</p>
+      {example && items.length > 0 && (
+        <p className="mt-3 flex items-start gap-2 rounded-xl bg-surface-2 px-3 py-2 text-sm text-muted">
+          <Icon name="info" size={16} className="mt-0.5 shrink-0" />
+          {t('plan.exampleNote')}
+        </p>
+      )}
 
       <ul className="mt-5 space-y-3">
         {items.map((item, idx) => (
@@ -98,7 +118,10 @@ function WhatIf() {
                 />
                 <button
                   type="button"
-                  onClick={() => setItems((l) => l.filter((i) => i.id !== item.id))}
+                  onClick={() => {
+                    setExample(false);
+                    setItems((l) => l.filter((i) => i.id !== item.id));
+                  }}
                   className="inline-flex h-11 w-11 items-center justify-center rounded-full text-muted hover:bg-surface-2"
                   aria-label={t('plan.remove', { n: idx + 1 })}
                 >
@@ -147,6 +170,7 @@ function WhatIf() {
         type="button"
         className="btn-secondary mt-3"
         onClick={() => {
+          setExample(false);
           setItems((l) => [...l, { id: nextId, kind: 'income', amount: '', date: tomorrow, label: '' }]);
           setNextId((n) => n + 1);
         }}
@@ -158,7 +182,7 @@ function WhatIf() {
       <div className="mt-6 border-t border-line pt-5">
         <p className="sr-only" aria-live="polite" aria-atomic="true">
           {t('plan.whatIfSpoken', {
-            label: result.after.state === 'short' ? t('hero.shortFrom') : t('hero.enoughUntil'),
+            label: t(headlineKey(result.after)),
             date: d.weekdayLong(result.after.headlineDate),
             state: t(`state.${result.after.state}`),
             change: result.deltaDays === 0 ? t('plan.noChange') : result.deltaDays > 0 ? t('plan.daysMore', { count: result.deltaDays }) : t('plan.daysLess', { count: -result.deltaDays }),
@@ -173,7 +197,7 @@ function WhatIf() {
           <Outcome label={t('plan.withChanges')} f={result.after} />
         </div>
         <p className="num mt-3 text-sm text-muted">
-          {t('plan.stsChange', { before: formatZAR(result.before.safeToSpendToday), after: formatZAR(result.after.safeToSpendToday) })}
+          {t('plan.stsChange', { before: budgetText(result.before), after: budgetText(result.after) })}
         </p>
       </div>
     </section>
@@ -184,7 +208,7 @@ function LoanCheck() {
   const { t } = useTranslation();
   const d = useDates();
   const { record, today } = useReadyPersona();
-  const [amount, setAmount] = useState('300');
+  const [amount, setAmount] = useState('');
   const value = parseAmount(amount);
   const valid = value !== null && value > 0;
   const result = useMemo(() => loanCheck({ transactions: record.transactions, balance: record.balance, today }, valid ? value : 0), [record, today, valid, value]);
@@ -201,9 +225,18 @@ function LoanCheck() {
       <p className="mt-1 text-sm text-muted">{t('plan.loanLead')}</p>
 
       <div className="relative mt-5 overflow-hidden rounded-xl bg-accent-soft p-5">
-        <p className="eyebrow">{t('plan.safeToLend')}</p>
-        <p className="num mt-2 font-heading text-[44px] font-bold leading-none tracking-[-0.035em] text-ink">{formatZAR(result.safeToLend)}</p>
-        <p className="mt-2 text-sm text-muted">{result.before.state === 'short' ? t('plan.safeToLendShort') : t('plan.safeToLendHint', { state: t(`state.${result.before.state}`) })}</p>
+        <p className="eyebrow">{t('plan.roomToLend')}</p>
+        <p className="num mt-2 font-heading text-[44px] font-bold leading-none tracking-[-0.035em] text-ink">{formatZAR(result.roomToLend)}</p>
+        <p className="num mt-2 text-sm text-muted">
+          {result.before.state === 'short'
+            ? t('plan.roomToLendShort')
+            : result.roomToLend === 0
+              ? t('plan.roomToLendNone', { state: t(`state.${result.before.state}`) })
+              : result.before.reserve > 0
+                ? t('plan.roomToLendHint', { state: t(`state.${result.before.state}`), reserve: formatZAR(result.before.reserve) })
+                : t('plan.roomToLendHintNoReserve', { state: t(`state.${result.before.state}`) })}
+        </p>
+        <p className="mt-2 text-sm text-ink">{t('plan.lendCaution')}</p>
       </div>
 
       <div className="mt-5">
@@ -233,9 +266,9 @@ function LoanCheck() {
               {formatZAR(v)}
             </button>
           ))}
-          {result.safeToLend > 0 && (
-            <button type="button" className="num min-h-[44px] rounded-full border border-accent/40 bg-accent-soft px-4 text-sm font-medium text-accent" onClick={() => setAmount(String(result.safeToLend))}>
-              {t('plan.useSafe', { amount: formatZAR(result.safeToLend) })}
+          {result.roomToLend > 0 && (
+            <button type="button" className="num min-h-[44px] rounded-full border border-accent/40 bg-accent-soft px-4 text-sm font-medium text-accent" onClick={() => setAmount(String(result.roomToLend))}>
+              {t('plan.useRoom', { amount: formatZAR(result.roomToLend) })}
             </button>
           )}
         </div>
@@ -246,7 +279,7 @@ function LoanCheck() {
           {valid
             ? t('plan.loanSpoken', {
                 amount: formatZAR(value),
-                label: result.after.state === 'short' ? t('hero.shortFrom') : t('hero.enoughUntil'),
+                label: t(headlineKey(result.after)),
                 date: d.weekdayLong(result.after.headlineDate),
                 state: t(`state.${result.after.state}`),
                 count: result.daysOff,

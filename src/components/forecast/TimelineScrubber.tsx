@@ -4,7 +4,7 @@ import type { DayProjection, Forecast } from '../../engine/types';
 import { formatZAR } from '../../lib/format';
 import { useDates } from '../../lib/useLang';
 import { Icon } from '../Icon';
-import { StateChip, StateText } from '../StateChip';
+import { STATE_ICON } from '../StateChip';
 
 const PAD = { top: 12, right: 12, bottom: 8, left: 52 };
 
@@ -35,6 +35,20 @@ function useWidth<T extends HTMLElement>() {
     return () => ro.disconnect();
   }, []);
   return [ref, width] as const;
+}
+
+/**
+ * Where the balance sits on a day of the projection. Deliberately not the cover state words or colours:
+ * the cover state belongs to the headline, and the chart only describes this one assumed path.
+ */
+function LevelText({ level, className = '' }: { level: DayProjection['state']; className?: string }) {
+  const { t } = useTranslation();
+  return (
+    <span className={`inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium text-muted ${className}`}>
+      <Icon name={STATE_ICON[level]} size={15} strokeWidth={2.2} />
+      {t(`scrubber.levelShort.${level}`)}
+    </span>
+  );
 }
 
 /**
@@ -78,10 +92,17 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
 
   const xLabels = useMemo(() => (width < 400 ? [0, 14, days.length - 1] : [0, 7, 14, 21, days.length - 1]), [days.length, width]);
 
+  const events = [
+    day.incomeToday > 0 ? `${t('scrubber.expectedIncome')} ${formatZAR(day.incomeToday)}` : '',
+    ...day.billsToday.map((b) => `${t('scrubber.billDue', { name: b.description })} ${formatZAR(b.amount)}`),
+  ].filter(Boolean);
   const valueText = t('scrubber.valueText', {
     date: d.weekdayLong(day.date),
     amount: formatZAR(Math.round(day.central)),
-    state: t(`state.${day.state}`),
+    low: formatZAR(Math.round(day.pessimistic)),
+    high: formatZAR(Math.round(day.optimistic)),
+    level: t(`scrubber.level.${day.state}`),
+    events: events.length ? ` ${events.join('. ')}.` : '',
   });
   const low = days.reduce((m, p) => (p.central < m.central ? p : m), days[0]!);
   const summary = t('scrubber.summary', { low: formatZAR(Math.round(low.central)), date: d.weekdayLong(low.date) });
@@ -101,13 +122,14 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
       {/* Readout for the picked day. The slider's value text already announces it. */}
       <div className="mt-5 flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <p className="text-sm font-medium text-muted">{index === 0 ? t('common.today') : d.dayShort(day.date)}</p>
+          <p className="text-xs font-medium text-subtle">{t('scrubber.ifUsual')}</p>
+          <p className="mt-0.5 text-sm font-medium text-muted">{index === 0 ? t('common.today') : d.dayShort(day.date)}</p>
           <p className="num mt-1 font-heading text-[26px] font-bold leading-none tracking-[-0.025em] text-ink">{formatZAR(Math.round(day.central))}</p>
           <p className="num mt-1.5 text-sm text-muted">
             {t('scrubber.range', { low: formatZAR(Math.round(day.pessimistic)), high: formatZAR(Math.round(day.optimistic)) })}
           </p>
         </div>
-        <StateText state={day.state} className="shrink-0" />
+        <LevelText level={day.state} className="shrink-0" />
       </div>
       <p className="num mt-2 min-h-[20px] text-xs text-subtle" aria-hidden>
         {[
@@ -248,7 +270,7 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
                     {t('common.rangeAmounts', { low: formatZAR(Math.round(p.pessimistic)), high: formatZAR(Math.round(p.optimistic)) })}
                   </td>
                   <td className="px-4 py-2">
-                    <StateChip state={p.state} size="sm" />
+                    <LevelText level={p.state} />
                   </td>
                 </tr>
               ))}

@@ -46,15 +46,25 @@ export function RangeBand({ forecast }: { forecast: Forecast }) {
         <div className="absolute top-[16px] h-4 w-4 -translate-x-1/2 rounded-full ring-[3px] ring-surface" style={{ left: pct(headlineDate), background: `var(--color-${state})` }} />
         <span className="absolute left-0 top-8 text-xs font-medium text-subtle">{t('common.today')}</span>
       </div>
-      {nextMoney && nextMoney.pattern !== 'unknown' && (
-        <p className="mt-1 flex items-center gap-1.5 text-xs text-subtle">
-          <span aria-hidden className="flex h-3 w-2.5 flex-col items-center">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-            <span className="h-1.5 w-px bg-accent" />
-          </span>
-          {t('band.legendNext', { date: d.dayShort(nextMoney.typical) })}
-        </p>
-      )}
+      <ul className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-subtle">
+        <li className="flex items-center gap-1.5">
+          <span aria-hidden className="h-2.5 w-2.5 rounded-full" style={{ background: `var(--color-${state})` }} />
+          {t('band.legendDate')}
+        </li>
+        <li className="flex items-center gap-1.5">
+          <span aria-hidden className="h-2 w-4 rounded-full border" style={{ background: `var(--color-${state}-soft)`, borderColor: `var(--color-${state})` }} />
+          {t('band.legendRange')}
+        </li>
+        {nextMoney && nextMoney.pattern !== 'unknown' && (
+          <li className="flex items-center gap-1.5">
+            <span aria-hidden className="flex h-3 w-2.5 flex-col items-center">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              <span className="h-1.5 w-px bg-accent" />
+            </span>
+            {t('band.legendNext')}
+          </li>
+        )}
+      </ul>
     </div>
   );
 }

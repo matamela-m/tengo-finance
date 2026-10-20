@@ -11,6 +11,7 @@ import { buildImport, detectMapping, mappingReady, parseAmount, parseCsv, type C
 import { formatZAR } from '../lib/format';
 import { downloadText, SAMPLE_FILENAME, sampleStatementCsv } from '../lib/sampleStatement';
 import { useDates } from '../lib/useLang';
+import { headlineKey } from '../engine/view';
 import { StateChip } from '../components/StateChip';
 
 const FIELDS: (keyof ColumnMapping)[] = ['date', 'description', 'amount', 'debit', 'credit', 'balance'];
@@ -257,7 +258,7 @@ export default function ImportPage() {
                         <p className="text-xs text-muted">{t('import.result')}</p>
                         <div className="mt-1 flex flex-wrap items-center gap-2">
                           <p className="num font-semibold">
-                            {preview.state === 'short' ? t('hero.shortFrom') : t('hero.enoughUntil')} {d.dayShort(preview.headlineDate)}
+                            {t(headlineKey(preview))} {d.dayShort(preview.headlineDate)}
                           </p>
                           <StateChip state={preview.state} size="sm" />
                         </div>

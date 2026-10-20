@@ -53,7 +53,7 @@
     "ctaNote": "No sign up. Fictional data only.",
     "previewLabel": "Live preview of Tengo",
     "previewWho": "Thabo, e-hailing driver. Fictional.",
-    "previewCaption": "Preview of Tengo for a fictional driver: enough until {{date}}, cover {{state}}, safe to spend {{amount}} today.",
+    "previewCaption": "Preview of Tengo for a fictional driver: {{label}} {{date}}, cover {{state}}, daily budget {{amount}}.",
     "howTitle": "Three steps to a date you can plan around.",
     "steps": {
       "history": {
@@ -66,7 +66,7 @@
       },
       "plan": {
         "title": "Plan around the date",
-        "body": "Try a what-if, check a loan to family, and see what is safe to spend today."
+        "body": "Try a what-if, check a loan to family, and see your daily budget."
       }
     },
     "tagline": "Money you can plan around.",
@@ -145,7 +145,7 @@
       },
       "who": {
         "title": "Who can see it",
-        "body": "Only you, on this device. No one at Tengo can see it in this demo."
+        "body": "Anyone using this browser on this device. No one at Tengo can see it."
       },
       "where": {
         "title": "Where it is processed",
@@ -153,7 +153,7 @@
       },
       "how": {
         "title": "How long we keep it",
-        "body": "12 months, then it is removed. You can delete it any time."
+        "body": "Records older than 12 months are removed from this device. You can delete everything any time."
       }
     },
     "choices": "Your choices",
@@ -164,7 +164,7 @@
     },
     "messages": {
       "title": "Daily messages",
-      "body": "A short daily update with your date. Simulated, nothing is sent."
+      "body": "A short daily update with your date. Off until you turn it on. Simulated, nothing is sent."
     },
     "analytics": {
       "title": "Product analytics",
@@ -185,7 +185,7 @@
     "lastChanged": "Last changed {{date}}",
     "minimisation": "What the forecast uses",
     "uses": "Uses",
-    "neverUses": "Never uses",
+    "neverUses": "Does not use",
     "used": {
       "date": "Transaction date",
       "amount": "Transaction amount",
@@ -193,19 +193,18 @@
       "balance": "Your current balance"
     },
     "unused": {
-      "name": "Your name",
       "id": "ID number",
       "location": "Location",
       "contacts": "Contacts",
-      "account": "Account or card numbers",
-      "merchant": "Who you pay, beyond the description"
+      "account": "Account or card numbers"
     },
     "security": "How data is protected",
     "securityItems": {
-      "transit": "In a real deployment, data is encrypted in transit and at rest.",
-      "rest": "In this demo, data stays in this browser's local storage and never leaves the device.",
-      "access": "Access is limited to you. Staff access would be logged and reviewed.",
-      "test": "Only fictional test data is used here."
+      "transit": "With an optional account: an encrypted connection and storage that only you can read.",
+      "access": "Any staff access would be limited and logged.",
+      "device": "Data stays in this browser's storage on this device. Tengo does not encrypt it on the device.",
+      "server": "Nothing is sent to a server. There is no Tengo account and no staff access.",
+      "shared": "Anyone who uses this browser on this device can open it. Delete it any time."
     },
     "rightsNav": "Your rights",
     "links": {
@@ -231,7 +230,7 @@
       }
     },
     "retention": "How long we keep it",
-    "retentionRule": "Kept for 12 months, then removed.",
+    "retentionRule": "Records older than 12 months are removed from this device when Tengo opens.",
     "nextRemoval": "Next removal {{date}}, for records from {{from}}.",
     "nothingStored": "Nothing stored yet.",
     "crossBorder": "Where data is processed",
@@ -328,7 +327,10 @@
     "deleteStart": "Delete my data",
     "deleteWarn": "This cannot be undone. You will go back to the start.",
     "deleteCheck": "I understand this removes the data for good",
-    "deleteConfirm": "Yes, delete everything"
+    "deleteConfirm": "Yes, delete everything",
+    "descriptionsNote": "Statement descriptions can include names or references. They stay on this device and are used only to spot repeat bills and group spending.",
+    "securityNow": "In this demo",
+    "securityPlanned": "Planned, not built yet"
   },
   "home": {
     "greeting": {
@@ -347,25 +349,38 @@
     "enoughBeyond": "Enough beyond",
     "shortFrom": "Short from",
     "gap_one": "{{count}} day before your next money",
-    "gap_other": "{{count}} days before your next money"
+    "gap_other": "{{count}} days before your next money",
+    "tightUntil": "Tight until"
   },
   "band": {
     "between": "Likely between {{from}} and {{to}}",
     "single": "Likely {{date}}",
     "lowConfidence": "Low confidence",
-    "legendNext": "Next money around {{date}}"
+    "legendNext": "Next money",
+    "legendDate": "Your date",
+    "legendRange": "Likely range"
   },
   "sts": {
-    "title": "Safe to spend today",
-    "withBills": "Until {{date}}, after {{bills}} in bills.",
-    "noBills": "Until {{date}}. No bills due."
+    "title": "Daily budget",
+    "withBills": "Spread evenly until your next money, after {{bills}} in bills.",
+    "noBills": "Spread evenly until your next money. No bills due before it.",
+    "reserveOne": "Keeps {{amount}} back for {{name}} on {{date}}, which your next money may not cover.",
+    "reserveMany": "Keeps {{amount}} back for {{count}} bills just after your next money, which it may not cover.",
+    "noReserve": "No bills due just after your next money, so nothing extra is kept back.",
+    "usual": "Your usual spend is {{amount}} a day.",
+    "notAdvised": "Not advised",
+    "notAdvisedWhy_one": "At your usual {{usual}} a day, money runs out {{count}} day before your next money.",
+    "notAdvisedWhy_other": "At your usual {{usual}} a day, money runs out {{count}} days before your next money.",
+    "disclaimer": "An estimate from your own history, not advice.",
+    "nothingSpare": "Nothing spare"
   },
   "stateCard": {
     "title": "Cover",
     "enough": "Covered until your next money, even on a heavy week.",
     "tight": "Covered on a normal week, not on a heavy one.",
     "short_one": "Runs out {{count}} day before your next money.",
-    "short_other": "Runs out {{count}} days before your next money."
+    "short_other": "Runs out {{count}} days before your next money.",
+    "tightReserve": "Covered until your next money, but {{amount}} is needed for a bill soon after it."
   },
   "next": {
     "title": "Next money",
@@ -384,9 +399,9 @@
   },
   "scrubber": {
     "title": "Next 30 days",
-    "subtitle": "If money lands as usual",
+    "subtitle": "Expected balance and likely range",
     "label": "Pick a day in the next 30 days",
-    "valueText": "{{date}}, about {{amount}}, {{state}}",
+    "valueText": "If money lands as usual. {{date}}: about {{amount}}, likely {{low}} to {{high}}. {{level}}.{{events}}",
     "range": "Likely {{low}} to {{high}}",
     "expectedIncome": "Expected money",
     "billDue": "{{name}} due",
@@ -397,8 +412,19 @@
     "colDay": "Day",
     "colExpected": "Expected",
     "colRange": "Likely range",
-    "colCover": "Cover",
-    "key": "Line: expected balance. Shading: likely range. Filled dots: money in. Hollow dots: bills."
+    "colCover": "Balance",
+    "key": "Line: expected balance. Shading: likely range. Filled dots: money in. Hollow dots: bills.",
+    "ifUsual": "If money lands as usual",
+    "level": {
+      "enough": "Above R0 even on a heavy week",
+      "tight": "Could dip below R0 on a heavy week",
+      "short": "Below R0 on a normal week"
+    },
+    "levelShort": {
+      "enough": "Above R0",
+      "tight": "Could reach R0",
+      "short": "Below R0"
+    }
   },
   "why": {
     "open": "Why this date",
@@ -436,7 +462,10 @@
       "short": "A normal week runs out before the usual next money."
     },
     "question": "Question this result",
-    "notAdvice": "This is an estimate from past patterns, not financial advice."
+    "notAdvice": "This is an estimate from past patterns, not financial advice.",
+    "budgetSpread": "The daily budget is spread to {{date}}, the latest your next money usually lands.",
+    "reserve": "Kept back for bills just after next money",
+    "reserveNone": "None due in the week after"
   },
   "paused": {
     "title": "Forecast paused",
@@ -485,7 +514,7 @@
     "loadBody": "Something went wrong reading this device's storage.",
     "retry": "Try again",
     "crashTitle": "Something went wrong",
-    "crashBody": "This screen hit an error. Your data on this device is safe.",
+    "crashBody": "This screen hit an error. Your data on this device has not changed.",
     "crashCta": "Back to start"
   },
   "notFound": {
@@ -517,22 +546,28 @@
     "daysMore_other": "{{count}} days more",
     "daysLess_one": "{{count}} day less",
     "daysLess_other": "{{count}} days less",
-    "stsChange": "Safe to spend today: {{before}} now, {{after}} with these changes.",
+    "stsChange": "Daily budget: {{before}} now, {{after}} with these changes.",
     "loan": "Loan check",
     "loanLead": "See what lending money does to your cover first.",
-    "safeToLend": "Safe to lend up to",
-    "safeToLendHint": "Lending up to this keeps you at {{state}}.",
-    "safeToLendShort": "You are already short before your next money, so no amount is safe to lend.",
-    "loanAmount": "Amount to lend",
-    "useSafe": "Use {{amount}}",
-    "enterAmount": "Enter an amount to see the effect.",
+    "loanAmount": "Amount someone asked for",
+    "enterAmount": "Enter an amount, or pick one below, to see the effect.",
     "ifLend": "If you lend {{amount}} today",
     "afterLoan": "After the loan",
     "stateDrops": "This drops your cover from {{from}} to {{to}}.",
     "amountError": "Enter an amount above zero, for example 250.",
     "whatIfSpoken": "With these changes: {{label}} {{date}}, {{state}}, {{change}}.",
     "loanSpoken_one": "If you lend {{amount}}: {{label}} {{date}}, {{state}}, {{count}} day less cover.",
-    "loanSpoken_other": "If you lend {{amount}}: {{label}} {{date}}, {{state}}, {{count}} days less cover."
+    "loanSpoken_other": "If you lend {{amount}}: {{label}} {{date}}, {{state}}, {{count}} days less cover.",
+    "notAdvised": "not advised",
+    "exampleNote": "An example to start with: a R200 school trip next Friday. Change it or remove it.",
+    "roomToLend": "Room to lend",
+    "roomToLendHint": "Lending or giving up to this keeps you at {{state}} and keeps {{reserve}} back for bills just after your next money.",
+    "roomToLendHintNoReserve": "Lending or giving up to this keeps you at {{state}}.",
+    "roomToLendNone": "Any amount now would drop you below {{state}} or use money kept back for bills.",
+    "roomToLendShort": "You are already Short before your next money. Any amount you lend brings your date closer.",
+    "lendCaution": "Only lend what you could manage without getting back. Tengo cannot tell if or when it comes back.",
+    "useRoom": "Use {{amount}}",
+    "labelPlaceholderValue": "School trip (example)"
   },
   "money": {
     "title": "Money",
@@ -654,7 +689,7 @@
     "to": "To {{name}}",
     "schedule": "Every morning at 07:00",
     "facts": {
-      "what": "Only your date, cover and safe to spend figure.",
+      "what": "Only your date, cover and daily budget.",
       "never": "Never your balance or transactions.",
       "stop": "Turn off any time in Privacy."
     },
@@ -667,19 +702,20 @@
       "tight": "Your money should last until *{{date}}* on a normal week. Cover: {{state}}.",
       "short_one": "Your money may run out on *{{date}}*, {{count}} day before your next money. Cover: {{state}}.",
       "short_other": "Your money may run out on *{{date}}*, {{count}} days before your next money. Cover: {{state}}.",
-      "sts": "Safe to spend today: *{{sts}}*.",
+      "sts": "Daily budget: *{{sts}}*.",
       "next": "Next money: around {{next}}.",
       "noNext": "No regular income found yet.",
       "tip": {
         "enough": "You are covered. A good week to put a little aside.",
-        "tight": "Keep spending close to the safe figure until your next money.",
+        "tight": "Keep spending close to your daily budget until your next money.",
         "short": "Check Plan in Tengo to see what helps most."
-      }
+      },
+      "stsNotAdvised": "Daily budget: not advised until your next money."
     },
     "sms": {
-      "enough": "Tengo: Hi {{name}}, money lasts until {{date}} ({{state}}). Safe today {{sts}}.",
-      "tight": "Tengo: Hi {{name}}, money lasts until {{date}} ({{state}}). Safe today {{sts}}.",
-      "short": "Tengo: Hi {{name}}, money may run out {{date}} ({{state}}). Safe today {{sts}}.",
+      "enough": "Tengo: Hi {{name}}, money lasts until {{date}} ({{state}}). Budget today {{sts}}.",
+      "tight": "Tengo: Hi {{name}}, money lasts until {{date}} on a normal week ({{state}}). Budget today {{sts}}.",
+      "short": "Tengo: Hi {{name}}, money may run out {{date}} ({{state}}). Daily budget not advised.",
       "next": "Next money about {{next}}."
     }
   },
@@ -699,7 +735,7 @@
     "extra": "Bring in {{amount}} more before {{date}}.",
     "tryInPlan": "Try it in Plan",
     "coveredTitle": "You are covered",
-    "setAside": "You could set aside up to {{amount}} today and still be Enough until your next money.",
+    "setAside": "You could set aside up to {{amount}} today and still be Enough until your next money. This is the same room as Room to lend, not extra.",
     "coveredBody": "Your money should last until your next money, even on a heavier week.",
     "toReachState": "To reach {{state}}",
     "more_one": "{{count}} more way",

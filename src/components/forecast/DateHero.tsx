@@ -1,12 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import type { Forecast } from '../../engine/types';
+import { headlineKey } from '../../engine/view';
 import { useDates } from '../../lib/useLang';
 
 /** The one number that matters, date first. Re-keys on change so it animates in. */
 export function DateHero({ forecast, as: Tag = 'h1', size = 'xl' }: { forecast: Forecast; as?: 'h1' | 'h2' | 'p'; size?: 'xl' | 'md' }) {
   const { t } = useTranslation();
   const d = useDates();
-  const label = forecast.state === 'short' ? t('hero.shortFrom') : forecast.beyondHorizon ? t('hero.enoughBeyond') : t('hero.enoughUntil');
+  const label = t(headlineKey(forecast));
   const date = d.dayShort(forecast.headlineDate);
   const spoken = d.weekdayLong(forecast.headlineDate);
   return (

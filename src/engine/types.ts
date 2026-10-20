@@ -85,7 +85,19 @@ export interface Forecast {
   runwayDays: number;
   /** For Short: days between running out and the typical next money. */
   gapDays: number;
-  safeToSpendToday: number;
+  /**
+   * Even spread of what is left after bills and the reserve, per day until the latest likely next money.
+   * Rounded down to R5. Only shown when the state is Enough or Tight.
+   */
+  dailyBudget: number;
+  /**
+   * Kept back before the daily budget is worked out: bills due within a week after the latest next money,
+   * less what a low next payment would cover.
+   */
+  reserve: number;
+  reserveBills: UpcomingBill[];
+  /** True when the state is Tight only because the reserve would otherwise be eaten into. */
+  reserveLimited: boolean;
   nextMoney: NextMoney | null;
   rates: SpendRates;
   confidence: Confidence;

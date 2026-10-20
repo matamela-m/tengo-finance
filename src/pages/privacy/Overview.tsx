@@ -75,36 +75,41 @@ export default function PrivacyOverview() {
 
           <Card icon="filter" title={t('privacy.minimisation')}>
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl bg-enough-soft p-4 text-enough">
-                <p className="flex items-center gap-1.5 font-semibold">
-                  <Icon name="checkCircle" size={18} />
-                  {t('privacy.uses')}
-                </p>
-                <ul className="mt-2 list-outside list-disc pl-5 space-y-1 text-sm text-ink">
+              <div className="rounded-xl bg-surface-2 p-4">
+                <p className="font-semibold">{t('privacy.uses')}</p>
+                <ul className="mt-2 list-outside list-disc space-y-1 pl-5 text-sm">
                   {(['date', 'amount', 'description', 'balance'] as const).map((k) => (
                     <li key={k}>{t(`privacy.used.${k}`)}</li>
                   ))}
                 </ul>
               </div>
               <div className="rounded-xl bg-surface-2 p-4">
-                <p className="flex items-center gap-1.5 font-semibold">
-                  <Icon name="x" size={18} />
-                  {t('privacy.neverUses')}
-                </p>
-                <ul className="mt-2 list-outside list-disc pl-5 space-y-1 text-sm">
-                  {(['name', 'id', 'location', 'contacts', 'account', 'merchant'] as const).map((k) => (
+                <p className="font-semibold">{t('privacy.neverUses')}</p>
+                <ul className="mt-2 list-outside list-disc space-y-1 pl-5 text-sm">
+                  {(['id', 'location', 'contacts', 'account'] as const).map((k) => (
                     <li key={k}>{t(`privacy.unused.${k}`)}</li>
                   ))}
                 </ul>
               </div>
             </div>
+            <p className="mt-3 text-sm text-muted">{t('privacy.descriptionsNote')}</p>
           </Card>
 
           <Card icon="lock" title={t('privacy.security')}>
-            <ul className="space-y-2">
-              {(['transit', 'rest', 'access', 'test'] as const).map((k) => (
+            <h3 className="eyebrow">{t('privacy.securityNow')}</h3>
+            <ul className="mt-2 space-y-2">
+              {(['device', 'server', 'shared'] as const).map((k) => (
                 <li key={k} className="flex items-start gap-2">
-                  <Icon name="check" size={18} className="mt-0.5 shrink-0 text-enough" />
+                  <Icon name="info" size={18} className="mt-0.5 shrink-0 text-muted" />
+                  {t(`privacy.securityItems.${k}`)}
+                </li>
+              ))}
+            </ul>
+            <h3 className="eyebrow mt-5">{t('privacy.securityPlanned')}</h3>
+            <ul className="mt-2 space-y-2">
+              {(['transit', 'access'] as const).map((k) => (
+                <li key={k} className="flex items-start gap-2 text-muted">
+                  <Icon name="clock" size={18} className="mt-0.5 shrink-0" />
                   {t(`privacy.securityItems.${k}`)}
                 </li>
               ))}

@@ -31,8 +31,8 @@ const THEMES = {
     accent: '#3755CC',
     'on-accent': '#FFFFFF',
     enough: '#046E50',
-    tight: '#9B4708',
-    short: '#A9390A',
+    tight: '#855700',
+    short: '#B42318',
     accentSoftA: 0.1,
     stateSoftA: 0.1,
   },
@@ -96,6 +96,23 @@ for (const [name, t] of Object.entries(THEMES)) {
     return { theme: name, pair: p.label, fg: p.fg, bg: p.bg, ratio: r.toFixed(2), min: p.min, result: ok ? 'pass' : 'FAIL' };
   });
   tables.push(...rows);
+}
+
+// Tight and Short must look different, not only read differently: their hues sit at least 25 degrees apart.
+function hue(h) {
+  const [r, g, b] = rgb(h).map((v) => v / 255);
+  const mx = Math.max(r, g, b);
+  const d = mx - Math.min(r, g, b);
+  if (!d) return 0;
+  const raw = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
+  return (raw * 60 + 360) % 360;
+}
+for (const [name, t] of Object.entries(THEMES)) {
+  const diff = Math.abs(hue(t.tight) - hue(t.short));
+  const apart = Math.min(diff, 360 - diff);
+  const ok = apart >= 25;
+  if (!ok) failed++;
+  tables.push({ theme: name, pair: 'Tight and Short hue difference (degrees)', fg: t.tight, bg: t.short, ratio: apart.toFixed(0), min: 25, result: ok ? 'pass' : 'FAIL' });
 }
 
 const fails = tables.filter((r) => r.result === 'FAIL');

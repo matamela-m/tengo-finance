@@ -26,6 +26,8 @@ export const SIGNIFICANT_INCOME_SHARE = 0.1;
 export const LOW_CONFIDENCE_SPREAD = 1.5;
 /** When no income pattern is found, plan to this many days ahead. */
 export const UNKNOWN_INCOME_DAYS = 30;
+/** Bills due up to this many days after the latest next money are kept back from the daily budget. */
+export const RESERVE_DAYS_AFTER = 7;
 
 export function confidenceFor(historyDays: number): Confidence {
   if (historyDays >= 60) return 'high';
@@ -284,16 +286,29 @@ export function forecast(input: ForecastInput): Forecast {
     central: zeroDate(balance, rates.central, today, upcomingBills, extras),
     pessimistic: zeroDate(balance, rates.pessimistic, today, upcomingBills, extras),
   };
-  const state = coverState(runway, next);
+  const billsBeforeNextMoney = upcomingBills.filter((b) => b.date < next.latest);
+  const billsTotalBeforeNextMoney = sum(billsBeforeNextMoney.map((b) => b.amount));
+  const reserveEnd = addDays(next.latest, RESERVE_DAYS_AFTER);
+  const reserveBills = upcomingBills.filter((b) => b.date >= next.latest && b.date <= reserveEnd);
+  // Keep back only the part of those bills that a low next payment would not cover on its own.
+  const expectedLow = next.pattern === 'unknown' ? 0 : next.amountLow;
+  const reserve = Math.max(0, Math.round(sum(reserveBills.map((b) => b.amount)) - expectedLow));
+
+  let state = coverState(runway, next);
+  // Enough means a heavy week still reaches next money with the reserve untouched. If the reserve
+  // would be eaten into, it is Tight, with the reserve named as the reason.
+  let reserveLimited = false;
+  if (state === 'enough' && reserve > 0 && !covers(zeroDate(balance - reserve, rates.pessimistic, today, upcomingBills, extras), next.latest)) {
+    state = 'tight';
+    reserveLimited = true;
+  }
   const headlineDate = runway.central ?? horizonEnd;
   const runwayDays = daysBetween(today, headlineDate);
 
-  const billsBeforeNextMoney = upcomingBills.filter((b) => b.date < next.latest);
-  const billsTotalBeforeNextMoney = sum(billsBeforeNextMoney.map((b) => b.amount));
   const extrasBefore = sum(extras.filter((e) => e.date < next.latest).map((e) => e.amount));
   const daysToLatest = Math.max(1, daysBetween(today, next.latest));
-  const perDay = (balance + extrasBefore - billsTotalBeforeNextMoney) / daysToLatest;
-  const safeToSpendToday = Math.max(0, Math.floor(perDay / 5) * 5);
+  const perDay = (balance + extrasBefore - billsTotalBeforeNextMoney - reserve) / daysToLatest;
+  const dailyBudget = Math.max(0, Math.floor(perDay / 5) * 5);
 
   return {
     today,
@@ -305,7 +320,10 @@ export function forecast(input: ForecastInput): Forecast {
     band: { from: runway.pessimistic ?? horizonEnd, to: runway.optimistic ?? horizonEnd },
     runwayDays,
     gapDays: state === 'short' ? Math.max(0, daysBetween(headlineDate, next.typical)) : 0,
-    safeToSpendToday,
+    dailyBudget,
+    reserve,
+    reserveBills,
+    reserveLimited,
     nextMoney: next,
     rates,
     confidence,
@@ -339,8 +357,8 @@ export interface LoanCheckResult {
   after: Forecast;
   /** Days of cover the loan removes. Zero or positive. */
   daysOff: number;
-  /** Largest amount, in R10 steps, that keeps the current cover state. Zero when already Short. */
-  safeToLend: number;
+  /** Largest amount, in R10 steps, that keeps the current cover state and the reserve. Zero when already Short. */
+  roomToLend: number;
 }
 
 export function loanCheck(input: ForecastInput, amount: number): LoanCheckResult {
@@ -350,13 +368,24 @@ export function loanCheck(input: ForecastInput, amount: number): LoanCheckResult
     before,
     after,
     daysOff: Math.max(0, before.runwayDays - after.runwayDays),
-    safeToLend: safeToLend(input, before.state),
+    roomToLend: roomToLend(input, before.state),
   };
 }
 
-export function safeToLend(input: ForecastInput, current: CoverState = forecast(input).state): number {
-  if (current === 'short' || input.balance <= 0) return 0;
-  const keeps = (x: number) => RANK[forecast({ ...input, balance: input.balance - x }).state] >= RANK[current];
+/**
+ * Room to lend or give: the largest amount, in R10 steps, that keeps the current cover state
+ * while the reserve for bills just after next money stays untouched. It is the same room as
+ * setting money aside, not an extra amount. It says nothing about whether the money comes back.
+ */
+export function roomToLend(input: ForecastInput, current?: CoverState): number {
+  const state = current ?? forecast(input).state;
+  if (state === 'short' || input.balance <= 0) return 0;
+  // The state already protects the reserve for Enough; a budget above zero protects it for Tight.
+  const keeps = (x: number) => {
+    const after = forecast({ ...input, balance: input.balance - x });
+    return RANK[after.state] >= RANK[state] && after.dailyBudget > 0;
+  };
+  if (!keeps(0)) return 0;
   let lo = 0;
   let hi = Math.floor(input.balance / 10);
   while (lo < hi) {

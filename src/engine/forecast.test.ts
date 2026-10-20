@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { addDays } from './dates';
-import { confidenceFor, estimateSpendRates, forecast, loanCheck, safeToLend, whatIf } from './forecast';
+import { confidenceFor, estimateSpendRates, forecast, loanCheck, roomToLend, whatIf } from './forecast';
 import { steadyHistory, txn } from './testUtils';
 
 // Monday. Pay lands on Fridays, so typical next money is Fri 16 Oct and the latest is Sat 17 Oct.
@@ -83,7 +83,7 @@ describe('cover state', () => {
     const f = forecast({ transactions: history, balance: 0, today });
     expect(f.state).toBe('short');
     expect(f.headlineDate).toBe(today);
-    expect(f.safeToSpendToday).toBe(0);
+    expect(f.dailyBudget).toBe(0);
   });
 
   it('band runs from the pessimistic to the optimistic zero date', () => {
@@ -139,10 +139,10 @@ describe('bills', () => {
     expect(f.runwayDays).toBeLessThan(base.runwayDays);
   });
 
-  it('takes bills off safe to spend', () => {
+  it('takes bills off the daily budget', () => {
     const f = forecast({ transactions: withBill, balance: 1200, today });
     // (1200 - 400) / 5 days = 160
-    expect(f.safeToSpendToday).toBe(160);
+    expect(f.dailyBudget).toBe(160);
   });
 
   it('does not count bills that land after the latest next money', () => {
@@ -155,16 +155,33 @@ describe('bills', () => {
     expect(f.billsBeforeNextMoney).toHaveLength(0);
     expect(f.upcomingBills.some((b) => b.date === '2026-10-25')).toBe(true);
   });
+
+  it('keeps back bills due within a week after the latest next money', () => {
+    const soon = [...history, txn('2026-08-20', -3300, 'Rent', 'bill'), txn('2026-09-20', -3300, 'Rent', 'bill')];
+    const f = forecast({ transactions: soon, balance: 1200, today });
+    // Latest next money is Sat 17 Oct; rent on Tue 20 Oct is inside the 7 day reserve window.
+    expect(f.billsBeforeNextMoney).toHaveLength(0);
+    expect(f.reserve).toBe(300);
+    // R3 300 rent less a low next payment of R3 000 leaves R300 to keep back.
+    expect(f.reserveBills).toEqual([{ description: 'Rent', date: '2026-10-20', amount: 3300 }]);
+    // (1200 - 300) / 5 days = 180
+    expect(f.dailyBudget).toBe(180);
+  });
+
+  it('does not reserve bills more than a week after next money', () => {
+    const late = [...history, txn('2026-08-28', -3300, 'Rent', 'bill'), txn('2026-09-28', -3300, 'Rent', 'bill')];
+    expect(forecast({ transactions: late, balance: 1200, today }).reserve).toBe(0);
+  });
 });
 
-describe('safe to spend', () => {
+describe('daily budget', () => {
   it('rounds down to the nearest R5', () => {
     // 619 / 5 days = 123.8, rounds down to 120
-    expect(forecast({ transactions: history, balance: 619, today }).safeToSpendToday).toBe(120);
+    expect(forecast({ transactions: history, balance: 619, today }).dailyBudget).toBe(120);
     // 624 / 5 = 124.8, still 120
-    expect(forecast({ transactions: history, balance: 624, today }).safeToSpendToday).toBe(120);
+    expect(forecast({ transactions: history, balance: 624, today }).dailyBudget).toBe(120);
     // 625 / 5 = 125
-    expect(forecast({ transactions: history, balance: 625, today }).safeToSpendToday).toBe(125);
+    expect(forecast({ transactions: history, balance: 625, today }).dailyBudget).toBe(125);
   });
 
   it('floors at zero when bills are bigger than the balance', () => {
@@ -173,7 +190,7 @@ describe('safe to spend', () => {
       txn('2026-08-13', -900, 'Rent', 'bill'),
       txn('2026-09-13', -900, 'Rent', 'bill'),
     ];
-    expect(forecast({ transactions: withBill, balance: 500, today }).safeToSpendToday).toBe(0);
+    expect(forecast({ transactions: withBill, balance: 500, today }).dailyBudget).toBe(0);
   });
 });
 
@@ -200,17 +217,39 @@ describe('what-if and loan check', () => {
     expect(r.after.state).toBe('short');
   });
 
-  it('safe to lend keeps the current state, and R10 more does not', () => {
+  it('room to lend keeps the current state, and R10 more does not', () => {
     const input = { transactions: history, balance: 900, today };
-    const safe = safeToLend(input);
+    const safe = roomToLend(input);
     expect(safe).toBeGreaterThan(0);
     expect(safe % 10).toBe(0);
     expect(forecast({ ...input, balance: 900 - safe }).state).toBe('enough');
     expect(forecast({ ...input, balance: 900 - safe - 10 }).state).not.toBe('enough');
   });
 
-  it('safe to lend is zero when already Short', () => {
-    expect(safeToLend({ transactions: history, balance: 300, today })).toBe(0);
+  it('room to lend leaves the reserve for bills just after next money untouched', () => {
+    const soon = [...history, txn('2026-08-20', -3300, 'Rent', 'bill'), txn('2026-09-20', -3300, 'Rent', 'bill')];
+    const input = { transactions: soon, balance: 1200, today };
+    const room = roomToLend(input);
+    const plain = roomToLend({ transactions: history, balance: 1200, today });
+    // R300 of the rent is kept back, so the room is at least R300 smaller than without the rent.
+    expect(room).toBeLessThanOrEqual(plain - 300);
+    const after = forecast({ ...input, balance: 1200 - room });
+    expect(after.state).toBe('enough');
+    expect(after.dailyBudget).toBeGreaterThan(0);
+    expect(forecast({ ...input, balance: 1200 - room - 10 }).state).not.toBe('enough');
+  });
+
+  it('marks Enough as Tight when a heavy week would eat into the reserve', () => {
+    const soon = [...history, txn('2026-08-20', -3300, 'Rent', 'bill'), txn('2026-09-20', -3300, 'Rent', 'bill')];
+    const without = forecast({ transactions: history, balance: 900, today });
+    const f = forecast({ transactions: soon, balance: 900, today });
+    expect(without.state).toBe('enough');
+    expect(f.state).toBe('tight');
+    expect(f.reserveLimited).toBe(true);
+  });
+
+  it('room to lend is zero when already Short', () => {
+    expect(roomToLend({ transactions: history, balance: 300, today })).toBe(0);
   });
 });
 

@@ -4,6 +4,7 @@ import { Notice } from '../../components/Feedback';
 import { Icon } from '../../components/Icon';
 import { usePersona, useReadyPersona } from '../../data/PersonaProvider';
 import type { ReviewRequest } from '../../data/repository';
+import { headlineKey } from '../../engine/view';
 import { useDates } from '../../lib/useLang';
 import { SubPage } from './Sub';
 
@@ -19,7 +20,7 @@ export default function Review() {
   const [contact, setContact] = useState<ReviewRequest['contact']>('inbox');
   const [sent, setSent] = useState<ReviewRequest | null>(null);
   const [busy, setBusy] = useState(false);
-  const headline = `${forecast.state === 'short' ? t('hero.shortFrom') : t('hero.enoughUntil')} ${d.dayShort(forecast.headlineDate)} (${t(`state.${forecast.state}`)})`;
+  const headline = `${t(headlineKey(forecast))} ${d.dayShort(forecast.headlineDate)} (${t(`state.${forecast.state}`)})`;
 
   const submit = async () => {
     setBusy(true);

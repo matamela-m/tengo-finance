@@ -1,5 +1,5 @@
 import { addDays, daysBetween } from './dates';
-import { forecast, safeToLend } from './forecast';
+import { forecast, roomToLend } from './forecast';
 import type { CoverState, ForecastInput, ISODate, UpcomingBill } from './types';
 
 const RANK: Record<CoverState, number> = { short: 0, tight: 1, enough: 2 };
@@ -46,12 +46,13 @@ export function helpPlan(input: ForecastInput): HelpPlan {
   const base = forecast(input);
   const current = base.state;
   if (current === 'enough') {
-    return { current, target: null, extraNeeded: 0, dailyCut: 0, until: null, billToMove: null, canSetAside: safeToLend(input, current) };
+    return { current, target: null, extraNeeded: 0, dailyCut: 0, until: null, billToMove: null, canSetAside: roomToLend(input, current) };
   }
   const target: CoverState = current === 'short' ? 'tight' : 'enough';
   const extraNeeded = extraToReach(input, target);
   const next = base.nextMoney;
-  const until = next ? (target === 'enough' ? next.latest : next.typical) : null;
+  // Always the typical next-money date, the one date Home shows.
+  const until = next ? next.typical : null;
   const days = until ? Math.max(1, daysBetween(input.today, until)) : 1;
   const dailyCut = Math.ceil(extraNeeded / days / 5) * 5;
 

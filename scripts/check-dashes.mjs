@@ -3,7 +3,7 @@ import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, extname } from 'node:path';
 
 const banned = [String.fromCharCode(0x2014), String.fromCharCode(0x2013)];
-const roots = ['src', 'scripts', 'tests', 'public', 'README.md', 'index.html', 'BRIEF.md'];
+const roots = ['src', 'scripts', 'tests', 'public', 'docs', 'README.md', 'index.html', 'BRIEF.md', 'vercel.json'];
 const exts = new Set(['.ts', '.tsx', '.js', '.mjs', '.json', '.css', '.html', '.md', '.csv', '.webmanifest']);
 const skipFiles = new Set(['BRIEF.md']);
 const hits = [];

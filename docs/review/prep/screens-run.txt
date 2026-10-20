@@ -1,0 +1,30 @@
+
+Running 24 tests using 1 worker
+
+  ✓   1 docs/review/tools/screens.review.ts:63:5 › public pages dark 390 (2.3s)
+  ✓   2 docs/review/tools/screens.review.ts:73:7 › thabo dark 390 (15.3s)
+  ✓   3 docs/review/tools/screens.review.ts:73:7 › lerato dark 390 (15.1s)
+  ✓   4 docs/review/tools/screens.review.ts:73:7 › ayanda dark 390 (15.3s)
+  ✓   5 docs/review/tools/screens.review.ts:63:5 › public pages dark 768 (2.4s)
+  ✓   6 docs/review/tools/screens.review.ts:73:7 › thabo dark 768 (15.4s)
+  ✓   7 docs/review/tools/screens.review.ts:73:7 › lerato dark 768 (15.4s)
+  ✓   8 docs/review/tools/screens.review.ts:73:7 › ayanda dark 768 (15.4s)
+  ✓   9 docs/review/tools/screens.review.ts:63:5 › public pages dark 1280 (2.4s)
+  ✓  10 docs/review/tools/screens.review.ts:73:7 › thabo dark 1280 (15.6s)
+  ✓  11 docs/review/tools/screens.review.ts:73:7 › lerato dark 1280 (15.6s)
+  ✓  12 docs/review/tools/screens.review.ts:73:7 › ayanda dark 1280 (15.5s)
+  ✓  13 docs/review/tools/screens.review.ts:63:5 › public pages light 390 (2.2s)
+  ✓  14 docs/review/tools/screens.review.ts:73:7 › thabo light 390 (15.2s)
+  ✓  15 docs/review/tools/screens.review.ts:73:7 › lerato light 390 (15.2s)
+  ✓  16 docs/review/tools/screens.review.ts:73:7 › ayanda light 390 (15.2s)
+  ✓  17 docs/review/tools/screens.review.ts:63:5 › public pages light 768 (2.4s)
+  ✓  18 docs/review/tools/screens.review.ts:73:7 › thabo light 768 (15.5s)
+  ✓  19 docs/review/tools/screens.review.ts:73:7 › lerato light 768 (15.5s)
+  ✓  20 docs/review/tools/screens.review.ts:73:7 › ayanda light 768 (15.4s)
+  ✓  21 docs/review/tools/screens.review.ts:63:5 › public pages light 1280 (2.3s)
+  ✓  22 docs/review/tools/screens.review.ts:73:7 › thabo light 1280 (15.6s)
+  ✓  23 docs/review/tools/screens.review.ts:73:7 › lerato light 1280 (15.5s)
+  ✓  24 docs/review/tools/screens.review.ts:73:7 › ayanda light 1280 (15.4s)
+
+  24 passed (4.9m)
+exit 0

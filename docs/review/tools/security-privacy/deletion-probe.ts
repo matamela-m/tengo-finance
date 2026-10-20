@@ -1,0 +1,20 @@
+// Read-only probe: what survives LocalRepository.deletePersona, and is retention enforced.
+import { LocalRepository } from '../../../../src/data/localRepository';
+const mem = new Map<string, string>();
+const store = { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => void mem.set(k, v), removeItem: (k: string) => void mem.delete(k) };
+const repo = new LocalRepository(store, 0);
+const today = '2026-10-20';
+const old = [{ id: 'x1', date: '2024-01-05', description: 'PAYMENT TO J SMITH ACC 62012345678', amount: -500, category: 'other' as any }];
+await repo.getRecord('thabo', today);
+await repo.replaceHistory('thabo', old as any, 1000);
+await repo.setConsent('thabo', { core: true, messages: true, analytics: false });
+await repo.appendAudit('thabo', 'transaction.edited', { name: 'PAYMENT TO J SMITH', fields: 'category' });
+await repo.addReviewRequest('thabo', { reason: 'other', details: 'My ID is 8001015009087', contact: 'inbox', headline: 'x' } as any);
+const before = await repo.getRecord('thabo', today);
+console.log('retention: 2024 record still held after 12+ months:', before.transactions.some((t) => t.date < '2025-10-20'));
+console.log('audit log stores description text:', JSON.stringify((await repo.getAudit('thabo'))[0].params));
+const r = await repo.deletePersona('thabo');
+console.log('after delete, raw store:', mem.get('tengo.data.v1'));
+console.log('receipt id format:', r.id);
+const again = await repo.getRecord('thabo', today);
+console.log('re-open after delete gives new seed record, source:', again.source, 'tx:', again.transactions.length);

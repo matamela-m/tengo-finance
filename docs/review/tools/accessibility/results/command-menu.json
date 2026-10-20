@@ -1,0 +1,13 @@
+{
+  "focusOnOpen": "combobox",
+  "optionsInitially": 23,
+  "optionsAfterPlan": [
+    "Plan"
+  ],
+  "activeDesc": "Plan",
+  "urlAfterEnter": "http://localhost:4180/app/plan",
+  "focusAfterRun": "main",
+  "themeAfter": "light",
+  "liveRegion": "Light theme on",
+  "opensFromTextField": 1
+}

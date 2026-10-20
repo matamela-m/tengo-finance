@@ -1,0 +1,10 @@
+slice,engine_state,n,hind_enough,hind_tight,hind_short
+shipped60,enough,255,215,35,5
+shipped60,tight,79,45,6,28
+shipped60,short,98,14,0,84
+seeds90,enough,1349,1258,33,58
+seeds90,tight,434,287,41,106
+seeds90,short,377,105,19,253
+shipped14,enough,261,197,41,23
+shipped14,tight,73,34,1,38
+shipped14,short,98,21,4,73

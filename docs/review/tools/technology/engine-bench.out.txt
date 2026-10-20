@@ -1,0 +1,47 @@
+## Engine timing (Node on dev laptop; multiply by roughly 4 to 10 for a low-end Android)
+
+285 transactions over 90 days
+forecast()                                   0.36 ms
+helpPlan() (Home card)                       4.22 ms
+loanCheck(R300) (Plan, per keystroke)        2.17 ms
+whatIf(1 item) (Plan, per keystroke)         0.41 ms
+JSON size in localStorage                    25 KB (UTF-16 in most browsers: ~50 KB)
+parseCsv + buildImport                       1.31 ms
+
+2032 transactions over 180 days
+forecast()                                   1.02 ms
+helpPlan() (Home card)                       10.18 ms
+loanCheck(R300) (Plan, per keystroke)        1.10 ms
+whatIf(1 item) (Plan, per keystroke)         1.14 ms
+JSON size in localStorage                    180 KB (UTF-16 in most browsers: ~360 KB)
+parseCsv + buildImport                       7.80 ms
+
+2069 transactions over 365 days
+forecast()                                   0.83 ms
+helpPlan() (Home card)                       12.46 ms
+loanCheck(R300) (Plan, per keystroke)        1.42 ms
+whatIf(1 item) (Plan, per keystroke)         1.45 ms
+JSON size in localStorage                    183 KB (UTF-16 in most browsers: ~367 KB)
+parseCsv + buildImport                       7.17 ms
+
+10080 transactions over 365 days
+forecast()                                   2.23 ms
+helpPlan() (Home card)                       40.18 ms
+loanCheck(R300) (Plan, per keystroke)        5.61 ms
+whatIf(1 item) (Plan, per keystroke)         4.44 ms
+JSON size in localStorage                    897 KB (UTF-16 in most browsers: ~1794 KB)
+parseCsv + buildImport                       38.62 ms
+
+## Stale data drift: an imported or edited record is never re-dated
+thabo   viewed  0 days later: state=tight  date=2026-10-27 safe=R295 central/day=R295 confidence=high
+thabo   viewed  7 days later: state=enough date=2026-11-13 safe=R790 central/day=R295 confidence=high
+thabo   viewed 14 days later: state=enough date=2026-11-18 safe=R735 central/day=R284 confidence=high
+thabo   viewed 30 days later: state=enough date=2026-12-01 safe=R1105 central/day=R175 confidence=high
+lerato  viewed  0 days later: state=enough date=2026-11-01 safe=R330 central/day=R120 confidence=high
+lerato  viewed  7 days later: state=enough date=2026-11-01 safe=R370 central/day=R236 confidence=high
+lerato  viewed 14 days later: state=enough date=2026-11-19 safe=R370 central/day=R111 confidence=high
+lerato  viewed 30 days later: state=enough date=2026-12-01 safe=R555 central/day=R81 confidence=high
+ayanda  viewed  0 days later: state=short  date=2026-10-23 safe=R310 central/day=R623 confidence=high
+ayanda  viewed  7 days later: state=tight  date=2026-10-30 safe=R625 central/day=R623 confidence=high
+ayanda  viewed 14 days later: state=tight  date=2026-11-05 safe=R560 central/day=R605 confidence=high
+ayanda  viewed 30 days later: state=enough date=2026-12-10 safe=R625 central/day=R79 confidence=high

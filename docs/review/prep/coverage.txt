@@ -1,0 +1,126 @@
+
+ RUN  v3.2.7 /Users/matamelamakhado/Documents/development/tengo-finance
+      Coverage enabled with v8
+
+ ✓ src/lib/csv.test.ts (9 tests) 15ms
+ ✓ src/lib/format.test.ts (4 tests) 41ms
+ ✓ src/engine/forecast.test.ts (24 tests) 40ms
+ ✓ src/engine/help.test.ts (6 tests) 52ms
+ ✓ src/data/localRepository.test.ts (5 tests) 118ms
+ ✓ src/messages/templates.test.ts (3 tests) 25ms
+ ✓ src/engine/classify.test.ts (7 tests) 9ms
+ ✓ src/engine/spending.test.ts (2 tests) 3ms
+ ✓ src/data/seed/generate.test.ts (6 tests) 1462ms
+   ✓ seed data > Thabo starts in tight on any day  579ms
+   ✓ seed data > Lerato starts in enough on any day  470ms
+   ✓ seed data > Ayanda starts in short on any day  398ms
+
+ Test Files  9 passed (9)
+      Tests  66 passed (66)
+   Start at  12:06:38
+   Duration  2.22s (transform 403ms, setup 0ms, collect 850ms, tests 1.77s, environment 1ms, prepare 798ms)
+
+ % Coverage report from v8
+
+=============================== Coverage summary ===============================
+Statements   : 19.95% ( 1068/5353 )
+Branches     : 82.18% ( 443/539 )
+Functions    : 63.79% ( 111/174 )
+Lines        : 19.95% ( 1068/5353 )
+================================================================================
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   19.95 |    82.18 |   63.79 |   19.95 |                   
+ src               |       0 |        0 |       0 |       0 |                   
+  App.tsx          |       0 |        0 |       0 |       0 | 1-50              
+  main.tsx         |       0 |        0 |       0 |       0 | 1-20              
+ src/components    |       0 |    28.57 |   28.57 |       0 |                   
+  A11y.tsx         |       0 |        0 |       0 |       0 | 1-83              
+  Avatar.tsx       |       0 |        0 |       0 |       0 | 1-20              
+  Brand.tsx        |       0 |      100 |     100 |       0 | 16-41             
+  ...ndPalette.tsx |       0 |        0 |       0 |       0 | 1-209             
+  CoverBars.tsx    |       0 |      100 |     100 |       0 | 7-19              
+  DemoChip.tsx     |       0 |        0 |       0 |       0 | 1-11              
+  Drawer.tsx       |       0 |        0 |       0 |       0 | 1-84              
+  ...rBoundary.tsx |       0 |        0 |       0 |       0 | 1-32              
+  Feedback.tsx     |       0 |      100 |     100 |       0 | 2-62              
+  Icon.tsx         |       0 |      100 |     100 |       0 | 2-132             
+  ...eSelector.tsx |       0 |        0 |       0 |       0 | 1-66              
+  PageHeader.tsx   |       0 |      100 |     100 |       0 | 2-15              
+  Preferences.tsx  |       0 |        0 |       0 |       0 | 1-31              
+  Reveal.tsx       |       0 |        0 |       0 |       0 | 1-39              
+  Segmented.tsx    |       0 |        0 |       0 |       0 | 1-51              
+  SpendingCard.tsx |       0 |        0 |       0 |       0 | 1-38              
+  StateChip.tsx    |       0 |        0 |       0 |       0 | 1-36              
+  ThemeToggle.tsx  |       0 |        0 |       0 |       0 | 1-62              
+  Toggle.tsx       |       0 |        0 |       0 |       0 | 1-56              
+  ...ionEditor.tsx |       0 |        0 |       0 |       0 | 1-107             
+  ui.tsx           |       0 |      100 |     100 |       0 | 2-90              
+ ...nents/forecast |       0 |        0 |       0 |       0 |                   
+  Cards.tsx        |       0 |        0 |       0 |       0 | 1-148             
+  DateHero.tsx     |       0 |        0 |       0 |       0 | 1-29              
+  HelpCard.tsx     |       0 |        0 |       0 |       0 | 1-78              
+  RangeBand.tsx    |       0 |        0 |       0 |       0 | 1-60              
+  ...eScrubber.tsx |       0 |        0 |       0 |       0 | 1-261             
+  WhyDrawer.tsx    |       0 |        0 |       0 |       0 | 1-148             
+ src/data          |   45.75 |     75.6 |   77.27 |   45.75 |                   
+  ...aProvider.tsx |       0 |        0 |       0 |       0 | 1-167             
+  index.ts         |       0 |        0 |       0 |       0 | 1-7               
+  ...Repository.ts |   90.51 |    78.94 |   84.21 |   90.51 | ...56-163,187-188 
+  repository.ts    |       0 |        0 |       0 |       0 |                   
+ src/data/seed     |   98.02 |    98.48 |     100 |   98.02 |                   
+  generate.ts      |   97.34 |    98.11 |     100 |   97.34 | 145-147           
+  personas.ts      |     100 |      100 |     100 |     100 |                   
+  prng.ts          |     100 |      100 |     100 |     100 |                   
+ src/engine        |   97.55 |    91.96 |   93.75 |   97.55 |                   
+  classify.ts      |     100 |    95.83 |     100 |     100 | 35,40             
+  dates.ts         |   85.71 |    77.77 |   83.33 |   85.71 | 56-60,67-68       
+  forecast.ts      |   98.59 |    93.84 |     100 |   98.59 | 71,180-182        
+  help.ts          |     100 |     90.9 |     100 |     100 | 54-55             
+  spending.ts      |     100 |    93.33 |     100 |     100 | 42                
+  stats.ts         |   89.47 |     62.5 |      75 |   89.47 | 22-23             
+  testUtils.ts     |     100 |      100 |     100 |     100 |                   
+  types.ts         |       0 |        0 |       0 |       0 |                   
+ src/i18n          |   82.05 |      100 |       0 |   82.05 |                   
+  index.ts         |     100 |      100 |     100 |     100 |                   
+  languages.ts     |      72 |      100 |       0 |      72 | 21-22,25-26,32-34 
+ src/layouts       |       0 |    66.66 |   66.66 |       0 |                   
+  AppGate.tsx      |       0 |        0 |       0 |       0 | 1-47              
+  AppLayout.tsx    |       0 |      100 |     100 |       0 | 2-196             
+  nav.ts           |       0 |      100 |     100 |       0 | 14-21             
+ src/lib           |   72.44 |    84.42 |   62.96 |   72.44 |                   
+  csv.ts           |     100 |    84.88 |     100 |     100 | ...45-146,154-157 
+  format.ts        |   58.18 |    82.35 |      40 |   58.18 | ...57,61-65,68-74 
+  ...eStatement.ts |   78.04 |      100 |      75 |   78.04 | 42-50             
+  useCountUp.ts    |       0 |        0 |       0 |       0 | 1-31              
+  useLang.ts       |       0 |        0 |       0 |       0 | 1-16              
+  usePageTitle.ts  |       0 |        0 |       0 |       0 | 1-7               
+ src/messages      |     100 |    33.33 |     100 |     100 |                   
+  MessageWriter.ts |     100 |      100 |     100 |     100 |                   
+  templates.ts     |     100 |    33.33 |     100 |     100 | 13-19,24-32       
+ src/pages         |       0 |        0 |       0 |       0 |                   
+  Consent.tsx      |       0 |        0 |       0 |       0 | 1-104             
+  ...astPaused.tsx |       0 |        0 |       0 |       0 | 1-35              
+  Home.tsx         |       0 |        0 |       0 |       0 | 1-159             
+  Import.tsx       |       0 |        0 |       0 |       0 | 1-286             
+  Inbox.tsx        |       0 |        0 |       0 |       0 | 1-163             
+  Landing.tsx      |       0 |        0 |       0 |       0 | 1-278             
+  Me.tsx           |       0 |        0 |       0 |       0 | 1-143             
+  Money.tsx        |       0 |        0 |       0 |       0 | 1-206             
+  NotFound.tsx     |       0 |        0 |       0 |       0 | 1-20              
+  Picker.tsx       |       0 |        0 |       0 |       0 | 1-120             
+  Plan.tsx         |       0 |        0 |       0 |       0 | 1-291             
+  Privacy.tsx      |       0 |        0 |       0 |       0 | 1-22              
+ src/pages/privacy |       0 |     37.5 |    37.5 |       0 |                   
+  Audit.tsx        |       0 |        0 |       0 |       0 | 1-52              
+  Breach.tsx       |       0 |        0 |       0 |       0 | 1-28              
+  Delete.tsx       |       0 |        0 |       0 |       0 | 1-71              
+  MyData.tsx       |       0 |        0 |       0 |       0 | 1-108             
+  Overview.tsx     |       0 |      100 |     100 |       0 | 2-164             
+  Review.tsx       |       0 |        0 |       0 |       0 | 1-118             
+  Sub.tsx          |       0 |      100 |     100 |       0 | 2-20              
+  retention.ts     |       0 |      100 |     100 |       0 | 3-12              
+ src/store         |       0 |        0 |       0 |       0 |                   
+  session.ts       |       0 |        0 |       0 |       0 | 1-33              
+-------------------|---------|----------|---------|---------|-------------------

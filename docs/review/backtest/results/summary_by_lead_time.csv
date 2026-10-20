@@ -1,0 +1,6 @@
+actualBucket,n,n_observed,censored_pct,mae_days,bias_days,median_abs_err,within1_pct,within3_pct,mae_capped_all,baseline_mae_days,band_n_decidable,band_coverage_pct,band_miss_early_pct,band_miss_late_pct,band_width_mean,state_acc_pct,state_acc_buf10_pct,state_acc_buf30_pct,covered_acc_pct,false_reassurance_pct,short_recall_pct,false_alarm_share_of_short_pct,real_short_pct,engine_short_precision_vs_real_pct,engine_covered_but_real_short_pct,ran_out_with_income_pct,nm_n,nm_mae_days,nm_exact_pct,nm_in_window_pct
+0 to 6,846,846,0,1.579,0.199,1,57.92,88.18,1.579,2.116,846,53.546,27.541,18.913,3.556,49.764,49.527,50.236,68.44,19.031,61.111,29.526,38.534,55.71,14.894,49.054,846,0.833,66.548,83.57
+14 to 20,321,321,0,2.9,0.308,2,38.006,64.486,2.9,3.53,321,88.474,4.673,6.854,17.558,99.065,99.065,99.065,100,0,,,0,,0,0,321,0.888,64.486,80.997
+21 to 29,225,225,0,2.684,-0.809,2,48.444,65.333,2.684,5.876,225,87.111,0,12.889,13.262,100,100,100,100,0,,,0,,0,0,225,0.333,87.111,93.333
+7 to 13,765,765,0,2.093,-0.014,2,46.275,76.34,2.093,3.949,765,80.392,5.752,13.856,7.814,76.471,76.34,75.686,97.255,0.392,0,100,0.392,0,0.392,4.575,765,0.553,77.255,88.105
+not within 30,3,0,100,,,,,,0,,0,,,,8.333,100,100,100,100,0,,,0,,0,0,3,0,100,100

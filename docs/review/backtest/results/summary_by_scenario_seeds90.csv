@@ -1,0 +1,7 @@
+scenario,n,n_observed,censored_pct,mae_days,bias_days,median_abs_err,within1_pct,within3_pct,mae_capped_all,baseline_mae_days,band_n_decidable,band_coverage_pct,band_miss_early_pct,band_miss_late_pct,band_width_mean,state_acc_pct,state_acc_buf10_pct,state_acc_buf30_pct,covered_acc_pct,false_reassurance_pct,short_recall_pct,false_alarm_share_of_short_pct,real_short_pct,engine_short_precision_vs_real_pct,engine_covered_but_real_short_pct,ran_out_with_income_pct,nm_n,nm_mae_days,nm_exact_pct,nm_in_window_pct
+cover14,360,360,0,2.297,0.214,2,43.889,72.5,2.297,4.6,360,81.389,10.278,8.333,11.567,97.222,97.222,98.333,100,0,,,0,,0,0,360,0.689,72.222,85.833
+cover21,360,357,0.833,2.552,0.417,2,49.86,68.347,2.531,3.978,357,87.955,5.322,6.723,17.197,100,100,100,100,0,,,0,,0,0,360,0.689,72.222,85.833
+cover7,360,360,0,2.047,1.025,2,44.444,75.556,2.047,3.353,360,76.667,18.333,5,7.092,75.278,75.833,73.611,89.444,10.556,30.909,0,13.889,100,9.167,18.333,360,0.689,72.222,85.833
+target_enough,360,360,0,2.128,-0.094,2,47.778,79.722,2.128,3.447,360,70.833,15.833,13.333,6.719,84.444,86.944,80,90.278,9.722,0,,8.333,,8.333,16.389,360,0.689,72.222,85.833
+target_short,360,360,0,1.664,-0.903,1,56.667,86.667,1.664,1.931,360,54.444,11.667,33.889,1.811,65.556,65.556,65.556,65.556,0,100,34.444,50.833,50.833,0,59.167,360,0.689,72.222,85.833
+target_tight,360,360,0,1.756,-0.45,1,56.389,85.556,1.756,2.908,360,59.444,19.722,20.833,4.589,8.611,4.722,13.056,74.722,25.278,0,,18.333,,18.333,31.111,360,0.689,72.222,85.833

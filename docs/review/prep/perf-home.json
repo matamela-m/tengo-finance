@@ -1,0 +1,21 @@
+{
+  "conditions": "4x CPU slowdown, 1.6 Mbps down, 750 kbps up, 150 ms latency, 390x844, service worker blocked",
+  "results": [
+    {
+      "run": "cold",
+      "heroVisibleMs": 1516,
+      "domContentLoadedMs": 1081,
+      "loadMs": 1083,
+      "fcpMs": 1188,
+      "transferredKB": 149
+    },
+    {
+      "run": "warm",
+      "heroVisibleMs": 627,
+      "domContentLoadedMs": 342,
+      "loadMs": 345,
+      "fcpMs": 404,
+      "transferredKB": 1
+    }
+  ]
+}

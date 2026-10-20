@@ -1,0 +1,117 @@
+[
+  {
+    "persona": "thabo",
+    "today": "2026-10-20",
+    "transactions": 220,
+    "balance": 5547,
+    "state": "tight",
+    "headlineDate": "2026-10-27",
+    "band": "2026-10-25 to 2026-10-28",
+    "safeToSpend": 295,
+    "nextMoneyTypical": "2026-10-26",
+    "nextMoneyWindow": "2026-10-26 to 2026-10-27",
+    "nextMoneyAmount": "2650 to 3120",
+    "pattern": "weekday",
+    "dailySpend": {
+      "optimistic": 241,
+      "central": 295,
+      "pessimistic": 353
+    },
+    "billsBeforeNext": 3450,
+    "recurringBills": [
+      "Car instalment R3450 day 25",
+      "Phone contract R399 day 7",
+      "Car insurance R690 day 15"
+    ],
+    "confidence": "high",
+    "gapDays": 0,
+    "help": {
+      "target": "enough",
+      "extraNeeded": 380,
+      "dailyCut": 55,
+      "billToMove": "Car instalment",
+      "canSetAside": 0
+    },
+    "topSpend": [
+      "transport R4860",
+      "food R3236",
+      "airtime R791"
+    ]
+  },
+  {
+    "persona": "lerato",
+    "today": "2026-10-20",
+    "transactions": 175,
+    "balance": 1867,
+    "state": "enough",
+    "headlineDate": "2026-11-01",
+    "band": "2026-10-26 to 2026-11-01",
+    "safeToSpend": 330,
+    "nextMoneyTypical": "2026-10-24",
+    "nextMoneyWindow": "2026-10-24 to 2026-10-25",
+    "nextMoneyAmount": "1780 to 2230",
+    "pattern": "weekday",
+    "dailySpend": {
+      "optimistic": 99,
+      "central": 120,
+      "pessimistic": 276
+    },
+    "billsBeforeNext": 199,
+    "recurringBills": [
+      "Phone contract R199 day 20",
+      "Rent R2800 day 1"
+    ],
+    "confidence": "high",
+    "gapDays": 0,
+    "help": {
+      "target": null,
+      "extraNeeded": 0,
+      "dailyCut": 0,
+      "billToMove": null,
+      "canSetAside": 280
+    },
+    "topSpend": [
+      "food R2651",
+      "stock R2400",
+      "transport R494"
+    ]
+  },
+  {
+    "persona": "ayanda",
+    "today": "2026-10-20",
+    "transactions": 150,
+    "balance": 1877,
+    "state": "short",
+    "headlineDate": "2026-10-23",
+    "band": "2026-10-22 to 2026-10-25",
+    "safeToSpend": 310,
+    "nextMoneyTypical": "2026-10-25",
+    "nextMoneyWindow": "2026-10-24 to 2026-10-26",
+    "nextMoneyAmount": "4650 to 6990",
+    "pattern": "interval",
+    "dailySpend": {
+      "optimistic": 335,
+      "central": 623,
+      "pessimistic": 763
+    },
+    "billsBeforeNext": 0,
+    "recurringBills": [
+      "Funeral policy R185 day 5",
+      "Phone contract R149 day 12"
+    ],
+    "confidence": "high",
+    "gapDays": 2,
+    "help": {
+      "target": "tight",
+      "extraNeeded": 1240,
+      "dailyCut": 250,
+      "billToMove": null,
+      "canSetAside": 0
+    },
+    "topSpend": [
+      "stock R15137",
+      "energy R1249",
+      "other R772"
+    ]
+  }
+]

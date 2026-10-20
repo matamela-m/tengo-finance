@@ -1,0 +1,2616 @@
+{
+  "tab-/app": [
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 12,
+      "bottom": 52,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Tengo, Home",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Privacy",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Why this date",
+      "top": 511,
+      "bottom": 555,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 332,
+      "bottom": 512,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Show numbers",
+      "top": 584,
+      "bottom": 628,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "1 more way",
+      "top": 800,
+      "bottom": 844,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Try it in Plan",
+      "top": 800,
+      "bottom": 844,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "See all",
+      "top": 477,
+      "bottom": 521,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Home",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Plan",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Money",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Inbox",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Me",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "body"
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Tengo, Home",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Privacy",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Why this date",
+      "top": 400,
+      "bottom": 444,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 332,
+      "bottom": 512,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Show numbers",
+      "top": 584,
+      "bottom": 628,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "1 more way",
+      "top": 800,
+      "bottom": 844,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Try it in Plan",
+      "top": 800,
+      "bottom": 844,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "See all",
+      "top": 477,
+      "bottom": 521,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Home",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Plan",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Money",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Inbox",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Me",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "body"
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Tengo, Home",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Privacy",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Why this date",
+      "top": 400,
+      "bottom": 444,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 332,
+      "bottom": 512,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Show numbers",
+      "top": 584,
+      "bottom": 628,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "1 more way",
+      "top": 800,
+      "bottom": 844,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Try it in Plan",
+      "top": 800,
+      "bottom": 844,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "See all",
+      "top": 477,
+      "bottom": 521,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Home",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Plan",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Money",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Inbox",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Me",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "body"
+    }
+  ],
+  "obscured-/app": [
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 12,
+      "bottom": 52,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "1 more way",
+      "top": 800,
+      "bottom": 844,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Try it in Plan",
+      "top": 800,
+      "bottom": 844,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "1 more way",
+      "top": 800,
+      "bottom": 844,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Try it in Plan",
+      "top": 800,
+      "bottom": 844,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "1 more way",
+      "top": 800,
+      "bottom": 844,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Try it in Plan",
+      "top": 800,
+      "bottom": 844,
+      "inBar": false,
+      "visibleFrac": 0
+    }
+  ],
+  "tab-/app/plan": [
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Tengo, Home",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Privacy",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 332,
+      "bottom": 333,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Remove change 1",
+      "top": 310,
+      "bottom": 354,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 394,
+      "bottom": 438,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 476,
+      "bottom": 520,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 476,
+      "bottom": 520,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 476,
+      "bottom": 520,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 476,
+      "bottom": 520,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 558,
+      "bottom": 602,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Add a change",
+      "top": 630,
+      "bottom": 674,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 400,
+      "bottom": 444,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "R200",
+      "top": 456,
+      "bottom": 500,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "R500",
+      "top": 456,
+      "bottom": 500,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "R1 000",
+      "top": 456,
+      "bottom": 500,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Home",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Plan",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Money",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Inbox",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Me",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "body"
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Tengo, Home",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Privacy",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 332,
+      "bottom": 333,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Remove change 1",
+      "top": 310,
+      "bottom": 354,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 394,
+      "bottom": 438,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 476,
+      "bottom": 520,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 476,
+      "bottom": 520,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 476,
+      "bottom": 520,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 476,
+      "bottom": 520,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 558,
+      "bottom": 602,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Add a change",
+      "top": 630,
+      "bottom": 674,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 400,
+      "bottom": 444,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "R200",
+      "top": 456,
+      "bottom": 500,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "R500",
+      "top": 456,
+      "bottom": 500,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "R1 000",
+      "top": 456,
+      "bottom": 500,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Home",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Plan",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Money",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Inbox",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Me",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "body"
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    }
+  ],
+  "obscured-/app/plan": [
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    }
+  ],
+  "tab-/app/money": [
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 12,
+      "bottom": 52,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Tengo, Home",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Privacy",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Import statement",
+      "top": 183,
+      "bottom": 227,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 422,
+      "bottom": 423,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 454,
+      "bottom": 498,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Card machine sales, Mon 19 Oct",
+      "top": 594,
+      "bottom": 638,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Cash deposit, shop takings, Sun 18 Oct",
+      "top": 659,
+      "bottom": 703,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Card machine sales, Sun 18 Oct",
+      "top": 724,
+      "bottom": 768,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Paraffin, Sun 18 Oct",
+      "top": 789,
+      "bottom": 833,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Card machine sales, Sat 17 Oct",
+      "top": 400,
+      "bottom": 444,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Bread and milk, Sat 17 Oct",
+      "top": 465,
+      "bottom": 509,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit School shoes, Sat 17 Oct",
+      "top": 530,
+      "bottom": 574,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Wholesale stock, Fri 16 Oct",
+      "top": 595,
+      "bottom": 639,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Taxi to wholesaler, Thu 15 Oct",
+      "top": 660,
+      "bottom": 704,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Card machine sales, Wed 14 Oct",
+      "top": 725,
+      "bottom": 769,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Bread and milk, Tue 13 Oct",
+      "top": 790,
+      "bottom": 834,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Phone contract, Mon 12 Oct",
+      "top": 400,
+      "bottom": 444,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Cash deposit, shop takings, Sun 11 Oct",
+      "top": 465,
+      "bottom": 509,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Airtime, Sun 11 Oct",
+      "top": 530,
+      "bottom": 574,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Wholesale stock, Sat 10 Oct",
+      "top": 595,
+      "bottom": 639,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Paraffin, Sat 10 Oct",
+      "top": 660,
+      "bottom": 704,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Card machine sales, Fri 09 Oct",
+      "top": 725,
+      "bottom": 769,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Prepaid electricity, Fri 09 Oct",
+      "top": 790,
+      "bottom": 834,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Airtime, Fri 09 Oct",
+      "top": 400,
+      "bottom": 444,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Card machine sales, Thu 08 Oct",
+      "top": 465,
+      "bottom": 509,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Prepaid electricity, Thu 08 Oct",
+      "top": 530,
+      "bottom": 574,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Taxi to wholesaler, Thu 08 Oct",
+      "top": 595,
+      "bottom": 639,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Card machine sales, Wed 07 Oct",
+      "top": 660,
+      "bottom": 704,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Airtime, Tue 06 Oct",
+      "top": 725,
+      "bottom": 769,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit School shoes, Tue 06 Oct",
+      "top": 790,
+      "bottom": 834,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Airtime, Mon 05 Oct",
+      "top": 400,
+      "bottom": 444,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Funeral policy, Mon 05 Oct",
+      "top": 465,
+      "bottom": 509,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Taxi to wholesaler, Sun 04 Oct",
+      "top": 530,
+      "bottom": 574,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Cash deposit, shop takings, Sat 03 Oct",
+      "top": 595,
+      "bottom": 639,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Card machine sales, Sat 03 Oct",
+      "top": 660,
+      "bottom": 704,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Bread and milk, Fri 02 Oct",
+      "top": 725,
+      "bottom": 769,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Card machine sales, Thu 01 Oct",
+      "top": 790,
+      "bottom": 834,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Wholesale stock, Thu 01 Oct",
+      "top": 400,
+      "bottom": 444,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Bread and milk, Thu 01 Oct",
+      "top": 465,
+      "bottom": 509,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Card machine sales, Wed 30 Sept",
+      "top": 571,
+      "bottom": 615,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Prepaid electricity, Wed 30 Sept",
+      "top": 636,
+      "bottom": 680,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit School shoes, Wed 30 Sept",
+      "top": 701,
+      "bottom": 745,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Card machine sales, Tue 29 Sept",
+      "top": 766,
+      "bottom": 810,
+      "inBar": false,
+      "visibleFrac": 0.38
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Card machine sales, Mon 28 Sept",
+      "top": 800,
+      "bottom": 844,
+      "inBar": false,
+      "visibleFrac": 0
+    }
+  ],
+  "obscured-/app/money": [
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 12,
+      "bottom": 52,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Paraffin, Sun 18 Oct",
+      "top": 789,
+      "bottom": 833,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Bread and milk, Tue 13 Oct",
+      "top": 790,
+      "bottom": 834,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Prepaid electricity, Fri 09 Oct",
+      "top": 790,
+      "bottom": 834,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit School shoes, Tue 06 Oct",
+      "top": 790,
+      "bottom": 834,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Card machine sales, Thu 01 Oct",
+      "top": 790,
+      "bottom": 834,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Card machine sales, Tue 29 Sept",
+      "top": 766,
+      "bottom": 810,
+      "inBar": false,
+      "visibleFrac": 0.38
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Edit Card machine sales, Mon 28 Sept",
+      "top": 800,
+      "bottom": 844,
+      "inBar": false,
+      "visibleFrac": 0
+    }
+  ],
+  "tab-/app/privacy": [
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Tengo, Home",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Privacy",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": "switch",
+      "name": "",
+      "top": 336,
+      "bottom": 380,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": "switch",
+      "name": "",
+      "top": 441,
+      "bottom": 485,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": "switch",
+      "name": "",
+      "top": 546,
+      "bottom": 590,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Audit log",
+      "top": 400,
+      "bottom": 444,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "See my dataEverything held, and export it",
+      "top": 502,
+      "bottom": 558,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Audit logEvery access and change, with times",
+      "top": 558,
+      "bottom": 614,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Question this resultAsk a person to check your date",
+      "top": 614,
+      "bottom": 670,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Breach noticeA sample of what we would send",
+      "top": 670,
+      "bottom": 726,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Delete my dataRemove this person's records",
+      "top": 726,
+      "bottom": 782,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Home",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Plan",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Money",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Inbox",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Me",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "body"
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Tengo, Home",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Privacy",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": "switch",
+      "name": "",
+      "top": 336,
+      "bottom": 380,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": "switch",
+      "name": "",
+      "top": 441,
+      "bottom": 485,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": "switch",
+      "name": "",
+      "top": 546,
+      "bottom": 590,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Audit log",
+      "top": 400,
+      "bottom": 444,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "See my dataEverything held, and export it",
+      "top": 502,
+      "bottom": 558,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Audit logEvery access and change, with times",
+      "top": 558,
+      "bottom": 614,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Question this resultAsk a person to check your date",
+      "top": 614,
+      "bottom": 670,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Breach noticeA sample of what we would send",
+      "top": 670,
+      "bottom": 726,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Delete my dataRemove this person's records",
+      "top": 726,
+      "bottom": 782,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Home",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Plan",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Money",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Inbox",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Me",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "body"
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Tengo, Home",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Privacy",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": "switch",
+      "name": "",
+      "top": 336,
+      "bottom": 380,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": "switch",
+      "name": "",
+      "top": 441,
+      "bottom": 485,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": "switch",
+      "name": "",
+      "top": 546,
+      "bottom": 590,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Audit log",
+      "top": 400,
+      "bottom": 444,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "See my dataEverything held, and export it",
+      "top": 502,
+      "bottom": 558,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Audit logEvery access and change, with times",
+      "top": 558,
+      "bottom": 614,
+      "inBar": false,
+      "visibleFrac": 1
+    }
+  ],
+  "obscured-/app/privacy": [
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    }
+  ],
+  "tab-/app/me": [
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Tengo, Home",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Privacy",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "TThaboE-hailing driver, TshwaneTight",
+      "top": 198,
+      "bottom": 262,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "LLeratoHairdresser, MamelodiEnough",
+      "top": 270,
+      "bottom": 334,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "AAyandaSpaza shop owner, TembisaCurrent",
+      "top": 342,
+      "bottom": 406,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "select",
+      "role": null,
+      "name": "EnglishAfrikaansisiNdebele (South Ndebele)isiXhosa (Xhosa)is",
+      "top": 536,
+      "bottom": 580,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 740,
+      "bottom": 741,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Reset demo data",
+      "top": 663,
+      "bottom": 707,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Home",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Plan",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Money",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Inbox",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Me",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "body"
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Tengo, Home",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Privacy",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "TThaboE-hailing driver, TshwaneTight",
+      "top": 198,
+      "bottom": 262,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "LLeratoHairdresser, MamelodiEnough",
+      "top": 270,
+      "bottom": 334,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "AAyandaSpaza shop owner, TembisaCurrent",
+      "top": 342,
+      "bottom": 406,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "select",
+      "role": null,
+      "name": "EnglishAfrikaansisiNdebele (South Ndebele)isiXhosa (Xhosa)is",
+      "top": 536,
+      "bottom": 580,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 740,
+      "bottom": 741,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Reset demo data",
+      "top": 663,
+      "bottom": 707,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Home",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Plan",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Money",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Inbox",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Me",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "body"
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Tengo, Home",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Privacy",
+      "top": 6,
+      "bottom": 50,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "TThaboE-hailing driver, TshwaneTight",
+      "top": 198,
+      "bottom": 262,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "LLeratoHairdresser, MamelodiEnough",
+      "top": 270,
+      "bottom": 334,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "AAyandaSpaza shop owner, TembisaCurrent",
+      "top": 342,
+      "bottom": 406,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "select",
+      "role": null,
+      "name": "EnglishAfrikaansisiNdebele (South Ndebele)isiXhosa (Xhosa)is",
+      "top": 536,
+      "bottom": 580,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "input",
+      "role": null,
+      "name": "",
+      "top": 740,
+      "bottom": 741,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Reset demo data",
+      "top": 663,
+      "bottom": 707,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Home",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Plan",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Money",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Inbox",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Me",
+      "top": 784,
+      "bottom": 844,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "body"
+    }
+  ],
+  "obscured-/app/me": [
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 11,
+      "bottom": 35,
+      "inBar": false,
+      "visibleFrac": 0
+    }
+  ],
+  "commandMenu": {
+    "focusOnOpen": null,
+    "focusAfterTab": {
+      "tag": "INPUT",
+      "inDialog": true
+    },
+    "openAfterEscapeFromOutside": 0,
+    "urlAfterEnter": "http://localhost:4180/app",
+    "focusAfterRun": "INPUT",
+    "optionGroupsExposed": "group labels are <p role=presentation>, no role=group",
+    "before": "BODY",
+    "mobileOpenButtonVisible": 0
+  },
+  "drawer": {
+    "focusOnOpen": {
+      "tag": "button",
+      "role": null,
+      "name": "Close",
+      "top": 861,
+      "bottom": 905,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    "tabCycle": [
+      {
+        "inDialog": true,
+        "name": "ShortShort from Fri 23 OctWe start with "
+      },
+      {
+        "inDialog": true,
+        "name": "Question this result"
+      },
+      {
+        "inDialog": true,
+        "name": "Close"
+      },
+      {
+        "inDialog": true,
+        "name": "ShortShort from Fri 23 OctWe start with "
+      },
+      {
+        "inDialog": true,
+        "name": "Question this result"
+      },
+      {
+        "inDialog": true,
+        "name": "Close"
+      },
+      {
+        "inDialog": true,
+        "name": "ShortShort from Fri 23 OctWe start with "
+      },
+      {
+        "inDialog": true,
+        "name": "Question this result"
+      },
+      {
+        "inDialog": true,
+        "name": "Close"
+      },
+      {
+        "inDialog": true,
+        "name": "ShortShort from Fri 23 OctWe start with "
+      },
+      {
+        "inDialog": true,
+        "name": "Question this result"
+      },
+      {
+        "inDialog": true,
+        "name": "Close"
+      }
+    ],
+    "dialogsAfterEscape": 0,
+    "focusReturnedTo": "Why this date"
+  },
+  "chart": {
+    "ayanda": {
+      "h1": "- heading \"Short from Friday 23 October\" [level=1]",
+      "slider": [
+        "Tuesday 20 October, about R1 312, Enough",
+        "Wednesday 21 October, about R746, Enough",
+        "Thursday 22 October, about R181, Tight",
+        "Friday 23 October, about -R384, Short",
+        "Saturday 24 October, about -R950, Short",
+        "Sunday 25 October, about R3 795, Tight",
+        "Monday 26 October, about R3 230, Enough",
+        "Wednesday 18 November, about R5 823, Tight"
+      ],
+      "visibleBillOrIncomeNoteAtDay6_ariaHidden": "",
+      "main": "- main:\n  - region \"Greeting\":\n    - paragraph: Tuesday 20 October\n    - paragraph: Good afternoon, Ayanda.\n  - region \"Your date\":\n    - heading \"Short from Friday 23 October\" [level=1]\n    - text: Short\n    - paragraph: Runs out 2 days before your next money.\n    - paragraph: Likely between Thu 22 Oct and Sun 25 Oct\n    - paragraph: Next money around Sun 25 Oct\n    - button \"Why this date\"\n  - region \"Next 30 days\":\n    - heading \"Next 30 days\" [level=2]\n    - paragraph: If money lands as usual\n    - paragraph: Projected balance for the next 30 days if money lands as usual. Lowest point -R950 on Saturday 24 October.\n    - paragraph: Wed 18 Nov\n    - paragraph: R5 823\n    - paragraph: Likely -R1 882 to R21 173\n    - text: Tight Pick a day in the next 30 days\n    - slider \"Pick a day in the next 30 days\": \"29\"\n    - paragraph: \"Line: expected balance. Shading: likely range. Filled dots: money in. Hollow dots: bills.\"\n    - button \"Show numbers\"\n  - region \"Safe to spend today\":\n    - heading \"Safe to spend today\" [level=2]\n    - paragraph: R310\n    - paragraph: Until Mon 26 Oct. No bills due.\n    - term: Next money\n    - definition: Sun 25 Oct\n    - definition: R4 650 to R6 990\n    - term: Confidence\n    - definition: High\n    - definition: From 89 days on record\n  - region \"What helps most\":\n    - heading \"What helps most\" [level=2]\n    - paragraph: To reach Tight\n    - list:\n      - listitem: Spend about R250 less a day until Sun 25 Oct.\n    - button \"1 more way\"\n    - link \"Try it in Plan\":\n      - /url: /app/plan\n  - region \"Recent activity\":\n    - heading \"Recent activity\" [level=2]\n    - link \"See all\":\n      - /url: /app/money\n    - list:\n      - listitem:\n        - paragraph: Card machine sales\n        - paragraph: Mon 19 Oct · Income\n        - paragraph: money in, R204\n      - listitem:\n        - paragraph: Cash deposit, shop takings\n        - paragraph: Sun 18 Oct · Income\n        - paragraph: money in, R4 794\n      - listitem:\n        - paragraph: Card machine sales\n        - paragraph: Sun 18 Oct · Income\n        - paragraph: money in, R134"
+    },
+    "thabo": {
+      "h1": "- heading \"Enough until Tuesday 27 October\" [level=1]",
+      "slider": [
+        "Tuesday 20 October, about R5 359, Enough",
+        "Wednesday 21 October, about R5 172, Enough",
+        "Thursday 22 October, about R4 984, Enough",
+        "Friday 23 October, about R4 796, Enough",
+        "Saturday 24 October, about R4 609, Enough",
+        "Sunday 25 October, about R971, Enough",
+        "Monday 26 October, about R3 643, Enough",
+        "Wednesday 18 November, about R6 818, Enough"
+      ],
+      "visibleBillOrIncomeNoteAtDay6_ariaHidden": "Expected money +R2 860",
+      "main": "- main:\n  - region \"Greeting\":\n    - paragraph: Tuesday 20 October\n    - paragraph: Good afternoon, Thabo.\n  - region \"Your date\":\n    - heading \"Enough until Tuesday 27 October\" [level=1]\n    - text: Tight\n    - paragraph: Covered on a normal week, not on a heavy one.\n    - paragraph: Likely between Sun 25 Oct and Wed 28 Oct\n    - paragraph: Next money around Mon 26 Oct\n    - button \"Why this date\"\n  - region \"Next 30 days\":\n    - heading \"Next 30 days\" [level=2]\n    - paragraph: If money lands as usual\n    - paragraph: Projected balance for the next 30 days if money lands as usual. Lowest point R971 on Sunday 25 October.\n    - paragraph: Wed 18 Nov\n    - paragraph: R6 818\n    - paragraph: Likely R2 622 to R9 486\n    - text: Enough Pick a day in the next 30 days\n    - slider \"Pick a day in the next 30 days\": \"29\"\n    - paragraph: \"Line: expected balance. Shading: likely range. Filled dots: money in. Hollow dots: bills.\"\n    - button \"Show numbers\"\n  - region \"Safe to spend today\":\n    - heading \"Safe to spend today\" [level=2]\n    - paragraph: R295\n    - paragraph: Until Tue 27 Oct, after R3 450 in bills.\n    - term: Next money\n    - definition: Mon 26 Oct\n    - definition: R2 650 to R3 120\n    - term: Confidence\n    - definition: High\n    - definition: From 90 days on record\n  - region \"What helps most\":\n    - heading \"What helps most\" [level=2]\n    - paragraph: To reach Enough\n    - list:\n      - listitem: Pay Car instalment (R3 450) after Tue 27 Oct instead of before.\n    - button \"2 more ways\"\n    - link \"Try it in Plan\":\n      - /url: /app/plan\n  - region \"Recent activity\":\n    - heading \"Recent activity\" [level=2]\n    - link \"See all\":\n      - /url: /app/money\n    - list:\n      - listitem:\n        - paragraph: Cash fares\n        - paragraph: Mon 19 Oct · Income\n        - paragraph: money in, R327\n      - listitem:\n        - paragraph: Ride app weekly payout\n        - paragraph: Mon 19 Oct · Income\n        - paragraph: money in, R2 529\n      - listitem:\n        - paragraph: Food, taxi rank\n        - paragraph: Sun 18 Oct · Spend\n        - paragraph: money out, R65.50"
+    },
+    "lerato": {
+      "h1": "- heading \"Enough until Sunday 01 November\" [level=1]",
+      "slider": [
+        "Tuesday 20 October, about R1 717, Enough",
+        "Wednesday 21 October, about R1 767, Enough",
+        "Thursday 22 October, about R1 816, Enough",
+        "Friday 23 October, about R1 866, Enough",
+        "Saturday 24 October, about R4 025, Enough",
+        "Sunday 25 October, about R4 075, Enough",
+        "Monday 26 October, about R4 124, Enough",
+        "Wednesday 18 November, about R8 791, Enough"
+      ],
+      "visibleBillOrIncomeNoteAtDay6_ariaHidden": "",
+      "main": "- main:\n  - region \"Greeting\":\n    - paragraph: Tuesday 20 October\n    - paragraph: Good afternoon, Lerato.\n  - region \"Your date\":\n    - heading \"Enough until Sunday 01 November\" [level=1]\n    - text: Enough\n    - paragraph: Covered until your next money, even on a heavy week.\n    - paragraph: Likely between Mon 26 Oct and Sun 01 Nov\n    - paragraph: Next money around Sat 24 Oct\n    - button \"Why this date\"\n  - region \"Next 30 days\":\n    - heading \"Next 30 days\" [level=2]\n    - paragraph: If money lands as usual\n    - paragraph: Projected balance for the next 30 days if money lands as usual. Lowest point R1 717 on Tuesday 20 October.\n    - paragraph: Wed 18 Nov\n    - paragraph: R8 791\n    - paragraph: Likely R266 to R9 909\n    - text: Enough Pick a day in the next 30 days\n    - slider \"Pick a day in the next 30 days\": \"29\"\n    - paragraph: \"Line: expected balance. Shading: likely range. Filled dots: money in. Hollow dots: bills.\"\n    - button \"Show numbers\"\n  - region \"Safe to spend today\":\n    - heading \"Safe to spend today\" [level=2]\n    - paragraph: R330\n    - paragraph: Until Sun 25 Oct, after R199 in bills.\n    - term: Next money\n    - definition: Sat 24 Oct\n    - definition: R1 780 to R2 230\n    - term: Confidence\n    - definition: High\n    - definition: From 90 days on record\n  - region \"You are covered\":\n    - heading \"You are covered\" [level=2]\n    - paragraph: You could set aside up to R280 today and still be Enough until your next money.\n    - link \"Try it in Plan\":\n      - /url: /app/plan\n  - region \"Recent activity\":\n    - heading \"Recent activity\" [level=2]\n    - link \"See all\":\n      - /url: /app/money\n    - list:\n      - listitem:\n        - paragraph: Taxi fare\n        - paragraph: Mon 19 Oct · Spend\n        - paragraph: money out, R30\n      - listitem:\n        - paragraph: Groceries\n        - paragraph: Mon 19 Oct · Spend\n        - paragraph: money out, R368\n      - listitem:\n        - paragraph: Salon takings\n        - paragraph: Sun 18 Oct · Income\n        - paragraph: money in, R639"
+    },
+    "tapSetsValue": "16"
+  },
+  "pickerTab": [
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 12,
+      "bottom": 52,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Tengo, home",
+      "top": 20,
+      "bottom": 44,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Theme: Dark. Switch to Light",
+      "top": 10,
+      "bottom": 54,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "select",
+      "role": null,
+      "name": "EnglishAfrikaansisiNdebele (South Ndebele)isiXhosa (Xhosa)is",
+      "top": 316,
+      "bottom": 360,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Enter as Thabo",
+      "top": 677,
+      "bottom": 721,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Enter as Lerato",
+      "top": 400,
+      "bottom": 444,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Enter as Ayanda",
+      "top": 737,
+      "bottom": 781,
+      "inBar": false,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "body"
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Skip to content",
+      "top": 12,
+      "bottom": 52,
+      "inBar": false,
+      "visibleFrac": 0
+    },
+    {
+      "tag": "a",
+      "role": null,
+      "name": "Tengo, home",
+      "top": 20,
+      "bottom": 44,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "button",
+      "role": null,
+      "name": "Theme: Dark. Switch to Light",
+      "top": 10,
+      "bottom": 54,
+      "inBar": true,
+      "visibleFrac": 1
+    },
+    {
+      "tag": "select",
+      "role": null,
+      "name": "EnglishAfrikaansisiNdebele (South Ndebele)isiXhosa (Xhosa)is",
+      "top": 316,
+      "bottom": 360,
+      "inBar": false,
+      "visibleFrac": 1
+    }
+  ],
+  "pickerCardsSnapshot": "- list:\n  - listitem:\n    - article:\n      - text: Tight\n      - heading \"Thabo\" [level=3]\n      - paragraph: E-hailing driver, Tshwane\n      - paragraph: Cash fares most days and an app payout on Mondays. Fuel and the car instalment come first.\n      - text: Fictional composite\n      - button \"Enter as Thabo\"\n  - listitem:\n    - article:\n      - text: Enough\n      - heading \"Lerato\" [level=3]\n      - paragraph: Hairdresser, Mamelodi\n      - paragraph: Saturdays carry the week. Product restocks every two weeks and rent on the 1st.\n      - text: Fictional composite\n      - button \"Enter as Lerato\"\n  - listitem:\n    - article:\n      - text: Short\n      - heading \"Ayanda\" [level=3]\n      - paragraph: Spaza shop owner, Tembisa\n      - paragraph: Cash takings come in lumps. Big stock runs and prepaid electricity in between.\n      - text: Fictional composite\n      - button \"Enter as Ayanda\"",
+  "reflow320": {
+    "/": {
+      "scrollWidth": 320,
+      "vw": 320,
+      "overflow": [],
+      "small": [
+        "(under 44) a \"Tengo, home\" 58x24"
+      ]
+    },
+    "/start": {
+      "scrollWidth": 320,
+      "vw": 320,
+      "overflow": [],
+      "small": [
+        "(under 44) a \"Tengo, home\" 58x24",
+        "label \"Language\" 280x20"
+      ]
+    },
+    "/consent": {
+      "scrollWidth": 320,
+      "vw": 320,
+      "overflow": [],
+      "small": []
+    },
+    "/app": {
+      "scrollWidth": 320,
+      "vw": 320,
+      "overflow": [
+        "div.pointer-events-none absolute -right-24 - right=399 \"\""
+      ],
+      "small": []
+    },
+    "/app/plan": {
+      "scrollWidth": 320,
+      "vw": 320,
+      "overflow": [],
+      "small": [
+        "(under 44) label \"Money in\" 94x40",
+        "(under 44) label \"Money out\" 104x40",
+        "(under 44) button \"Remove change 1\" 36x44",
+        "label \"Amount\" 214x20",
+        "label \"Date\" 214x20",
+        "label \"Note (optional)\" 214x20",
+        "label \"Amount to lend\" 246x20"
+      ]
+    },
+    "/app/money": {
+      "scrollWidth": 320,
+      "vw": 320,
+      "overflow": [],
+      "small": [
+        "(under 44) label \"All\" 52x40",
+        "(under 44) label \"Income\" 84x40",
+        "(under 44) label \"Spend\" 77x40",
+        "(under 44) label \"Bills\" 62x40"
+      ]
+    },
+    "/app/money/import": {
+      "scrollWidth": 320,
+      "vw": 320,
+      "overflow": [],
+      "small": [
+        "(under 44) a \"Money\" 91x40"
+      ]
+    },
+    "/app/inbox": {
+      "scrollWidth": 320,
+      "vw": 320,
+      "overflow": [],
+      "small": [
+        "(under 44) label \"WhatsApp\" 125x40",
+        "(under 44) label \"SMS\" 85x40",
+        "label \"Message language\" 238x20"
+      ]
+    },
+    "/app/privacy": {
+      "scrollWidth": 320,
+      "vw": 320,
+      "overflow": [],
+      "small": [
+        "(under 44) label \"ForecastOn\" 186x28",
+        "(under 44) label \"Daily messagesOn\" 186x28"
+      ]
+    },
+    "/app/privacy/data": {
+      "scrollWidth": 320,
+      "vw": 320,
+      "overflow": [],
+      "small": [
+        "(under 44) a \"Privacy\" 95x40"
+      ]
+    },
+    "/app/privacy/audit": {
+      "scrollWidth": 320,
+      "vw": 320,
+      "overflow": [],
+      "small": [
+        "(under 44) a \"Privacy\" 95x40"
+      ]
+    },
+    "/app/me": {
+      "scrollWidth": 320,
+      "vw": 320,
+      "overflow": [],
+      "small": [
+        "label \"Language\" 238x20",
+        "(under 44) label \"Light\" 88x40",
+        "(under 44) label \"Dark\" 86x40",
+        "(under 44) label \"System\" 105x40"
+      ]
+    }
+  },
+  "textSpacing": {
+    "clipped": [
+      "section \"Short from Friday 23 OctoberFri 23 OctSh\"",
+      "span \"Friday 23 October\"",
+      "p \"Projected balance for the next 30 days i\"",
+      "label \"Pick a day in the next 30 days\"",
+      "span \"R310\"",
+      "span \"money in, R204\"",
+      "p \"Cash deposit, shop takings\"",
+      "span \"money in, R4 794\"",
+      "span \"money in, R134\""
+    ],
+    "scrollWidth": 390
+  },
+  "lang": {
+    "ve": {
+      "htmlLang": "ve",
+      "h1": "Short from Friday 23 OctoberFri 23 Oct",
+      "nav": [
+        "Home",
+        "Plan",
+        "Money",
+        "Inbox",
+        "Privacy"
+      ]
+    },
+    "nso": {
+      "htmlLang": "nso",
+      "h1": "Short from Friday 23 OctoberFri 23 Oct",
+      "nav": [
+        "Home",
+        "Plan",
+        "Money",
+        "Inbox",
+        "Privacy"
+      ]
+    },
+    "zu": {
+      "htmlLang": "zu",
+      "h1": "Short from Friday 23 OctoberFri 23 Oct",
+      "nav": [
+        "Home",
+        "Plan",
+        "Money",
+        "Inbox",
+        "Privacy"
+      ]
+    }
+  },
+  "storage": {
+    "tengo.data.v1": 16502,
+    "tengo.session.v1": 106
+  },
+  "storageSample": "{\"personas\":{\"ayanda\":{\"consent\":{\"core\":true,\"messages\":true,\"analytics\":false,\"decidedAt\":\"2026-10-20T10:15:44.974Z\"},\"audit\":[{\"id\":\"a_mvgj2drrwwxr3e\",\"at\":\"2026-10-20T10:15:45.207Z\",\"type\":\"session.opened\"},{\"id\":\"a_mvgj2dxfpvcyww\",\"at\":\"2026-10-20T10:15:45.411Z\",\"type\":\"session.opened\"}],\"reviews\":[],\"record\":{\"personaId\":\"ayanda\",\"transactions\":[{\"id\":\"ayanda-0000\",\"date\":\"2026-07-23\",\"descr"
+}

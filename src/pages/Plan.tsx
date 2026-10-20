@@ -317,6 +317,7 @@ export default function PlanPage() {
   return (
     <>
       <PageHeader title={t('plan.title')} lead={t('plan.lead')} />
+      <p className="-mt-2 mb-6 text-sm text-muted">{t('plan.notAdvice')}</p>
       <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
         <WhatIf />
         <LoanCheck />

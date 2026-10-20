@@ -42,5 +42,45 @@ for (const code of codes) {
     }
   }
 }
+// Translation quality gates (L10N-09, L10N-11): placeholders and *bold* markers match English,
+// every string is NFC so decomposed Tshivenda letters render in the right font.
+const enValues = Object.fromEntries(values(JSON.parse(readFileSync(`${dir}/en.json`, 'utf8'))));
+const marks = (v) => [...(v.match(/\{\{[^}]+\}\}/g) ?? []), ...(v.match(/\*[^*]+\*/g) ? ['*bold*'] : [])].sort().join('|');
+for (const code of codes) {
+  for (const [key, value] of values(JSON.parse(readFileSync(`${dir}/${code}.json`, 'utf8')))) {
+    if (value !== value.normalize('NFC')) {
+      console.error(`${code}: ${key} is not NFC normalised`);
+      problems++;
+    }
+    if (code !== 'en' && enValues[key] !== undefined && marks(value) !== marks(enValues[key])) {
+      console.error(`${code}: ${key} placeholders or bold markers differ from English`);
+      problems++;
+    }
+  }
+}
+
+// Status rules (L10N-02, L10N-04): known values only; Tshivenda is never machine translated;
+// a language is "reviewed" only when every key is marked reviewed in review-status.json.
+const STATUSES = new Set(['pending', 'machine', 'reviewed', 'needsTranslator']);
+const status = JSON.parse(readFileSync('src/i18n/status.json', 'utf8'));
+const review = JSON.parse(readFileSync('src/i18n/review-status.json', 'utf8'));
+for (const [code, st] of Object.entries(status)) {
+  if (!STATUSES.has(st)) {
+    console.error(`${code}: unknown status "${st}" in status.json`);
+    problems++;
+  }
+  if (code === 've' && st === 'machine') {
+    console.error('ve: Tshivenda cannot be machine translated; use needsTranslator, pending or reviewed');
+    problems++;
+  }
+  if (st === 'reviewed') {
+    const notReviewed = [...base].filter((k) => review[code]?.[k] !== 'reviewed');
+    if (notReviewed.length) {
+      console.error(`${code}: marked reviewed but ${notReviewed.length} key(s) are not, for example ${notReviewed.slice(0, 3).join(', ')}`);
+      problems++;
+    }
+  }
+}
+
 if (problems) process.exit(1);
-console.log(`All ${codes.length} locales have the same ${base.size} keys.`);
+console.log(`All ${codes.length} locales have the same ${base.size} keys, matching placeholders and valid review status.`);

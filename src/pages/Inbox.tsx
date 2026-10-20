@@ -10,7 +10,8 @@ import { Brand } from '../components/Brand';
 import { usePersona, useReadyPersona } from '../data/PersonaProvider';
 import type { LanguageCode } from '../i18n/languages';
 import { LanguageSelect } from '../components/LanguageSelector';
-import { SMS_LIMIT, type Channel, type DailyMessage } from '../messages/MessageWriter';
+import { smsSegments, type Channel, type DailyMessage } from '../messages/MessageWriter';
+import { Toggle } from '../components/Toggle';
 import { messageWriter } from '../messages/templates';
 import { useSession } from '../store/session';
 
@@ -28,6 +29,16 @@ function WhatsAppText({ text }: { text: string }) {
   );
 }
 
+function SmsCount({ text }: { text: string }) {
+  const { t } = useTranslation();
+  const s = smsSegments(text);
+  return (
+    <p className="num border-t border-line px-6 py-3 text-xs text-muted">
+      {t('inbox.smsCount', { count: s.parts, chars: s.units, encoding: s.encoding, limit: s.perPart })}
+    </p>
+  );
+}
+
 export default function InboxPage() {
   const { t } = useTranslation();
   const { forecast, profile } = useReadyPersona();
@@ -36,17 +47,19 @@ export default function InboxPage() {
   const [channel, setChannel] = useState<Channel>('whatsapp');
   const [language, setLanguage] = useState<LanguageCode>(appLanguage);
   const [message, setMessage] = useState<DailyMessage | null>(null);
+  const discreet = useSession((s) => s.discreet);
+  const setDiscreet = useSession((s) => s.setDiscreet);
   const enabled = consent?.messages ?? false;
 
   useEffect(() => {
     if (!enabled) return;
     let live = true;
     setMessage(null);
-    void messageWriter.write({ name: profile.name, forecast, language, channel }).then((m) => live && setMessage(m));
+    void messageWriter.write({ name: profile.name, forecast, language, channel, discreet }).then((m) => live && setMessage(m));
     return () => {
       live = false;
     };
-  }, [enabled, profile.name, forecast, language, channel]);
+  }, [enabled, profile.name, forecast, language, channel, discreet]);
 
   return (
     <>
@@ -126,7 +139,7 @@ export default function InboxPage() {
               </div>
             </div>
             {message && channel === 'sms' && (
-              <p className="num border-t border-line px-6 py-3 text-xs text-muted">{t('inbox.smsCount', { count: message.text.length, limit: SMS_LIMIT })}</p>
+              <SmsCount text={message.text} />
             )}
           </section>
 
@@ -143,13 +156,16 @@ export default function InboxPage() {
                 </div>
               </div>
               <ul className="mt-4 space-y-2 text-sm">
-                {(['what', 'never', 'stop'] as const).map((k) => (
+                {(['what', 'never', 'stop', 'where'] as const).map((k) => (
                   <li key={k} className="flex gap-2">
-                    <Icon name="check" size={16} className="mt-0.5 shrink-0 text-enough" />
+                    <Icon name="info" size={16} className="mt-0.5 shrink-0 text-muted" />
                     {t(`inbox.facts.${k}`)}
                   </li>
                 ))}
               </ul>
+              <div className="mt-2 border-t border-line">
+                <Toggle checked={discreet} onChange={setDiscreet} label={t('inbox.discreet')} description={t('inbox.discreetHint')} />
+              </div>
               <Link to="/app/privacy" className="btn-ghost -ml-3 mt-3 text-sm">
                 {t('inbox.manage')}
                 <Icon name="chevronRight" size={16} />

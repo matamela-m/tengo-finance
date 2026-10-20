@@ -30,7 +30,8 @@ for (const code of codes) {
   const existing = JSON.parse(readFileSync(`${dir}/${code}.json`, 'utf8'));
   const st = status[code] ?? 'pending';
   status[code] = st;
-  const next = st === 'pending' ? en : merge(en, existing, source[code] ?? {});
+  // Untranslated languages are a fresh copy of English.
+  const next = st === 'pending' || st === 'needsTranslator' ? en : merge(en, existing, source[code] ?? {});
   writeFileSync(`${dir}/${code}.json`, JSON.stringify(next, null, 2) + '\n');
 }
 writeFileSync(statusPath, JSON.stringify(status, null, 2) + '\n');

@@ -5,6 +5,7 @@ import type {
   ConsentRecord,
   DeletionReceipt,
   PersonaRecord,
+  PlanSettings,
   ReviewRequest,
   TengoRepository,
   TransactionPatch,
@@ -143,6 +144,14 @@ export class LocalRepository implements TengoRepository {
     return this.change(personaId, (r) => {
       r.balance = balance;
       r.balanceDate = balanceDate;
+    });
+  }
+
+  async setPlanSettings(personaId: PersonaId, settings: PlanSettings): Promise<PersonaRecord> {
+    await this.wait();
+    return this.change(personaId, (r) => {
+      if (settings.flexibleGroups) r.flexibleGroups = settings.flexibleGroups;
+      if (settings.movableBills) r.movableBills = settings.movableBills;
     });
   }
 

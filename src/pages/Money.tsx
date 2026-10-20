@@ -9,7 +9,8 @@ import { Segmented } from '../components/Segmented';
 import { BalanceUpdate } from '../components/BalanceUpdate';
 import { TransactionEditor } from '../components/TransactionEditor';
 import { SpendingCard } from '../components/SpendingCard';
-import { useReadyPersona } from '../data/PersonaProvider';
+import { usePersona, useReadyPersona } from '../data/PersonaProvider';
+import { canMarkMovable } from '../engine/help';
 import { addDays } from '../engine/dates';
 import type { Category, Transaction } from '../engine/types';
 import { formatZAR } from '../lib/format';
@@ -26,6 +27,8 @@ export default function MoneyPage() {
   const { record, forecast, today } = useReadyPersona();
   const oneOffIds = useMemo(() => new Set(forecast.oneOffs.map((o) => o.id)), [forecast]);
   const [editBalance, setEditBalance] = useState(false);
+  const { setPlanSettings } = usePersona();
+  const movable = record.movableBills ?? [];
   const [filter, setFilter] = useState<Filter>('all');
   const [query, setQuery] = useState('');
   const [shown, setShown] = useState(PAGE);
@@ -169,7 +172,12 @@ export default function MoneyPage() {
             {editBalance && <BalanceUpdate initial={record.balance} onDone={() => setEditBalance(false)} />}
           </section>
 
-          <SpendingCard transactions={record.transactions} today={today} />
+          <SpendingCard
+            transactions={record.transactions}
+            today={today}
+            flexible={record.flexibleGroups ?? []}
+            onFlexibleChange={(groups) => void setPlanSettings({ flexibleGroups: groups })}
+          />
 
           <section className="card p-6" aria-labelledby="bills-title">
             <div className="flex items-center gap-2">
@@ -179,17 +187,34 @@ export default function MoneyPage() {
               </h2>
             </div>
             <p className="mt-1 text-sm text-muted">{t('money.billsRule')}</p>
+            {forecast.recurringBills.length > 0 && <p className="mt-1 text-sm text-muted">{t('money.movableHint')}</p>}
             {forecast.recurringBills.length === 0 ? (
               <p className="mt-4 text-sm text-muted">{t('money.noBills')}</p>
             ) : (
               <ul className="mt-3 divide-y divide-line">
                 {forecast.recurringBills.map((b) => (
-                  <li key={b.key} className="flex items-center justify-between gap-3 py-3">
-                    <div className="min-w-0">
-                      <p className="truncate font-medium">{b.description}</p>
-                      <p className="num text-xs text-muted">{t('money.billNext', { date: d.dayShort(b.nextDate), count: b.occurrences })}</p>
+                  <li key={b.key} className="py-3">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="min-w-0">
+                        <p className="truncate font-medium">{b.description}</p>
+                        <p className="num text-xs text-muted">{t('money.billNext', { date: d.dayShort(b.nextDate), count: b.occurrences })}</p>
+                      </div>
+                      <p className="num shrink-0 font-semibold">{formatZAR(b.amount)}</p>
                     </div>
-                    <p className="num shrink-0 font-semibold">{formatZAR(b.amount)}</p>
+                    {canMarkMovable(b) ? (
+                      <label className="mt-1 inline-flex min-h-[36px] cursor-pointer items-center gap-2 text-sm text-muted">
+                        <input
+                          type="checkbox"
+                          className="h-5 w-5 accent-[var(--color-accent)]"
+                          checked={movable.includes(b.key)}
+                          onChange={(e) => void setPlanSettings({ movableBills: e.target.checked ? [...movable, b.key] : movable.filter((k) => k !== b.key) })}
+                          aria-label={`${t('money.movableLabel')}: ${b.description}`}
+                        />
+                        {t('money.movableLabel')}
+                      </label>
+                    ) : (
+                      <p className="mt-1 text-xs text-subtle">{t('money.protectedBill')}</p>
+                    )}
                   </li>
                 ))}
               </ul>

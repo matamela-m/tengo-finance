@@ -1,3 +1,4 @@
+import type { SpendGroup } from '../engine/spending';
 import type { BillDecision, ISODate, Transaction } from '../engine/types';
 import type { PersonaId } from './seed/personas';
 
@@ -15,6 +16,10 @@ export interface PersonaRecord {
   balanceDate?: ISODate;
   /** Answers about bills that looked unpaid, keyed by the missed bill id. */
   billDecisions?: Record<string, BillDecision>;
+  /** Spending groups the person says can bend, used only by What helps most. */
+  flexibleGroups?: SpendGroup[];
+  /** Recurring bill keys the person says can be paid later without a fee. Protected bills are never moved. */
+  movableBills?: string[];
   createdAt: string;
   updatedAt: string;
 }
@@ -39,6 +44,7 @@ export type AuditType =
   | 'transaction.added'
   | 'balance.updated'
   | 'bill.answered'
+  | 'plan.settings'
   | 'review.requested'
   | 'forecast.paused'
   | 'forecast.resumed';
@@ -68,6 +74,11 @@ export interface ReviewRequest {
   headline: string;
 }
 
+export interface PlanSettings {
+  flexibleGroups?: SpendGroup[];
+  movableBills?: string[];
+}
+
 export interface TransactionPatch {
   description?: string;
   amount?: number;
@@ -90,6 +101,7 @@ export interface TengoRepository {
   addTransactions(personaId: PersonaId, transactions: Transaction[], balance?: number): Promise<PersonaRecord>;
   setBalance(personaId: PersonaId, balance: number, balanceDate: ISODate): Promise<PersonaRecord>;
   setBillDecision(personaId: PersonaId, missedBillId: string, decision: BillDecision): Promise<PersonaRecord>;
+  setPlanSettings(personaId: PersonaId, settings: PlanSettings): Promise<PersonaRecord>;
 
   getConsent(personaId: PersonaId): Promise<ConsentRecord | null>;
   setConsent(personaId: PersonaId, consent: Omit<ConsentRecord, 'decidedAt'>): Promise<ConsentRecord>;

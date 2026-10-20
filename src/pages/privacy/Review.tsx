@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Notice } from '../../components/Feedback';
 import { Icon } from '../../components/Icon';
-import { usePersona, useReadyPersona } from '../../data/PersonaProvider';
+import { usePersona } from '../../data/PersonaProvider';
 import type { ReviewRequest } from '../../data/repository';
 import { headlineKey } from '../../engine/view';
 import { useDates } from '../../lib/useLang';
@@ -13,14 +13,18 @@ const REASONS = ['date', 'income', 'bill', 'other'] as const;
 export default function Review() {
   const { t } = useTranslation();
   const d = useDates();
-  const { forecast } = useReadyPersona();
+  const { forecast } = usePersona();
   const { addReview, reviews } = usePersona();
   const [reason, setReason] = useState<(typeof REASONS)[number]>('date');
   const [details, setDetails] = useState('');
   const [contact, setContact] = useState<ReviewRequest['contact']>('inbox');
   const [sent, setSent] = useState<ReviewRequest | null>(null);
   const [busy, setBusy] = useState(false);
-  const headline = `${t(headlineKey(forecast))} ${d.dayShort(forecast.headlineDate)} (${t(`state.${forecast.status}`)})`;
+  const headline = !forecast
+    ? t('paused.title')
+    : forecast.status === 'unclear'
+      ? t('hero.unclear')
+      : `${t(headlineKey(forecast))} ${d.dayShort(forecast.headlineDate)} (${t(`state.${forecast.status}`)})`;
 
   const submit = async () => {
     setBusy(true);

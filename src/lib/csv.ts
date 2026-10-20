@@ -135,7 +135,7 @@ export function buildImport(file: ParsedFile, mapping: ColumnMapping, today: ISO
   let skipped = 0;
   for (const row of file.rows) {
     const date = parseDate(row[mapping.date] ?? '');
-    const description = (row[mapping.description] ?? '').trim();
+    const description = scrubDescription((row[mapping.description] ?? '').trim());
     let amount: number | null;
     if (mapping.amount) {
       amount = parseAmount(row[mapping.amount]);
@@ -197,4 +197,13 @@ export function toCsv(rows: (string | number)[][]): string {
         .join(','),
     )
     .join('\n');
+}
+
+/**
+ * Masks long numbers in a statement description before it is stored: account, card, phone and reference
+ * numbers are not needed to spot repeat bills (SEC-03). Runs of 6 or more digits, allowing spaces or
+ * dashes between them, keep only their last 2 digits.
+ */
+export function scrubDescription(description: string): string {
+  return description.replace(/\d(?:[\s-]?\d){5,}/g, (m) => `••${m.replace(/\D/g, '').slice(-2)}`);
 }

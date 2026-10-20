@@ -14,6 +14,7 @@ import { Badge, IconTile, SectionLabel } from '../components/ui';
 import { seedRecord } from '../data/localRepository';
 import { localToday } from '../engine/dates';
 import { forecast as runForecast } from '../engine/forecast';
+import { FLAGS } from '../lib/flags';
 import { headlineKey, homeView } from '../engine/view';
 import type { Forecast } from '../engine/types';
 import { LANGUAGES } from '../i18n/languages';
@@ -116,7 +117,7 @@ const STEPS: { key: string; icon: IconName }[] = [
 const FOOTER = [
   { group: 'product', links: [['how', '#how'], ['explore', '/start']] },
   { group: 'privacy', links: [['privacyCentre', '/start'], ['fictional', '#privacy']] },
-  { group: 'about', links: [['name', '/start'], ['hackathon', '#how']] },
+  { group: 'about', links: FLAGS.nameStory ? [['name', '/app/me'], ['hackathon', '#how']] : [['hackathon', '#how']] },
 ] as const;
 
 export default function Landing() {

@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TransactionRow } from '../../components/forecast/Cards';
 import { Icon } from '../../components/Icon';
-import { useReadyPersona } from '../../data/PersonaProvider';
+import { useRecordPersona } from '../../data/PersonaProvider';
 import { toCsv } from '../../lib/csv';
 import { formatZAR } from '../../lib/format';
 import { downloadText } from '../../lib/sampleStatement';
@@ -13,7 +13,7 @@ import { useAnnounce } from '../../components/A11y';
 export default function MyData() {
   const { t } = useTranslation();
   const d = useDates();
-  const { record, profile, consent, audit, reviews, log } = useReadyPersona();
+  const { record, profile, consent, audit, reviews, log } = useRecordPersona();
   const logged = useRef(false);
   const announce = useAnnounce();
 

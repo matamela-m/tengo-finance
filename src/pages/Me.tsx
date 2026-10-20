@@ -5,6 +5,7 @@ import { Avatar } from '../components/Avatar';
 import { Notice } from '../components/Feedback';
 import { Icon } from '../components/Icon';
 import { LanguageSelector } from '../components/LanguageSelector';
+import { FLAGS } from '../lib/flags';
 import { PageHeader } from '../components/PageHeader';
 import { StateChip } from '../components/StateChip';
 import { repository } from '../data';
@@ -96,8 +97,12 @@ export default function MePage() {
             <h2 id="about-title" className="font-heading text-h2 text-ink">
               {t('me.about')}
             </h2>
-            <h3 className="mt-5 font-semibold">{t('me.nameTitle')}</h3>
-            <p className="mt-1 text-[15px] text-muted">{t('me.nameBody')}</p>
+            {FLAGS.nameStory && (
+              <>
+                <h3 className="mt-5 font-semibold">{t('me.nameTitle')}</h3>
+                <p className="mt-1 text-[15px] text-muted">{t('me.nameBody')}</p>
+              </>
+            )}
             <h3 className="mt-5 font-semibold">{t('me.howTitle')}</h3>
             <ol className="mt-2 list-outside list-decimal space-y-1.5 pl-5 text-[15px] text-muted">
               {(['1', '2', '3', '4', '5'] as const).map((k) => (

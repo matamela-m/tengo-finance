@@ -4,7 +4,7 @@ import { forecast as runForecast } from '../engine/forecast';
 import type { BillDecision, Forecast, ForecastInput, ISODate, Transaction } from '../engine/types';
 import { useSession } from '../store/session';
 import { repository } from './index';
-import type { AuditEntry, AuditType, ConsentRecord, DeletionReceipt, PersonaRecord, ReviewRequest, TransactionPatch } from './repository';
+import type { AuditEntry, AuditType, ConsentRecord, DeletionReceipt, PersonaRecord, PlanSettings, ReviewRequest, TransactionPatch } from './repository';
 import { getPersona, type PersonaId, type PersonaProfile } from './seed/personas';
 
 type Status = 'idle' | 'loading' | 'ready' | 'error';
@@ -29,6 +29,7 @@ interface PersonaContextValue {
   addTransactions: (transactions: Transaction[], balance?: number) => Promise<void>;
   setBalance: (balance: number) => Promise<void>;
   setBillDecision: (missedBillId: string, decision: BillDecision) => Promise<void>;
+  setPlanSettings: (settings: PlanSettings) => Promise<void>;
   addReview: (r: Omit<ReviewRequest, 'id' | 'at'>) => Promise<ReviewRequest>;
   deleteData: () => Promise<DeletionReceipt>;
 }
@@ -95,7 +96,9 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
     void repository.appendAudit(personaId, 'session.opened').then(() => repository.getAudit(personaId).then(setAudit));
   }, [personaId, status, consent]);
 
-  const input = useMemo(() => (record ? forecastInput(record, today) : null), [record, today]);
+  // With core consent withdrawn the forecast is not worked out at all, not just hidden (SEC-13).
+  const paused = consent?.core === false;
+  const input = useMemo(() => (record && !paused ? forecastInput(record, today) : null), [record, today, paused]);
   const forecast = useMemo(() => (input ? runForecast(input) : null), [input]);
 
   const value = useMemo<PersonaContextValue>(() => {
@@ -145,6 +148,12 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
         const id = requireId();
         setRecord(await repository.setBalance(id, balance, today));
         await repository.appendAudit(id, 'balance.updated');
+        await refreshAudit(id);
+      },
+      setPlanSettings: async (settings) => {
+        const id = requireId();
+        setRecord(await repository.setPlanSettings(id, settings));
+        await repository.appendAudit(id, 'plan.settings');
         await refreshAudit(id);
       },
       setBillDecision: async (missedBillId, decision) => {
@@ -204,6 +213,13 @@ export function usePersona(): PersonaContextValue {
   const v = useContext(Ctx);
   if (!v) throw new Error('usePersona must be used inside PersonaProvider');
   return v;
+}
+
+/** For pages that need the stored record but not the forecast, so they work while the forecast is paused. */
+export function useRecordPersona() {
+  const v = usePersona();
+  if (!v.record || !v.personaId || !v.profile) throw new Error('Persona data not ready');
+  return { ...v, record: v.record, personaId: v.personaId, profile: v.profile };
 }
 
 /** For pages that only render once data is ready. */

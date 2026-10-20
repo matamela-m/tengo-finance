@@ -109,7 +109,7 @@ export function HomeNotices({ notices }: { notices: NoticeItem[] }) {
                   type="button"
                   className="btn-secondary mt-3 min-h-[44px]"
                   disabled={busy}
-                  onClick={() => void run(() => updateTransaction(n.id, { oneOff: true }, { name: '', fields: 'one-off' }))}
+                  onClick={() => void run(() => updateTransaction(n.id, { oneOff: true }, { fields: 'one-off' }))}
                 >
                   {t('notice.askOneOff.action')}
                 </button>

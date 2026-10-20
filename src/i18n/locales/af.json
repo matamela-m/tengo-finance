@@ -45,7 +45,21 @@
     "label": "Language",
     "pending": "Translation on the way. This language shows English for now.",
     "machine": "Machine translated with Google Translate. A first-language speaker still needs to check it.",
-    "reviewed": "Translated and checked by a first-language speaker."
+    "reviewed": "Translated and checked by a first-language speaker.",
+    "claim": "Built for 11 languages. English today.",
+    "needsTranslator": "Needs a first-language translator. Machine translation does not support Tshivenda, so it shows English for now.",
+    "short": {
+      "pending": "English for now",
+      "needsTranslator": "English for now",
+      "machine": "machine translated"
+    },
+    "chip": {
+      "source": "English",
+      "pending": "English for now",
+      "needsTranslator": "Needs a translator",
+      "machine": "Machine translated",
+      "reviewed": "Human reviewed"
+    }
   },
   "landing": {
     "title": "Money you can plan around",
@@ -85,7 +99,7 @@
     "stats": {
       "history": "Days of history per person",
       "states": "Cover states: Enough, Tight, Short",
-      "languages": "Official languages",
+      "languages": "Built for 11 languages. English today.",
       "logins": "Bank logins needed"
     },
     "closingTitle": "See how long your money lasts.",
@@ -165,7 +179,7 @@
     },
     "messages": {
       "title": "Daily messages",
-      "body": "A short daily update with your date. Off until you turn it on. Simulated, nothing is sent."
+      "body": "A short daily update with your date, by WhatsApp or SMS. WhatsApp messages pass through Meta, outside South Africa. Off until you turn it on. Simulated, nothing is sent."
     },
     "analytics": {
       "title": "Product analytics",
@@ -199,7 +213,7 @@
       "contacts": "Contacts",
       "account": "Account or card numbers"
     },
-    "security": "How data is protected",
+    "security": "How data is kept",
     "securityItems": {
       "transit": "With an optional account: an encrypted connection and storage that only you can read.",
       "access": "Any staff access would be limited and logged.",
@@ -329,7 +343,7 @@
     "deleteWarn": "This cannot be undone. You will go back to the start.",
     "deleteCheck": "I understand this removes the data for good",
     "deleteConfirm": "Yes, delete everything",
-    "descriptionsNote": "Statement descriptions can include names or references. They stay on this device and are used only to spot repeat bills and group spending.",
+    "descriptionsNote": "Statement descriptions can include names or references. Long numbers such as account, card or phone numbers are masked when a statement is imported. Descriptions stay on this device and are used only to spot repeat bills and group spending.",
     "securityNow": "In this demo",
     "securityPlanned": "Planned, not built yet"
   },
@@ -481,7 +495,7 @@
       "unclear": "Not enough history or no income, so there is no date yet."
     },
     "question": "Question this result",
-    "notAdvice": "This is an estimate from past patterns, not financial advice.",
+    "notAdvice": "This is an estimate from past patterns, not financial advice, and it is not used for any credit or lending decision.",
     "budgetSpread": "The daily budget is spread to {{date}}, the latest your next money usually lands.",
     "reserve": "Kept back for bills just after next money",
     "reserveNone": "None due in the week after",
@@ -537,7 +551,7 @@
       "bank": "There is no bank connection and no open banking.",
       "messages": "Messages are previews. Nothing is sent.",
       "privacy": "Privacy controls show good practice. They are not a compliance certification.",
-      "translations": "Translations into the other 10 official languages are machine made or on the way, and still need checking by first-language speakers."
+      "translations": "Built for 11 languages. English today. The other 10 need translating and checking by first-language speakers, and Tshivenda needs a human translator."
     },
     "reset": "Reset demo data",
     "resetBody": "Clears every person, consent choice and log on this device and starts fresh.",
@@ -604,7 +618,8 @@
     "lendCaution": "Only lend what you could manage without getting back. Tengo cannot tell if or when it comes back.",
     "useRoom": "Use {{amount}}",
     "labelPlaceholderValue": "School trip (example)",
-    "roomToLendUnsure": "Tengo is not sure enough about your money coming in to suggest an amount. Check the effect of a specific amount below."
+    "roomToLendUnsure": "Tengo is not sure enough about your money coming in to suggest an amount. Check the effect of a specific amount below.",
+    "notAdvice": "Estimates from your own history, not advice. Nothing here is a lending decision or an offer of credit."
   },
   "money": {
     "title": "Money",
@@ -636,7 +651,10 @@
     "billNext_one": "Next {{date}} · seen {{count}} time",
     "billNext_other": "Next {{date}} · seen {{count}} times",
     "importTitle": "Bring your own statement",
-    "importBody": "Upload a CSV bank statement. It is read on this device and replaces this person's history."
+    "importBody": "Upload a CSV bank statement. It is read on this device and replaces this person's history.",
+    "movableLabel": "Can be paid later",
+    "movableHint": "Only mark a bill if it can be paid a few days late without a fee.",
+    "protectedBill": "Never suggested to move: paying late can cost fees, cover or credit."
   },
   "import": {
     "title": "Import statement",
@@ -703,14 +721,15 @@
     "data_viewed": "Viewed all data",
     "data_exported": "Exported data as {{format}}",
     "statement_imported": "Imported a statement with {{rows}} transactions",
-    "transaction_edited": "Corrected {{name}}: {{fields}}",
+    "transaction_edited": "Corrected a transaction: {{fields}}",
     "review_requested": "Asked for a human review",
     "forecast_paused": "Paused the forecast",
     "forecast_resumed": "Resumed the forecast",
     "transaction_added_one": "Added {{count}} entry",
     "transaction_added_other": "Added {{count}} entries",
     "balance_updated": "Updated the balance",
-    "bill_answered": "Answered a question about a bill that looked unpaid"
+    "bill_answered": "Answered a question about a bill that looked unpaid",
+    "plan_settings": "Changed which spending can bend or which bills can move"
   },
   "inbox": {
     "title": "Inbox",
@@ -726,7 +745,6 @@
       "sms": "SMS"
     },
     "todayAt": "Today",
-    "smsCount": "{{count}} of {{limit}} characters",
     "language": "Message language",
     "languageHint": "Messages can use a different language from the app.",
     "to": "To {{name}}",
@@ -734,9 +752,14 @@
     "facts": {
       "what": "Only your date, cover and daily budget.",
       "never": "Never your balance or transactions.",
-      "stop": "Turn off any time in Privacy."
+      "stop": "Every message says it is from Tengo and how to stop. You can also turn messages off in Privacy.",
+      "where": "WhatsApp messages would pass through Meta, outside South Africa. SMS is the alternative. Simulated here: nothing is sent."
     },
-    "manage": "Manage messages"
+    "manage": "Manage messages",
+    "smsCount_one": "1 SMS, {{encoding}}, {{chars}} of {{limit}} characters",
+    "smsCount_other": "{{count}} SMS parts, {{encoding}}, {{chars}} characters",
+    "discreet": "Discreet messages",
+    "discreetHint": "No amounts, dates or cover words in the message, for shared phones and lock screens."
   },
   "messages": {
     "whatsapp": {
@@ -749,20 +772,24 @@
       "next": "Next money: around {{next}}.",
       "noNext": "No next money is expected at the moment.",
       "tip": {
-        "enough": "You are covered. A good week to put a little aside.",
+        "enough": "Covered until your next money, even on a heavy week.",
         "tight": "Keep spending close to your daily budget until your next money.",
         "short": "Check Plan in Tengo to see what helps most."
       },
       "stsNotAdvised": "Daily budget: not advised until your next money.",
       "unclear": "Tengo does not have enough to go on yet to give you a date. Open Tengo to see what to add.",
-      "stsPending": "Daily budget: worked out once today's payment lands."
+      "stsPending": "Daily budget: worked out once today's payment lands.",
+      "stop": "From Tengo. Reply STOP to end these updates.",
+      "discreet": "Tengo: your daily update is ready. Open the app to see it."
     },
     "sms": {
-      "enough": "Tengo: Hi {{name}}, money lasts until {{date}} ({{state}}). Budget today {{sts}}.",
-      "tight": "Tengo: Hi {{name}}, money lasts until {{date}} on a normal week ({{state}}). Budget today {{sts}}.",
-      "short": "Tengo: Hi {{name}}, money may run out {{date}} ({{state}}). Daily budget not advised.",
+      "enough": "Tengo: Hi {{name}}, money lasts until {{date}} ({{state}}). Budget {{sts}} a day.",
+      "tight": "Tengo: Hi {{name}}, money lasts until {{date}} on a normal week ({{state}}). Budget {{sts}} a day.",
+      "short": "Tengo: Hi {{name}}, money may run out {{date}} ({{state}}). Budget not advised.",
       "next": "Next money about {{next}}.",
-      "unclear": "Tengo: Hi {{name}}, not enough to go on yet for a date. Open Tengo to see what to add."
+      "unclear": "Tengo: Hi {{name}}, not enough to go on yet for a date. Open Tengo to see what to add.",
+      "stop": "Reply STOP to end.",
+      "discreet": "Tengo: your daily update is ready. Open the app to see it. Reply STOP to end."
     }
   },
   "a11y": {
@@ -776,9 +803,7 @@
   },
   "help": {
     "title": "What helps most",
-    "moveBill": "Pay {{name}} ({{amount}}) after {{date}} instead of before.",
-    "dailyCut": "Spend about {{amount}} less a day until {{date}}.",
-    "extra": "Bring in {{amount}} more before {{date}}.",
+    "moveBill": "If {{name}} ({{amount}}) can be paid after {{date}} without a fee, that alone reaches {{state}}.",
     "tryInPlan": "Try it in Plan",
     "coveredTitle": "You are covered",
     "setAside": "You could set aside up to {{amount}} today and still be Enough until your next money. This is the same room as Room to lend, not extra.",
@@ -786,7 +811,17 @@
     "toReachState": "To reach {{state}}",
     "more_one": "{{count}} more way",
     "more_other": "{{count}} more ways",
-    "fewer": "Show fewer"
+    "fewer": "Show fewer",
+    "earn": "Earn or receive {{amount}} more before {{date}}, for example extra work or money owed to you.",
+    "earnAssume": "Assumes your spending stays as usual. Borrowing to cover a gap usually costs more later.",
+    "trim": "Spend about {{amount}} a day less on {{groups}} until {{date}}.",
+    "trimAssume": "Only spending you marked as able to bend. Assumes everything else stays as usual.",
+    "trimPartial": "That is all the spending you marked as able to bend, so it covers part of the gap. The rest still needs money in.",
+    "moveAssume": "You marked it as movable. Ask first. Never skip debit orders for loans or insurance.",
+    "markFlexible": "Mark which everyday spending can bend to see where you could trim.",
+    "chooseOnMoney": "Choose on Money",
+    "freeHelp": "If you are behind on debt, the National Credit Regulator lists free help:",
+    "ideasNote": "Ideas, not advice. Check fees and penalties before changing a payment."
   },
   "spending": {
     "title": "Where everyday money goes",
@@ -799,7 +834,10 @@
       "stock": "Stock and supplies",
       "energy": "Electricity and fuel at home",
       "other": "Other"
-    }
+    },
+    "flexibleLabel": "Can bend",
+    "flexibleHint": "Mark the spending you could trim if money is short. Work costs like stock and fuel are never suggested for cuts.",
+    "workCost": "Work cost"
   },
   "palette": {
     "title": "Command menu",

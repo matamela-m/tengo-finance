@@ -45,14 +45,20 @@ test('Tight shows a daily budget with what is kept back and the usual spend', as
   await expect(budget).toContainText(/(Keeps R.* back|nothing extra is kept back)/);
 });
 
-test('language choice persists and sets html lang', async ({ page }) => {
+// Changed in build 2: html lang is the language of the text actually shown, so it stays "en" while a
+// translation is pending (WCAG 3.1.1, A11Y-01). The chosen language still persists.
+test('language choice persists, and html lang stays English while the text is English', async ({ page }) => {
   await page.goto('/start');
   await page.getByLabel('Language').selectOption('zu');
-  await expect(page.locator('html')).toHaveAttribute('lang', 'zu');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.locator('html')).toHaveAttribute('data-ui-language', 'zu');
+  await expect(page.locator('span', { hasText: /^English for now$/ })).toBeVisible();
   await page.reload();
-  await expect(page.locator('html')).toHaveAttribute('lang', 'zu');
-  await page.getByLabel('Language').selectOption('nso');
-  await expect(page.locator('html')).toHaveAttribute('lang', 'nso');
+  await expect(page.getByLabel('Language')).toHaveValue('zu');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await page.getByLabel('Language').selectOption('ve');
+  await expect(page.getByText('Needs a translator')).toBeVisible();
+  await expect(page.getByText('Built for 11 languages. English today.').first()).toBeVisible();
 });
 
 test('withdrawing core consent pauses the forecast and resume brings it back', async ({ page }) => {
@@ -196,7 +202,12 @@ test('What helps most offers a way up for a Short persona', async ({ page }) => 
   await page.getByRole('button', { name: 'Agree and continue' }).click();
   const help = page.getByRole('region', { name: 'What helps most' });
   await expect(help).toBeVisible();
-  await expect(help.getByText(/less a day until/)).toBeVisible();
+  // Changed in build 2: trims only come from spending the person marked flexible, so the first idea is to
+  // earn or receive more, with a prompt to mark flexible spending.
+  await expect(help.getByText(/Earn or receive R.* more before/)).toBeVisible();
+  await expect(help.getByText(/Borrowing to cover a gap usually costs more later/)).toBeVisible();
+  await expect(help.getByRole('link', { name: 'Choose on Money' })).toBeVisible();
+  await expect(help).not.toContainText(/instalment|insurance|stock/i);
 });
 
 test('command palette jumps to a page and changes theme and language', async ({ page }) => {
@@ -216,7 +227,9 @@ test('command palette jumps to a page and changes theme and language', async ({ 
   await page.keyboard.press('Control+k');
   await page.getByRole('combobox', { name: 'Search commands' }).fill('zulu');
   await page.keyboard.press('Enter');
-  await expect(page.locator('html')).toHaveAttribute('lang', 'zu');
+  // Changed in build 2: html lang stays "en" while isiZulu text is not translated yet.
+  await expect(page.locator('html')).toHaveAttribute('data-ui-language', 'zu');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
 });
 
 test('theme is set before the app loads, so there is no flash', async ({ page }) => {
@@ -230,18 +243,14 @@ test('theme is set before the app loads, so there is no flash', async ({ page })
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
 });
 
+// Changed in build 2: html lang is only "ve" once Tshivenda text is shown, so the test sets it directly
+// to check the font rule that will apply then.
 test('Tshivenda headings use Inter so words never mix fonts', async ({ page }) => {
-  await page.goto('/');
-  await page.evaluate(() =>
-    localStorage.setItem('tengo.session.v1', JSON.stringify({ state: { language: 've', theme: 'dark', activePersonaId: null }, version: 0 })),
-  );
   await page.goto('/start');
+  await page.evaluate(() => (document.documentElement.lang = 've'));
   const heading = await page.getByRole('heading', { level: 1 }).evaluate((el) => getComputedStyle(el).fontFamily);
   expect(heading.startsWith('"Inter Variable"')).toBe(true);
-  await page.evaluate(() =>
-    localStorage.setItem('tengo.session.v1', JSON.stringify({ state: { language: 'zu', theme: 'dark', activePersonaId: null }, version: 0 })),
-  );
-  await page.goto('/start');
+  await page.evaluate(() => (document.documentElement.lang = 'zu'));
   const zulu = await page.getByRole('heading', { level: 1 }).evaluate((el) => getComputedStyle(el).fontFamily);
   expect(zulu.startsWith('"Figtree Variable"')).toBe(true);
 });

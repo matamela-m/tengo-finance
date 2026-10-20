@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Notice } from '../../components/Feedback';
 import { Icon } from '../../components/Icon';
-import { usePersona, useReadyPersona } from '../../data/PersonaProvider';
+import { usePersona, useRecordPersona } from '../../data/PersonaProvider';
 import { SubPage } from './Sub';
 
 export default function Delete() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { record, profile, audit } = useReadyPersona();
+  const { record, profile, audit } = useRecordPersona();
   const { deleteData } = usePersona();
   const [step, setStep] = useState<'ask' | 'confirm'>('ask');
   const [understood, setUnderstood] = useState(false);

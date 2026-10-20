@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildImport, detectMapping, parseAmount, parseCsv, parseDate } from './csv';
+import { buildImport, detectMapping, parseAmount, parseCsv, parseDate, scrubDescription } from './csv';
 import { sampleStatementCsv } from './sampleStatement';
 
 describe('parseDate', () => {
@@ -85,5 +85,14 @@ describe('buildImport', () => {
   it('reports a missing mapping', () => {
     const f = parseCsv('Foo,Bar\n1,2\n');
     expect(buildImport(f, detectMapping(f.headers), today).error).toBe('noMapping');
+  });
+});
+
+describe('scrubDescription', () => {
+  it('masks account, card and phone numbers but keeps short numbers', () => {
+    expect(scrubDescription('VODACOM 0821234567')).toBe('VODACOM ••67');
+    expect(scrubDescription('Card 4111 1111 1111 1234 Spar')).toBe('Card ••34 Spar');
+    expect(scrubDescription('Rent unit 4B')).toBe('Rent unit 4B');
+    expect(scrubDescription('Taxi 2024')).toBe('Taxi 2024');
   });
 });

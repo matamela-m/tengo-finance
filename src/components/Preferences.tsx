@@ -1,15 +1,18 @@
 import { useEffect } from 'react';
 import i18n from '../i18n';
+import { contentLanguage } from '../i18n/languages';
 import { useSession } from '../store/session';
 
-/** Keeps i18next, <html lang> and the theme attribute in sync with the persisted session. */
+/** Keeps i18next, <html lang> (the language of the shown text) and the theme attribute in sync with the persisted session. */
 export function Preferences() {
   const language = useSession((s) => s.language);
   const theme = useSession((s) => s.theme);
 
   useEffect(() => {
     void i18n.changeLanguage(language);
-    document.documentElement.lang = language;
+    // The page language is the language of the text actually shown: English while a translation is pending.
+    document.documentElement.lang = contentLanguage(language);
+    document.documentElement.dataset.uiLanguage = language;
   }, [language]);
 
   useEffect(() => {

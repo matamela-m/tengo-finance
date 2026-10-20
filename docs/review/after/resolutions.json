@@ -1,4 +1,8 @@
 {
+ "A11Y-01": {
+  "status": "Fixed",
+  "resolution": "Phase 3: html lang follows contentLanguage(): English while a language is not translated; Playwright checks it."
+ },
  "A11Y-03": {
   "status": "Fixed",
   "resolution": "Phase 1: slider value text includes the assumption, likely range, balance level, bills and income; no cover state word per day."
@@ -18,6 +22,14 @@
  "BEH-04": {
   "status": "Fixed",
   "resolution": "Phase 1: one daily number per state, chart labelled as the if-usual case, What helps uses the same typical next-money date."
+ },
+ "BEH-05": {
+  "status": "Fixed",
+  "resolution": "Phase 3: stock and transport are work costs, never offered for cuts; vehicle finance and funeral cover never moved."
+ },
+ "COMM-08": {
+  "status": "Fixed",
+  "resolution": "Phase 3: the landing stat and every language claim reworded honestly."
  },
  "DATA-02": {
   "status": "Partly fixed",
@@ -51,9 +63,29 @@
   "status": "Fixed",
   "resolution": "Phase 1: one rule per screen enforced by the Home view model and its tests."
  },
+ "INV-05": {
+  "status": "Fixed",
+  "resolution": "Phase 3: the claim now reads Built for 11 languages. English today."
+ },
+ "INV-09": {
+  "status": "Fixed",
+  "resolution": "Phases 1 and 3: credit instalments excluded, Room to lend reworded with caution, estimate-not-advice lines."
+ },
+ "INV-11": {
+  "status": "Prepared for human action",
+  "resolution": "Phase 3: name story off by default; name confirmation and logo are human actions."
+ },
  "JUDGE-01": {
   "status": "Fixed",
   "resolution": "Phase 1: homeView() in src/engine/view.ts drives every Home element; view.test.ts checks every persona on 60 days, balance sweeps and edge cases for consistency."
+ },
+ "JUDGE-02": {
+  "status": "Fixed",
+  "resolution": "Phase 3: Built for 11 languages. English today. on Landing, picker and Me; html lang is the language of the shown text; status chips per language."
+ },
+ "JUDGE-03": {
+  "status": "Fixed",
+  "resolution": "Phases 1 and 3: help only offers earn or receive more, trim spending marked flexible, or move a bill marked movable; credit, insurance, rent, school fees and funeral cover are never moved; stock and fuel never trimmed; borrowing caution and not-advice lines on Home, Plan and Help."
  },
  "JUDGE-04": {
   "status": "Fixed",
@@ -63,13 +95,65 @@
   "status": "Fixed",
   "resolution": "Phase 1: labelled Plan example, messages off by default, neutral icons with In this demo and Planned sections on Privacy, distinct amber Tight."
  },
- "LEGAL-02": {
+ "JUDGE-11": {
+  "status": "Prepared for human action",
+  "resolution": "Phase 3: name story off by default; confirmation and final logo listed in docs/HUMAN-ACTIONS.md."
+ },
+ "L10N-01": {
+  "status": "Prepared for human action",
+  "resolution": "Phase 3: honest claim and status chips; translations need first-language speakers (docs/HUMAN-ACTIONS.md)."
+ },
+ "L10N-02": {
+  "status": "Fixed",
+  "resolution": "Phase 3: translate.mjs never sends Tshivenda, marks it needsTranslator, saves status after every language; i18n-check fails if ve is ever machine."
+ },
+ "L10N-03": {
   "status": "Partly fixed",
-  "resolution": "Phase 1: Safe to spend is now Daily budget with a buffer line and a not-advice line on Home; Plan, Help and legal pass follow in Phase 3."
+  "resolution": "Phase 3: money strings are not machine translated unless --include-money; src/i18n/glossary.json holds money terms for translators. No in-message caveat because nothing is machine translated yet."
+ },
+ "L10N-04": {
+  "status": "Fixed",
+  "resolution": "Phase 3: src/i18n/review-status.json tracks review per string; a language is reviewed only when every key is, enforced by i18n-check."
+ },
+ "L10N-05": {
+  "status": "Fixed",
+  "resolution": "Phase 3: same as A11Y-01, with data-ui-language keeping the chosen language."
+ },
+ "L10N-07": {
+  "status": "Fixed",
+  "resolution": "Phase 3: smsSegments() counts GSM-7 and UCS-2 parts; Inbox shows encoding and parts; tests cover both."
+ },
+ "L10N-09": {
+  "status": "Fixed",
+  "resolution": "Phase 3: i18n-check fails on placeholder or bold marker mismatch and on unknown statuses."
+ },
+ "L10N-11": {
+  "status": "Fixed",
+  "resolution": "Phase 3: i18n-check fails on any string that is not NFC normalised."
+ },
+ "L10N-12": {
+  "status": "Prepared for human action",
+  "resolution": "Phase 3: the name story is behind VITE_SHOW_NAME_STORY, off by default, with a TODO to confirm with two Tshivenda speakers."
+ },
+ "LEGAL-01": {
+  "status": "Fixed",
+  "resolution": "Phase 3: PROTECTED_BILL_WORDS in src/engine/help.ts; protected bills cannot be marked movable and are never returned as billToMove (unit tested); suggestion reworded to ask first."
+ },
+ "LEGAL-02": {
+  "status": "Fixed",
+  "resolution": "Phases 1 and 3: Daily budget and Room to lend with buffer lines; estimate-not-advice lines on Home, Plan, Help and the Why drawer."
  },
  "LEGAL-03": {
   "status": "Partly fixed",
-  "resolution": "Phase 1: messages default off. Sender identity and STOP wording in every message follow in Phase 3."
+  "resolution": "Phases 1 and 3: messages off by default; every message names Tengo and says Reply STOP. A server consent log with wording version follows in Phase 8."
+ },
+ "LEGAL-06": {
+  "status": "Fixed",
+  "resolution": "Phase 3: Earn or receive with a borrowing caution; Short users get a neutral link to the National Credit Regulator."
+ },
+ "LEGAL-07": {
+  "status": "Partly fixed",
+  "resolution": "Phase 3: opt-in and Inbox name Meta and cross-border processing, SMS offered, discreet template added. Explicit s72 consent and real sending are out of scope while nothing is sent."
  },
  "LEGAL-08": {
   "status": "Fixed",
@@ -82,6 +166,10 @@
  "PROD-03": {
   "status": "Fixed",
   "resolution": "Phase 1: state-specific headline (Enough until, Tight until, Short from); daily budget follows the state; chart readout labelled If money lands as usual."
+ },
+ "PROD-04": {
+  "status": "Fixed",
+  "resolution": "Phases 1 and 3: descriptive outcomes, no safe to lend, no credit repayment moves, not-advice and no-lending-decision lines."
  },
  "RISK-01": {
   "status": "Fixed",
@@ -115,6 +203,10 @@
   "status": "Fixed",
   "resolution": "Phase 2: calibrated minimum band, never zero width; confidence also drops for paused or irregular income and old balances; no room to lend at low confidence."
  },
+ "RISK-09": {
+  "status": "Fixed",
+  "resolution": "Phase 3: no deferring rent or credit, no stock cuts; trims capped at what flexible groups usually cost."
+ },
  "RISK-10": {
   "status": "Fixed",
   "resolution": "Phase 2: a payment due today is pending, not pushed a week; Home offers It has come in (S12)."
@@ -133,11 +225,23 @@
  },
  "SEC-02": {
   "status": "Partly fixed",
-  "resolution": "Phase 1: Privacy overview ticks removed, split into In this demo and Planned. Mode-conditional copy everywhere follows in Phase 3."
+  "resolution": "Phases 1 and 3: ticks removed, In this demo and Planned sections, simulated labels. Copy that switches by storage mode follows in Phase 8."
+ },
+ "SEC-03": {
+  "status": "Fixed",
+  "resolution": "Phase 3: long numbers in imported descriptions are masked (scrubDescription, tested) and the copy no longer claims names are never used."
  },
  "SEC-06": {
   "status": "Partly fixed",
   "resolution": "Phase 1: messages no longer pre-ticked. Provable server consent records follow in Phase 8."
+ },
+ "SEC-07": {
+  "status": "Partly fixed",
+  "resolution": "Phase 3: audit entries no longer store transaction descriptions. A tamper-evident server log follows in Phase 8."
+ },
+ "SEC-13": {
+  "status": "Fixed",
+  "resolution": "Phase 3: with core consent withdrawn the forecast is not computed at all; the paused screen offers resume or delete."
  },
  "TECH-01": {
   "status": "Fixed",

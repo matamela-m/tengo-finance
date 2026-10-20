@@ -42,7 +42,7 @@ export function TransactionEditor({ tx, onClose }: { tx: Transaction | null; onC
     if (category !== tx.category) changes.push('category');
     if (oneOff !== Boolean(tx.oneOff)) changes.push('one-off');
     if (changes.length) {
-      await updateTransaction(tx.id, { description: description.trim(), amount: parsed, category, oneOff }, { name: tx.description, fields: changes.join(', ') });
+      await updateTransaction(tx.id, { description: description.trim(), amount: parsed, category, oneOff }, { fields: changes.join(', ') });
     }
     setSaving(false);
     announce(changes.length ? t('a11y.saved') : t('a11y.noChanges'));

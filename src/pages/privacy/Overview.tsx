@@ -6,7 +6,7 @@ import { Icon, type IconName } from '../../components/Icon';
 import { PageHeader } from '../../components/PageHeader';
 import { Toggle } from '../../components/Toggle';
 import { IconTile } from '../../components/ui';
-import { usePersona, useReadyPersona } from '../../data/PersonaProvider';
+import { usePersona, useRecordPersona } from '../../data/PersonaProvider';
 import type { ConsentRecord } from '../../data/repository';
 import { useDates } from '../../lib/useLang';
 import { retention } from './retention';
@@ -35,7 +35,7 @@ const LINKS: { to: string; key: string; icon: IconName }[] = [
 export default function PrivacyOverview() {
   const { t } = useTranslation();
   const d = useDates();
-  const { record } = useReadyPersona();
+  const { record } = useRecordPersona();
   const { consent, setConsent } = usePersona();
   const keep = retention(record.transactions);
   const announce = useAnnounce();

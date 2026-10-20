@@ -17,6 +17,7 @@ const ICONS: Record<AuditType, IconName> = {
   'transaction.added': 'plus',
   'balance.updated': 'refresh',
   'bill.answered': 'receipt',
+  'plan.settings': 'sliders',
   'review.requested': 'mail',
   'forecast.paused': 'pause',
   'forecast.resumed': 'refresh',

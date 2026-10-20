@@ -100,8 +100,8 @@ Each case is also a permanent unit test in `src/engine/stress.test.ts`. Full det
 | S05 Missed bill: rent paid Aug and Sep, October rent unpaid | enough; Enough until 2026-10-30; safe to spend R300; safe to lend R690 | enough, enoughUntil 2026-10-30, budget R300, room to lend R690, notices: missedBill |
 | S05b Missed bill mid history: rent Aug and Oct, September skipped | enough; Enough until 2026-10-30; safe to spend R300; safe to lend R680 | enough, enoughUntil 2026-10-30, budget R300, room to lend R690 |
 | S06 Month-end spike: R600 a day extra from the 25th, today 24 Oct | enough; Enough until 2026-11-16; safe to spend R425; safe to lend R350 | short, shortFrom 2026-10-28, budget notAdvised, room to lend R0 |
-| S07-5 Thin data: 5 days of history | short; Short from 2026-11-01; safe to spend R50; safe to lend R0 | unclear (thin), Not enough to tell, budget unclear, room to lend R0, notices: irregular |
-| S07-7 Thin data: 7 days of history | short; Short from 2026-11-02; safe to spend R50; safe to lend R0 | unclear (thin), Not enough to tell, budget unclear, room to lend R0, notices: irregular |
+| S07-5 Thin data: 5 days of history | short; Short from 2026-11-01; safe to spend R50; safe to lend R0 | unclear (thin), Not enough to tell, budget unclear, room to lend R0 |
+| S07-7 Thin data: 7 days of history | short; Short from 2026-11-02; safe to spend R50; safe to lend R0 | unclear (thin), Not enough to tell, budget unclear, room to lend R0 |
 | S07-14 Thin data: 14 days of history | enough; Enough until 2026-11-02; safe to spend R500; safe to lend R1150 | tight, tightUntil 2026-11-02, budget R500, room to lend R0 |
 | S07-20 Thin data: 20 days of history | enough; Enough until 2026-11-02; safe to spend R375; safe to lend R1040 | tight, tightUntil 2026-11-02, budget R375, room to lend R0 |
 | S08 Outliers: two R9000 one-off spends in the last 60 days | tight; Enough until 2026-11-01; safe to spend R750; safe to lend R2610 | enough, enoughUntil 2026-11-01, budget R750, room to lend R2490, notices: oneOffs |
@@ -114,9 +114,13 @@ Each case is also a permanent unit test in `src/engine/stress.test.ts`. Full det
 | S12 Payday is today (Tuesday), payout not yet in balance | short; Short from 2026-10-23; safe to spend R50; safe to lend R0 | enough, enoughUntil 2026-10-23, budget pending, room to lend R0, notices: pendingToday |
 | S12b Payday is today, payout already in balance (R400 + R2000) | enough; Enough until 2026-11-01; safe to spend R300; safe to lend R1380 | enough, enoughUntil 2026-11-01, budget pending, room to lend R0, notices: pendingToday |
 | S13 Rent R3000 due 25 Oct, the day after the latest next money (24 Oct) | enough; Enough until 2026-10-25; safe to spend R400; safe to lend R1090 | enough, enoughUntil 2026-10-25, budget R150, room to lend R90 |
-| P-thabo Persona thabo as seeded | tight; Enough until 2026-10-27; safe to spend R295; safe to lend R320 | tight, tightUntil 2026-10-27, budget R260, room to lend R370 |
-| P-lerato Persona lerato as seeded | enough; Enough until 2026-11-01; safe to spend R330; safe to lend R280 | enough, enoughUntil 2026-11-01, budget R320, room to lend R440 |
-| P-ayanda Persona ayanda as seeded | short; Short from 2026-10-23; safe to spend R310; safe to lend R0 | short, shortFrom 2026-10-23, budget notAdvised, room to lend R0 |
+| P-thabo Persona thabo as seeded, with cash and an informal obligation | tight; Enough until 2026-10-27; safe to spend R295; safe to lend R320 | tight, tightUntil 2026-10-27, budget R260, room to lend R370 |
+| P-lerato Persona lerato as seeded, with cash and an informal obligation | enough; Enough until 2026-11-01; safe to spend R330; safe to lend R280 | enough, enoughUntil 2026-11-01, budget R320, room to lend R440 |
+| P-ayanda Persona ayanda as seeded, with cash and an informal obligation | short; Short from 2026-10-23; safe to spend R310; safe to lend R0 | short, shortFrom 2026-10-23, budget notAdvised, room to lend R0 |
+
+## Cash, wallets and obligations (Phase 5)
+
+The personas now hold some cash on hand and one informal obligation each (Thabo: R500 a month for his mother; Lerato: a R400 stokvel; Ayanda: a R150 burial society). These live in the record, not in the generated bank history, so the backtest's generator copy still matches `generateHistory` line for line and every number above is unchanged. Obligations are known in advance and projected exactly like bills, so they add no forecast error of their own; their effect on state and lending is covered by the persona stress cases and unit tests (`src/engine/setup.test.ts`, `src/engine/help.test.ts`). The persona rows in the stress table include them.
 
 ## Regression guard
 

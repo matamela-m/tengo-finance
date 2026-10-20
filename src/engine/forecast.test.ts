@@ -142,7 +142,7 @@ describe('bills', () => {
     const base = forecast({ transactions: history, balance: 1200, today });
     const f = forecast({ transactions: withBill, balance: 1200, today });
     expect(f.recurringBills[0]?.nextDate).toBe('2026-10-14');
-    expect(f.billsBeforeNextMoney).toEqual([{ description: 'Phone contract', date: '2026-10-14', amount: 400 }]);
+    expect(f.billsBeforeNextMoney).toEqual([{ description: 'Phone contract', date: '2026-10-14', amount: 400, key: 'phone contract' }]);
     expect(f.billsTotalBeforeNextMoney).toBe(400);
     expect(f.runwayDays).toBeLessThan(base.runwayDays);
   });
@@ -171,7 +171,7 @@ describe('bills', () => {
     expect(f.billsBeforeNextMoney).toHaveLength(0);
     expect(f.reserve).toBe(300);
     // R3 300 rent less a low next payment of R3 000 leaves R300 to keep back.
-    expect(f.reserveBills).toEqual([{ description: 'Rent', date: '2026-10-20', amount: 3300 }]);
+    expect(f.reserveBills).toEqual([{ description: 'Rent', date: '2026-10-20', amount: 3300, key: 'rent' }]);
     // (1200 - 300) / 5 days = 180
     expect(f.dailyBudget).toBe(180);
   });

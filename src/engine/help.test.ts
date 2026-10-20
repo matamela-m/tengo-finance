@@ -103,4 +103,14 @@ describe('helpPlan', () => {
   it('extraToReach is zero when already there', () => {
     expect(extraToReach({ transactions: history, balance: 1200, today }, 'enough')).toBe(0);
   });
+
+  it('moves an informal obligation only when marked movable, never a loan or burial society', () => {
+    const due = (kind: 'family' | 'loan' | 'burial', movable: boolean) => [{ id: 'o1', kind, name: 'To family', amount: 400, every: 'month' as const, nextDate: '2026-10-14', movable }];
+    const input = (kind: 'family' | 'loan' | 'burial', movable: boolean) => ({ transactions: history, balance: 800, today, obligations: due(kind, movable) });
+    expect(forecast(input('family', true)).state).not.toBe('enough');
+    expect(helpPlan(input('family', false)).billToMove).toBeNull();
+    expect(helpPlan(input('family', true)).billToMove?.key).toBe('ob:o1');
+    expect(helpPlan(input('loan', true)).billToMove).toBeNull();
+    expect(helpPlan(input('burial', true)).billToMove).toBeNull();
+  });
 });

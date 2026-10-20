@@ -58,6 +58,8 @@ export type Notice =
   | { kind: 'pendingToday' }
   | { kind: 'missedBill'; bill: MissedBillInfo }
   | { kind: 'oneOffs'; count: number }
+  /** Some of the history is estimated from setup answers. */
+  | { kind: 'estimated' }
   /** A large spend in a short history: still counted, the person can mark it as a one-off. */
   | { kind: 'askOneOff'; id: string; description: string; amount: number; date: ISODate };
 
@@ -69,6 +71,9 @@ export type SummaryKey =
   | 'enoughHorizon'
   | 'tightHorizon'
   | 'shortHorizon'
+  | 'enoughDaily'
+  | 'tightDaily'
+  | 'shortDaily'
   | 'unclearThin'
   | 'unclearNoIncome'
   | 'unclearStale';
@@ -90,6 +95,8 @@ export interface HomeView {
   confidence: Forecast['confidence'];
   /** Plain notices above the fold, most urgent first. */
   notices: Notice[];
+  /** Money comes in most days: the next-money tile says so instead of a date. */
+  dailyIncome: boolean;
 }
 
 const GAUGE: Record<Status, 0 | 1 | 2 | 3> = { unclear: 0, short: 1, tight: 2, enough: 3 };
@@ -108,7 +115,7 @@ export function headlineKey(f: Pick<Forecast, 'status' | 'beyondHorizon'>): stri
 
 function summaryKey(f: Forecast): SummaryKey {
   if (f.status === 'unclear') return f.unclearReason === 'noIncome' ? 'unclearNoIncome' : f.unclearReason === 'stale' ? 'unclearStale' : 'unclearThin';
-  if (f.coverTarget.kind === 'horizon') return `${f.status}Horizon` as SummaryKey;
+  if (f.coverTarget.kind === 'horizon') return `${f.status}${f.income.status === 'daily' ? 'Daily' : 'Horizon'}` as SummaryKey;
   if (f.reserveLimited) return 'tightReserve';
   return f.status;
 }
@@ -135,6 +142,7 @@ export function homeView(f: Forecast): HomeView {
   if (f.income.status === 'irregular' && !unclear) notices.push({ kind: 'irregular' });
   if (pendingToday) notices.push({ kind: 'pendingToday' });
   for (const bill of f.missedBills) notices.push({ kind: 'missedBill', bill });
+  if (f.estimated) notices.push({ kind: 'estimated' });
   const left = f.oneOffs.filter((o) => o.why !== 'ask');
   if (left.length > 0) notices.push({ kind: 'oneOffs', count: left.length });
   for (const o of f.oneOffs.filter((x) => x.why === 'ask')) notices.push({ kind: 'askOneOff', id: o.id, description: o.description, amount: -o.amount, date: o.date });
@@ -157,5 +165,6 @@ export function homeView(f: Forecast): HomeView {
     chart: { assumption: 'ifUsual', nextMoneyDate: n ? n.typical : null },
     confidence: f.confidence,
     notices,
+    dailyIncome: f.income.status === 'daily' && !unclear,
   };
 }

@@ -56,7 +56,7 @@ function ProductPreview() {
   const f = useMemo(() => {
     const today = localToday();
     const r = seedRecord('thabo', today);
-    return runForecast({ transactions: r.transactions, balance: r.balance, today });
+    return runForecast({ transactions: r.transactions, balance: r.balance, today, obligations: r.obligations });
   }, []);
   const v = homeView(f);
   const budget = v.budget.kind === 'amount' ? formatZAR(v.budget.amount) : t('sts.notAdvised');

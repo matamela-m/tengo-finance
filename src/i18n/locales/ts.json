@@ -272,7 +272,8 @@
     "source": {
       "seed": "Sample data",
       "import": "Imported statement",
-      "edited": "Sample data, corrected"
+      "edited": "Sample data, corrected",
+      "manual": "Set up by hand, estimated"
     },
     "correctHint": "Something wrong? Correct or recategorise any transaction from the Money page.",
     "auditLead": "A simulated log of access and changes, newest first.",
@@ -410,7 +411,10 @@
     "unclearStale": "Your balance is more than two weeks old. Add today's balance to see your date.",
     "enoughHorizon": "Lasts the next {{days}} days even on a heavy week, with no money expected.",
     "tightHorizon": "Lasts the next {{days}} days on a normal week, not on a heavy one. No money is expected.",
-    "shortHorizon": "Runs out within the next {{days}} days, and no money is expected."
+    "shortHorizon": "Runs out within the next {{days}} days, and no money is expected.",
+    "enoughDaily": "Lasts the next {{days}} days even on a heavy week, counting half of what usually comes in each day.",
+    "tightDaily": "Lasts the next {{days}} days on a normal week, counting half of what usually comes in each day. Not on a heavy one.",
+    "shortDaily": "Runs out within the next {{days}} days, even counting half of what usually comes in each day."
   },
   "next": {
     "title": "Next money",
@@ -422,7 +426,8 @@
     "patternInterval_other": "Usually lands every {{count}} days.",
     "unknown": "No regular income found yet. Tengo plans 30 days ahead.",
     "pendingToday": "Today, not in yet",
-    "none": "None expected"
+    "none": "None expected",
+    "daily": "Most days"
   },
   "recent": {
     "title": "Recent activity",
@@ -505,7 +510,8 @@
       "pendingToday": "Due today",
       "paused": "Paused",
       "irregular": "No pattern",
-      "none": "None found"
+      "none": "None found",
+      "daily": "Most days"
     },
     "monthEnd": "Month end",
     "monthEndValue": {
@@ -515,7 +521,8 @@
     },
     "oneOffs": "Left out as one-off",
     "oneOffsNone": "Nothing",
-    "horizon": "No money is expected, so the cover is judged over the next {{count}} days."
+    "horizon": "No money is expected, so the cover is judged over the next {{count}} days.",
+    "horizonDaily": "Money comes in most days, so the cover is judged over the next {{count}} days, counting half of your usual daily income."
   },
   "paused": {
     "title": "Forecast paused",
@@ -702,7 +709,8 @@
     "balanceKept": "No balance column. Keeping the current balance of {{amount}}. Type to change it.",
     "result": "Forecast with this statement",
     "confirm": "Replace history and see my date",
-    "replaceNote": "This replaces this person's history on this device and adds an entry to the audit log."
+    "replaceNote": "This replaces this person's history on this device and adds an entry to the audit log.",
+    "tooBig": "That file is larger than 2 MB, which is more than a statement needs. Choose a shorter period or a smaller file."
   },
   "edit": {
     "title": "Edit transaction",
@@ -729,7 +737,10 @@
     "transaction_added_other": "Added {{count}} entries",
     "balance_updated": "Updated the balance",
     "bill_answered": "Answered a question about a bill that looked unpaid",
-    "plan_settings": "Changed which spending can bend or which bills can move"
+    "plan_settings": "Changed which spending can bend or which bills can move",
+    "money_updated": "Changed accounts or money owed",
+    "cash_added": "Recorded cash {{direction}}",
+    "setup_saved": "Set up a history by hand"
   },
   "inbox": {
     "title": "Inbox",
@@ -780,7 +791,8 @@
       "unclear": "Tengo does not have enough to go on yet to give you a date. Open Tengo to see what to add.",
       "stsPending": "Daily budget: worked out once today's payment lands.",
       "stop": "From Tengo. Reply STOP to end these updates.",
-      "discreet": "Tengo: your daily update is ready. Open the app to see it."
+      "discreet": "Tengo: your daily update is ready. Open the app to see it.",
+      "noNextDaily": "Money comes in most days, so there is no single next payment."
     },
     "sms": {
       "enough": "Tengo: Hi {{name}}, money lasts until {{date}} ({{state}}). Budget {{sts}} a day.",
@@ -907,11 +919,15 @@
       "title": "Was {{name}} ({{amount}}, {{date}}) a one-off?",
       "body": "It is much bigger than your usual spending, and with a short history Tengo cannot tell. For now it counts as usual spending.",
       "action": "Yes, a one-off"
+    },
+    "estimated": {
+      "title": "Estimated from your answers",
+      "body": "Part of your history comes from the setup questions, so confidence is low. Real entries, cash added here or a statement replace the estimate."
     }
   },
   "balance": {
-    "update": "Add today's balance",
-    "label": "Balance today",
+    "update": "Update bank balance",
+    "label": "Bank account balance today",
     "save": "Save balance",
     "saved": "Balance saved",
     "error": "Enter an amount, for example 1250 or -300."
@@ -931,5 +947,112 @@
       "body": "Something went wrong with the data saved in this browser. A copy has been kept on this device. Start fresh to keep using Tengo.",
       "action": "Start fresh"
     }
+  },
+  "cash": {
+    "add": "Add cash",
+    "title": "Cash",
+    "kind": "What happened",
+    "modes": {
+      "in": "Cash in",
+      "out": "Cash out",
+      "hand": "Cash in hand"
+    },
+    "hints": {
+      "in": "Cash you received, for example fares, a client or money back from family. It counts as money in.",
+      "out": "Cash you spent. It counts as spending.",
+      "hand": "How much cash you have right now. This sets the cash balance and does not add an entry."
+    },
+    "notePlaceholder": {
+      "in": "For example, cash fares",
+      "out": "For example, taxi"
+    },
+    "saved": "Cash saved"
+  },
+  "accounts": {
+    "title": "Where your money is",
+    "lead": "Your forecast uses the total of all of these.",
+    "edit": "Edit",
+    "total": "Total",
+    "name": "Name",
+    "balance": "Balance",
+    "addWallet": "Add a wallet or account",
+    "walletName": "Mobile wallet",
+    "remove": "Remove",
+    "cashTag": "Cash",
+    "homeLine": "Total {{total}}, including {{cash}} cash on hand.",
+    "homeLineBank": "Total {{total}}."
+  },
+  "obligations": {
+    "title": "Other money you owe",
+    "lead": "Stokvel, burial society, family support and informal loans. They count like bills.",
+    "none": "Nothing added yet.",
+    "add": "Add one",
+    "addTitle": "Add money you owe",
+    "editTitle": "Change money you owe",
+    "editLabel": "Change {{name}}",
+    "remove": "Remove",
+    "kind": "Kind",
+    "kinds": {
+      "stokvel": "Stokvel",
+      "burial": "Burial society",
+      "family": "Family support",
+      "loan": "Informal loan",
+      "other": "Other"
+    },
+    "placeholder": {
+      "stokvel": "For example, Sunday stokvel",
+      "burial": "For example, burial society",
+      "family": "For example, money for my mother",
+      "loan": "For example, paying back my cousin",
+      "other": "Name"
+    },
+    "name": "Name",
+    "nextLabel": "Next due",
+    "howOften": "How often",
+    "every": {
+      "week": "Every week",
+      "month": "Every month"
+    },
+    "next": "next {{date}}",
+    "movableHint": "Only if it can be paid a few days late without trouble.",
+    "protected": "Never suggested to move: paying a loan or burial society late can cost you."
+  },
+  "setup": {
+    "title": "Set up by hand",
+    "lead": "No statement? Answer a few questions and Tengo estimates a starting history. Real entries replace it as you add them.",
+    "link": "Set up by hand",
+    "pretend": "You can use pretend numbers to try it. Nothing leaves this device.",
+    "balance": "Balance in your bank account today",
+    "arrives": "How your money usually arrives",
+    "arrival": {
+      "daily": "Most days",
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "irregular": "Every few days"
+    },
+    "arrivalHint": {
+      "daily": "For example cash fares or sales on most days.",
+      "weekly": "For example a weekly payout or Saturday takings.",
+      "monthly": "For example a monthly payment or grant.",
+      "irregular": "For example deposits every week or so, but not on a fixed day."
+    },
+    "amount": "Usual amount each time",
+    "amountDaily": "Usual amount on a day",
+    "weekday": "Usual day",
+    "dayOfMonth": "Usual day of the month",
+    "everyDays": "Roughly every how many days",
+    "dailySpend": "Usual everyday spending a day",
+    "dailySpendHint": "Food, transport, airtime and the like. Not rent or other bills.",
+    "bills": "Regular bills",
+    "billsHint": "Rent, phone contract, school fees and other bills that go off every month.",
+    "billName": "Bill",
+    "billDay": "Day",
+    "addBill": "Add a bill",
+    "removeBill": "Remove bill {{n}}",
+    "billError": "Each bill needs a name, an amount above zero and a day from 1 to 31.",
+    "fieldError": "Enter a number, for example 250.",
+    "estimatedNote": "Tengo makes a starting history from these answers, marked as estimated. Confidence stays low until real entries arrive.",
+    "submit": "See my date",
+    "estimatedTag": "Estimated"
   }
 }

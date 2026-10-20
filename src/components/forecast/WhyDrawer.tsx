@@ -107,7 +107,7 @@ export function WhyDrawer({ forecast, open, onClose }: { forecast: Forecast; ope
       </div>
       <p className="mt-4 text-[15px] leading-relaxed">{t('why.plain')}</p>
       {n && forecast.status !== 'short' && forecast.status !== 'unclear' && <p className="num mt-2 text-sm text-muted">{t('why.budgetSpread', { date: d.dayShort(n.latest) })}</p>}
-      {forecast.coverTarget.kind === 'horizon' && <p className="num mt-2 text-sm text-muted">{t('why.horizon', { count: 30 })}</p>}
+      {forecast.coverTarget.kind === 'horizon' && <p className="num mt-2 text-sm text-muted">{t(forecast.income.status === 'daily' ? 'why.horizonDaily' : 'why.horizon', { count: 30 })}</p>}
 
       <div className="mt-5 rounded-2xl bg-surface-2 p-4">
         <RunwayChart forecast={forecast} />

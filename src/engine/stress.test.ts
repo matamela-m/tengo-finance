@@ -167,7 +167,7 @@ describe('seeded personas', () => {
   ] as const) {
     it(`${id} is ${state} with a consistent Home and no harmful help`, () => {
       const r = seedRecord(id, STRESS_TODAY);
-      const input = { transactions: r.transactions, balance: r.balance, today: STRESS_TODAY };
+      const input = { transactions: r.transactions, balance: r.balance, today: STRESS_TODAY, obligations: r.obligations };
       const f = forecast(input);
       const room = roomToLend(input);
       expect(f.status).toBe(state);

@@ -16,6 +16,7 @@ const HomePage = lazy(() => import('./pages/Home'));
 const PlanPage = lazy(() => import('./pages/Plan'));
 const MoneyPage = lazy(() => import('./pages/Money'));
 const ImportPage = lazy(() => import('./pages/Import'));
+const SetupPage = lazy(() => import('./pages/Setup'));
 const InboxPage = lazy(() => import('./pages/Inbox'));
 const PrivacyPage = lazy(() => import('./pages/Privacy'));
 const MePage = lazy(() => import('./pages/Me'));
@@ -40,6 +41,7 @@ export default function App() {
             <Route path="plan" element={<PlanPage />} />
             <Route path="money" element={<MoneyPage />} />
             <Route path="money/import" element={<ImportPage />} />
+            <Route path="money/setup" element={<SetupPage />} />
             <Route path="inbox" element={<InboxPage />} />
             <Route path="privacy/*" element={<PrivacyPage />} />
             <Route path="me" element={<MePage />} />

@@ -8,7 +8,7 @@ import { forecastInput, useReadyPersona } from '../data/PersonaProvider';
 import type { PersonaRecord } from '../data/repository';
 import { addDays } from '../engine/dates';
 import { forecast as runForecast } from '../engine/forecast';
-import { buildImport, detectMapping, mappingReady, parseAmount, parseCsv, type ColumnMapping, type ParsedFile } from '../lib/csv';
+import { buildImport, detectMapping, mappingReady, MAX_IMPORT_BYTES, parseAmount, parseCsv, type ColumnMapping, type ParsedFile } from '../lib/csv';
 import { formatZAR } from '../lib/format';
 import { downloadText, SAMPLE_FILENAME, sampleStatementCsv } from '../lib/sampleStatement';
 import { useDates } from '../lib/useLang';
@@ -28,6 +28,7 @@ export default function ImportPage() {
   const [mapping, setMapping] = useState<ColumnMapping | null>(null);
   const [balanceText, setBalanceText] = useState('');
   const [readError, setReadError] = useState(false);
+  const [tooBig, setTooBig] = useState(false);
   const [saving, setSaving] = useState(false);
 
   const load = (text: string, name: string) => {
@@ -101,7 +102,13 @@ export default function ImportPage() {
                 className="sr-only"
                 onChange={async (e) => {
                   const f = e.target.files?.[0];
-                  if (f) load(await f.text(), f.name);
+                  if (f && f.size > MAX_IMPORT_BYTES) {
+                    setTooBig(true);
+                    setFile(null);
+                  } else if (f) {
+                    setTooBig(false);
+                    load(await f.text(), f.name);
+                  }
                   if (fileInput.current) fileInput.current.value = '';
                 }}
               />
@@ -132,11 +139,19 @@ export default function ImportPage() {
           <h2 id="map-title" className="font-heading text-h3 text-ink">
             {t('import.step2')}
           </h2>
-          {readError && (
-            <Notice tone="danger" className="mt-4">
-              {t('import.readError')}
-            </Notice>
-          )}
+          {/* Errors are announced as they appear (A11Y-10). */}
+          <div role="alert">
+            {readError && (
+              <Notice tone="danger" className="mt-4">
+                {t('import.readError')}
+              </Notice>
+            )}
+            {tooBig && (
+              <Notice tone="danger" className="mt-4">
+                {t('import.tooBig')}
+              </Notice>
+            )}
+          </div>
           {!file || !mapping ? (
             <div className="mt-4 flex flex-col items-center gap-3 rounded-2xl border border-dashed border-line px-6 py-12 text-center text-muted">
               <Icon name="file" size={28} />

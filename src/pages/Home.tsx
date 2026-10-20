@@ -7,6 +7,8 @@ import { DateHero } from '../components/forecast/DateHero';
 import { RecentActivity } from '../components/forecast/Cards';
 import { HelpCard } from '../components/forecast/HelpCard';
 import { HomeNotices } from '../components/forecast/Notices';
+import { CashQuickAdd } from '../components/CashQuickAdd';
+import { accountsOf, totalOf, type Account } from '../data/repository';
 import { RangeBand } from '../components/forecast/RangeBand';
 import { TimelineScrubber } from '../components/forecast/TimelineScrubber';
 import { WhyDrawer } from '../components/forecast/WhyDrawer';
@@ -53,7 +55,7 @@ function BigWords({ children }: { children: ReactNode }) {
 }
 
 /** The daily budget leads, ruled by the state; next money and confidence sit beside it as quiet figures. */
-function Stats({ view, historyDays }: { view: HomeView; historyDays: number }) {
+function Stats({ view, historyDays, accounts }: { view: HomeView; historyDays: number; accounts: Account[] }) {
   const { t } = useTranslation();
   const d = useDates();
   const b = view.budget;
@@ -65,6 +67,9 @@ function Stats({ view, historyDays }: { view: HomeView; historyDays: number }) {
         : t('sts.reserveMany', { amount: formatZAR(amount), count: bills.length });
   const shown = useCountUp(b.kind === 'amount' ? b.amount : 0);
   const n = view.nextMoney;
+  const total = totalOf(accounts);
+  const cash = accounts.filter((a) => a.kind === 'cash').reduce((s, a) => s + a.balance, 0);
+  const others = accounts.filter((a) => a.kind === 'wallet').length;
   return (
     <section className="card p-5 sm:p-6" aria-labelledby="sts-title">
       <h2 id="sts-title" className="eyebrow">
@@ -109,11 +114,19 @@ function Stats({ view, historyDays }: { view: HomeView; historyDays: number }) {
         </>
       )}
       <p className="mt-3 text-xs text-subtle">{t('sts.disclaimer')}</p>
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-line pt-4">
+        <p className="num text-sm text-muted">
+          {cash > 0 || others > 0
+            ? t('accounts.homeLine', { total: formatZAR(total), cash: formatZAR(cash) })
+            : t('accounts.homeLineBank', { total: formatZAR(total) })}
+        </p>
+        <CashQuickAdd />
+      </div>
       <dl className="mt-5 grid grid-cols-2 border-t border-line pt-4">
         <div className="pr-4">
           <dt className="eyebrow">{t('next.title')}</dt>
           <dd className="num mt-1.5 font-heading text-[19px] font-semibold tracking-[-0.01em] text-ink">
-            {n ? (n.pendingToday ? t('next.pendingToday') : d.dayShort(n.date)) : view.status === 'unclear' ? t('home.unknownShort') : t('next.none')}
+            {n ? (n.pendingToday ? t('next.pendingToday') : d.dayShort(n.date)) : view.status === 'unclear' ? t('home.unknownShort') : view.dailyIncome ? t('next.daily') : t('next.none')}
           </dd>
           {n && (
             <dd className="num mt-0.5 text-xs text-subtle">
@@ -195,7 +208,7 @@ export default function HomePage() {
         </div>
         <div className="contents lg:flex lg:min-w-0 lg:flex-1 lg:flex-col lg:gap-5">
           <div className="order-2 lg:order-none">
-            <Stats view={view} historyDays={forecast.historyDays} />
+            <Stats view={view} historyDays={forecast.historyDays} accounts={accountsOf(record)} />
           </div>
           <div className="order-4 lg:order-none">
             <HelpCard />

@@ -19,6 +19,8 @@ export function TransactionRow({ tx, compact = false, oneOff = false }: { tx: Tr
         <p className="truncate text-[15px] font-medium">{tx.description}</p>
         <p className="num text-xs text-subtle">
           {d.dayShort(tx.date)} · {t(`category.${tx.category}`)}
+          {tx.accountId === 'cash' && ` · ${t('accounts.cashTag')}`}
+          {tx.estimated && ` · ${t('setup.estimatedTag')}`}
           {oneOff && ` · ${t('edit.oneOff')}`}
         </p>
       </div>

@@ -15,6 +15,10 @@
   "status": "Partly fixed",
   "resolution": "Phase 1: contradictions removed and fewer dates on Home. A low-numeracy test is in the research kit (Phase 9)."
  },
+ "A11Y-10": {
+  "status": "Fixed",
+  "resolution": "Phase 5: import errors sit in a live alert region and explain what to do; setup form errors are announced too."
+ },
  "A11Y-14": {
   "status": "Fixed",
   "resolution": "Phase 4: no untranslated locale JSON is parsed at start; initial JavaScript is 119 KB gzipped."
@@ -22,6 +26,10 @@
  "BEH-01": {
   "status": "Partly fixed",
   "resolution": "Phase 1: usual spend shown beside the budget and the next large bill just after next money is kept back and named."
+ },
+ "BEH-02": {
+  "status": "Fixed",
+  "resolution": "Phase 5: bank, cash and mobile wallet accounts with a balance each, summed for the forecast; quick cash entries; manual setup for people without statements."
  },
  "BEH-03": {
   "status": "Partly fixed",
@@ -34,6 +42,14 @@
  "BEH-05": {
   "status": "Fixed",
   "resolution": "Phase 3: stock and transport are work costs, never offered for cuts; vehicle finance and funeral cover never moved."
+ },
+ "BEH-07": {
+  "status": "Fixed",
+  "resolution": "Phase 5: stokvel, burial society, family support and informal loans are first-class recurring items that behave like bills; every persona has one."
+ },
+ "COMM-04": {
+  "status": "Fixed",
+  "resolution": "Phase 5: cash income and cash on hand are now part of the forecast."
  },
  "COMM-08": {
   "status": "Fixed",
@@ -79,6 +95,10 @@
   "status": "Fixed",
   "resolution": "Phases 1 and 3: credit instalments excluded, Room to lend reworded with caution, estimate-not-advice lines."
  },
+ "INV-10": {
+  "status": "Fixed",
+  "resolution": "Phase 5: cash, wallets and informal obligations are in the model and on screen."
+ },
  "INV-11": {
   "status": "Prepared for human action",
   "resolution": "Phase 3: name story off by default; name confirmation and logo are human actions."
@@ -102,6 +122,10 @@
  "JUDGE-04": {
   "status": "Fixed",
   "resolution": "Phase 2: paused income, no-income state, payday-today rule, stale-balance handling and data age, each with unit tests; stress cases S01 to S13 are permanent tests (src/engine/stress.test.ts)."
+ },
+ "JUDGE-08": {
+  "status": "Fixed",
+  "resolution": "Phase 5: cash in, cash out and cash on hand in one tap from Home and Money; cash entries feed the forecast and cash on hand counts in the total, shown separately."
  },
  "JUDGE-09": {
   "status": "Fixed",
@@ -181,7 +205,7 @@
  },
  "PROD-01": {
   "status": "Partly fixed",
-  "resolution": "Phase 2: overdraft depth is shown as its own notice. Multiple accounts follow in Phase 5; facility limits and scheduled debit orders need a bank data contract."
+  "resolution": "Phases 2 and 5: overdraft shown; several accounts summed with a breakdown. Facility limits and scheduled debit orders still need a bank data contract."
  },
  "PROD-03": {
   "status": "Fixed",
@@ -190,6 +214,10 @@
  "PROD-04": {
   "status": "Fixed",
   "resolution": "Phases 1 and 3: descriptive outcomes, no safe to lend, no credit repayment moves, not-advice and no-lending-decision lines."
+ },
+ "PROD-07": {
+  "status": "Partly fixed",
+  "resolution": "Phase 5: the cash-heavy persona now has cash on hand and a burial society, and daily earners get a daily rhythm. Segment fit still needs the user study (docs/research)."
  },
  "RISK-01": {
   "status": "Fixed",
@@ -270,6 +298,10 @@
  "SEC-13": {
   "status": "Fixed",
   "resolution": "Phase 3: with core consent withdrawn the forecast is not computed at all; the paused screen offers resume or delete."
+ },
+ "SEC-14": {
+  "status": "Fixed",
+  "resolution": "Phase 5: CSV export neutralises formula prefixes (tested), imports over 2 MB are refused with a message, quota errors are handled (Phase 4)."
  },
  "TECH-01": {
   "status": "Fixed",

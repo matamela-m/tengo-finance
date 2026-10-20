@@ -12,6 +12,26 @@ export interface Transaction {
   category: Category;
   /** Marked by the person as a one-off: left out of usual spend and of the income pattern. */
   oneOff?: boolean;
+  /** Which account it moved through. Missing means the bank account. */
+  accountId?: string;
+  /** Generated from the person's setup answers, not a real entry. Replaced as real entries arrive. */
+  estimated?: boolean;
+}
+
+/** Recurring money owed outside the bank: stokvel, burial society, family support, informal loans. */
+export type ObligationKind = 'stokvel' | 'burial' | 'family' | 'loan' | 'other';
+
+export interface Obligation {
+  id: string;
+  kind: ObligationKind;
+  name: string;
+  /** Rands each time, positive. */
+  amount: number;
+  every: 'week' | 'month';
+  /** The next time it is due. */
+  nextDate: ISODate;
+  /** The person says it could be paid a few days later without trouble. Never honoured for loans or burial societies. */
+  movable: boolean;
 }
 
 export type CoverState = 'enough' | 'tight' | 'short';
@@ -22,10 +42,11 @@ export type UnclearReason = 'thin' | 'noIncome' | 'stale';
  * regular: a pattern and the next payment is still due.
  * pendingToday: the usual payment is due today and is not in the balance yet.
  * paused: payments stopped for more than about two usual gaps.
+ * daily: small amounts come in on most days, with no big payment to wait for.
  * irregular: money comes in, but with no pattern Tengo can use.
  * none: no money in at all in the history.
  */
-export type IncomeStatus = 'regular' | 'pendingToday' | 'paused' | 'irregular' | 'none';
+export type IncomeStatus = 'regular' | 'pendingToday' | 'paused' | 'daily' | 'irregular' | 'none';
 export type Confidence = 'high' | 'medium' | 'low';
 export type IncomePattern = 'weekday' | 'interval' | 'unknown';
 
@@ -54,6 +75,8 @@ export interface UpcomingBill {
   description: string;
   date: ISODate;
   amount: number;
+  /** Recurring bill key, or "ob:<id>" for an informal obligation. */
+  key?: string;
 }
 
 export interface RecurringBill {
@@ -113,6 +136,8 @@ export interface Forecast {
   dataEnd: ISODate;
   /** Days between the balance date (today) and the real date, when the balance is old. */
   asOfDaysAgo: number;
+  /** Some of the history is estimated from setup answers. */
+  estimated: boolean;
   balance: number;
   /** What the cover rule says about the numbers. When status is 'unclear' this is only shown in the Why drawer. */
   state: CoverState;
@@ -190,6 +215,8 @@ export interface ForecastInput {
   now?: ISODate;
   /** The person's answers about missed bills, keyed by MissedBillInfo.id. */
   billDecisions?: Record<string, BillDecision>;
+  /** Informal recurring obligations. They behave like bills. */
+  obligations?: Obligation[];
   /** One-off future items for what-if checks. Money already in the account is in `balance`. */
   extras?: Pick<Transaction, 'date' | 'amount' | 'description'>[];
 }

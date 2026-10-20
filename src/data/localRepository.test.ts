@@ -49,7 +49,11 @@ describe('LocalRepository', () => {
     await repo.replaceHistory('thabo', [], 500);
     const kept = await repo.getRecord('thabo', '2026-10-14');
     expect(kept.source).toBe('import');
-    expect(kept.balance).toBe(500);
+    // Build 2: a statement sets the bank account; cash on hand stays and counts in the total.
+    const bank = kept.accounts?.find((a) => a.kind === 'bank');
+    const cash = kept.accounts?.find((a) => a.kind === 'cash')?.balance ?? 0;
+    expect(bank?.balance).toBe(500);
+    expect(kept.balance).toBe(500 + cash);
   });
 
   it('edits a transaction and marks seed data as edited', async () => {
@@ -87,6 +91,36 @@ describe('LocalRepository', () => {
     const r = new LocalRepository(store);
     await r.setConsent('thabo', { core: true, messages: false, analytics: false });
     expect(JSON.parse(store.getItem('tengo.data.v1')!).schema).toBe(SCHEMA_VERSION);
+  });
+});
+
+describe('accounts and obligations', () => {
+  it('seeds each persona with cash on hand and one informal obligation, and the total is the balance', async () => {
+    const repo = new LocalRepository(new MemoryStore());
+    for (const id of ['thabo', 'lerato', 'ayanda'] as const) {
+      const r = await repo.getRecord(id, '2026-10-20');
+      expect(r.accounts?.map((a) => a.kind)).toEqual(['bank', 'cash']);
+      expect(r.accounts!.reduce((a, b) => a + b.balance, 0)).toBeCloseTo(r.balance, 2);
+      expect(r.obligations).toHaveLength(1);
+      expect(r.obligations![0]!.nextDate >= '2026-10-20').toBe(true);
+    }
+  });
+
+  it('keeps the balance equal to the total of the accounts when money changes', async () => {
+    const repo = new LocalRepository(new MemoryStore());
+    await repo.getRecord('lerato', '2026-10-20');
+    const r = await repo.updateMoney('lerato', {
+      accounts: [
+        { id: 'bank', kind: 'bank', name: 'Bank account', balance: 1000 },
+        { id: 'cash', kind: 'cash', name: 'Cash on hand', balance: 250 },
+        { id: 'w1', kind: 'wallet', name: 'Mobile wallet', balance: 100 },
+      ],
+      add: [{ id: 'c1', date: '2026-10-20', description: 'Cash in', amount: 50, category: 'income', accountId: 'cash' }],
+    });
+    expect(r.balance).toBe(1350);
+    expect(r.transactions.some((t) => t.id === 'c1')).toBe(true);
+    const b = await repo.setBalance('lerato', 900, '2026-10-20');
+    expect(b.balance).toBe(1250);
   });
 });
 

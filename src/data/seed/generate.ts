@@ -1,7 +1,7 @@
 import { classifyRows } from '../../engine/classify';
-import { addDays, dayOfMonth, weekday } from '../../engine/dates';
+import { addDays, dayOfMonth, sameDayNextMonth, sameMonthDay, weekday } from '../../engine/dates';
 import { forecast } from '../../engine/forecast';
-import type { CoverState, ISODate, Transaction } from '../../engine/types';
+import type { CoverState, ISODate, Obligation, Transaction } from '../../engine/types';
 import { createRng, type Rng } from './prng';
 import type { PersonaId } from './personas';
 
@@ -110,18 +110,18 @@ export function generateHistory(personaId: PersonaId, today: ISODate): Transacti
   }));
 }
 
-function stateFor(transactions: Transaction[], balance: number, today: ISODate): CoverState {
-  return forecast({ transactions, balance, today }).state;
+function stateFor(transactions: Transaction[], balance: number, today: ISODate, obligations: Obligation[] = []): CoverState {
+  return forecast({ transactions, balance, today, obligations }).state;
 }
 
 /** Smallest whole-rand balance whose cover state is at least `target`, by bisection. */
-function minBalanceFor(transactions: Transaction[], today: ISODate, target: CoverState): number {
+function minBalanceFor(transactions: Transaction[], today: ISODate, target: CoverState, obligations: Obligation[] = []): number {
   const rank: Record<CoverState, number> = { short: 0, tight: 1, enough: 2 };
   let lo = 1;
   let hi = 200_000;
   while (lo < hi) {
     const mid = Math.floor((lo + hi) / 2);
-    if (rank[stateFor(transactions, mid, today)] >= rank[target]) hi = mid;
+    if (rank[stateFor(transactions, mid, today, obligations)] >= rank[target]) hi = mid;
     else lo = mid + 1;
   }
   return lo;
@@ -132,18 +132,36 @@ function minBalanceFor(transactions: Transaction[], today: ISODate, target: Cove
  * Enough sits a little above the Enough line, Tight sits inside the Tight range,
  * Short sits a few days short of the next money.
  */
-export function startingBalance(transactions: Transaction[], today: ISODate, target: CoverState): number {
-  const tightMin = minBalanceFor(transactions, today, 'tight');
-  const enoughMin = minBalanceFor(transactions, today, 'enough');
+export function startingBalance(transactions: Transaction[], today: ISODate, target: CoverState, obligations: Obligation[] = []): number {
+  const tightMin = minBalanceFor(transactions, today, 'tight', obligations);
+  const enoughMin = minBalanceFor(transactions, today, 'enough', obligations);
   let balance: number;
   if (target === 'enough') balance = enoughMin * 1.18;
   else if (target === 'tight') balance = tightMin + (enoughMin - tightMin) * 0.45;
   else balance = tightMin * 0.6;
   balance = Math.max(10, Math.round(balance / 10) * 10 + 7);
   // Nudge if rounding moved it across a line.
-  for (let k = 0; k < 50 && stateFor(transactions, balance, today) !== target; k++) {
+  for (let k = 0; k < 50 && stateFor(transactions, balance, today, obligations) !== target; k++) {
     balance += target === 'short' ? -10 : 10;
     if (balance <= 0) break;
   }
   return Math.max(0, balance);
+}
+
+/**
+ * Money each persona holds or owes outside the bank account: some cash on hand and one informal
+ * obligation, so the fictional people look like the people Tengo is for (BEH-02, BEH-07).
+ */
+export const PERSONA_EXTRAS: Record<PersonaId, { cash: number; obligation: Omit<Obligation, 'id' | 'nextDate'> & { day: number } }> = {
+  thabo: { cash: 350, obligation: { kind: 'family', name: 'Money for my mother', amount: 500, every: 'month', day: 28, movable: true } },
+  lerato: { cash: 200, obligation: { kind: 'stokvel', name: 'Stokvel contribution', amount: 400, every: 'month', day: 15, movable: false } },
+  ayanda: { cash: 600, obligation: { kind: 'burial', name: 'Burial society', amount: 150, every: 'month', day: 3, movable: false } },
+};
+
+/** The persona's obligation with its next due date on or after today. */
+export function personaObligations(personaId: PersonaId, today: ISODate): Obligation[] {
+  const { day, ...o } = PERSONA_EXTRAS[personaId].obligation;
+  let next = sameMonthDay(today, day);
+  if (next < today) next = sameDayNextMonth(today, day);
+  return [{ ...o, id: `${personaId}-ob`, nextDate: next }];
 }

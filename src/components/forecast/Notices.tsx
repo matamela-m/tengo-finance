@@ -115,6 +115,18 @@ export function HomeNotices({ notices }: { notices: NoticeItem[] }) {
                 </button>
               </Notice>
             );
+          case 'estimated':
+            return (
+              <Notice key="estimated" icon="sliders">
+                <p className="font-semibold">{t('notice.estimated.title')}</p>
+                <p className="mt-0.5">{t('notice.estimated.body')}</p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  <Link to="/app/money/import" className="btn-secondary min-h-[44px]">
+                    {t('money.import')}
+                  </Link>
+                </div>
+              </Notice>
+            );
           case 'oneOffs':
             return (
               <Notice key="oneOffs" icon="info">

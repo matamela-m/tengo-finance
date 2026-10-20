@@ -44,7 +44,7 @@ const cases: { id: string; scenario: string; input: ForecastInput }[] = [
   ...stressCases(),
   ...(['thabo', 'lerato', 'ayanda'] as const).map((p) => {
     const r = seedRecord(p, STRESS_TODAY);
-    return { id: `P-${p}`, scenario: `Persona ${p} as seeded`, input: { transactions: r.transactions, balance: r.balance, today: STRESS_TODAY } };
+    return { id: `P-${p}`, scenario: `Persona ${p} as seeded, with cash and an informal obligation`, input: { transactions: r.transactions, balance: r.balance, today: STRESS_TODAY, obligations: r.obligations } };
   }),
 ];
 

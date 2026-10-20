@@ -1,14 +1,38 @@
 import type { SpendGroup } from '../engine/spending';
-import type { BillDecision, ISODate, Transaction } from '../engine/types';
+import type { BillDecision, ISODate, Obligation, Transaction } from '../engine/types';
 import type { PersonaId } from './seed/personas';
 
-export type RecordSource = 'seed' | 'import' | 'edited';
+export type RecordSource = 'seed' | 'import' | 'edited' | 'manual';
+
+export type AccountKind = 'bank' | 'cash' | 'wallet';
+
+/** One place money is kept. The forecast uses the total of every account. */
+export interface Account {
+  id: string;
+  kind: AccountKind;
+  name: string;
+  /** Rands. */
+  balance: number;
+}
+
+/** The accounts of a record; older records without any get one bank account holding the balance. */
+export function accountsOf(record: Pick<PersonaRecord, 'accounts' | 'balance'>): Account[] {
+  return record.accounts && record.accounts.length > 0 ? record.accounts : [{ id: 'bank', kind: 'bank', name: 'Bank account', balance: record.balance }];
+}
+
+export function totalOf(accounts: Account[]): number {
+  return Math.round(accounts.reduce((a, b) => a + b.balance, 0) * 100) / 100;
+}
 
 export interface PersonaRecord {
   personaId: PersonaId;
   transactions: Transaction[];
-  /** Current balance in rands. */
+  /** Current balance in rands: the total of every account. */
   balance: number;
+  /** Where the money is kept. The total always equals `balance`. */
+  accounts?: Account[];
+  /** Stokvel, burial society, family support and informal loans. */
+  obligations?: Obligation[];
   source: RecordSource;
   /** The date the seed was generated for. Seeds refresh daily until the user changes them. */
   seededOn: ISODate;
@@ -45,6 +69,9 @@ export type AuditType =
   | 'balance.updated'
   | 'bill.answered'
   | 'plan.settings'
+  | 'money.updated'
+  | 'setup.saved'
+  | 'cash.added'
   | 'review.requested'
   | 'forecast.paused'
   | 'forecast.resumed';
@@ -74,6 +101,12 @@ export interface ReviewRequest {
   headline: string;
 }
 
+export interface MoneyChange {
+  accounts?: Account[];
+  obligations?: Obligation[];
+  add?: Transaction[];
+}
+
 export interface PlanSettings {
   flexibleGroups?: SpendGroup[];
   movableBills?: string[];
@@ -95,13 +128,18 @@ export interface TengoRepository {
   /** Loads the persona's record, creating it from seed data when missing or stale. */
   getRecord(personaId: PersonaId, today: ISODate): Promise<PersonaRecord>;
   /** `balanceDate` is the day the balance was true for, usually the statement end or today. */
-  replaceHistory(personaId: PersonaId, transactions: Transaction[], balance: number, balanceDate?: ISODate): Promise<PersonaRecord>;
+  replaceHistory(personaId: PersonaId, transactions: Transaction[], balance: number, balanceDate?: ISODate, source?: RecordSource): Promise<PersonaRecord>;
   updateTransaction(personaId: PersonaId, transactionId: string, patch: TransactionPatch): Promise<PersonaRecord>;
   /** Adds entries such as a confirmed payment or cash. Does not change the balance unless `balance` is given. */
   addTransactions(personaId: PersonaId, transactions: Transaction[], balance?: number): Promise<PersonaRecord>;
   setBalance(personaId: PersonaId, balance: number, balanceDate: ISODate): Promise<PersonaRecord>;
   setBillDecision(personaId: PersonaId, missedBillId: string, decision: BillDecision): Promise<PersonaRecord>;
   setPlanSettings(personaId: PersonaId, settings: PlanSettings): Promise<PersonaRecord>;
+  /**
+   * Changes accounts and obligations, and adds entries, in one write. When accounts are given the balance
+   * becomes their total. Used by cash quick add, wallets and obligations.
+   */
+  updateMoney(personaId: PersonaId, change: MoneyChange): Promise<PersonaRecord>;
 
   getConsent(personaId: PersonaId): Promise<ConsentRecord | null>;
   setConsent(personaId: PersonaId, consent: Omit<ConsentRecord, 'decidedAt'>): Promise<ConsentRecord>;

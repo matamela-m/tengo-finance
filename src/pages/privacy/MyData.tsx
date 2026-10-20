@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { TransactionRow } from '../../components/forecast/Cards';
 import { Icon } from '../../components/Icon';
 import { useRecordPersona } from '../../data/PersonaProvider';
+import { accountsOf } from '../../data/repository';
 import { toCsv } from '../../lib/csv';
 import { formatZAR } from '../../lib/format';
 import { downloadText } from '../../lib/sampleStatement';
@@ -30,7 +31,13 @@ export default function MyData() {
       note: 'Fictional demo data from Tengo. Not real personal information.',
       persona: { id: profile.id, name: profile.name, fictional: true },
       balance: record.balance,
+      accounts: accountsOf(record),
+      obligations: record.obligations ?? [],
       source: record.source,
+      balanceDate: record.balanceDate ?? null,
+      billDecisions: record.billDecisions ?? {},
+      flexibleGroups: record.flexibleGroups ?? [],
+      movableBills: record.movableBills ?? [],
       consent,
       transactions: record.transactions,
       auditLog: audit,
@@ -41,7 +48,10 @@ export default function MyData() {
     announce(t('a11y.exported', { format: 'JSON' }));
   };
   const exportCsv = () => {
-    const rows = [['date', 'description', 'amount', 'category'], ...record.transactions.map((x) => [x.date, x.description, x.amount.toFixed(2), x.category])];
+    const rows = [
+      ['date', 'description', 'amount', 'category', 'account', 'one_off', 'estimated'],
+      ...record.transactions.map((x) => [x.date, x.description, x.amount.toFixed(2), x.category, x.accountId ?? 'bank', x.oneOff ? 'yes' : '', x.estimated ? 'yes' : '']),
+    ];
     downloadText(`tengo-${profile.id}-${stamp}.csv`, toCsv(rows) + '\n');
     void log('data.exported', { format: 'CSV' });
     announce(t('a11y.exported', { format: 'CSV' }));

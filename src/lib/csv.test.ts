@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildImport, detectMapping, parseAmount, parseCsv, parseDate, scrubDescription } from './csv';
+import { buildImport, detectMapping, neutraliseCell, parseAmount, parseCsv, parseDate, scrubDescription, toCsv } from './csv';
 import { sampleStatementCsv } from './sampleStatement';
 
 describe('parseDate', () => {
@@ -94,5 +94,16 @@ describe('scrubDescription', () => {
     expect(scrubDescription('Card 4111 1111 1111 1234 Spar')).toBe('Card ••34 Spar');
     expect(scrubDescription('Rent unit 4B')).toBe('Rent unit 4B');
     expect(scrubDescription('Taxi 2024')).toBe('Taxi 2024');
+  });
+});
+
+describe('CSV export safety', () => {
+  it('neutralises text a spreadsheet would run as a formula, but keeps numbers', () => {
+    expect(neutraliseCell('=HYPERLINK("x")')).toBe(`'=HYPERLINK("x")`);
+    expect(neutraliseCell('+27 82')).toBe("'+27 82");
+    expect(neutraliseCell('@SUM(A1)')).toBe("'@SUM(A1)");
+    expect(neutraliseCell('-250.00')).toBe('-250.00');
+    expect(neutraliseCell('Groceries')).toBe('Groceries');
+    expect(toCsv([['=1+1', '-5']])).toBe("'=1+1,-5");
   });
 });

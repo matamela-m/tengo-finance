@@ -1,4 +1,5 @@
 import type { BillDecision, ISODate, Transaction } from '../engine/types';
+import { accountsOf, totalOf, type Account, type MoneyChange, type RecordSource } from './repository';
 import type {
   AuditEntry,
   AuditType,
@@ -11,7 +12,7 @@ import type {
   TransactionPatch,
 } from './repository';
 import { applyRetention } from './retention';
-import { generateHistory, startingBalance } from './seed/generate';
+import { generateHistory, PERSONA_EXTRAS, personaObligations, startingBalance } from './seed/generate';
 import { getPersona, type PersonaId } from './seed/personas';
 
 const KEY = 'tengo.data.v1';
@@ -90,9 +91,16 @@ function uid(prefix: string): string {
 export function seedRecord(personaId: PersonaId, today: ISODate): PersonaRecord {
   const profile = getPersona(personaId);
   const transactions = generateHistory(personaId, today);
-  const balance = startingBalance(transactions, today, profile?.startState ?? 'tight');
+  const obligations = personaObligations(personaId, today);
+  // The total puts the persona in its intended state with its obligation counted; some of it is cash.
+  const balance = startingBalance(transactions, today, profile?.startState ?? 'tight', obligations);
+  const cash = Math.min(PERSONA_EXTRAS[personaId].cash, Math.max(0, balance));
+  const accounts: Account[] = [
+    { id: 'bank', kind: 'bank', name: 'Bank account', balance: Math.round((balance - cash) * 100) / 100 },
+    { id: 'cash', kind: 'cash', name: 'Cash on hand', balance: cash },
+  ];
   const now = new Date().toISOString();
-  return { personaId, transactions, balance, source: 'seed', seededOn: today, createdAt: now, updatedAt: now };
+  return { personaId, transactions, balance, accounts, obligations, source: 'seed', seededOn: today, createdAt: now, updatedAt: now };
 }
 
 export class LocalRepository implements TengoRepository {
@@ -163,16 +171,21 @@ export class LocalRepository implements TengoRepository {
     return slot.record;
   }
 
-  async replaceHistory(personaId: PersonaId, transactions: Transaction[], balance: number, balanceDate?: ISODate): Promise<PersonaRecord> {
+  async replaceHistory(personaId: PersonaId, transactions: Transaction[], balance: number, balanceDate?: ISODate, source: RecordSource = 'import'): Promise<PersonaRecord> {
     await this.wait();
     const data = this.read();
     const slot = this.slot(data, personaId);
     const now = new Date().toISOString();
+    // A statement replaces the bank account; cash and wallets the person added stay, and count in the total.
+    const others = slot.record ? accountsOf(slot.record).filter((a) => a.kind !== 'bank') : [];
+    const accounts: Account[] = [{ id: 'bank', kind: 'bank', name: 'Bank account', balance }, ...others];
     slot.record = {
       personaId,
       transactions,
-      balance,
-      source: 'import',
+      balance: totalOf(accounts),
+      accounts,
+      obligations: slot.record?.obligations,
+      source,
       seededOn: slot.record?.seededOn ?? now.slice(0, 10),
       balanceDate,
       billDecisions: {},
@@ -203,11 +216,27 @@ export class LocalRepository implements TengoRepository {
     });
   }
 
+  /** Sets the bank account balance (the one a statement shows); the total follows. */
   async setBalance(personaId: PersonaId, balance: number, balanceDate: ISODate): Promise<PersonaRecord> {
     await this.wait();
     return this.change(personaId, (r) => {
-      r.balance = balance;
+      const accounts = accountsOf(r).map((a) => (a.kind === 'bank' ? { ...a, balance } : a));
+      if (!accounts.some((a) => a.kind === 'bank')) accounts.unshift({ id: 'bank', kind: 'bank', name: 'Bank account', balance });
+      r.accounts = accounts;
+      r.balance = totalOf(accounts);
       r.balanceDate = balanceDate;
+    });
+  }
+
+  async updateMoney(personaId: PersonaId, change: MoneyChange): Promise<PersonaRecord> {
+    await this.wait();
+    return this.change(personaId, (r) => {
+      if (change.add?.length) r.transactions = [...r.transactions, ...change.add];
+      if (change.obligations) r.obligations = change.obligations;
+      if (change.accounts) {
+        r.accounts = change.accounts;
+        r.balance = totalOf(change.accounts);
+      }
     });
   }
 

@@ -1,7 +1,7 @@
 import { addDays, daysBetween } from './dates';
 import { forecast, roomToLend } from './forecast';
 import { spendGroup, type SpendGroup } from './spending';
-import type { CoverState, ForecastInput, ISODate, RecurringBill, Transaction, UpcomingBill } from './types';
+import type { CoverState, ForecastInput, ISODate, ObligationKind, RecurringBill, Transaction, UpcomingBill } from './types';
 
 const RANK: Record<CoverState, number> = { short: 0, tight: 1, enough: 2 };
 const MAX_SEARCH = 200_000;
@@ -34,6 +34,9 @@ export const PROTECTED_BILL_WORDS = [
   'maintenance',
   'creche',
 ];
+
+/** Informal obligations that are never suggested as movable: repaying a loan and keeping funeral cover. */
+export const PROTECTED_OBLIGATIONS: ObligationKind[] = ['loan', 'burial'];
 
 /** Spending groups that are work costs for the people Tengo is built for, so never trimmed: stock and transport or fuel. */
 export const WORK_COST_GROUPS: SpendGroup[] = ['stock', 'transport'];
@@ -143,10 +146,9 @@ export function helpPlan(input: ForecastInput, options: HelpOptions = {}): HelpP
   let billToMove: UpcomingBill | null = null;
   if (next) {
     const after = addDays(next.latest, 1);
-    const keyOf = new Map(base.recurringBills.map((b) => [b.description, b.key]));
-    const candidates = base.billsBeforeNextMoney
-      .filter((b) => !isProtectedBill(b.description) && movable.has(keyOf.get(b.description) ?? ''))
-      .sort((a, b) => a.amount - b.amount);
+    // Informal obligations the person marked movable count too, but never informal loans or burial societies.
+    for (const o of input.obligations ?? []) if (o.movable && !PROTECTED_OBLIGATIONS.includes(o.kind)) movable.add(`ob:${o.id}`);
+    const candidates = base.billsBeforeNextMoney.filter((b) => b.key && movable.has(b.key) && !isProtectedBill(b.description)).sort((a, b) => a.amount - b.amount);
     for (const bill of candidates) {
       const shifted = [
         ...(input.extras ?? []),

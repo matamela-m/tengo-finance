@@ -1,6 +1,6 @@
 import { addDays, dayNumber, dayOfMonth, sameDayNextMonth, sameMonthDay } from './dates';
 import { median } from './stats';
-import type { Category, ISODate, RecurringBill, Transaction, UpcomingBill } from './types';
+import type { Category, ISODate, Obligation, RecurringBill, Transaction, UpcomingBill } from './types';
 
 /** Lower case, digits and punctuation removed, so "VODACOM 0821234567" and "Vodacom" match. */
 export function descriptionKey(description: string): string {
@@ -141,8 +141,25 @@ export function projectBills(bills: RecurringBill[], today: ISODate, until: ISOD
   for (const b of bills) {
     let date = b.nextDate;
     while (date <= until) {
-      if (date >= today) out.push({ description: b.description, date, amount: b.amount });
+      if (date >= today) out.push({ description: b.description, date, amount: b.amount, key: b.key });
       date = sameDayNextMonth(date, b.dayOfMonth);
+    }
+  }
+  return out.sort((a, b) => (a.date < b.date ? -1 : 1));
+}
+
+/** Every occurrence of the informal obligations from `today` up to and including `until`, as bills. */
+export function projectObligations(obligations: Obligation[], today: ISODate, until: ISODate): UpcomingBill[] {
+  const out: UpcomingBill[] = [];
+  for (const o of obligations) {
+    if (!(o.amount > 0)) continue;
+    let date = o.nextDate;
+    const dom = dayOfMonth(o.nextDate);
+    // Catch up a next date in the past, so an obligation is never silently dropped.
+    while (date < today) date = o.every === 'week' ? addDays(date, 7) : sameDayNextMonth(date, dom);
+    while (date <= until) {
+      out.push({ description: o.name, date, amount: o.amount, key: `ob:${o.id}` });
+      date = o.every === 'week' ? addDays(date, 7) : sameDayNextMonth(date, dom);
     }
   }
   return out.sort((a, b) => (a.date < b.date ? -1 : 1));

@@ -5,7 +5,8 @@ import type { BillDecision, Forecast, ForecastInput, ISODate, Transaction } from
 import { useSession } from '../store/session';
 import { repository } from './index';
 import { StorageError, type StorageProblem } from './localRepository';
-import type { AuditEntry, AuditType, ConsentRecord, DeletionReceipt, PersonaRecord, PlanSettings, ReviewRequest, TransactionPatch } from './repository';
+import { accountsOf, type Account, type AuditEntry, type AuditType, type ConsentRecord, type DeletionReceipt, type MoneyChange, type PersonaRecord, type PlanSettings, type ReviewRequest, type TransactionPatch } from './repository';
+import { mergeEstimated } from '../engine/setup';
 import { getPersona, type PersonaId, type PersonaProfile } from './seed/personas';
 
 type Status = 'idle' | 'loading' | 'ready' | 'error';
@@ -31,11 +32,18 @@ interface PersonaContextValue {
   log: (type: AuditType, params?: AuditEntry['params']) => Promise<void>;
   setConsent: (c: Omit<ConsentRecord, 'decidedAt'>, type?: AuditType, params?: AuditEntry['params']) => Promise<void>;
   replaceHistory: (transactions: Transaction[], balance: number, rows: number, balanceDate?: ISODate) => Promise<void>;
+  /** Replaces the history with one estimated from setup answers, balance as of today. */
+  saveManualSetup: (transactions: Transaction[], balance: number) => Promise<void>;
   updateTransaction: (id: string, patch: TransactionPatch, params: AuditEntry['params']) => Promise<void>;
   addTransactions: (transactions: Transaction[], balance?: number) => Promise<void>;
   setBalance: (balance: number) => Promise<void>;
   setBillDecision: (missedBillId: string, decision: BillDecision) => Promise<void>;
   setPlanSettings: (settings: PlanSettings) => Promise<void>;
+  updateMoney: (change: MoneyChange) => Promise<void>;
+  /** Cash in or out: an entry on the cash account and a matching change to cash on hand. */
+  addCash: (direction: 'in' | 'out', amount: number, note: string) => Promise<void>;
+  /** Sets how much cash is on hand now, without an entry. */
+  setCashOnHand: (amount: number) => Promise<void>;
   addReview: (r: Omit<ReviewRequest, 'id' | 'at'>) => Promise<ReviewRequest>;
   deleteData: () => Promise<DeletionReceipt>;
 }
@@ -159,6 +167,12 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
         await repository.appendAudit(id, 'statement.imported', { rows });
         await refreshAudit(id);
       },
+      saveManualSetup: async (transactions, balance) => {
+        const id = requireId();
+        setRecord(await repository.replaceHistory(id, transactions, balance, today, 'manual'));
+        await repository.appendAudit(id, 'setup.saved');
+        await refreshAudit(id);
+      },
       addTransactions: async (transactions, balance) => {
         const id = requireId();
         setRecord(await repository.addTransactions(id, transactions, balance));
@@ -169,6 +183,36 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
         const id = requireId();
         setRecord(await repository.setBalance(id, balance, today));
         await repository.appendAudit(id, 'balance.updated');
+        await refreshAudit(id);
+      },
+      updateMoney: async (change) => {
+        const id = requireId();
+        setRecord(await repository.updateMoney(id, change));
+        await repository.appendAudit(id, 'money.updated');
+        await refreshAudit(id);
+      },
+      addCash: async (direction, amount, note) => {
+        const id = requireId();
+        if (!record) return;
+        const accounts = withCash(accountsOf(record), (c) => c + (direction === 'in' ? amount : -amount));
+        const tx: Transaction = {
+          id: `cash-${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`,
+          date: today,
+          description: note.trim() || (direction === 'in' ? 'Cash in' : 'Cash out'),
+          amount: direction === 'in' ? amount : -amount,
+          category: direction === 'in' ? 'income' : 'spend',
+          accountId: 'cash',
+        };
+        setRecord(await repository.updateMoney(id, { add: [tx], accounts }));
+        // No amounts or notes in the log, only that cash was recorded.
+        await repository.appendAudit(id, 'cash.added', { direction });
+        await refreshAudit(id);
+      },
+      setCashOnHand: async (amount) => {
+        const id = requireId();
+        if (!record) return;
+        setRecord(await repository.updateMoney(id, { accounts: withCash(accountsOf(record), () => amount) }));
+        await repository.appendAudit(id, 'money.updated');
         await refreshAudit(id);
       },
       setPlanSettings: async (settings) => {
@@ -234,13 +278,21 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
  * the day its balance was true, with `now` set so the engine can say how old it is.
  */
 export function forecastInput(record: PersonaRecord, today: ISODate): ForecastInput {
-  const base = { transactions: record.transactions, balance: record.balance, billDecisions: record.billDecisions };
+  // Real entries replace estimated ones from the manual setup as they arrive.
+  const base = { transactions: mergeEstimated(record.transactions), balance: record.balance, billDecisions: record.billDecisions, obligations: record.obligations };
   if (record.source === 'seed') return { ...base, today };
   const last = record.transactions.reduce<ISODate | null>((m, t) => (m === null || t.date > m ? t.date : m), null);
   const dataEnd = last ? addDays(last, 1) : today;
   // An imported closing balance is true at the start of the day after the statement's last day.
   const asOf = minDate(record.balanceDate ?? (record.source === 'import' ? dataEnd : record.seededOn), today);
   return { ...base, today: asOf, dataEnd: minDate(dataEnd, asOf), now: today };
+}
+
+/** Accounts with the cash account changed by `fn`, adding a cash account if there is none. */
+function withCash(accounts: Account[], fn: (current: number) => number): Account[] {
+  const has = accounts.some((a) => a.kind === 'cash');
+  const list = has ? accounts : [...accounts, { id: 'cash', kind: 'cash' as const, name: 'Cash on hand', balance: 0 }];
+  return list.map((a) => (a.kind === 'cash' ? { ...a, balance: Math.round(fn(a.balance) * 100) / 100 } : a));
 }
 
 export function usePersona(): PersonaContextValue {

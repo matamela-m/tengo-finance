@@ -345,3 +345,54 @@ test('a bill that looks unpaid asks the person, and the answer clears the questi
   await page.goto('/app/privacy/audit');
   await expect(page.getByText('Answered a question about a bill that looked unpaid')).toBeVisible();
 });
+
+test('cash out from Home lowers cash on hand and counts in the forecast', async ({ page }) => {
+  await page.goto('/start');
+  await page.getByRole('button', { name: /Lerato/ }).click();
+  await page.getByRole('button', { name: 'Agree and continue' }).click();
+  const before = await page.locator('section[aria-labelledby="sts-title"]').innerText();
+  await page.getByRole('button', { name: 'Add cash' }).click();
+  await page.getByRole('radio', { name: 'Cash out' }).check();
+  await page.getByLabel('Amount').fill('150');
+  await page.getByLabel('Note (optional)').fill('Taxi');
+  await page.getByRole('dialog').getByRole('button', { name: 'Save' }).click();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await expect(page.locator('section[aria-labelledby="sts-title"]')).not.toHaveText(before);
+  await page.goto('/app/money');
+  await expect(page.getByText('Cash on hand')).toBeVisible();
+  await expect(page.getByText(/Cash$/).first()).toBeVisible();
+  await page.goto('/app/privacy/audit');
+  await expect(page.getByText('Recorded cash out')).toBeVisible();
+});
+
+test('set up by hand gives an estimated, low-confidence forecast', async ({ page }) => {
+  await page.goto('/start');
+  await page.getByRole('button', { name: /Thabo/ }).click();
+  await page.getByRole('button', { name: 'Agree and continue' }).click();
+  await page.goto('/app/money/setup');
+  await page.getByLabel('Balance in your bank account today').fill('1800');
+  await page.getByRole('radio', { name: 'Weekly' }).check();
+  await page.getByLabel('Usual amount each time').fill('2500');
+  await page.getByLabel('Usual everyday spending a day').fill('200');
+  await page.getByRole('button', { name: 'Add a bill' }).click();
+  await page.getByLabel('Bill', { exact: true }).fill('Rent');
+  await page.getByLabel('Amount', { exact: true }).fill('1500');
+  await page.getByRole('button', { name: 'See my date' }).click();
+  await expect(page).toHaveURL(/\/app$/);
+  await expect(page.getByText('Estimated from your answers', { exact: true })).toBeVisible();
+  await expect(page.locator('section[aria-labelledby="sts-title"]')).toContainText('Low');
+});
+
+test('an informal obligation can be added and counts like a bill', async ({ page }) => {
+  await page.goto('/start');
+  await page.getByRole('button', { name: /Lerato/ }).click();
+  await page.getByRole('button', { name: 'Agree and continue' }).click();
+  await page.goto('/app/money');
+  await page.getByRole('button', { name: 'Add one' }).click();
+  await page.getByLabel('Kind').selectOption('loan');
+  await expect(page.getByText(/Never suggested to move: paying a loan/)).toBeVisible();
+  await page.getByLabel('Name').fill('Paying back my cousin');
+  await page.getByLabel('Amount').fill('300');
+  await page.getByRole('dialog').getByRole('button', { name: 'Save' }).click();
+  await expect(page.getByText('Paying back my cousin')).toBeVisible();
+});

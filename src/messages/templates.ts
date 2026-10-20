@@ -46,7 +46,7 @@ export class TemplateMessageWriter implements MessageWriter {
       t('messages.whatsapp.greeting', vars),
       t(`messages.whatsapp.${v.status}`, vars),
       budgetLine,
-      next ? t('messages.whatsapp.next', vars) : t('messages.whatsapp.noNext'),
+      next ? t('messages.whatsapp.next', vars) : f.income.status === 'daily' ? t('messages.whatsapp.noNextDaily') : t('messages.whatsapp.noNext'),
       t(`messages.whatsapp.tip.${v.status}`, vars),
       t('messages.whatsapp.stop'),
     ];

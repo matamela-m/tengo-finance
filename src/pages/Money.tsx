@@ -7,6 +7,8 @@ import { Icon } from '../components/Icon';
 import { PageHeader } from '../components/PageHeader';
 import { Segmented } from '../components/Segmented';
 import { BalanceUpdate } from '../components/BalanceUpdate';
+import { AccountsCard } from '../components/money/AccountsCard';
+import { ObligationsCard } from '../components/money/ObligationsCard';
 import { TransactionEditor } from '../components/TransactionEditor';
 import { SpendingCard } from '../components/SpendingCard';
 import { usePersona, useReadyPersona } from '../data/PersonaProvider';
@@ -69,10 +71,16 @@ export default function MoneyPage() {
         title={t('money.title')}
         lead={t('money.lead')}
         actions={
-          <Link to="/app/money/import" className="btn-primary">
-            <Icon name="upload" size={18} />
-            {t('money.import')}
-          </Link>
+          <div className="flex flex-wrap gap-2">
+            <Link to="/app/money/setup" className="btn-secondary">
+              <Icon name="sliders" size={18} />
+              {t('setup.link')}
+            </Link>
+            <Link to="/app/money/import" className="btn-primary">
+              <Icon name="upload" size={18} />
+              {t('money.import')}
+            </Link>
+          </div>
         }
       />
 
@@ -171,6 +179,9 @@ export default function MoneyPage() {
             </div>
             {editBalance && <BalanceUpdate initial={record.balance} onDone={() => setEditBalance(false)} />}
           </section>
+
+          <AccountsCard />
+          <ObligationsCard />
 
           <SpendingCard
             transactions={record.transactions}

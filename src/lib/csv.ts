@@ -186,12 +186,24 @@ export function buildImport(file: ParsedFile, mapping: ColumnMapping, today: ISO
   };
 }
 
+/** Largest statement file accepted, so a huge file cannot freeze or fill the browser (SEC-14). */
+export const MAX_IMPORT_BYTES = 2 * 1024 * 1024;
+
+/**
+ * Text that a spreadsheet would run as a formula is prefixed with an apostrophe (CSV injection, SEC-14).
+ * Plain numbers, including negative amounts, are left alone.
+ */
+export function neutraliseCell(s: string): string {
+  if (/^-?\d+(\.\d+)?$/.test(s)) return s;
+  return /^[=+\-@\t\r]/.test(s) ? `'${s}` : s;
+}
+
 export function toCsv(rows: (string | number)[][]): string {
   return rows
     .map((r) =>
       r
         .map((v) => {
-          const s = String(v);
+          const s = neutraliseCell(String(v));
           return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
         })
         .join(','),

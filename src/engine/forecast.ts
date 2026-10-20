@@ -1,4 +1,4 @@
-import { descriptionKey, missedBills as findMissedBills, projectBills, recurringBills } from './classify';
+import { descriptionKey, missedBills as findMissedBills, projectBills, projectObligations, recurringBills } from './classify';
 import { addDays, dayNumber, dayOfMonth, daysBetween, maxDate, minDate, weekday } from './dates';
 import { median, percentile, sum } from './stats';
 import type {
@@ -35,6 +35,8 @@ export const RESERVE_DAYS_AFTER = 7;
 /** A balance older than this many days lowers confidence; older than STALE_HIDE_DAYS hides the state. */
 export const STALE_LOWER_DAYS = 3;
 export const STALE_HIDE_DAYS = 14;
+/** Income on at least this share of days, with no big payments, is a daily rhythm. */
+export const DAILY_INCOME_SHARE = 0.5;
 /** Under this many days of history there is not enough to tell. */
 export const MIN_HISTORY_DAYS = 14;
 /** Under this many days of history Enough is not shown: the best is Tight. */
@@ -227,7 +229,12 @@ export function estimateIncome(transactions: Transaction[], today: ISODate, hist
   const windowStart = addDays(end, -windowDays);
   const backgroundPerDay = sum(background.filter(([d]) => d >= windowStart).map(([, v]) => v)) / windowDays;
 
-  if (significant.length < 2) return none('irregular', backgroundPerDay);
+  if (significant.length < 2) {
+    // Money on most days, none of it big: a daily earner. No next-money date, but the daily income is real.
+    const daysWithIncome = days.filter(([d]) => d >= windowStart).length;
+    if (windowDays >= 14 && daysWithIncome / windowDays >= DAILY_INCOME_SHARE) return none('daily', backgroundPerDay);
+    return none('irregular', backgroundPerDay);
+  }
 
   const amounts = significant.map(([, v]) => v);
   const amountLow = roundTo(percentile(amounts, 0.2), 10);
@@ -452,15 +459,15 @@ export function forecast(input: ForecastInput): Forecast {
   const model = estimateIncome(clean, today, historyDays, dataEnd);
   const next = model.next;
   const income = model.info;
-  // No usable rhythm means the outer paths are less certain too.
-  if (income.status === 'paused' || income.status === 'irregular') confidence = 'low';
+  // No usable rhythm, or a history estimated from answers, means the outer paths are less certain too.
+  if (income.status === 'paused' || income.status === 'irregular' || transactions.some((t) => t.estimated)) confidence = 'low';
   const asOfDaysAgo = input.now ? Math.max(0, daysBetween(today, input.now)) : 0;
   if (asOfDaysAgo > STALE_LOWER_DAYS) confidence = confidence === 'high' ? 'medium' : 'low';
   const rates = shortHistoryFloor(estimateSpendRates(clean, dataEnd, windowDays, confidence), clean, dataEnd, windowDays, historyDays);
   const monthEnd = monthEndEffect(clean, dataEnd, historyDays);
   // Small daily income only counts alongside a known rhythm and four weeks of history. Without them it may
   // be most of the income, or bills may not have shown up yet, and counting it would be false reassurance.
-  const bg = (income.status === 'regular' || income.status === 'pendingToday') && historyDays >= ENOUGH_MIN_HISTORY_DAYS ? income.backgroundPerDay : 0;
+  const bg = (income.status === 'regular' || income.status === 'pendingToday' || income.status === 'daily') && historyDays >= ENOUGH_MIN_HISTORY_DAYS ? income.backgroundPerDay : 0;
   const paths = {
     optimistic: pathRates(rates.optimistic, bg * BACKGROUND_SHARE.optimistic, monthEnd, false),
     central: pathRates(rates.central, bg * BACKGROUND_SHARE.central, monthEnd, false),
@@ -473,7 +480,9 @@ export function forecast(input: ForecastInput): Forecast {
   const missedAll = findMissedBills(recurring, dataEnd);
   const owedBills: UpcomingBill[] = missedAll.filter((m) => decisions[m.id] === 'owed').map((m) => ({ description: m.description, date: today, amount: m.amount }));
   const missedBills = missedAll.filter((m) => !decisions[m.id]).map(({ id, description, amount, dueDate }) => ({ id, description, amount, dueDate }));
-  const upcomingBills = [...owedBills, ...projectBills(recurring, today, horizonEnd)].sort((a, b) => (a.date < b.date ? -1 : 1));
+  const upcomingBills = [...owedBills, ...projectBills(recurring, today, horizonEnd), ...projectObligations(input.obligations ?? [], today, horizonEnd)].sort((a, b) =>
+    a.date < b.date ? -1 : 1,
+  );
 
   const coverTarget: Forecast['coverTarget'] = next
     ? { kind: 'nextMoney', typical: next.typical, latest: next.latest }
@@ -521,6 +530,7 @@ export function forecast(input: ForecastInput): Forecast {
     today,
     dataEnd,
     asOfDaysAgo,
+    estimated: transactions.some((t) => t.estimated),
     balance,
     state,
     status,
@@ -599,7 +609,7 @@ export function loanCheck(input: ForecastInput, amount: number): LoanCheckResult
 export function roomToLend(input: ForecastInput, current?: CoverState): number {
   const base = forecast(input);
   const state = current ?? base.state;
-  if (state === 'short' || input.balance <= 0 || base.status === 'unclear' || base.confidence === 'low' || base.income.status !== 'regular') return 0;
+  if (state === 'short' || input.balance <= 0 || base.status === 'unclear' || base.confidence === 'low' || !['regular', 'daily'].includes(base.income.status)) return 0;
   // The state already protects the reserve for Enough; a budget above zero protects it for Tight.
   const keeps = (x: number) => {
     const after = forecast({ ...input, balance: input.balance - x });

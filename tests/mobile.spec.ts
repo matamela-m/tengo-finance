@@ -3,7 +3,7 @@ import { test, expect, devices } from '@playwright/test';
 // Phone checks: no sideways panning, and no field small enough to make iOS Safari zoom in on tap.
 test.use({ ...devices['iPhone 13'], browserName: 'chromium' });
 
-const PAGES = ['/', '/start', '/app', '/app/plan', '/app/money', '/app/money/import', '/app/inbox', '/app/privacy', '/app/privacy/review', '/app/me'];
+const PAGES = ['/', '/start', '/app', '/app/plan', '/app/money', '/app/money/import', '/app/inbox', '/app/privacy', '/app/privacy/review', '/app/me', '/app/money/setup', '/safety'];
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/404-prime');

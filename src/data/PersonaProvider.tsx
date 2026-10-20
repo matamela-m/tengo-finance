@@ -7,6 +7,7 @@ import { repository } from './index';
 import { StorageError, type StorageProblem } from './localRepository';
 import { accountsOf, type Account, type AuditEntry, type AuditType, type ConsentRecord, type DeletionReceipt, type MoneyChange, type PersonaRecord, type PlanSettings, type ReviewRequest, type TransactionPatch } from './repository';
 import { mergeEstimated } from '../engine/setup';
+import { recordDiagnostic } from '../lib/diagnostics';
 import { getPersona, type PersonaId, type PersonaProfile } from './seed/personas';
 
 type Status = 'idle' | 'loading' | 'ready' | 'error';
@@ -132,7 +133,10 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
           setProblem(null);
           return out;
         } catch (e) {
-          if (e instanceof StorageError) setProblem(e.kind);
+          if (e instanceof StorageError) {
+            setProblem(e.kind);
+            recordDiagnostic('storage', e, window.location.pathname);
+          }
           throw e;
         }
       };

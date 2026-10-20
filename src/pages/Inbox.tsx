@@ -164,7 +164,7 @@ export default function InboxPage() {
                 ))}
               </ul>
               <div className="mt-2 border-t border-line">
-                <Toggle checked={discreet} onChange={setDiscreet} label={t('inbox.discreet')} description={t('inbox.discreetHint')} />
+                <Toggle checked={discreet} onChange={setDiscreet} label={t('shared.discreet')} description={t('shared.discreetHint')} />
               </div>
               <Link to="/app/privacy" className="btn-ghost -ml-3 mt-3 text-sm">
                 {t('inbox.manage')}

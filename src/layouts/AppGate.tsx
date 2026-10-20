@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { EmptyState, PageLoading } from '../components/Feedback';
 import { usePersona } from '../data/PersonaProvider';
 import { AppLayout } from './AppLayout';
+import { ErrorBoundary } from '../components/ErrorBoundary';
+import { LockScreen, useLock } from '../components/Lock';
 import { ForecastPaused } from '../pages/ForecastPaused';
 
 /** Pages that still work while the forecast is paused, so people can see or delete their data. */
@@ -12,8 +14,11 @@ export function AppGate() {
   const { t } = useTranslation();
   const { personaId, status, consent, record, reload, storageProblem, startFresh } = usePersona();
   const { pathname } = useLocation();
+  const { locked } = useLock();
 
   if (!personaId) return <Navigate to="/start" replace />;
+  // A locked app shows only the PIN screen: no names, amounts or dates.
+  if (locked) return <LockScreen />;
   if (status === 'ready' && !consent) return <Navigate to="/consent" replace />;
 
   let content;
@@ -51,7 +56,9 @@ export function AppGate() {
     // Fades in on every page change and when loading finishes, instead of snapping.
     content = (
       <div key={pathname} className="animate-page">
-        <Outlet />
+        <ErrorBoundary embedded resetKey={pathname}>
+          <Outlet />
+        </ErrorBoundary>
       </div>
     );
   }

@@ -2,8 +2,22 @@ import { INTL_LOCALE, type LanguageCode } from '../i18n/languages';
 
 const NBSP = ' ';
 
-/** Formats rand amounts as "R1 250", with decimals only when the value has cents. */
-export function formatZAR(value: number, opts: { sign?: boolean } = {}): string {
+/** Shown instead of an amount in discreet mode. */
+export const MASK = 'R ••••';
+let masked = false;
+
+/** Discreet mode: while on, every amount on screen is shown as MASK until the person taps to show amounts. */
+export function setMasked(value: boolean) {
+  masked = value;
+}
+
+export function isMasked(): boolean {
+  return masked;
+}
+
+/** Formats rand amounts as "R1 250", with decimals only when the value has cents. Masked in discreet mode. */
+export function formatZAR(value: number, opts: { sign?: boolean; unmasked?: boolean } = {}): string {
+  if (masked && !opts.unmasked) return MASK;
   const negative = value < 0;
   const abs = Math.abs(value);
   const hasCents = Math.round(abs * 100) % 100 !== 0;

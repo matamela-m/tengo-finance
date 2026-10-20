@@ -1,7 +1,18 @@
 import { useEffect } from 'react';
 import i18n, { loadLanguage } from '../i18n';
 import { contentLanguage } from '../i18n/languages';
+import { setMasked } from '../lib/format';
+import { useReveal } from '../store/reveal';
 import { useSession } from '../store/session';
+
+/** True while discreet mode hides amounts. Components that show amounts re-render when it changes. */
+export function useMasked(): boolean {
+  const discreet = useSession((s) => s.discreet);
+  const until = useReveal((s) => s.until);
+  const masked = discreet && until <= Date.now();
+  setMasked(masked);
+  return masked;
+}
 
 /** Keeps i18next, <html lang> (the language of the shown text) and the theme attribute in sync with the persisted session. */
 export function Preferences() {

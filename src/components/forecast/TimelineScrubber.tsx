@@ -1,7 +1,7 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { DayProjection, Forecast } from '../../engine/types';
-import { formatZAR } from '../../lib/format';
+import { formatZAR, isMasked } from '../../lib/format';
 import { useDates } from '../../lib/useLang';
 import { Icon } from '../Icon';
 import { STATE_ICON } from '../StateChip';
@@ -18,6 +18,7 @@ function niceStep(range: number, ticks: number): number {
 
 /** "R2 000" as "R2k" so the axis stays narrow. */
 function compactZAR(v: number): string {
+  if (isMasked()) return v === 0 ? 'R0' : '•••';
   if (v === 0) return 'R0';
   const abs = Math.abs(v);
   const s = abs >= 1000 ? `R${(abs / 1000).toFixed(abs % 1000 === 0 ? 0 : 1)}k` : `R${abs}`;
@@ -240,7 +241,8 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
       </div>
 
       {showTable && (
-        <div id={`${id}-table`} className="mt-3 max-h-[360px] overflow-auto rounded-2xl border border-line">
+        // Focusable so the scrolling table can be moved with the keyboard (WCAG 2.1.1).
+        <div id={`${id}-table`} tabIndex={0} role="region" aria-label={t('scrubber.tableCaption')} className="mt-3 max-h-[360px] overflow-auto rounded-2xl border border-line">
           <table className="data-table min-w-[460px]">
             <caption className="sr-only">{t('scrubber.tableCaption')}</caption>
             <thead className="sticky top-0">

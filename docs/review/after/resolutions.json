@@ -11,9 +11,21 @@
   "status": "Fixed",
   "resolution": "Phase 1: slider value text includes the assumption, likely range, balance level, bills and income; no cover state word per day."
  },
+ "A11Y-04": {
+  "status": "Fixed",
+  "resolution": "Phase 6: scroll padding keeps focused fields clear of the sticky top bar and the fixed phone tab bar."
+ },
  "A11Y-05": {
   "status": "Partly fixed",
   "resolution": "Phase 1: contradictions removed and fewer dates on Home. A low-numeracy test is in the research kit (Phase 9)."
+ },
+ "A11Y-06": {
+  "status": "Fixed",
+  "resolution": "Phase 6: optional PIN lock (salted PBKDF2 hash on the device, auto-lock, cool-off after five tries), discreet mode that masks amounts until tapped, and quick exit to a neutral page; Playwright covers all three."
+ },
+ "A11Y-08": {
+  "status": "Fixed",
+  "resolution": "Phase 6: the chart table is a focusable, labelled region so it scrolls with the keyboard."
  },
  "A11Y-10": {
   "status": "Fixed",
@@ -43,9 +55,17 @@
   "status": "Fixed",
   "resolution": "Phase 3: stock and transport are work costs, never offered for cuts; vehicle finance and funeral cover never moved."
  },
+ "BEH-06": {
+  "status": "Partly fixed",
+  "resolution": "Phase 6: discreet messages and on-screen masking for shared phones and lock screens. Change-based messages and opt-out tracking by state need a real messaging pilot."
+ },
  "BEH-07": {
   "status": "Fixed",
   "resolution": "Phase 5: stokvel, burial society, family support and informal loans are first-class recurring items that behave like bills; every persona has one."
+ },
+ "BEH-09": {
+  "status": "Prepared for human action",
+  "resolution": "Phase 6: discreet mode and quick exit are built as design inputs; whether people show or hide the screen strategically is a question in the research kit (docs/research)."
  },
  "COMM-04": {
   "status": "Fixed",
@@ -295,6 +315,10 @@
   "status": "Fixed",
   "resolution": "Phase 4: the service worker never caches anything outside the app's own build files and ignores cross-origin requests."
  },
+ "SEC-11": {
+  "status": "Fixed",
+  "resolution": "Phase 6: written safety policy (/safety) for adults only with an 18 or older declaration at account creation (Phase 8), shared-phone protections and coercion guidance; app lock, discreet mode and quick exit built."
+ },
  "SEC-13": {
   "status": "Fixed",
   "resolution": "Phase 3: with core consent withdrawn the forecast is not computed at all; the paused screen offers resume or delete."
@@ -308,8 +332,8 @@
   "resolution": "Phase 2: imports are forecast as of the statement end with a notice and a balance prompt; confidence drops after 3 days and the state is hidden after 14."
  },
  "TECH-02": {
-  "status": "Partly fixed",
-  "resolution": "Phase 4: storage failures are now visible. Error boundaries, a local diagnostic panel and a logging plan follow in Phase 6."
+  "status": "Fixed",
+  "resolution": "Phases 4 and 6: per-page error boundaries, local diagnostics that keep only error name, kind, route pattern and time (tested to exclude personal data), a diagnostics panel in Me, and docs/OBSERVABILITY.md for server logging."
  },
  "TECH-04": {
   "status": "Fixed",

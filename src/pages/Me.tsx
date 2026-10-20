@@ -6,6 +6,8 @@ import { Notice } from '../components/Feedback';
 import { Icon } from '../components/Icon';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { FLAGS } from '../lib/flags';
+import { SharedPhoneCard } from '../components/SharedPhoneCard';
+import { DiagnosticsCard } from '../components/DiagnosticsCard';
 import { PageHeader } from '../components/PageHeader';
 import { StateChip } from '../components/StateChip';
 import { repository } from '../data';
@@ -79,6 +81,8 @@ export default function MePage() {
             <p className="mt-3 text-xs text-muted">{t('personas.fictional')}</p>
           </section>
 
+          <SharedPhoneCard />
+
           <section className="card p-6" aria-label={t('language.label')}>
             <LanguageSelector />
           </section>
@@ -116,6 +120,8 @@ export default function MePage() {
               ))}
             </ul>
           </section>
+
+          <DiagnosticsCard />
 
           <section className="card p-6" aria-labelledby="reset-title">
             <h2 id="reset-title" className="font-heading text-h3 text-ink">

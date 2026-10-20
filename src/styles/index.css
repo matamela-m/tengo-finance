@@ -88,6 +88,9 @@
   html {
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
+    /* Focused fields scroll clear of the sticky top bar and the fixed phone tab bar (WCAG 2.4.11). */
+    scroll-padding-top: 72px;
+    scroll-padding-bottom: 96px;
   }
 
   /* Never let the page pan sideways on phones. clip (not hidden) keeps sticky headers working. */
@@ -227,5 +230,12 @@
   }
   .data-table tbody tr {
     @apply border-t border-line;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 24px;
+    scroll-padding-bottom: 24px;
   }
 }

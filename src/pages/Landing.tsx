@@ -116,7 +116,7 @@ const STEPS: { key: string; icon: IconName }[] = [
 
 const FOOTER = [
   { group: 'product', links: [['how', '#how'], ['explore', '/start']] },
-  { group: 'privacy', links: [['privacyCentre', '/start'], ['fictional', '#privacy']] },
+  { group: 'privacy', links: [['privacyCentre', '/start'], ['fictional', '#privacy'], ['safety', '/safety']] },
   { group: 'about', links: FLAGS.nameStory ? [['name', '/app/me'], ['hackathon', '#how']] : [['hackathon', '#how']] },
 ] as const;
 

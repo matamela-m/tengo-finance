@@ -5,6 +5,7 @@ import { CommandPalette } from './components/CommandPalette';
 import { Preferences } from './components/Preferences';
 import { PersonaProvider } from './data/PersonaProvider';
 import { AppGate } from './layouts/AppGate';
+import { LockProvider } from './components/Lock';
 import { lazy, Suspense } from 'react';
 import { PageLoading } from './components/Feedback';
 import Landing from './pages/Landing';
@@ -21,6 +22,8 @@ const InboxPage = lazy(() => import('./pages/Inbox'));
 const PrivacyPage = lazy(() => import('./pages/Privacy'));
 const MePage = lazy(() => import('./pages/Me'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const ExitPage = lazy(() => import('./pages/Exit'));
+const SafetyPolicy = lazy(() => import('./pages/SafetyPolicy'));
 
 export default function App() {
   return (
@@ -29,6 +32,7 @@ export default function App() {
       <Preferences />
       <SkipLink />
       <A11yProvider>
+      <LockProvider>
       <PersonaProvider>
         <CommandPalette />
         <Suspense fallback={<PageLoading />}>
@@ -36,6 +40,8 @@ export default function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/start" element={<Picker />} />
           <Route path="/consent" element={<Consent />} />
+          <Route path="/exit" element={<ExitPage />} />
+          <Route path="/safety" element={<SafetyPolicy />} />
           <Route path="/app" element={<AppGate />}>
             <Route index element={<HomePage />} />
             <Route path="plan" element={<PlanPage />} />
@@ -51,6 +57,7 @@ export default function App() {
         </Routes>
         </Suspense>
       </PersonaProvider>
+      </LockProvider>
       </A11yProvider>
     </BrowserRouter>
     </ErrorBoundary>

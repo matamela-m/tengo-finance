@@ -3,7 +3,7 @@ import { test, expect, type Page } from '@playwright/test';
 
 // Automated WCAG 2.1 A and AA checks with axe-core on every main screen, light and dark.
 
-const PAGES = ['/', '/start', '/app', '/app/plan', '/app/money', '/app/money/import', '/app/inbox', '/app/privacy', '/app/privacy/data', '/app/privacy/audit', '/app/privacy/review', '/app/privacy/breach', '/app/privacy/delete', '/app/me'];
+const PAGES = ['/', '/start', '/app', '/app/plan', '/app/money', '/app/money/import', '/app/inbox', '/app/privacy', '/app/privacy/data', '/app/privacy/audit', '/app/privacy/review', '/app/privacy/breach', '/app/privacy/delete', '/app/me', '/app/money/setup', '/safety', '/exit'];
 
 async function enter(page: Page, theme: 'light' | 'dark') {
   await page.goto('/404-prime');

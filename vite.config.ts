@@ -36,6 +36,8 @@ function precacheManifest(): Plugin {
 
 export default defineConfig({
   plugins: [react(), precacheManifest()],
+  // Shown in the diagnostics panel on Me.
+  define: { __BUILD_ID__: JSON.stringify(`${process.env.npm_package_version ?? '0'}-${new Date().toISOString().slice(0, 16)}`) },
   build: { manifest: true },
   test: {
     include: ['src/**/*.test.ts'],

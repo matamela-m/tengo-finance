@@ -114,7 +114,8 @@
         "privacyCentre": "Privacy centre",
         "fictional": "Fictional data only",
         "name": "The name Tengo",
-        "hackathon": "Hackathon entry"
+        "hackathon": "Hackathon entry",
+        "safety": "Safety and who it is for"
       }
     },
     "status": "Demo environment. Fictional data."
@@ -768,9 +769,7 @@
     },
     "manage": "Manage messages",
     "smsCount_one": "1 SMS, {{encoding}}, {{chars}} of {{limit}} characters",
-    "smsCount_other": "{{count}} SMS parts, {{encoding}}, {{chars}} characters",
-    "discreet": "Discreet messages",
-    "discreetHint": "No amounts, dates or cover words in the message, for shared phones and lock screens."
+    "smsCount_other": "{{count}} SMS parts, {{encoding}}, {{chars}} characters"
   },
   "messages": {
     "whatsapp": {
@@ -1054,5 +1053,100 @@
     "estimatedNote": "Tengo makes a starting history from these answers, marked as estimated. Confidence stays low until real entries arrive.",
     "submit": "See my date",
     "estimatedTag": "Estimated"
+  },
+  "safety": {
+    "quickExit": "Quick exit",
+    "showAmounts": "Show amounts",
+    "hideAmounts": "Hide amounts",
+    "exitTitle": "Notes",
+    "exitBody": "No notes yet.",
+    "exitBack": "Back"
+  },
+  "safetyPolicy": {
+    "title": "Safety and who Tengo is for",
+    "lead": "How Tengo protects people on shared phones, people who are vulnerable, and children.",
+    "draft": "Draft policy for the pilot, to be reviewed by a lawyer and a safeguarding adviser.",
+    "adults": {
+      "title": "Adults only",
+      "body": "Tengo is for adults. If you are under 18, please do not use it. Saving to an account asks you to confirm you are 18 or older. Tengo does not ask for a date of birth or an ID number, and the fictional demo people are adults."
+    },
+    "shared": {
+      "title": "Shared phones",
+      "body": "You can set a PIN so Tengo locks itself after a few minutes, turn on discreet mode so amounts stay hidden until you tap to show them, and use quick exit to leave Tengo for a plain page straight away. Discreet messages carry no amounts, dates or cover words."
+    },
+    "control": {
+      "title": "If someone controls your money",
+      "body": "No one should make you show your forecast, share your PIN or hand over your money. Tengo never asks for a bank password or PIN. If someone checks your phone, quick exit and the PIN lock help, and you can delete your data at any time from Privacy."
+    },
+    "care": {
+      "title": "Care for people in a hard spot",
+      "body": "Tengo uses plain words, shows estimates and not advice, and never suggests borrowing, skipping a loan or insurance payment, or cutting stock for a business. When money looks short it points to free help from the National Credit Regulator."
+    },
+    "never": {
+      "title": "What Tengo never does",
+      "body": "Tengo does not make lending or credit decisions, does not sell products, and does not share your data with anyone for marketing. Nothing about your forecast is used to judge you."
+    },
+    "help": {
+      "title": "If you need help now",
+      "police": "Police emergency: 10111.",
+      "gbv": "Gender-Based Violence Command Centre: 0800 428 428, free and open all day and night.",
+      "childline": "Childline, for children and anyone worried about a child: 116, free.",
+      "note": "Numbers to be confirmed before launch. Tengo is not an emergency service."
+    }
+  },
+  "lock": {
+    "title": "Tengo is locked",
+    "lead": "Enter your PIN to open Tengo.",
+    "pin": "PIN",
+    "unlock": "Unlock",
+    "wrong": "That PIN is not right. Try again.",
+    "wait": "Too many tries. Wait a moment and try again.",
+    "waitFor_one": "Too many tries. Try again in {{count}} second.",
+    "waitFor_other": "Too many tries. Try again in {{count}} seconds.",
+    "forgot": "Forgot your PIN?",
+    "forgotBody": "Tengo cannot recover a PIN, because it is never stored. To start again, delete all Tengo data on this device. This cannot be undone.",
+    "erase": "Delete all data on this device"
+  },
+  "shared": {
+    "title": "Shared phone safety",
+    "lead": "For a phone other people can pick up.",
+    "lockTitle": "App lock",
+    "lockOff": "Off. Set a 4 to 6 digit PIN to lock Tengo when you are away.",
+    "lockOn": "On. Tengo locks after {{count}} minutes without use.",
+    "newPin": "New PIN",
+    "confirmPin": "Type the PIN again",
+    "pinHint": "4 to 6 digits. It is stored only as a scrambled code on this device and cannot be recovered.",
+    "pinMismatch": "The two PINs do not match.",
+    "pinInvalid": "Use 4 to 6 digits.",
+    "setPin": "Set PIN",
+    "changePin": "Change PIN",
+    "turnOff": "Turn off lock",
+    "currentPin": "Current PIN",
+    "wrongPin": "That PIN is not right.",
+    "autoLock": "Lock after",
+    "minutes_one": "{{count}} minute",
+    "minutes_other": "{{count}} minutes",
+    "lockNow": "Lock now",
+    "discreet": "Discreet mode",
+    "discreetHint": "Hide amounts on screen until you tap Show amounts, and send messages with no amounts or dates.",
+    "quickExitHint": "Quick exit is always at the top of the screen. It hides everything and opens a plain page.",
+    "policy": "Read the safety policy"
+  },
+  "diag": {
+    "title": "Diagnostics",
+    "lead": "For help with a problem. No personal data is kept here, and nothing is sent.",
+    "show": "Show",
+    "hide": "Hide",
+    "build": "Build",
+    "schema": "Data version",
+    "storage": "Storage used",
+    "offline": "Offline copy",
+    "offlineNo": "Not installed yet",
+    "language": "Language",
+    "errors": "Errors noted",
+    "copy": "Copy",
+    "copied": "Copied",
+    "clear": "Clear errors",
+    "cleared": "Errors cleared"
   }
 }

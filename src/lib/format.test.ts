@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { formatDayShort, formatZAR } from './format';
+import { afterEach, describe, expect, it } from 'vitest';
+import { formatDayShort, formatZAR, MASK, setMasked } from './format';
 
 describe('formatZAR', () => {
   it('uses a space thousands separator and no decimals for whole rands', () => {
@@ -19,5 +19,17 @@ describe('formatZAR', () => {
 describe('formatDayShort', () => {
   it('formats as weekday day month', () => {
     expect(formatDayShort('2026-10-23', 'en')).toBe('Fri 23 Oct');
+  });
+});
+
+describe('discreet mode', () => {
+  afterEach(() => setMasked(false));
+  it('masks every amount unless asked not to', () => {
+    setMasked(true);
+    expect(formatZAR(1250)).toBe(MASK);
+    expect(formatZAR(-80, { sign: true })).toBe(MASK);
+    expect(formatZAR(1250, { unmasked: true })).toBe('R1\u00a0250');
+    setMasked(false);
+    expect(formatZAR(1250)).toBe('R1\u00a0250');
   });
 });

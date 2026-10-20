@@ -9,6 +9,8 @@ import { ThemeButton } from '../components/ThemeToggle';
 import { usePersona } from '../data/PersonaProvider';
 import { useSession } from '../store/session';
 import { StorageBanner } from '../components/StorageBanner';
+import { SafetyControls } from '../components/SafetyControls';
+import { useMasked } from '../components/Preferences';
 import { NAV, type NavItem } from './nav';
 
 function SideLink({ item, collapsed }: { item: NavItem; collapsed: boolean }) {
@@ -60,6 +62,7 @@ export function AppLayout({ children }: { children?: ReactNode }) {
   const collapsed = useSession((s) => s.sidebarCollapsed);
   const setCollapsed = useSession((s) => s.setSidebarCollapsed);
   const main = NAV.filter((n) => !n.secondary);
+  const masked = useMasked();
   const secondary = NAV.filter((n) => n.secondary);
 
   return (
@@ -150,6 +153,7 @@ export function AppLayout({ children }: { children?: ReactNode }) {
           </Link>
           <div className="flex items-center gap-1">
             <DemoChip />
+            <SafetyControls compact />
             <NavLink
               to="/app/privacy"
               className={({ isActive }) =>
@@ -164,8 +168,14 @@ export function AppLayout({ children }: { children?: ReactNode }) {
 
         {/* Desktop: the demo chip sits in the sidebar, so the page starts straight away. */}
         <main id="main" className="mx-auto w-full max-w-app flex-1 px-4 pb-28 pt-5 sm:px-6 md:px-8 lg:px-10 lg:pb-16 lg:pt-8">
+          <div className="-mt-2 mb-3 hidden justify-end lg:flex">
+            <SafetyControls />
+          </div>
           <StorageBanner />
-          {children ?? <Outlet />}
+          {/* Re-rendered when discreet masking changes, so every amount follows it. */}
+          <div key={masked ? 'masked' : 'shown'} className="contents">
+            {children ?? <Outlet />}
+          </div>
         </main>
 
         {/* Mobile and tablet bottom tab bar */}

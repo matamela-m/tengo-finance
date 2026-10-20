@@ -245,3 +245,58 @@ test('Tshivenda headings use Inter so words never mix fonts', async ({ page }) =
   const zulu = await page.getByRole('heading', { level: 1 }).evaluate((el) => getComputedStyle(el).fontFamily);
   expect(zulu.startsWith('"Figtree Variable"')).toBe(true);
 });
+
+/** Stores an imported record for Thabo, built in the page so dates are relative to the browser's today. */
+async function seedImported(page: import('@playwright/test').Page, opts: { days: number; rentMonthsAgo?: number[]; balance: number }) {
+  await page.goto('/');
+  await page.evaluate((o) => {
+    const iso = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    const today = new Date();
+    const tx: { id: string; date: string; description: string; amount: number; category: string }[] = [];
+    for (let i = o.days; i >= 1; i--) {
+      const d = new Date(today);
+      d.setDate(d.getDate() - i);
+      tx.push({ id: `s${i}`, date: iso(d), description: 'Groceries', amount: -80, category: 'spend' });
+      if (d.getDay() === 5) tx.push({ id: `p${i}`, date: iso(d), description: 'Wages', amount: 1500, category: 'income' });
+    }
+    for (const m of o.rentMonthsAgo ?? []) {
+      const d = new Date(today.getFullYear(), today.getMonth() - m, 1);
+      tx.push({ id: `r${m}`, date: iso(d), description: 'Rent', amount: -900, category: 'bill' });
+    }
+    const now = new Date().toISOString();
+    localStorage.setItem('tengo.session.v1', JSON.stringify({ state: { language: 'en', theme: 'light', activePersonaId: 'thabo', sidebarCollapsed: false }, version: 0 }));
+    localStorage.setItem(
+      'tengo.data.v1',
+      JSON.stringify({
+        personas: {
+          thabo: {
+            record: { personaId: 'thabo', transactions: tx, balance: o.balance, source: 'import', seededOn: iso(today), balanceDate: iso(today), billDecisions: {}, createdAt: now, updatedAt: now },
+            consent: { core: true, messages: false, analytics: false, decidedAt: now },
+            audit: [],
+            reviews: [],
+          },
+        },
+        receipts: [],
+      }),
+    );
+  }, opts);
+}
+
+test('a 10 day history says Not enough to tell and shows no figures', async ({ page }) => {
+  await seedImported(page, { days: 10, balance: 1500 });
+  await page.goto('/app');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Not enough to tell');
+  const budget = page.locator('section[aria-labelledby="sts-title"]');
+  await expect(budget).toContainText('Not shown yet');
+  await expect(page.getByText(/at least 14 days of money history/)).toBeVisible();
+});
+
+test('a bill that looks unpaid asks the person, and the answer clears the question', async ({ page }) => {
+  await seedImported(page, { days: 100, rentMonthsAgo: [3, 2], balance: 3000 });
+  await page.goto('/app');
+  await expect(page.getByText(/Rent \(R.*\) looks unpaid/)).toBeVisible();
+  await page.getByRole('button', { name: 'I still owe it' }).click();
+  await expect(page.getByText(/looks unpaid/)).toHaveCount(0);
+  await page.goto('/app/privacy/audit');
+  await expect(page.getByText('Answered a question about a bill that looked unpaid')).toBeVisible();
+});

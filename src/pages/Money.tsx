@@ -6,6 +6,7 @@ import { EmptyState } from '../components/Feedback';
 import { Icon } from '../components/Icon';
 import { PageHeader } from '../components/PageHeader';
 import { Segmented } from '../components/Segmented';
+import { BalanceUpdate } from '../components/BalanceUpdate';
 import { TransactionEditor } from '../components/TransactionEditor';
 import { SpendingCard } from '../components/SpendingCard';
 import { useReadyPersona } from '../data/PersonaProvider';
@@ -23,6 +24,8 @@ export default function MoneyPage() {
   const { t } = useTranslation();
   const d = useDates();
   const { record, forecast, today } = useReadyPersona();
+  const oneOffIds = useMemo(() => new Set(forecast.oneOffs.map((o) => o.id)), [forecast]);
+  const [editBalance, setEditBalance] = useState(false);
   const [filter, setFilter] = useState<Filter>('all');
   const [query, setQuery] = useState('');
   const [shown, setShown] = useState(PAGE);
@@ -112,7 +115,7 @@ export default function MoneyPage() {
                     {g.items.map((tx) => (
                       <li key={tx.id} className="-mx-2 flex items-center gap-2 rounded-lg px-2 transition-colors duration-150 hover:bg-surface-2/60">
                         <div className="min-w-0 flex-1">
-                          <TransactionRow tx={tx} />
+                          <TransactionRow tx={tx} oneOff={oneOffIds.has(tx.id)} />
                         </div>
                         <button
                           type="button"
@@ -157,7 +160,13 @@ export default function MoneyPage() {
                 <dd className="num mt-2 font-heading text-[26px] font-bold leading-none tracking-[-0.03em] text-ink">{formatZAR(Math.round(last30.out))}</dd>
               </div>
             </dl>
-            <p className="num mt-4 text-sm text-muted">{t('money.balance', { amount: formatZAR(record.balance) })}</p>
+            <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
+              <p className="num text-sm text-muted">{t('money.balance', { amount: formatZAR(record.balance) })}</p>
+              <button type="button" className="btn-ghost -mr-3 min-h-[44px] px-3 text-sm text-accent" aria-expanded={editBalance} onClick={() => setEditBalance((v) => !v)}>
+                {t('balance.update')}
+              </button>
+            </div>
+            {editBalance && <BalanceUpdate initial={record.balance} onDone={() => setEditBalance(false)} />}
           </section>
 
           <SpendingCard transactions={record.transactions} today={today} />

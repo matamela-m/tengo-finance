@@ -20,7 +20,7 @@ export default function Review() {
   const [contact, setContact] = useState<ReviewRequest['contact']>('inbox');
   const [sent, setSent] = useState<ReviewRequest | null>(null);
   const [busy, setBusy] = useState(false);
-  const headline = `${t(headlineKey(forecast))} ${d.dayShort(forecast.headlineDate)} (${t(`state.${forecast.state}`)})`;
+  const headline = `${t(headlineKey(forecast))} ${d.dayShort(forecast.headlineDate)} (${t(`state.${forecast.status}`)})`;
 
   const submit = async () => {
     setBusy(true);

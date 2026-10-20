@@ -51,10 +51,14 @@ describe('next money', () => {
     expect(f.nextMoney!.typical).toBe(addDays('2026-10-06', 8));
   });
 
-  it('falls back to a 30 day plan when there is no income', () => {
+  // Changed in build 2: no income no longer invents a next-money date 30 days out.
+  it('does not invent next money when there is no income, and says there is not enough to tell', () => {
     const f = forecast({ transactions: history.filter((t) => t.amount < 0), balance: 5000, today });
-    expect(f.nextMoney?.pattern).toBe('unknown');
-    expect(f.nextMoney?.typical).toBe(addDays(today, 30));
+    expect(f.nextMoney).toBeNull();
+    expect(f.income.status).toBe('none');
+    expect(f.status).toBe('unclear');
+    expect(f.unclearReason).toBe('noIncome');
+    expect(f.coverTarget).toEqual({ kind: 'horizon', typical: addDays(today, 30), latest: addDays(today, 30) });
   });
 });
 
@@ -86,11 +90,13 @@ describe('cover state', () => {
     expect(f.dailyBudget).toBe(0);
   });
 
-  it('band runs from the pessimistic to the optimistic zero date', () => {
+  // Changed in build 2: the band is calibrated to a minimum width, so it can be wider than the raw paths.
+  it('band contains the pessimistic to optimistic zero dates and is never zero width', () => {
     const f = forecast({ transactions: history, balance: 500, today });
-    expect(f.band.from).toBe(f.runway.pessimistic);
-    expect(f.band.to).toBe(f.runway.optimistic);
+    expect(f.band.from <= f.runway.pessimistic!).toBe(true);
+    expect(f.band.to >= f.runway.optimistic!).toBe(true);
     expect(f.band.from <= f.headlineDate && f.headlineDate <= f.band.to).toBe(true);
+    expect(f.band.from < f.band.to).toBe(true);
   });
 });
 
@@ -113,12 +119,14 @@ describe('thin data', () => {
     expect(f.rates.pessimistic - f.rates.central).toBeCloseTo((normal.pessimistic - normal.central) * 1.5, 6);
   });
 
-  it('copes with no history at all', () => {
+  // Changed in build 2: no history is Not enough to tell, never Enough.
+  it('copes with no history at all and says there is not enough to tell', () => {
     const f = forecast({ transactions: [], balance: 1000, today });
     expect(f.historyDays).toBe(0);
     expect(f.rates.central).toBe(0);
     expect(f.beyondHorizon).toBe(true);
-    expect(f.state).toBe('enough');
+    expect(f.status).toBe('unclear');
+    expect(f.unclearReason).toBe('thin');
   });
 });
 

@@ -12,9 +12,11 @@ import { IconTile } from '../ui';
 export function HelpCard() {
   const { t } = useTranslation();
   const d = useDates();
-  const { record, today } = useReadyPersona();
+  const { input, forecast } = useReadyPersona();
   const [showAll, setShowAll] = useState(false);
-  const plan = useMemo(() => helpPlan({ transactions: record.transactions, balance: record.balance, today }), [record, today]);
+  const plan = useMemo(() => helpPlan(input), [input]);
+  // Nothing to suggest until Tengo can tell.
+  if (forecast.status === 'unclear') return null;
 
   if (!plan.target) {
     return (

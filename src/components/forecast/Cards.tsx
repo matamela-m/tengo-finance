@@ -5,7 +5,7 @@ import { formatZAR } from '../../lib/format';
 import { useDates } from '../../lib/useLang';
 import { Icon } from '../Icon';
 
-export function TransactionRow({ tx, compact = false }: { tx: Transaction; compact?: boolean }) {
+export function TransactionRow({ tx, compact = false, oneOff = false }: { tx: Transaction; compact?: boolean; oneOff?: boolean }) {
   const { t } = useTranslation();
   const d = useDates();
   const icon = tx.category === 'income' ? 'arrowDown' : tx.category === 'bill' ? 'receipt' : 'arrowUp';
@@ -19,6 +19,7 @@ export function TransactionRow({ tx, compact = false }: { tx: Transaction; compa
         <p className="truncate text-[15px] font-medium">{tx.description}</p>
         <p className="num text-xs text-subtle">
           {d.dayShort(tx.date)} · {t(`category.${tx.category}`)}
+          {oneOff && ` · ${t('edit.oneOff')}`}
         </p>
       </div>
       <p className={`num shrink-0 text-[15px] font-semibold ${tx.amount > 0 ? 'text-enough' : 'text-ink'}`}>

@@ -8,7 +8,8 @@ import { Icon } from '../Icon';
 export function RangeBand({ forecast }: { forecast: Forecast }) {
   const { t } = useTranslation();
   const d = useDates();
-  const { band, headlineDate, nextMoney, today, state, confidence } = forecast;
+  const { band, headlineDate, nextMoney, today, confidence } = forecast;
+  const state = forecast.status === 'unclear' ? 'tight' : forecast.status;
   const end = [band.to, nextMoney?.latest ?? today, addDays(today, 14)].reduce((a, b) => (a > b ? a : b));
   const span = Math.max(1, daysBetween(today, end) + 2);
   const pct = (iso: string) => `${Math.min(100, Math.max(0, (daysBetween(today, iso) / span) * 100))}%`;
@@ -37,7 +38,7 @@ export function RangeBand({ forecast }: { forecast: Forecast }) {
             borderColor: `var(--color-${state})`,
           }}
         />
-        {nextMoney && nextMoney.pattern !== 'unknown' && (
+        {nextMoney && (
           <div className="absolute top-1 flex -translate-x-1/2 flex-col items-center" style={{ left: pct(nextMoney.typical) }}>
             <span className="h-2.5 w-2.5 rounded-full bg-accent" />
             <span className="h-5 w-px bg-accent" />
@@ -55,7 +56,7 @@ export function RangeBand({ forecast }: { forecast: Forecast }) {
           <span aria-hidden className="h-2 w-4 rounded-full border" style={{ background: `var(--color-${state}-soft)`, borderColor: `var(--color-${state})` }} />
           {t('band.legendRange')}
         </li>
-        {nextMoney && nextMoney.pattern !== 'unknown' && (
+        {nextMoney && (
           <li className="flex items-center gap-1.5">
             <span aria-hidden className="flex h-3 w-2.5 flex-col items-center">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />

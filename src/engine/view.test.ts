@@ -10,26 +10,34 @@ import { homeView, type HomeView } from './view';
 /** Every check the Home rule promises. Fails with the case name so a broken case is easy to find. */
 function expectConsistent(name: string, f: Forecast, v: HomeView) {
   const at = `${name} (${f.today})`;
-  expect(v.state, at).toBe(f.state);
-  expect(v.gauge, at).toBe({ short: 1, tight: 2, enough: 3 }[f.state]);
-  expect(v.summaryKey, at).toBe(f.reserveLimited ? 'tightReserve' : f.state);
-  if (f.reserveLimited) expect(f.state, at).toBe('tight');
-  const labels = { short: ['shortFrom'], tight: ['tightUntil'], enough: ['enoughUntil', 'enoughBeyond'] }[f.state];
+  expect(v.status, at).toBe(f.status);
+  expect(v.gauge, at).toBe({ unclear: 0, short: 1, tight: 2, enough: 3 }[f.status]);
+  const labels = { unclear: ['unclear'], short: ['shortFrom'], tight: ['tightUntil'], enough: ['enoughUntil', 'enoughBeyond'] }[f.status];
   expect(labels, at).toContain(v.headline.label);
+
+  if (f.status === 'unclear') {
+    // Not enough to tell: no date, no budget, no next money, no cover words.
+    expect(v.headline.date, at).toBeNull();
+    expect(v.budget.kind, at).toBe('unclear');
+    expect(v.nextMoney, at).toBeNull();
+    expect(v.summaryKey.startsWith('unclear'), at).toBe(true);
+    return;
+  }
   expect(v.headline.date, at).toBe(f.headlineDate);
+  expect(v.summaryKey.startsWith(f.status) || (v.summaryKey === 'tightReserve' && f.status === 'tight'), at).toBe(true);
+  if (f.reserveLimited) expect(f.status, at).toBe('tight');
 
   // The daily budget never shows a number when Short.
-  if (f.state === 'short') {
+  if (f.status === 'short') {
     expect(v.budget.kind, at).toBe('notAdvised');
-    expect(v.gapDays, at).toBeGreaterThanOrEqual(0);
   } else {
-    // Enough always leaves something to spend; Tight may have nothing spare, said in words, never R0.
-    if (f.state === 'enough') expect(v.budget.kind, at).toBe('amount');
-    else expect(['amount', 'nothingSpare'], at).toContain(v.budget.kind);
+    // Enough always leaves something to spend unless today's payment is pending; Tight may have nothing
+    // spare, said in words, never R0.
+    const allowed = f.status === 'enough' ? ['amount', 'pending'] : ['amount', 'nothingSpare', 'pending'];
+    expect(allowed, at).toContain(v.budget.kind);
     if (v.budget.kind === 'amount') {
       expect(v.budget.amount, at).toBeGreaterThan(0);
       expect(v.budget.amount % 5, at).toBe(0);
-      expect(v.budget.amount, at).toBeGreaterThanOrEqual(0);
     }
     expect(v.gapDays, at).toBe(0);
   }
@@ -37,13 +45,16 @@ function expectConsistent(name: string, f: Forecast, v: HomeView) {
   // Exactly one next-money date, shared by the stat tile and the chart.
   expect(v.chart.assumption, at).toBe('ifUsual');
   expect(v.chart.nextMoneyDate, at).toBe(v.nextMoney?.date ?? null);
+  if (f.nextMoney === null) expect(v.nextMoney, at).toBeNull();
   if (v.nextMoney) {
     const firstIncome = f.timeline.find((d) => d.incomeToday > 0);
     if (firstIncome) expect(firstIncome.date, at).toBe(v.nextMoney.date);
     // The headline date agrees with the state: Short runs out before next money, the others reach it.
-    if (f.state === 'short') expect(v.headline.date <= v.nextMoney.date, at).toBe(true);
-    else expect(f.beyondHorizon || v.headline.date >= v.nextMoney.date, at).toBe(true);
+    if (f.status === 'short') expect(v.headline.date! <= v.nextMoney.date, at).toBe(true);
+    else expect(f.beyondHorizon || v.headline.date! >= v.nextMoney.date, at).toBe(true);
   }
+  // Paused or irregular income never shows Enough with high confidence.
+  if (f.income.status === 'paused' || f.income.status === 'irregular') expect(f.confidence, at).toBe('low');
 }
 
 function check(name: string, input: ForecastInput) {
@@ -61,7 +72,7 @@ describe('Home view model', () => {
         const transactions = generateHistory(p.id, today);
         const balance = startingBalance(transactions, today, p.startState);
         const f = check(p.id, { transactions, balance, today });
-        seen.add(f.state);
+        seen.add(f.status);
       }
     }
     expect([...seen].sort()).toEqual(['enough', 'short', 'tight']);
@@ -103,8 +114,8 @@ describe('Home view model', () => {
   it('shows Not advised with the usual spend when Short', () => {
     const f = forecast({ transactions: steadyHistory(today, 90), balance: 300, today });
     const v = homeView(f);
-    expect(v.state).toBe('short');
-    expect(v.budget).toMatchObject({ kind: 'notAdvised', usual: Math.round(f.rates.central) });
+    expect(v.status).toBe('short');
+    expect(v.budget).toMatchObject({ kind: 'notAdvised', usual: Math.round(f.rates.central), gapDays: 2 });
     expect(v.headline.label).toBe('shortFrom');
   });
 

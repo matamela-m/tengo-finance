@@ -12,28 +12,35 @@ export class TemplateMessageWriter implements MessageWriter {
     const t = i18n.getFixedT(language);
     // Messages follow the same Home rule as the screen: one next-money date, no budget figure when Short.
     const v = homeView(f);
-    const date = formatDayShort(v.headline.date, language);
+    const date = v.headline.date ? formatDayShort(v.headline.date, language) : '';
     const next = v.nextMoney ? formatDayShort(v.nextMoney.date, language) : null;
     const vars = {
       name,
       date,
-      state: t(`state.${v.state}`),
+      state: t(`state.${v.status}`),
       sts: v.budget.kind === 'amount' ? formatZAR(v.budget.amount) : '',
       next: next ?? '',
-      count: f.gapDays,
+      count: v.gapDays,
     };
 
+    if (v.status === 'unclear') {
+      const text = channel === 'sms' ? t('messages.sms.unclear', vars) : [t('messages.whatsapp.greeting', vars), t('messages.whatsapp.unclear', vars)].join('\n');
+      return { channel, language, text };
+    }
+
+    const budgetLine =
+      v.budget.kind === 'amount' ? t('messages.whatsapp.sts', vars) : v.budget.kind === 'pending' ? t('messages.whatsapp.stsPending', vars) : t('messages.whatsapp.stsNotAdvised', vars);
     if (channel === 'sms') {
-      const parts = [t(`messages.sms.${f.state}`, vars), next ? t('messages.sms.next', vars) : ''];
+      const parts = [t(`messages.sms.${v.status}`, vars), next ? t('messages.sms.next', vars) : ''];
       return { channel, language, text: parts.filter(Boolean).join(' ') };
     }
 
     const lines = [
       t('messages.whatsapp.greeting', vars),
-      t(`messages.whatsapp.${f.state}`, vars),
-      v.budget.kind === 'amount' ? t('messages.whatsapp.sts', vars) : t('messages.whatsapp.stsNotAdvised', vars),
+      t(`messages.whatsapp.${v.status}`, vars),
+      budgetLine,
       next ? t('messages.whatsapp.next', vars) : t('messages.whatsapp.noNext'),
-      t(`messages.whatsapp.tip.${f.state}`, vars),
+      t(`messages.whatsapp.tip.${v.status}`, vars),
     ];
     return { channel, language, text: lines.join('\n') };
   }

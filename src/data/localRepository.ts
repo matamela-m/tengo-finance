@@ -1,4 +1,4 @@
-import type { ISODate, Transaction } from '../engine/types';
+import type { BillDecision, ISODate, Transaction } from '../engine/types';
 import type {
   AuditEntry,
   AuditType,
@@ -98,7 +98,7 @@ export class LocalRepository implements TengoRepository {
     return slot.record;
   }
 
-  async replaceHistory(personaId: PersonaId, transactions: Transaction[], balance: number): Promise<PersonaRecord> {
+  async replaceHistory(personaId: PersonaId, transactions: Transaction[], balance: number, balanceDate?: ISODate): Promise<PersonaRecord> {
     await this.wait();
     const data = this.read();
     const slot = this.slot(data, personaId);
@@ -109,11 +109,48 @@ export class LocalRepository implements TengoRepository {
       balance,
       source: 'import',
       seededOn: slot.record?.seededOn ?? now.slice(0, 10),
+      balanceDate,
+      billDecisions: {},
       createdAt: slot.record?.createdAt ?? now,
       updatedAt: now,
     };
     this.write(data);
     return slot.record;
+  }
+
+  /** Applies a change to an existing record, marks seeds as edited and saves. */
+  private change(personaId: PersonaId, fn: (record: PersonaRecord) => void): PersonaRecord {
+    const data = this.read();
+    const record = this.slot(data, personaId).record;
+    if (!record) throw new Error('No record for persona');
+    fn(record);
+    if (record.source === 'seed') record.source = 'edited';
+    record.updatedAt = new Date().toISOString();
+    this.write(data);
+    return record;
+  }
+
+  async addTransactions(personaId: PersonaId, transactions: Transaction[], balance?: number): Promise<PersonaRecord> {
+    await this.wait();
+    return this.change(personaId, (r) => {
+      r.transactions = [...r.transactions, ...transactions];
+      if (balance !== undefined) r.balance = balance;
+    });
+  }
+
+  async setBalance(personaId: PersonaId, balance: number, balanceDate: ISODate): Promise<PersonaRecord> {
+    await this.wait();
+    return this.change(personaId, (r) => {
+      r.balance = balance;
+      r.balanceDate = balanceDate;
+    });
+  }
+
+  async setBillDecision(personaId: PersonaId, missedBillId: string, decision: BillDecision): Promise<PersonaRecord> {
+    await this.wait();
+    return this.change(personaId, (r) => {
+      r.billDecisions = { ...(r.billDecisions ?? {}), [missedBillId]: decision };
+    });
   }
 
   async updateTransaction(personaId: PersonaId, transactionId: string, patch: TransactionPatch): Promise<PersonaRecord> {

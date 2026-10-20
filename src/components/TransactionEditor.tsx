@@ -6,6 +6,7 @@ import type { Category, Transaction } from '../engine/types';
 import { parseAmount } from '../lib/csv';
 import { Drawer } from './Drawer';
 import { Notice } from './Feedback';
+import { Toggle } from './Toggle';
 
 const CATEGORIES: Category[] = ['income', 'spend', 'bill'];
 
@@ -17,6 +18,7 @@ export function TransactionEditor({ tx, onClose }: { tx: Transaction | null; onC
   const [description, setDescription] = useState('');
   const [amount, setAmount] = useState('');
   const [category, setCategory] = useState<Category>('spend');
+  const [oneOff, setOneOff] = useState(false);
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
@@ -24,6 +26,7 @@ export function TransactionEditor({ tx, onClose }: { tx: Transaction | null; onC
     setDescription(tx.description);
     setAmount(String(tx.amount));
     setCategory(tx.category);
+    setOneOff(Boolean(tx.oneOff));
   }, [tx]);
 
   if (!tx) return null;
@@ -37,8 +40,9 @@ export function TransactionEditor({ tx, onClose }: { tx: Transaction | null; onC
     if (description.trim() !== tx.description) changes.push('description');
     if (parsed !== tx.amount) changes.push('amount');
     if (category !== tx.category) changes.push('category');
+    if (oneOff !== Boolean(tx.oneOff)) changes.push('one-off');
     if (changes.length) {
-      await updateTransaction(tx.id, { description: description.trim(), amount: parsed, category }, { name: tx.description, fields: changes.join(', ') });
+      await updateTransaction(tx.id, { description: description.trim(), amount: parsed, category, oneOff }, { name: tx.description, fields: changes.join(', ') });
     }
     setSaving(false);
     announce(changes.length ? t('a11y.saved') : t('a11y.noChanges'));
@@ -100,6 +104,7 @@ export function TransactionEditor({ tx, onClose }: { tx: Transaction | null; onC
             ))}
           </div>
         </fieldset>
+        {category !== 'bill' && <Toggle checked={oneOff} onChange={setOneOff} label={t('edit.oneOff')} description={t('edit.oneOffHint')} />}
         <Notice>{t('edit.auditNote')}</Notice>
       </form>
     </Drawer>

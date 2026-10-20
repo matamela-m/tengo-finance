@@ -62,7 +62,7 @@ function ProductPreview() {
   const summary = t('landing.previewCaption', {
     label: t(headlineKey(f)).toLowerCase(),
     date: d.weekdayLong(f.headlineDate),
-    state: t(`state.${f.state}`),
+    state: t(`state.${f.status}`),
     amount: budget,
   });
   return (
@@ -80,8 +80,8 @@ function ProductPreview() {
           <div className="min-w-0">
             <DateHero forecast={f} as="p" size="md" />
             <div className="mt-3 flex items-center gap-3">
-              <StateChip state={f.state} />
-              <CoverBars state={f.state} size={64} />
+              <StateChip state={f.status} />
+              <CoverBars state={f.status} size={64} />
             </div>
             <div className="mt-5 border-t border-line pt-4">
               <RangeBand forecast={f} />

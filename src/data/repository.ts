@@ -1,4 +1,4 @@
-import type { ISODate, Transaction } from '../engine/types';
+import type { BillDecision, ISODate, Transaction } from '../engine/types';
 import type { PersonaId } from './seed/personas';
 
 export type RecordSource = 'seed' | 'import' | 'edited';
@@ -11,6 +11,10 @@ export interface PersonaRecord {
   source: RecordSource;
   /** The date the seed was generated for. Seeds refresh daily until the user changes them. */
   seededOn: ISODate;
+  /** The day the balance was true for. Missing means today for seeds and the statement end for imports. */
+  balanceDate?: ISODate;
+  /** Answers about bills that looked unpaid, keyed by the missed bill id. */
+  billDecisions?: Record<string, BillDecision>;
   createdAt: string;
   updatedAt: string;
 }
@@ -32,6 +36,9 @@ export type AuditType =
   | 'data.exported'
   | 'statement.imported'
   | 'transaction.edited'
+  | 'transaction.added'
+  | 'balance.updated'
+  | 'bill.answered'
   | 'review.requested'
   | 'forecast.paused'
   | 'forecast.resumed';
@@ -65,6 +72,7 @@ export interface TransactionPatch {
   description?: string;
   amount?: number;
   category?: Transaction['category'];
+  oneOff?: boolean;
 }
 
 /**
@@ -75,8 +83,13 @@ export interface TransactionPatch {
 export interface TengoRepository {
   /** Loads the persona's record, creating it from seed data when missing or stale. */
   getRecord(personaId: PersonaId, today: ISODate): Promise<PersonaRecord>;
-  replaceHistory(personaId: PersonaId, transactions: Transaction[], balance: number): Promise<PersonaRecord>;
+  /** `balanceDate` is the day the balance was true for, usually the statement end or today. */
+  replaceHistory(personaId: PersonaId, transactions: Transaction[], balance: number, balanceDate?: ISODate): Promise<PersonaRecord>;
   updateTransaction(personaId: PersonaId, transactionId: string, patch: TransactionPatch): Promise<PersonaRecord>;
+  /** Adds entries such as a confirmed payment or cash. Does not change the balance unless `balance` is given. */
+  addTransactions(personaId: PersonaId, transactions: Transaction[], balance?: number): Promise<PersonaRecord>;
+  setBalance(personaId: PersonaId, balance: number, balanceDate: ISODate): Promise<PersonaRecord>;
+  setBillDecision(personaId: PersonaId, missedBillId: string, decision: BillDecision): Promise<PersonaRecord>;
 
   getConsent(personaId: PersonaId): Promise<ConsentRecord | null>;
   setConsent(personaId: PersonaId, consent: Omit<ConsentRecord, 'decidedAt'>): Promise<ConsentRecord>;

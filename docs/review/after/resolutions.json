@@ -19,6 +19,34 @@
   "status": "Fixed",
   "resolution": "Phase 1: one daily number per state, chart labelled as the if-usual case, What helps uses the same typical next-money date."
  },
+ "DATA-02": {
+  "status": "Partly fixed",
+  "resolution": "Phase 2: state downgrades for the reserve and paused income reduce some false reassurance; lumpy outflows are still a daily rate, not events."
+ },
+ "DATA-03": {
+  "status": "Fixed",
+  "resolution": "Phase 2: calibrated band covers about 80 percent at every lead time up to 20 days (54 percent within 6 days before); method in README and COMPARISON.md."
+ },
+ "DATA-04": {
+  "status": "Fixed",
+  "resolution": "Phase 2: no Enough under 28 days, under 14 days Not enough to tell, and usual spend never below the plain outflow average under 45 days."
+ },
+ "DATA-05": {
+  "status": "Partly fixed",
+  "resolution": "Phase 2: band coverage improves under every shock; a first missed payout is still not caught until two usual gaps pass (COMPARISON.md)."
+ },
+ "DATA-06": {
+  "status": "Partly fixed",
+  "resolution": "Phase 2: interval window widened to the 10th to 90th percentile gaps and day 0 payments handled; next money inside the window rose from 85.8 to 90.1 percent on the 90 day slice."
+ },
+ "DATA-08": {
+  "status": "Partly fixed",
+  "resolution": "Phase 2: a conservative share of small daily income now counts in the state. Alarm precision is not tracked in the field."
+ },
+ "DATA-09": {
+  "status": "Partly fixed",
+  "resolution": "Phase 2: src/engine/accuracy.test.ts runs a backtest slice in npm test and CI with thresholds. Field accuracy logging needs a pilot."
+ },
  "INV-03": {
   "status": "Fixed",
   "resolution": "Phase 1: one rule per screen enforced by the Home view model and its tests."
@@ -26,6 +54,10 @@
  "JUDGE-01": {
   "status": "Fixed",
   "resolution": "Phase 1: homeView() in src/engine/view.ts drives every Home element; view.test.ts checks every persona on 60 days, balance sweeps and edge cases for consistency."
+ },
+ "JUDGE-04": {
+  "status": "Fixed",
+  "resolution": "Phase 2: paused income, no-income state, payday-today rule, stale-balance handling and data age, each with unit tests; stress cases S01 to S13 are permanent tests (src/engine/stress.test.ts)."
  },
  "JUDGE-10": {
   "status": "Fixed",
@@ -43,21 +75,57 @@
   "status": "Fixed",
   "resolution": "Phase 1: Enough is used only for the Enough state; Tight until for Tight."
  },
+ "PROD-01": {
+  "status": "Partly fixed",
+  "resolution": "Phase 2: overdraft depth is shown as its own notice. Multiple accounts follow in Phase 5; facility limits and scheduled debit orders need a bank data contract."
+ },
  "PROD-03": {
   "status": "Fixed",
   "resolution": "Phase 1: state-specific headline (Enough until, Tight until, Short from); daily budget follows the state; chart readout labelled If money lands as usual."
  },
+ "RISK-01": {
+  "status": "Fixed",
+  "resolution": "Phase 2: income is paused after more than two usual gaps; no next money is counted, confidence is low, room to lend is R0 and Home says Income looks paused (S09, S11, S11b)."
+ },
  "RISK-02": {
-  "status": "Partly fixed",
-  "resolution": "Phase 1: bills within a week after next money, less a low next payment, are reserved before the daily budget and Enough becomes Tight when a heavy week would eat into them. More engine work in Phase 2."
+  "status": "Fixed",
+  "resolution": "Phases 1 and 2: bills due in the week after next money (less a low payment) are kept back, Enough becomes Tight if a heavy week would eat into them, and lending keeps that reserve (S13: budget R150, lend R90, was R400 and R1 090)."
+ },
+ "RISK-03": {
+  "status": "Fixed",
+  "resolution": "Phase 2: no income gives Not enough to tell with the plain runway as a fact; no invented next money; nothing to lend (S02, S02b)."
  },
  "RISK-04": {
   "status": "Fixed",
   "resolution": "Phase 1: no budget figure when Short, usual spend shown, disclaimer beside the figure on Home."
  },
+ "RISK-05": {
+  "status": "Fixed",
+  "resolution": "Phase 2: loans, refunds and listed words, large unrepeated amounts and anything marked one-off are left out of rates and income; under 45 days the person is asked instead (S04, S04b, S08, S08b)."
+ },
+ "RISK-06": {
+  "status": "Partly fixed",
+  "resolution": "Phase 2: one skipped month still counts, rising bills use the latest amount, missed bills are asked about. Weekly bill cycles and a bill editor are not built."
+ },
+ "RISK-07": {
+  "status": "Fixed",
+  "resolution": "Phase 2: month-end uplift from history when two month ends show it, otherwise a heavier heavy path from the 25th (S06 now Short from 28 Oct, was Enough until 16 Nov)."
+ },
+ "RISK-08": {
+  "status": "Fixed",
+  "resolution": "Phase 2: calibrated minimum band, never zero width; confidence also drops for paused or irregular income and old balances; no room to lend at low confidence."
+ },
+ "RISK-10": {
+  "status": "Fixed",
+  "resolution": "Phase 2: a payment due today is pending, not pushed a week; Home offers It has come in (S12)."
+ },
  "RISK-11": {
   "status": "Fixed",
   "resolution": "Phase 1: renamed Room to lend, keeps the reserve, adds Only lend what you could manage without getting back."
+ },
+ "RISK-12": {
+  "status": "Fixed",
+  "resolution": "Phase 2: small daily income counts in the headline and chart with the same shares (1, 0.5, 0.25), only with a rhythm and 28 days of history."
  },
  "SEC-01": {
   "status": "Fixed",
@@ -70,6 +138,14 @@
  "SEC-06": {
   "status": "Partly fixed",
   "resolution": "Phase 1: messages no longer pre-ticked. Provable server consent records follow in Phase 8."
+ },
+ "TECH-01": {
+  "status": "Fixed",
+  "resolution": "Phase 2: imports are forecast as of the statement end with a notice and a balance prompt; confidence drops after 3 days and the state is hidden after 14."
+ },
+ "TECH-11": {
+  "status": "Fixed",
+  "resolution": "Phase 2: today is rechecked on visibility change and every minute, so the forecast moves on after midnight."
  },
  "UX-01": {
   "status": "Fixed",

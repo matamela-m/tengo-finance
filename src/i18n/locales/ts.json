@@ -28,7 +28,8 @@
   "state": {
     "enough": "Enough",
     "tight": "Tight",
-    "short": "Short"
+    "short": "Short",
+    "unclear": "Not enough to tell"
   },
   "confidence": {
     "high": "High",
@@ -350,7 +351,9 @@
     "shortFrom": "Short from",
     "gap_one": "{{count}} day before your next money",
     "gap_other": "{{count}} days before your next money",
-    "tightUntil": "Tight until"
+    "tightUntil": "Tight until",
+    "unclear": "Not enough to tell",
+    "unclearLead": "Your date"
   },
   "band": {
     "between": "Likely between {{from}} and {{to}}",
@@ -372,7 +375,13 @@
     "notAdvisedWhy_one": "At your usual {{usual}} a day, money runs out {{count}} day before your next money.",
     "notAdvisedWhy_other": "At your usual {{usual}} a day, money runs out {{count}} days before your next money.",
     "disclaimer": "An estimate from your own history, not advice.",
-    "nothingSpare": "Nothing spare"
+    "nothingSpare": "Nothing spare",
+    "pending": "Waiting for today's money",
+    "pendingWhy": "Your usual payment is due today. The budget is worked out once it lands.",
+    "unclear": "Not shown yet",
+    "unclearWhy": "Tengo needs more to go on before it suggests a daily figure.",
+    "overdrawnWhy": "You are overdrawn by {{amount}}. Money that comes in covers this first.",
+    "notAdvisedNoMoney": "At your usual {{usual}} a day, money runs out before any money is expected."
   },
   "stateCard": {
     "title": "Cover",
@@ -380,7 +389,14 @@
     "tight": "Covered on a normal week, not on a heavy one.",
     "short_one": "Runs out {{count}} day before your next money.",
     "short_other": "Runs out {{count}} days before your next money.",
-    "tightReserve": "Covered until your next money, but {{amount}} is needed for a bill soon after it."
+    "tightReserve": "Covered until your next money, but {{amount}} is needed for a bill soon after it.",
+    "unclearThin": "Tengo needs at least 14 days of money history to work out a date. Import a statement or add a few weeks of entries.",
+    "unclearNoIncome": "No money coming in was found in your history. Add your income, or set it up by hand, to get an answer.",
+    "noIncomeRunway": "With nothing coming in, your balance lasts until {{date}} at your usual spend.",
+    "unclearStale": "Your balance is more than two weeks old. Add today's balance to see your date.",
+    "enoughHorizon": "Lasts the next {{days}} days even on a heavy week, with no money expected.",
+    "tightHorizon": "Lasts the next {{days}} days on a normal week, not on a heavy one. No money is expected.",
+    "shortHorizon": "Runs out within the next {{days}} days, and no money is expected."
   },
   "next": {
     "title": "Next money",
@@ -390,7 +406,9 @@
     "patternWeekday": "Usually lands on a {{day}}.",
     "patternInterval_one": "Usually lands every {{count}} day.",
     "patternInterval_other": "Usually lands every {{count}} days.",
-    "unknown": "No regular income found yet. Tengo plans 30 days ahead."
+    "unknown": "No regular income found yet. Tengo plans 30 days ahead.",
+    "pendingToday": "Today, not in yet",
+    "none": "None expected"
   },
   "recent": {
     "title": "Recent activity",
@@ -459,13 +477,31 @@
     "rule": {
       "enough": "Even a heavy week lasts until the latest likely next money.",
       "tight": "A normal week lasts until the usual next money. A heavy week does not.",
-      "short": "A normal week runs out before the usual next money."
+      "short": "A normal week runs out before the usual next money.",
+      "unclear": "Not enough history or no income, so there is no date yet."
     },
     "question": "Question this result",
     "notAdvice": "This is an estimate from past patterns, not financial advice.",
     "budgetSpread": "The daily budget is spread to {{date}}, the latest your next money usually lands.",
     "reserve": "Kept back for bills just after next money",
-    "reserveNone": "None due in the week after"
+    "reserveNone": "None due in the week after",
+    "incomeStatus": "Money in",
+    "incomeStatusValue": {
+      "regular": "Regular",
+      "pendingToday": "Due today",
+      "paused": "Paused",
+      "irregular": "No pattern",
+      "none": "None found"
+    },
+    "monthEnd": "Month end",
+    "monthEndValue": {
+      "pattern": "Spends more from the 25th",
+      "widened": "Heavy path allows for it",
+      "none": "No pattern"
+    },
+    "oneOffs": "Left out as one-off",
+    "oneOffsNone": "Nothing",
+    "horizon": "No money is expected, so the cover is judged over the next {{count}} days."
   },
   "paused": {
     "title": "Forecast paused",
@@ -567,7 +603,8 @@
     "roomToLendShort": "You are already Short before your next money. Any amount you lend brings your date closer.",
     "lendCaution": "Only lend what you could manage without getting back. Tengo cannot tell if or when it comes back.",
     "useRoom": "Use {{amount}}",
-    "labelPlaceholderValue": "School trip (example)"
+    "labelPlaceholderValue": "School trip (example)",
+    "roomToLendUnsure": "Tengo is not sure enough about your money coming in to suggest an amount. Check the effect of a specific amount below."
   },
   "money": {
     "title": "Money",
@@ -655,7 +692,9 @@
     "amount": "Amount",
     "amountHint": "Negative for money out, for example -250.",
     "category": "Type",
-    "auditNote": "Saving adds an entry to your audit log."
+    "auditNote": "Saving adds an entry to your audit log.",
+    "oneOff": "One-off",
+    "oneOffHint": "Left out of your usual spend and income pattern. It still counts in your balance."
   },
   "audit": {
     "session_opened": "Opened Tengo",
@@ -667,7 +706,11 @@
     "transaction_edited": "Corrected {{name}}: {{fields}}",
     "review_requested": "Asked for a human review",
     "forecast_paused": "Paused the forecast",
-    "forecast_resumed": "Resumed the forecast"
+    "forecast_resumed": "Resumed the forecast",
+    "transaction_added_one": "Added {{count}} entry",
+    "transaction_added_other": "Added {{count}} entries",
+    "balance_updated": "Updated the balance",
+    "bill_answered": "Answered a question about a bill that looked unpaid"
   },
   "inbox": {
     "title": "Inbox",
@@ -704,19 +747,22 @@
       "short_other": "Your money may run out on *{{date}}*, {{count}} days before your next money. Cover: {{state}}.",
       "sts": "Daily budget: *{{sts}}*.",
       "next": "Next money: around {{next}}.",
-      "noNext": "No regular income found yet.",
+      "noNext": "No next money is expected at the moment.",
       "tip": {
         "enough": "You are covered. A good week to put a little aside.",
         "tight": "Keep spending close to your daily budget until your next money.",
         "short": "Check Plan in Tengo to see what helps most."
       },
-      "stsNotAdvised": "Daily budget: not advised until your next money."
+      "stsNotAdvised": "Daily budget: not advised until your next money.",
+      "unclear": "Tengo does not have enough to go on yet to give you a date. Open Tengo to see what to add.",
+      "stsPending": "Daily budget: worked out once today's payment lands."
     },
     "sms": {
       "enough": "Tengo: Hi {{name}}, money lasts until {{date}} ({{state}}). Budget today {{sts}}.",
       "tight": "Tengo: Hi {{name}}, money lasts until {{date}} on a normal week ({{state}}). Budget today {{sts}}.",
       "short": "Tengo: Hi {{name}}, money may run out {{date}} ({{state}}). Daily budget not advised.",
-      "next": "Next money about {{next}}."
+      "next": "Next money about {{next}}.",
+      "unclear": "Tengo: Hi {{name}}, not enough to go on yet for a date. Open Tengo to see what to add."
     }
   },
   "a11y": {
@@ -777,5 +823,59 @@
   },
   "theme": {
     "button": "Theme: {{current}}. Switch to {{next}}"
+  },
+  "notice": {
+    "overdrawn": {
+      "title": "Overdrawn by {{amount}}",
+      "body": "Money that comes in covers this first. Your date counts from when the balance is above R0 again."
+    },
+    "asOf": {
+      "title": "From your statement",
+      "body_one": "This forecast is from your statement, which ends {{date}}, {{count}} day ago. Add today's balance to bring it up to date.",
+      "body_other": "This forecast is from your statement, which ends {{date}}, {{count}} days ago. Add today's balance to bring it up to date."
+    },
+    "historyEnds": {
+      "title": "History ends {{date}}",
+      "body": "Spending since then is not in your history, so the forecast uses the pattern up to that day with today's balance."
+    },
+    "paused": {
+      "title": "Income looks paused",
+      "body": "Nothing like your usual payments has come in since {{date}}. Tengo no longer counts on next money and checks the next 30 days instead."
+    },
+    "pausedNoDate": "Nothing like your usual payments has come in for a while. Tengo no longer counts on next money and checks the next 30 days instead.",
+    "irregular": {
+      "title": "No regular pattern yet",
+      "body": "Money comes in, but not in a rhythm Tengo can use. It checks the next 30 days instead of a next-money date."
+    },
+    "pendingToday": {
+      "title": "Payment due today",
+      "body": "Your usual payment is due today and is not in your balance yet, so it is still counted as coming.",
+      "action": "It has come in",
+      "entry": "Usual payment, marked as received"
+    },
+    "missedBill": {
+      "title": "{{name}} ({{amount}}) looks unpaid",
+      "body": "It was due around {{date}} and did not show up. Tell Tengo what happened so the date stays right.",
+      "owed": "I still owe it",
+      "settled": "It is paid or stopped"
+    },
+    "oneOffs": {
+      "body_one": "{{count}} large one-off amount is left out of your usual spend and income.",
+      "body_other": "{{count}} large one-off amounts are left out of your usual spend and income.",
+      "action": "See them on Money"
+    },
+    "label": "Things to check",
+    "askOneOff": {
+      "title": "Was {{name}} ({{amount}}, {{date}}) a one-off?",
+      "body": "It is much bigger than your usual spending, and with a short history Tengo cannot tell. For now it counts as usual spending.",
+      "action": "Yes, a one-off"
+    }
+  },
+  "balance": {
+    "update": "Add today's balance",
+    "label": "Balance today",
+    "save": "Save balance",
+    "saved": "Balance saved",
+    "error": "Enter an amount, for example 1250 or -300."
   }
 }

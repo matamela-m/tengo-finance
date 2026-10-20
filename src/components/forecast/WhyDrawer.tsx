@@ -37,7 +37,7 @@ function RunwayChart({ forecast }: { forecast: Forecast }) {
     <figure>
       <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full" role="img" aria-label={t('why.chartLabel')}>
         <line x1="0" x2={W} y1={H - 8} y2={H - 8} stroke="var(--color-short)" strokeDasharray="4 4" />
-        {nextMoney && nextMoney.pattern !== 'unknown' && (
+        {nextMoney && (
           <g>
             <rect x={x(daysBetween(today, nextMoney.earliest))} width={Math.max(4, x(daysBetween(nextMoney.earliest, nextMoney.latest) + 1))} y="0" height={H} fill="var(--color-accent)" opacity="0.1" />
             <line x1={x(daysBetween(today, nextMoney.typical))} x2={x(daysBetween(today, nextMoney.typical))} y1="0" y2={H} stroke="var(--color-accent)" strokeWidth="2" />
@@ -60,7 +60,7 @@ function RunwayChart({ forecast }: { forecast: Forecast }) {
           <span className="h-[2px] w-4 border-t-2 border-dashed border-short" />
           {t('why.lineHeavy')}
         </span>
-        {nextMoney && nextMoney.pattern !== 'unknown' && (
+        {nextMoney && (
           <span className="flex items-center gap-1.5">
             <span className="h-3 w-[2px] bg-accent" />
             {t('why.lineNext', { date: d.dayShort(nextMoney.typical) })}
@@ -87,7 +87,6 @@ export function WhyDrawer({ forecast, open, onClose }: { forecast: Forecast; ope
   const { t } = useTranslation();
   const d = useDates();
   const n = forecast.nextMoney;
-  const known = n && n.pattern !== 'unknown';
   return (
     <Drawer
       open={open}
@@ -101,13 +100,14 @@ export function WhyDrawer({ forecast, open, onClose }: { forecast: Forecast; ope
       }
     >
       <div className="flex flex-wrap items-center gap-3">
-        <StateChip state={forecast.state} />
+        <StateChip state={forecast.status} />
         <p className="num text-[15px] font-semibold">
-          {t(headlineKey(forecast))} {d.dayShort(forecast.headlineDate)}
+          {forecast.status === 'unclear' ? t('hero.unclear') : `${t(headlineKey(forecast))} ${d.dayShort(forecast.headlineDate)}`}
         </p>
       </div>
       <p className="mt-4 text-[15px] leading-relaxed">{t('why.plain')}</p>
-      {known && forecast.state !== 'short' && <p className="num mt-2 text-sm text-muted">{t('why.budgetSpread', { date: d.dayShort(n.latest) })}</p>}
+      {n && forecast.status !== 'short' && forecast.status !== 'unclear' && <p className="num mt-2 text-sm text-muted">{t('why.budgetSpread', { date: d.dayShort(n.latest) })}</p>}
+      {forecast.coverTarget.kind === 'horizon' && <p className="num mt-2 text-sm text-muted">{t('why.horizon', { count: 30 })}</p>}
 
       <div className="mt-5 rounded-2xl bg-surface-2 p-4">
         <RunwayChart forecast={forecast} />
@@ -128,8 +128,15 @@ export function WhyDrawer({ forecast, open, onClose }: { forecast: Forecast; ope
         />
         <Row
           label={t('why.income')}
-          hint={known ? t('common.rangeDates', { from: d.dayMonth(n.earliest), to: d.dayMonth(n.latest) }) : t('next.unknown')}
-          value={known ? t('why.incomeValue', { amount: formatZAR(n.amountTypical), date: d.dayShort(n.typical) }) : '-'}
+          hint={n ? t('common.rangeDates', { from: d.dayMonth(n.earliest), to: d.dayMonth(n.latest) }) : t('next.unknown')}
+          value={n ? t('why.incomeValue', { amount: formatZAR(n.amountTypical), date: d.dayShort(n.typical) }) : '-'}
+        />
+        <Row label={t('why.incomeStatus')} value={t(`why.incomeStatusValue.${forecast.income.status}`)} />
+        <Row label={t('why.monthEnd')} value={t(`why.monthEndValue.${forecast.monthEnd.mode}`)} />
+        <Row
+          label={t('why.oneOffs')}
+          hint={forecast.oneOffs.map((o) => `${o.description}, ${d.dayMonth(o.date)}`).join('; ') || undefined}
+          value={forecast.oneOffs.length ? String(forecast.oneOffs.length) : t('why.oneOffsNone')}
         />
         <Row
           label={t('why.reserve')}
@@ -142,10 +149,10 @@ export function WhyDrawer({ forecast, open, onClose }: { forecast: Forecast; ope
 
       <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-muted">{t('why.rulesTitle')}</h3>
       <ul className="mt-2 space-y-2 text-sm">
-        {(['enough', 'tight', 'short'] as const).map((s) => (
+        {(['enough', 'tight', 'short', 'unclear'] as const).map((s) => (
           <li key={s} className="flex items-start gap-3">
             <StateChip state={s} size="sm" className="mt-0.5 w-[88px] justify-center" />
-            <span className={forecast.state === s ? 'font-semibold' : 'text-muted'}>{t(`why.rule.${s}`)}</span>
+            <span className={forecast.status === s ? 'font-semibold' : 'text-muted'}>{t(`why.rule.${s}`)}</span>
           </li>
         ))}
       </ul>

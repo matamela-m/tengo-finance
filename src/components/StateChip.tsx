@@ -1,17 +1,18 @@
 import { useTranslation } from 'react-i18next';
-import type { CoverState } from '../engine/types';
+import type { Status } from '../engine/types';
 import { Icon, type IconName } from './Icon';
 
-export const STATE_ICON: Record<CoverState, IconName> = { enough: 'checkCircle', tight: 'alert', short: 'shortCircle' };
+export const STATE_ICON: Record<Status, IconName> = { enough: 'checkCircle', tight: 'alert', short: 'shortCircle', unclear: 'help' };
 
-const STYLES: Record<CoverState, string> = {
+const STYLES: Record<Status, string> = {
+  unclear: 'bg-surface-2 text-muted border-line',
   enough: 'bg-enough-soft text-enough border-enough/25',
   tight: 'bg-tight-soft text-tight border-tight/25',
   short: 'bg-short-soft text-short border-short/25',
 };
 
 /** Colour, word and icon together, so colour is never the only signal. */
-export function StateChip({ state, size = 'md', className = '' }: { state: CoverState; size?: 'sm' | 'md' | 'lg'; className?: string }) {
+export function StateChip({ state, size = 'md', className = '' }: { state: Status; size?: 'sm' | 'md' | 'lg'; className?: string }) {
   const { t } = useTranslation();
   const sizing = size === 'lg' ? 'min-h-[36px] px-3.5 text-[15px] gap-1.5' : size === 'sm' ? 'min-h-[24px] px-2 text-xs gap-1' : 'min-h-[30px] px-3 text-sm gap-1.5';
   return (
@@ -22,10 +23,10 @@ export function StateChip({ state, size = 'md', className = '' }: { state: Cover
   );
 }
 
-const TEXT: Record<CoverState, string> = { enough: 'text-enough', tight: 'text-tight', short: 'text-short' };
+const TEXT: Record<Status, string> = { enough: 'text-enough', tight: 'text-tight', short: 'text-short', unclear: 'text-muted' };
 
 /** Quiet inline state: icon and word in the state colour, no pill. For secondary mentions. */
-export function StateText({ state, className = '' }: { state: CoverState; className?: string }) {
+export function StateText({ state, className = '' }: { state: Status; className?: string }) {
   const { t } = useTranslation();
   return (
     <span className={`inline-flex items-center gap-1 text-sm font-medium ${TEXT[state]} ${className}`}>

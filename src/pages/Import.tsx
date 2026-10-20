@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { Notice } from '../components/Feedback';
 import { Icon } from '../components/Icon';
 import { PageHeader } from '../components/PageHeader';
-import { useReadyPersona } from '../data/PersonaProvider';
+import { forecastInput, useReadyPersona } from '../data/PersonaProvider';
+import type { PersonaRecord } from '../data/repository';
 import { addDays } from '../engine/dates';
 import { forecast as runForecast } from '../engine/forecast';
 import { buildImport, detectMapping, mappingReady, parseAmount, parseCsv, type ColumnMapping, type ParsedFile } from '../lib/csv';
@@ -48,15 +49,18 @@ export default function ImportPage() {
   const balanceFromFile = result?.lastBalance ?? null;
   const typedBalance = parseAmount(balanceText);
   const balance = balanceText.trim() ? typedBalance : (balanceFromFile ?? record.balance);
-  const preview = useMemo(
-    () => (result && !result.error && balance !== null ? runForecast({ transactions: result.transactions, balance, today }) : null),
-    [result, balance, today],
-  );
+  // A typed balance is today's; otherwise the balance is the statement's own, as of its last day.
+  const balanceDate = balanceText.trim() ? today : undefined;
+  const preview = useMemo(() => {
+    if (!result || result.error || balance === null) return null;
+    const draft: PersonaRecord = { ...record, transactions: result.transactions, balance, source: 'import', balanceDate, billDecisions: {} };
+    return runForecast(forecastInput(draft, today));
+  }, [result, balance, balanceDate, record, today]);
 
   const confirm = async () => {
     if (!result || result.error || balance === null) return;
     setSaving(true);
-    await replaceHistory(result.transactions, balance, result.transactions.length);
+    await replaceHistory(result.transactions, balance, result.transactions.length, balanceDate);
     navigate('/app');
   };
 
@@ -258,9 +262,9 @@ export default function ImportPage() {
                         <p className="text-xs text-muted">{t('import.result')}</p>
                         <div className="mt-1 flex flex-wrap items-center gap-2">
                           <p className="num font-semibold">
-                            {t(headlineKey(preview))} {d.dayShort(preview.headlineDate)}
+                            {preview.status === 'unclear' ? t('hero.unclear') : `${t(headlineKey(preview))} ${d.dayShort(preview.headlineDate)}`}
                           </p>
-                          <StateChip state={preview.state} size="sm" />
+                          <StateChip state={preview.status} size="sm" />
                         </div>
                       </div>
                     )}

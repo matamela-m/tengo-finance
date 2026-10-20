@@ -71,18 +71,29 @@ A restyle of the existing app: the same engine, data, routes, i18n, consent and 
 
 All of it lives in `src/engine/`: pure TypeScript, no UI imports, unit tested.
 
-1. **Sort the history.** Every transaction is income, a recurring bill or everyday spend. A recurring bill is the same description with a similar amount (within 20%) repeating 24 to 36 days apart.
-2. **Everyday spend.** Take the last 60 days (fewer if that is all there is) and add up spending over every rolling 7 day stretch. The middle value, divided by 7, is the usual daily spend. The 80th percentile is a heavy week and the 20th a light week.
-3. **Next money.** Deposits of at least 10% of typical monthly income count as "next money". If most of them land on one weekday (Lerato's Saturdays, Thabo's Monday payout), the next one is the next such weekday, possibly a day late. Otherwise the gaps between deposits give an earliest, typical and latest date (Ayanda's lumpy cash). Amounts give a low, typical and high figure.
-4. **Runway.** Start from today's balance and run it down day by day at the daily spend rate, taking off known bills on their dates. Money not yet received is not counted. The day the normal path reaches zero is **the date**. The heavy and light paths give the range band.
-5. **Cover.**
-   - **Enough**: even the heavy week lasts until the latest likely next money.
-   - **Tight**: a normal week reaches the typical next money, a heavy week does not.
+1. **Sort the history.** Every transaction is income, a recurring bill or everyday spend. A recurring bill is the same description with a similar amount (within 35%, so a price rise still matches) repeating 24 to 36 days apart; one skipped month (52 to 70 days) still counts. A bill is projected at the larger of its last two amounts.
+2. **Leave out one-offs.** Anything the person marks as a one-off, money in that reads as a loan, refund, reversal or advance (a configurable word list), and very large amounts seen only once (more than five usual spending days, or four usual income days) are left out of usual spend and the income pattern. They stay in the balance. Under 45 days of history a large spend may be a habit, so it still counts and Home asks "Was this a one-off?".
+3. **Everyday spend.** Take the last 60 days (fewer if that is all there is) and add up spending over every rolling 7 day stretch. The middle value, divided by 7, is the usual daily spend. The 80th percentile is a heavy week and the 20th a light week. Under 45 days the usual spend is never below the plain average of all outflows, so a monthly bill seen once is not missed. If at least two month ends show spending 30% above other days, days from the 25th use that uplift; without enough history, the heavy path is 25% heavier from the 25th.
+4. **Next money.** Deposits of at least 10% of typical monthly income count as "next money". If most of them land on one weekday, the next one is the next such weekday, possibly a day late. Otherwise the gaps between deposits (10th to 90th percentile) give an earliest, typical and latest date. Amounts give a low, typical and high figure. Smaller deposits are background income.
+   - **Payday today**: if the usual payment is due today and has not landed, it is still expected today ("It has come in" records it).
+   - **Paused**: if nothing significant has landed for more than two usual gaps, income is paused. No next money is counted and the state is judged over the next 30 days.
+   - **Irregular or none**: with no rhythm, or no income at all, no next-money date is invented.
+5. **Missed bills.** A recurring bill more than 3 days past its due date with no payment shows as "Rent looks unpaid". The person answers: still owe it (counted as due today) or paid or stopped.
+6. **Runway.** Start from the balance and run it down day by day at the daily spend rate, taking off known bills on their dates and adding a share of background income: all of it on the light path, half on the usual path, a quarter on the heavy path, and none without a regular rhythm and 28 days of history. The chart uses the same shares. Next money is not counted. The day the usual path reaches zero is **the date**.
+7. **Band.** The likely range runs from the heavy-path date to the light-path date, widened to at least 1 day plus 15% of the lead time either side (3 days plus 15% at low confidence) and capped at half the lead plus 2 days. On the review's synthetic backtest this covers the actual date about 80% of the time at every lead time up to 20 days; it was 54% within 6 days before. See `docs/review/after/COMPARISON.md`.
+8. **Cover.**
+   - **Enough**: even the heavy week lasts until the latest likely next money with the reserve (step 9) untouched. Never under 28 days of history.
+   - **Tight**: a normal week reaches the typical next money, a heavy week does not, or only by eating into the reserve.
    - **Short**: a normal week runs out first. The headline then reads "Short from" with the gap in days.
-6. **Safe to spend today**: balance minus bills due before the latest likely next money, divided by the days until then, floored at zero and rounded down to the nearest R5.
-7. **Confidence**: high with 60 or more days of history, medium with 28 to 59, low below 28. Low confidence widens the band by 1.5 times and shows "Low confidence".
-8. **Scrubber**: for each of the next 30 days, the light, normal and heavy balance including expected income at its usual timing, and the cover for that day.
-9. **What-if and loan check** rerun the same engine with an extra dated item or a lower starting balance.
+   - **Not enough to tell**: under 14 days of history, no income at all, or a balance more than 14 days old.
+9. **Daily budget.** Bills due in the week after the latest next money, less a low next payment, are kept back as a reserve. The budget is the balance less bills before next money and the reserve, spread over the days until the latest likely next money, rounded down to R5. Home shows it only for Enough and Tight; Short shows "Not advised".
+10. **Room to lend.** The largest amount, in R10 steps, that keeps the state and a budget above zero. Zero when Short, unsure (low confidence, paused or irregular income) or not enough to tell.
+11. **Overdraft and old statements.** A negative balance shows how far overdrawn. An imported statement is forecast as of its end date and Home asks for today's balance; confidence drops after 3 days and the state is hidden after 14.
+12. **Confidence**: high with 60 or more days of history, medium with 28 to 59, low below 28 or with paused or irregular income. Low confidence widens the heavy and light paths by 1.5 times.
+13. **Scrubber**: for each of the next 30 days, the light, usual and heavy balance including expected income at its usual timing. It describes the balance (above R0, could reach R0, below R0), never the cover state.
+14. **What-if and loan check** rerun the same engine with an extra dated item or a lower starting balance.
+
+Every Home element reads one view model, `homeView()` in `src/engine/view.ts`, so the headline, chip, gauge, budget, next-money date, chart and messages cannot disagree. `src/engine/stress.test.ts` keeps the review's stress cases as regression tests and `src/engine/accuracy.test.ts` fails the build if backtest accuracy drops below stated thresholds.
 
 The "Why this date" drawer on Home shows every input behind the date and doubles as the explanation of this automated result.
 

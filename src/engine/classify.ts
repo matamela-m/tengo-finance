@@ -12,14 +12,24 @@ export function descriptionKey(description: string): string {
     .trim();
 }
 
-/** Rule for a recurring bill: the same description, a similar amount, roughly a month apart. */
+/**
+ * Rule for a recurring bill: the same description, a similar amount, roughly a month apart.
+ * One skipped month (a gap of about two months) still counts, so a missed payment does not
+ * turn rent into everyday spend.
+ */
 export const RECURRING_RULE = {
   minOccurrences: 2,
   minGapDays: 24,
   maxGapDays: 36,
-  /** Every amount within this share of the group's median. */
-  amountTolerance: 0.2,
+  /** A gap in this range is one skipped month. */
+  skippedMinDays: 52,
+  skippedMaxDays: 70,
+  /** Every amount within this share of the group's median, so a price rise of up to a third still matches. */
+  amountTolerance: 0.35,
 } as const;
+
+/** Days after a due date before a bill that did not appear is reported as looking unpaid. */
+export const MISSED_GRACE_DAYS = 3;
 
 interface Row {
   date: ISODate;
@@ -48,8 +58,11 @@ function isRecurringGroup(rows: Row[]): boolean {
   if (amounts.some((a) => Math.abs(a - mid) > mid * RECURRING_RULE.amountTolerance)) return false;
   for (let i = 1; i < rows.length; i++) {
     const gap = dayNumber(rows[i]!.date) - dayNumber(rows[i - 1]!.date);
-    if (gap < RECURRING_RULE.minGapDays || gap > RECURRING_RULE.maxGapDays) return false;
+    const normal = gap >= RECURRING_RULE.minGapDays && gap <= RECURRING_RULE.maxGapDays;
+    const skipped = gap >= RECURRING_RULE.skippedMinDays && gap <= RECURRING_RULE.skippedMaxDays;
+    if (!normal && !skipped) return false;
   }
+  // Two payments two months apart are treated as monthly with one skipped: projecting it monthly is the safer error.
   return true;
 }
 
@@ -82,10 +95,12 @@ export function recurringBills(transactions: Transaction[], today: ISODate): Rec
     const last = list[list.length - 1]!;
     const recent = list.slice(-3);
     const dom = Math.round(median(recent.map((r) => dayOfMonth(r.date))));
+    // A rising bill is projected at its latest level: the larger of the last two amounts.
+    const latestTwo = list.slice(-2).map((r) => -r.amount);
     out.push({
       key,
       description: last.description,
-      amount: Math.round(median(recent.map((r) => -r.amount)) * 100) / 100,
+      amount: Math.round(Math.max(...latestTwo) * 100) / 100,
       dayOfMonth: dom,
       occurrences: list.length,
       lastDate: last.date,
@@ -93,6 +108,31 @@ export function recurringBills(transactions: Transaction[], today: ISODate): Rec
     });
   }
   return out.sort((a, b) => (a.nextDate < b.nextDate ? -1 : 1));
+}
+
+/** A recurring bill whose due date passed without a payment. The person confirms what happened. */
+export interface MissedBill {
+  /** Stable id for the person's answer: bill key and the due date that was missed. */
+  id: string;
+  key: string;
+  description: string;
+  amount: number;
+  dueDate: ISODate;
+}
+
+/**
+ * Bills whose last expected payment is more than MISSED_GRACE_DAYS overdue as of `dataEnd`
+ * (the day after the last day of history). Only the first missed due date is reported.
+ */
+export function missedBills(bills: RecurringBill[], dataEnd: ISODate): MissedBill[] {
+  const out: MissedBill[] = [];
+  for (const b of bills) {
+    const due = nextDue(b.lastDate, b.dayOfMonth, addDays(b.lastDate, 1));
+    if (addDays(due, MISSED_GRACE_DAYS) < dataEnd) {
+      out.push({ id: `${b.key}@${due}`, key: b.key, description: b.description, amount: b.amount, dueDate: due });
+    }
+  }
+  return out;
 }
 
 /** Every bill occurrence from `today` up to and including `until`. */

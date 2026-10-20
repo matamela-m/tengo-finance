@@ -43,10 +43,10 @@ function Outcome({ label, f }: { label: string; f: Forecast }) {
     <div className="min-w-0 rounded-xl bg-surface-2 p-4">
       <p className="eyebrow">{label}</p>
       <p className="num mt-2 text-sm text-muted">{t(headlineKey(f))}</p>
-      <p className="num font-heading text-[22px] font-extrabold leading-tight tracking-tight sm:text-[26px]">{d.dayShort(f.headlineDate)}</p>
+      <p className="num font-heading text-[22px] font-extrabold leading-tight tracking-tight sm:text-[26px]">{f.status === 'unclear' ? '-' : d.dayShort(f.headlineDate)}</p>
       <div className="mt-2 flex items-center gap-2">
-        <StateChip state={f.state} size="sm" />
-        <CoverBars state={f.state} size={48} />
+        <StateChip state={f.status} size="sm" />
+        <CoverBars state={f.status} size={48} />
       </div>
     </div>
   );
@@ -61,9 +61,9 @@ function nextFriday(today: string): string {
 function WhatIf() {
   const { t } = useTranslation();
   // The daily budget follows the Home rule: no number when Short.
-  const budgetText = (f: Forecast) => (f.state === 'short' ? t('plan.notAdvised') : formatZAR(f.dailyBudget));
+  const budgetText = (f: Forecast) => (f.status === 'short' || f.status === 'unclear' ? t('plan.notAdvised') : formatZAR(f.dailyBudget));
   const d = useDates();
-  const { record, today } = useReadyPersona();
+  const { input, today } = useReadyPersona();
   const tomorrow = addDays(today, 1);
   // A labelled example so the page is never empty on a first visit: a R200 school trip next Friday.
   const [items, setItems] = useState<Item[]>(() => [{ id: 1, kind: 'expense', amount: '200', date: nextFriday(today), label: t('plan.labelPlaceholderValue') }]);
@@ -76,11 +76,11 @@ function WhatIf() {
   const result = useMemo(
     () =>
       whatIf(
-        { transactions: record.transactions, balance: record.balance, today },
+        input,
         parsed.map((i) => ({ date: i.date, amount: i.kind === 'income' ? i.value : -i.value, description: i.label || i.kind })),
       ),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [record, today, JSON.stringify(parsed)],
+    [input, JSON.stringify(parsed)],
   );
 
   const update = (id: number, patch: Partial<Item>) => {
@@ -184,7 +184,7 @@ function WhatIf() {
           {t('plan.whatIfSpoken', {
             label: t(headlineKey(result.after)),
             date: d.weekdayLong(result.after.headlineDate),
-            state: t(`state.${result.after.state}`),
+            state: t(`state.${result.after.status}`),
             change: result.deltaDays === 0 ? t('plan.noChange') : result.deltaDays > 0 ? t('plan.daysMore', { count: result.deltaDays }) : t('plan.daysLess', { count: -result.deltaDays }),
           })}
         </p>
@@ -207,12 +207,12 @@ function WhatIf() {
 function LoanCheck() {
   const { t } = useTranslation();
   const d = useDates();
-  const { record, today } = useReadyPersona();
+  const { input } = useReadyPersona();
   const [amount, setAmount] = useState('');
   const value = parseAmount(amount);
   const valid = value !== null && value > 0;
-  const result = useMemo(() => loanCheck({ transactions: record.transactions, balance: record.balance, today }, valid ? value : 0), [record, today, valid, value]);
-  const worse = result.after.state !== result.before.state;
+  const result = useMemo(() => loanCheck(input, valid ? value : 0), [input, valid, value]);
+  const worse = result.after.status !== result.before.status;
 
   return (
     <section className="card p-5 sm:p-7" aria-labelledby="loan-title">
@@ -228,13 +228,15 @@ function LoanCheck() {
         <p className="eyebrow">{t('plan.roomToLend')}</p>
         <p className="num mt-2 font-heading text-[44px] font-bold leading-none tracking-[-0.035em] text-ink">{formatZAR(result.roomToLend)}</p>
         <p className="num mt-2 text-sm text-muted">
-          {result.before.state === 'short'
+          {result.before.status === 'short'
             ? t('plan.roomToLendShort')
-            : result.roomToLend === 0
-              ? t('plan.roomToLendNone', { state: t(`state.${result.before.state}`) })
-              : result.before.reserve > 0
-                ? t('plan.roomToLendHint', { state: t(`state.${result.before.state}`), reserve: formatZAR(result.before.reserve) })
-                : t('plan.roomToLendHintNoReserve', { state: t(`state.${result.before.state}`) })}
+            : result.before.status === 'unclear' || result.before.confidence === 'low' || result.before.income.status !== 'regular'
+              ? t('plan.roomToLendUnsure')
+              : result.roomToLend === 0
+                ? t('plan.roomToLendNone', { state: t(`state.${result.before.status}`) })
+                : result.before.reserve > 0
+                  ? t('plan.roomToLendHint', { state: t(`state.${result.before.status}`), reserve: formatZAR(result.before.reserve) })
+                  : t('plan.roomToLendHintNoReserve', { state: t(`state.${result.before.status}`) })}
         </p>
         <p className="mt-2 text-sm text-ink">{t('plan.lendCaution')}</p>
       </div>
@@ -281,7 +283,7 @@ function LoanCheck() {
                 amount: formatZAR(value),
                 label: t(headlineKey(result.after)),
                 date: d.weekdayLong(result.after.headlineDate),
-                state: t(`state.${result.after.state}`),
+                state: t(`state.${result.after.status}`),
                 count: result.daysOff,
               })
             : ''}
@@ -299,8 +301,8 @@ function LoanCheck() {
               <Outcome label={t('plan.afterLoan')} f={result.after} />
             </div>
             {worse && (
-              <Notice tone={result.after.state === 'short' ? 'danger' : 'warn'} className="mt-4">
-                {t('plan.stateDrops', { from: t(`state.${result.before.state}`), to: t(`state.${result.after.state}`) })}
+              <Notice tone={result.after.status === 'short' ? 'danger' : 'warn'} className="mt-4">
+                {t('plan.stateDrops', { from: t(`state.${result.before.status}`), to: t(`state.${result.after.status}`) })}
               </Notice>
             )}
           </>

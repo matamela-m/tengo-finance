@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import { localToday } from '../engine/dates';
+import { addDays, localToday, minDate } from '../engine/dates';
 import { forecast as runForecast } from '../engine/forecast';
-import type { Forecast, ISODate, Transaction } from '../engine/types';
+import type { BillDecision, Forecast, ForecastInput, ISODate, Transaction } from '../engine/types';
 import { useSession } from '../store/session';
 import { repository } from './index';
 import type { AuditEntry, AuditType, ConsentRecord, DeletionReceipt, PersonaRecord, ReviewRequest, TransactionPatch } from './repository';
@@ -16,14 +16,19 @@ interface PersonaContextValue {
   status: Status;
   record: PersonaRecord | null;
   consent: ConsentRecord | null;
+  /** The exact engine input behind `forecast`, for what-ifs and help plans on other screens. */
+  input: ForecastInput | null;
   forecast: Forecast | null;
   audit: AuditEntry[];
   reviews: ReviewRequest[];
   reload: () => Promise<void>;
   log: (type: AuditType, params?: AuditEntry['params']) => Promise<void>;
   setConsent: (c: Omit<ConsentRecord, 'decidedAt'>, type?: AuditType, params?: AuditEntry['params']) => Promise<void>;
-  replaceHistory: (transactions: Transaction[], balance: number, rows: number) => Promise<void>;
+  replaceHistory: (transactions: Transaction[], balance: number, rows: number, balanceDate?: ISODate) => Promise<void>;
   updateTransaction: (id: string, patch: TransactionPatch, params: AuditEntry['params']) => Promise<void>;
+  addTransactions: (transactions: Transaction[], balance?: number) => Promise<void>;
+  setBalance: (balance: number) => Promise<void>;
+  setBillDecision: (missedBillId: string, decision: BillDecision) => Promise<void>;
   addReview: (r: Omit<ReviewRequest, 'id' | 'at'>) => Promise<ReviewRequest>;
   deleteData: () => Promise<DeletionReceipt>;
 }
@@ -33,7 +38,17 @@ const Ctx = createContext<PersonaContextValue | null>(null);
 export function PersonaProvider({ children }: { children: ReactNode }) {
   const personaId = useSession((s) => s.activePersonaId) as PersonaId | null;
   const profile = getPersona(personaId);
-  const [today] = useState(() => localToday());
+  const [today, setToday] = useState(() => localToday());
+  // "Today" moves on when the app comes back after midnight, so the forecast never sits on yesterday.
+  useEffect(() => {
+    const check = () => setToday((prev) => (localToday() === prev ? prev : localToday()));
+    document.addEventListener('visibilitychange', check);
+    const timer = window.setInterval(check, 60_000);
+    return () => {
+      document.removeEventListener('visibilitychange', check);
+      window.clearInterval(timer);
+    };
+  }, []);
   const [status, setStatus] = useState<Status>('idle');
   const [record, setRecord] = useState<PersonaRecord | null>(null);
   const [consent, setConsentState] = useState<ConsentRecord | null>(null);
@@ -80,10 +95,8 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
     void repository.appendAudit(personaId, 'session.opened').then(() => repository.getAudit(personaId).then(setAudit));
   }, [personaId, status, consent]);
 
-  const forecast = useMemo(
-    () => (record ? runForecast({ transactions: record.transactions, balance: record.balance, today }) : null),
-    [record, today],
-  );
+  const input = useMemo(() => (record ? forecastInput(record, today) : null), [record, today]);
+  const forecast = useMemo(() => (input ? runForecast(input) : null), [input]);
 
   const value = useMemo<PersonaContextValue>(() => {
     const requireId = () => {
@@ -98,6 +111,7 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
       status,
       record,
       consent,
+      input,
       forecast,
       audit,
       reviews,
@@ -115,10 +129,29 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
         await repository.appendAudit(id, type, params);
         await refreshAudit(id);
       },
-      replaceHistory: async (transactions, balance, rows) => {
+      replaceHistory: async (transactions, balance, rows, balanceDate) => {
         const id = requireId();
-        setRecord(await repository.replaceHistory(id, transactions, balance));
+        setRecord(await repository.replaceHistory(id, transactions, balance, balanceDate));
         await repository.appendAudit(id, 'statement.imported', { rows });
+        await refreshAudit(id);
+      },
+      addTransactions: async (transactions, balance) => {
+        const id = requireId();
+        setRecord(await repository.addTransactions(id, transactions, balance));
+        await repository.appendAudit(id, 'transaction.added', { count: transactions.length });
+        await refreshAudit(id);
+      },
+      setBalance: async (balance) => {
+        const id = requireId();
+        setRecord(await repository.setBalance(id, balance, today));
+        await repository.appendAudit(id, 'balance.updated');
+        await refreshAudit(id);
+      },
+      setBillDecision: async (missedBillId, decision) => {
+        const id = requireId();
+        setRecord(await repository.setBillDecision(id, missedBillId, decision));
+        // No bill name in the log: the audit trail records that an answer was given, not what was paid.
+        await repository.appendAudit(id, 'bill.answered', { answer: decision });
         await refreshAudit(id);
       },
       updateTransaction: async (txId, patch, params) => {
@@ -148,9 +181,23 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
         return receipt;
       },
     };
-  }, [personaId, profile, today, status, record, consent, forecast, audit, reviews, load]);
+  }, [personaId, profile, today, status, record, consent, input, forecast, audit, reviews, load]);
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
+}
+
+/**
+ * Engine input for a stored record. Seeds are always current. An imported statement is forecast as of
+ * the day its balance was true, with `now` set so the engine can say how old it is.
+ */
+export function forecastInput(record: PersonaRecord, today: ISODate): ForecastInput {
+  const base = { transactions: record.transactions, balance: record.balance, billDecisions: record.billDecisions };
+  if (record.source === 'seed') return { ...base, today };
+  const last = record.transactions.reduce<ISODate | null>((m, t) => (m === null || t.date > m ? t.date : m), null);
+  const dataEnd = last ? addDays(last, 1) : today;
+  // An imported closing balance is true at the start of the day after the statement's last day.
+  const asOf = minDate(record.balanceDate ?? (record.source === 'import' ? dataEnd : record.seededOn), today);
+  return { ...base, today: asOf, dataEnd: minDate(dataEnd, asOf), now: today };
 }
 
 export function usePersona(): PersonaContextValue {
@@ -162,6 +209,6 @@ export function usePersona(): PersonaContextValue {
 /** For pages that only render once data is ready. */
 export function useReadyPersona() {
   const v = usePersona();
-  if (!v.record || !v.forecast || !v.personaId || !v.profile) throw new Error('Persona data not ready');
-  return { ...v, record: v.record, forecast: v.forecast, personaId: v.personaId, profile: v.profile };
+  if (!v.record || !v.forecast || !v.input || !v.personaId || !v.profile) throw new Error('Persona data not ready');
+  return { ...v, record: v.record, forecast: v.forecast, input: v.input, personaId: v.personaId, profile: v.profile };
 }

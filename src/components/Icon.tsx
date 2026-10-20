@@ -1,5 +1,17 @@
 import type { SVGProps } from 'react';
 import {
+  Activity,
+  Bug,
+  CircleHelp,
+  Cloud,
+  Coins,
+  DoorOpen,
+  EyeOff,
+  HandCoins,
+  KeyRound,
+  LogIn,
+  Users,
+  Wallet,
   ArrowDown,
   ArrowLeftRight,
   ArrowRight,
@@ -105,6 +117,18 @@ const ICONS = {
   map: Map,
   scale: Scale,
   sidebar: PanelLeft,
+  help: CircleHelp,
+  eyeOff: EyeOff,
+  wallet: Wallet,
+  coins: Coins,
+  users: Users,
+  door: DoorOpen,
+  key: KeyRound,
+  bug: Bug,
+  cloud: Cloud,
+  handCoins: HandCoins,
+  login: LogIn,
+  activity: Activity,
 } satisfies Record<string, LucideIcon>;
 
 export type IconName = keyof typeof ICONS;

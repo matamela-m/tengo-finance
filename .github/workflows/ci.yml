@@ -1,0 +1,25 @@
+# Runs on every push and pull request. The accuracy regression test (src/engine/accuracy.test.ts)
+# is part of `npm test` and fails the build if headline forecast metrics get worse than stated thresholds.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run i18n:check
+      - run: npm run fonts:check
+      - run: npm test
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test

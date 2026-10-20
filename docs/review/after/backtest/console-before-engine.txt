@@ -1,0 +1,41 @@
+cases: 12528 (no perturbation: 9936)
+generator diversity thabo=7 lerato=7 ayanda=1
+shipped 60d headline {
+  n: 432,
+  unclear_pct: 0,
+  n_observed: 431,
+  censored_pct: 0.2,
+  mae_days: 1.9,
+  mae_bg_days: 4.3,
+  bias_bg_days: -3.3,
+  bias_days: 0.3,
+  median_abs_err: 2,
+  within1_pct: 49.4,
+  within3_pct: 76.1,
+  mae_capped_all: 1.9,
+  baseline_mae_days: 3.4,
+  band_n_decidable: 431,
+  band_coverage_pct: 65.7,
+  band_miss_early_pct: 19.3,
+  band_miss_late_pct: 15.1,
+  band_width_mean: 14.5,
+  state_acc_pct: 67.6,
+  state_acc_buf10_pct: 75.5,
+  state_acc_buf30_pct: 64.1,
+  covered_acc_pct: 87.3,
+  false_reassurance_pct: 7.6,
+  false_reassurance_bg_pct: 6.9,
+  short_recall_pct: 69.7,
+  false_alarm_share_of_short_pct: 22.4,
+  real_short_pct: 21.5,
+  engine_short_precision_vs_real_pct: 64.3,
+  engine_covered_but_real_short_pct: 6.9,
+  ran_out_with_income_pct: 26.4,
+  nm_n: 432,
+  nm_mae_days: 1,
+  nm_exact_pct: 56.9,
+  nm_in_window_pct: 90.3
+}
+history 14 mae 5.1 cov 56.3 state 64.4 falseReassure 10.2
+history 28 mae 4.1 cov 74 state 67.6 falseReassure 7.4
+history 60 mae 1.9 cov 65.7 state 67.6 falseReassure 7.6

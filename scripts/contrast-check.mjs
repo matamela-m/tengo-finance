@@ -17,6 +17,7 @@ const THEMES = {
     enough: '#34D399',
     tight: '#FBBF24',
     short: '#F97362',
+    'field-border': '#6E6E78',
     accentSoftA: 0.14,
     stateSoftA: 0.13,
   },
@@ -33,6 +34,7 @@ const THEMES = {
     enough: '#046E50',
     tight: '#855700',
     short: '#B42318',
+    'field-border': '#86837B',
     accentSoftA: 0.1,
     stateSoftA: 0.1,
   },
@@ -80,6 +82,7 @@ function pairsFor(t) {
   add('On-accent on accent (mark, selected)', t['on-accent'], t.accent, 4.5);
   add('On-accent on short (destructive button)', t['on-accent'], t.short, 4.5);
   add('Dimmed headline half (display size) on bg', t['text-muted'], t.bg, 3);
+  for (const s of ['bg', 'surface-1', 'surface-2']) add(`Form field border on ${s}`, t['field-border'], t[s], 3);
   for (const s of ['bg', 'surface-1', 'surface-2']) add(`Focus ring and handle (accent) on ${s}`, t.accent, t[s], 3);
   for (const st of STATES) add(`${st} gauge segment on surface-1`, t[st], t['surface-1'], 3);
   add('Gauge empty segment (surface-3) vs lit is decorative: state word always shown', t['surface-3'], t['surface-1'], 1);

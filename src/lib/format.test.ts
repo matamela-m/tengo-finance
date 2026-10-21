@@ -33,3 +33,9 @@ describe('discreet mode', () => {
     expect(formatZAR(1250)).toBe('R1\u00a0250');
   });
 });
+
+describe('dates', () => {
+  it('never shows a leading zero on the day', () => {
+    expect(formatDayShort('2026-11-01', 'en')).toBe('Sun 1 Nov');
+  });
+});

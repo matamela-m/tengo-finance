@@ -61,7 +61,7 @@ export default function MePage() {
                       <Avatar persona={p} size={44} />
                       <span className="min-w-0 flex-1">
                         <span className="block font-semibold">{p.name}</span>
-                        <span className="block truncate text-sm text-muted">
+                        <span className="line-clamp-2 block text-sm text-muted">
                           {t(`personas.${p.id}.role`)}, {p.place}
                         </span>
                       </span>

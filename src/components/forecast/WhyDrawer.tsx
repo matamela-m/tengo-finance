@@ -102,7 +102,7 @@ export function WhyDrawer({ forecast, open, onClose }: { forecast: Forecast; ope
       <div className="flex flex-wrap items-center gap-3">
         <StateChip state={forecast.status} />
         <p className="num text-[15px] font-semibold">
-          {forecast.status === 'unclear' ? t('hero.unclear') : `${t(headlineKey(forecast))} ${d.dayShort(forecast.headlineDate)}`}
+          {forecast.status === 'unclear' ? t('hero.unclear') : t('hero.line', { label: t(headlineKey(forecast)), date: d.dayShort(forecast.headlineDate) })}
         </p>
       </div>
       <p className="mt-4 text-[15px] leading-relaxed">{t('why.plain')}</p>

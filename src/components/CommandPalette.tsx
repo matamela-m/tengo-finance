@@ -43,7 +43,10 @@ export function CommandPalette() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      // Leave the shortcut alone while someone is typing in a field that has text.
+      const el = e.target as HTMLInputElement | HTMLTextAreaElement | null;
+      const typing = el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') && el.value !== '' && !el.closest('[role="dialog"]');
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k' && !typing) {
         e.preventDefault();
         setOpen((v) => !v);
       }
@@ -194,7 +197,10 @@ export function CommandPalette() {
                   className={`flex min-h-[44px] cursor-pointer items-center gap-3 rounded-xl px-3 text-[15px] ${selected ? 'bg-surface-3 text-ink' : 'text-muted'}`}
                 >
                   <Icon name={c.icon} size={17} className={selected ? 'text-accent' : 'text-subtle'} />
-                  <span className="flex-1 truncate">{c.label}</span>
+                  <span className="flex-1 truncate">
+                    <span className="sr-only">{t(`palette.groups.${c.group}`)}: </span>
+                    {c.label}
+                  </span>
                   {c.hint && <span className="truncate text-xs text-subtle">{c.hint}</span>}
                 </div>
               </li>

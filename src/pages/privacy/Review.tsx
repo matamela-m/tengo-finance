@@ -24,7 +24,7 @@ export default function Review() {
     ? t('paused.title')
     : forecast.status === 'unclear'
       ? t('hero.unclear')
-      : `${t(headlineKey(forecast))} ${d.dayShort(forecast.headlineDate)} (${t(`state.${forecast.status}`)})`;
+      : `${t('hero.line', { label: t(headlineKey(forecast)), date: d.dayShort(forecast.headlineDate) })} (${t(`state.${forecast.status}`)})`;
 
   const submit = async () => {
     setBusy(true);

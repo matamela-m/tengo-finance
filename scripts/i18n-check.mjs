@@ -82,5 +82,31 @@ for (const [code, st] of Object.entries(status)) {
   }
 }
 
+// Plurals (L10N-10): every key used with a count has every plural form that language's rules need,
+// from Intl.PluralRules, so 0, 1 and 2 always find a string. English _one and _other are the floor.
+for (const code of codes) {
+  const keys = new Set(flatten(JSON.parse(readFileSync(`${dir}/${code}.json`, 'utf8'))));
+  const bases = new Set([...keys].filter((k) => /_(zero|one|two|few|many|other)$/.test(k)).map((k) => k.replace(/_(zero|one|two|few|many|other)$/, '')));
+  let rules;
+  try {
+    rules = new Intl.PluralRules(code === 'nso' ? 'nso' : code);
+  } catch {
+    rules = new Intl.PluralRules('en');
+  }
+  const needed = new Set([0, 1, 2, 5, 21].map((n) => rules.select(n)));
+  for (const b of bases) {
+    for (const cat of needed) {
+      if (!keys.has(`${b}_${cat}`) && !keys.has(`${b}_other`)) {
+        console.error(`${code}: ${b} has no ${cat} or other form`);
+        problems++;
+      }
+    }
+    if (!keys.has(`${b}_other`)) {
+      console.error(`${code}: ${b} has no _other form`);
+      problems++;
+    }
+  }
+}
+
 if (problems) process.exit(1);
 console.log(`All ${codes.length} locales have the same ${base.size} keys, matching placeholders and valid review status.`);

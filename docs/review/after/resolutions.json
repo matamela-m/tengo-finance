@@ -23,13 +23,33 @@
   "status": "Fixed",
   "resolution": "Phase 6: optional PIN lock (salted PBKDF2 hash on the device, auto-lock, cool-off after five tries), discreet mode that masks amounts until tapped, and quick exit to a neutral page; Playwright covers all three."
  },
+ "A11Y-07": {
+  "status": "Partly fixed",
+  "resolution": "Part A close: form field borders are at least 3:1 in both themes and checked by the contrast script. The chart band stays decorative: the expected line and the table carry the information."
+ },
  "A11Y-08": {
   "status": "Fixed",
   "resolution": "Phase 6: the chart table is a focusable, labelled region so it scrolls with the keyboard."
  },
+ "A11Y-09": {
+  "status": "Prepared for human action",
+  "resolution": "Translations by first-language speakers and testing with low-literacy users are listed in docs/HUMAN-ACTIONS.md and the research kit."
+ },
  "A11Y-10": {
   "status": "Fixed",
   "resolution": "Phase 5: import errors sit in a live alert region and explain what to do; setup form errors are announced too."
+ },
+ "A11Y-11": {
+  "status": "Fixed",
+  "resolution": "Part A close: the chart slider says amounts below zero in words; transaction rows already say money in or money out."
+ },
+ "A11Y-12": {
+  "status": "Fixed",
+  "resolution": "Part A close: transaction descriptions and roles wrap to two lines instead of truncating."
+ },
+ "A11Y-13": {
+  "status": "Fixed",
+  "resolution": "Part A close: each command menu option is announced with its group, and the shortcut is ignored while typing in a field with text."
  },
  "A11Y-14": {
   "status": "Fixed",
@@ -63,6 +83,10 @@
   "status": "Fixed",
   "resolution": "Phase 5: stokvel, burial society, family support and informal loans are first-class recurring items that behave like bills; every persona has one."
  },
+ "BEH-08": {
+  "status": "Prepared for human action",
+  "resolution": "The date-first claim is presented as a hypothesis and tested in task T2 of the research kit (docs/research)."
+ },
  "BEH-09": {
   "status": "Prepared for human action",
   "resolution": "Phase 6: discreet mode and quick exit are built as design inputs; whether people show or hide the screen strategically is a question in the research kit (docs/research)."
@@ -95,6 +119,10 @@
   "status": "Partly fixed",
   "resolution": "Phase 2: interval window widened to the 10th to 90th percentile gaps and day 0 payments handled; next money inside the window rose from 85.8 to 90.1 percent on the 90 day slice."
  },
+ "DATA-07": {
+  "status": "Prepared for human action",
+  "resolution": "Whether people read the date as what the money they have now lasts until is a question in the comprehension test kit (docs/research); copy changes wait for its answer."
+ },
  "DATA-08": {
   "status": "Partly fixed",
   "resolution": "Phase 2: a conservative share of small daily income now counts in the state. Alarm precision is not tracked in the field."
@@ -102,6 +130,10 @@
  "DATA-09": {
   "status": "Partly fixed",
   "resolution": "Phase 2: src/engine/accuracy.test.ts runs a backtest slice in npm test and CI with thresholds. Field accuracy logging needs a pilot."
+ },
+ "DATA-10": {
+  "status": "Not fixing",
+  "resolution": "The time of day of the balance is unknown, so a full day of spend on day 0 is the cautious choice. Pending same-day credits are handled by the payday-today rule."
  },
  "INV-03": {
   "status": "Fixed",
@@ -179,13 +211,25 @@
   "status": "Fixed",
   "resolution": "Phase 3: same as A11Y-01, with data-ui-language keeping the chosen language."
  },
+ "L10N-06": {
+  "status": "Partly fixed",
+  "resolution": "Part A close: headline and date are one translatable sentence (hero.line) wherever they were joined in code. State words inside sentences and day names from Intl remain."
+ },
  "L10N-07": {
   "status": "Fixed",
   "resolution": "Phase 3: smsSegments() counts GSM-7 and UCS-2 parts; Inbox shows encoding and parts; tests cover both."
  },
+ "L10N-08": {
+  "status": "Not fixing",
+  "resolution": "No translated text exists yet, so there is nothing longer to clip. A pseudo-locale layout check is part of the translation round in docs/HUMAN-ACTIONS.md."
+ },
  "L10N-09": {
   "status": "Fixed",
   "resolution": "Phase 3: i18n-check fails on placeholder or bold marker mismatch and on unknown statuses."
+ },
+ "L10N-10": {
+  "status": "Partly fixed",
+  "resolution": "Part A close: i18n-check fails if any counted key lacks the plural forms Intl.PluralRules needs for that language. Briefing translators on plurals is a human action."
  },
  "L10N-11": {
   "status": "Fixed",
@@ -194,6 +238,10 @@
  "L10N-12": {
   "status": "Prepared for human action",
   "resolution": "Phase 3: the name story is behind VITE_SHOW_NAME_STORY, off by default, with a TODO to confirm with two Tshivenda speakers."
+ },
+ "L10N-13": {
+  "status": "Prepared for human action",
+  "resolution": "The demo label is English because every language shows English today; showing a translated label beside it needs a translator."
  },
  "L10N-14": {
   "status": "Fixed",
@@ -399,8 +447,28 @@
   "status": "Fixed",
   "resolution": "Phase 1: range band has a legend for Your date, Likely range and Next money."
  },
+ "UX-08": {
+  "status": "Fixed",
+  "resolution": "Part A close: the chart scales to the expected line and heavy path, and the light edge of the band is clipped to the plot."
+ },
  "UX-09": {
   "status": "Fixed",
   "resolution": "Phase 1: daily messages default off at consent; Playwright checks the switch is unchecked."
+ },
+ "UX-10": {
+  "status": "Not fixing",
+  "resolution": "Rated Low; the importer works and is tested. Effort went to manual setup and cash entry, which serve people without statements. Revisit after the comprehension sessions."
+ },
+ "UX-11": {
+  "status": "Partly fixed",
+  "resolution": "Part A close: no leading zeros on days anywhere (tested); To reach Tight now reads Ways to reach Tight; R330 and R280 reconciled by the Phase 1 budget and room rules. Bill names keep the person's own case."
+ },
+ "UX-12": {
+  "status": "Not fixing",
+  "resolution": "The redesigned Home keeps the date, state and range in the first fold on phones and a single column on tablets by choice; Privacy has an accessible name. Revisit with the comprehension sessions."
+ },
+ "UX-13": {
+  "status": "Partly fixed",
+  "resolution": "Part A close: the picker chip is labelled Starts at, and roles on Me wrap to two lines instead of truncating. The chip is not recomputed from a live forecast."
  }
 }

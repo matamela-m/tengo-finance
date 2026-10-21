@@ -129,7 +129,8 @@
     "backHome": "home",
     "deletedTitle": "{{name}}'s data was deleted",
     "deletedBody": "Receipt {{ref}}, {{date}}. Removed {{count}} transactions and {{audit}} audit entries. Choose a person to start again.",
-    "step": "Step 1 of 2"
+    "step": "Step 1 of 2",
+    "startsAt": "Starts at"
   },
   "personas": {
     "fictional": "Fictional composite",
@@ -369,7 +370,8 @@
     "gap_other": "{{count}} days before your next money",
     "tightUntil": "Tight until",
     "unclear": "Not enough to tell",
-    "unclearLead": "Your date"
+    "unclearLead": "Your date",
+    "line": "{{label}} {{date}}"
   },
   "band": {
     "between": "Likely between {{from}} and {{to}}",
@@ -810,7 +812,8 @@
     "noChanges": "No changes made",
     "exported": "Data exported as {{format}}",
     "consentSaved": "Consent updated",
-    "paused": "Consent withdrawn. The forecast is paused."
+    "paused": "Consent withdrawn. The forecast is paused.",
+    "belowZero": "{{amount}} below zero"
   },
   "help": {
     "title": "What helps most",
@@ -819,7 +822,7 @@
     "coveredTitle": "You are covered",
     "setAside": "You could set aside up to {{amount}} today and still be Enough until your next money. This is the same room as Room to lend, not extra.",
     "coveredBody": "Your money should last until your next money, even on a heavier week.",
-    "toReachState": "To reach {{state}}",
+    "toReachState": "Ways to reach {{state}}",
     "more_one": "{{count}} more way",
     "more_other": "{{count}} more ways",
     "fewer": "Show fewer",

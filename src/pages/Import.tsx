@@ -277,7 +277,7 @@ export default function ImportPage() {
                         <p className="text-xs text-muted">{t('import.result')}</p>
                         <div className="mt-1 flex flex-wrap items-center gap-2">
                           <p className="num font-semibold">
-                            {preview.status === 'unclear' ? t('hero.unclear') : `${t(headlineKey(preview))} ${d.dayShort(preview.headlineDate)}`}
+                            {preview.status === 'unclear' ? t('hero.unclear') : t('hero.line', { label: t(headlineKey(preview)), date: d.dayShort(preview.headlineDate) })}
                           </p>
                           <StateChip state={preview.status} size="sm" />
                         </div>

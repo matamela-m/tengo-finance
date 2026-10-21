@@ -71,8 +71,10 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
   const geo = useMemo(() => {
     const w = Math.max(1, width - PAD.left - PAD.right);
     const h = height - PAD.top - PAD.bottom;
-    const rawHi = Math.max(forecast.balance, ...days.map((p) => p.optimistic));
-    const rawLo = Math.min(0, ...days.map((p) => p.pessimistic));
+    // Scale to the expected line and the heavy path, not the light path, so the line does not hug
+    // zero; the light edge of the band is clipped at the top of the plot (UX-08).
+    const rawHi = Math.max(forecast.balance, ...days.map((p) => p.central)) * 1.15;
+    const rawLo = Math.min(0, ...days.map((p) => Math.min(p.central, p.pessimistic)));
     const step = niceStep(rawHi - rawLo, 3);
     const hi = Math.ceil(rawHi / step) * step;
     const lo = Math.floor(rawLo / step) * step;
@@ -93,15 +95,17 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
 
   const xLabels = useMemo(() => (width < 400 ? [0, 14, days.length - 1] : [0, 7, 14, 21, days.length - 1]), [days.length, width]);
 
+  // Screen readers can drop a leading minus, so negative amounts are said in words (A11Y-11).
+  const spoken = (v: number) => (Math.round(v) < 0 ? t('a11y.belowZero', { amount: formatZAR(Math.abs(Math.round(v))) }) : formatZAR(Math.round(v)));
   const events = [
     day.incomeToday > 0 ? `${t('scrubber.expectedIncome')} ${formatZAR(day.incomeToday)}` : '',
     ...day.billsToday.map((b) => `${t('scrubber.billDue', { name: b.description })} ${formatZAR(b.amount)}`),
   ].filter(Boolean);
   const valueText = t('scrubber.valueText', {
     date: d.weekdayLong(day.date),
-    amount: formatZAR(Math.round(day.central)),
-    low: formatZAR(Math.round(day.pessimistic)),
-    high: formatZAR(Math.round(day.optimistic)),
+    amount: spoken(day.central),
+    low: spoken(day.pessimistic),
+    high: spoken(day.optimistic),
     level: t(`scrubber.level.${day.state}`),
     events: events.length ? ` ${events.join('. ')}.` : '',
   });
@@ -168,7 +172,10 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
                 </text>
               </g>
             ))}
-            <path d={geo.band} fill="var(--color-band)" />
+            <clipPath id={`${id}-clip`}>
+              <rect x={PAD.left} y={PAD.top} width={Math.max(0, width - PAD.left - PAD.right)} height={Math.max(0, geo.bottom - PAD.top)} />
+            </clipPath>
+            <path d={geo.band} fill="var(--color-band)" clipPath={`url(#${id}-clip)`} />
             <path d={geo.area} fill={`url(#${id}-area)`} />
             <path d={geo.central} fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
             <line x1={geo.x(index)} x2={geo.x(index)} y1={PAD.top} y2={geo.bottom} stroke="var(--color-text)" strokeOpacity="0.2" strokeWidth="1" />

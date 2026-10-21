@@ -88,6 +88,7 @@ export default function Picker() {
                   <div className="flex w-full items-start justify-between gap-4">
                     <Avatar persona={p} size={48} />
                     <div className="flex flex-col items-end gap-2">
+                      <span className="text-xs text-subtle">{t('picker.startsAt')}</span>
                       <StateChip state={p.startState} />
                       <CoverBars state={p.startState} size={56} />
                     </div>

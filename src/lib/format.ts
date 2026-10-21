@@ -44,25 +44,25 @@ function parts(iso: string, lang: LanguageCode, options: Intl.DateTimeFormatOpti
 /** "Thu 23 Oct" */
 export function formatDayShort(iso: string, lang: LanguageCode): string {
   const p = parts(iso, lang, { weekday: 'short', day: 'numeric', month: 'short' });
-  return `${p.weekday} ${p.day} ${p.month}`;
+  return `${p.weekday} ${Number(p.day)} ${p.month}`;
 }
 
 /** "Thursday 23 October", for screen readers and long labels. */
 export function formatDayLong(iso: string, lang: LanguageCode): string {
   const p = parts(iso, lang, { weekday: 'long', day: 'numeric', month: 'long' });
-  return `${p.weekday} ${p.day} ${p.month}`;
+  return `${p.weekday} ${Number(p.day)} ${p.month}`;
 }
 
 /** "23 Oct" */
 export function formatDayMonth(iso: string, lang: LanguageCode): string {
   const p = parts(iso, lang, { day: 'numeric', month: 'short' });
-  return `${p.day} ${p.month}`;
+  return `${Number(p.day)} ${p.month}`;
 }
 
 /** "23 Oct 2026" */
 export function formatDateLong(iso: string, lang: LanguageCode): string {
   const p = parts(iso, lang, { day: 'numeric', month: 'short', year: 'numeric' });
-  return `${p.day} ${p.month} ${p.year}`;
+  return `${Number(p.day)} ${p.month} ${p.year}`;
 }
 
 /** "Thursday" */

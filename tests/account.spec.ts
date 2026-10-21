@@ -125,3 +125,32 @@ test('sign out everywhere ends the session and returns to the picker', async ({ 
   expect(session).toBeNull();
   await context.close();
 });
+
+test('erasing after a forgotten PIN also signs out, so the account data does not open without the PIN', async ({ browser }) => {
+  const context = await browser.newContext();
+  const page = await device(context);
+  await guestWithSample(page);
+  await page.goto('/app/account');
+  await signIn(page, 'lee@example.test');
+  await page.getByRole('button', { name: "Save this device's profile" }).click();
+  await expect(page).toHaveURL(/\/app$/);
+  await page.goto('/app/me');
+  await page.getByRole('button', { name: 'Set PIN' }).click();
+  await page.getByLabel('New PIN').fill('4821');
+  await page.getByLabel('Type the PIN again').fill('4821');
+  await page.getByRole('button', { name: 'Set PIN' }).click();
+  await page.getByRole('button', { name: 'Lock now' }).click();
+  await page.getByRole('button', { name: 'Forgot your PIN?' }).click();
+  await page.getByRole('button', { name: 'Delete all data on this device' }).click();
+  await page.waitForURL((u) => u.pathname === '/');
+  const left = await page.evaluate(() => ({
+    account: localStorage.getItem('tengo.account.v1') ?? '',
+    session: localStorage.getItem('tengo.e2e.session') ?? '',
+  }));
+  expect(left.account).not.toContain('"mode":"account"');
+  expect(left.account).not.toContain('lee@example.test');
+  expect(left.session).toBe('');
+  await page.goto('/app');
+  await expect(page.getByText(/Your profile \| Saved to your account/)).toHaveCount(0);
+  await context.close();
+});

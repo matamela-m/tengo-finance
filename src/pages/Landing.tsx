@@ -126,7 +126,7 @@ export default function Landing() {
 
   const stats = [
     { value: '90', label: t('landing.stats.history') },
-    { value: '3', label: t('landing.stats.states') },
+    { value: '4', label: t('landing.stats.states') },
     { value: String(LANGUAGES.length), label: t('landing.stats.languages') },
     { value: '0', label: t('landing.stats.logins') },
   ];

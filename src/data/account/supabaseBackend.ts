@@ -8,6 +8,8 @@ import type { AccountBackend, AccountUser, Bundle } from './backend';
  * (supabase/migrations) limits every query to the signed-in person. The client library is loaded only
  * when accounts are used, so guests never download it.
  */
+const PAGE = 1000;
+
 export class SupabaseBackend implements AccountBackend {
   private client: Promise<SupabaseClient> | null = null;
 
@@ -54,7 +56,7 @@ export class SupabaseBackend implements AccountBackend {
     const [p, a, t, r] = await Promise.all([
       db.from('profiles').select('*').maybeSingle(),
       db.from('accounts').select('*'),
-      db.from('transactions').select('*').order('date'),
+      this.allTransactions(),
       db.from('recurring_items').select('*'),
     ]);
     for (const res of [p, a, t, r]) if (res.error) throw new Error('load_failed');
@@ -96,6 +98,18 @@ export class SupabaseBackend implements AccountBackend {
     };
   }
 
+  /** The server returns at most 1 000 rows per request, so transactions are read in pages. */
+  private async allTransactions(): Promise<{ data: Record<string, unknown>[]; error: unknown }> {
+    const db = await this.db();
+    const rows: Record<string, unknown>[] = [];
+    for (let from = 0; ; from += PAGE) {
+      const res = await db.from('transactions').select('*').order('date').order('id').range(from, from + PAGE - 1);
+      if (res.error) return { data: [], error: res.error };
+      rows.push(...(res.data as Record<string, unknown>[]));
+      if (res.data.length < PAGE) return { data: rows, error: null };
+    }
+  }
+
   async saveBundle(b: Bundle): Promise<void> {
     const db = await this.db();
     const user_id = await this.uid();
@@ -119,7 +133,8 @@ export class SupabaseBackend implements AccountBackend {
         movable_bills: p.movableBills ?? [],
       }),
     );
-    // Small tables are replaced whole. Row-level security limits the delete to this person's rows.
+    // Rows are written first and only rows no longer present are removed after, so a save that fails
+    // partway leaves the server copy whole rather than empty. Row-level security limits both to this person.
     for (const [table, rows] of [
       ['accounts', b.accounts.map((a) => ({ user_id, id: a.id, kind: a.kind, name: a.name, balance: a.balance }))],
       [
@@ -128,8 +143,17 @@ export class SupabaseBackend implements AccountBackend {
       ],
       ['recurring_items', b.obligations.map((o) => ({ user_id, id: o.id, kind: o.kind, name: o.name, amount: o.amount, every: o.every, next_date: o.nextDate, movable: o.movable }))],
     ] as const) {
-      check(await db.from(table).delete().eq('user_id', user_id));
-      for (let i = 0; i < rows.length; i += 500) check(await db.from(table).insert(rows.slice(i, i + 500) as never[]));
+      for (let i = 0; i < rows.length; i += 500) check(await db.from(table).upsert(rows.slice(i, i + 500) as never[]));
+      const keep = new Set(rows.map((r) => r.id));
+      const existing: string[] = [];
+      for (let from = 0; ; from += PAGE) {
+        const res = await db.from(table).select('id').order('id').range(from, from + PAGE - 1);
+        check(res);
+        existing.push(...(res.data as { id: string }[]).map((r) => r.id));
+        if ((res.data ?? []).length < PAGE) break;
+      }
+      const stale = existing.filter((id) => !keep.has(id));
+      for (let i = 0; i < stale.length; i += 200) check(await db.from(table).delete().eq('user_id', user_id).in('id', stale.slice(i, i + 200)));
     }
   }
 

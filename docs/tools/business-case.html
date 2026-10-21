@@ -1,0 +1,187 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Tengo business case</title><style>
+@page { size: A4; margin: 10mm 11mm; }
+body { font-family: Arial, sans-serif; font-size: 7.2pt; line-height: 1.32; color: #1C1B19; columns: 2; column-gap: 8mm; }
+h1 { column-span: all; font-size: 15pt; margin: 0 0 2mm; }
+h1 + p { column-span: all; color: #66635D; margin: 0 0 3mm; }
+h2 { font-size: 9pt; margin: 3mm 0 1mm; color: #3755CC; break-after: avoid; }
+p { margin: 0 0 1.6mm; }
+table { width: 100%; border-collapse: collapse; margin: 0 0 2mm; break-inside: avoid; }
+th, td { text-align: left; vertical-align: top; padding: 0.6mm 1mm; border-bottom: 0.2mm solid #E7E5E1; }
+th { background: #F4F3F1; }
+code { font-size: 6.6pt; }
+</style></head><body><h1>Tengo business case: a bank-embedded money date for irregular earners</h1>
+<p>Prepared 2026-10-21. Every number comes from <code>docs/review/model.xlsx</code> (Base scenario unless stated), whose inputs are sourced or labelled <strong>Assumption</strong> in <code>docs/review/model-inputs.md</code>. No user or bank data exists yet: the outcomes a bank would pay for are assumptions until a pilot measures them.</p>
+<h2>The offer</h2>
+<p>Tengo is a feature a bank switches on inside its own app for customers paid by the trip, the client or the till. It shows the date the money runs out, when the next money usually lands, and one state in plain words (Enough, Tight, Short), worked out on the phone from the bank's own data.</p>
+<p><strong>Pricing (model (a), licence):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Base</th>
+<th>Range in the model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Licence per monthly active user</td>
+<td>R5 a month</td>
+<td>R2 to R12</td>
+</tr>
+<tr>
+<td>Six month pilot fee</td>
+<td>R400 000</td>
+<td>R150 000 to R1 000 000</td>
+</tr>
+<tr>
+<td>Annual platform minimum after the pilot</td>
+<td>R1 200 000</td>
+<td>R600 000 to R3 000 000</td>
+</tr>
+</tbody>
+</table>
+<p>Users never pay. A consumer subscription does not fit this segment (model (c) shows negative contribution in the Base scenario).</p>
+<p><strong>Messages: in-app notifications, not paid WhatsApp.</strong> A daily WhatsApp message costs more than the licence leaves; in-app push inside a bank app costs R0 a message in the model. WhatsApp or SMS is used only if the bank pays for it, and every message carries the sender and STOP.</p>
+<h2>What a bank already has, and what Tengo adds</h2>
+<table>
+<thead>
+<tr>
+<th>A bank already has</th>
+<th>Tengo adds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Balances, transaction history, debit orders</td>
+<td>The date money runs out, with a likely range tuned to about 80 percent coverage on synthetic data, not yet held out or tested on real statements</td>
+</tr>
+<tr>
+<td>Budgets and spend categories that assume a payday</td>
+<td>Next money inferred from irregular income: weekday, interval, daily or paused</td>
+</tr>
+<tr>
+<td>Overdraft and credit products</td>
+<td>One plain state with rules that never suggest borrowing, skipping credit or insurance, or cutting stock</td>
+</tr>
+<tr>
+<td>A mobile app and notifications</td>
+<td>Shared-phone protections, plain-language copy, a design built and tested for people without a payday</td>
+</tr>
+</tbody>
+</table>
+<p>The arithmetic is simple and a bank could build it. Tengo's claim is the tested rules, the copy, the safety design and the evidence from a pilot, delivered faster than an internal build.</p>
+<h2>Data contract</h2>
+<table>
+<thead>
+<tr>
+<th>Tengo needs from the bank</th>
+<th>Tengo returns to the bank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Up to 90 days of transactions per consenting customer (date, amount, description, category)</td>
+<td>Nothing about individuals. The forecast runs on the phone</td>
+</tr>
+<tr>
+<td>Available balance, and any overdraft facility shown separately</td>
+<td>Aggregated, consented pilot metrics only (below)</td>
+</tr>
+<tr>
+<td>Scheduled debit orders as known bills</td>
+<td>A monthly accuracy report on the bank's own data</td>
+</tr>
+</tbody>
+</table>
+<p>Purpose limit: Tengo's outputs may not be used for credit decisions, pricing, collections or marketing without fresh, separate consent and a POPIA section 71 assessment.</p>
+<h2>Unit economics (Base scenario, one partner bank)</h2>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Serviceable market (people)</td>
+<td>3 300 000</td>
+</tr>
+<tr>
+<td>Steady-state monthly active users, one bank</td>
+<td>44 064</td>
+</tr>
+<tr>
+<td>Variable cost per active user per month</td>
+<td>R1.19</td>
+</tr>
+<tr>
+<td>Fixed cost per month</td>
+<td>R310 403</td>
+</tr>
+<tr>
+<td>Contribution per active user per month, licence</td>
+<td>R3.81</td>
+</tr>
+<tr>
+<td>Active users needed to break even, licence</td>
+<td>81 374</td>
+</tr>
+<tr>
+<td>Peak funding need</td>
+<td>R4 728 272</td>
+</tr>
+<tr>
+<td>First profitable month</td>
+<td>beyond month 24</td>
+</tr>
+</tbody>
+</table>
+<p>One bank at Base adoption does not break even on the licence alone. The pilot fee and the platform minimum carry the early months; a second bank or a sponsor programme closes the gap. The Ambitious scenario (330 480 active users) is profitable from month 1; the Conservative one never is.</p>
+<p><strong>Value to the bank (assumptions):</strong> about R30.50 per active user a year against R60 of licence, or R0.51 of value per rand of licence, driven mostly by retention and balances. This is the weakest part of the case and is exactly what the pilot measures.</p>
+<h2>Pilot design and KPIs</h2>
+<p>Six months, one bank, a randomised control group of offered-but-not-shown customers.</p>
+<table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Measured how</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unpaid debit orders per user</td>
+<td>Treatment against control</td>
+<td>Fees avoided and bank cost</td>
+</tr>
+<tr>
+<td>Average balance and days below R0</td>
+<td>Treatment against control</td>
+<td>Balances and overdraft use</td>
+</tr>
+<tr>
+<td>90 day retention of the account</td>
+<td>Treatment against control</td>
+<td>The main value driver in the model</td>
+</tr>
+<tr>
+<td>Forecast accuracy on real data</td>
+<td>Error in days and band coverage</td>
+<td>Replaces the synthetic backtest</td>
+</tr>
+<tr>
+<td>Comprehension</td>
+<td>The six-person test kit, then in-app questions</td>
+<td>People read the date, range and state correctly</td>
+</tr>
+<tr>
+<td>Opt-in and opt-out of messages</td>
+<td>Rates by state</td>
+<td>Avoidance and anxiety</td>
+</tr>
+</tbody>
+</table>
+<p>Stop rule: if people read the date as a deadline and make worse decisions, or real-data accuracy is far below the stated range, the pilot pauses.</p>
+<h2>Changes from the build</h2>
+<p>Build 2 does not change any modelled cost: messages are still templates (no paid model calls), in-app push is already modelled at R0, and the forecast still runs on the device. The optional account storage used outside a bank is covered by the hosting line (R0.15 per active user a month, an assumption). So <code>model.xlsx</code> is unchanged.</p></body></html>

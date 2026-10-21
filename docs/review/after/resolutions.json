@@ -1,7 +1,7 @@
 {
  "A11Y-01": {
   "status": "Fixed",
-  "resolution": "Phase 3: html lang follows contentLanguage(): English while a language is not translated; Playwright checks it."
+  "resolution": "Phase 3: html lang follows contentLanguage(): English while a language is not translated; Playwright checks it. Phase 9: Inbox message text now uses contentLanguage too."
  },
  "A11Y-02": {
   "status": "Fixed",
@@ -20,8 +20,8 @@
   "resolution": "Phase 1: contradictions removed and fewer dates on Home. A low-numeracy test is in the research kit (Phase 9)."
  },
  "A11Y-06": {
-  "status": "Fixed",
-  "resolution": "Phase 6: optional PIN lock (salted PBKDF2 hash on the device, auto-lock, cool-off after five tries), discreet mode that masks amounts until tapped, and quick exit to a neutral page; Playwright covers all three."
+  "status": "Partly fixed",
+  "resolution": "Phase 6: optional PIN lock (salted PBKDF2 hash on the device, auto-lock, cool-off after five tries), discreet mode that masks amounts until tapped, and quick exit to a neutral page; Playwright covers all three. Re-review (accessibility, partly): Lock and discreet mode work (safety.spec.ts:15, 42). Quick exit uses replace on one entry (SafetyControls.tsx:32), so Back returns to Home when no PIN is set. safety.spec.ts:64 only checks \"not /app/plan\". Quick exit cannot be reached while a drawer is open (Drawer.tsx:28 makes root inert)."
  },
  "A11Y-07": {
   "status": "Partly fixed",
@@ -36,16 +36,16 @@
   "resolution": "Translations by first-language speakers and testing with low-literacy users are listed in docs/HUMAN-ACTIONS.md and the research kit."
  },
  "A11Y-10": {
-  "status": "Fixed",
-  "resolution": "Phase 5: import errors sit in a live alert region and explain what to do; setup form errors are announced too."
+  "status": "Partly fixed",
+  "resolution": "Phase 5: import errors sit in a live alert region and explain what to do; setup form errors are announced too. Re-review (accessibility, partly): Setup errors use role alert (ManualSetupForm.tsx:68). The obligations amount, account email and account balance still give no message (A11Y-A5)."
  },
  "A11Y-11": {
-  "status": "Fixed",
-  "resolution": "Part A close: the chart slider says amounts below zero in words; transaction rows already say money in or money out."
+  "status": "Partly fixed",
+  "resolution": "Part A close: the chart slider says amounts below zero in words; transaction rows already say money in or money out. Re-review (accessibility, partly): Slider says \"below zero\" (TimelineScrubber.tsx:99). The chart table still prints \"-R1 882\" (TimelineScrubber.tsx:280)."
  },
  "A11Y-12": {
-  "status": "Fixed",
-  "resolution": "Part A close: transaction descriptions and roles wrap to two lines instead of truncating."
+  "status": "Partly fixed",
+  "resolution": "Part A close: transaction descriptions and roles wrap to two lines instead of truncating. Re-review (accessibility, partly): Truncate is still used at Money.tsx:210, ObligationsCard.tsx:74, AccountsCard.tsx:55 and Import.tsx:218."
  },
  "A11Y-13": {
   "status": "Fixed",
@@ -53,7 +53,7 @@
  },
  "A11Y-14": {
   "status": "Fixed",
-  "resolution": "Phase 4: no untranslated locale JSON is parsed at start; initial JavaScript is 119 KB gzipped."
+  "resolution": "Phase 4: no untranslated locale JSON is parsed at start; initial JavaScript is 134 KB gzipped."
  },
  "A11Y-15": {
   "status": "Partly fixed",
@@ -64,8 +64,8 @@
   "resolution": "Phase 1: usual spend shown beside the budget and the next large bill just after next money is kept back and named."
  },
  "BEH-02": {
-  "status": "Fixed",
-  "resolution": "Phase 5: bank, cash and mobile wallet accounts with a balance each, summed for the forecast; quick cash entries; manual setup for people without statements."
+  "status": "Partly fixed",
+  "resolution": "Phase 5: bank, cash and mobile wallet accounts with a balance each, summed for the forecast; quick cash entries; manual setup for people without statements. Re-review (behavioural, disagree): Accounts and cash entries exist, but no ATM or transfer rule (forecast.ts:55 is the only transfer word). A withdrawal counts as spend and the cash out entry counts again."
  },
  "BEH-03": {
   "status": "Partly fixed",
@@ -84,36 +84,76 @@
   "resolution": "Phase 6: discreet messages and on-screen masking for shared phones and lock screens. Change-based messages and opt-out tracking by state need a real messaging pilot."
  },
  "BEH-07": {
-  "status": "Fixed",
-  "resolution": "Phase 5: stokvel, burial society, family support and informal loans are first-class recurring items that behave like bills; every persona has one."
+  "status": "Partly fixed",
+  "resolution": "Phase 5: stokvel, burial society, family support and informal loans are first-class recurring items that behave like bills; every persona has one. Re-review (behavioural, partly): Obligations count like bills, but stokvel and family support can be offered as bills to move (help.ts:39, help.ts:150), and a stokvel payout has no tag beyond one-off."
  },
  "BEH-08": {
   "status": "Prepared for human action",
-  "resolution": "The date-first claim is presented as a hypothesis and tested in task T2 of the research kit (docs/research)."
+  "resolution": "The date-first claim is presented as a hypothesis and tested in task T2 of the research kit (docs/research). Re-review (behavioural, disagree): T2 has no balance-only condition, so it cannot compare date and balance (docs/research/task-script.md:19-21)."
  },
  "BEH-09": {
   "status": "Prepared for human action",
-  "resolution": "Phase 6: discreet mode and quick exit are built as design inputs; whether people show or hide the screen strategically is a question in the research kit (docs/research)."
+  "resolution": "Phase 6: discreet mode and quick exit are built as design inputs; whether people show or hide the screen strategically is a question in the research kit (docs/research). Re-review (behavioural, partly): Only \"would not want someone else to see\" is asked (task-script.md:32); nothing on showing the screen to turn down a request."
+ },
+ "COMM-01": {
+  "status": "Partly fixed",
+  "resolution": "Phase 9: the business case and judge Q&A describe Tengo as a partner capability, not a moat; no defensibility beyond speed and pilot evidence."
+ },
+ "COMM-02": {
+  "status": "Partly fixed",
+  "resolution": "Phase 9: the model shows the single bank gap openly; a pilot fee, an annual minimum and a second bank or sponsor are the levers. One bank at base adoption still does not break even."
+ },
+ "COMM-03": {
+  "status": "Fixed",
+  "resolution": "Phase 9: base model uses in-app notifications at R0 a message; paid WhatsApp only if the bank pays (docs/business-case.md)."
  },
  "COMM-04": {
   "status": "Fixed",
   "resolution": "Phase 5: cash income and cash on hand are now part of the forecast."
  },
+ "COMM-05": {
+  "status": "Prepared for human action",
+  "resolution": "Phase 9: pilot design with a control group and KPIs in docs/business-case.md; outcomes need a real pilot."
+ },
+ "COMM-06": {
+  "status": "Fixed",
+  "resolution": "Phase 9: no consumer subscription; a bank pays per active user and users never pay (docs/business-case.md)."
+ },
+ "COMM-07": {
+  "status": "Partly fixed",
+  "resolution": "Phase 9: one distribution story, bank embedded, in the business case and pitch. The build also offers standalone accounts, which the product re-review flags (PROD-A3)."
+ },
  "COMM-08": {
   "status": "Fixed",
   "resolution": "Phase 3: the landing stat and every language claim reworded honestly."
+ },
+ "COMM-09": {
+  "status": "Partly fixed",
+  "resolution": "Phase 9: the business case names a second bank or a funder as the way past one buyer; no second buyer exists."
+ },
+ "COMM-10": {
+  "status": "Prepared for human action",
+  "resolution": "Phase 9: logo and brand assets listed for a designer and the founder (docs/HUMAN-ACTIONS.md item 14)."
+ },
+ "COMM-11": {
+  "status": "Fixed",
+  "resolution": "Phase 9: docs/business-case.md and a one-page docs/business-case.pdf."
+ },
+ "DATA-01": {
+  "status": "Prepared for human action",
+  "resolution": "Phase 9: backtest code and regression thresholds are ready to run on consented real statements (docs/HUMAN-ACTIONS.md item 13); every accuracy number so far is synthetic."
  },
  "DATA-02": {
   "status": "Partly fixed",
   "resolution": "Phase 2: state downgrades for the reserve and paused income reduce some false reassurance; lumpy outflows are still a daily rate, not events."
  },
  "DATA-03": {
-  "status": "Fixed",
-  "resolution": "Phase 2: calibrated band covers about 80 percent at every lead time up to 20 days (54 percent within 6 days before); method in README and COMPARISON.md."
+  "status": "Partly fixed",
+  "resolution": "Phase 2: calibrated band covers about 80 percent at every lead time up to 20 days (54 percent within 6 days before); method in README and COMPARISON.md. Re-review (data, disagree): Engine-independent balances, run-out within 6 days: 53.5 percent coverage (n 129), old 48.1. The 78.9 headline comes from target cases (83.2). Ayanda overall: 70.5."
  },
  "DATA-04": {
-  "status": "Fixed",
-  "resolution": "Phase 2: no Enough under 28 days, under 14 days Not enough to tell, and usual spend never below the plain outflow average under 45 days."
+  "status": "Partly fixed",
+  "resolution": "Phase 2: no Enough under 28 days, under 14 days Not enough to tell, and usual spend never below the plain outflow average under 45 days. Re-review (data, partly): False reassurance at 14 days fell from 6.9 to 0.8. MAE still ties the naive baseline: 5.4 vs 5.4 at 14 days, 3.3 vs 3.3 at 28."
  },
  "DATA-05": {
   "status": "Partly fixed",
@@ -121,7 +161,7 @@
  },
  "DATA-06": {
   "status": "Partly fixed",
-  "resolution": "Phase 2: interval window widened to the 10th to 90th percentile gaps and day 0 payments handled; next money inside the window rose from 85.8 to 90.1 percent on the 90 day slice."
+  "resolution": "Phase 2: interval window widened to the 10th to 90th percentile gaps and day 0 payments handled; next money inside the window rose from 85.8 to 90.1 percent on the 90 day slice. Re-review (data, partly): \"85.8 to 90.1\" mixes conventions. Under the same convention it is 75.6 to 90.1. Without day 0 paydays, 89.5 to 94.1."
  },
  "DATA-07": {
   "status": "Prepared for human action",
@@ -133,19 +173,43 @@
  },
  "DATA-09": {
   "status": "Partly fixed",
-  "resolution": "Phase 2: src/engine/accuracy.test.ts runs a backtest slice in npm test and CI with thresholds. Field accuracy logging needs a pilot."
+  "resolution": "Phase 2: src/engine/accuracy.test.ts runs a backtest slice in npm test and CI with thresholds. Field accuracy logging needs a pilot. Re-review (data, partly): The test passes: MAE 2.59, coverage 87.2, false reassurance 2.8, n 108. Thresholds are loose (DATA-A3)."
  },
  "DATA-10": {
   "status": "Not fixing",
-  "resolution": "The time of day of the balance is unknown, so a full day of spend on day 0 is the cautious choice. Pending same-day credits are handled by the payday-today rule."
+  "resolution": "The time of day of the balance is unknown, so a full day of spend on day 0 is the cautious choice. Pending same-day credits are handled by the payday-today rule. Re-review (data, partly): Untested. The harness puts day 0 income in the hold-out but still subtracts all of day 0 spend. 336 of 2 160 cases are day 0 paydays."
+ },
+ "INV-01": {
+  "status": "Prepared for human action",
+  "resolution": "Phase 9: comprehension kit in docs/research/ for six sessions (docs/HUMAN-ACTIONS.md item 4); no user evidence yet."
+ },
+ "INV-02": {
+  "status": "Partly fixed",
+  "resolution": "Phase 9: business case says what a bank already has and that a bank could build it; the insight is not protected."
  },
  "INV-03": {
   "status": "Fixed",
   "resolution": "Phase 1: one rule per screen enforced by the Home view model and its tests."
  },
+ "INV-04": {
+  "status": "Prepared for human action",
+  "resolution": "Phase 9: data contract in the business case, CSV import and manual setup in the app; a real feed needs a bank."
+ },
  "INV-05": {
   "status": "Fixed",
   "resolution": "Phase 3: the claim now reads Built for 11 languages. English today."
+ },
+ "INV-06": {
+  "status": "Partly fixed",
+  "resolution": "Phases 2 and 9: engine fixes, rerun backtest and a regression test. Still synthetic and tuned in-sample; the data re-review finds the engine roughly ties a simple baseline on outflows only."
+ },
+ "INV-07": {
+  "status": "Fixed",
+  "resolution": "Phase 9: a bank pays per active user, with a pilot fee and an annual minimum (docs/business-case.md, model.xlsx)."
+ },
+ "INV-08": {
+  "status": "Fixed",
+  "resolution": "Phase 2: the headline counts small daily income at half on the usual path, as the chart does; COMPARISON.md shows both measures."
  },
  "INV-09": {
   "status": "Fixed",
@@ -168,32 +232,48 @@
   "resolution": "Phase 1: homeView() in src/engine/view.ts drives every Home element; view.test.ts checks every persona on 60 days, balance sweeps and edge cases for consistency."
  },
  "JUDGE-02": {
-  "status": "Fixed",
-  "resolution": "Phase 3: Built for 11 languages. English today. on Landing, picker and Me; html lang is the language of the shown text; status chips per language."
+  "status": "Partly fixed",
+  "resolution": "Phase 3: Built for 11 languages. English today. on Landing, picker and Me; html lang is the language of the shown text; status chips per language. Re-review (judges, partly): Stat and html lang fixed; Inbox lang still wrong (A11Y-01)."
  },
  "JUDGE-03": {
-  "status": "Fixed",
-  "resolution": "Phases 1 and 3: help only offers earn or receive more, trim spending marked flexible, or move a bill marked movable; credit, insurance, rent, school fees and funeral cover are never moved; stock and fuel never trimmed; borrowing caution and not-advice lines on Home, Plan and Help."
+  "status": "Partly fixed",
+  "resolution": "Phases 1 and 3: help only offers earn or receive more, trim spending marked flexible, or move a bill marked movable; credit, insurance, rent, school fees and funeral cover are never moved; stock and fuel never trimmed; borrowing caution and not-advice lines on Home, Plan and Help. Re-review (judges, partly): One-tap Room to lend in Tight and uncapped budget remain (BEH-A1, BEH-01, RISK-11)."
  },
  "JUDGE-04": {
-  "status": "Fixed",
-  "resolution": "Phase 2: paused income, no-income state, payday-today rule, stale-balance handling and data age, each with unit tests; stress cases S01 to S13 are permanent tests (src/engine/stress.test.ts)."
+  "status": "Partly fixed",
+  "resolution": "Phase 2: paused income, no-income state, payday-today rule, stale-balance handling and data age, each with unit tests; stress cases S01 to S13 are permanent tests (src/engine/stress.test.ts). Re-review (judges, partly): Late pay and stopped daily takings show Enough (RISK-A1, RISK-A2); income_missed false reassurance 36.8 to 45.4 (DATA-05)."
+ },
+ "JUDGE-05": {
+  "status": "Partly fixed",
+  "resolution": "Phase 9: the backtest is in the demo script and Q&A with its limits; after the data re-review the numbers were restated as matched figures with the baseline beside them."
+ },
+ "JUDGE-06": {
+  "status": "Partly fixed",
+  "resolution": "Phase 9: docs/business-case.md and PDF with one bank-embedded story; standalone accounts still pull against it (PROD-A3)."
+ },
+ "JUDGE-07": {
+  "status": "Prepared for human action",
+  "resolution": "Phase 9: research kit in docs/research/; sessions are for the founder (docs/HUMAN-ACTIONS.md item 4)."
  },
  "JUDGE-08": {
-  "status": "Fixed",
-  "resolution": "Phase 5: cash in, cash out and cash on hand in one tap from Home and Money; cash entries feed the forecast and cash on hand counts in the total, shown separately."
+  "status": "Partly fixed",
+  "resolution": "Phase 5: cash in, cash out and cash on hand in one tap from Home and Money; cash entries feed the forecast and cash on hand counts in the total, shown separately. Re-review (judges, partly): ATM withdrawals double count (BEH-A2); summed balances hide overdraft (PROD-A1)."
  },
  "JUDGE-09": {
   "status": "Fixed",
   "resolution": "Phase 4: the whole build is precached at install from a build-time manifest; offline fallback page; Playwright tests go offline straight after a cold first load with no reload."
  },
  "JUDGE-10": {
-  "status": "Fixed",
-  "resolution": "Phase 1: labelled Plan example, messages off by default, neutral icons with In this demo and Planned sections on Privacy, distinct amber Tight."
+  "status": "Partly fixed",
+  "resolution": "Phase 1: labelled Plan example, messages off by default, neutral icons with In this demo and Planned sections on Privacy, distinct amber Tight. Re-review (judges, partly): Plan example still loads a change (UX-06); notice claims staff logging (SEC-A4)."
  },
  "JUDGE-11": {
   "status": "Prepared for human action",
   "resolution": "Phase 3: name story off by default; confirmation and final logo listed in docs/HUMAN-ACTIONS.md."
+ },
+ "JUDGE-12": {
+  "status": "Partly fixed",
+  "resolution": "Phase 9: docs/pitch/demo-script.md on the strongest screens; overstated lines found by the judges re-review were rewritten."
  },
  "L10N-01": {
   "status": "Prepared for human action",
@@ -260,12 +340,12 @@
   "resolution": "Phases 1 and 3: Daily budget and Room to lend with buffer lines; estimate-not-advice lines on Home, Plan, Help and the Why drawer."
  },
  "LEGAL-03": {
-  "status": "Fixed",
-  "resolution": "Phases 1, 3 and 8: messages off by default, sender and STOP in every message, and a server consent log with notice version."
+  "status": "Partly fixed",
+  "resolution": "Phases 1, 3 and 8: messages off by default, sender and STOP in every message, and a server consent log with notice version. Re-review (legal, partly): Off by default (Consent.tsx:28, Welcome toggle). STOP in every template (templates.ts:14-51). But messages carry only \"From Tengo\", no contact details, and the opt-in is a toggle inside onboarding with no channel or number named. Server consent log exists only for accounts."
  },
  "LEGAL-04": {
   "status": "Prepared for human action",
-  "resolution": "Phase 8: draft privacy notice and terms of use at /privacy-notice and /terms with a complaints route; operator identity from env vars. Legal review and naming the responsible party are human actions."
+  "resolution": "Phase 8: draft privacy notice and terms of use at /privacy-notice and /terms with a complaints route; operator identity from env vars. Legal review and naming the responsible party are human actions. Re-review (legal, partly): Drafts exist (PrivacyNotice.tsx, legalDoc keys) with placeholder warning. But the terms are linked only from the notice header (PrivacyNotice.tsx:26), not from Welcome or Account, and acceptance of terms is never recorded."
  },
  "LEGAL-05": {
   "status": "Prepared for human action",
@@ -289,15 +369,27 @@
  },
  "PROD-01": {
   "status": "Partly fixed",
-  "resolution": "Phases 2 and 5: overdraft shown; several accounts summed with a breakdown. Facility limits and scheduled debit orders still need a bank data contract."
+  "resolution": "Phases 2 and 5: overdraft shown; several accounts summed with a breakdown. Facility limits and scheduled debit orders still need a bank data contract. Re-review (product, partly): Overdraft depth is shown (src/engine/view.ts:139), but it is computed on the summed total (src/engine/forecast.ts:540, src/data/repository.ts:23). No facility limit, no scheduled debit orders, no credit account type (src/data/repository.ts:7)."
+ },
+ "PROD-02": {
+  "status": "Partly fixed",
+  "resolution": "Phase 9: docs/business-case.md has a table of what a bank already has and what Tengo adds, and narrows the claim to the run-out date; overlap with any bank's own tools is still for the bank to judge."
  },
  "PROD-03": {
   "status": "Fixed",
   "resolution": "Phase 1: state-specific headline (Enough until, Tight until, Short from); daily budget follows the state; chart readout labelled If money lands as usual."
  },
  "PROD-04": {
-  "status": "Fixed",
-  "resolution": "Phases 1 and 3: descriptive outcomes, no safe to lend, no credit repayment moves, not-advice and no-lending-decision lines."
+  "status": "Partly fixed",
+  "resolution": "Phases 1 and 3: descriptive outcomes, no safe to lend, no credit repayment moves, not-advice and no-lending-decision lines. Re-review (product, partly): Credit and burial moves are blocked (src/engine/help.ts:38-39) and the not-advice lines exist (src/i18n/locales/en.json:523, 657). But Plan's largest figure is still a lending amount, \"Room to lend\" at 44px (src/pages/Plan.tsx:228-229), and Home's \"Not advised\" (en.json:409) reads as advice."
+ },
+ "PROD-05": {
+  "status": "Not fixing",
+  "resolution": "Phase 9: messages default to in-app notifications inside a bank app, and WhatsApp or SMS only if the bank pays (business case). No USSD channel in this build; a USSD design needs a bank or operator."
+ },
+ "PROD-06": {
+  "status": "Prepared for human action",
+  "resolution": "Phase 9: business case data contract lists what a bank would send; the pilot still needs a bank sponsor (docs/HUMAN-ACTIONS.md)."
  },
  "PROD-07": {
   "status": "Partly fixed",
@@ -305,15 +397,15 @@
  },
  "PROD-08": {
   "status": "Partly fixed",
-  "resolution": "Phase 7: a guest-first own-profile onboarding (four steps, resumable) beside the fictional people. English-only locales and the placeholder brand remain human actions."
+  "resolution": "Phase 7: a guest-first own-profile onboarding (four steps, resumable) beside the fictional people. English-only locales and the placeholder brand remain human actions. Re-review (product, partly): The new onboarding is a standalone four-step wizard, which is further from a one-screen in-app opt-in on bank consent, not closer. Locales are still English only."
  },
  "RISK-01": {
-  "status": "Fixed",
-  "resolution": "Phase 2: income is paused after more than two usual gaps; no next money is counted, confidence is low, room to lend is R0 and Home says Income looks paused (S09, S11, S11b)."
+  "status": "Partly fixed",
+  "resolution": "Phase 2: income is paused after more than two usual gaps; no next money is counted, confidence is low, room to lend is R0 and Home says Income looks paused (S09, S11, S11b). Re-review (credit risk, partly): S09, S11, S11b paused, lend R0. Monthly salary 51 days since last: high, Enough, lend R2 740 (A1)."
  },
  "RISK-02": {
-  "status": "Fixed",
-  "resolution": "Phases 1 and 2: bills due in the week after next money (less a low payment) are kept back, Enough becomes Tight if a heavy week would eat into them, and lending keeps that reserve (S13: budget R150, lend R90, was R400 and R1 090)."
+  "status": "Partly fixed",
+  "resolution": "Phases 1 and 2: bills due in the week after next money (less a low payment) are kept back, Enough becomes Tight if a heavy week would eat into them, and lending keeps that reserve (S13: budget R150, lend R90, was R400 and R1 090). Re-review (credit risk, partly): S13 reserve R1 000, but following the budget ends at minus R667 (A3)."
  },
  "RISK-03": {
   "status": "Fixed",
@@ -324,8 +416,8 @@
   "resolution": "Phase 1: no budget figure when Short, usual spend shown, disclaimer beside the figure on Home."
  },
  "RISK-05": {
-  "status": "Fixed",
-  "resolution": "Phase 2: loans, refunds and listed words, large unrepeated amounts and anything marked one-off are left out of rates and income; under 45 days the person is asked instead (S04, S04b, S08, S08b)."
+  "status": "Partly fixed",
+  "resolution": "Phase 2: loans, refunds and listed words, large unrepeated amounts and anything marked one-off are left out of rates and income; under 45 days the person is asked instead (S04, S04b, S08, S08b). Re-review (credit risk, partly): S04, S04b, S08 fixed. New misfire: tips R60 a day plus \"Salary\" R6 000 twice in 50 days; both salaries dropped as one-offs (forecast.ts:189)."
  },
  "RISK-06": {
   "status": "Partly fixed",
@@ -336,28 +428,28 @@
   "resolution": "Phase 2: month-end uplift from history when two month ends show it, otherwise a heavier heavy path from the 25th (S06 now Short from 28 Oct, was Enough until 16 Nov)."
  },
  "RISK-08": {
-  "status": "Fixed",
-  "resolution": "Phase 2: calibrated minimum band, never zero width; confidence also drops for paused or irregular income and old balances; no room to lend at low confidence."
+  "status": "Partly fixed",
+  "resolution": "Phase 2: calibrated minimum band, never zero width; confidence also drops for paused or irregular income and old balances; no room to lend at low confidence. Re-review (credit risk, partly): Band never zero (S07-14). Confidence ignores late pay: A1, A2 show high."
  },
  "RISK-09": {
   "status": "Fixed",
   "resolution": "Phase 3: no deferring rent or credit, no stock cuts; trims capped at what flexible groups usually cost."
  },
  "RISK-10": {
-  "status": "Fixed",
-  "resolution": "Phase 2: a payment due today is pending, not pushed a week; Home offers It has come in (S12)."
+  "status": "Partly fixed",
+  "resolution": "Phase 2: a payment due today is pending, not pushed a week; Home offers It has come in (S12). Re-review (credit risk, partly): S12 pending. A day late (Tuesday pay, today 21 Oct, R300) it is Short, next money 27 Oct, though latest allows that day."
  },
  "RISK-11": {
-  "status": "Fixed",
-  "resolution": "Phase 1: renamed Room to lend, keeps the reserve, adds Only lend what you could manage without getting back."
+  "status": "Partly fixed",
+  "resolution": "Phase 1: renamed Room to lend, keeps the reserve, adds Only lend what you could manage without getting back. Re-review (credit risk, partly): Renamed, caution added. One-tap \"Use\" still shows in Tight (Plan.tsx:271), no heavy-week warning; Thabo's Tight room rose R320 to R370. Phase 9: the one-tap Use amount shows only in Enough (tests/flows.spec.ts)."
  },
  "RISK-12": {
   "status": "Fixed",
   "resolution": "Phase 2: small daily income counts in the headline and chart with the same shares (1, 0.5, 0.25), only with a rhythm and 28 days of history."
  },
  "SEC-01": {
-  "status": "Fixed",
-  "resolution": "Phase 1: 12 month retention is enforced on open in LocalRepository.getRecord (src/data/retention.ts, with tests)."
+  "status": "Partly fixed",
+  "resolution": "Phase 1: 12 month retention is enforced on open in LocalRepository.getRecord (src/data/retention.ts, with tests). Re-review (security, partly): Device purge works (retention.ts:21). Server purge is never scheduled (migration:185-197), so inactive accounts keep old rows."
  },
  "SEC-02": {
   "status": "Partly fixed",
@@ -369,19 +461,19 @@
  },
  "SEC-04": {
   "status": "Partly fixed",
-  "resolution": "Phases 4 and 8: optional passwordless accounts on Supabase with row-level security on every table (SQL-tested with two users), only the anon key in the browser, CSP limited to the Supabase host, security headers. Guest data stays in browser storage on the device by design, protected by the optional PIN lock."
+  "resolution": "Phases 4 and 8: optional passwordless accounts on Supabase with row-level security on every table (SQL-tested with two users), only the anon key in the browser, CSP limited to the Supabase host, security headers. Guest data stays in browser storage on the device by design, protected by the optional PIN lock. Re-review (security, partly): RLS real (migration:100-121), headers set (vercel.json:9-16). connect-src allows every *.supabase.co project. Guest data plaintext; lock is a UI gate (SEC-A1, SEC-A5)."
  },
  "SEC-05": {
-  "status": "Fixed",
-  "resolution": "Phases 7 and 8: device deletion removes every record; account deletion (delete_my_account) removes every row and the sign-in and returns a receipt with no personal data or user id; receipts never go in the URL; backup retention is to be stated in the notice."
+  "status": "Partly fixed",
+  "resolution": "Phases 7 and 8: device deletion removes every record; account deletion (delete_my_account) removes every row and the sign-in and returns a receipt with no personal data or user id; receipts never go in the URL; backup retention is to be stated in the notice. Re-review (security, partly): delete_my_account removes all rows and auth.users (migration:146-153, tested). Backups not covered (en.json:1284). Receipt unsigned, not retrievable (accountRepository.ts:152)."
  },
  "SEC-06": {
-  "status": "Fixed",
-  "resolution": "Phases 1 and 8: separate opt-ins, messages and analytics off by default, and a server-side append-only consent log with time and notice version, exportable."
+  "status": "Partly fixed",
+  "resolution": "Phases 1 and 8: separate opt-ins, messages and analytics off by default, and a server-side append-only consent log with time and notice version, exportable. Re-review (security, partly): Append only and versioned (migration:60-68,118-119), but decided_at and notice_version are client-writable (migration:210). It records what the browser sent."
  },
  "SEC-07": {
-  "status": "Fixed",
-  "resolution": "Phases 3 and 8: audit entries hold no descriptions; the server audit log is append only for its owner (no update or delete policies), tested in SQL."
+  "status": "Partly fixed",
+  "resolution": "Phases 3 and 8: audit entries hold no descriptions; the server audit log is append only for its owner (no update or delete policies), tested in SQL. Re-review (security, partly): No update or delete policies, so append only holds under RLS. The test passes for the wrong reason (SEC-A2). Owner can set any at; not tamper-evident."
  },
  "SEC-08": {
   "status": "Prepared for human action",
@@ -396,8 +488,8 @@
   "resolution": "Phase 8: the setup guide lists every operator (Supabase, Vercel, email sender) and the cross-border check; signing operator agreements and the section 72 assessment are human actions."
  },
  "SEC-11": {
-  "status": "Fixed",
-  "resolution": "Phase 6: written safety policy (/safety) for adults only with an 18 or older declaration at account creation (Phase 8), shared-phone protections and coercion guidance; app lock, discreet mode and quick exit built."
+  "status": "Partly fixed",
+  "resolution": "Phase 6: written safety policy (/safety) for adults only with an 18 or older declaration at account creation (Phase 8), shared-phone protections and coercion guidance; app lock, discreet mode and quick exit built. Re-review (security, partly): 18+ tick for accounts only (Account.tsx:31,71). A missing confirmation is filled with \"now\" (account/index.ts:63)."
  },
  "SEC-12": {
   "status": "Prepared for human action",
@@ -416,28 +508,28 @@
   "resolution": "Phase 2: imports are forecast as of the statement end with a notice and a balance prompt; confidence drops after 3 days and the state is hidden after 14."
  },
  "TECH-02": {
-  "status": "Fixed",
-  "resolution": "Phases 4 and 6: per-page error boundaries, local diagnostics that keep only error name, kind, route pattern and time (tested to exclude personal data), a diagnostics panel in Me, and docs/OBSERVABILITY.md for server logging."
+  "status": "Partly fixed",
+  "resolution": "Phases 4 and 6: per-page error boundaries, local diagnostics that keep only error name, kind, route pattern and time (tested to exclude personal data), a diagnostics panel in Me, and docs/OBSERVABILITY.md for server logging. Re-review (technology, partly): diagnostics.ts:1-4 says \"nothing is sent anywhere\". No remote errors, no web vitals, no forecast accuracy events. A pilot team still sees nothing."
  },
  "TECH-03": {
-  "status": "Fixed",
-  "resolution": "Phase 8: AccountRepository implements the same TengoRepository interface over an AccountBackend (Supabase or an in-memory server with the same rules), chosen by storage mode through the routing repository; UI code is unchanged."
+  "status": "Partly fixed",
+  "resolution": "Phase 8: AccountRepository implements the same TengoRepository interface over an AccountBackend (Supabase or an in-memory server with the same rules), chosen by storage mode through the routing repository; UI code is unchanged. Re-review (technology, partly): Interface swap works (routing.ts:9-59). Not paged, not incremental, no concurrency control: supabaseBackend.ts:57 and 99-133 load and rewrite everything. Audit rows are written by the client (supabaseBackend.ts:159-168), not by the server."
  },
  "TECH-04": {
-  "status": "Fixed",
-  "resolution": "Phase 4: storage writes are guarded; quota and blocked storage show a visible message; unreadable data is kept aside with a start-fresh path; schema versioning with migrations; all tested."
+  "status": "Partly fixed",
+  "resolution": "Phase 4: storage writes are guarded; quota and blocked storage show a visible message; unreadable data is kept aside with a start-fresh path; schema versioning with migrations; all tested. Re-review (technology, partly): Quota guard and migrations exist (localRepository.ts:25, 45, 49). No IndexedDB, no storage.persist, no cross-tab sync: grep for persist(), storage events and BroadcastChannel in src found nothing."
  },
  "TECH-05": {
-  "status": "Fixed",
-  "resolution": "Phase 4: precache from a manifest, cache first only for app files, network only for everything else, cross-origin untouched, old caches removed; documented in sw.js and README."
+  "status": "Partly fixed",
+  "resolution": "Phase 4: precache from a manifest, cache first only for app files, network only for everything else, cross-origin untouched, old caches removed; documented in sw.js and README. Re-review (technology, partly): Manifest precache and versioned caches are good (sw.js:14-36, vite.config.ts:13-35). The recommended asset exclusion from the rewrite was not done: vercel.json:2 still rewrites every path, including missing /assets files, to index.html."
  },
  "TECH-06": {
   "status": "Fixed",
-  "resolution": "Phase 4: locales load on demand and pages are split by route; initial JavaScript 119 KB gzipped against a 142 KB budget enforced by npm run budget in CI."
+  "resolution": "Phase 4: locales load on demand and pages are split by route; initial JavaScript 134 KB gzipped against a 142 KB budget enforced by npm run budget in CI."
  },
  "TECH-07": {
-  "status": "Fixed",
-  "resolution": "Phase 4: data-layer and failure-path unit tests; unit coverage across src is 43 percent with a 40 percent floor (npm run coverage), up from 20 percent; Playwright covers every route."
+  "status": "Partly fixed",
+  "resolution": "Phase 4: data-layer and failure-path unit tests; unit coverage across src is 43 percent with a 40 percent floor (npm run coverage), up from 20 percent; Playwright covers every route. Re-review (technology, partly): 171 unit tests pass. Playwright is still Chromium only (playwright.config.ts:11). CI runs npm test, not npm run coverage, so the 40 percent floor is not enforced (ci.yml:42). No test touches SupabaseBackend."
  },
  "TECH-08": {
   "status": "Fixed",
@@ -468,8 +560,8 @@
   "resolution": "Phase 1: chart readout no longer uses cover state words; it says If money lands as usual and Above R0, Could reach R0 or Below R0."
  },
  "UX-03": {
-  "status": "Fixed",
-  "resolution": "Phase 1: Tight uses Tight until (hero.tightUntil) on Home, Plan, Import, Review and the Why drawer via headlineKey()."
+  "status": "Partly fixed",
+  "resolution": "Phase 1: Tight uses Tight until (hero.tightUntil) on Home, Plan, Import, Review and the Why drawer via headlineKey(). Re-review (UX, partly): \"Tight until Tue 27 Oct\" beside next money Mon 26 Oct can read as \"tight, then fine after Tuesday\" (home-thabo-light-1280.png, landing-light-390.png)."
  },
  "UX-04": {
   "status": "Fixed",
@@ -480,16 +572,16 @@
   "resolution": "Phase 1: light Tight is amber #855700, Short is red #B42318; contrast-check now also fails if their hues are under 25 degrees apart."
  },
  "UX-06": {
-  "status": "Fixed",
-  "resolution": "Phase 1: per BUILD2 the Plan is never empty; the what-if starts with a clearly labelled example (R200 school trip) and the loan amount starts empty with quick picks."
+  "status": "Partly fixed",
+  "resolution": "Phase 1: per BUILD2 the Plan is never empty; the what-if starts with a clearly labelled example (R200 school trip) and the loan amount starts empty with quick picks. Re-review (UX, partly): Loan field starts empty. The what-if is labelled as an example but still loads a change: Ayanda lands on \"1 day less\" and Short from Fri 23 Oct (plan-ayanda-light-390.png)."
  },
  "UX-07": {
   "status": "Fixed",
   "resolution": "Phase 1: range band has a legend for Your date, Likely range and Next money."
  },
  "UX-08": {
-  "status": "Fixed",
-  "resolution": "Part A close: the chart scales to the expected line and heavy path, and the light edge of the band is clipped to the plot."
+  "status": "Partly fixed",
+  "resolution": "Part A close: the chart scales to the expected line and heavy path, and the light edge of the band is clipped to the plot. Re-review (UX, partly): Axis is tighter, but Ayanda's chart still runs to minus R10k with deep shading below R0 for a R1 193 balance (home-ayanda-light-390.png)."
  },
  "UX-09": {
   "status": "Fixed",
@@ -501,11 +593,11 @@
  },
  "UX-11": {
   "status": "Partly fixed",
-  "resolution": "Part A close: no leading zeros on days anywhere (tested); To reach Tight now reads Ways to reach Tight; R330 and R280 reconciled by the Phase 1 budget and room rules. Bill names keep the person's own case."
+  "resolution": "Part A close: no leading zeros on days anywhere (tested); To reach Tight now reads Ways to reach Tight; R330 and R280 reconciled by the Phase 1 budget and room rules. Bill names keep the person's own case. Re-review (UX, partly): No leading zeros. Lerato still sees R310 daily budget and \"set aside up to R330\" on one screen (home-lerato-dark-390.png); two figures remain."
  },
  "UX-12": {
   "status": "Not fixing",
-  "resolution": "The redesigned Home keeps the date, state and range in the first fold on phones and a single column on tablets by choice; Privacy has an accessible name. Revisit with the comprehension sessions."
+  "resolution": "The redesigned Home keeps the date, state and range in the first fold on phones and a single column on tablets by choice; Privacy has an accessible name. Revisit with the comprehension sessions. Re-review (UX, disagree): At 390 the bottom bar still cuts the Daily budget card (home-ayanda-light-390.png). The Privacy shield is still an unlabelled icon, and now sits beside a second unlabelled icon (UX-A2)."
  },
  "UX-13": {
   "status": "Partly fixed",

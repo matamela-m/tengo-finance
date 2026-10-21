@@ -268,7 +268,8 @@ function LoanCheck() {
               {formatZAR(v)}
             </button>
           ))}
-          {result.roomToLend > 0 && (
+          {/* No one-tap amount in Tight: a heavy week already runs out there, so the person types any amount. */}
+          {result.roomToLend > 0 && result.before.status === 'enough' && (
             <button type="button" className="num min-h-[44px] rounded-full border border-accent/40 bg-accent-soft px-4 text-sm font-medium text-accent" onClick={() => setAmount(String(result.roomToLend))}>
               {t('plan.useRoom', { amount: formatZAR(result.roomToLend) })}
             </button>

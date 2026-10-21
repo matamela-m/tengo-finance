@@ -103,6 +103,22 @@ test('Plan opens with a labelled example and Room to lend', async ({ page }) => 
   await expect(page.locator('body')).not.toContainText(/safe to lend/i);
 });
 
+test('Room to lend has a one-tap amount only in Enough, never in Tight', async ({ page }) => {
+  await page.goto('/start');
+  await page.getByRole('button', { name: /Lerato/ }).click();
+  await page.getByRole('button', { name: 'Agree and continue' }).click();
+  await page.goto('/app/plan');
+  await expect(page.getByRole('button', { name: /^Use R/ })).toBeVisible();
+  await page.goto('/');
+  await page.evaluate(() => localStorage.clear());
+  await page.goto('/start');
+  await page.getByRole('button', { name: /Thabo/ }).click();
+  await page.getByRole('button', { name: 'Agree and continue' }).click();
+  await page.goto('/app/plan');
+  await expect(page.getByText('Room to lend', { exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: /^Use R/ })).toHaveCount(0);
+});
+
 test('import the sample statement and land on Home', async ({ page }) => {
   await page.goto('/start');
   await page.getByRole('button', { name: /Thabo/ }).click();

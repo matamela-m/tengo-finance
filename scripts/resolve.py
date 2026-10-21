@@ -6,7 +6,7 @@ import sys
 P = 'docs/review/after/resolutions.json'
 data = json.load(open(P))
 for k, (status, text) in json.load(open(sys.argv[1])).items():
-    if '—' in text or '–' in text:
+    if '\u2014' in text or '\u2013' in text:
         raise SystemExit(f'dash in {k}')
     data[k] = {'status': status, 'resolution': text}
 json.dump(dict(sorted(data.items())), open(P, 'w'), indent=1, ensure_ascii=False)

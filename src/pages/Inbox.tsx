@@ -8,7 +8,7 @@ import { PageHeader } from '../components/PageHeader';
 import { Segmented } from '../components/Segmented';
 import { Brand } from '../components/Brand';
 import { usePersona, useReadyPersona } from '../data/PersonaProvider';
-import type { LanguageCode } from '../i18n/languages';
+import { contentLanguage, type LanguageCode } from '../i18n/languages';
 import { LanguageSelect } from '../components/LanguageSelector';
 import { smsSegments, type Channel, type DailyMessage } from '../messages/MessageWriter';
 import { Toggle } from '../components/Toggle';
@@ -127,7 +127,7 @@ export default function InboxPage() {
                   >
                     <p className="mb-1 text-xs font-semibold text-accent">Tengo</p>
                     {message ? (
-                      <p lang={message.language} className="num break-words">
+                      <p lang={contentLanguage(message.language)} className="num break-words">
                         {channel === 'whatsapp' ? <WhatsAppText text={message.text} /> : message.text}
                       </p>
                     ) : (

@@ -1,71 +1,47 @@
 # Tengo
 
-**Money you can plan around.**
+**Money you can plan around.** A balance tells you what you have. Tengo tells you until when.
 
-A balance tells you what you have. Tengo tells you until when.
+Tengo is a money app for people paid irregularly: drivers, hairdressers, spaza shop owners, domestic workers and anyone paid by the trip, the client or the till. It answers one question, date first: is my money enough until the next money? For example "Tight until Tue 27 Oct", with a likely range, a daily budget and one state: Enough, Tight, Short, or Not enough to tell.
 
-Tengo is a money app for people with irregular income: drivers, hairdressers, spaza shop owners and anyone paid in lumps, by the day or by the weekend. It answers one question: is my money enough until the next money? The answer comes date first, for example "Enough until Thu 23 Oct", with a likely range, a "Safe to spend today" figure and a cover state of Enough, Tight or Short.
+Built for the FNB App of the Year hackathon (financial inclusion and money confidence). Tengo is a pilot, not a bank, and gives estimates, not financial advice. It has no partnership with any bank.
 
-Built for the FNB App of the Year hackathon, track: Financial inclusion and money confidence.
+## Three ways to use it
 
-> This is a demo with fictional data only. There is no bank connection, no real personal information and no open banking. Every person in it is a fictional composite.
+| Mode | What it is | Where the data lives |
+| --- | --- | --- |
+| Fictional people | Thabo, Lerato and Ayanda, made-up composites with seeded money histories. Always labelled "Demo, Fictional Data". | This browser |
+| Your own money, as a guest | "Use your own money" on the picker: import a CSV statement, answer a few questions, or try labelled sample numbers. No sign-up. Labelled "Your profile, This device only". | This device only (`tengo.profile.v1`) |
+| Your own money, saved to an account | Optional, offered after a guest has seen value. Passwordless one-time code, 18 or older checkbox. Labelled "Your profile, Saved to your account". | Supabase, with row-level security. The forecast still runs on the phone. |
 
-## Run it
+## Run and test
 
-Requires Node 20 or later.
+Requires Node 20 or later. Accounts are optional: with no environment variables the app runs fully as a guest.
 
 ```bash
 npm install
-npm run dev          # http://localhost:5173
+npm run dev            # http://localhost:5173
+npm run dev:phone      # same, on your local network for a phone
 ```
 
 | Command | What it does |
 | --- | --- |
-| `npm run build` | Type checks and builds to `dist/` |
-| `npm run test` | Contrast check for both themes, then Vitest unit tests (engine, seeds, CSV, messages, repository, formatting) |
-| `npm run lint` | ESLint plus a check that no em or en dash appears anywhere |
-| `npm run i18n:check` | Fails if any of the 11 locales is missing a key, has extra keys, or uses an exclamation mark |
-| `npm run i18n:sync` | Copies new or changed English strings into the other locale files |
-| `npm run i18n:translate` | Machine translates the locale files with the Google Cloud Translation API (needs `GOOGLE_TRANSLATE_API_KEY`) |
-| `npm run a11y` | axe-core accessibility checks (WCAG 2.1 A and AA) on every main page, light and dark |
-| `npm run contrast` | WCAG contrast check of every text and surface pair the UI uses |
-| `npm run screens` | Playwright: screenshots at 390, 768, 1280 and 1600px into `screenshots/`, plus end to end flow tests |
-| `npm run icons` | Rebuilds the placeholder favicons and app icons (needs Python with Pillow: `pip install pillow`) |
-| `npm run fonts:check` | Checks every locale string against Inter (fails on gaps) and Figtree (warns on gaps) |
+| `npm run build` | Type checks and builds to `dist/` (warns while the privacy notice placeholders are unset) |
+| `npm test` | Contrast check, then all unit tests, including the stress cases and the accuracy regression test |
+| `npm run coverage` | Unit coverage across `src`, with a 40 percent floor |
+| `npm run lint` | ESLint, the em and en dash check, and the secrets check |
+| `npm run i18n:check` | Same keys in all 11 locales, no exclamation marks, matching placeholders, NFC text, plural forms and valid review status |
+| `npm run i18n:sync` | Copies new or changed English strings into untranslated locales |
+| `npm run i18n:translate` | Machine translation with Google Cloud Translation, only with your key; never Tshivenda; never marks anything reviewed |
+| `npm run fonts:check` | Every locale string is covered by the fonts |
+| `npm run contrast` | WCAG contrast of every colour pair, plus Tight and Short hue separation |
+| `npm run budget` | Fails if a first visit downloads more than 142 KB of JavaScript, gzipped |
+| `npm run test:rls` | Runs the Supabase migration and the two-user row-level security tests on a throwaway local Postgres |
+| `npx playwright test` | Flows, own profile, accounts, safety, phone layout, offline, headers and axe in both themes |
 
-**On your phone (same Wi-Fi):** run `npm run dev:phone`, then open the "Network" address it prints (for example `http://192.168.1.20:5173`) in your phone's browser. If macOS asks whether Node may accept incoming connections, choose Allow.
+Playwright needs Chromium once: `npx playwright install chromium`. Account tests use an in-memory account server that only switches on at localhost.
 
-Playwright needs a browser once: `npx playwright install chromium`. Set `SCREENS=home-thabo,landing` or `WIDTHS=390` to capture a subset.
-
-`vercel.json` has an SPA rewrite, so the build deploys to Vercel as is.
-
-## Redesign
-
-A restyle of the existing app: the same engine, data, routes, i18n, consent and privacy logic, PWA and tests, with a new visual system. Calm and confident: quiet neutrals, hairline borders, generous space, almost no shadows, big tightly tracked headings, pill buttons, status-dot badges and tiny uppercase labels on data cards. Dark is the default theme. Light is equally finished.
-
-**What changed**
-- **Tokens.** Every colour is defined once in `src/styles/index.css`, for dark and light, and exposed to Tailwind (`bg`, `surface`, `surface-2`, `surface-3`, `line`, `line-strong`, `ink`, `muted`, `subtle`, `accent`, `accent-soft`, `on-accent`, `enough`, `tight`, `short` and their soft fills). The old palette (white, off-white, mint, sage, deep green, charcoal) is gone and components hard-code no colours. The accent is one token, `--accent`, and is deliberately not green so it can never be mistaken for Enough.
-- **Theme.** Light, Dark or System, remembered. An inline script in `index.html` sets the theme and language before first paint, so the wrong theme never flashes. A Playwright test blocks the app bundle and checks the inline script alone gets it right.
-- **Brand.** The old logo is archived. `src/components/Brand.tsx` is the only place the brand is drawn (see Brand and type).
-- **Primitives.** Card (with optional corner brackets), section label, icon tile, badge with status dot, stat tile, state chip, slim three-segment cover gauge, quiet inputs, switch with an On or Off dot, segmented control, drawer, toast, data table, empty state and skeleton.
-- **Pages.** A new landing page with a framed live preview, a Notion-style sidebar that collapses to icons, a rebuilt Home (greeting banner, large date hero, stat tiles, restyled chart) and every other page on the shared primitives.
-- **Sleek pass.** Only outer cards are outlined; inner tiles and notices use soft fills. Each screen has one hero number (the date on Home). The state is shown loudly once and quietly elsewhere. Legends became single lines, the sidebar uses plain icons with one theme button, icons come from Lucide, pages fade in, and the landing page has one explainer section under a larger tilted preview.
-- **Command menu.** Ctrl or Cmd plus K (or "Search or jump to" in the sidebar) jumps to a page, switches person, changes language or theme.
-
-**Type rules**
-- Figtree (600 to 700) for headings, display numbers, buttons and nav, tracked about -0.03em at display sizes and -0.01em at heading sizes. Inter for body, labels, inputs and tables. Money and dates always use tabular numbers.
-- Fluid scale: display up to 88px on desktop and 44px on phones, h1 40, h2 28, h3 20, body 16, small 14, caption 12. Nothing smaller than 12px.
-- The heading font is the CSS variable `--font-heading`. For Tshivenda (`html[lang="ve"]`) it switches to Inter, because Figtree has none of ḓ ḽ ṅ ṋ ṱ. Every other language keeps Figtree, with Inter as the fallback. A test checks both.
-
-**Placeholders to replace**
-- `src/components/Brand.tsx`: the text wordmark and the T mark. Swap in the final logo here and nowhere else.
-- `public/icons/*`: favicons, the SVG favicon, the Apple touch icon and the PWA icons, made from the T mark by `npm run icons`.
-- `public/manifest.webmanifest`: `theme_color` and `background_color` follow the dark theme. Update them with the final brand.
-
-**Known limitations of the redesign**
-- Hairline borders on inputs and cards are below 3:1 against their surface. Fields are identified by their visible label and their filled background, and focus shows a 2px accent ring that passes 3:1.
-- A web app manifest takes one theme colour, so installed app chrome uses the dark background. The page itself follows the chosen theme through the `theme-color` meta tags.
-- The shortcut hint reads "Ctrl K". Cmd plus K works on a Mac too.
+To deploy and turn on accounts, follow `docs/SETUP-SUPABASE.md`. Environment variables are listed in `.env.example`.
 
 ## How the forecast works, in plain words
 
@@ -80,7 +56,7 @@ All of it lives in `src/engine/`: pure TypeScript, no UI imports, unit tested.
    - **Irregular or none**: with no rhythm, or no income at all, no next-money date is invented.
 5. **Missed bills.** A recurring bill more than 3 days past its due date with no payment shows as "Rent looks unpaid". The person answers: still owe it (counted as due today) or paid or stopped.
 6. **Runway.** Start from the balance and run it down day by day at the daily spend rate, taking off known bills on their dates and adding a share of background income: all of it on the light path, half on the usual path, a quarter on the heavy path, and none without a regular rhythm and 28 days of history. The chart uses the same shares. Next money is not counted. The day the usual path reaches zero is **the date**.
-7. **Band.** The likely range runs from the heavy-path date to the light-path date, widened to at least 1 day plus 15% of the lead time either side (3 days plus 15% at low confidence) and capped at half the lead plus 2 days. On the review's synthetic backtest this covers the actual date about 80% of the time at every lead time up to 20 days; it was 54% within 6 days before. See `docs/review/after/COMPARISON.md`.
+7. **Band.** The likely range runs from the heavy-path date to the light-path date, widened to at least 1 day plus 15% of the lead time either side (3 days plus 15% at low confidence) and capped at half the lead plus 2 days. The constants were tuned on the review's synthetic backtest, with no hold-out set. On that data the range covers the actual date about 80% of the time overall. Near run-out the result depends on how the starting balances are chosen: about 79% on the rerun cases, about 54% on the balances both builds share (`docs/review/after/COMPARISON.md`, `docs/review/after/data-scientist.md`).
 8. **Cover.**
    - **Enough**: even the heavy week lasts until the latest likely next money with the reserve (step 9) untouched. Never under 28 days of history.
    - **Tight**: a normal week reaches the typical next money, a heavy week does not, or only by eating into the reserve.
@@ -93,32 +69,66 @@ All of it lives in `src/engine/`: pure TypeScript, no UI imports, unit tested.
 13. **Scrubber**: for each of the next 30 days, the light, usual and heavy balance including expected income at its usual timing. It describes the balance (above R0, could reach R0, below R0), never the cover state.
 14. **What-if and loan check** rerun the same engine with an extra dated item or a lower starting balance.
 
-Every Home element reads one view model, `homeView()` in `src/engine/view.ts`, so the headline, chip, gauge, budget, next-money date, chart and messages cannot disagree. `src/engine/stress.test.ts` keeps the review's stress cases as regression tests and `src/engine/accuracy.test.ts` fails the build if backtest accuracy drops below stated thresholds.
+Every Home element reads one view model, `homeView()` in `src/engine/view.ts`, so the headline, chip, gauge, budget, next-money date, chart and messages cannot disagree. (The chart's Today point and the budget card's Total can still differ; the re-review asks for labels, UX-A1.) `src/engine/stress.test.ts` keeps the review's stress cases as regression tests and `src/engine/accuracy.test.ts` fails the build if backtest accuracy drops below stated thresholds.
 
 The "Why this date" drawer on Home shows every input behind the date and doubles as the explanation of this automated result.
 
-## What is simulated
+## What is real and what is simulated
 
-- **People and money.** Thabo (e-hailing driver, Tshwane), Lerato (hairdresser, Mamelodi) and Ayanda (spaza shop owner, Tembisa) are fictional composites. Their 90 days of history come from a seeded generator, so they are the same every time and always end yesterday. They start in Tight, Enough and Short.
-- **No bank.** No bank connection and no open banking. The CSV import reads a file in the browser and nothing is uploaded.
-- **Messages.** The Inbox previews a daily WhatsApp or SMS message. Nothing is sent.
-- **Privacy controls.** Consent, access, export, correction, deletion, retention, audit log, human review, breach notice and Information Officer details all work against local storage. They show good practice and are labelled "Simulated privacy controls. Not a compliance certification." They are not legal advice. The Information Officer contact is a placeholder.
-- **Storage.** Everything is in this browser's local storage. All data access goes through the `TengoRepository` interface in `src/data/repository.ts`. Swap `LocalRepository` in `src/data/index.ts` for a hosted one (for example Supabase) without touching UI code.
-- **Messages writer.** `MessageWriter` in `src/messages/` has a template implementation. An LLM-backed writer can implement the same interface.
+| Real | Simulated or not yet built |
+| --- | --- |
+| The forecast engine, on every mode | The fictional people and their money |
+| Your own profile on this device, with export and deletion | Daily messages: previewed in the Inbox, never sent |
+| Optional accounts on Supabase with row-level security, a server consent log, server export and real deletion | Product analytics: off, and nothing runs |
+| PIN lock, discreet mode, quick exit | Human review of a result: the request is recorded, nobody replies yet |
+| 12 month retention, enforced on open and by a server function | The breach notice: a sample |
+| Offline after the first visit | Translations: English today |
 
-## Brand and type
+## Security and privacy
 
-- **Logo: placeholder.** The founder is replacing the logo. The old PNGs are archived in `assets/archive/old-brand/` (not served, not bundled). Every place the brand appears uses one component, `src/components/Brand.tsx`: a "Tengo" wordmark in Figtree 700, and a `mark` variant (a rounded accent square with a bold T). Swap that one file for the final logo.
-- **Icons: placeholders.** Favicons, the SVG favicon and the PWA icons are the T mark in the accent colour, made by `npm run icons` (Python with Pillow). Replace them with the final logo.
-- **Fonts.** Figtree for headings, display numbers, buttons and nav. Inter for body text, labels, inputs and tables. Both are self-hosted through `@fontsource-variable`. Money and dates use tabular numbers.
-- **Tshivenda.** Figtree has no Tshivenda letters (ḓ ḽ ṅ ṋ ṱ). The heading font is a CSS variable, and when the language is Tshivenda (`html[lang="ve"]`) headings switch to Inter, so a word never mixes two fonts. `npm run fonts:check` scans every locale string against both fonts: it fails if Inter lacks a character and warns about Figtree gaps.
-- No third-party requests at runtime and no analytics scripts. A Playwright test checks this.
+- **Guest:** everything stays in this browser on this device; nothing is sent. Optional PIN lock (PBKDF2, salted, never the PIN itself), discreet mode and quick exit for shared phones.
+- **Account:** passwordless one-time codes, a 60 second code cooldown on top of Supabase's rate limits, short sessions and "sign out everywhere". Row-level security on every table so a person reads and writes only their own rows; logs are append only. `delete_my_account()` removes every row and the sign-in and returns a receipt with no personal data. Only the public anon key is in the browser; `npm run lint` and CI (gitleaks) fail on secrets.
+- **Never collected:** ID numbers, phone numbers, bank logins or PINs. Long numbers in imported descriptions are masked. Audit entries hold no descriptions or amounts. Local diagnostics keep only an error's name, kind, route pattern and time.
+- **Headers:** CSP allowing only this site and the Supabase host, no frames, no referrer, a strict permissions policy and HSTS (`vercel.json`), checked on the built app.
+- **Offline cache:** only the app's own files; never data.
+- **Notice and terms:** drafts at `/privacy-notice` and `/terms` for a lawyer to review. The responsible party and Information Officer come from environment variables and must be filled before launch. Tengo makes no claim of POPIA compliance or certification.
 
-## Name origin
+## Accessibility
 
-Tengo comes from "mutengo", Tshivenda for value. This was supplied by the founder.
+- Zero axe WCAG 2.1 A and AA violations on every route in both themes at 390 and 1280 px.
+- State is never shown by colour alone: every state has a word and an icon, and Tight and Short use clearly different hues in both themes.
+- Page language is the language of the shown text. Inputs are 16 px on phones, focus scrolls clear of the sticky bars, there is no sideways panning, and the chart is a native slider with a full spoken value and a table.
+- Form field borders are at least 3:1. Reduced motion is respected.
 
-- [ ] **TODO: confirm the meaning with a Tshivenda speaker before submission.**
+## Translations
+
+Built for 11 languages. English today. Each language shows its status (English for now, machine translated, human reviewed, or needs a translator). Tshivenda needs a first-language translator because Google Cloud Translation does not support it. Review status is tracked per string (`src/i18n/review-status.json`), money terms are agreed first in `src/i18n/glossary.json`, and money strings are not machine translated unless asked. Only English is bundled; other languages load when chosen.
+
+## Brand and placeholders to replace
+
+- Logo: `src/components/Brand.tsx` (a text wordmark and a T mark) and `public/icons/*` (made by `npm run icons`). Replace with the final logo.
+- Responsible party, address, Information Officer and privacy email: environment variables (`.env.example`).
+- Help numbers on `/safety`: to confirm before launch.
+- Translations: see `docs/HUMAN-ACTIONS.md`.
+- The name story ("mutengo") is off until two Tshivenda speakers confirm it (`VITE_SHOW_NAME_STORY`).
+
+## Decisions
+
+- **Guest first.** Value in about a minute with no sign-up; an account only after that, as a choice. Account data wins on another device; replacing it is explicit.
+- **The engine never runs on a server.** The account only stores data.
+- **Account tests without Docker.** Docker was not running, so the policies are tested at the SQL level on a local Postgres and the app against an in-memory server with the same rules.
+- **Small daily income counts in the headline** at half on the usual path, as in the chart, because the brief asked for consistency. This makes the headline a little later than an outflows-only date; `docs/review/after/COMPARISON.md` shows both measures.
+- **Under 45 days of history a big spend still counts** and the person is asked whether it was a one-off, because leaving out a habit makes the date too late.
+- **Plan opens with a labelled example** rather than empty, as build 2 asked, which differs from the review's suggestion.
+- **Business model unchanged by the build**: see `docs/business-case.md`.
+
+## Known limitations
+
+- Every accuracy number is from synthetic data written by the same author as the engine. No real statements have been tested.
+- Lumpy outflows (stock runs) are a daily rate, not events. Weekday effects are not modelled. The first missed payday is caught only after two usual gaps.
+- Recurring bills need two monthly payments to be recognised; weekly bills are not detected.
+- English only. The comprehension sessions, legal review and operator agreements have not happened.
+- Guest data lives in one browser; clearing site data removes it.
 
 ## Colour and contrast
 
@@ -129,15 +139,11 @@ Tengo comes from "mutengo", Tshivenda for value. This was supplied by the founde
 | border / border-strong | #26262B / #34343A | #E7E5E1 / #D6D3CD |
 | text / muted / subtle | #F4F4F5 / #A1A1AA / #8B8B94 | #1C1B19 / #66635D / #6C6963 |
 | accent / on-accent | #7291FF / #0B0B0C | #3755CC / #FFFFFF |
-| enough / tight / short | #34D399 / #FBBF24 / #F97362 | #046E50 / #9B4708 / #A9390A |
+| enough / tight / short | #34D399 / #FBBF24 / #F97362 | #046E50 / #855700 / #B42318 |
+| field border | #6E6E78 | #86837B |
 | soft fills | state colour at 13%, accent at 14% | state colour at 10%, accent at 10% |
 
-The proposed light values were adjusted where a pair failed: subtle text, the three state colours and the accent are each a few percent darker in light, and the dark accent a touch lighter, so that state text passes 4.5:1 on every surface and on its own soft fill. Every state shows a colour, a word and an icon.
-
-`npm run contrast` checks every text and UI pair the interface uses, in both themes, blending translucent fills over the surface they sit on first. It runs as part of `npm run test`. Body and small text need 4.5:1, large text and non-text UI 3:1. The empty gauge segment is decorative, since the state word is always shown beside it.
-
-<details>
-<summary>All 116 checked pairs</summary>
+Measured by `npm run contrast` (also part of `npm test`):
 
 | Theme | Pair | Foreground | Background | Ratio | Target |
 | --- | --- | --- | --- | --- | --- |
@@ -192,6 +198,9 @@ The proposed light values were adjusted where a pair failed: subtle text, the th
 | dark | On-accent on accent (mark, selected) | #0B0B0C | #7291FF | 6.75:1 | 4.5:1 |
 | dark | On-accent on short (destructive button) | #0B0B0C | #F97362 | 7.17:1 | 4.5:1 |
 | dark | Dimmed headline half (display size) on bg | #A1A1AA | #0B0B0C | 7.68:1 | 3:1 |
+| dark | Form field border on bg | #6E6E78 | #0B0B0C | 3.90:1 | 3:1 |
+| dark | Form field border on surface-1 | #6E6E78 | #121214 | 3.71:1 | 3:1 |
+| dark | Form field border on surface-2 | #6E6E78 | #18181B | 3.51:1 | 3:1 |
 | dark | Focus ring and handle (accent) on bg | #7291FF | #0B0B0C | 6.75:1 | 3:1 |
 | dark | Focus ring and handle (accent) on surface-1 | #7291FF | #121214 | 6.42:1 | 3:1 |
 | dark | Focus ring and handle (accent) on surface-2 | #7291FF | #18181B | 6.08:1 | 3:1 |
@@ -203,135 +212,62 @@ The proposed light values were adjusted where a pair failed: subtle text, the th
 | light | Muted text on bg | #66635D | #FBFBFA | 5.78:1 | 4.5:1 |
 | light | Subtle text on bg | #6C6963 | #FBFBFA | 5.28:1 | 4.5:1 |
 | light | enough text on bg | #046E50 | #FBFBFA | 6.05:1 | 4.5:1 |
-| light | tight text on bg | #9B4708 | #FBFBFA | 6.15:1 | 4.5:1 |
-| light | short text on bg | #A9390A | #FBFBFA | 6.19:1 | 4.5:1 |
+| light | tight text on bg | #855700 | #FBFBFA | 6.04:1 | 4.5:1 |
+| light | short text on bg | #B42318 | #FBFBFA | 6.35:1 | 4.5:1 |
 | light | Text on surface-1 | #1C1B19 | #FFFFFF | 17.21:1 | 4.5:1 |
 | light | Muted text on surface-1 | #66635D | #FFFFFF | 5.99:1 | 4.5:1 |
 | light | Subtle text on surface-1 | #6C6963 | #FFFFFF | 5.47:1 | 4.5:1 |
 | light | enough text on surface-1 | #046E50 | #FFFFFF | 6.27:1 | 4.5:1 |
-| light | tight text on surface-1 | #9B4708 | #FFFFFF | 6.37:1 | 4.5:1 |
-| light | short text on surface-1 | #A9390A | #FFFFFF | 6.41:1 | 4.5:1 |
+| light | tight text on surface-1 | #855700 | #FFFFFF | 6.25:1 | 4.5:1 |
+| light | short text on surface-1 | #B42318 | #FFFFFF | 6.57:1 | 4.5:1 |
 | light | Text on surface-2 | #1C1B19 | #F4F3F1 | 15.52:1 | 4.5:1 |
 | light | Muted text on surface-2 | #66635D | #F4F3F1 | 5.40:1 | 4.5:1 |
 | light | Subtle text on surface-2 | #6C6963 | #F4F3F1 | 4.93:1 | 4.5:1 |
 | light | enough text on surface-2 | #046E50 | #F4F3F1 | 5.65:1 | 4.5:1 |
-| light | tight text on surface-2 | #9B4708 | #F4F3F1 | 5.74:1 | 4.5:1 |
-| light | short text on surface-2 | #A9390A | #F4F3F1 | 5.78:1 | 4.5:1 |
+| light | tight text on surface-2 | #855700 | #F4F3F1 | 5.64:1 | 4.5:1 |
+| light | short text on surface-2 | #B42318 | #F4F3F1 | 5.93:1 | 4.5:1 |
 | light | Text on surface-3 | #1C1B19 | #ECEAE6 | 14.32:1 | 4.5:1 |
 | light | Muted text on surface-3 | #66635D | #ECEAE6 | 4.98:1 | 4.5:1 |
 | light | Subtle text on surface-3 | #6C6963 | #ECEAE6 | 4.55:1 | 4.5:1 |
 | light | enough text on surface-3 | #046E50 | #ECEAE6 | 5.22:1 | 4.5:1 |
-| light | tight text on surface-3 | #9B4708 | #ECEAE6 | 5.30:1 | 4.5:1 |
-| light | short text on surface-3 | #A9390A | #ECEAE6 | 5.33:1 | 4.5:1 |
+| light | tight text on surface-3 | #855700 | #ECEAE6 | 5.20:1 | 4.5:1 |
+| light | short text on surface-3 | #B42318 | #ECEAE6 | 5.47:1 | 4.5:1 |
 | light | Accent link on bg | #3755CC | #FBFBFA | 6.08:1 | 4.5:1 |
 | light | Accent link on surface-1 | #3755CC | #FFFFFF | 6.30:1 | 4.5:1 |
 | light | Accent link on surface-2 | #3755CC | #F4F3F1 | 5.68:1 | 4.5:1 |
 | light | Accent text on accent-soft over bg | #3755CC | #E7EAF5 | 5.24:1 | 4.5:1 |
 | light | Text on accent-soft over bg | #1C1B19 | #E7EAF5 | 14.33:1 | 4.5:1 |
 | light | enough text on enough-soft over bg | #046E50 | #E2EDE9 | 5.23:1 | 4.5:1 |
-| light | tight text on tight-soft over bg | #9B4708 | #F1E9E2 | 5.30:1 | 4.5:1 |
-| light | short text on short-soft over bg | #A9390A | #F3E8E2 | 5.33:1 | 4.5:1 |
+| light | tight text on tight-soft over bg | #855700 | #EFEBE1 | 5.25:1 | 4.5:1 |
+| light | short text on short-soft over bg | #B42318 | #F4E5E3 | 5.37:1 | 4.5:1 |
 | light | Accent text on accent-soft over surface-1 | #3755CC | #EBEEFA | 5.44:1 | 4.5:1 |
 | light | Text on accent-soft over surface-1 | #1C1B19 | #EBEEFA | 14.87:1 | 4.5:1 |
 | light | enough text on enough-soft over surface-1 | #046E50 | #E6F1EE | 5.43:1 | 4.5:1 |
-| light | tight text on tight-soft over surface-1 | #9B4708 | #F5EDE6 | 5.50:1 | 4.5:1 |
-| light | short text on short-soft over surface-1 | #A9390A | #F6EBE7 | 5.48:1 | 4.5:1 |
+| light | tight text on tight-soft over surface-1 | #855700 | #F3EEE6 | 5.41:1 | 4.5:1 |
+| light | short text on short-soft over surface-1 | #B42318 | #F8E9E8 | 5.58:1 | 4.5:1 |
 | light | Accent text on accent-soft over surface-2 | #3755CC | #E1E3ED | 4.92:1 | 4.5:1 |
 | light | Text on accent-soft over surface-2 | #1C1B19 | #E1E3ED | 13.45:1 | 4.5:1 |
 | light | enough text on enough-soft over surface-2 | #046E50 | #DCE6E1 | 4.91:1 | 4.5:1 |
-| light | tight text on tight-soft over surface-2 | #9B4708 | #EBE2DA | 4.98:1 | 4.5:1 |
-| light | short text on short-soft over surface-2 | #A9390A | #EDE0DA | 4.97:1 | 4.5:1 |
+| light | tight text on tight-soft over surface-2 | #855700 | #E9E3D9 | 4.90:1 | 4.5:1 |
+| light | short text on short-soft over surface-2 | #B42318 | #EEDEDB | 5.04:1 | 4.5:1 |
 | light | Accent text on accent-soft over surface-3 | #3755CC | #DADBE3 | 4.57:1 | 4.5:1 |
 | light | Text on accent-soft over surface-3 | #1C1B19 | #DADBE3 | 12.48:1 | 4.5:1 |
 | light | enough text on enough-soft over surface-3 | #046E50 | #D5DED7 | 4.55:1 | 4.5:1 |
-| light | tight text on tight-soft over surface-3 | #9B4708 | #E4DAD0 | 4.62:1 | 4.5:1 |
-| light | short text on short-soft over surface-3 | #A9390A | #E5D8D0 | 4.60:1 | 4.5:1 |
+| light | tight text on tight-soft over surface-3 | #855700 | #E2DBCF | 4.54:1 | 4.5:1 |
+| light | short text on short-soft over surface-3 | #B42318 | #E6D6D1 | 4.67:1 | 4.5:1 |
 | light | Primary pill: background-colour label on text-colour fill | #FBFBFA | #1C1B19 | 16.62:1 | 4.5:1 |
 | light | On-accent on accent (mark, selected) | #FFFFFF | #3755CC | 6.30:1 | 4.5:1 |
-| light | On-accent on short (destructive button) | #FFFFFF | #A9390A | 6.41:1 | 4.5:1 |
+| light | On-accent on short (destructive button) | #FFFFFF | #B42318 | 6.57:1 | 4.5:1 |
 | light | Dimmed headline half (display size) on bg | #66635D | #FBFBFA | 5.78:1 | 3:1 |
+| light | Form field border on bg | #86837B | #FBFBFA | 3.66:1 | 3:1 |
+| light | Form field border on surface-1 | #86837B | #FFFFFF | 3.79:1 | 3:1 |
+| light | Form field border on surface-2 | #86837B | #F4F3F1 | 3.41:1 | 3:1 |
 | light | Focus ring and handle (accent) on bg | #3755CC | #FBFBFA | 6.08:1 | 3:1 |
 | light | Focus ring and handle (accent) on surface-1 | #3755CC | #FFFFFF | 6.30:1 | 3:1 |
 | light | Focus ring and handle (accent) on surface-2 | #3755CC | #F4F3F1 | 5.68:1 | 3:1 |
 | light | enough gauge segment on surface-1 | #046E50 | #FFFFFF | 6.27:1 | 3:1 |
-| light | tight gauge segment on surface-1 | #9B4708 | #FFFFFF | 6.37:1 | 3:1 |
-| light | short gauge segment on surface-1 | #A9390A | #FFFFFF | 6.41:1 | 3:1 |
+| light | tight gauge segment on surface-1 | #855700 | #FFFFFF | 6.25:1 | 3:1 |
+| light | short gauge segment on surface-1 | #B42318 | #FFFFFF | 6.57:1 | 3:1 |
 | light | Gauge empty segment (surface-3) vs lit is decorative: state word always shown | #ECEAE6 | #FFFFFF | 1.20:1 | 1:1 |
-
-</details>
-
-## Translations
-
-All 11 official written languages of South Africa: English, Afrikaans, isiNdebele, isiXhosa, isiZulu, Sepedi, Sesotho, Setswana, siSwati, Tshivenda and Xitsonga (`en af nr xh zu nso st tn ss ve ts`). Every file has the same keys. South African Sign Language is also an official language. It cannot be written as text, so it is out of scope for the locale files.
-
-The language picker is a single labelled select showing the native and English name of each language. It says whether a language is still in English, machine translated, or checked by a first-language speaker (`src/i18n/status.json`).
-
-**Machine translation with Google.** `npm run i18n:translate` sends the English strings to the Google Cloud Translation API and writes the results into the locale files. This happens at build time only. The app never calls Google while it runs, so the no-third-party-requests rule still holds.
-
-1. In Google Cloud, create a project, enable the Cloud Translation API, and create an API key restricted to that API. A billing account is required, but the first 500,000 characters each month are free. All 10 languages take about 155,000 characters.
-2. Run `GOOGLE_TRANSLATE_API_KEY=your-key npm run i18n:translate` (or name languages, for example `-- zu xh`).
-3. Check with `npm run i18n:check` and commit the locale files.
-
-The script protects `{{placeholders}}`, *bold* markers and names such as Tengo and WhatsApp. It keeps the demo chip exactly "Demo | Fictional Data", and replaces any em dash, en dash or exclamation mark the translation brings in. Any string whose placeholders change stays in English. It remembers which English text each translation came from (`src/i18n/translated-from.json`), so only new or changed strings are sent next time. Machine translations still need checking by first-language speakers. Mark a language `reviewed` in `status.json` once that is done.
-
-Dates use `Intl.DateTimeFormat` with a locale map that resolves every language to `en-ZA` for now. Headings switch from Figtree to Inter for Tshivenda (see Brand and type).
-
-## Accessibility
-
-- Every main page passes axe-core WCAG 2.1 A and AA checks in light and dark themes, at 390 and 1280px wide, plus the drawer and command menu (`npm run a11y`).
-- A skip link. Route changes move focus to the main content and announce the new page.
-- One polite live region announces saves, exports and consent changes, with a matching visual toast.
-- Choice rows (filters, money in or out, WhatsApp or SMS) are native radio groups, so arrow keys work.
-- The 30 day chart is a native slider with a full spoken value ("Tuesday 20 October, about R1 250, Tight"), plus a "Show numbers" table.
-- Dates are read in full and amounts as "money in" or "money out". Decorative gauges and icons are hidden from screen readers. Every state has a word and an icon, not just a colour.
-- Drawers trap focus, close on Escape and hide the page behind them. Form errors are shown in text and linked to their fields.
-- Visible focus, 44px touch targets, reduced motion respected, contrast checked by script and by axe.
-
-## Premium features
-
-- **What helps most** (Home): for Short or Tight, the smallest extra amount, the daily spending cut, or a bill to move that would lift the cover one level. For Enough, how much could be set aside. Uses the same engine as the date (`src/engine/help.ts`).
-- **Where everyday money goes** (Money): last 30 days of spending in plain groups, by simple keyword rules (`src/engine/spending.ts`).
-- **Installable and offline**: the service worker (`public/sw.js`) caches every file of the build at install, from `precache-manifest.json` written by `vite.config.ts`, so the app works offline straight after the first visit with no reload. Pages are network first with the cached app shell and then `offline.html` as fallbacks; app files are cache first; nothing else is ever cached, and cross-origin requests (such as the optional account database) are not touched, so personal data responses are never stored. Old caches are deleted when a new build activates.
-- **Performance**: English is bundled and every other language loads when chosen. Every page except the landing page is its own chunk. `npm run budget` fails if the JavaScript a first visit downloads is over 142 KB gzipped (119 KB today); CI runs it. The 140 ms repository delay exists only in development. The engine takes about 0.5 ms per forecast and at most about 11 ms for a full help plan on the personas, so it stays on the main thread, memoised per record.
-- **Storage**: stored data carries a schema version and is migrated on read. A full or blocked store shows a visible message; unreadable data is kept aside under `tengo.data.unreadable` and the person can start fresh. Security headers (CSP, frame ancestors, referrer and permissions policy, HSTS) are in `vercel.json` and checked on the built app by `tests/headers.spec.ts`.
-- **Motion**: the Safe to spend figure counts up and the date hero animates in. Both respect reduced motion.
-- **Phone testing**: `npm run dev:phone` serves the app on your local network.
-- **Command menu**: Ctrl or Cmd plus K to jump anywhere, switch person, language or theme.
-
-## Decisions
-
-Choices made where the brief left room:
-
-- **Light colours adjusted.** The redesign brief's proposed light state colours, subtle text and accent failed 4.5:1 on the darker surfaces and on their own soft fills. Each was darkened the smallest amount that passes everywhere.
-- **Sidebar collapse.** Collapsing hides labels visually but keeps them for screen readers, with a tooltip on hover.
-- **Redesign references.** The redesign brief points at reference screenshots in `assets/reference/`. That folder does not exist, so the style follows the brief's written description only.
-
-- **Asset locations.** The first brief pointed at `docs/BRIEF.md`, `assets/brand/` and `assets/fonts/`. The brief was at the root and the logos came as `tengo-brand-trimmed.zip`. Those logos are now archived (see Brand and type).
-- **Spend paths.** The central path uses the median of rolling 7 day spend divided by 7 (not the median single day), so it uses the same basis as the 20th and 80th percentile paths and copes with lumpy spending such as stock runs.
-- **What counts as next money.** Deposits of at least 10% of typical monthly income. Smaller daily income (cash fares, card sales) is not "next money". The scrubber still includes it as background income (full rate on the normal and light paths, half on the heavy path).
-- **Weekday payouts.** At least 3 qualifying deposits with 60% on one weekday. The latest plausible date is one day after the typical one. Next money is always after today, since anything that landed today is already in the balance.
-- **No income pattern found.** Tengo plans 30 days ahead and says so.
-- **"Reaches zero".** The first day the end-of-day balance is zero or below. That is the headline date.
-- **Headline versus scrubber.** The headline counts only money already in the account. The scrubber assumes income lands as usual, so on a given day it can show Enough while the headline says Short. The scrubber is labelled "If money lands as usual". Its per-day cover is Enough if the heavy path is above zero, Tight if only the normal path is, Short otherwise.
-- **Safe to lend.** The largest amount, in R10 steps, that keeps the current cover state. Zero when already Short.
-- **Persona balances.** Each persona's balance is picked with the engine so the intended start state holds on any date (tested over 40 consecutive days). Seed data refreshes daily until the user imports or corrects something.
-- **Old statements.** A CSV that ends more than 3 days ago has its dates moved forward to end yesterday, with a visible note. Otherwise the 60 day spend window would be empty.
-- **Mobile navigation.** The bottom bar has five tabs (Home, Plan, Money, Inbox, Me). Privacy is the shield icon in the top bar and is linked from Me, Inbox and the consent flow. The desktop sidebar has all six.
-- **Paused forecast.** With core consent withdrawn, Privacy and Me stay open so people can still see, export or delete their data. Every other page shows "Forecast paused".
-- **Picker states.** Persona cards show each persona's designed starting state.
-- **Spending groups.** Descriptions are now also used to group everyday spending. The data minimisation panel says so.
-- **Premium suggestions.** "What helps most" aims one level up: Short to Tight, Tight to Enough. A bill is only suggested if moving it alone is enough.
-- **Message templates.** Template strings live in the locale files under `messages.*`, so the i18n check covers them. `src/messages/templates.ts` composes them.
-- **Retention.** The next removal date is the oldest stored transaction plus 12 months.
-- **Dark theme.** Built as the stretch goal on the same tokens, selectable in Me.
-
-## Known limitations
-
-- The logo and app icons are placeholders until the founder's new logo is ready.
-- Translations stay in English until the translate script is run with a Google API key, and machine translations still need review by first-language speakers.
-- The forecast is statistical and simple by design. It does not model seasonality, month-end effects or income that is changing over time.
-- Recurring bill detection needs at least two monthly occurrences. A new bill shows as spend until the user recategorises it.
-- CSV import handles common South African formats (day first dates, R amounts, debit and credit columns). It does not handle multi-currency files or PDF statements. PDF is shown as "coming next".
-- Data lives in one browser's local storage. Clearing site data removes it.
-- Icon generation needs Python with Pillow. The generated icons are committed.
-- Privacy features are a simulation and have not been reviewed by a lawyer.
+| dark | Tight and Short hue difference (degrees) | #FBBF24 | #F97362 | 37:1 | 25:1 |
+| light | Tight and Short hue difference (degrees) | #855700 | #B42318 | 35:1 | 25:1 |

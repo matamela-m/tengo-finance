@@ -44,7 +44,7 @@ function Greeting({ name, forecast }: { name: string; forecast: Forecast }) {
     >
       <p className="num text-xs font-medium uppercase tracking-[0.08em] text-subtle">{d.weekdayLong(forecast.today)}</p>
       <p className="mt-1 font-heading text-[20px] font-semibold tracking-[-0.015em] text-ink sm:mt-2 sm:text-h2">
-        {t(`home.greeting.${greetingKey(new Date().getHours())}`, { name })}
+        {name ? t(`home.greeting.${greetingKey(new Date().getHours())}`, { name }) : t(`home.greetingNoName.${greetingKey(new Date().getHours())}`)}
       </p>
     </section>
   );
@@ -169,7 +169,8 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col gap-4 sm:gap-5">
-      <Greeting name={profile.name} forecast={forecast} />
+      {/* The own profile is greeted by nickname only when the person gave one. */}
+      <Greeting name={profile.own && !record.profile?.nickname ? '' : profile.name} forecast={forecast} />
       <HomeNotices notices={record.profile?.sample ? view.notices.map((n) => (n.kind === 'estimated' ? { kind: 'sample' as const } : n)) : view.notices} />
 
       {/* Two independent columns on desktop; one ordered stack below 1024px via display: contents. */}

@@ -44,6 +44,34 @@ const SHOTS: Shot[] = [
   { name: 'inbox', path: '/app/inbox', persona: 'lerato' },
   { name: 'inbox-off', path: '/app/inbox', persona: 'ayanda', messages: false },
   { name: 'me', path: '/app/me', persona: 'ayanda' },
+  { name: 'plan-ayanda', path: '/app/plan', persona: 'ayanda' },
+  { name: 'setup', path: '/app/money/setup', persona: 'lerato' },
+  { name: 'safety', path: '/safety' },
+  { name: 'exit', path: '/exit' },
+  { name: 'privacy-notice', path: '/privacy-notice' },
+  { name: 'terms', path: '/terms' },
+  { name: 'welcome-1', path: '/start', setup: async (page) => startOwn(page, 1) },
+  { name: 'welcome-2', path: '/start', setup: async (page) => startOwn(page, 2) },
+  { name: 'welcome-3', path: '/start', setup: async (page) => startOwn(page, 3) },
+  { name: 'welcome-4', path: '/start', setup: async (page) => startOwn(page, 4) },
+  {
+    name: 'own-home',
+    path: '/start',
+    setup: async (page) => {
+      await startOwn(page, 4);
+      await page.getByRole('button', { name: 'Open Home' }).click();
+      await page.getByRole('heading', { level: 1 }).waitFor();
+    },
+  },
+  {
+    name: 'account',
+    path: '/start',
+    setup: async (page) => {
+      await startOwn(page, 4);
+      await page.goto('/app/account');
+      await page.getByLabel('Email address').waitFor();
+    },
+  },
   {
     name: 'why-drawer',
     path: '/app',
@@ -55,6 +83,22 @@ const SHOTS: Shot[] = [
     },
   },
 ];
+
+/** Walks the own-profile onboarding to the given step, with sample numbers at step 4. */
+async function startOwn(page: Page, step: 1 | 2 | 3 | 4) {
+  await page.evaluate(() => localStorage.setItem('tengo.e2e.accounts', '1'));
+  await page.getByRole('button', { name: 'Start' }).click();
+  await page.getByRole('heading', { name: 'What Tengo asks for, and why' }).waitFor();
+  if (step === 1) return;
+  await page.getByRole('button', { name: 'Next' }).click();
+  await page.getByRole('heading', { name: 'Your choices' }).waitFor();
+  if (step === 2) return;
+  await page.getByRole('button', { name: 'Agree and continue' }).click();
+  await page.getByRole('heading', { name: 'Add your money' }).waitFor();
+  if (step === 3) return;
+  await page.getByRole('button', { name: /Try with sample numbers/ }).click();
+  await page.getByText('Your first forecast').waitFor();
+}
 
 async function prime(page: Page, shot: Shot) {
   await page.goto('/404-prime');

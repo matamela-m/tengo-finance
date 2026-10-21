@@ -75,3 +75,35 @@ test('axe command palette', async ({ page }) => {
   await page.getByRole('combobox', { name: 'Search commands' }).waitFor();
   await scan(page);
 });
+
+for (const theme of ['light', 'dark'] as const) {
+  test(`axe ${theme}: own-profile onboarding, account, notice and terms`, async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto('/404-prime');
+    await page.evaluate((theme) => {
+      localStorage.clear();
+      localStorage.setItem('tengo.session.v1', JSON.stringify({ state: { language: 'en', theme, activePersonaId: null }, version: 0 }));
+      localStorage.setItem('tengo.e2e.accounts', '1');
+    }, theme);
+    for (const path of ['/privacy-notice', '/terms']) {
+      await page.goto(path);
+      await page.getByRole('heading', { level: 1 }).waitFor();
+      await scan(page);
+    }
+    await page.goto('/start');
+    await page.getByRole('button', { name: 'Start' }).click();
+    await page.getByRole('heading', { name: 'What Tengo asks for, and why' }).waitFor();
+    await scan(page);
+    await page.getByRole('button', { name: 'Next' }).click();
+    await page.getByRole('heading', { name: 'Your choices' }).waitFor();
+    await scan(page);
+    await page.getByRole('button', { name: 'Agree and continue' }).click();
+    await page.getByRole('heading', { name: 'Add your money' }).waitFor();
+    await scan(page);
+    await page.getByRole('button', { name: /Answer a few questions/ }).click();
+    await scan(page);
+    await page.goto('/app/account');
+    await page.getByLabel('Email address').waitFor();
+    await scan(page);
+  });
+}

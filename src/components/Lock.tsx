@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { repository } from '../data';
+import { accountBackend, useAccount } from '../data/account';
 import { checkPin, COOL_OFF_MS, makeLock, MAX_TRIES, readLock, writeLock, type LockSettings } from '../lib/appLock';
 import { useSession } from '../store/session';
 import { Brand } from './Brand';
@@ -136,6 +137,16 @@ export function LockScreen() {
   };
 
   const eraseAll = async () => {
+    // A signed-in session must not survive the erase, or the account data would open again with no PIN.
+    if (useAccount.getState().mode === 'account') {
+      try {
+        await accountBackend().signOut(false);
+      } catch {
+        // Offline: the local session keys are removed below either way.
+      }
+      useAccount.getState().setSignedOut();
+    }
+    for (const key of Object.keys(localStorage)) if (key.startsWith('sb-')) localStorage.removeItem(key);
     await repository.resetAll();
     writeLock(store, null);
     setActive(null);

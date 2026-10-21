@@ -121,8 +121,8 @@
     "status": "Demo environment. Fictional data."
   },
   "picker": {
-    "title": "Choose a person",
-    "lead": "Each person is a fictional composite with a different way of earning. Pick one to see Tengo with their money.",
+    "title": "Choose how to explore",
+    "lead": "Each fictional person earns in a different way. Pick one to see Tengo with their money, or use your own.",
     "personas": "People",
     "enterAs": "Enter as {{name}}",
     "continueAs": "Continue as {{name}}",
@@ -218,7 +218,7 @@
     "security": "How data is kept",
     "securityItems": {
       "transit": "With an optional account: an encrypted connection and storage that only you can read.",
-      "access": "Any staff access would be limited and logged.",
+      "access": "No staff access is set up. If support ever needs it, this notice will first say how it is limited and recorded.",
       "device": "Data stays in this browser's storage on this device. Tengo does not encrypt it on the device.",
       "server": "Nothing is sent to a server. There is no Tengo account and no staff access.",
       "shared": "Anyone who uses this browser on this device can open it. Delete it any time.",
@@ -372,7 +372,12 @@
     "emptyTitle": "No money history yet",
     "emptyBody": "Import a statement with at least 14 days of transactions to see your date.",
     "greetingLabel": "Greeting",
-    "unknownShort": "Not found yet"
+    "unknownShort": "Not found yet",
+    "greetingNoName": {
+      "morning": "Good morning.",
+      "afternoon": "Good afternoon.",
+      "evening": "Good evening."
+    }
   },
   "hero": {
     "enoughUntil": "Enough until",
@@ -576,8 +581,8 @@
       "translations": "Built for 11 languages. English today. The other 10 need translating and checking by first-language speakers, and Tshivenda needs a human translator."
     },
     "reset": "Reset demo data",
-    "resetBody": "Clears every person, consent choice and log on this device and starts fresh.",
-    "resetWarn": "This removes everything the demo stored on this device.",
+    "resetBody": "Clears the fictional people, your own profile on this device, consent choices and logs, and starts fresh. An account, if you saved one, is not touched.",
+    "resetWarn": "This removes everything Tengo stored on this device, including your own profile.",
     "resetConfirm": "Yes, reset everything",
     "themeHint": "Dark is the default. System follows your device.",
     "profileTitle": "Your profile",
@@ -1272,11 +1277,11 @@
       },
       "who": {
         "title": "Who can see it",
-        "body": "As a guest: anyone who uses this browser on this device. Use the PIN lock on a shared phone. With an account: you, after signing in. Each person's rows are locked to them in the database. Staff access, if ever needed for support, is limited and logged."
+        "body": "As a guest: anyone who uses this browser on this device. Use the PIN lock on a shared phone. With an account: you, after signing in. Each person's rows are locked to them in the database. No staff access to your rows is set up. If support ever needs it, this notice will first say how it is limited and recorded."
       },
       "keep": {
         "title": "How long it is kept",
-        "body": "Transactions older than 12 months are removed when Tengo opens. You can delete everything at any time; on an account, deletion removes your rows and your sign-in, and you get a receipt with no personal data. Backups kept by the hosting provider are deleted on their own schedule, stated here before launch."
+        "body": "Transactions older than 12 months are removed from this device when Tengo opens. On an account, a server job to remove them is written but not yet switched on. You can delete everything at any time; on an account, deletion removes your rows and your sign-in, and you get a receipt with no personal data. Backups kept by the hosting provider are deleted on their own schedule, stated here before launch."
       },
       "rights": {
         "title": "Your rights",

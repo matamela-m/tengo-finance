@@ -10,6 +10,8 @@ import { usePersona, useRecordPersona } from '../../data/PersonaProvider';
 import type { ConsentRecord } from '../../data/repository';
 import { useDates } from '../../lib/useLang';
 import { retention } from './retention';
+import { useAccount } from '../../data/account';
+import { OPERATOR, OPERATOR_IS_PLACEHOLDER } from '../../lib/operator';
 import { useAnnounce } from '../../components/A11y';
 
 function Card({ icon, title, children, className = '' }: { icon: IconName; title: string; children: ReactNode; className?: string }) {
@@ -36,7 +38,10 @@ export default function PrivacyOverview() {
   const { t } = useTranslation();
   const d = useDates();
   const { record } = useRecordPersona();
-  const { consent, setConsent } = usePersona();
+  const { consent, setConsent, isOwn } = usePersona();
+  const accountMode = useAccount((s) => s.mode);
+  // Every statement here matches the mode actually in use: the fictional demo, own data on this device, or an account.
+  const mode: 'demo' | 'device' | 'account' = !isOwn ? 'demo' : accountMode;
   const keep = retention(record.transactions);
   const announce = useAnnounce();
 
@@ -53,7 +58,7 @@ export default function PrivacyOverview() {
     <>
       <PageHeader title={t('privacy.title')} lead={t('privacy.lead')} />
       <Notice tone="warn" icon="shield" className="mb-6">
-        <strong>{t('privacy.simulated')}</strong>
+        <strong>{mode === 'demo' ? t('privacy.simulated') : t('privacy.pilot')}</strong>
       </Notice>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
@@ -96,9 +101,9 @@ export default function PrivacyOverview() {
           </Card>
 
           <Card icon="lock" title={t('privacy.security')}>
-            <h3 className="eyebrow">{t('privacy.securityNow')}</h3>
+            <h3 className="eyebrow">{t(`privacy.securityNowMode.${mode}`)}</h3>
             <ul className="mt-2 space-y-2">
-              {(['device', 'server', 'shared'] as const).map((k) => (
+              {(mode === 'account' ? (['accountStore', 'accountRls', 'accountForecast'] as const) : (['device', 'server', 'shared'] as const)).map((k) => (
                 <li key={k} className="flex items-start gap-2">
                   <Icon name="info" size={18} className="mt-0.5 shrink-0 text-muted" />
                   {t(`privacy.securityItems.${k}`)}
@@ -107,7 +112,7 @@ export default function PrivacyOverview() {
             </ul>
             <h3 className="eyebrow mt-5">{t('privacy.securityPlanned')}</h3>
             <ul className="mt-2 space-y-2">
-              {(['transit', 'access'] as const).map((k) => (
+              {(mode === 'account' ? (['access'] as const) : (['transit', 'access'] as const)).map((k) => (
                 <li key={k} className="flex items-start gap-2 text-muted">
                   <Icon name="clock" size={18} className="mt-0.5 shrink-0" />
                   {t(`privacy.securityItems.${k}`)}
@@ -140,26 +145,30 @@ export default function PrivacyOverview() {
           </nav>
 
           <Card icon="clock" title={t('privacy.retention')}>
-            <p className="font-semibold">{t('privacy.retentionRule')}</p>
+            <p className="font-semibold">{mode === 'account' ? t('privacy.retentionAccount') : t('privacy.retentionRule')}</p>
             <p className="num mt-2 text-muted">{keep.next ? t('privacy.nextRemoval', { date: d.long(keep.next), from: d.long(keep.oldest!) }) : t('privacy.nothingStored')}</p>
           </Card>
 
           <Card icon="map" title={t('privacy.crossBorder')}>
-            <p>{t('privacy.crossBorderBody')}</p>
+            <p>{mode === 'account' ? t('privacy.crossBorderAccount') : t('privacy.crossBorderBody')}</p>
           </Card>
 
           <Card icon="user" title={t('privacy.officer')}>
             <dl className="space-y-2 text-sm">
               <div>
                 <dt className="text-muted">{t('privacy.officerName')}</dt>
-                <dd className="font-semibold">{t('privacy.placeholderName')}</dd>
+                <dd className="font-semibold">{OPERATOR.informationOfficer}</dd>
               </div>
               <div>
                 <dt className="text-muted">{t('privacy.officerEmail')}</dt>
-                <dd className="font-semibold">privacy@example.org</dd>
+                <dd className="font-semibold">{OPERATOR.contactEmail}</dd>
               </div>
             </dl>
-            <p className="mt-3 rounded-xl bg-tight-soft px-3 py-2 text-xs font-semibold text-tight">{t('privacy.placeholderNote')}</p>
+            {OPERATOR_IS_PLACEHOLDER && <p className="mt-3 rounded-xl bg-tight-soft px-3 py-2 text-xs font-semibold text-tight">{t('privacy.placeholderNote')}</p>}
+            <Link to="/privacy-notice" className="btn-ghost -ml-3 mt-2 text-sm">
+              {t('me.notice')}
+              <Icon name="chevronRight" size={16} />
+            </Link>
             <p className="mt-3 text-sm text-muted">{t('privacy.complaints')}</p>
           </Card>
         </div>

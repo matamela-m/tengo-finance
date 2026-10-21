@@ -30,13 +30,19 @@ export default function Picker() {
   const setActive = useSession((s) => s.setActivePersona);
   const d = useDates();
   const location = useLocation();
-  const deletedId = (location.state as { deleted?: string } | null)?.deleted ?? null;
+  const navState = location.state as { deleted?: string; receipt?: DeletionReceipt } | null;
+  const deletedId = navState?.deleted ?? null;
   const [receipt, setReceipt] = useState<DeletionReceipt | null>(null);
 
   useEffect(() => {
+    // An account deletion hands over the receipt itself: the server keeps no copy linked to the person.
+    if (navState?.receipt) {
+      setReceipt(navState.receipt);
+      return;
+    }
     if (!deletedId) return;
     void repository.getDeletionReceipts().then((all) => setReceipt(all.find((r) => r.id === deletedId) ?? null));
-  }, [deletedId]);
+  }, [deletedId, navState?.receipt]);
 
   // The own profile goes through onboarding until it is done, then straight to Home.
   const chooseOwn = async () => {

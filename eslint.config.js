@@ -15,6 +15,8 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': 'off',
       '@typescript-eslint/no-explicit-any': 'error',
+      // A leading underscore marks a parameter kept only to match an interface.
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
     },
   },
   {

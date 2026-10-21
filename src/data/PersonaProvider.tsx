@@ -3,7 +3,8 @@ import { addDays, localToday, minDate } from '../engine/dates';
 import { forecast as runForecast } from '../engine/forecast';
 import type { BillDecision, Forecast, ForecastInput, ISODate, Transaction } from '../engine/types';
 import { useSession } from '../store/session';
-import { repository } from './index';
+import { repository, setOwnStorage } from './index';
+import { useAccount } from './account';
 import { StorageError, type StorageProblem } from './localRepository';
 import { accountsOf, type Account, type AuditEntry, type AuditType, type ConsentRecord, type DeletionReceipt, type MoneyChange, type OwnProfile, type PersonaRecord, type PlanSettings, type ReviewRequest, type TransactionPatch } from './repository';
 import { mergeEstimated } from '../engine/setup';
@@ -101,6 +102,12 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
         setStatus('ready');
       } catch (e) {
         if (e instanceof StorageError) setProblem(e.kind);
+        // An account session that ended falls back to this device; Me offers to sign in again.
+        if (id === OWN_ID && (e as Error).message === 'not signed in') {
+          useAccount.getState().setSignedOut();
+          setOwnStorage('device');
+          return load(id, quiet);
+        }
         setStatus('error');
       }
     },

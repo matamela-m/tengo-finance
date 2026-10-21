@@ -4,6 +4,7 @@ import { TransactionRow } from '../../components/forecast/Cards';
 import { Icon } from '../../components/Icon';
 import { useRecordPersona } from '../../data/PersonaProvider';
 import { accountsOf } from '../../data/repository';
+import { useAccount } from '../../data/account';
 import { toCsv } from '../../lib/csv';
 import { formatZAR } from '../../lib/format';
 import { downloadText } from '../../lib/sampleStatement';
@@ -15,6 +16,7 @@ export default function MyData() {
   const { t } = useTranslation();
   const d = useDates();
   const { record, profile, consent, audit, reviews, log, isOwn } = useRecordPersona();
+  const accountMode = useAccount((s) => s.mode);
   const logged = useRef(false);
   const announce = useAnnounce();
 
@@ -91,7 +93,7 @@ export default function MyData() {
               [t('privacy.heldConsent'), consent ? d.stamp(consent.decidedAt) : '-'],
               [t('privacy.heldAudit'), String(audit.length)],
               [t('privacy.heldReviews'), String(reviews.length)],
-              [t('privacy.heldWhere'), t('privacy.heldWhereValue')],
+              [t('privacy.heldWhere'), isOwn && accountMode === 'account' ? t('own.storage.account') : t('privacy.heldWhereValue')],
             ].map(([k, v]) => (
               <div key={k} className="flex justify-between gap-4 py-2.5">
                 <dt className="text-muted">{k}</dt>

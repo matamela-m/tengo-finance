@@ -9,3 +9,8 @@ screenshots/*.png
 tengo-brand-trimmed.zip
 public_stunt/
 docs/review/after/backtest/.before-engine/
+
+# Local secrets
+.env
+.env.*
+!.env.example

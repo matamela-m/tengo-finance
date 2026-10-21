@@ -221,7 +221,10 @@
       "access": "Any staff access would be limited and logged.",
       "device": "Data stays in this browser's storage on this device. Tengo does not encrypt it on the device.",
       "server": "Nothing is sent to a server. There is no Tengo account and no staff access.",
-      "shared": "Anyone who uses this browser on this device can open it. Delete it any time."
+      "shared": "Anyone who uses this browser on this device can open it. Delete it any time.",
+      "accountStore": "Your data is stored with the database provider over an encrypted connection.",
+      "accountRls": "Each row is locked to you in the database, so no other account can read, change or delete it.",
+      "accountForecast": "Your forecast is still worked out on your device. The server only stores data."
     },
     "rightsNav": "Your rights",
     "links": {
@@ -349,7 +352,15 @@
     "descriptionsNote": "Statement descriptions can include names or references. Long numbers such as account, card or phone numbers are masked when a statement is imported. Descriptions stay on this device and are used only to spot repeat bills and group spending.",
     "securityNow": "In this demo",
     "securityPlanned": "Planned, not built yet",
-    "deleteLeadOwn": "Remove your profile and everything in it from this device."
+    "deleteLeadOwn": "Remove your profile and everything in it from this device.",
+    "pilot": "Pilot privacy controls. Not a compliance certification.",
+    "securityNowMode": {
+      "demo": "In this demo",
+      "device": "Your profile, on this device",
+      "account": "Your profile, saved to your account"
+    },
+    "retentionAccount": "Records older than 12 months are removed. Deleting your account removes every row and your sign-in.",
+    "crossBorderAccount": "Stored with the database provider in the region named in the privacy notice. Nothing is sent anywhere else."
   },
   "home": {
     "greeting": {
@@ -752,7 +763,10 @@
     "plan_settings": "Changed which spending can bend or which bills can move",
     "money_updated": "Changed accounts or money owed",
     "cash_added": "Recorded cash {{direction}}",
-    "setup_saved": "Set up a history by hand"
+    "setup_saved": "Set up a history by hand",
+    "account_uploaded": "Saved the profile to an account",
+    "account_created": "Started an empty account",
+    "account_signedIn": "Signed in on a device"
   },
   "inbox": {
     "title": "Inbox",
@@ -1231,7 +1245,8 @@
       "lead": "This is an estimate from the numbers you gave, not advice. It gets better as you add real entries.",
       "sample": "These are sample numbers, not yours. Change them on Money, or replace them with a statement or your own answers.",
       "open": "Open Home"
-    }
+    },
+    "signIn": "Already saved to an account? Sign in"
   },
   "legalDoc": {
     "version": "Version {{version}}",
@@ -1302,6 +1317,59 @@
         "title": "Complaints",
         "body": "Contact the responsible party above. For privacy complaints you can also go to the Information Regulator of South Africa."
       }
+    }
+  },
+  "account": {
+    "title": "Account",
+    "unavailable": "Accounts are not set up on this copy of Tengo. Your profile stays on this device.",
+    "lead": "Save to an account to keep this on any device. Optional: Tengo works fully without one.",
+    "leadSaved": "Your profile is saved to your account. Your forecast is still worked out on this device.",
+    "saveTitle": "Save to an account",
+    "manage": "Manage your account",
+    "facts": {
+      "passwordless": "No password: you sign in with a one-time code sent to your email.",
+      "device": "Your forecast is still worked out on your device. The account only stores your data.",
+      "where": "Stored with the database provider named in the privacy notice. Only you can read your rows.",
+      "leave": "Sign out everywhere, export or delete everything at any time."
+    },
+    "email": "Email address",
+    "adult": "I am 18 or older.",
+    "adultHint": "Tengo is for adults. It does not ask for or keep a date of birth.",
+    "sendCode": "Send me a code",
+    "codeSent": "Code sent",
+    "codeTitle": "Enter your code",
+    "codeLead": "We sent a one-time code to {{email}}. It works once and expires soon.",
+    "code": "One-time code",
+    "verify": "Sign in",
+    "resend": "Send a new code",
+    "resendIn_one": "Send a new code in {{count}} second",
+    "resendIn_other": "Send a new code in {{count}} seconds",
+    "uploadTitle": "Save what is on this device?",
+    "uploadLead": "Your account is empty. Save your profile from this device to it. It is then removed from this device and kept in your account.",
+    "emptyLead": "Your account is new and empty. Add your money to get your first forecast.",
+    "conflictTitle": "This account already has data",
+    "conflictLead": "This device also has a profile. Usually you keep the account's data. You can replace it with this device's data instead.",
+    "useLead": "Your account's data will be used on this device.",
+    "choices": {
+      "upload": "Save this device's profile",
+      "startEmpty": "Start with an empty account",
+      "useAccount": "Use the account's data",
+      "replaceAccount": "Replace it with this device's data"
+    },
+    "replaceWarn": "Replacing removes what the account holds now and cannot be undone.",
+    "saved": "Saved to your account",
+    "signedInAs": "Signed in as {{email}}",
+    "savedFacts": "Export everything the server holds at any time, as JSON or CSV.",
+    "signOut": "Sign out",
+    "signOutEverywhere": "Sign out everywhere",
+    "deleteTitle": "Delete my account",
+    "deleteBody": "Removes every row the server holds about you and your sign-in, and gives you a receipt with no personal data. Backups kept by the hosting provider expire on its schedule, stated in the privacy notice.",
+    "deleteWarn": "This cannot be undone. Export first if you want a copy.",
+    "deleteConfirm": "Yes, delete my account",
+    "errors": {
+      "rate_limited": "A code was sent a moment ago. Wait a minute, then try again.",
+      "invalid_code": "That code did not work. Check it, or send a new one.",
+      "generic": "Something went wrong. Check your connection and try again."
     }
   }
 }

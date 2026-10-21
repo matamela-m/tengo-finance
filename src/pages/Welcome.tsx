@@ -12,6 +12,7 @@ import { StateChip } from '../components/StateChip';
 import { Toggle } from '../components/Toggle';
 import { IconTile } from '../components/ui';
 import { usePersona } from '../data/PersonaProvider';
+import { accountsAvailable, useAccount } from '../data/account';
 import { OWN_ID } from '../data/seed/personas';
 import { estimatedHistory, SAMPLE_ANSWERS, SAMPLE_BANK_BALANCE, SAMPLE_CASH } from '../engine/setup';
 import { NOTICE_VERSION } from '../lib/notice';
@@ -46,6 +47,7 @@ export default function Welcome() {
   const [way, setWay] = useState<Way>('choose');
   const [busy, setBusy] = useState(false);
   const named = useRef(false);
+  const accountMode = useAccount((s) => s.mode);
 
   useEffect(() => {
     if (active !== OWN_ID) setActive(OWN_ID);
@@ -154,10 +156,17 @@ export default function Welcome() {
               {t('welcome.nicknameHint')}
             </p>
           </div>
-          <button type="button" className="btn-primary mt-8 min-h-[52px]" onClick={() => void go(2, { nickname: nickname.trim() || undefined })}>
-            {t('welcome.next')}
-            <Icon name="arrowRight" size={18} />
-          </button>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <button type="button" className="btn-primary min-h-[52px]" onClick={() => void go(2, { nickname: nickname.trim() || undefined })}>
+              {t('welcome.next')}
+              <Icon name="arrowRight" size={18} />
+            </button>
+            {accountsAvailable() && accountMode === 'device' && (
+              <Link to="/app/account" className="btn-ghost min-h-[52px]">
+                {t('welcome.signIn')}
+              </Link>
+            )}
+          </div>
         </section>
       )}
 
@@ -244,10 +253,18 @@ export default function Welcome() {
           </div>
           {forecast.status !== 'unclear' && <StateChip state={forecast.status} size="lg" className="mt-4" />}
           <p className="mt-4 max-w-xl text-muted">{record.profile?.sample ? t('welcome.s4.sample') : t('welcome.s4.lead')}</p>
-          <button type="button" className="btn-primary mt-8 min-h-[52px]" onClick={() => navigate('/app')}>
-            {t('welcome.s4.open')}
-            <Icon name="arrowRight" size={18} />
-          </button>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <button type="button" className="btn-primary min-h-[52px]" onClick={() => navigate('/app')}>
+              {t('welcome.s4.open')}
+              <Icon name="arrowRight" size={18} />
+            </button>
+            {accountsAvailable() && accountMode === 'device' && (
+              <Link to="/app/account" className="btn-ghost min-h-[52px]">
+                <Icon name="cloud" size={18} />
+                {t('account.saveTitle')}
+              </Link>
+            )}
+          </div>
         </section>
       )}
     </Shell>

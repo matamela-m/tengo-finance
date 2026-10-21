@@ -20,9 +20,10 @@ export function AppGate() {
   // A locked app shows only the PIN screen: no names, amounts or dates.
   if (locked) return <LockScreen />;
   // The person's own profile goes through onboarding; the fictional people through the consent page.
-  if (status === 'ready' && isOwn && (!consent || (record && record.transactions.length === 0 && (record.profile?.onboardingStep ?? 0) < 4)))
+  // The account page stays open before onboarding, so a second device can sign in first.
+  if (status === 'ready' && isOwn && !pathname.startsWith('/app/account') && (!consent || (record && record.transactions.length === 0 && (record.profile?.onboardingStep ?? 0) < 4)))
     return <Navigate to="/welcome" replace />;
-  if (status === 'ready' && !consent) return <Navigate to="/consent" replace />;
+  if (status === 'ready' && !consent && !isOwn) return <Navigate to="/consent" replace />;
 
   let content;
   if (status === 'error' && storageProblem === 'corrupt') {

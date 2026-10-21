@@ -55,6 +55,10 @@
   "status": "Fixed",
   "resolution": "Phase 4: no untranslated locale JSON is parsed at start; initial JavaScript is 119 KB gzipped."
  },
+ "A11Y-15": {
+  "status": "Partly fixed",
+  "resolution": "Phase 8: login is passwordless, with a one-time code field that allows paste and autofill (autocomplete one-time-code) and no memory or puzzle test. A consistent help link on every page and testing with disabled users are not done; the research kit covers the testing."
+ },
  "BEH-01": {
   "status": "Partly fixed",
   "resolution": "Phase 1: usual spend shown beside the budget and the next large bill just after next money is kept back and named."
@@ -256,8 +260,16 @@
   "resolution": "Phases 1 and 3: Daily budget and Room to lend with buffer lines; estimate-not-advice lines on Home, Plan, Help and the Why drawer."
  },
  "LEGAL-03": {
-  "status": "Partly fixed",
-  "resolution": "Phases 1 and 3: messages off by default; every message names Tengo and says Reply STOP. A server consent log with wording version follows in Phase 8."
+  "status": "Fixed",
+  "resolution": "Phases 1, 3 and 8: messages off by default, sender and STOP in every message, and a server consent log with notice version."
+ },
+ "LEGAL-04": {
+  "status": "Prepared for human action",
+  "resolution": "Phase 8: draft privacy notice and terms of use at /privacy-notice and /terms with a complaints route; operator identity from env vars. Legal review and naming the responsible party are human actions."
+ },
+ "LEGAL-05": {
+  "status": "Prepared for human action",
+  "resolution": "An attorney-reviewed perimeter memo (FAIS, NCA, CPA, POPIA) is listed in docs/HUMAN-ACTIONS.md; copy already avoids naming or linking financial products."
  },
  "LEGAL-06": {
   "status": "Fixed",
@@ -270,6 +282,10 @@
  "LEGAL-08": {
   "status": "Fixed",
   "resolution": "Phase 1: Enough is used only for the Enough state; Tight until for Tight."
+ },
+ "LEGAL-09": {
+  "status": "Prepared for human action",
+  "resolution": "The notice and terms say outputs are never used for credit or lending decisions; putting the purpose limit into any bank partner contract is a human action."
  },
  "PROD-01": {
   "status": "Partly fixed",
@@ -353,27 +369,39 @@
  },
  "SEC-04": {
   "status": "Partly fixed",
-  "resolution": "Phase 4: security headers and dependency upgrades are done. Auth, encrypted server storage and row-level security follow in Phase 8; device data stays in browser storage by design."
+  "resolution": "Phases 4 and 8: optional passwordless accounts on Supabase with row-level security on every table (SQL-tested with two users), only the anon key in the browser, CSP limited to the Supabase host, security headers. Guest data stays in browser storage on the device by design, protected by the optional PIN lock."
  },
  "SEC-05": {
-  "status": "Partly fixed",
-  "resolution": "Phase 7: own-profile deletion removes every record on the device, the receipt holds no personal data and the receipt id is no longer put in the URL. Server deletion follows in Phase 8."
+  "status": "Fixed",
+  "resolution": "Phases 7 and 8: device deletion removes every record; account deletion (delete_my_account) removes every row and the sign-in and returns a receipt with no personal data or user id; receipts never go in the URL; backup retention is to be stated in the notice."
  },
  "SEC-06": {
-  "status": "Partly fixed",
-  "resolution": "Phase 1: messages no longer pre-ticked. Provable server consent records follow in Phase 8."
+  "status": "Fixed",
+  "resolution": "Phases 1 and 8: separate opt-ins, messages and analytics off by default, and a server-side append-only consent log with time and notice version, exportable."
  },
  "SEC-07": {
-  "status": "Partly fixed",
-  "resolution": "Phase 3: audit entries no longer store transaction descriptions. A tamper-evident server log follows in Phase 8."
+  "status": "Fixed",
+  "resolution": "Phases 3 and 8: audit entries hold no descriptions; the server audit log is append only for its owner (no update or delete policies), tested in SQL."
+ },
+ "SEC-08": {
+  "status": "Prepared for human action",
+  "resolution": "Phase 8: a layered draft notice covering what, why, where, who, how long, rights and complaints, with the responsible party and Information Officer from env vars and a build warning. Naming and registering them, and legal review, are human actions."
  },
  "SEC-09": {
   "status": "Fixed",
   "resolution": "Phase 4: the service worker never caches anything outside the app's own build files and ignores cross-origin requests."
  },
+ "SEC-10": {
+  "status": "Prepared for human action",
+  "resolution": "Phase 8: the setup guide lists every operator (Supabase, Vercel, email sender) and the cross-border check; signing operator agreements and the section 72 assessment are human actions."
+ },
  "SEC-11": {
   "status": "Fixed",
   "resolution": "Phase 6: written safety policy (/safety) for adults only with an 18 or older declaration at account creation (Phase 8), shared-phone protections and coercion guidance; app lock, discreet mode and quick exit built."
+ },
+ "SEC-12": {
+  "status": "Prepared for human action",
+  "resolution": "The sample breach notice stays; an incident plan with the Information Regulator's process needs the named responsible party and is listed in docs/HUMAN-ACTIONS.md."
  },
  "SEC-13": {
   "status": "Fixed",
@@ -390,6 +418,10 @@
  "TECH-02": {
   "status": "Fixed",
   "resolution": "Phases 4 and 6: per-page error boundaries, local diagnostics that keep only error name, kind, route pattern and time (tested to exclude personal data), a diagnostics panel in Me, and docs/OBSERVABILITY.md for server logging."
+ },
+ "TECH-03": {
+  "status": "Fixed",
+  "resolution": "Phase 8: AccountRepository implements the same TengoRepository interface over an AccountBackend (Supabase or an in-memory server with the same rules), chosen by storage mode through the routing repository; UI code is unchanged."
  },
  "TECH-04": {
   "status": "Fixed",

@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { usePersona, useRecordPersona } from '../data/PersonaProvider';
 import { useSession } from '../store/session';
+import { accountsAvailable, useAccount } from '../data/account';
 import { useAnnounce } from './A11y';
 import { ProfileChip } from './DemoChip';
 import { Icon } from './Icon';
@@ -16,6 +17,7 @@ export function OwnProfileCard() {
   const { updateProfile } = usePersona();
   const setActive = useSession((s) => s.setActivePersona);
   const [nickname, setNickname] = useState(record.profile?.nickname ?? '');
+  const mode = useAccount((s) => s.mode);
 
   return (
     <section className="card p-5 sm:p-6" aria-labelledby="own-title">
@@ -25,7 +27,13 @@ export function OwnProfileCard() {
         </h2>
         <ProfileChip />
       </div>
-      <p className="mt-1 text-sm text-muted">{t('me.storageMode', { mode: t('own.storage.device') })}</p>
+      <p className="mt-1 text-sm text-muted">{t('me.storageMode', { mode: t(`own.storage.${mode}`) })}</p>
+      {accountsAvailable() && (
+        <Link to="/app/account" className="btn-secondary mt-3 min-h-[44px]">
+          <Icon name="cloud" size={16} />
+          {mode === 'account' ? t('account.manage') : t('account.saveTitle')}
+        </Link>
+      )}
       <form
         className="mt-4 flex flex-wrap items-end gap-2"
         onSubmit={(e) => {

@@ -7,6 +7,26 @@ on:
   pull_request:
 
 jobs:
+  secrets:
+    # Fails if a key or token is committed, such as a Supabase service role key.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  rls:
+    # Row-level security tests: user B cannot read, change or delete user A's data.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y postgresql
+      - run: echo "/usr/lib/postgresql/$(ls /usr/lib/postgresql)/bin" >> "$GITHUB_PATH"
+      - run: bash scripts/test-rls.sh
+
   checks:
     runs-on: ubuntu-latest
     steps:

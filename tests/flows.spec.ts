@@ -53,7 +53,9 @@ test('language choice persists, html lang follows the text shown, and drafts are
   await page.getByLabel('Language').selectOption('zu');
   await expect(page.locator('html')).toHaveAttribute('lang', 'zu');
   await expect(page.locator('html')).toHaveAttribute('data-ui-language', 'zu');
-  await expect(page.locator('span', { hasText: /^Uhlaka lwe-AI$/ })).toBeVisible();
+  // Changed: the list shows plain names; the draft note is one line under the picker, for the chosen language only.
+  await expect(page.getByText(/^Uhlaka lokuhumusha olwenziwe nge-AI/)).toBeVisible();
+  await expect(page.locator('option', { hasText: /AI/ })).toHaveCount(0);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Khetha ukuthi uhlole kanjani');
   await page.reload();
   await expect(page.getByLabel('Ulimi')).toHaveValue('zu');

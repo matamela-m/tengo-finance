@@ -59,8 +59,9 @@ for (const code of codes) {
   }
 }
 
-// Status rules (L10N-02, L10N-04): known values only; Tshivenda is never machine translated;
-// a language is "reviewed" only when every key is marked reviewed in review-status.json.
+// Status rules (L10N-02, L10N-04): known values only; a language is a "machine" draft only when every key is
+// drafted or reviewed, and "reviewed" only when every key is marked reviewed in review-status.json. Tshivenda
+// can be drafted with AI (scripts/import-drafts.mjs) but never through Google, which does not support it.
 const STATUSES = new Set(['pending', 'machine', 'reviewed', 'needsTranslator']);
 const status = JSON.parse(readFileSync('src/i18n/status.json', 'utf8'));
 const review = JSON.parse(readFileSync('src/i18n/review-status.json', 'utf8'));
@@ -69,9 +70,12 @@ for (const [code, st] of Object.entries(status)) {
     console.error(`${code}: unknown status "${st}" in status.json`);
     problems++;
   }
-  if (code === 've' && st === 'machine') {
-    console.error('ve: Tshivenda cannot be machine translated; use needsTranslator, pending or reviewed');
-    problems++;
+  if (st === 'machine') {
+    const undrafted = [...base].filter((k) => k !== 'common.demoChip' && !['machine', 'reviewed'].includes(review[code]?.[k]));
+    if (undrafted.length) {
+      console.error(`${code}: marked machine but ${undrafted.length} key(s) are not drafted, for example ${undrafted.slice(0, 3).join(', ')}`);
+      problems++;
+    }
   }
   if (st === 'reviewed') {
     const notReviewed = [...base].filter((k) => review[code]?.[k] !== 'reviewed');

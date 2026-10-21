@@ -1,1380 +1,1380 @@
 {
   "common": {
     "demoChip": "Demo | Fictional Data",
-    "skipToContent": "Skip to content",
-    "loading": "Loading",
-    "saving": "Saving",
-    "close": "Close",
-    "cancel": "Cancel",
-    "save": "Save",
-    "today": "Today",
-    "rangeDates": "{{from}} to {{to}}",
-    "rangeAmounts": "{{low}} to {{high}}",
-    "on": "On",
-    "off": "Off",
-    "back": "Back"
+    "skipToContent": "Feta go diteng",
+    "loading": "E a laiša",
+    "saving": "E a boloka",
+    "close": "Tswalela",
+    "cancel": "Khansela",
+    "save": "Boloka",
+    "today": "Lehono",
+    "rangeDates": "{{from}} go fihla {{to}}",
+    "rangeAmounts": "{{low}} go fihla {{high}}",
+    "on": "E bulegile",
+    "off": "E tswaletšwe",
+    "back": "Morago"
   },
   "nav": {
-    "label": "Main",
-    "home": "Home",
-    "plan": "Plan",
-    "money": "Money",
-    "inbox": "Inbox",
-    "privacy": "Privacy",
-    "me": "Me",
-    "collapse": "Collapse sidebar",
-    "expand": "Expand sidebar"
+    "label": "Tše kgolo",
+    "home": "Gae",
+    "plan": "Beakanya",
+    "money": "Tšhelete",
+    "inbox": "Melaetša",
+    "privacy": "Sephiri",
+    "me": "Nna",
+    "collapse": "Phuthela lepheko la ka thoko",
+    "expand": "Atološa lepheko la ka thoko"
   },
   "state": {
-    "enough": "Enough",
-    "tight": "Tight",
-    "short": "Short",
-    "unclear": "Not enough to tell"
+    "enough": "E lekane",
+    "tight": "E lekanyana",
+    "short": "E a hlaela",
+    "unclear": "Ga go lekane go bolela"
   },
   "confidence": {
-    "high": "High",
-    "medium": "Medium",
-    "low": "Low"
+    "high": "Godimo",
+    "medium": "Magareng",
+    "low": "Fase"
   },
   "category": {
-    "income": "Income",
-    "spend": "Spend",
-    "bill": "Bill"
+    "income": "Letseno",
+    "spend": "Tšhomišo",
+    "bill": "Tefo"
   },
   "language": {
-    "label": "Language",
-    "pending": "Translation on the way. This language shows English for now.",
-    "machine": "Machine translated with Google Translate. A first-language speaker still needs to check it.",
-    "reviewed": "Translated and checked by a first-language speaker.",
-    "claim": "Built for 11 languages. English today.",
-    "needsTranslator": "Needs a first-language translator. Machine translation does not support Tshivenda, so it shows English for now.",
+    "label": "Polelo",
+    "pending": "Phetolelo e a tla. Polelo ye e bontšha Seisemane gabjale.",
+    "machine": "Kakanyo ya phetolelo ye e dirilwego ka AI. Seboledi sa polelo ye bjalo ka leleme la gagwe se sa swanetše go e lekola.",
+    "reviewed": "E fetoletšwe gomme ya lekolwa ke seboledi sa polelo ye bjalo ka leleme la gagwe.",
+    "claim": "Dipolelo tše 11. Seisemane le dikakanyo tše 10 tša AI, tšeo di sa swanetšego go lekolwa.",
+    "needsTranslator": "Go nyakega mofetoledi yo a bolelago polelo ye bjalo ka leleme la gagwe. E bontšha Seisemane gabjale.",
     "short": {
-      "pending": "English for now",
-      "needsTranslator": "English for now",
-      "machine": "machine translated"
+      "pending": "Seisemane gabjale",
+      "needsTranslator": "Seisemane gabjale",
+      "machine": "Kakanyo ya AI"
     },
     "chip": {
-      "source": "English",
-      "pending": "English for now",
-      "needsTranslator": "Needs a translator",
-      "machine": "Machine translated",
-      "reviewed": "Human reviewed"
+      "source": "Seisemane",
+      "pending": "Seisemane gabjale",
+      "needsTranslator": "Go nyakega mofetoledi",
+      "machine": "Kakanyo ya AI",
+      "reviewed": "E lekotšwe ke motho"
     }
   },
   "landing": {
-    "title": "Money you can plan around",
-    "pitch": "A balance tells you what you have. Tengo tells you until when.",
-    "cta": "Explore Tengo",
-    "ctaNote": "No sign up. Fictional data only.",
-    "previewLabel": "Live preview of Tengo",
-    "previewWho": "Thabo, e-hailing driver. Fictional.",
-    "previewCaption": "Preview of Tengo for a fictional driver: {{label}} {{date}}, cover {{state}}, daily budget {{amount}}.",
-    "howTitle": "Three steps to a date you can plan around.",
+    "title": "Tšhelete yeo o ka beakanyago ka yona",
+    "pitch": "Palomo e go botša seo o nago le sona. Tengo e go botša gore go fihla neng.",
+    "cta": "Hlahloba Tengo",
+    "ctaNote": "Ga go ngwadišo. Tshedimošo ya maitirelo fela.",
+    "previewLabel": "Ponelopele ye e phelago ya Tengo",
+    "previewWho": "Thabo, mootledi wa e-hailing. Wa maitirelo.",
+    "previewCaption": "Ponelopele ya Tengo ya mootledi wa maitirelo: {{label}} {{date}}, boemo {{state}}, tekanyetšo ya letšatši {{amount}}.",
+    "howTitle": "Dikgato tše tharo go ya letšatšing leo o ka beakanyago ka lona.",
     "steps": {
       "history": {
-        "title": "Add your money history",
-        "body": "Use a sample person or bring a bank statement as a CSV file. It stays on your device."
+        "title": "Tsenya histori ya tšhelete ya gago",
+        "body": "Šomiša motho wa mohlala goba o tliše setatamente sa panka bjalo ka faele ya CSV. Se dula sedirišweng sa gago."
       },
       "last": {
-        "title": "See how long it lasts",
-        "body": "Tengo works out the day your money runs out and when your next money usually lands."
+        "title": "Bona gore e tšea nako ye kae",
+        "body": "Tengo e bala letšatši leo tšhelete ya gago e tlago go fela ka lona le gore tšhelete ya gago ye e latelago e tlwaetše go tsena neng."
       },
       "plan": {
-        "title": "Plan around the date",
-        "body": "Try a what-if, check a loan to family, and see your daily budget."
+        "title": "Beakanya go dikologa letšatši",
+        "body": "Leka ge eba bjang, lekola kadimo go ba lapa, gomme o bone tekanyetšo ya gago ya letšatši."
       }
     },
-    "tagline": "Money you can plan around.",
-    "fictional": "All people, places and amounts in this demo are fictional. No bank connection.",
+    "tagline": "Tšhelete yeo o ka beakanyago ka yona.",
+    "fictional": "Batho ka moka, mafelo le ditšhelete ka gare ga demo ye ke tša maitirelo. Ga go kgokagano le panka.",
     "navLabel": "Tengo",
-    "home": "home",
+    "home": "gae",
     "nav": {
-      "how": "How it works",
-      "privacy": "Privacy"
+      "how": "Ka moo e šomago",
+      "privacy": "Sephiri"
     },
-    "badge": "Built for the FNB App of the Year hackathon",
-    "headlineLead": "Money you can",
-    "headlineDim": "plan around.",
-    "ctaSecondary": "See how it works",
+    "badge": "E agetšwe hackathon ya FNB App of the Year",
+    "headlineLead": "Tšhelete yeo o ka",
+    "headlineDim": "beakanyago ka yona.",
+    "ctaSecondary": "Bona ka moo e šomago",
     "stats": {
-      "history": "Days of history per person",
-      "states": "Cover states: Enough, Tight, Short",
-      "languages": "Built for 11 languages. English today.",
-      "logins": "Bank logins needed"
+      "history": "Matšatši a histori go motho yo mongwe le yo mongwe",
+      "states": "Maemo: E lekane, E lekanyana, E a hlaela, Ga go lekane go bolela",
+      "languages": "Dipolelo tše 11. Seisemane le dikakanyo tše 10 tša AI, tšeo di sa swanetšego go lekolwa.",
+      "logins": "Go tsena pankeng go go nyakegago"
     },
-    "closingTitle": "See how long your money lasts.",
-    "closingBody": "Pick a fictional person and explore. No sign up, nothing leaves your browser.",
+    "closingTitle": "Bona gore tšhelete ya gago e tšea nako ye kae.",
+    "closingBody": "Kgetha motho wa maitirelo gomme o hlahlobe. Ga go ngwadišo, ga go selo seo se tšwago sefetleking sa gago.",
     "footer": {
-      "product": "Product",
-      "privacy": "Privacy",
-      "about": "About",
+      "product": "Setšweletšwa",
+      "privacy": "Sephiri",
+      "about": "Ka ga",
       "links": {
-        "how": "How it works",
-        "explore": "Explore Tengo",
-        "privacyCentre": "Privacy centre",
-        "fictional": "Fictional data only",
-        "name": "The name Tengo",
-        "hackathon": "Hackathon entry",
-        "safety": "Safety and who it is for"
+        "how": "Ka moo e šomago",
+        "explore": "Hlahloba Tengo",
+        "privacyCentre": "Senthara ya sephiri",
+        "fictional": "Tshedimošo ya maitirelo fela",
+        "name": "Leina la Tengo",
+        "hackathon": "Go tsenela hackathon",
+        "safety": "Polokego le gore ke ya mang"
       }
     },
-    "status": "Demo environment. Fictional data."
+    "status": "Tikologo ya demo. Tshedimošo ya maitirelo."
   },
   "picker": {
-    "title": "Choose how to explore",
-    "lead": "Each fictional person earns in a different way. Pick one to see Tengo with their money, or use your own.",
-    "personas": "People",
-    "enterAs": "Enter as {{name}}",
-    "continueAs": "Continue as {{name}}",
-    "backHome": "home",
-    "deletedTitle": "{{name}}'s data was deleted",
-    "deletedBody": "Receipt {{ref}}, {{date}}. Removed {{count}} transactions and {{audit}} audit entries. Choose a person to start again.",
-    "step": "Step 1 of 2",
-    "startsAt": "Starts at"
+    "title": "Kgetha ka moo o tlago go hlahloba",
+    "lead": "Motho yo mongwe le yo mongwe wa maitirelo o hwetša tšhelete ka tsela ye e fapanego. Kgetha yo mongwe go bona Tengo le tšhelete ya gagwe, goba o šomiše ya gago.",
+    "personas": "Batho",
+    "enterAs": "Tsena bjalo ka {{name}}",
+    "continueAs": "Tšwela pele bjalo ka {{name}}",
+    "backHome": "gae",
+    "deletedTitle": "Tshedimošo ya {{name}} e phumotšwe",
+    "deletedBody": "Rasiti {{ref}}, {{date}}. Go tlošitšwe ditirelano tše {{count}} le ditseno tša tlhahlobo tše {{audit}}. Kgetha motho go thoma lefsa.",
+    "step": "Kgato 1 ya 2",
+    "startsAt": "E thoma go"
   },
   "personas": {
-    "fictional": "Fictional composite",
+    "fictional": "Motho wa maitirelo",
     "thabo": {
-      "role": "E-hailing driver",
-      "situation": "Cash fares most days and an app payout on Mondays. Fuel and the car instalment come first."
+      "role": "Mootledi wa e-hailing",
+      "situation": "Ditefo tša go namela ka kheše matšatši a mantši le tefo ya app ka Mošupologo. Peterole le tefo ya koloi di tla pele."
     },
     "lerato": {
-      "role": "Hairdresser",
-      "situation": "Saturdays carry the week. Product restocks every two weeks and rent on the 1st."
+      "role": "Mohlatswa-meriri",
+      "situation": "Mekibelo e rwala beke. Go reka ditšweletšwa lefsa beke tše pedi le tše pedi le rente ka la 1."
     },
     "ayanda": {
-      "role": "Spaza shop owner",
-      "situation": "Cash takings come in lumps. Big stock runs and prepaid electricity in between."
+      "role": "Mong wa lebenkele la spaza",
+      "situation": "Tšhelete ya kheše e tsena ka dihlopha. Go reka setoko se segolo le mohlagase wa go lefelwa pele magareng."
     }
   },
   "consent": {
-    "title": "Before you start",
-    "as": "Entering as {{name}}",
-    "lead": "Here is what Tengo uses, why, and what you can change.",
+    "title": "Pele o thoma",
+    "as": "O tsena bjalo ka {{name}}",
+    "lead": "Se ke seo Tengo e se šomišago, lebaka, le seo o ka se fetošago.",
     "notice": {
       "what": {
-        "title": "What we use",
-        "body": "Transaction dates, amounts and descriptions, plus your current balance. Nothing else."
+        "title": "Seo re se šomišago",
+        "body": "Matšatši a ditirelano, ditšhelete le ditlhalošo, gotee le palomo ya gago ya bjale. Ga go se sengwe."
       },
       "why": {
-        "title": "Why",
-        "body": "To work out how long your money lasts and when your next money is likely. Not for marketing or credit scoring."
+        "title": "Lebaka",
+        "body": "Go bala gore tšhelete ya gago e tšea nako ye kae le gore tšhelete ya gago ye e latelago e ka tsena neng. E sego bakeng sa papatšo goba go lekanyetša mokitlana."
       },
       "who": {
-        "title": "Who can see it",
-        "body": "Anyone using this browser on this device. No one at Tengo can see it."
+        "title": "Ke mang yo a ka e bonago",
+        "body": "Mang le mang yo a šomišago sefetleki se sedirišweng se. Ga go motho go Tengo yo a ka e bonago."
       },
       "where": {
-        "title": "Where it is processed",
-        "body": "In your browser, on this device. Nothing is sent to a server."
+        "title": "Moo e šongwago gona",
+        "body": "Sefetlekong sa gago, sedirišweng se. Ga go selo seo se romelwago go seva."
       },
       "how": {
-        "title": "How long we keep it",
-        "body": "Records older than 12 months are removed from this device. You can delete everything any time."
+        "title": "Re e boloka nako ye kae",
+        "body": "Direkhoto tše di fetago dikgwedi tše 12 di tlošwa sedirišweng se. O ka phumola tšohle nako efe goba efe."
       }
     },
-    "choices": "Your choices",
-    "required": "Required",
+    "choices": "Dikgetho tša gago",
+    "required": "E a nyakega",
     "core": {
-      "title": "Forecast",
-      "body": "Needed to use Tengo. Withdraw any time and the forecast pauses."
+      "title": "Ponelopele",
+      "body": "E a nyakega go šomiša Tengo. Gogela morago nako efe goba efe gomme ponelopele e emišwa."
     },
     "messages": {
-      "title": "Daily messages",
-      "body": "A short daily update with your date, by WhatsApp or SMS. WhatsApp messages pass through Meta, outside South Africa. Off until you turn it on. Simulated, nothing is sent."
+      "title": "Melaetša ya letšatši le letšatši",
+      "body": "Mpshafatšo ye kopana ya letšatši le letšatši ye e nago le letšatši la gago, ka WhatsApp goba SMS. Melaetša ya WhatsApp e feta go Meta, ka ntle ga Afrika Borwa. E tswaletšwe go fihlela o e bula. Ke ekišo, ga go selo se romelwago."
     },
     "analytics": {
-      "title": "Product analytics",
-      "body": "Helps improve Tengo. Off by default. No analytics runs in this demo."
+      "title": "Tshekatsheko ya setšweletšwa",
+      "body": "E thuša go kaonafatša Tengo. E tswaletšwe ka tlwaelo. Ga go tshekatsheko ye e šomago ka gare ga demo ye."
     },
-    "changeLater": "You can change these any time in Privacy.",
-    "agree": "Agree and continue",
-    "notNow": "Not now",
-    "step": "Step 2 of 2"
+    "changeLater": "O ka fetoša se nako efe goba efe go Sephiri.",
+    "agree": "Dumela gomme o tšwele pele",
+    "notNow": "E sego gabjale",
+    "step": "Kgato 2 ya 2"
   },
   "privacy": {
-    "simulated": "Simulated privacy controls. Not a compliance certification.",
-    "title": "Privacy",
-    "lead": "See, change, export or delete this person's data.",
-    "consentTitle": "Your consent",
-    "coreEffect": "Needed for Tengo to work. Turning it off pauses the forecast.",
-    "messagesEffect": "A short daily update in the Inbox. Turning it off hides the Inbox preview.",
-    "lastChanged": "Last changed {{date}}",
-    "minimisation": "What the forecast uses",
-    "uses": "Uses",
-    "neverUses": "Does not use",
+    "simulated": "Ditaolo tša sephiri tša ekišo. E sego setifikeiti sa go obamela molao.",
+    "title": "Sephiri",
+    "lead": "Bona, fetoša, ntšha goba o phumole tshedimošo ya motho yo.",
+    "consentTitle": "Tumelelo ya gago",
+    "coreEffect": "E a nyakega gore Tengo e šome. Go e tima go emiša ponelopele.",
+    "messagesEffect": "Mpshafatšo ye kopana ya letšatši le letšatši go Melaetša. Go e tima go uta ponelopele ya Melaetša.",
+    "lastChanged": "E fetošitšwe la mafelelo ka {{date}}",
+    "minimisation": "Seo ponelopele e se šomišago",
+    "uses": "E šomiša",
+    "neverUses": "Ga e šomiše",
     "used": {
-      "date": "Transaction date",
-      "amount": "Transaction amount",
-      "description": "Transaction description, to spot repeat bills and group spending",
-      "balance": "Your current balance"
+      "date": "Letšatši la tirelano",
+      "amount": "Tšhelete ya tirelano",
+      "description": "Tlhalošo ya tirelano, go lemoga ditefo tše di boelelwago le go hlopha tšhomišo",
+      "balance": "Palomo ya gago ya bjale"
     },
     "unused": {
-      "id": "ID number",
-      "location": "Location",
-      "contacts": "Contacts",
-      "account": "Account or card numbers"
+      "id": "Nomoro ya boitsebišo",
+      "location": "Lefelo",
+      "contacts": "Bao o ikgokaganyago le bona",
+      "account": "Dinomoro tša akhaonte goba tša karata"
     },
-    "security": "How data is kept",
+    "security": "Ka moo tshedimošo e bolokwago",
     "securityItems": {
-      "transit": "With an optional account: an encrypted connection and storage that only you can read.",
-      "access": "No staff access is set up. If support ever needs it, this notice will first say how it is limited and recorded.",
-      "device": "Data stays in this browser's storage on this device. Tengo does not encrypt it on the device.",
-      "server": "Nothing is sent to a server. There is no Tengo account and no staff access.",
-      "shared": "Anyone who uses this browser on this device can open it. Delete it any time.",
-      "accountStore": "Your data is stored with the database provider over an encrypted connection.",
-      "accountRls": "Each row is locked to you in the database, so no other account can read, change or delete it.",
-      "accountForecast": "Your forecast is still worked out on your device. The server only stores data."
+      "transit": "Ka akhaonte ya boikgethelo: kgokagano ye e šireleditšwego le polokelo yeo e balwago ke wena fela.",
+      "access": "Ga go phihlelelo ya bašomi yeo e beakantšwego. Ge thekgo e ka e nyaka, tsebišo ye e tla thoma ka go bolela ka moo e lekanyeditšwego le go ngwalwa ka gona.",
+      "device": "Tshedimošo e dula polokelong ya sefetleki se sedirišweng se. Tengo ga e e šireletše sedirišweng.",
+      "server": "Ga go selo seo se romelwago go seva. Ga go akhaonte ya Tengo le phihlelelo ya bašomi.",
+      "shared": "Mang le mang yo a šomišago sefetleki se sedirišweng se a ka e bula. E phumole nako efe goba efe.",
+      "accountStore": "Tshedimošo ya gago e bolokwa go mofani wa polokelo ya tshedimošo ka kgokagano ye e šireleditšwego.",
+      "accountRls": "Mothalo wo mongwe le wo mongwe o notletšwe go wena polokelong ya tshedimošo, ka gona ga go akhaonte ye nngwe ye e ka o balago, ya o fetoša goba ya o phumola.",
+      "accountForecast": "Ponelopele ya gago e sa balwa sedirišweng sa gago. Seva e boloka tshedimošo fela."
     },
-    "rightsNav": "Your rights",
+    "rightsNav": "Ditokelo tša gago",
     "links": {
       "data": {
-        "title": "See my data",
-        "body": "Everything held, and export it"
+        "title": "Bona tshedimošo ya ka",
+        "body": "Tšohle tše di bolokilwego, gomme o di ntšhe"
       },
       "audit": {
-        "title": "Audit log",
-        "body": "Every access and change, with times"
+        "title": "Rekhoto ya tlhahlobo",
+        "body": "Phihlelelo yohle le diphetogo, le dinako"
       },
       "review": {
-        "title": "Question this result",
-        "body": "Ask a person to check your date"
+        "title": "Botšiša ka sephetho se",
+        "body": "Kgopela motho go lekola letšatši la gago"
       },
       "breach": {
-        "title": "Breach notice",
-        "body": "A sample of what we would send"
+        "title": "Tsebišo ya go robega ga polokego",
+        "body": "Mohlala wa seo re bego re tla se romela"
       },
       "delete": {
-        "title": "Delete my data",
-        "body": "Remove this person's records"
+        "title": "Phumola tshedimošo ya ka",
+        "body": "Tloša direkhoto tša motho yo"
       }
     },
-    "retention": "How long we keep it",
-    "retentionRule": "Records older than 12 months are removed from this device when Tengo opens.",
-    "nextRemoval": "Next removal {{date}}, for records from {{from}}.",
-    "nothingStored": "Nothing stored yet.",
-    "crossBorder": "Where data is processed",
-    "crossBorderBody": "On this device only. In this demo nothing is sent to a server, inside or outside South Africa.",
-    "officer": "Information Officer",
-    "officerName": "Name",
-    "officerEmail": "Email",
-    "placeholderName": "To be appointed",
-    "placeholderNote": "Placeholder details. Not a real contact.",
-    "complaints": "If you are not happy with how your data is handled, you can complain to the Information Regulator of South Africa.",
-    "dataLead": "Everything Tengo holds about this person on this device.",
-    "exportJson": "Export JSON",
-    "exportCsv": "Export CSV",
-    "held": "Held about this person",
-    "heldPersona": "Person",
-    "heldBalance": "Balance",
-    "heldTransactions": "Transactions",
-    "heldSource": "Source",
-    "heldConsent": "Consent given",
-    "heldAudit": "Audit entries",
-    "heldReviews": "Review requests",
-    "heldWhere": "Stored",
-    "heldWhereValue": "This browser only",
+    "retention": "Re e boloka nako ye kae",
+    "retentionRule": "Direkhoto tše di fetago dikgwedi tše 12 di tlošwa sedirišweng se ge Tengo e bulwa.",
+    "nextRemoval": "Go tlošwa mo go latelago ka {{date}}, ga direkhoto go tloga ka {{from}}.",
+    "nothingStored": "Ga go selo se bolokilwego gabjale.",
+    "crossBorder": "Moo tshedimošo e šongwago gona",
+    "crossBorderBody": "Sedirišweng se fela. Ka gare ga demo ye ga go selo seo se romelwago go seva, ka gare goba ka ntle ga Afrika Borwa.",
+    "officer": "Mohlankedi wa Tshedimošo",
+    "officerName": "Leina",
+    "officerEmail": "Imeile",
+    "placeholderName": "O sa tla kgethwa",
+    "placeholderNote": "Dintlha tša nakwana. E sego motho wa nnete wa go ikgokaganya le yena.",
+    "complaints": "Ge o sa kgotsofala ka moo tshedimošo ya gago e swarwago ka gona, o ka tsenya ngongorego go Molaodi wa Tshedimošo wa Afrika Borwa.",
+    "dataLead": "Tšohle tšeo Tengo e di swerego ka ga motho yo sedirišweng se.",
+    "exportJson": "Ntšha JSON",
+    "exportCsv": "Ntšha CSV",
+    "held": "Tše di swerwego ka ga motho yo",
+    "heldPersona": "Motho",
+    "heldBalance": "Palomo",
+    "heldTransactions": "Ditirelano",
+    "heldSource": "Mothopo",
+    "heldConsent": "Tumelelo ye e filwego",
+    "heldAudit": "Ditseno tša tlhahlobo",
+    "heldReviews": "Dikgopelo tša tekolo",
+    "heldWhere": "E bolokilwe",
+    "heldWhereValue": "Sefetlekong se fela",
     "source": {
-      "seed": "Sample data",
-      "import": "Imported statement",
-      "edited": "Sample data, corrected",
-      "manual": "Set up by hand, estimated"
+      "seed": "Tshedimošo ya mohlala",
+      "import": "Setatamente se se tsentšwego",
+      "edited": "Tshedimošo ya mohlala, e lokišitšwe",
+      "manual": "E beakantšwe ka seatla, e akanyeditšwe"
     },
-    "correctHint": "Something wrong? Correct or recategorise any transaction from the Money page.",
-    "auditLead": "A simulated log of access and changes, newest first.",
-    "auditEmpty": "No entries yet.",
-    "auditActor": "By you, on this device",
-    "reviewLead": "The date is worked out by fixed rules. If it looks wrong, ask a person to check it.",
-    "reviewFormTitle": "Request a human review",
-    "reviewAbout": "About: {{result}}",
-    "reviewReason": "What looks wrong",
+    "correctHint": "Go na le seo se fošagetšego? Lokiša goba o fetoše sehlopha sa tirelano efe goba efe letlakaleng la Tšhelete.",
+    "auditLead": "Rekhoto ya ekišo ya phihlelelo le diphetogo, tše mpsha pele.",
+    "auditEmpty": "Ga go ditseno gabjale.",
+    "auditActor": "Ke wena, sedirišweng se",
+    "reviewLead": "Letšatši le balwa ka melao ye e sa fetogego. Ge le bonagala le fošagetše, kgopela motho go le lekola.",
+    "reviewFormTitle": "Kgopela tekolo ya motho",
+    "reviewAbout": "Ka ga: {{result}}",
+    "reviewReason": "Ke eng seo se bonagalago se fošagetše",
     "reasons": {
-      "date": "The date looks wrong",
-      "income": "Income is missing or wrong",
-      "bill": "A bill is wrong",
-      "other": "Something else"
+      "date": "Letšatši le bonagala le fošagetše",
+      "income": "Letseno ga le gona goba le fošagetše",
+      "bill": "Tefo e fošagetše",
+      "other": "Se sengwe"
     },
-    "reviewDetails": "Tell us more (optional)",
-    "reviewPlaceholder": "For example, I get paid on the 25th, not on Mondays.",
-    "reviewContact": "How should we reply",
+    "reviewDetails": "Re botše go feta (boikgethelo)",
+    "reviewPlaceholder": "Mohlala, ke lefša ka la 25, e sego ka Mošupologo.",
+    "reviewContact": "Re swanetše go araba bjang",
     "contact": {
-      "inbox": "In my Tengo Inbox",
-      "none": "No reply needed"
+      "inbox": "Ka Melaetšeng ya ka ya Tengo",
+      "none": "Ga go nyakege karabo"
     },
-    "reviewSubmit": "Send request",
-    "reviewSimulated": "Simulated. No request leaves this device.",
-    "reviewSent": "Request received",
-    "reviewRef": "Reference {{ref}}",
-    "reviewNext": "In a real service, a person would check the inputs and reply within 5 working days. Until then the forecast keeps working as normal.",
-    "reviewAnother": "Send another",
-    "reviewPast": "Your requests",
-    "reviewNone": "No requests yet.",
-    "reviewStatus": "Received",
-    "breachLead": "If personal data were ever exposed, this is the kind of notice users would get.",
-    "breachSample": "Sample only. There has been no breach.",
-    "sampleStamp": "Sample",
-    "breachDate": "Date of notice: [date]",
-    "breachHeading": "Important: a security incident affecting your Tengo data",
+    "reviewSubmit": "Romela kgopelo",
+    "reviewSimulated": "Ke ekišo. Ga go kgopelo ye e tšwago sedirišweng se.",
+    "reviewSent": "Kgopelo e amogetšwe",
+    "reviewRef": "Tšhupetšo {{ref}}",
+    "reviewNext": "Tirelong ya nnete, motho o be a tla lekola tše di tsentšwego gomme a arabe ka gare ga matšatši a 5 a mošomo. Go fihla ka nako yeo ponelopele e tšwela pele go šoma bjalo ka mehleng.",
+    "reviewAnother": "Romela ye nngwe",
+    "reviewPast": "Dikgopelo tša gago",
+    "reviewNone": "Ga go dikgopelo gabjale.",
+    "reviewStatus": "E amogetšwe",
+    "breachLead": "Ge tshedimošo ya motho e ka utollwa, ye ke mohuta wa tsebišo yeo badiriši ba bego ba tla e hwetša.",
+    "breachSample": "Ke mohlala fela. Ga go bjalo go robega ga polokego.",
+    "sampleStamp": "Mohlala",
+    "breachDate": "Letšatši la tsebišo: [letšatši]",
+    "breachHeading": "Bohlokwa: tiragalo ya polokego ye e amago tshedimošo ya gago ya Tengo",
     "breach": {
       "happened": {
-        "title": "What happened",
-        "body": "On [date], we found that [describe the incident]. We stopped it on [date]."
+        "title": "Seo se diregilego",
+        "body": "Ka [letšatši], re hweditše gore [hlaloša tiragalo]. Re e emišitše ka [letšatši]."
       },
       "data": {
-        "title": "What data was involved",
-        "body": "[List the data, for example transaction dates, amounts and descriptions]. Your ID number and passwords were not involved."
+        "title": "Tshedimošo ye e amegilego",
+        "body": "[Lokeletša tshedimošo, mohlala matšatši a ditirelano, ditšhelete le ditlhalošo]. Nomoro ya gago ya boitsebišo le mantšu a sephiri ga se tša amega."
       },
       "doing": {
-        "title": "What we are doing",
-        "body": "We have [steps taken] and told the Information Regulator. We are working with [security partner] to stop this happening again."
+        "title": "Seo re se dirago",
+        "body": "Re tšere [dikgato tše di tšerwego] gomme ra tsebiša Molaodi wa Tshedimošo. Re šoma le [molekane wa polokego] go thibela gore se se se boe se direge."
       },
       "you": {
-        "title": "What you can do",
-        "body": "Watch for messages that ask for your PIN or password. Tengo will never ask for them. You can delete your data at any time in Privacy."
+        "title": "Seo o ka se dirago",
+        "body": "Hlokomela melaetša ye e kgopelago PIN ya gago goba lentšu la gago la sephiri. Tengo e ka se tsoge e di kgopetše. O ka phumola tshedimošo ya gago nako efe goba efe go Sephiri."
       },
       "contact": {
-        "title": "Contact us",
-        "body": "Our Information Officer is at [contact details]. You can also complain to the Information Regulator."
+        "title": "Ikgokaganye le rena",
+        "body": "Mohlankedi wa Tshedimošo wa rena o hwetšagala go [dintlha tša kgokagano]. O ka tsenya ngongorego gape go Molaodi wa Tshedimošo."
       }
     },
-    "deleteLead": "Remove {{name}}'s records from this device.",
-    "deleteWhat": "What will be removed",
-    "deleteTx_one": "{{count}} transaction and the balance",
-    "deleteTx_other": "{{count}} transactions and the balance",
-    "deleteConsent": "Consent choices and review requests",
-    "deleteAudit_one": "{{count}} audit log entry",
-    "deleteAudit_other": "{{count}} audit log entries",
-    "deleteReceipt": "A deletion receipt is kept, with no transaction details.",
-    "deleteStart": "Delete my data",
-    "deleteWarn": "This cannot be undone. You will go back to the start.",
-    "deleteCheck": "I understand this removes the data for good",
-    "deleteConfirm": "Yes, delete everything",
-    "descriptionsNote": "Statement descriptions can include names or references. Long numbers such as account, card or phone numbers are masked when a statement is imported. Descriptions stay on this device and are used only to spot repeat bills and group spending.",
-    "securityNow": "In this demo",
-    "securityPlanned": "Planned, not built yet",
-    "deleteLeadOwn": "Remove your profile and everything in it from this device.",
-    "pilot": "Pilot privacy controls. Not a compliance certification.",
+    "deleteLead": "Tloša direkhoto tša {{name}} sedirišweng se.",
+    "deleteWhat": "Seo se tlago go tlošwa",
+    "deleteTx_one": "Tirelano ye {{count}} le palomo",
+    "deleteTx_other": "Ditirelano tše {{count}} le palomo",
+    "deleteConsent": "Dikgetho tša tumelelo le dikgopelo tša tekolo",
+    "deleteAudit_one": "Tseno ye {{count}} ya rekhoto ya tlhahlobo",
+    "deleteAudit_other": "Ditseno tše {{count}} tša rekhoto ya tlhahlobo",
+    "deleteReceipt": "Rasiti ya go phumola e a bolokwa, ntle le dintlha tša ditirelano.",
+    "deleteStart": "Phumola tshedimošo ya ka",
+    "deleteWarn": "Se se ka se bušetšwe morago. O tla boela mathomong.",
+    "deleteCheck": "Ke a kwešiša gore se se tloša tshedimošo go ya go ile",
+    "deleteConfirm": "Ee, phumola tšohle",
+    "descriptionsNote": "Ditlhalošo tša setatamente di ka ba le maina goba ditšhupetšo. Dinomoro tše telele go swana le dinomoro tša akhaonte, tša karata goba tša mogala di a utwa ge setatamente se tsenywa. Ditlhalošo di dula sedirišweng se gomme di šomišwa fela go lemoga ditefo tše di boelelwago le go hlopha tšhomišo.",
+    "securityNow": "Ka gare ga demo ye",
+    "securityPlanned": "E beakantšwe, ga se ya agwa",
+    "deleteLeadOwn": "Tloša profaele ya gago le tšohle tše di lego go yona sedirišweng se.",
+    "pilot": "Ditaolo tša sephiri tša teko. E sego setifikeiti sa go obamela molao.",
     "securityNowMode": {
-      "demo": "In this demo",
-      "device": "Your profile, on this device",
-      "account": "Your profile, saved to your account"
+      "demo": "Ka gare ga demo ye",
+      "device": "Profaele ya gago, sedirišweng se",
+      "account": "Profaele ya gago, e bolokilwe akhaonteng ya gago"
     },
-    "retentionAccount": "Records older than 12 months are removed. Deleting your account removes every row and your sign-in.",
-    "crossBorderAccount": "Stored with the database provider in the region named in the privacy notice. Nothing is sent anywhere else."
+    "retentionAccount": "Direkhoto tše di fetago dikgwedi tše 12 di a tlošwa. Go phumola akhaonte ya gago go tloša methalo ka moka le go tsena ga gago.",
+    "crossBorderAccount": "E bolokilwe go mofani wa polokelo ya tshedimošo seleteng seo se bolelwago tsebišong ya sephiri. Ga go selo seo se romelwago felo go gongwe."
   },
   "home": {
     "greeting": {
-      "morning": "Good morning, {{name}}.",
-      "afternoon": "Good afternoon, {{name}}.",
-      "evening": "Good evening, {{name}}."
+      "morning": "Thobela, {{name}}.",
+      "afternoon": "Thobela, {{name}}.",
+      "evening": "Thobela, {{name}}."
     },
-    "heroLabel": "Your date",
-    "emptyTitle": "No money history yet",
-    "emptyBody": "Import a statement with at least 14 days of transactions to see your date.",
-    "greetingLabel": "Greeting",
-    "unknownShort": "Not found yet",
+    "heroLabel": "Letšatši la gago",
+    "emptyTitle": "Ga go histori ya tšhelete gabjale",
+    "emptyBody": "Tsenya setatamente se se nago le bonnyane matšatši a 14 a ditirelano go bona letšatši la gago.",
+    "greetingLabel": "Tumedišo",
+    "unknownShort": "Ga se ya hwetšwa",
     "greetingNoName": {
-      "morning": "Good morning.",
-      "afternoon": "Good afternoon.",
-      "evening": "Good evening."
+      "morning": "Thobela.",
+      "afternoon": "Thobela.",
+      "evening": "Thobela."
     }
   },
   "hero": {
-    "enoughUntil": "Enough until",
-    "enoughBeyond": "Enough beyond",
-    "shortFrom": "Short from",
-    "gap_one": "{{count}} day before your next money",
-    "gap_other": "{{count}} days before your next money",
-    "tightUntil": "Tight until",
-    "unclear": "Not enough to tell",
-    "unclearLead": "Your date",
+    "enoughUntil": "E lekane go fihla",
+    "enoughBeyond": "E lekane go feta",
+    "shortFrom": "E a hlaela go tloga",
+    "gap_one": "Letšatši le {{count}} pele ga tšhelete ya gago ye e latelago",
+    "gap_other": "Matšatši a {{count}} pele ga tšhelete ya gago ye e latelago",
+    "tightUntil": "E lekanyana go fihla",
+    "unclear": "Ga go lekane go bolela",
+    "unclearLead": "Letšatši la gago",
     "line": "{{label}} {{date}}"
   },
   "band": {
-    "between": "Likely between {{from}} and {{to}}",
-    "single": "Likely {{date}}",
-    "lowConfidence": "Low confidence",
-    "legendNext": "Next money",
-    "legendDate": "Your date",
-    "legendRange": "Likely range"
+    "between": "Go ka direga magareng ga {{from}} le {{to}}",
+    "single": "Go ka direga {{date}}",
+    "lowConfidence": "Kgonthišišo ye e lego fase",
+    "legendNext": "Tšhelete ye e latelago",
+    "legendDate": "Letšatši la gago",
+    "legendRange": "Sekgoba seo se ka bago gona"
   },
   "sts": {
-    "title": "Daily budget",
-    "withBills": "Spread evenly until your next money, after {{bills}} in bills.",
-    "noBills": "Spread evenly until your next money. No bills due before it.",
-    "reserveOne": "Keeps {{amount}} back for {{name}} on {{date}}, which your next money may not cover.",
-    "reserveMany": "Keeps {{amount}} back for {{count}} bills just after your next money, which it may not cover.",
-    "noReserve": "No bills due just after your next money, so nothing extra is kept back.",
-    "usual": "Your usual spend is {{amount}} a day.",
-    "notAdvised": "Not advised",
-    "notAdvisedWhy_one": "At your usual {{usual}} a day, money runs out {{count}} day before your next money.",
-    "notAdvisedWhy_other": "At your usual {{usual}} a day, money runs out {{count}} days before your next money.",
-    "disclaimer": "An estimate from your own history, not advice.",
-    "nothingSpare": "Nothing spare",
-    "pending": "Waiting for today's money",
-    "pendingWhy": "Your usual payment is due today. The budget is worked out once it lands.",
-    "unclear": "Not shown yet",
-    "unclearWhy": "Tengo needs more to go on before it suggests a daily figure.",
-    "overdrawnWhy": "You are overdrawn by {{amount}}. Money that comes in covers this first.",
-    "notAdvisedNoMoney": "At your usual {{usual}} a day, money runs out before any money is expected."
+    "title": "Tekanyetšo ya letšatši",
+    "withBills": "E arogantšwe ka go lekana go fihla tšhelete ya gago ye e latelago, ka morago ga {{bills}} ya ditefo.",
+    "noBills": "E arogantšwe ka go lekana go fihla tšhelete ya gago ye e latelago. Ga go ditefo tše di swanetšego go lefša pele ga yona.",
+    "reserveOne": "E boloka {{amount}} bakeng sa {{name}} ka {{date}}, yeo tšhelete ya gago ye e latelago e ka se e lefelego.",
+    "reserveMany": "E boloka {{amount}} bakeng sa ditefo tše {{count}} tše di tlago ka morago ga tšhelete ya gago ye e latelago, yeo e ka se di lefelego.",
+    "noReserve": "Ga go ditefo tše di tlago ka morago ga tšhelete ya gago ye e latelago, ka fao ga go selo se se oketšegilego se se bolokwago.",
+    "usual": "Tšhomišo ya gago ya ka mehla ke {{amount}} ka letšatši.",
+    "notAdvised": "Ga e eletšwe",
+    "notAdvisedWhy_one": "Ka tšhomišo ya gago ya ka mehla ya {{usual}} ka letšatši, tšhelete e fela letšatši le {{count}} pele ga tšhelete ya gago ye e latelago.",
+    "notAdvisedWhy_other": "Ka tšhomišo ya gago ya ka mehla ya {{usual}} ka letšatši, tšhelete e fela matšatši a {{count}} pele ga tšhelete ya gago ye e latelago.",
+    "disclaimer": "Kakanyo go tšwa historing ya gago, e sego keletšo.",
+    "nothingSpare": "Ga go se se šetšego",
+    "pending": "E letetše tšhelete ya lehono",
+    "pendingWhy": "Tefo ya gago ya ka mehla e swanetše lehono. Tekanyetšo e tla balwa ge e tsene.",
+    "unclear": "Ga se ya bontšhwa",
+    "unclearWhy": "Tengo e nyaka go feta pele e šišinya palo ya letšatši.",
+    "overdrawnWhy": "O ntšhitše go feta ka {{amount}}. Tšhelete ye e tsenago e lefa se pele.",
+    "notAdvisedNoMoney": "Ka tšhomišo ya gago ya ka mehla ya {{usual}} ka letšatši, tšhelete e fela pele ga ge tšhelete efe goba efe e letetšwe."
   },
   "stateCard": {
-    "title": "Cover",
-    "enough": "Covered until your next money, even on a heavy week.",
-    "tight": "Covered on a normal week, not on a heavy one.",
-    "short_one": "Runs out {{count}} day before your next money.",
-    "short_other": "Runs out {{count}} days before your next money.",
-    "tightReserve": "Covered until your next money, but {{amount}} is needed for a bill soon after it.",
-    "unclearThin": "Tengo needs at least 14 days of money history to work out a date. Import a statement or add a few weeks of entries.",
-    "unclearNoIncome": "No money coming in was found in your history. Add your income, or set it up by hand, to get an answer.",
-    "noIncomeRunway": "With nothing coming in, your balance lasts until {{date}} at your usual spend.",
-    "unclearStale": "Your balance is more than two weeks old. Add today's balance to see your date.",
-    "enoughHorizon": "Lasts the next {{days}} days even on a heavy week, with no money expected.",
-    "tightHorizon": "Lasts the next {{days}} days on a normal week, not on a heavy one. No money is expected.",
-    "shortHorizon": "Runs out within the next {{days}} days, and no money is expected.",
-    "enoughDaily": "Lasts the next {{days}} days even on a heavy week, counting half of what usually comes in each day.",
-    "tightDaily": "Lasts the next {{days}} days on a normal week, counting half of what usually comes in each day. Not on a heavy one.",
-    "shortDaily": "Runs out within the next {{days}} days, even counting half of what usually comes in each day."
+    "title": "Boemo",
+    "enough": "O šireletšegile go fihla tšhelete ya gago ye e latelago, le ka beke ye boima.",
+    "tight": "O šireletšegile ka beke ya ka mehla, e sego ka beke ye boima.",
+    "short_one": "E fela letšatši le {{count}} pele ga tšhelete ya gago ye e latelago.",
+    "short_other": "E fela matšatši a {{count}} pele ga tšhelete ya gago ye e latelago.",
+    "tightReserve": "O šireletšegile go fihla tšhelete ya gago ye e latelago, eupša {{amount}} e a nyakega bakeng sa tefo ye e tlago kapejana ka morago ga yona.",
+    "unclearThin": "Tengo e nyaka bonnyane matšatši a 14 a histori ya tšhelete go bala letšatši. Tsenya setatamente goba o oketše dibeke tše mmalwa tša ditseno.",
+    "unclearNoIncome": "Ga go tšhelete ye e tsenago ye e hweditšwego historing ya gago. Oketša letseno la gago, goba o le beakanye ka seatla, go hwetša karabo.",
+    "noIncomeRunway": "Ge go se selo se se tsenago, palomo ya gago e tšea go fihla {{date}} ka tšhomišo ya gago ya ka mehla.",
+    "unclearStale": "Palomo ya gago e tšofetše go feta dibeke tše pedi. Oketša palomo ya lehono go bona letšatši la gago.",
+    "enoughHorizon": "E tšea matšatši a {{days}} a a latelago le ka beke ye boima, go se tšhelete ye e letetšwego.",
+    "tightHorizon": "E tšea matšatši a {{days}} a a latelago ka beke ya ka mehla, e sego ka ye boima. Ga go tšhelete ye e letetšwego.",
+    "shortHorizon": "E fela ka gare ga matšatši a {{days}} a a latelago, gomme ga go tšhelete ye e letetšwego.",
+    "enoughDaily": "E tšea matšatši a {{days}} a a latelago le ka beke ye boima, go balwa seripa sa seo se tlwaetšego go tsena letšatši le lengwe le le lengwe.",
+    "tightDaily": "E tšea matšatši a {{days}} a a latelago ka beke ya ka mehla, go balwa seripa sa seo se tlwaetšego go tsena letšatši le lengwe le le lengwe. E sego ka beke ye boima.",
+    "shortDaily": "E fela ka gare ga matšatši a {{days}} a a latelago, le ge go balwa seripa sa seo se tlwaetšego go tsena letšatši le lengwe le le lengwe."
   },
   "next": {
-    "title": "Next money",
-    "around": "Around {{date}}",
-    "window": "Likely window",
-    "amount": "Usual amount",
-    "patternWeekday": "Usually lands on a {{day}}.",
-    "patternInterval_one": "Usually lands every {{count}} day.",
-    "patternInterval_other": "Usually lands every {{count}} days.",
-    "unknown": "No regular income found yet. Tengo plans 30 days ahead.",
-    "pendingToday": "Today, not in yet",
-    "none": "None expected",
-    "daily": "Most days"
+    "title": "Tšhelete ye e latelago",
+    "around": "Ka {{date}} goba kgauswi",
+    "window": "Nako ye e ka bago gona",
+    "amount": "Tšhelete ya ka mehla",
+    "patternWeekday": "E tlwaetše go tsena ka {{day}}.",
+    "patternInterval_one": "E tlwaetše go tsena ka morago ga letšatši le {{count}} ka mehla.",
+    "patternInterval_other": "E tlwaetše go tsena ka morago ga matšatši a {{count}} ka mehla.",
+    "unknown": "Ga se ya hwetšwa letseno la ka mehla. Tengo e beakanya matšatši a 30 pele.",
+    "pendingToday": "Lehono, ga se ya tsena",
+    "none": "Ga go ye e letetšwego",
+    "daily": "Matšatši a mantši"
   },
   "recent": {
-    "title": "Recent activity",
-    "all": "See all",
-    "empty": "No transactions yet."
+    "title": "Mošomo wa morago bjale",
+    "all": "Bona tšohle",
+    "empty": "Ga go ditirelano gabjale."
   },
   "scrubber": {
-    "title": "Next 30 days",
-    "subtitle": "Expected balance and likely range",
-    "label": "Pick a day in the next 30 days",
-    "valueText": "If money lands as usual. {{date}}: about {{amount}}, likely {{low}} to {{high}}. {{level}}.{{events}}",
-    "range": "Likely {{low}} to {{high}}",
-    "expectedIncome": "Expected money",
-    "billDue": "{{name}} due",
-    "summary": "Projected balance for the next 30 days if money lands as usual. Lowest point {{low}} on {{date}}.",
-    "showTable": "Show numbers",
-    "hideTable": "Hide numbers",
-    "tableCaption": "Projected balance and cover for each of the next 30 days",
-    "colDay": "Day",
-    "colExpected": "Expected",
-    "colRange": "Likely range",
-    "colCover": "Balance",
-    "key": "Line: expected balance. Shading: likely range. Filled dots: money in. Hollow dots: bills.",
-    "ifUsual": "If money lands as usual",
+    "title": "Matšatši a 30 a a latelago",
+    "subtitle": "Palomo ye e letetšwego le sekgoba seo se ka bago gona",
+    "label": "Kgetha letšatši ka gare ga matšatši a 30 a a latelago",
+    "valueText": "Ge tšhelete e tsena bjalo ka mehleng. {{date}}: e ka ba {{amount}}, go ka direga {{low}} go fihla {{high}}. {{level}}.{{events}}",
+    "range": "Go ka direga {{low}} go fihla {{high}}",
+    "expectedIncome": "Tšhelete ye e letetšwego",
+    "billDue": "{{name}} e swanetše go lefša",
+    "summary": "Palomo ye e akanyeditšwego ya matšatši a 30 a a latelago ge tšhelete e tsena bjalo ka mehleng. Ntlha ya fase kudu {{low}} ka {{date}}.",
+    "showTable": "Bontšha dinomoro",
+    "hideTable": "Uta dinomoro",
+    "tableCaption": "Palomo ye e akanyeditšwego le boemo bja letšatši le lengwe le le lengwe matšatšing a 30 a a latelago",
+    "colDay": "Letšatši",
+    "colExpected": "Ye e letetšwego",
+    "colRange": "Sekgoba seo se ka bago gona",
+    "colCover": "Palomo",
+    "key": "Mothalo: palomo ye e letetšwego. Moriti: sekgoba seo se ka bago gona. Dikhwiti tše di tletšego: tšhelete ye e tsenago. Dikhwiti tše di se nago selo: ditefo.",
+    "ifUsual": "Ge tšhelete e tsena bjalo ka mehleng",
     "level": {
-      "enough": "Above R0 even on a heavy week",
-      "tight": "Could dip below R0 on a heavy week",
-      "short": "Below R0 on a normal week"
+      "enough": "Godimo ga R0 le ka beke ye boima",
+      "tight": "E ka theogela ka fase ga R0 ka beke ye boima",
+      "short": "Ka fase ga R0 ka beke ya ka mehla"
     },
     "levelShort": {
-      "enough": "Above R0",
-      "tight": "Could reach R0",
-      "short": "Below R0"
+      "enough": "Godimo ga R0",
+      "tight": "E ka fihla R0",
+      "short": "Ka fase ga R0"
     }
   },
   "why": {
-    "open": "Why this date",
-    "title": "Why this date",
-    "plain": "We start with your balance today, take off bills on their due dates, and spend at your usual daily rate until the money reaches zero. That day is your date. Money you have not received yet is not counted.",
-    "chartLabel": "How the balance runs down on a normal, light and heavy week",
-    "lineCentral": "Normal week",
-    "lineLight": "Light week",
-    "lineHeavy": "Heavy week",
-    "lineNext": "Next money, {{date}}",
-    "inputs": "What went in",
-    "balance": "Balance today",
-    "dailySpend": "Usual daily spend",
-    "dailySpendHint": "Light to heavy week: {{low}} to {{high}} a day",
-    "perDay": "{{amount}} a day",
-    "bills": "Bills before next money",
-    "noBills": "None due",
-    "income": "Expected next money",
+    "open": "Ke ka lebaka la eng letšatši le",
+    "title": "Ke ka lebaka la eng letšatši le",
+    "plain": "Re thoma ka palomo ya gago ya lehono, ra ntšha ditefo ka matšatši a tšona, gomme ra šomiša ka tekanyo ya gago ya ka mehla ya letšatši go fihlela tšhelete e fihla go lefela. Letšatši leo ke letšatši la gago. Tšhelete yeo o sa e hwetšago ga e balwe.",
+    "chartLabel": "Ka moo palomo e theogago ka gona ka beke ya ka mehla, ye bonolo le ye boima",
+    "lineCentral": "Beke ya ka mehla",
+    "lineLight": "Beke ye bonolo",
+    "lineHeavy": "Beke ye boima",
+    "lineNext": "Tšhelete ye e latelago, {{date}}",
+    "inputs": "Tše di tsentšwego",
+    "balance": "Palomo ya lehono",
+    "dailySpend": "Tšhomišo ya ka mehla ya letšatši",
+    "dailySpendHint": "Beke ye bonolo go ya go ye boima: {{low}} go fihla {{high}} ka letšatši",
+    "perDay": "{{amount}} ka letšatši",
+    "bills": "Ditefo pele ga tšhelete ye e latelago",
+    "noBills": "Ga go tše di swanetšego",
+    "income": "Tšhelete ye e latelago ye e letetšwego",
     "incomeValue": "{{amount}}, {{date}}",
-    "history": "History used",
-    "historyHint_one": "From {{count}} day on record",
-    "historyHint_other": "From {{count}} days on record",
-    "historyValue_one": "Last {{count}} day",
-    "historyValue_other": "Last {{count}} days",
-    "confidence": "Confidence",
+    "history": "Histori ye e šomišitšwego",
+    "historyHint_one": "Go tšwa letšatšing le {{count}} le le ngwadilwego",
+    "historyHint_other": "Go tšwa matšatšing a {{count}} a a ngwadilwego",
+    "historyValue_one": "Letšatši le {{count}} la mafelelo",
+    "historyValue_other": "Matšatši a {{count}} a mafelelo",
+    "confidence": "Kgonthišišo",
     "confidenceHint": {
-      "high": "60 or more days of history",
-      "medium": "28 to 59 days of history",
-      "low": "Under 28 days. The range is wider."
+      "high": "Matšatši a 60 goba go feta a histori",
+      "medium": "Matšatši a 28 go fihla go a 59 a histori",
+      "low": "Ka fase ga matšatši a 28. Sekgoba se sephara."
     },
-    "rulesTitle": "How the cover is set",
+    "rulesTitle": "Ka moo boemo bo beago ka gona",
     "rule": {
-      "enough": "Even a heavy week lasts until the latest likely next money.",
-      "tight": "A normal week lasts until the usual next money. A heavy week does not.",
-      "short": "A normal week runs out before the usual next money.",
-      "unclear": "Not enough history or no income, so there is no date yet."
+      "enough": "Le beke ye boima e tšea go fihla tšhelete ye e latelago ya morago kudu ye e ka bago gona.",
+      "tight": "Beke ya ka mehla e tšea go fihla tšhelete ye e latelago ya ka mehla. Beke ye boima ga e tšee.",
+      "short": "Beke ya ka mehla e fela pele ga tšhelete ye e latelago ya ka mehla.",
+      "unclear": "Histori ga e lekane goba ga go letseno, ka fao ga go letšatši gabjale."
     },
-    "question": "Question this result",
-    "notAdvice": "This is an estimate from past patterns, not financial advice, and it is not used for any credit or lending decision.",
-    "budgetSpread": "The daily budget is spread to {{date}}, the latest your next money usually lands.",
-    "reserve": "Kept back for bills just after next money",
-    "reserveNone": "None due in the week after",
-    "incomeStatus": "Money in",
+    "question": "Botšiša ka sephetho se",
+    "notAdvice": "Ye ke kakanyo go tšwa mekgweng ya nakong ye e fetilego, e sego keletšo ya ditšhelete, gomme ga e šomišwe bakeng sa sephetho sefe goba sefe sa mokitlana goba sa kadimo.",
+    "budgetSpread": "Tekanyetšo ya letšatši e arogantšwe go fihla {{date}}, letšatši la morago kudu leo tšhelete ya gago ye e latelago e tlwaetšego go tsena ka lona.",
+    "reserve": "E bolokeletšwe ditefo tše di tlago ka morago ga tšhelete ye e latelago",
+    "reserveNone": "Ga go tše di swanetšego bekeng ye e latelago",
+    "incomeStatus": "Tšhelete ye e tsenago",
     "incomeStatusValue": {
-      "regular": "Regular",
-      "pendingToday": "Due today",
-      "paused": "Paused",
-      "irregular": "No pattern",
-      "none": "None found",
-      "daily": "Most days"
+      "regular": "Ka mehla",
+      "pendingToday": "E swanetše lehono",
+      "paused": "E emišitšwe",
+      "irregular": "Ga go mokgwa",
+      "none": "Ga se ya hwetšwa",
+      "daily": "Matšatši a mantši"
     },
-    "monthEnd": "Month end",
+    "monthEnd": "Mafelelo a kgwedi",
     "monthEndValue": {
-      "pattern": "Spends more from the 25th",
-      "widened": "Heavy path allows for it",
-      "none": "No pattern"
+      "pattern": "O šomiša go feta go tloga ka la 25",
+      "widened": "Tsela ye boima e a e šetša",
+      "none": "Ga go mokgwa"
     },
-    "oneOffs": "Left out as one-off",
-    "oneOffsNone": "Nothing",
-    "horizon": "No money is expected, so the cover is judged over the next {{count}} days.",
-    "horizonDaily": "Money comes in most days, so the cover is judged over the next {{count}} days, counting half of your usual daily income."
+    "oneOffs": "Tše di tlogetšwego ka ntle bjalo ka tša gatee",
+    "oneOffsNone": "Ga go selo",
+    "horizon": "Ga go tšhelete ye e letetšwego, ka fao boemo bo ahlolwa matšatšing a {{count}} a a latelago.",
+    "horizonDaily": "Tšhelete e tsena matšatši a mantši, ka fao boemo bo ahlolwa matšatšing a {{count}} a a latelago, go balwa seripa sa letseno la gago la ka mehla la letšatši."
   },
   "paused": {
-    "title": "Forecast paused",
-    "body": "You withdrew consent for the forecast, so Tengo is not using your data. Resume to see your date again, or delete your data.",
-    "resume": "Resume forecast",
-    "delete": "Delete my data"
+    "title": "Ponelopele e emišitšwe",
+    "body": "O gogetše morago tumelelo ya ponelopele, ka fao Tengo ga e šomiše tshedimošo ya gago. Tšwela pele gape go bona letšatši la gago, goba o phumole tshedimošo ya gago.",
+    "resume": "Tšwela pele ka ponelopele",
+    "delete": "Phumola tshedimošo ya ka"
   },
   "me": {
-    "switchPersona": "Switch person",
-    "title": "Me",
-    "persona": "Who you are in the demo",
-    "current": "Current",
-    "theme": "Theme",
+    "switchPersona": "Fetoša motho",
+    "title": "Nna",
+    "persona": "Ke wena mang ka gare ga demo",
+    "current": "Ya bjale",
+    "theme": "Thimi",
     "themes": {
-      "light": "Light",
-      "dark": "Dark",
-      "system": "System"
+      "light": "Seetša",
+      "dark": "Leswiswi",
+      "system": "Tshepedišo"
     },
-    "about": "About Tengo",
-    "nameTitle": "The name",
-    "nameBody": "Tengo comes from mutengo, the Tshivenda word for value. This meaning was supplied by the founder and is still to be confirmed by a Tshivenda speaker.",
-    "howTitle": "How the forecast works",
+    "about": "Ka ga Tengo",
+    "nameTitle": "Leina",
+    "nameBody": "Tengo e tšwa go mutengo, lentšu la Setšhivenda leo le rago boleng. Tlhalošo ye e filwe ke mothomi gomme e sa swanetše go netefatšwa ke seboledi sa Setšhivenda.",
+    "howTitle": "Ka moo ponelopele e šomago ka gona",
     "how": {
-      "1": "It splits your history into income, regular bills and everyday spending.",
-      "2": "It works out your usual daily spend from the last 60 days, plus a light week and a heavy week.",
-      "3": "It finds when your next money usually lands and how much it usually is.",
-      "4": "It runs your balance down day by day, taking off bills on their dates, until it reaches zero. That day is your date.",
-      "5": "It compares that date with your next money to set your cover: Enough, Tight or Short."
+      "1": "E arola histori ya gago go ba letseno, ditefo tša ka mehla le tšhomišo ya letšatši le letšatši.",
+      "2": "E bala tšhomišo ya gago ya ka mehla ya letšatši go tšwa matšatšing a 60 a mafelelo, gotee le beke ye bonolo le beke ye boima.",
+      "3": "E hwetša gore tšhelete ya gago ye e latelago e tlwaetše go tsena neng le gore e tlwaetše go ba bokae.",
+      "4": "E theoša palomo ya gago letšatši ka letšatši, e ntšha ditefo ka matšatši a tšona, go fihlela e fihla go lefela. Letšatši leo ke letšatši la gago.",
+      "5": "E bapetša letšatši leo le tšhelete ya gago ye e latelago go bea boemo bja gago: E lekane, E lekanyana goba E a hlaela."
     },
-    "simTitle": "What is simulated",
+    "simTitle": "Seo e lego ekišo",
     "sim": {
-      "data": "All people and money are fictional composites.",
-      "bank": "There is no bank connection and no open banking.",
-      "messages": "Messages are previews. Nothing is sent.",
-      "privacy": "Privacy controls show good practice. They are not a compliance certification.",
-      "translations": "Built for 11 languages. English today. The other 10 need translating and checking by first-language speakers, and Tshivenda needs a human translator."
+      "data": "Batho ka moka le tšhelete ke tša maitirelo.",
+      "bank": "Ga go kgokagano le panka le open banking.",
+      "messages": "Melaetša ke diponelopele. Ga go selo se romelwago.",
+      "privacy": "Ditaolo tša sephiri di bontšha mokgwa wo mobotse. E sego setifikeiti sa go obamela molao.",
+      "translations": "Seisemane ke mothopo. Dipolelo tše dingwe tše 10 ke dikakanyo tša AI tšeo diboledi tša dipolelo tšeo bjalo ka maleme a bona di sa swanetšego go di lekola, ka fao mantšu a mangwe a ka fošagala."
     },
-    "reset": "Reset demo data",
-    "resetBody": "Clears the fictional people, your own profile on this device, consent choices and logs, and starts fresh. An account, if you saved one, is not touched.",
-    "resetWarn": "This removes everything Tengo stored on this device, including your own profile.",
-    "resetConfirm": "Yes, reset everything",
-    "themeHint": "Dark is the default. System follows your device.",
-    "profileTitle": "Your profile",
-    "storageMode": "Stored: {{mode}}",
-    "nicknameSave": "Save name",
-    "nicknameSaved": "Name saved",
-    "exportLink": "See and export my data",
-    "deleteProfile": "Delete my profile",
-    "switchPeople": "Switch to the fictional people",
-    "notice": "Privacy notice and terms"
+    "reset": "Beakanya lefsa tshedimošo ya demo",
+    "resetBody": "E phumola batho ba maitirelo, profaele ya gago sedirišweng se, dikgetho tša tumelelo le direkhoto, gomme ya thoma lefsa. Akhaonte, ge o bolokile ye nngwe, ga e kgongwe.",
+    "resetWarn": "Se se tloša tšohle tšeo Tengo e di bolokilego sedirišweng se, go akaretšwa profaele ya gago.",
+    "resetConfirm": "Ee, beakanya tšohle lefsa",
+    "themeHint": "Leswiswi ke la tlwaelo. Tshepedišo e latela sedirišwa sa gago.",
+    "profileTitle": "Profaele ya gago",
+    "storageMode": "E bolokilwe: {{mode}}",
+    "nicknameSave": "Boloka leina",
+    "nicknameSaved": "Leina le bolokilwe",
+    "exportLink": "Bona gomme o ntšhe tshedimošo ya ka",
+    "deleteProfile": "Phumola profaele ya ka",
+    "switchPeople": "Fetogela go batho ba maitirelo",
+    "notice": "Tsebišo ya sephiri le mabaka"
   },
   "errors": {
-    "loadTitle": "Could not load your data",
-    "loadBody": "Something went wrong reading this device's storage.",
-    "retry": "Try again",
-    "crashTitle": "Something went wrong",
-    "crashBody": "This screen hit an error. Your data on this device has not changed.",
-    "crashCta": "Back to start"
+    "loadTitle": "Ga se ya kgona go laiša tshedimošo ya gago",
+    "loadBody": "Go na le se se sa sepelago gabotse ge go balwa polokelo ya sedirišwa se.",
+    "retry": "Leka gape",
+    "crashTitle": "Go na le se se sa sepelago gabotse",
+    "crashBody": "Sešireng se se kopane le phošo. Tshedimošo ya gago sedirišweng se ga se ya fetoga.",
+    "crashCta": "Boela mathomong"
   },
   "notFound": {
-    "title": "Page not found",
-    "body": "This page does not exist in the demo.",
-    "cta": "Back to start"
+    "title": "Letlakala ga le hwetšwe",
+    "body": "Letlakala le ga le gona ka gare ga demo.",
+    "cta": "Boela mathomong"
   },
   "plan": {
-    "title": "Plan",
-    "lead": "Test a change before you make it. Nothing is saved.",
-    "whatIf": "What-if",
-    "whatIfLead": "Add a one-off amount and see your date move.",
-    "itemLabel": "Change {{n}}",
-    "kind": "Money in or out",
-    "income": "Money in",
-    "expense": "Money out",
-    "remove": "Remove change {{n}}",
-    "amount": "Amount",
-    "date": "Date",
-    "label": "Note (optional)",
-    "labelPlaceholder": "For example, school trip",
-    "add": "Add a change",
-    "noItems": "No changes yet. Add one to see the effect.",
-    "result": "Result",
-    "now": "Now",
-    "withChanges": "With these changes",
-    "noChange": "No change",
-    "daysMore_one": "{{count}} day more",
-    "daysMore_other": "{{count}} days more",
-    "daysLess_one": "{{count}} day less",
-    "daysLess_other": "{{count}} days less",
-    "stsChange": "Daily budget: {{before}} now, {{after}} with these changes.",
-    "loan": "Loan check",
-    "loanLead": "See what lending money does to your cover first.",
-    "loanAmount": "Amount someone asked for",
-    "enterAmount": "Enter an amount, or pick one below, to see the effect.",
-    "ifLend": "If you lend {{amount}} today",
-    "afterLoan": "After the loan",
-    "stateDrops": "This drops your cover from {{from}} to {{to}}.",
-    "amountError": "Enter an amount above zero, for example 250.",
-    "whatIfSpoken": "With these changes: {{label}} {{date}}, {{state}}, {{change}}.",
-    "loanSpoken_one": "If you lend {{amount}}: {{label}} {{date}}, {{state}}, {{count}} day less cover.",
-    "loanSpoken_other": "If you lend {{amount}}: {{label}} {{date}}, {{state}}, {{count}} days less cover.",
-    "notAdvised": "not advised",
-    "exampleNote": "An example to start with: a R200 school trip next Friday. Change it or remove it.",
-    "roomToLend": "Room to lend",
-    "roomToLendHint": "Lending or giving up to this keeps you at {{state}} and keeps {{reserve}} back for bills just after your next money.",
-    "roomToLendHintNoReserve": "Lending or giving up to this keeps you at {{state}}.",
-    "roomToLendNone": "Any amount now would drop you below {{state}} or use money kept back for bills.",
-    "roomToLendShort": "You are already Short before your next money. Any amount you lend brings your date closer.",
-    "lendCaution": "Only lend what you could manage without getting back. Tengo cannot tell if or when it comes back.",
-    "useRoom": "Use {{amount}}",
-    "labelPlaceholderValue": "School trip (example)",
-    "roomToLendUnsure": "Tengo is not sure enough about your money coming in to suggest an amount. Check the effect of a specific amount below.",
-    "notAdvice": "Estimates from your own history, not advice. Nothing here is a lending decision or an offer of credit."
+    "title": "Beakanya",
+    "lead": "Leka phetogo pele o e dira. Ga go selo se bolokwago.",
+    "whatIf": "Ge eba bjang",
+    "whatIfLead": "Oketša tšhelete ya gatee gomme o bone letšatši la gago le šuthišega.",
+    "itemLabel": "Phetogo {{n}}",
+    "kind": "Tšhelete ye e tsenago goba ye e tšwago",
+    "income": "Tšhelete ye e tsenago",
+    "expense": "Tšhelete ye e tšwago",
+    "remove": "Tloša phetogo {{n}}",
+    "amount": "Tšhelete",
+    "date": "Letšatši",
+    "label": "Ntlha (boikgethelo)",
+    "labelPlaceholder": "Mohlala, leeto la sekolo",
+    "add": "Oketša phetogo",
+    "noItems": "Ga go diphetogo gabjale. Oketša ye nngwe go bona sephetho.",
+    "result": "Sephetho",
+    "now": "Bjale",
+    "withChanges": "Ka diphetogo tše",
+    "noChange": "Ga go phetogo",
+    "daysMore_one": "Letšatši le {{count}} go feta",
+    "daysMore_other": "Matšatši a {{count}} go feta",
+    "daysLess_one": "Letšatši le {{count}} ka fase",
+    "daysLess_other": "Matšatši a {{count}} ka fase",
+    "stsChange": "Tekanyetšo ya letšatši: {{before}} bjale, {{after}} ka diphetogo tše.",
+    "loan": "Tekolo ya kadimo",
+    "loanLead": "Bona pele gore go adimiša tšhelete go dira eng boemong bja gago.",
+    "loanAmount": "Tšhelete yeo motho a e kgopetšego",
+    "enterAmount": "Tsenya tšhelete, goba o kgethe ye nngwe ka fase, go bona sephetho.",
+    "ifLend": "Ge o adimiša {{amount}} lehono",
+    "afterLoan": "Ka morago ga kadimo",
+    "stateDrops": "Se se theoša boemo bja gago go tloga go {{from}} go ya go {{to}}.",
+    "amountError": "Tsenya tšhelete ye e fetago lefela, mohlala 250.",
+    "whatIfSpoken": "Ka diphetogo tše: {{label}} {{date}}, {{state}}, {{change}}.",
+    "loanSpoken_one": "Ge o adimiša {{amount}}: {{label}} {{date}}, {{state}}, letšatši le {{count}} la tšhireletšo ka fase.",
+    "loanSpoken_other": "Ge o adimiša {{amount}}: {{label}} {{date}}, {{state}}, matšatši a {{count}} a tšhireletšo ka fase.",
+    "notAdvised": "ga e eletšwe",
+    "exampleNote": "Mohlala wa go thoma: leeto la sekolo la R200 ka Labohlano le le tlago. Le fetoše goba o le tloše.",
+    "roomToLend": "Sekgoba sa go adimiša",
+    "roomToLendHint": "Go adimiša goba go fa go fihla go tšhelete ye go go boloka go {{state}} gomme go boloka {{reserve}} bakeng sa ditefo tše di tlago ka morago ga tšhelete ya gago ye e latelago.",
+    "roomToLendHintNoReserve": "Go adimiša goba go fa go fihla go tšhelete ye go go boloka go {{state}}.",
+    "roomToLendNone": "Tšhelete efe goba efe bjale e ka go theošetša ka fase ga {{state}} goba ya šomiša tšhelete ye e bolokeletšwego ditefo.",
+    "roomToLendShort": "O šetše o hlaelwa pele ga tšhelete ya gago ye e latelago. Tšhelete efe goba efe yeo o e adimišago e batametša letšatši la gago.",
+    "lendCaution": "Adimiša fela seo o ka phelago ntle le go se bušetšwa. Tengo e ka se bolele ge eba se tla boa goba neng.",
+    "useRoom": "Šomiša {{amount}}",
+    "labelPlaceholderValue": "Leeto la sekolo (mohlala)",
+    "roomToLendUnsure": "Tengo ga e na kgonthišišo ye e lekanego ka tšhelete ya gago ye e tsenago go šišinya tšhelete. Lekola sephetho sa tšhelete ye e itšego ka fase.",
+    "notAdvice": "Dikakanyo go tšwa historing ya gago, e sego keletšo. Ga go selo mo seo e lego sephetho sa kadimo goba kabelo ya mokitlana."
   },
   "money": {
-    "title": "Money",
-    "lead": "Every transaction Tengo uses, and the bills it found.",
-    "history": "Transaction history",
-    "import": "Import statement",
-    "filter": "Show",
-    "all": "All",
+    "title": "Tšhelete",
+    "lead": "Tirelano ye nngwe le ye nngwe yeo Tengo e e šomišago, le ditefo tšeo e di hweditšego.",
+    "history": "Histori ya ditirelano",
+    "import": "Tsenya setatamente",
+    "filter": "Bontšha",
+    "all": "Tšohle",
     "filters": {
-      "income": "Income",
-      "spend": "Spend",
-      "bill": "Bills"
+      "income": "Letseno",
+      "spend": "Tšhomišo",
+      "bill": "Ditefo"
     },
-    "search": "Search",
-    "count_one": "{{count}} transaction",
-    "count_other": "{{count}} transactions",
-    "emptyTitle": "Nothing to show",
-    "emptyBodyNone": "No transactions yet. Import a statement to get started.",
-    "emptyBodyFilter": "No transactions match this filter.",
-    "editLabel": "Edit {{name}}, {{date}}",
-    "more": "Show {{count}} more",
-    "last30": "Last 30 days",
-    "in": "Money in",
-    "out": "Money out",
-    "balance": "Balance today: {{amount}}",
-    "bills": "Recurring bills",
-    "billsRule": "Same description and a similar amount, about a month apart.",
-    "noBills": "No recurring bills found.",
-    "billNext_one": "Next {{date}} · seen {{count}} time",
-    "billNext_other": "Next {{date}} · seen {{count}} times",
-    "importTitle": "Bring your own statement",
-    "importBody": "Upload a CSV bank statement. It is read on this device and replaces this person's history.",
-    "movableLabel": "Can be paid later",
-    "movableHint": "Only mark a bill if it can be paid a few days late without a fee.",
-    "protectedBill": "Never suggested to move: paying late can cost fees, cover or credit."
+    "search": "Nyaka",
+    "count_one": "Tirelano ye {{count}}",
+    "count_other": "Ditirelano tše {{count}}",
+    "emptyTitle": "Ga go selo sa go bontšha",
+    "emptyBodyNone": "Ga go ditirelano gabjale. Tsenya setatamente go thoma.",
+    "emptyBodyFilter": "Ga go ditirelano tše di sepelelanago le sefe se.",
+    "editLabel": "Rulaganya {{name}}, {{date}}",
+    "more": "Bontšha tše {{count}} go feta",
+    "last30": "Matšatši a 30 a mafelelo",
+    "in": "Tšhelete ye e tsenago",
+    "out": "Tšhelete ye e tšwago",
+    "balance": "Palomo ya lehono: {{amount}}",
+    "bills": "Ditefo tše di boelelwago",
+    "billsRule": "Tlhalošo ye e swanago le tšhelete ye e swanago, kgwedi magareng.",
+    "noBills": "Ga go ditefo tše di boelelwago tše di hweditšwego.",
+    "billNext_one": "Ye e latelago {{date}} · e bonwe ga {{count}}",
+    "billNext_other": "Ye e latelago {{date}} · e bonwe ga {{count}}",
+    "importTitle": "Tliša setatamente sa gago",
+    "importBody": "Laiša setatamente sa panka sa CSV. Se balwa sedirišweng se gomme se tšea legato la histori ya motho yo.",
+    "movableLabel": "E ka lefšwa ka morago",
+    "movableHint": "Swaya tefo fela ge e ka lefšwa ka morago ga matšatši a mmalwa ntle le tefišo.",
+    "protectedBill": "Ga e ke e šišinywa go šuthišwa: go lefa ka morago ga nako go ka bitša ditefišo, tšhireletšo goba mokitlana."
   },
   "import": {
-    "title": "Import statement",
-    "lead": "Use a CSV bank statement to replace this person's history. It never leaves your browser.",
-    "step1": "1. Choose a file",
-    "useSample": "Use sample statement",
-    "chooseCsv": "Choose a CSV file",
-    "pdf": "PDF statement (coming next)",
-    "pdfNote": "PDF statements are not supported yet.",
-    "downloadSample": "Download sample-statement.csv",
-    "local": "Processed on your device. Nothing leaves your browser.",
-    "formatTitle": "What the file needs",
-    "formatBody": "A date, a description and an amount (negative for money out), or separate debit and credit columns. At least 14 days.",
-    "step2": "2. Check and confirm",
-    "readError": "This file could not be read as a CSV.",
-    "empty": "Choose a file or use the sample statement to see a preview here.",
-    "rowsRead_one": "{{count}} row read",
-    "rowsRead_other": "{{count}} rows read",
-    "mapping": "Columns",
-    "mappingHint": "We guessed these from the headers. Change any that look wrong.",
+    "title": "Tsenya setatamente",
+    "lead": "Šomiša setatamente sa panka sa CSV go tšea legato la histori ya motho yo. Ga se ke se tšwa sefetlekong sa gago.",
+    "step1": "1. Kgetha faele",
+    "useSample": "Šomiša setatamente sa mohlala",
+    "chooseCsv": "Kgetha faele ya CSV",
+    "pdf": "Setatamente sa PDF (se a tla)",
+    "pdfNote": "Ditatamente tša PDF ga se tša thekgwa gabjale.",
+    "downloadSample": "Laolla sample-statement.csv",
+    "local": "E šongwa sedirišweng sa gago. Ga go selo seo se tšwago sefetlekong sa gago.",
+    "formatTitle": "Seo faele e se nyakago",
+    "formatBody": "Letšatši, tlhalošo le tšhelete (ka fase ga lefela bakeng sa tšhelete ye e tšwago), goba dikholomo tše di aroganego tša debit le credit. Bonnyane matšatši a 14.",
+    "step2": "2. Lekola gomme o netefatše",
+    "readError": "Faele ye ga se ya kgona go balwa bjalo ka CSV.",
+    "empty": "Kgetha faele goba o šomiše setatamente sa mohlala go bona ponelopele mo.",
+    "rowsRead_one": "Go badilwe mothalo wo {{count}}",
+    "rowsRead_other": "Go badilwe methalo ye {{count}}",
+    "mapping": "Dikholomo",
+    "mappingHint": "Re di akantše go tšwa dihlogong. Fetoša efe goba efe ye e bonagalago e fošagetše.",
     "field": {
-      "date": "Date",
-      "description": "Description",
-      "amount": "Amount",
+      "date": "Letšatši",
+      "description": "Tlhalošo",
+      "amount": "Tšhelete",
       "debit": "Debit",
       "credit": "Credit",
-      "balance": "Balance"
+      "balance": "Palomo"
     },
-    "none": "Not used",
-    "needMapping": "Pick a date, a description, and either an amount or debit and credit columns.",
-    "previewCaption": "The last rows of the statement",
-    "type": "Type",
-    "previewNote_one": "Showing the last rows of {{count}} transaction.",
-    "previewNote_other": "Showing the last rows of {{count}} transactions.",
-    "skipped_one": "{{count}} row skipped because the date, description or amount could not be read.",
-    "skipped_other": "{{count}} rows skipped because the date, description or amount could not be read.",
-    "tooShort": "This statement covers {{count}} days. Tengo needs at least 14.",
-    "noRows": "No usable rows found with these columns.",
-    "wideRange": "Only {{count}} days of history. The forecast will work, but the range will be wide.",
-    "shifted_one": "Dates moved forward by {{count}} day so the statement ends yesterday.",
-    "shifted_other": "Dates moved forward by {{count}} days so the statement ends yesterday.",
-    "days": "Days",
-    "balance": "Current balance",
-    "balanceFromFile": "Taken from the last balance in the file: {{amount}}. Type to change it.",
-    "balanceKept": "No balance column. Keeping the current balance of {{amount}}. Type to change it.",
-    "result": "Forecast with this statement",
-    "confirm": "Replace history and see my date",
-    "replaceNote": "This replaces this person's history on this device and adds an entry to the audit log.",
-    "tooBig": "That file is larger than 2 MB, which is more than a statement needs. Choose a shorter period or a smaller file."
+    "none": "Ga e šomišwe",
+    "needMapping": "Kgetha letšatši, tlhalošo, le tšhelete goba dikholomo tša debit le credit.",
+    "previewCaption": "Methalo ya mafelelo ya setatamente",
+    "type": "Mohuta",
+    "previewNote_one": "Go bontšhwa methalo ya mafelelo ya tirelano ye {{count}}.",
+    "previewNote_other": "Go bontšhwa methalo ya mafelelo ya ditirelano tše {{count}}.",
+    "skipped_one": "Go tlodilwe mothalo wo {{count}} ka gobane letšatši, tlhalošo goba tšhelete di sa kgone go balwa.",
+    "skipped_other": "Go tlodilwe methalo ye {{count}} ka gobane letšatši, tlhalošo goba tšhelete di sa kgone go balwa.",
+    "tooShort": "Setatamente se se akaretša matšatši a {{count}}. Tengo e nyaka bonnyane a 14.",
+    "noRows": "Ga go methalo ye e šomišegago ye e hweditšwego ka dikholomo tše.",
+    "wideRange": "Matšatši a {{count}} fela a histori. Ponelopele e tla šoma, eupša sekgoba se tla ba sephara.",
+    "shifted_one": "Matšatši a šuthišeditšwe pele ka letšatši le {{count}} gore setatamente se fele maabane.",
+    "shifted_other": "Matšatši a šuthišeditšwe pele ka matšatši a {{count}} gore setatamente se fele maabane.",
+    "days": "Matšatši",
+    "balance": "Palomo ya bjale",
+    "balanceFromFile": "E tšerwe palomong ya mafelelo ka faeleng: {{amount}}. Thaepa go e fetoša.",
+    "balanceKept": "Ga go kholomo ya palomo. Go bolokwa palomo ya bjale ya {{amount}}. Thaepa go e fetoša.",
+    "result": "Ponelopele ka setatamente se",
+    "confirm": "Tšeela histori legato gomme o bone letšatši la ka",
+    "replaceNote": "Se se tšea legato la histori ya motho yo sedirišweng se gomme se oketša tseno rekhotong ya tlhahlobo.",
+    "tooBig": "Faele yeo e kgolo go feta 2 MB, e lego go feta seo setatamente se se nyakago. Kgetha nako ye kopana goba faele ye nnyane."
   },
   "edit": {
-    "title": "Edit transaction",
-    "description": "Description",
-    "amount": "Amount",
-    "amountHint": "Negative for money out, for example -250.",
-    "category": "Type",
-    "auditNote": "Saving adds an entry to your audit log.",
-    "oneOff": "One-off",
-    "oneOffHint": "Left out of your usual spend and income pattern. It still counts in your balance."
+    "title": "Rulaganya tirelano",
+    "description": "Tlhalošo",
+    "amount": "Tšhelete",
+    "amountHint": "Ka fase ga lefela bakeng sa tšhelete ye e tšwago, mohlala -250.",
+    "category": "Mohuta",
+    "auditNote": "Go boloka go oketša tseno rekhotong ya gago ya tlhahlobo.",
+    "oneOff": "Ya gatee",
+    "oneOffHint": "E tlogetšwe ka ntle ga mokgwa wa gago wa ka mehla wa tšhomišo le letseno. E sa balwa palomong ya gago."
   },
   "audit": {
-    "session_opened": "Opened Tengo",
-    "consent_given": "Gave consent. Messages {{messages}}, analytics {{analytics}}",
-    "consent_changed": "Changed consent: {{item}} {{value}}",
-    "data_viewed": "Viewed all data",
-    "data_exported": "Exported data as {{format}}",
-    "statement_imported": "Imported a statement with {{rows}} transactions",
-    "transaction_edited": "Corrected a transaction: {{fields}}",
-    "review_requested": "Asked for a human review",
-    "forecast_paused": "Paused the forecast",
-    "forecast_resumed": "Resumed the forecast",
-    "transaction_added_one": "Added {{count}} entry",
-    "transaction_added_other": "Added {{count}} entries",
-    "balance_updated": "Updated the balance",
-    "bill_answered": "Answered a question about a bill that looked unpaid",
-    "plan_settings": "Changed which spending can bend or which bills can move",
-    "money_updated": "Changed accounts or money owed",
-    "cash_added": "Recorded cash {{direction}}",
-    "setup_saved": "Set up a history by hand",
-    "account_uploaded": "Saved the profile to an account",
-    "account_created": "Started an empty account",
-    "account_signedIn": "Signed in on a device"
+    "session_opened": "Go butšwe Tengo",
+    "consent_given": "Go filwe tumelelo. Melaetša {{messages}}, tshekatsheko {{analytics}}",
+    "consent_changed": "Go fetošitšwe tumelelo: {{item}} {{value}}",
+    "data_viewed": "Go lebeletšwe tshedimošo ka moka",
+    "data_exported": "Go ntšhitšwe tshedimošo bjalo ka {{format}}",
+    "statement_imported": "Go tsentšwe setatamente se se nago le ditirelano tše {{rows}}",
+    "transaction_edited": "Go lokišitšwe tirelano: {{fields}}",
+    "review_requested": "Go kgopetšwe tekolo ya motho",
+    "forecast_paused": "Go emišitšwe ponelopele",
+    "forecast_resumed": "Go tšwetšwe pele ka ponelopele",
+    "transaction_added_one": "Go oketšwe tseno ye {{count}}",
+    "transaction_added_other": "Go oketšwe ditseno tše {{count}}",
+    "balance_updated": "Go mpshafaditšwe palomo",
+    "bill_answered": "Go arabilwe potšišo ka ga tefo ye e bego e bonagala e sa lefša",
+    "plan_settings": "Go fetošitšwe tšhomišo yeo e ka fokotšwago goba ditefo tšeo di ka šuthišwago",
+    "money_updated": "Go fetošitšwe diakhaonte goba tšhelete ye e kolotwago",
+    "cash_added": "Go ngwadilwe kheše {{direction}}",
+    "setup_saved": "Go beakantšwe histori ka seatla",
+    "account_uploaded": "Go bolokilwe profaele akhaonteng",
+    "account_created": "Go thomilwe akhaonte ye e se nago selo",
+    "account_signedIn": "Go tsenwe sedirišweng"
   },
   "inbox": {
-    "title": "Inbox",
-    "lead": "The daily message Tengo would send.",
-    "simulated": "Simulated. No message is sent.",
-    "offTitle": "Daily messages are off",
-    "offBody": "You turned off daily messages, so there is nothing to preview. Turn them on here or in Privacy.",
-    "turnOn": "Turn on daily messages",
-    "preview": "Today's message",
-    "channel": "Channel",
+    "title": "Melaetša",
+    "lead": "Molaetša wa letšatši le letšatši wo Tengo e bego e tla o romela.",
+    "simulated": "Ke ekišo. Ga go molaetša wo o romelwago.",
+    "offTitle": "Melaetša ya letšatši le letšatši e tswaletšwe",
+    "offBody": "O tswaletše melaetša ya letšatši le letšatši, ka fao ga go selo sa go bonwa pele. E bule mo goba go Sephiri.",
+    "turnOn": "Bula melaetša ya letšatši le letšatši",
+    "preview": "Molaetša wa lehono",
+    "channel": "Kanale",
     "channels": {
       "whatsapp": "WhatsApp",
       "sms": "SMS"
     },
-    "todayAt": "Today",
-    "language": "Message language",
-    "languageHint": "Messages can use a different language from the app.",
-    "to": "To {{name}}",
-    "schedule": "Every morning at 07:00",
+    "todayAt": "Lehono",
+    "language": "Polelo ya molaetša",
+    "languageHint": "Melaetša e ka šomiša polelo ye e fapanego le ya app.",
+    "to": "Go {{name}}",
+    "schedule": "Mesong ye mengwe le ye mengwe ka 07:00",
     "facts": {
-      "what": "Only your date, cover and daily budget.",
-      "never": "Never your balance or transactions.",
-      "stop": "Every message says it is from Tengo and how to stop. You can also turn messages off in Privacy.",
-      "where": "WhatsApp messages would pass through Meta, outside South Africa. SMS is the alternative. Simulated here: nothing is sent."
+      "what": "Letšatši la gago, boemo le tekanyetšo ya letšatši fela.",
+      "never": "Ga e ke e ba palomo ya gago goba ditirelano tša gago.",
+      "stop": "Molaetša wo mongwe le wo mongwe o bolela gore o tšwa go Tengo le ka moo o ka o emišago. O ka tswalela melaetša gape go Sephiri.",
+      "where": "Melaetša ya WhatsApp e be e tla feta go Meta, ka ntle ga Afrika Borwa. SMS ke tsela ye nngwe. Ke ekišo mo: ga go selo se romelwago."
     },
-    "manage": "Manage messages",
-    "smsCount_one": "1 SMS, {{encoding}}, {{chars}} of {{limit}} characters",
-    "smsCount_other": "{{count}} SMS parts, {{encoding}}, {{chars}} characters"
+    "manage": "Laola melaetša",
+    "smsCount_one": "1 SMS, {{encoding}}, {{chars}} go ditlhaka tše {{limit}}",
+    "smsCount_other": "Dikarolo tše {{count}} tša SMS, {{encoding}}, ditlhaka tše {{chars}}"
   },
   "messages": {
     "whatsapp": {
-      "greeting": "Hi {{name}}.",
-      "enough": "Your money should last until *{{date}}*. Cover: {{state}}.",
-      "tight": "Your money should last until *{{date}}* on a normal week. Cover: {{state}}.",
-      "short_one": "Your money may run out on *{{date}}*, {{count}} day before your next money. Cover: {{state}}.",
-      "short_other": "Your money may run out on *{{date}}*, {{count}} days before your next money. Cover: {{state}}.",
-      "sts": "Daily budget: *{{sts}}*.",
-      "next": "Next money: around {{next}}.",
-      "noNext": "No next money is expected at the moment.",
+      "greeting": "Thobela {{name}}.",
+      "enough": "Tšhelete ya gago e swanetše go tšea go fihla *{{date}}*. Boemo: {{state}}.",
+      "tight": "Tšhelete ya gago e swanetše go tšea go fihla *{{date}}* ka beke ya ka mehla. Boemo: {{state}}.",
+      "short_one": "Tšhelete ya gago e ka fela ka *{{date}}*, letšatši le {{count}} pele ga tšhelete ya gago ye e latelago. Boemo: {{state}}.",
+      "short_other": "Tšhelete ya gago e ka fela ka *{{date}}*, matšatši a {{count}} pele ga tšhelete ya gago ye e latelago. Boemo: {{state}}.",
+      "sts": "Tekanyetšo ya letšatši: *{{sts}}*.",
+      "next": "Tšhelete ye e latelago: ka {{next}} goba kgauswi.",
+      "noNext": "Ga go tšhelete ye e latelago ye e letetšwego gabjale.",
       "tip": {
-        "enough": "Covered until your next money, even on a heavy week.",
-        "tight": "Keep spending close to your daily budget until your next money.",
-        "short": "Check Plan in Tengo to see what helps most."
+        "enough": "O šireletšegile go fihla tšhelete ya gago ye e latelago, le ka beke ye boima.",
+        "tight": "Boloka tšhomišo kgauswi le tekanyetšo ya gago ya letšatši go fihla tšhelete ya gago ye e latelago.",
+        "short": "Lebelela Beakanya go Tengo go bona seo se thušago kudu."
       },
-      "stsNotAdvised": "Daily budget: not advised until your next money.",
-      "unclear": "Tengo does not have enough to go on yet to give you a date. Open Tengo to see what to add.",
-      "stsPending": "Daily budget: worked out once today's payment lands.",
-      "stop": "From Tengo. Reply STOP to end these updates.",
-      "discreet": "Tengo: your daily update is ready. Open the app to see it.",
-      "noNextDaily": "Money comes in most days, so there is no single next payment."
+      "stsNotAdvised": "Tekanyetšo ya letšatši: ga e eletšwe go fihla tšhelete ya gago ye e latelago.",
+      "unclear": "Tengo ga e na tše di lekanego gabjale go go fa letšatši. Bula Tengo go bona seo o swanetšego go se oketša.",
+      "stsPending": "Tekanyetšo ya letšatši: e tla balwa ge tefo ya lehono e tsene.",
+      "stop": "Go tšwa go Tengo. Araba ka STOP go emiša dimpshafatšo tše.",
+      "discreet": "Tengo: mpshafatšo ya gago ya letšatši e loketše. Bula app go e bona.",
+      "noNextDaily": "Tšhelete e tsena matšatši a mantši, ka fao ga go tefo e tee ye e latelago."
     },
     "sms": {
-      "enough": "Tengo: Hi {{name}}, money lasts until {{date}} ({{state}}). Budget {{sts}} a day.",
-      "tight": "Tengo: Hi {{name}}, money lasts until {{date}} on a normal week ({{state}}). Budget {{sts}} a day.",
-      "short": "Tengo: Hi {{name}}, money may run out {{date}} ({{state}}). Budget not advised.",
-      "next": "Next money about {{next}}.",
-      "unclear": "Tengo: Hi {{name}}, not enough to go on yet for a date. Open Tengo to see what to add.",
-      "stop": "Reply STOP to end.",
-      "discreet": "Tengo: your daily update is ready. Open the app to see it. Reply STOP to end."
+      "enough": "Tengo: Thobela {{name}}, tšhelete e tšea go fihla {{date}} ({{state}}). Tekanyetšo {{sts}} ka letšatši.",
+      "tight": "Tengo: Thobela {{name}}, tšhelete e tšea go fihla {{date}} ka beke ya ka mehla ({{state}}). Tekanyetšo {{sts}} ka letšatši.",
+      "short": "Tengo: Thobela {{name}}, tšhelete e ka fela {{date}} ({{state}}). Tekanyetšo ga e eletšwe.",
+      "next": "Tšhelete ye e latelago ka {{next}} goba kgauswi.",
+      "unclear": "Tengo: Thobela {{name}}, ga go tše di lekanego gabjale bakeng sa letšatši. Bula Tengo go bona seo o swanetšego go se oketša.",
+      "stop": "Araba ka STOP go emiša.",
+      "discreet": "Tengo: mpshafatšo ya gago ya letšatši e loketše. Bula app go e bona. Araba ka STOP go emiša."
     }
   },
   "a11y": {
-    "moneyIn": "money in, {{amount}}",
-    "moneyOut": "money out, {{amount}}",
-    "saved": "Transaction saved",
-    "noChanges": "No changes made",
-    "exported": "Data exported as {{format}}",
-    "consentSaved": "Consent updated",
-    "paused": "Consent withdrawn. The forecast is paused.",
-    "belowZero": "{{amount}} below zero"
+    "moneyIn": "tšhelete ye e tsenago, {{amount}}",
+    "moneyOut": "tšhelete ye e tšwago, {{amount}}",
+    "saved": "Tirelano e bolokilwe",
+    "noChanges": "Ga go diphetogo tše di dirilwego",
+    "exported": "Tshedimošo e ntšhitšwe bjalo ka {{format}}",
+    "consentSaved": "Tumelelo e mpshafaditšwe",
+    "paused": "Tumelelo e gogetšwe morago. Ponelopele e emišitšwe.",
+    "belowZero": "{{amount}} ka fase ga lefela"
   },
   "help": {
-    "title": "What helps most",
-    "moveBill": "If {{name}} ({{amount}}) can be paid after {{date}} without a fee, that alone reaches {{state}}.",
-    "tryInPlan": "Try it in Plan",
-    "coveredTitle": "You are covered",
-    "setAside": "You could set aside up to {{amount}} today and still be Enough until your next money. This is the same room as Room to lend, not extra.",
-    "coveredBody": "Your money should last until your next money, even on a heavier week.",
-    "toReachState": "Ways to reach {{state}}",
-    "more_one": "{{count}} more way",
-    "more_other": "{{count}} more ways",
-    "fewer": "Show fewer",
-    "earn": "Earn or receive {{amount}} more before {{date}}, for example extra work or money owed to you.",
-    "earnAssume": "Assumes your spending stays as usual. Borrowing to cover a gap usually costs more later.",
-    "trim": "Spend about {{amount}} a day less on {{groups}} until {{date}}.",
-    "trimAssume": "Only spending you marked as able to bend. Assumes everything else stays as usual.",
-    "trimPartial": "That is all the spending you marked as able to bend, so it covers part of the gap. The rest still needs money in.",
-    "moveAssume": "You marked it as movable. Ask first. Never skip debit orders for loans or insurance.",
-    "markFlexible": "Mark which everyday spending can bend to see where you could trim.",
-    "chooseOnMoney": "Choose on Money",
-    "freeHelp": "If you are behind on debt, the National Credit Regulator lists free help:",
-    "ideasNote": "Ideas, not advice. Check fees and penalties before changing a payment."
+    "title": "Seo se thušago kudu",
+    "moveBill": "Ge {{name}} ({{amount}}) e ka lefšwa ka morago ga {{date}} ntle le tefišo, seo se nnoši se fihla go {{state}}.",
+    "tryInPlan": "E leke go Beakanya",
+    "coveredTitle": "O šireletšegile",
+    "setAside": "O ka bea ka thoko go fihla go {{amount}} lehono gomme wa dula o le go E lekane go fihla tšhelete ya gago ye e latelago. Se ke sekgoba se se swanago le Sekgoba sa go adimiša, e sego se se oketšegilego.",
+    "coveredBody": "Tšhelete ya gago e swanetše go tšea go fihla tšhelete ya gago ye e latelago, le ka beke ye boima kudu.",
+    "toReachState": "Ditsela tša go fihla go {{state}}",
+    "more_one": "Tsela ye {{count}} ye nngwe",
+    "more_other": "Ditsela tše {{count}} tše dingwe",
+    "fewer": "Bontšha tše mmalwa",
+    "earn": "Hwetša goba o amogele {{amount}} go feta pele ga {{date}}, mohlala mošomo wo o oketšegilego goba tšhelete yeo o e kolotwago.",
+    "earnAssume": "Go akanywa gore tšhomišo ya gago e dula bjalo ka mehleng. Go adima go thiba sekgoba gantši go bitša go feta ka morago.",
+    "trim": "Šomiša {{amount}} ka letšatši ka fase go {{groups}} go fihla {{date}}.",
+    "trimAssume": "Tšhomišo fela yeo o e swailego bjalo ka ye e ka fokotšwago. Go akanywa gore tše dingwe ka moka di dula bjalo ka mehleng.",
+    "trimPartial": "Yeo ke tšhomišo ka moka yeo o e swailego bjalo ka ye e ka fokotšwago, ka fao e thiba karolo ya sekgoba. Se se šetšego se sa nyaka tšhelete ye e tsenago.",
+    "moveAssume": "O e swaile bjalo ka ye e ka šuthišwago. Botšiša pele. O se ke wa tlola di-debit order tša dikadimo goba inšorense.",
+    "markFlexible": "Swaya tšhomišo ya letšatši le letšatši ye e ka fokotšwago go bona moo o ka fokotšago gona.",
+    "chooseOnMoney": "Kgetha go Tšhelete",
+    "freeHelp": "Ge o šaletše morago ka dikoloto, National Credit Regulator e lokeletša thušo ya mahala:",
+    "ideasNote": "Dikgopolo, e sego keletšo. Lekola ditefišo le dikotlo pele o fetoša tefo."
   },
   "spending": {
-    "title": "Where everyday money goes",
-    "lead": "Last 30 days, not counting bills.",
-    "empty": "No everyday spending in the last 30 days.",
+    "title": "Moo tšhelete ya letšatši le letšatši e yago gona",
+    "lead": "Matšatši a 30 a mafelelo, ntle le ditefo.",
+    "empty": "Ga go tšhomišo ya letšatši le letšatši matšatšing a 30 a mafelelo.",
     "groups": {
-      "food": "Food and groceries",
-      "transport": "Fuel and transport",
-      "airtime": "Airtime and data",
-      "stock": "Stock and supplies",
-      "energy": "Electricity and fuel at home",
-      "other": "Other"
+      "food": "Dijo le dithoto tša ka gae",
+      "transport": "Peterole le dinamelwa",
+      "airtime": "Airtime le data",
+      "stock": "Setoko le didirišwa",
+      "energy": "Mohlagase le makhura a ka gae",
+      "other": "Tše dingwe"
     },
-    "flexibleLabel": "Can bend",
-    "flexibleHint": "Mark the spending you could trim if money is short. Work costs like stock and fuel are never suggested for cuts.",
-    "workCost": "Work cost"
+    "flexibleLabel": "E ka fokotšwa",
+    "flexibleHint": "Swaya tšhomišo yeo o ka e fokotšago ge tšhelete e hlaela. Ditshenyagalelo tša mošomo go swana le setoko le peterole ga di ke di šišinywa go fokotšwa.",
+    "workCost": "Tshenyagalelo ya mošomo"
   },
   "palette": {
-    "title": "Command menu",
-    "open": "Search or jump to",
+    "title": "Lenaneo la ditaelo",
+    "open": "Nyaka goba o tlolele go",
     "shortcut": "Ctrl K",
-    "search": "Search commands",
-    "placeholder": "Go to a page, switch person, change language",
-    "results": "Commands",
-    "empty": "Nothing matches.",
-    "help": "Arrow keys to move, Enter to choose, Esc to close.",
-    "switchTo": "Switch to {{name}}",
-    "theme": "{{name}} theme",
-    "languageSet": "Language set to {{name}}",
-    "themeSet": "{{name}} theme on",
+    "search": "Nyaka ditaelo",
+    "placeholder": "Eya letlakaleng, fetoša motho, fetoša polelo",
+    "results": "Ditaelo",
+    "empty": "Ga go se se sepelelanago.",
+    "help": "Dikonopo tša mesebe go sepela, Enter go kgetha, Esc go tswalela.",
+    "switchTo": "Fetogela go {{name}}",
+    "theme": "Thimi ya {{name}}",
+    "languageSet": "Polelo e beilwe go {{name}}",
+    "themeSet": "Thimi ya {{name}} e bulegile",
     "groups": {
-      "pages": "Pages",
-      "people": "People",
-      "language": "Language",
-      "theme": "Theme"
+      "pages": "Matlakala",
+      "people": "Batho",
+      "language": "Polelo",
+      "theme": "Thimi"
     }
   },
   "theme": {
-    "button": "Theme: {{current}}. Switch to {{next}}"
+    "button": "Thimi: {{current}}. Fetogela go {{next}}"
   },
   "notice": {
     "overdrawn": {
-      "title": "Overdrawn by {{amount}}",
-      "body": "Money that comes in covers this first. Your date counts from when the balance is above R0 again."
+      "title": "O ntšhitše go feta ka {{amount}}",
+      "body": "Tšhelete ye e tsenago e lefa se pele. Letšatši la gago le balwa go tloga ge palomo e boa godimo ga R0."
     },
     "asOf": {
-      "title": "From your statement",
-      "body_one": "This forecast is from your statement, which ends {{date}}, {{count}} day ago. Add today's balance to bring it up to date.",
-      "body_other": "This forecast is from your statement, which ends {{date}}, {{count}} days ago. Add today's balance to bring it up to date."
+      "title": "Go tšwa setatamenteng sa gago",
+      "body_one": "Ponelopele ye e tšwa setatamenteng sa gago, seo se felago ka {{date}}, letšatši le {{count}} le le fetilego. Oketša palomo ya lehono go e mpshafatša.",
+      "body_other": "Ponelopele ye e tšwa setatamenteng sa gago, seo se felago ka {{date}}, matšatši a {{count}} a a fetilego. Oketša palomo ya lehono go e mpshafatša."
     },
     "historyEnds": {
-      "title": "History ends {{date}}",
-      "body": "Spending since then is not in your history, so the forecast uses the pattern up to that day with today's balance."
+      "title": "Histori e fela ka {{date}}",
+      "body": "Tšhomišo go tloga ka nako yeo ga e gona historing ya gago, ka fao ponelopele e šomiša mokgwa go fihla letšatšing leo le palomo ya lehono."
     },
     "paused": {
-      "title": "Income looks paused",
-      "body": "Nothing like your usual payments has come in since {{date}}. Tengo no longer counts on next money and checks the next 30 days instead."
+      "title": "Letseno le bonagala le emišitšwe",
+      "body": "Ga go selo se se swanago le ditefo tša gago tša ka mehla seo se tsenego go tloga ka {{date}}. Tengo ga e sa ithekga ka tšhelete ye e latelago gomme go e na le moo e lekola matšatši a 30 a a latelago."
     },
-    "pausedNoDate": "Nothing like your usual payments has come in for a while. Tengo no longer counts on next money and checks the next 30 days instead.",
+    "pausedNoDate": "Ga go selo se se swanago le ditefo tša gago tša ka mehla seo se tsenego nako ye itšego. Tengo ga e sa ithekga ka tšhelete ye e latelago gomme go e na le moo e lekola matšatši a 30 a a latelago.",
     "irregular": {
-      "title": "No regular pattern yet",
-      "body": "Money comes in, but not in a rhythm Tengo can use. It checks the next 30 days instead of a next-money date."
+      "title": "Ga go mokgwa wa ka mehla gabjale",
+      "body": "Tšhelete e a tsena, eupša e sego ka morethetho wo Tengo e ka o šomišago. E lekola matšatši a 30 a a latelago go e na le letšatši la tšhelete ye e latelago."
     },
     "pendingToday": {
-      "title": "Payment due today",
-      "body": "Your usual payment is due today and is not in your balance yet, so it is still counted as coming.",
-      "action": "It has come in",
-      "entry": "Usual payment, marked as received"
+      "title": "Tefo e swanetše lehono",
+      "body": "Tefo ya gago ya ka mehla e swanetše lehono gomme ga se ya tsena palomong ya gago, ka fao e sa balwa bjalo ka ye e tlago.",
+      "action": "E tsene",
+      "entry": "Tefo ya ka mehla, e swailwe bjalo ka ye e amogetšwego"
     },
     "missedBill": {
-      "title": "{{name}} ({{amount}}) looks unpaid",
-      "body": "It was due around {{date}} and did not show up. Tell Tengo what happened so the date stays right.",
-      "owed": "I still owe it",
-      "settled": "It is paid or stopped"
+      "title": "{{name}} ({{amount}}) e bonagala e sa lefša",
+      "body": "E be e swanetše ka {{date}} goba kgauswi gomme ga se ya bonala. Botša Tengo seo se diregilego gore letšatši le dule le nepagetše.",
+      "owed": "Ke sa e kolota",
+      "settled": "E lefilwe goba e emišitšwe"
     },
     "oneOffs": {
-      "body_one": "{{count}} large one-off amount is left out of your usual spend and income.",
-      "body_other": "{{count}} large one-off amounts are left out of your usual spend and income.",
-      "action": "See them on Money"
+      "body_one": "Tšhelete ye kgolo ya gatee ye {{count}} e tlogetšwe ka ntle ga tšhomišo le letseno la gago la ka mehla.",
+      "body_other": "Ditšhelete tše kgolo tša gatee tše {{count}} di tlogetšwe ka ntle ga tšhomišo le letseno la gago la ka mehla.",
+      "action": "Di bone go Tšhelete"
     },
-    "label": "Things to check",
+    "label": "Dilo tša go lekolwa",
     "askOneOff": {
-      "title": "Was {{name}} ({{amount}}, {{date}}) a one-off?",
-      "body": "It is much bigger than your usual spending, and with a short history Tengo cannot tell. For now it counts as usual spending.",
-      "action": "Yes, a one-off"
+      "title": "Na {{name}} ({{amount}}, {{date}}) e be e le ya gatee?",
+      "body": "E kgolo kudu go feta tšhomišo ya gago ya ka mehla, gomme ka histori ye kopana Tengo e ka se bolele. Gabjale e balwa bjalo ka tšhomišo ya ka mehla.",
+      "action": "Ee, ya gatee"
     },
     "estimated": {
-      "title": "Estimated from your answers",
-      "body": "Part of your history comes from the setup questions, so confidence is low. Real entries, cash added here or a statement replace the estimate."
+      "title": "E akanyeditšwe go tšwa dikarabong tša gago",
+      "body": "Karolo ya histori ya gago e tšwa dipotšišong tša peakanyo, ka fao kgonthišišo e le fase. Ditseno tša nnete, kheše yeo o e oketšago mo goba setatamente di tšea legato la kakanyo."
     },
     "sample": {
-      "title": "Sample numbers",
-      "body": "This forecast uses sample numbers, not yours. Change them on Money, or replace them with a statement or your own answers.",
-      "action": "Use my own numbers"
+      "title": "Dinomoro tša mohlala",
+      "body": "Ponelopele ye e šomiša dinomoro tša mohlala, e sego tša gago. Di fetoše go Tšhelete, goba o di tšeele legato ka setatamente goba ka dikarabo tša gago.",
+      "action": "Šomiša dinomoro tša ka"
     }
   },
   "balance": {
-    "update": "Update bank balance",
-    "label": "Bank account balance today",
-    "save": "Save balance",
-    "saved": "Balance saved",
-    "error": "Enter an amount, for example 1250 or -300."
+    "update": "Mpshafatša palomo ya panka",
+    "label": "Palomo ya akhaonte ya panka ya lehono",
+    "save": "Boloka palomo",
+    "saved": "Palomo e bolokilwe",
+    "error": "Tsenya tšhelete, mohlala 1250 goba -300."
   },
   "storage": {
     "quota": {
-      "title": "Could not save on this device",
-      "body": "This browser's storage is full, so your last change was not kept. Export your data, then free some space or delete old data."
+      "title": "Ga se ya kgona go boloka sedirišweng se",
+      "body": "Polokelo ya sefetleki se e tletše, ka fao phetogo ya gago ya mafelelo ga se ya bolokwa. Ntšha tshedimošo ya gago, ke moka o lokolle sekgoba goba o phumole tshedimošo ya kgale."
     },
     "unavailable": {
-      "title": "Could not save on this device",
-      "body": "This browser is blocking storage, for example in a private window, so your last change was not kept."
+      "title": "Ga se ya kgona go boloka sedirišweng se",
+      "body": "Sefetleki se se thibela polokelo, mohlala lefasetereng la sephiri, ka fao phetogo ya gago ya mafelelo ga se ya bolokwa."
     },
-    "export": "Export my data",
+    "export": "Ntšha tshedimošo ya ka",
     "corrupt": {
-      "title": "Your saved data could not be read",
-      "body": "Something went wrong with the data saved in this browser. A copy has been kept on this device. Start fresh to keep using Tengo.",
-      "action": "Start fresh"
+      "title": "Tshedimošo ya gago ye e bolokilwego ga se ya kgona go balwa",
+      "body": "Go na le se se sa sepelago gabotse ka tshedimošo ye e bolokilwego sefetlekong se. Kopi e bolokilwe sedirišweng se. Thoma lefsa go tšwela pele o šomiša Tengo.",
+      "action": "Thoma lefsa"
     }
   },
   "cash": {
-    "add": "Add cash",
-    "title": "Cash",
-    "kind": "What happened",
+    "add": "Oketša kheše",
+    "title": "Kheše",
+    "kind": "Go diregile eng",
     "modes": {
-      "in": "Cash in",
-      "out": "Cash out",
-      "hand": "Cash in hand"
+      "in": "Kheše ye e tsenago",
+      "out": "Kheše ye e tšwago",
+      "hand": "Kheše ka seatleng"
     },
     "hints": {
-      "in": "Cash you received, for example fares, a client or money back from family. It counts as money in.",
-      "out": "Cash you spent. It counts as spending.",
-      "hand": "How much cash you have right now. This sets the cash balance and does not add an entry."
+      "in": "Kheše yeo o e amogetšego, mohlala ditefo tša go namela, moreki goba tšhelete ye e bušitšwego ke ba lapa. E balwa bjalo ka tšhelete ye e tsenago.",
+      "out": "Kheše yeo o e šomišitšego. E balwa bjalo ka tšhomišo.",
+      "hand": "Kheše yeo o nago le yona bjale. Se se bea palomo ya kheše gomme ga se oketše tseno."
     },
     "notePlaceholder": {
-      "in": "For example, cash fares",
-      "out": "For example, taxi"
+      "in": "Mohlala, ditefo tša go namela ka kheše",
+      "out": "Mohlala, thekisi"
     },
-    "saved": "Cash saved"
+    "saved": "Kheše e bolokilwe"
   },
   "accounts": {
-    "title": "Where your money is",
-    "lead": "Your forecast uses the total of all of these.",
-    "edit": "Edit",
-    "total": "Total",
-    "name": "Name",
-    "balance": "Balance",
-    "addWallet": "Add a wallet or account",
-    "walletName": "Mobile wallet",
-    "remove": "Remove",
-    "cashTag": "Cash",
-    "homeLine": "Total {{total}}, including {{cash}} cash on hand.",
-    "homeLineBank": "Total {{total}}.",
-    "bankName": "Bank account",
-    "cashName": "Cash on hand"
+    "title": "Moo tšhelete ya gago e lego gona",
+    "lead": "Ponelopele ya gago e šomiša palomoka ya tše ka moka.",
+    "edit": "Rulaganya",
+    "total": "Palomoka",
+    "name": "Leina",
+    "balance": "Palomo",
+    "addWallet": "Oketša wallet goba akhaonte",
+    "walletName": "Wallet ya mogala",
+    "remove": "Tloša",
+    "cashTag": "Kheše",
+    "homeLine": "Palomoka {{total}}, go akaretšwa {{cash}} ya kheše ka seatleng.",
+    "homeLineBank": "Palomoka {{total}}.",
+    "bankName": "Akhaonte ya panka",
+    "cashName": "Kheše ka seatleng"
   },
   "obligations": {
-    "title": "Other money you owe",
-    "lead": "Stokvel, burial society, family support and informal loans. They count like bills.",
-    "none": "Nothing added yet.",
-    "add": "Add one",
-    "addTitle": "Add money you owe",
-    "editTitle": "Change money you owe",
-    "editLabel": "Change {{name}}",
-    "remove": "Remove",
-    "kind": "Kind",
+    "title": "Tšhelete ye nngwe yeo o e kolotago",
+    "lead": "Stokvel, mokgatlo wa poloko, thekgo ya lapa le dikadimo tše e sego tša semmušo. Di balwa bjalo ka ditefo.",
+    "none": "Ga go se se oketšwego gabjale.",
+    "add": "Oketša ye nngwe",
+    "addTitle": "Oketša tšhelete yeo o e kolotago",
+    "editTitle": "Fetoša tšhelete yeo o e kolotago",
+    "editLabel": "Fetoša {{name}}",
+    "remove": "Tloša",
+    "kind": "Mohuta",
     "kinds": {
       "stokvel": "Stokvel",
-      "burial": "Burial society",
-      "family": "Family support",
-      "loan": "Informal loan",
-      "other": "Other"
+      "burial": "Mokgatlo wa poloko",
+      "family": "Thekgo ya lapa",
+      "loan": "Kadimo ye e sego ya semmušo",
+      "other": "Tše dingwe"
     },
     "placeholder": {
-      "stokvel": "For example, Sunday stokvel",
-      "burial": "For example, burial society",
-      "family": "For example, money for my mother",
-      "loan": "For example, paying back my cousin",
-      "other": "Name"
+      "stokvel": "Mohlala, stokvel sa Sontaga",
+      "burial": "Mohlala, mokgatlo wa poloko",
+      "family": "Mohlala, tšhelete ya mma",
+      "loan": "Mohlala, go bušetša motswala wa ka",
+      "other": "Leina"
     },
-    "name": "Name",
-    "nextLabel": "Next due",
-    "howOften": "How often",
+    "name": "Leina",
+    "nextLabel": "Ye e latelago ye e swanetšego",
+    "howOften": "Ga kae",
     "every": {
-      "week": "Every week",
-      "month": "Every month"
+      "week": "Beke le beke",
+      "month": "Kgwedi le kgwedi"
     },
-    "next": "next {{date}}",
-    "movableHint": "Only if it can be paid a few days late without trouble.",
-    "protected": "Never suggested to move: paying a loan or burial society late can cost you."
+    "next": "ye e latelago {{date}}",
+    "movableHint": "Fela ge e ka lefšwa ka morago ga matšatši a mmalwa ntle le bothata.",
+    "protected": "Ga e ke e šišinywa go šuthišwa: go lefa kadimo goba mokgatlo wa poloko ka morago ga nako go ka go bitša."
   },
   "setup": {
-    "title": "Set up by hand",
-    "lead": "No statement? Answer a few questions and Tengo estimates a starting history. Real entries replace it as you add them.",
-    "link": "Set up by hand",
-    "pretend": "You can use pretend numbers to try it. Nothing leaves this device.",
-    "balance": "Balance in your bank account today",
-    "arrives": "How your money usually arrives",
+    "title": "Beakanya ka seatla",
+    "lead": "Ga o na setatamente? Araba dipotšišo tše mmalwa gomme Tengo e akanyetša histori ya go thoma. Ditseno tša nnete di e tšea legato ge o di oketša.",
+    "link": "Beakanya ka seatla",
+    "pretend": "O ka šomiša dinomoro tša boitirelo go e leka. Ga go selo seo se tšwago sedirišweng se.",
+    "balance": "Palomo ka akhaonteng ya gago ya panka lehono",
+    "arrives": "Ka moo tšhelete ya gago e tlwaetšego go tsena ka gona",
     "arrival": {
-      "daily": "Most days",
-      "weekly": "Weekly",
-      "monthly": "Monthly",
-      "irregular": "Every few days"
+      "daily": "Matšatši a mantši",
+      "weekly": "Beke le beke",
+      "monthly": "Kgwedi le kgwedi",
+      "irregular": "Morago ga matšatši a mmalwa"
     },
     "arrivalHint": {
-      "daily": "For example cash fares or sales on most days.",
-      "weekly": "For example a weekly payout or Saturday takings.",
-      "monthly": "For example a monthly payment or grant.",
-      "irregular": "For example deposits every week or so, but not on a fixed day."
+      "daily": "Mohlala ditefo tša go namela ka kheše goba thekišo matšatši a mantši.",
+      "weekly": "Mohlala tefo ya beke goba tšhelete ya Mokibelo.",
+      "monthly": "Mohlala tefo ya kgwedi goba thušo ya mmušo.",
+      "irregular": "Mohlala dipeelo beke ye nngwe le ye nngwe goba kgauswi, eupša e sego ka letšatši le le beilwego."
     },
-    "amount": "Usual amount each time",
-    "amountDaily": "Usual amount on a day",
-    "weekday": "Usual day",
-    "dayOfMonth": "Usual day of the month",
-    "everyDays": "Roughly every how many days",
-    "dailySpend": "Usual everyday spending a day",
-    "dailySpendHint": "Food, transport, airtime and the like. Not rent or other bills.",
-    "bills": "Regular bills",
-    "billsHint": "Rent, phone contract, school fees and other bills that go off every month.",
-    "billName": "Bill",
-    "billDay": "Day",
-    "addBill": "Add a bill",
-    "removeBill": "Remove bill {{n}}",
-    "billError": "Each bill needs a name, an amount above zero and a day from 1 to 31.",
-    "fieldError": "Enter a number, for example 250.",
-    "estimatedNote": "Tengo makes a starting history from these answers, marked as estimated. Confidence stays low until real entries arrive.",
-    "submit": "See my date",
-    "estimatedTag": "Estimated"
+    "amount": "Tšhelete ya ka mehla nako ye nngwe le ye nngwe",
+    "amountDaily": "Tšhelete ya ka mehla ka letšatši",
+    "weekday": "Letšatši la ka mehla",
+    "dayOfMonth": "Letšatši la ka mehla la kgwedi",
+    "everyDays": "Morago ga matšatši a makae",
+    "dailySpend": "Tšhomišo ya ka mehla ya letšatši le letšatši ka letšatši",
+    "dailySpendHint": "Dijo, dinamelwa, airtime le tše dingwe tše bjalo. E sego rente goba ditefo tše dingwe.",
+    "bills": "Ditefo tša ka mehla",
+    "billsHint": "Rente, kontraka ya mogala, tefo ya sekolo le ditefo tše dingwe tše di tšwago kgwedi le kgwedi.",
+    "billName": "Tefo",
+    "billDay": "Letšatši",
+    "addBill": "Oketša tefo",
+    "removeBill": "Tloša tefo {{n}}",
+    "billError": "Tefo ye nngwe le ye nngwe e nyaka leina, tšhelete ye e fetago lefela le letšatši go tloga go 1 go fihla go 31.",
+    "fieldError": "Tsenya nomoro, mohlala 250.",
+    "estimatedNote": "Tengo e dira histori ya go thoma go tšwa dikarabong tše, e swailwe bjalo ka ye e akanyeditšwego. Kgonthišišo e dula e le fase go fihla ditseno tša nnete di fihla.",
+    "submit": "Bona letšatši la ka",
+    "estimatedTag": "E akanyeditšwe"
   },
   "safety": {
-    "quickExit": "Quick exit",
-    "showAmounts": "Show amounts",
-    "hideAmounts": "Hide amounts",
-    "exitTitle": "Notes",
-    "exitBody": "No notes yet.",
-    "exitBack": "Back"
+    "quickExit": "Tšwa ka pela",
+    "showAmounts": "Bontšha ditšhelete",
+    "hideAmounts": "Uta ditšhelete",
+    "exitTitle": "Dintlha",
+    "exitBody": "Ga go dintlha gabjale.",
+    "exitBack": "Morago"
   },
   "safetyPolicy": {
-    "title": "Safety and who Tengo is for",
-    "lead": "How Tengo protects people on shared phones, people who are vulnerable, and children.",
-    "draft": "Draft policy for the pilot, to be reviewed by a lawyer and a safeguarding adviser.",
+    "title": "Polokego le gore Tengo ke ya mang",
+    "lead": "Ka moo Tengo e šireletšago batho bao ba abelanago megala, batho bao ba lego kotsing, le bana.",
+    "draft": "Pholisi ya kakanyo ya teko, ye e tlago go lekolwa ke ramolao le moeletši wa tšhireletšo.",
     "adults": {
-      "title": "Adults only",
-      "body": "Tengo is for adults. If you are under 18, please do not use it. Saving to an account asks you to confirm you are 18 or older. Tengo does not ask for a date of birth or an ID number, and the fictional demo people are adults."
+      "title": "Batho ba bagolo fela",
+      "body": "Tengo ke ya batho ba bagolo. Ge o le ka fase ga mengwaga ye 18, hle o se e šomiše. Go boloka akhaonteng go go kgopela go netefatša gore o na le mengwaga ye 18 goba go feta. Tengo ga e kgopele letšatši la matswalo goba nomoro ya boitsebišo, gomme batho ba maitirelo ba demo ke batho ba bagolo."
     },
     "shared": {
-      "title": "Shared phones",
-      "body": "You can set a PIN so Tengo locks itself after a few minutes, turn on discreet mode so amounts stay hidden until you tap to show them, and use quick exit to leave Tengo for a plain page straight away. Discreet messages carry no amounts, dates or cover words."
+      "title": "Megala ye e abelanwago",
+      "body": "O ka bea PIN gore Tengo e iphate ka morago ga metsotso ye mmalwa, wa bula mokgwa wa sephiri gore ditšhelete di dule di utilwe go fihla o kgotla go di bona, gomme wa šomiša go tšwa ka pela go tlogela Tengo go ya letlakaleng le le se nago selo ka yona nako yeo. Melaetša ya sephiri ga e na ditšhelete, matšatši goba mantšu a boemo."
     },
     "control": {
-      "title": "If someone controls your money",
-      "body": "No one should make you show your forecast, share your PIN or hand over your money. Tengo never asks for a bank password or PIN. If someone checks your phone, quick exit and the PIN lock help, and you can delete your data at any time from Privacy."
+      "title": "Ge motho a laola tšhelete ya gago",
+      "body": "Ga go motho yo a swanetšego go go gapeletša go bontšha ponelopele ya gago, go abelana PIN ya gago goba go neela tšhelete ya gago. Tengo ga e ke e kgopela lentšu la sephiri la panka goba PIN. Ge motho a lekola mogala wa gago, go tšwa ka pela le go notlela ka PIN go a thuša, gomme o ka phumola tshedimošo ya gago nako efe goba efe go Sephiri."
     },
     "care": {
-      "title": "Care for people in a hard spot",
-      "body": "Tengo uses plain words, shows estimates and not advice, and never suggests borrowing, skipping a loan or insurance payment, or cutting stock for a business. When money looks short it points to free help from the National Credit Regulator."
+      "title": "Go hlokomela batho bao ba lego maemong a thata",
+      "body": "Tengo e šomiša mantšu a bonolo, e bontšha dikakanyo e sego keletšo, gomme ga e ke e šišinya go adima, go tlola tefo ya kadimo goba ya inšorense, goba go fokotša setoko sa kgwebo. Ge tšhelete e bonagala e hlaela, e šupa thušo ya mahala go tšwa go National Credit Regulator."
     },
     "never": {
-      "title": "What Tengo never does",
-      "body": "Tengo does not make lending or credit decisions, does not sell products, and does not share your data with anyone for marketing. Nothing about your forecast is used to judge you."
+      "title": "Seo Tengo e sa se kego ya se dira",
+      "body": "Tengo ga e dire diphetho tša kadimo goba tša mokitlana, ga e rekiše ditšweletšwa, gomme ga e abelane tshedimošo ya gago le motho ofe goba ofe bakeng sa papatšo. Ga go selo ka ga ponelopele ya gago seo se šomišwago go go ahlola."
     },
     "help": {
-      "title": "If you need help now",
-      "police": "Police emergency: 10111.",
-      "gbv": "Gender-Based Violence Command Centre: 0800 428 428, free and open all day and night.",
-      "childline": "Childline, for children and anyone worried about a child: 116, free.",
-      "note": "Numbers to be confirmed before launch. Tengo is not an emergency service."
+      "title": "Ge o nyaka thušo bjale",
+      "police": "Tšhoganetšo ya maphodisa: 10111.",
+      "gbv": "Gender-Based Violence Command Centre: 0800 428 428, mahala gomme e bulegile mosegare le bošego.",
+      "childline": "Childline, ya bana le mang le mang yo a tshwenyegilego ka ngwana: 116, mahala.",
+      "note": "Dinomoro di tla netefatšwa pele ga go thongwa. Tengo ga se tirelo ya tšhoganetšo."
     }
   },
   "lock": {
-    "title": "Tengo is locked",
-    "lead": "Enter your PIN to open Tengo.",
+    "title": "Tengo e notletšwe",
+    "lead": "Tsenya PIN ya gago go bula Tengo.",
     "pin": "PIN",
-    "unlock": "Unlock",
-    "wrong": "That PIN is not right. Try again.",
-    "wait": "Too many tries. Wait a moment and try again.",
-    "waitFor_one": "Too many tries. Try again in {{count}} second.",
-    "waitFor_other": "Too many tries. Try again in {{count}} seconds.",
-    "forgot": "Forgot your PIN?",
-    "forgotBody": "Tengo cannot recover a PIN, because it is never stored. To start again, delete all Tengo data on this device. This cannot be undone.",
-    "erase": "Delete all data on this device"
+    "unlock": "Bula",
+    "wrong": "PIN yeo ga e nepagale. Leka gape.",
+    "wait": "Maiteko a mantši kudu. Ema nakwana gomme o leke gape.",
+    "waitFor_one": "Maiteko a mantši kudu. Leka gape ka morago ga motsotswana wo {{count}}.",
+    "waitFor_other": "Maiteko a mantši kudu. Leka gape ka morago ga metsotswana ye {{count}}.",
+    "forgot": "O lebetše PIN ya gago?",
+    "forgotBody": "Tengo e ka se bušetše PIN, ka gobane ga e ke e bolokwa. Go thoma lefsa, phumola tshedimošo ka moka ya Tengo sedirišweng se. Se se ka se bušetšwe morago.",
+    "erase": "Phumola tshedimošo ka moka sedirišweng se"
   },
   "shared": {
-    "title": "Shared phone safety",
-    "lead": "For a phone other people can pick up.",
-    "lockTitle": "App lock",
-    "lockOff": "Off. Set a 4 to 6 digit PIN to lock Tengo when you are away.",
-    "lockOn": "On. Tengo locks after {{count}} minutes without use.",
-    "newPin": "New PIN",
-    "confirmPin": "Type the PIN again",
-    "pinHint": "4 to 6 digits. It is stored only as a scrambled code on this device and cannot be recovered.",
-    "pinMismatch": "The two PINs do not match.",
-    "pinInvalid": "Use 4 to 6 digits.",
-    "setPin": "Set PIN",
-    "changePin": "Change PIN",
-    "turnOff": "Turn off lock",
-    "currentPin": "Current PIN",
-    "wrongPin": "That PIN is not right.",
-    "autoLock": "Lock after",
-    "minutes_one": "{{count}} minute",
-    "minutes_other": "{{count}} minutes",
-    "lockNow": "Lock now",
-    "discreet": "Discreet mode",
-    "discreetHint": "Hide amounts on screen until you tap Show amounts, and send messages with no amounts or dates.",
-    "quickExitHint": "Quick exit is always at the top of the screen. It hides everything and opens a plain page.",
-    "policy": "Read the safety policy"
+    "title": "Polokego ya mogala wo o abelanwago",
+    "lead": "Bakeng sa mogala wo batho ba bangwe ba ka o tšeago.",
+    "lockTitle": "Go notlela app",
+    "lockOff": "E tswaletšwe. Bea PIN ya dinomoro tše 4 go fihla go tše 6 go notlela Tengo ge o se gona.",
+    "lockOn": "E bulegile. Tengo e a notlela ka morago ga metsotso ye {{count}} e sa šomišwe.",
+    "newPin": "PIN ye mpsha",
+    "confirmPin": "Thaepa PIN gape",
+    "pinHint": "Dinomoro tše 4 go fihla go tše 6. E bolokwa fela bjalo ka khoutu ye e hlakantšwego sedirišweng se gomme e ka se bušetšwe.",
+    "pinMismatch": "Di-PIN tše pedi ga di swane.",
+    "pinInvalid": "Šomiša dinomoro tše 4 go fihla go tše 6.",
+    "setPin": "Bea PIN",
+    "changePin": "Fetoša PIN",
+    "turnOff": "Tima go notlela",
+    "currentPin": "PIN ya bjale",
+    "wrongPin": "PIN yeo ga e nepagale.",
+    "autoLock": "Notlela ka morago ga",
+    "minutes_one": "Motsotso wo {{count}}",
+    "minutes_other": "Metsotso ye {{count}}",
+    "lockNow": "Notlela bjale",
+    "discreet": "Mokgwa wa sephiri",
+    "discreetHint": "Uta ditšhelete sešireng go fihla o kgotla Bontšha ditšhelete, gomme o romele melaetša ye e se nago ditšhelete goba matšatši.",
+    "quickExitHint": "Go tšwa ka pela go dula go le godimo sešireng. Go uta tšohle gomme go bula letlakala le le se nago selo.",
+    "policy": "Bala pholisi ya polokego"
   },
   "diag": {
-    "title": "Diagnostics",
-    "lead": "For help with a problem. No personal data is kept here, and nothing is sent.",
-    "show": "Show",
-    "hide": "Hide",
-    "build": "Build",
-    "schema": "Data version",
-    "storage": "Storage used",
-    "offline": "Offline copy",
-    "offlineNo": "Not installed yet",
-    "language": "Language",
-    "errors": "Errors noted",
-    "copy": "Copy",
-    "copied": "Copied",
-    "clear": "Clear errors",
-    "cleared": "Errors cleared"
+    "title": "Tlhahlobo ya mathata",
+    "lead": "Bakeng sa thušo ka bothata. Ga go tshedimošo ya motho ye e bolokwago mo, gomme ga go selo se romelwago.",
+    "show": "Bontšha",
+    "hide": "Uta",
+    "build": "Kago",
+    "schema": "Phetolelo ya tshedimošo",
+    "storage": "Polokelo ye e šomišitšwego",
+    "offline": "Kopi ya ntle le inthanete",
+    "offlineNo": "Ga se ya tsenywa",
+    "language": "Polelo",
+    "errors": "Diphošo tše di ngwadilwego",
+    "copy": "Kopiša",
+    "copied": "E kopišitšwe",
+    "clear": "Phumola diphošo",
+    "cleared": "Diphošo di phumotšwe"
   },
   "own": {
-    "you": "You",
-    "chip": "Your profile | {{mode}}",
+    "you": "Wena",
+    "chip": "Profaele ya gago | {{mode}}",
     "storage": {
-      "device": "This device only",
-      "account": "Saved to your account"
+      "device": "Sedirišweng se fela",
+      "account": "E bolokilwe akhaonteng ya gago"
     },
-    "cardTitle": "Use your own money",
-    "cardPromise": "Your numbers, your date. Nothing leaves your device unless you save an account.",
-    "cardBody": "Import a statement, answer a few questions, or try it with sample numbers first. No sign up needed.",
-    "start": "Start",
-    "continue": "Continue",
-    "deletedTitle": "Your profile was deleted"
+    "cardTitle": "Šomiša tšhelete ya gago",
+    "cardPromise": "Dinomoro tša gago, letšatši la gago. Ga go selo seo se tšwago sedirišweng sa gago ntle le ge o boloka akhaonte.",
+    "cardBody": "Tsenya setatamente, araba dipotšišo tše mmalwa, goba o leke pele ka dinomoro tša mohlala. Ga go nyakege ngwadišo.",
+    "start": "Thoma",
+    "continue": "Tšwela pele",
+    "deletedTitle": "Profaele ya gago e phumotšwe"
   },
   "welcome": {
-    "title": "Use your own money",
-    "step": "Step {{n}} of {{total}}",
-    "next": "Next",
-    "back": "Back",
-    "nickname": "Name or nickname (optional)",
-    "nicknameHint": "Only used to greet you. Leave it empty if you prefer.",
+    "title": "Šomiša tšhelete ya gago",
+    "step": "Kgato {{n}} ya {{total}}",
+    "next": "Ye e latelago",
+    "back": "Morago",
+    "nickname": "Leina goba leinatlaleletšo (boikgethelo)",
+    "nicknameHint": "Le šomišwa fela go go dumediša. Le tlogele le se na selo ge o rata.",
     "s1": {
-      "title": "What Tengo asks for, and why",
-      "lead": "Tengo works out how long your money lasts and when your next money usually lands. It only needs a little to do that.",
+      "title": "Seo Tengo e se kgopelago, le lebaka",
+      "lead": "Tengo e bala gore tšhelete ya gago e tšea nako ye kae le gore tšhelete ya gago ye e latelago e tlwaetše go tsena neng. E nyaka se senyenyane fela go dira seo.",
       "money": {
-        "title": "Your money in and out",
-        "body": "Dates, amounts and short descriptions, and your balance. From a statement, from a few answers, or from sample numbers."
+        "title": "Tšhelete ya gago ye e tsenago le ye e tšwago",
+        "body": "Matšatši, ditšhelete le ditlhalošo tše kopana, le palomo ya gago. Go tšwa setatamenteng, dikarabong tše mmalwa, goba dinomorong tša mohlala."
       },
       "bills": {
-        "title": "Regular bills and money you owe",
-        "body": "Things like rent, a phone contract or a stokvel, so Tengo can keep money back for them."
+        "title": "Ditefo tša ka mehla le tšhelete yeo o e kolotago",
+        "body": "Dilo go swana le rente, kontraka ya mogala goba stokvel, gore Tengo e kgone go di bolokela tšhelete."
       },
       "never": {
-        "title": "Never",
-        "body": "Tengo never asks for an ID number, a phone number, a bank login or a PIN."
+        "title": "Le ka mohla",
+        "body": "Tengo ga e ke e kgopela nomoro ya boitsebišo, nomoro ya mogala, go tsena pankeng goba PIN."
       },
       "where": {
-        "title": "Where it stays",
-        "body": "On this device only, unless you later choose to save it to an account. You can delete it any time."
+        "title": "Moo e dulago gona",
+        "body": "Sedirišweng se fela, ntle le ge ka morago o kgetha go e boloka akhaonteng. O ka e phumola nako efe goba efe."
       }
     },
     "s2": {
-      "title": "Your choices",
-      "lead": "Only the forecast is needed. Everything else is off until you turn it on.",
-      "core": "Needed to work out your date. It runs on this device. Withdraw any time and it pauses.",
-      "notice": "The full privacy notice says what is kept, where, for how long, and how to complain.",
-      "noticeLink": "Read the privacy notice"
+      "title": "Dikgetho tša gago",
+      "lead": "Ke ponelopele fela ye e nyakegago. Tše dingwe ka moka di tswaletšwe go fihla o di bula.",
+      "core": "E a nyakega go bala letšatši la gago. E šoma sedirišweng se. Gogela morago nako efe goba efe gomme e a ema.",
+      "notice": "Tsebišo ye e feletšego ya sephiri e bolela seo se bolokwago, kae, nako ye kae, le ka moo o ka tsenyago ngongorego.",
+      "noticeLink": "Bala tsebišo ya sephiri"
     },
     "s3": {
-      "title": "Add your money",
-      "lead": "Choose one way. You can change or replace it later on Money.",
-      "import": "Import a statement",
-      "importBody": "A CSV file from your bank. It is read on this device.",
-      "manual": "Answer a few questions",
-      "manualBody": "For when you have no statement. Tengo estimates a starting history from your answers.",
-      "sample": "Try with sample numbers",
-      "sampleBody": "Explore without typing anything. The sample is labelled and you can change every number."
+      "title": "Oketša tšhelete ya gago",
+      "lead": "Kgetha tsela e tee. O ka e fetoša goba wa e tšeela legato ka morago go Tšhelete.",
+      "import": "Tsenya setatamente",
+      "importBody": "Faele ya CSV go tšwa pankeng ya gago. E balwa sedirišweng se.",
+      "manual": "Araba dipotšišo tše mmalwa",
+      "manualBody": "Ge o se na setatamente. Tengo e akanyetša histori ya go thoma go tšwa dikarabong tša gago.",
+      "sample": "Leka ka dinomoro tša mohlala",
+      "sampleBody": "Hlahloba ntle le go thaepa selo. Mohlala o swailwe gomme o ka fetoša nomoro ye nngwe le ye nngwe."
     },
     "s4": {
-      "eyebrow": "Your first forecast",
-      "lead": "This is an estimate from the numbers you gave, not advice. It gets better as you add real entries.",
-      "sample": "These are sample numbers, not yours. Change them on Money, or replace them with a statement or your own answers.",
-      "open": "Open Home"
+      "eyebrow": "Ponelopele ya gago ya mathomo",
+      "lead": "Ye ke kakanyo go tšwa dinomorong tšeo o di filego, e sego keletšo. E kaonafala ge o oketša ditseno tša nnete.",
+      "sample": "Tše ke dinomoro tša mohlala, e sego tša gago. Di fetoše go Tšhelete, goba o di tšeele legato ka setatamente goba ka dikarabo tša gago.",
+      "open": "Bula Gae"
     },
-    "signIn": "Already saved to an account? Sign in"
+    "signIn": "O šetše o bolokile akhaonteng? Tsena"
   },
   "legalDoc": {
-    "version": "Version {{version}}",
-    "draft": "Draft for the pilot, to be reviewed by a lawyer before launch. Tengo is not a bank and does not give financial advice. This notice does not claim compliance with any law or certification.",
-    "placeholderWarning": "The responsible party and Information Officer have not been named yet. They must be filled in before any real launch.",
-    "party": "Responsible party",
-    "address": "Address",
-    "officer": "Information Officer",
-    "contact": "Contact",
+    "version": "Phetolelo {{version}}",
+    "draft": "Kakanyo ya teko, ye e tlago go lekolwa ke ramolao pele ga go thongwa. Tengo ga se panka gomme ga e fe keletšo ya ditšhelete. Tsebišo ye ga e re e obamela molao ofe goba ofe goba setifikeiti.",
+    "placeholderWarning": "Mokgahlo wo o ikarabelago le Mohlankedi wa Tshedimošo ga se ba bolelwa. Ba swanetše go tlatšwa pele ga go thongwa ga nnete.",
+    "party": "Mokgahlo wo o ikarabelago",
+    "address": "Aterese",
+    "officer": "Mohlankedi wa Tshedimošo",
+    "contact": "Kgokagano",
     "notice": {
-      "title": "Privacy notice",
+      "title": "Tsebišo ya sephiri",
       "what": {
-        "title": "What Tengo keeps",
-        "body": "The money history you add (dates, amounts, short descriptions and categories), your balances, regular bills and money you owe, your choices and settings, an optional nickname, and a log of what you did in the app. If you save an account, your email address too. Tengo does not ask for or keep ID numbers, phone numbers, bank logins or PINs. Long numbers in imported descriptions are masked."
+        "title": "Seo Tengo e se bolokago",
+        "body": "Histori ya tšhelete yeo o e oketšago (matšatši, ditšhelete, ditlhalošo tše kopana le dihlopha), dipalomo tša gago, ditefo tša ka mehla le tšhelete yeo o e kolotago, dikgetho tša gago le dipeakanyo, leinatlaleletšo la boikgethelo, le rekhoto ya seo o se dirilego ka app. Ge o boloka akhaonte, le aterese ya gago ya imeile. Tengo ga e kgopele goba go boloka dinomoro tša boitsebišo, dinomoro tša mogala, go tsena pankeng goba di-PIN. Dinomoro tše telele ditlhalošong tše di tsentšwego di a utwa."
       },
       "why": {
-        "title": "Why",
-        "body": "Only to work out how long your money lasts, when your next money usually lands, and the estimates on screen. Not for marketing, credit scoring, lending decisions or selling to anyone. Giving the information is voluntary; without it there is no forecast."
+        "title": "Lebaka",
+        "body": "Fela go bala gore tšhelete ya gago e tšea nako ye kae, tšhelete ya gago ye e latelago e tlwaetše go tsena neng, le dikakanyo tše di lego sešireng. E sego bakeng sa papatšo, go lekanyetša mokitlana, diphetho tša kadimo goba go rekišetša motho ofe goba ofe. Go fa tshedimošo ke boithaopo; ntle le yona ga go ponelopele."
       },
       "where": {
-        "title": "Where it is processed",
-        "body": "As a guest, everything stays in this browser on this device and the forecast is worked out on the device. Nothing is sent to Tengo.\nIf you choose to save an account, your data is stored with the database provider named in the setup (Supabase), in the region the operator chooses, and sent over an encrypted connection. The forecast is still worked out on your device. Any storage outside South Africa needs adequate protection under POPIA section 72 and is named here before launch."
+        "title": "Moo e šongwago gona",
+        "body": "Bjalo ka moeng, tšohle di dula sefetlekong se sedirišweng se gomme ponelopele e balwa sedirišweng. Ga go selo seo se romelwago go Tengo.\nGe o kgetha go boloka akhaonte, tshedimošo ya gago e bolokwa go mofani wa polokelo ya tshedimošo yo a bolelwago peakanyong (Supabase), seleteng seo mosepediši a se kgethago, gomme e romelwa ka kgokagano ye e šireleditšwego. Ponelopele e sa balwa sedirišweng sa gago. Polokelo efe goba efe ka ntle ga Afrika Borwa e nyaka tšhireletšo ye e lekanego ka fase ga karolo ya 72 ya POPIA gomme e tla bolelwa mo pele ga go thongwa."
       },
       "who": {
-        "title": "Who can see it",
-        "body": "As a guest: anyone who uses this browser on this device. Use the PIN lock on a shared phone. With an account: you, after signing in. Each person's rows are locked to them in the database. No staff access to your rows is set up. If support ever needs it, this notice will first say how it is limited and recorded."
+        "title": "Ke mang yo a ka e bonago",
+        "body": "Bjalo ka moeng: mang le mang yo a šomišago sefetleki se sedirišweng se. Šomiša go notlela ka PIN mogaleng wo o abelanwago. Ka akhaonte: wena, ka morago ga go tsena. Methalo ya motho yo mongwe le yo mongwe e notletšwe go yena polokelong ya tshedimošo. Ga go phihlelelo ya bašomi methalong ya gago yeo e beakantšwego. Ge thekgo e ka e nyaka, tsebišo ye e tla thoma ka go bolela ka moo e lekanyeditšwego le go ngwalwa ka gona."
       },
       "keep": {
-        "title": "How long it is kept",
-        "body": "Transactions older than 12 months are removed from this device when Tengo opens. On an account, a server job to remove them is written but not yet switched on. You can delete everything at any time; on an account, deletion removes your rows and your sign-in, and you get a receipt with no personal data. Backups kept by the hosting provider are deleted on their own schedule, stated here before launch."
+        "title": "E bolokwa nako ye kae",
+        "body": "Ditirelano tše di fetago dikgwedi tše 12 di tlošwa sedirišweng se ge Tengo e bulwa. Akhaonteng, mošomo wa seva wa go di tloša o ngwadilwe eupša ga se wa bulwa. O ka phumola tšohle nako efe goba efe; akhaonteng, go phumola go tloša methalo ya gago le go tsena ga gago, gomme o hwetša rasiti ye e se nago tshedimošo ya motho. Dikopi tša polokelo tšeo di bolokwago ke mofani wa go swara di phumolwa go ya ka lenaneo la gagwe, leo le tlago go bolelwa mo pele ga go thongwa."
       },
       "rights": {
-        "title": "Your rights",
-        "body": "You can see your data and export it as JSON or CSV, correct any entry, ask a person to check a result, withdraw any choice, and delete everything. You can complain to the responsible party above, and to the Information Regulator of South Africa."
+        "title": "Ditokelo tša gago",
+        "body": "O ka bona tshedimošo ya gago gomme wa e ntšha bjalo ka JSON goba CSV, wa lokiša tseno efe goba efe, wa kgopela motho go lekola sephetho, wa gogela morago kgetho efe goba efe, gomme wa phumola tšohle. O ka tsenya ngongorego go mokgahlo wo o ikarabelago wo o lego ka godimo, le go Molaodi wa Tshedimošo wa Afrika Borwa."
       },
       "not": {
-        "title": "What Tengo is not",
-        "body": "Tengo is a pilot. It is not a bank, not a credit provider and not a financial adviser. Its figures are estimates from your own history, and it makes no decisions about you."
+        "title": "Seo Tengo e sego sona",
+        "body": "Tengo ke teko. Ga se panka, ga se mofani wa mokitlana gomme ga se moeletši wa ditšhelete. Dinomoro tša yona ke dikakanyo go tšwa historing ya gago, gomme ga e dire diphetho ka ga gago."
       },
       "changes": {
-        "title": "Changes",
-        "body": "If this notice changes, the version above changes and Tengo asks you to look at it again before you continue."
+        "title": "Diphetogo",
+        "body": "Ge tsebišo ye e fetoga, phetolelo ye e lego ka godimo e a fetoga gomme Tengo e go kgopela go e lebelela gape pele o tšwela pele."
       }
     },
     "terms": {
-      "title": "Terms of use",
+      "title": "Mabaka a tšhomišo",
       "use": {
-        "title": "Using Tengo",
-        "body": "Tengo is free to use during the pilot. It is for adults, 18 or older. Use it only with your own money or with pretend numbers."
+        "title": "Go šomiša Tengo",
+        "body": "Tengo ke ya mahala go e šomiša nakong ya teko. Ke ya batho ba bagolo, ba mengwaga ye 18 goba go feta. E šomiše fela ka tšhelete ya gago goba ka dinomoro tša boitirelo."
       },
       "estimate": {
-        "title": "Estimates, not promises",
-        "body": "Every date, budget and suggestion is an estimate from past patterns. Money can arrive late or not at all, and bills can change. Check before you make a decision that matters."
+        "title": "Dikakanyo, e sego dikholofetšo",
+        "body": "Letšatši le lengwe le le lengwe, tekanyetšo le tšhišinyo ke kakanyo go tšwa mekgweng ya nakong ye e fetilego. Tšhelete e ka tsena ka morago ga nako goba ya se tsene le gatee, gomme ditefo di ka fetoga. Lekola pele o dira sephetho se bohlokwa."
       },
       "liability": {
-        "title": "Your decisions",
-        "body": "Tengo does not give financial advice and is not responsible for decisions you make using it. Nothing here limits rights you have under South African law."
+        "title": "Diphetho tša gago",
+        "body": "Tengo ga e fe keletšo ya ditšhelete gomme ga e ikarabele ka diphetho tšeo o di dirago o e šomiša. Ga go selo mo seo se lekanyetšago ditokelo tšeo o nago le tšona ka fase ga molao wa Afrika Borwa."
       },
       "accounts": {
-        "title": "Accounts",
-        "body": "Accounts are optional. Keep access to your email address, because sign-in is by a one-time code. You can sign out everywhere and delete your account at any time."
+        "title": "Diakhaonte",
+        "body": "Diakhaonte ke tša boikgethelo. Boloka phihlelelo ya aterese ya gago ya imeile, ka gobane go tsena go dirwa ka khoutu ya nako e tee. O ka tšwa gohle gomme wa phumola akhaonte ya gago nako efe goba efe."
       },
       "ending": {
-        "title": "Ending the pilot",
-        "body": "If the pilot ends, you will be told in the app and given time to export your data before it is deleted."
+        "title": "Go fela ga teko",
+        "body": "Ge teko e fela, o tla botšwa ka app gomme wa fiwa nako ya go ntšha tshedimošo ya gago pele e phumolwa."
       },
       "complaints": {
-        "title": "Complaints",
-        "body": "Contact the responsible party above. For privacy complaints you can also go to the Information Regulator of South Africa."
+        "title": "Dingongorego",
+        "body": "Ikgokaganye le mokgahlo wo o ikarabelago wo o lego ka godimo. Bakeng sa dingongorego tša sephiri o ka ya gape go Molaodi wa Tshedimošo wa Afrika Borwa."
       }
     }
   },
   "account": {
-    "title": "Account",
-    "unavailable": "Accounts are not set up on this copy of Tengo. Your profile stays on this device.",
-    "lead": "Save to an account to keep this on any device. Optional: Tengo works fully without one.",
-    "leadSaved": "Your profile is saved to your account. Your forecast is still worked out on this device.",
-    "saveTitle": "Save to an account",
-    "manage": "Manage your account",
+    "title": "Akhaonte",
+    "unavailable": "Diakhaonte ga se tša beakanywa koping ye ya Tengo. Profaele ya gago e dula sedirišweng se.",
+    "lead": "Boloka akhaonteng go e boloka sedirišweng sefe goba sefe. Ke boikgethelo: Tengo e šoma ka botlalo ntle le yona.",
+    "leadSaved": "Profaele ya gago e bolokilwe akhaonteng ya gago. Ponelopele ya gago e sa balwa sedirišweng se.",
+    "saveTitle": "Boloka akhaonteng",
+    "manage": "Laola akhaonte ya gago",
     "facts": {
-      "passwordless": "No password: you sign in with a one-time code sent to your email.",
-      "device": "Your forecast is still worked out on your device. The account only stores your data.",
-      "where": "Stored with the database provider named in the privacy notice. Only you can read your rows.",
-      "leave": "Sign out everywhere, export or delete everything at any time."
+      "passwordless": "Ga go lentšu la sephiri: o tsena ka khoutu ya nako e tee ye e romelwago imeileng ya gago.",
+      "device": "Ponelopele ya gago e sa balwa sedirišweng sa gago. Akhaonte e boloka tshedimošo ya gago fela.",
+      "where": "E bolokilwe go mofani wa polokelo ya tshedimošo yo a bolelwago tsebišong ya sephiri. Ke wena fela yo a ka balago methalo ya gago.",
+      "leave": "Tšwa gohle, ntšha goba o phumole tšohle nako efe goba efe."
     },
-    "email": "Email address",
-    "adult": "I am 18 or older.",
-    "adultHint": "Tengo is for adults. It does not ask for or keep a date of birth.",
-    "sendCode": "Send me a code",
-    "codeSent": "Code sent",
-    "codeTitle": "Enter your code",
-    "codeLead": "We sent a one-time code to {{email}}. It works once and expires soon.",
-    "code": "One-time code",
-    "verify": "Sign in",
-    "resend": "Send a new code",
-    "resendIn_one": "Send a new code in {{count}} second",
-    "resendIn_other": "Send a new code in {{count}} seconds",
-    "uploadTitle": "Save what is on this device?",
-    "uploadLead": "Your account is empty. Save your profile from this device to it. It is then removed from this device and kept in your account.",
-    "emptyLead": "Your account is new and empty. Add your money to get your first forecast.",
-    "conflictTitle": "This account already has data",
-    "conflictLead": "This device also has a profile. Usually you keep the account's data. You can replace it with this device's data instead.",
-    "useLead": "Your account's data will be used on this device.",
+    "email": "Aterese ya imeile",
+    "adult": "Ke na le mengwaga ye 18 goba go feta.",
+    "adultHint": "Tengo ke ya batho ba bagolo. Ga e kgopele goba go boloka letšatši la matswalo.",
+    "sendCode": "Nthomelela khoutu",
+    "codeSent": "Khoutu e romilwe",
+    "codeTitle": "Tsenya khoutu ya gago",
+    "codeLead": "Re romile khoutu ya nako e tee go {{email}}. E šoma gatee gomme e fela ka pela.",
+    "code": "Khoutu ya nako e tee",
+    "verify": "Tsena",
+    "resend": "Romela khoutu ye mpsha",
+    "resendIn_one": "Romela khoutu ye mpsha ka morago ga motsotswana wo {{count}}",
+    "resendIn_other": "Romela khoutu ye mpsha ka morago ga metsotswana ye {{count}}",
+    "uploadTitle": "Boloka tše di lego sedirišweng se?",
+    "uploadLead": "Akhaonte ya gago ga e na selo. Boloka profaele ya gago go tšwa sedirišweng se go yona. Ke moka e tlošwa sedirišweng se gomme ya bolokwa akhaonteng ya gago.",
+    "emptyLead": "Akhaonte ya gago ke ye mpsha gomme ga e na selo. Oketša tšhelete ya gago go hwetša ponelopele ya gago ya mathomo.",
+    "conflictTitle": "Akhaonte ye e šetše e na le tshedimošo",
+    "conflictLead": "Sedirišwa se le sona se na le profaele. Gantši o boloka tshedimošo ya akhaonte. O ka e tšeela legato ka tshedimošo ya sedirišwa se go e na le moo.",
+    "useLead": "Tshedimošo ya akhaonte ya gago e tla šomišwa sedirišweng se.",
     "choices": {
-      "upload": "Save this device's profile",
-      "startEmpty": "Start with an empty account",
-      "useAccount": "Use the account's data",
-      "replaceAccount": "Replace it with this device's data"
+      "upload": "Boloka profaele ya sedirišwa se",
+      "startEmpty": "Thoma ka akhaonte ye e se nago selo",
+      "useAccount": "Šomiša tshedimošo ya akhaonte",
+      "replaceAccount": "E tšeele legato ka tshedimošo ya sedirišwa se"
     },
-    "replaceWarn": "Replacing removes what the account holds now and cannot be undone.",
-    "saved": "Saved to your account",
-    "signedInAs": "Signed in as {{email}}",
-    "savedFacts": "Export everything the server holds at any time, as JSON or CSV.",
-    "signOut": "Sign out",
-    "signOutEverywhere": "Sign out everywhere",
-    "deleteTitle": "Delete my account",
-    "deleteBody": "Removes every row the server holds about you and your sign-in, and gives you a receipt with no personal data. Backups kept by the hosting provider expire on its schedule, stated in the privacy notice.",
-    "deleteWarn": "This cannot be undone. Export first if you want a copy.",
-    "deleteConfirm": "Yes, delete my account",
+    "replaceWarn": "Go tšeela legato go tloša seo akhaonte e nago le sona bjale gomme se ka se bušetšwe morago.",
+    "saved": "E bolokilwe akhaonteng ya gago",
+    "signedInAs": "O tsene bjalo ka {{email}}",
+    "savedFacts": "Ntšha tšohle tšeo seva e di swerego nako efe goba efe, bjalo ka JSON goba CSV.",
+    "signOut": "Tšwa",
+    "signOutEverywhere": "Tšwa gohle",
+    "deleteTitle": "Phumola akhaonte ya ka",
+    "deleteBody": "E tloša methalo ka moka yeo seva e e swerego ka ga gago le go tsena ga gago, gomme ya go fa rasiti ye e se nago tshedimošo ya motho. Dikopi tša polokelo tšeo di bolokwago ke mofani wa go swara di fela go ya ka lenaneo la gagwe, leo le bolelwago tsebišong ya sephiri.",
+    "deleteWarn": "Se se ka se bušetšwe morago. Ntšha pele ge o nyaka kopi.",
+    "deleteConfirm": "Ee, phumola akhaonte ya ka",
     "errors": {
-      "rate_limited": "A code was sent a moment ago. Wait a minute, then try again.",
-      "invalid_code": "That code did not work. Check it, or send a new one.",
-      "generic": "Something went wrong. Check your connection and try again."
+      "rate_limited": "Khoutu e romilwe nakwana ye e fetilego. Ema motsotso, ke moka o leke gape.",
+      "invalid_code": "Khoutu yeo ga se ya šoma. E lekole, goba o romele ye mpsha.",
+      "generic": "Go na le se se sa sepelago gabotse. Lekola kgokagano ya gago gomme o leke gape."
     }
   }
 }

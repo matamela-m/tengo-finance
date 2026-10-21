@@ -1,1380 +1,1380 @@
 {
   "common": {
     "demoChip": "Demo | Fictional Data",
-    "skipToContent": "Skip to content",
-    "loading": "Loading",
-    "saving": "Saving",
-    "close": "Close",
-    "cancel": "Cancel",
-    "save": "Save",
-    "today": "Today",
-    "rangeDates": "{{from}} to {{to}}",
-    "rangeAmounts": "{{low}} to {{high}}",
-    "on": "On",
-    "off": "Off",
-    "back": "Back"
+    "skipToContent": "Gaan na inhoud",
+    "loading": "Laai",
+    "saving": "Stoor",
+    "close": "Maak toe",
+    "cancel": "Kanselleer",
+    "save": "Stoor",
+    "today": "Vandag",
+    "rangeDates": "{{from}} tot {{to}}",
+    "rangeAmounts": "{{low}} tot {{high}}",
+    "on": "Aan",
+    "off": "Af",
+    "back": "Terug"
   },
   "nav": {
-    "label": "Main",
-    "home": "Home",
-    "plan": "Plan",
-    "money": "Money",
-    "inbox": "Inbox",
-    "privacy": "Privacy",
-    "me": "Me",
-    "collapse": "Collapse sidebar",
-    "expand": "Expand sidebar"
+    "label": "Hoof",
+    "home": "Tuis",
+    "plan": "Beplan",
+    "money": "Geld",
+    "inbox": "Inkassie",
+    "privacy": "Privaatheid",
+    "me": "Ek",
+    "collapse": "Vou kantbalk in",
+    "expand": "Vou kantbalk uit"
   },
   "state": {
-    "enough": "Enough",
-    "tight": "Tight",
-    "short": "Short",
-    "unclear": "Not enough to tell"
+    "enough": "Genoeg",
+    "tight": "Knap",
+    "short": "Kort",
+    "unclear": "Nie genoeg om te sê nie"
   },
   "confidence": {
-    "high": "High",
-    "medium": "Medium",
-    "low": "Low"
+    "high": "Hoog",
+    "medium": "Middelmatig",
+    "low": "Laag"
   },
   "category": {
-    "income": "Income",
-    "spend": "Spend",
-    "bill": "Bill"
+    "income": "Inkomste",
+    "spend": "Besteding",
+    "bill": "Rekening"
   },
   "language": {
-    "label": "Language",
-    "pending": "Translation on the way. This language shows English for now.",
-    "machine": "Machine translated with Google Translate. A first-language speaker still needs to check it.",
-    "reviewed": "Translated and checked by a first-language speaker.",
-    "claim": "Built for 11 languages. English today.",
-    "needsTranslator": "Needs a first-language translator. Machine translation does not support Tshivenda, so it shows English for now.",
+    "label": "Taal",
+    "pending": "Vertaling is op pad. Hierdie taal wys vir nou Engels.",
+    "machine": "'n Konsepvertaling wat met KI gemaak is. 'n Moedertaalspreker moet dit nog nagaan.",
+    "reviewed": "Vertaal en nagegaan deur 'n moedertaalspreker.",
+    "claim": "11 tale. Engels plus 10 KI-konsepte wat nog nagegaan moet word.",
+    "needsTranslator": "Het 'n moedertaalvertaler nodig. Dit wys vir nou Engels.",
     "short": {
-      "pending": "English for now",
-      "needsTranslator": "English for now",
-      "machine": "machine translated"
+      "pending": "Vir nou Engels",
+      "needsTranslator": "Vir nou Engels",
+      "machine": "KI-konsep"
     },
     "chip": {
-      "source": "English",
-      "pending": "English for now",
-      "needsTranslator": "Needs a translator",
-      "machine": "Machine translated",
-      "reviewed": "Human reviewed"
+      "source": "Engels",
+      "pending": "Vir nou Engels",
+      "needsTranslator": "Het 'n vertaler nodig",
+      "machine": "KI-konsep",
+      "reviewed": "Deur 'n mens nagegaan"
     }
   },
   "landing": {
-    "title": "Money you can plan around",
-    "pitch": "A balance tells you what you have. Tengo tells you until when.",
-    "cta": "Explore Tengo",
-    "ctaNote": "No sign up. Fictional data only.",
-    "previewLabel": "Live preview of Tengo",
-    "previewWho": "Thabo, e-hailing driver. Fictional.",
-    "previewCaption": "Preview of Tengo for a fictional driver: {{label}} {{date}}, cover {{state}}, daily budget {{amount}}.",
-    "howTitle": "Three steps to a date you can plan around.",
+    "title": "Geld waarmee jy kan beplan",
+    "pitch": "'n Saldo sê wat jy het. Tengo sê tot wanneer.",
+    "cta": "Verken Tengo",
+    "ctaNote": "Geen registrasie nie. Net fiktiewe data.",
+    "previewLabel": "Lewendige voorskou van Tengo",
+    "previewWho": "Thabo, e-ry-bestuurder. Fiktief.",
+    "previewCaption": "Voorskou van Tengo vir 'n fiktiewe bestuurder: {{label}} {{date}}, dekking {{state}}, daaglikse begroting {{amount}}.",
+    "howTitle": "Drie stappe na 'n datum waarmee jy kan beplan.",
     "steps": {
       "history": {
-        "title": "Add your money history",
-        "body": "Use a sample person or bring a bank statement as a CSV file. It stays on your device."
+        "title": "Voeg jou geldgeskiedenis by",
+        "body": "Gebruik 'n voorbeeldpersoon of bring 'n bankstaat as 'n CSV-lêer. Dit bly op jou toestel."
       },
       "last": {
-        "title": "See how long it lasts",
-        "body": "Tengo works out the day your money runs out and when your next money usually lands."
+        "title": "Sien hoe lank dit hou",
+        "body": "Tengo bereken die dag waarop jou geld opraak en wanneer jou volgende geld gewoonlik inkom."
       },
       "plan": {
-        "title": "Plan around the date",
-        "body": "Try a what-if, check a loan to family, and see your daily budget."
+        "title": "Beplan rondom die datum",
+        "body": "Probeer 'n wat-as, toets 'n lening aan familie, en sien jou daaglikse begroting."
       }
     },
-    "tagline": "Money you can plan around.",
-    "fictional": "All people, places and amounts in this demo are fictional. No bank connection.",
+    "tagline": "Geld waarmee jy kan beplan.",
+    "fictional": "Alle mense, plekke en bedrae in hierdie demo is fiktief. Geen bankverbinding nie.",
     "navLabel": "Tengo",
-    "home": "home",
+    "home": "tuis",
     "nav": {
-      "how": "How it works",
-      "privacy": "Privacy"
+      "how": "Hoe dit werk",
+      "privacy": "Privaatheid"
     },
-    "badge": "Built for the FNB App of the Year hackathon",
-    "headlineLead": "Money you can",
-    "headlineDim": "plan around.",
-    "ctaSecondary": "See how it works",
+    "badge": "Gebou vir die FNB App of the Year-hackathon",
+    "headlineLead": "Geld waarmee jy",
+    "headlineDim": "kan beplan.",
+    "ctaSecondary": "Sien hoe dit werk",
     "stats": {
-      "history": "Days of history per person",
-      "states": "Cover states: Enough, Tight, Short",
-      "languages": "Built for 11 languages. English today.",
-      "logins": "Bank logins needed"
+      "history": "Dae se geskiedenis per persoon",
+      "states": "Statusse: Genoeg, Knap, Kort, Nie genoeg om te sê nie",
+      "languages": "11 tale. Engels plus 10 KI-konsepte wat nog nagegaan moet word.",
+      "logins": "Bankaanmeldings nodig"
     },
-    "closingTitle": "See how long your money lasts.",
-    "closingBody": "Pick a fictional person and explore. No sign up, nothing leaves your browser.",
+    "closingTitle": "Sien hoe lank jou geld hou.",
+    "closingBody": "Kies 'n fiktiewe persoon en verken. Geen registrasie nie, niks verlaat jou blaaier nie.",
     "footer": {
-      "product": "Product",
-      "privacy": "Privacy",
-      "about": "About",
+      "product": "Produk",
+      "privacy": "Privaatheid",
+      "about": "Oor",
       "links": {
-        "how": "How it works",
-        "explore": "Explore Tengo",
-        "privacyCentre": "Privacy centre",
-        "fictional": "Fictional data only",
-        "name": "The name Tengo",
-        "hackathon": "Hackathon entry",
-        "safety": "Safety and who it is for"
+        "how": "Hoe dit werk",
+        "explore": "Verken Tengo",
+        "privacyCentre": "Privaatheidsentrum",
+        "fictional": "Net fiktiewe data",
+        "name": "Die naam Tengo",
+        "hackathon": "Hackathon-inskrywing",
+        "safety": "Veiligheid en vir wie dit is"
       }
     },
-    "status": "Demo environment. Fictional data."
+    "status": "Demo-omgewing. Fiktiewe data."
   },
   "picker": {
-    "title": "Choose how to explore",
-    "lead": "Each fictional person earns in a different way. Pick one to see Tengo with their money, or use your own.",
-    "personas": "People",
-    "enterAs": "Enter as {{name}}",
-    "continueAs": "Continue as {{name}}",
-    "backHome": "home",
-    "deletedTitle": "{{name}}'s data was deleted",
-    "deletedBody": "Receipt {{ref}}, {{date}}. Removed {{count}} transactions and {{audit}} audit entries. Choose a person to start again.",
-    "step": "Step 1 of 2",
-    "startsAt": "Starts at"
+    "title": "Kies hoe om te verken",
+    "lead": "Elke fiktiewe persoon verdien op 'n ander manier. Kies een om Tengo met hulle geld te sien, of gebruik jou eie.",
+    "personas": "Mense",
+    "enterAs": "Gaan in as {{name}}",
+    "continueAs": "Gaan voort as {{name}}",
+    "backHome": "tuis",
+    "deletedTitle": "{{name}} se data is uitgevee",
+    "deletedBody": "Kwitansie {{ref}}, {{date}}. {{count}} transaksies en {{audit}} ouditinskrywings verwyder. Kies 'n persoon om weer te begin.",
+    "step": "Stap 1 van 2",
+    "startsAt": "Begin by"
   },
   "personas": {
-    "fictional": "Fictional composite",
+    "fictional": "Fiktiewe samestelling",
     "thabo": {
-      "role": "E-hailing driver",
-      "situation": "Cash fares most days and an app payout on Mondays. Fuel and the car instalment come first."
+      "role": "E-ry-bestuurder",
+      "situation": "Kontant ritgelde op die meeste dae en 'n app-uitbetaling op Maandae. Brandstof en die motorpaaiement kom eerste."
     },
     "lerato": {
-      "role": "Hairdresser",
-      "situation": "Saturdays carry the week. Product restocks every two weeks and rent on the 1st."
+      "role": "Haarkapper",
+      "situation": "Saterdae dra die week. Produkvoorraad elke twee weke en huur op die 1ste."
     },
     "ayanda": {
-      "role": "Spaza shop owner",
-      "situation": "Cash takings come in lumps. Big stock runs and prepaid electricity in between."
+      "role": "Spaza-winkeleienaar",
+      "situation": "Kontantinkomste kom in klonte in. Groot voorraadaankope en voorafbetaalde elektrisiteit tussenin."
     }
   },
   "consent": {
-    "title": "Before you start",
-    "as": "Entering as {{name}}",
-    "lead": "Here is what Tengo uses, why, and what you can change.",
+    "title": "Voordat jy begin",
+    "as": "Gaan in as {{name}}",
+    "lead": "Hier is wat Tengo gebruik, hoekom, en wat jy kan verander.",
     "notice": {
       "what": {
-        "title": "What we use",
-        "body": "Transaction dates, amounts and descriptions, plus your current balance. Nothing else."
+        "title": "Wat ons gebruik",
+        "body": "Transaksiedatums, bedrae en beskrywings, plus jou huidige saldo. Niks anders nie."
       },
       "why": {
-        "title": "Why",
-        "body": "To work out how long your money lasts and when your next money is likely. Not for marketing or credit scoring."
+        "title": "Hoekom",
+        "body": "Om uit te werk hoe lank jou geld hou en wanneer jou volgende geld waarskynlik kom. Nie vir bemarking of kredietpunte nie."
       },
       "who": {
-        "title": "Who can see it",
-        "body": "Anyone using this browser on this device. No one at Tengo can see it."
+        "title": "Wie dit kan sien",
+        "body": "Enigiemand wat hierdie blaaier op hierdie toestel gebruik. Niemand by Tengo kan dit sien nie."
       },
       "where": {
-        "title": "Where it is processed",
-        "body": "In your browser, on this device. Nothing is sent to a server."
+        "title": "Waar dit verwerk word",
+        "body": "In jou blaaier, op hierdie toestel. Niks word na 'n bediener gestuur nie."
       },
       "how": {
-        "title": "How long we keep it",
-        "body": "Records older than 12 months are removed from this device. You can delete everything any time."
+        "title": "Hoe lank ons dit hou",
+        "body": "Rekords ouer as 12 maande word van hierdie toestel verwyder. Jy kan enige tyd alles uitvee."
       }
     },
-    "choices": "Your choices",
-    "required": "Required",
+    "choices": "Jou keuses",
+    "required": "Vereis",
     "core": {
-      "title": "Forecast",
-      "body": "Needed to use Tengo. Withdraw any time and the forecast pauses."
+      "title": "Vooruitskatting",
+      "body": "Nodig om Tengo te gebruik. Trek dit enige tyd terug en die vooruitskatting word onderbreek."
     },
     "messages": {
-      "title": "Daily messages",
-      "body": "A short daily update with your date, by WhatsApp or SMS. WhatsApp messages pass through Meta, outside South Africa. Off until you turn it on. Simulated, nothing is sent."
+      "title": "Daaglikse boodskappe",
+      "body": "'n Kort daaglikse opdatering met jou datum, per WhatsApp of SMS. WhatsApp-boodskappe gaan deur Meta, buite Suid-Afrika. Af totdat jy dit aanskakel. Gesimuleer, niks word gestuur nie."
     },
     "analytics": {
-      "title": "Product analytics",
-      "body": "Helps improve Tengo. Off by default. No analytics runs in this demo."
+      "title": "Produkontleding",
+      "body": "Help om Tengo te verbeter. Verstek af. Geen ontleding loop in hierdie demo nie."
     },
-    "changeLater": "You can change these any time in Privacy.",
-    "agree": "Agree and continue",
-    "notNow": "Not now",
-    "step": "Step 2 of 2"
+    "changeLater": "Jy kan dit enige tyd onder Privaatheid verander.",
+    "agree": "Stem in en gaan voort",
+    "notNow": "Nie nou nie",
+    "step": "Stap 2 van 2"
   },
   "privacy": {
-    "simulated": "Simulated privacy controls. Not a compliance certification.",
-    "title": "Privacy",
-    "lead": "See, change, export or delete this person's data.",
-    "consentTitle": "Your consent",
-    "coreEffect": "Needed for Tengo to work. Turning it off pauses the forecast.",
-    "messagesEffect": "A short daily update in the Inbox. Turning it off hides the Inbox preview.",
-    "lastChanged": "Last changed {{date}}",
-    "minimisation": "What the forecast uses",
-    "uses": "Uses",
-    "neverUses": "Does not use",
+    "simulated": "Gesimuleerde privaatheidskontroles. Nie 'n nakomingsertifisering nie.",
+    "title": "Privaatheid",
+    "lead": "Sien, verander, voer uit of vee hierdie persoon se data uit.",
+    "consentTitle": "Jou toestemming",
+    "coreEffect": "Nodig vir Tengo om te werk. As jy dit afskakel, word die vooruitskatting onderbreek.",
+    "messagesEffect": "'n Kort daaglikse opdatering in die Inkassie. As jy dit afskakel, word die Inkassie-voorskou versteek.",
+    "lastChanged": "Laas verander {{date}}",
+    "minimisation": "Wat die vooruitskatting gebruik",
+    "uses": "Gebruik",
+    "neverUses": "Gebruik nie",
     "used": {
-      "date": "Transaction date",
-      "amount": "Transaction amount",
-      "description": "Transaction description, to spot repeat bills and group spending",
-      "balance": "Your current balance"
+      "date": "Transaksiedatum",
+      "amount": "Transaksiebedrag",
+      "description": "Transaksiebeskrywing, om herhalende rekenings raak te sien en besteding te groepeer",
+      "balance": "Jou huidige saldo"
     },
     "unused": {
-      "id": "ID number",
-      "location": "Location",
-      "contacts": "Contacts",
-      "account": "Account or card numbers"
+      "id": "ID-nommer",
+      "location": "Ligging",
+      "contacts": "Kontakte",
+      "account": "Rekening- of kaartnommers"
     },
-    "security": "How data is kept",
+    "security": "Hoe data gehou word",
     "securityItems": {
-      "transit": "With an optional account: an encrypted connection and storage that only you can read.",
-      "access": "No staff access is set up. If support ever needs it, this notice will first say how it is limited and recorded.",
-      "device": "Data stays in this browser's storage on this device. Tengo does not encrypt it on the device.",
-      "server": "Nothing is sent to a server. There is no Tengo account and no staff access.",
-      "shared": "Anyone who uses this browser on this device can open it. Delete it any time.",
-      "accountStore": "Your data is stored with the database provider over an encrypted connection.",
-      "accountRls": "Each row is locked to you in the database, so no other account can read, change or delete it.",
-      "accountForecast": "Your forecast is still worked out on your device. The server only stores data."
+      "transit": "Met 'n opsionele rekening: 'n geënkripteerde verbinding en berging wat net jy kan lees.",
+      "access": "Geen personeeltoegang is opgestel nie. As ondersteuning dit ooit nodig het, sal hierdie kennisgewing eers sê hoe dit beperk en aangeteken word.",
+      "device": "Data bly in hierdie blaaier se berging op hierdie toestel. Tengo enkripteer dit nie op die toestel nie.",
+      "server": "Niks word na 'n bediener gestuur nie. Daar is geen Tengo-rekening en geen personeeltoegang nie.",
+      "shared": "Enigiemand wat hierdie blaaier op hierdie toestel gebruik, kan dit oopmaak. Vee dit enige tyd uit.",
+      "accountStore": "Jou data word by die databasisverskaffer gestoor oor 'n geënkripteerde verbinding.",
+      "accountRls": "Elke ry is in die databasis aan jou gesluit, sodat geen ander rekening dit kan lees, verander of uitvee nie.",
+      "accountForecast": "Jou vooruitskatting word steeds op jou toestel bereken. Die bediener stoor net data."
     },
-    "rightsNav": "Your rights",
+    "rightsNav": "Jou regte",
     "links": {
       "data": {
-        "title": "See my data",
-        "body": "Everything held, and export it"
+        "title": "Sien my data",
+        "body": "Alles wat gehou word, en voer dit uit"
       },
       "audit": {
-        "title": "Audit log",
-        "body": "Every access and change, with times"
+        "title": "Ouditlogboek",
+        "body": "Elke toegang en verandering, met tye"
       },
       "review": {
-        "title": "Question this result",
-        "body": "Ask a person to check your date"
+        "title": "Bevraagteken hierdie resultaat",
+        "body": "Vra 'n persoon om jou datum na te gaan"
       },
       "breach": {
-        "title": "Breach notice",
-        "body": "A sample of what we would send"
+        "title": "Kennisgewing van 'n oortreding",
+        "body": "'n Voorbeeld van wat ons sou stuur"
       },
       "delete": {
-        "title": "Delete my data",
-        "body": "Remove this person's records"
+        "title": "Vee my data uit",
+        "body": "Verwyder hierdie persoon se rekords"
       }
     },
-    "retention": "How long we keep it",
-    "retentionRule": "Records older than 12 months are removed from this device when Tengo opens.",
-    "nextRemoval": "Next removal {{date}}, for records from {{from}}.",
-    "nothingStored": "Nothing stored yet.",
-    "crossBorder": "Where data is processed",
-    "crossBorderBody": "On this device only. In this demo nothing is sent to a server, inside or outside South Africa.",
-    "officer": "Information Officer",
-    "officerName": "Name",
-    "officerEmail": "Email",
-    "placeholderName": "To be appointed",
-    "placeholderNote": "Placeholder details. Not a real contact.",
-    "complaints": "If you are not happy with how your data is handled, you can complain to the Information Regulator of South Africa.",
-    "dataLead": "Everything Tengo holds about this person on this device.",
-    "exportJson": "Export JSON",
-    "exportCsv": "Export CSV",
-    "held": "Held about this person",
-    "heldPersona": "Person",
-    "heldBalance": "Balance",
-    "heldTransactions": "Transactions",
-    "heldSource": "Source",
-    "heldConsent": "Consent given",
-    "heldAudit": "Audit entries",
-    "heldReviews": "Review requests",
-    "heldWhere": "Stored",
-    "heldWhereValue": "This browser only",
+    "retention": "Hoe lank ons dit hou",
+    "retentionRule": "Rekords ouer as 12 maande word van hierdie toestel verwyder wanneer Tengo oopmaak.",
+    "nextRemoval": "Volgende verwydering {{date}}, vir rekords vanaf {{from}}.",
+    "nothingStored": "Nog niks gestoor nie.",
+    "crossBorder": "Waar data verwerk word",
+    "crossBorderBody": "Net op hierdie toestel. In hierdie demo word niks na 'n bediener gestuur nie, binne of buite Suid-Afrika.",
+    "officer": "Inligtingsbeampte",
+    "officerName": "Naam",
+    "officerEmail": "E-pos",
+    "placeholderName": "Moet nog aangestel word",
+    "placeholderNote": "Plekhouerbesonderhede. Nie 'n regte kontak nie.",
+    "complaints": "As jy nie tevrede is met hoe jou data hanteer word nie, kan jy by die Inligtingsreguleerder van Suid-Afrika kla.",
+    "dataLead": "Alles wat Tengo oor hierdie persoon op hierdie toestel hou.",
+    "exportJson": "Voer JSON uit",
+    "exportCsv": "Voer CSV uit",
+    "held": "Gehou oor hierdie persoon",
+    "heldPersona": "Persoon",
+    "heldBalance": "Saldo",
+    "heldTransactions": "Transaksies",
+    "heldSource": "Bron",
+    "heldConsent": "Toestemming gegee",
+    "heldAudit": "Ouditinskrywings",
+    "heldReviews": "Hersieningsversoeke",
+    "heldWhere": "Gestoor",
+    "heldWhereValue": "Net hierdie blaaier",
     "source": {
-      "seed": "Sample data",
-      "import": "Imported statement",
-      "edited": "Sample data, corrected",
-      "manual": "Set up by hand, estimated"
+      "seed": "Voorbeelddata",
+      "import": "Ingevoerde staat",
+      "edited": "Voorbeelddata, reggestel",
+      "manual": "Met die hand opgestel, geskat"
     },
-    "correctHint": "Something wrong? Correct or recategorise any transaction from the Money page.",
-    "auditLead": "A simulated log of access and changes, newest first.",
-    "auditEmpty": "No entries yet.",
-    "auditActor": "By you, on this device",
-    "reviewLead": "The date is worked out by fixed rules. If it looks wrong, ask a person to check it.",
-    "reviewFormTitle": "Request a human review",
-    "reviewAbout": "About: {{result}}",
-    "reviewReason": "What looks wrong",
+    "correctHint": "Is iets verkeerd? Stel enige transaksie reg of gee dit 'n ander kategorie op die Geld-bladsy.",
+    "auditLead": "'n Gesimuleerde logboek van toegang en veranderinge, nuutste eerste.",
+    "auditEmpty": "Nog geen inskrywings nie.",
+    "auditActor": "Deur jou, op hierdie toestel",
+    "reviewLead": "Die datum word met vaste reëls bereken. As dit verkeerd lyk, vra 'n persoon om dit na te gaan.",
+    "reviewFormTitle": "Vra vir 'n menslike hersiening",
+    "reviewAbout": "Oor: {{result}}",
+    "reviewReason": "Wat lyk verkeerd",
     "reasons": {
-      "date": "The date looks wrong",
-      "income": "Income is missing or wrong",
-      "bill": "A bill is wrong",
-      "other": "Something else"
+      "date": "Die datum lyk verkeerd",
+      "income": "Inkomste ontbreek of is verkeerd",
+      "bill": "'n Rekening is verkeerd",
+      "other": "Iets anders"
     },
-    "reviewDetails": "Tell us more (optional)",
-    "reviewPlaceholder": "For example, I get paid on the 25th, not on Mondays.",
-    "reviewContact": "How should we reply",
+    "reviewDetails": "Vertel ons meer (opsioneel)",
+    "reviewPlaceholder": "Byvoorbeeld, ek word op die 25ste betaal, nie op Maandae nie.",
+    "reviewContact": "Hoe moet ons antwoord",
     "contact": {
-      "inbox": "In my Tengo Inbox",
-      "none": "No reply needed"
+      "inbox": "In my Tengo-inkassie",
+      "none": "Geen antwoord nodig nie"
     },
-    "reviewSubmit": "Send request",
-    "reviewSimulated": "Simulated. No request leaves this device.",
-    "reviewSent": "Request received",
-    "reviewRef": "Reference {{ref}}",
-    "reviewNext": "In a real service, a person would check the inputs and reply within 5 working days. Until then the forecast keeps working as normal.",
-    "reviewAnother": "Send another",
-    "reviewPast": "Your requests",
-    "reviewNone": "No requests yet.",
-    "reviewStatus": "Received",
-    "breachLead": "If personal data were ever exposed, this is the kind of notice users would get.",
-    "breachSample": "Sample only. There has been no breach.",
-    "sampleStamp": "Sample",
-    "breachDate": "Date of notice: [date]",
-    "breachHeading": "Important: a security incident affecting your Tengo data",
+    "reviewSubmit": "Stuur versoek",
+    "reviewSimulated": "Gesimuleer. Geen versoek verlaat hierdie toestel nie.",
+    "reviewSent": "Versoek ontvang",
+    "reviewRef": "Verwysing {{ref}}",
+    "reviewNext": "In 'n regte diens sou 'n persoon die insette nagaan en binne 5 werksdae antwoord. Tot dan werk die vooruitskatting soos gewoonlik.",
+    "reviewAnother": "Stuur nog een",
+    "reviewPast": "Jou versoeke",
+    "reviewNone": "Nog geen versoeke nie.",
+    "reviewStatus": "Ontvang",
+    "breachLead": "As persoonlike data ooit blootgestel word, is dit die soort kennisgewing wat gebruikers sou kry.",
+    "breachSample": "Net 'n voorbeeld. Daar was geen oortreding nie.",
+    "sampleStamp": "Voorbeeld",
+    "breachDate": "Datum van kennisgewing: [datum]",
+    "breachHeading": "Belangrik: 'n sekuriteitsvoorval wat jou Tengo-data raak",
     "breach": {
       "happened": {
-        "title": "What happened",
-        "body": "On [date], we found that [describe the incident]. We stopped it on [date]."
+        "title": "Wat gebeur het",
+        "body": "Op [datum] het ons gevind dat [beskryf die voorval]. Ons het dit op [datum] gestop."
       },
       "data": {
-        "title": "What data was involved",
-        "body": "[List the data, for example transaction dates, amounts and descriptions]. Your ID number and passwords were not involved."
+        "title": "Watter data betrokke was",
+        "body": "[Lys die data, byvoorbeeld transaksiedatums, bedrae en beskrywings]. Jou ID-nommer en wagwoorde was nie betrokke nie."
       },
       "doing": {
-        "title": "What we are doing",
-        "body": "We have [steps taken] and told the Information Regulator. We are working with [security partner] to stop this happening again."
+        "title": "Wat ons doen",
+        "body": "Ons het [stappe geneem] en die Inligtingsreguleerder ingelig. Ons werk saam met [sekuriteitsvennoot] om te keer dat dit weer gebeur."
       },
       "you": {
-        "title": "What you can do",
-        "body": "Watch for messages that ask for your PIN or password. Tengo will never ask for them. You can delete your data at any time in Privacy."
+        "title": "Wat jy kan doen",
+        "body": "Wees op die uitkyk vir boodskappe wat vir jou PIN of wagwoord vra. Tengo sal nooit daarvoor vra nie. Jy kan jou data enige tyd onder Privaatheid uitvee."
       },
       "contact": {
-        "title": "Contact us",
-        "body": "Our Information Officer is at [contact details]. You can also complain to the Information Regulator."
+        "title": "Kontak ons",
+        "body": "Ons Inligtingsbeampte is by [kontakbesonderhede]. Jy kan ook by die Inligtingsreguleerder kla."
       }
     },
-    "deleteLead": "Remove {{name}}'s records from this device.",
-    "deleteWhat": "What will be removed",
-    "deleteTx_one": "{{count}} transaction and the balance",
-    "deleteTx_other": "{{count}} transactions and the balance",
-    "deleteConsent": "Consent choices and review requests",
-    "deleteAudit_one": "{{count}} audit log entry",
-    "deleteAudit_other": "{{count}} audit log entries",
-    "deleteReceipt": "A deletion receipt is kept, with no transaction details.",
-    "deleteStart": "Delete my data",
-    "deleteWarn": "This cannot be undone. You will go back to the start.",
-    "deleteCheck": "I understand this removes the data for good",
-    "deleteConfirm": "Yes, delete everything",
-    "descriptionsNote": "Statement descriptions can include names or references. Long numbers such as account, card or phone numbers are masked when a statement is imported. Descriptions stay on this device and are used only to spot repeat bills and group spending.",
-    "securityNow": "In this demo",
-    "securityPlanned": "Planned, not built yet",
-    "deleteLeadOwn": "Remove your profile and everything in it from this device.",
-    "pilot": "Pilot privacy controls. Not a compliance certification.",
+    "deleteLead": "Verwyder {{name}} se rekords van hierdie toestel.",
+    "deleteWhat": "Wat verwyder sal word",
+    "deleteTx_one": "{{count}} transaksie en die saldo",
+    "deleteTx_other": "{{count}} transaksies en die saldo",
+    "deleteConsent": "Toestemmingskeuses en hersieningsversoeke",
+    "deleteAudit_one": "{{count}} ouditinskrywing",
+    "deleteAudit_other": "{{count}} ouditinskrywings",
+    "deleteReceipt": "'n Uitveekwitansie word gehou, sonder transaksiebesonderhede.",
+    "deleteStart": "Vee my data uit",
+    "deleteWarn": "Dit kan nie ongedaan gemaak word nie. Jy gaan terug na die begin.",
+    "deleteCheck": "Ek verstaan dat dit die data vir altyd verwyder",
+    "deleteConfirm": "Ja, vee alles uit",
+    "descriptionsNote": "Staatbeskrywings kan name of verwysings bevat. Lang nommers soos rekening-, kaart- of telefoonnommers word gemasker wanneer 'n staat ingevoer word. Beskrywings bly op hierdie toestel en word net gebruik om herhalende rekenings raak te sien en besteding te groepeer.",
+    "securityNow": "In hierdie demo",
+    "securityPlanned": "Beplan, nog nie gebou nie",
+    "deleteLeadOwn": "Verwyder jou profiel en alles daarin van hierdie toestel.",
+    "pilot": "Privaatheidskontroles vir die proefprojek. Nie 'n nakomingsertifisering nie.",
     "securityNowMode": {
-      "demo": "In this demo",
-      "device": "Your profile, on this device",
-      "account": "Your profile, saved to your account"
+      "demo": "In hierdie demo",
+      "device": "Jou profiel, op hierdie toestel",
+      "account": "Jou profiel, in jou rekening gestoor"
     },
-    "retentionAccount": "Records older than 12 months are removed. Deleting your account removes every row and your sign-in.",
-    "crossBorderAccount": "Stored with the database provider in the region named in the privacy notice. Nothing is sent anywhere else."
+    "retentionAccount": "Rekords ouer as 12 maande word verwyder. As jy jou rekening uitvee, word elke ry en jou aanmelding verwyder.",
+    "crossBorderAccount": "Gestoor by die databasisverskaffer in die streek wat in die privaatheidskennisgewing genoem word. Niks word elders heen gestuur nie."
   },
   "home": {
     "greeting": {
-      "morning": "Good morning, {{name}}.",
-      "afternoon": "Good afternoon, {{name}}.",
-      "evening": "Good evening, {{name}}."
+      "morning": "Goeiemôre, {{name}}.",
+      "afternoon": "Goeiemiddag, {{name}}.",
+      "evening": "Goeienaand, {{name}}."
     },
-    "heroLabel": "Your date",
-    "emptyTitle": "No money history yet",
-    "emptyBody": "Import a statement with at least 14 days of transactions to see your date.",
-    "greetingLabel": "Greeting",
-    "unknownShort": "Not found yet",
+    "heroLabel": "Jou datum",
+    "emptyTitle": "Nog geen geldgeskiedenis nie",
+    "emptyBody": "Voer 'n staat in met minstens 14 dae se transaksies om jou datum te sien.",
+    "greetingLabel": "Groet",
+    "unknownShort": "Nog nie gevind nie",
     "greetingNoName": {
-      "morning": "Good morning.",
-      "afternoon": "Good afternoon.",
-      "evening": "Good evening."
+      "morning": "Goeiemôre.",
+      "afternoon": "Goeiemiddag.",
+      "evening": "Goeienaand."
     }
   },
   "hero": {
-    "enoughUntil": "Enough until",
-    "enoughBeyond": "Enough beyond",
-    "shortFrom": "Short from",
-    "gap_one": "{{count}} day before your next money",
-    "gap_other": "{{count}} days before your next money",
-    "tightUntil": "Tight until",
-    "unclear": "Not enough to tell",
-    "unclearLead": "Your date",
+    "enoughUntil": "Genoeg tot",
+    "enoughBeyond": "Genoeg verby",
+    "shortFrom": "Kort vanaf",
+    "gap_one": "{{count}} dag voor jou volgende geld",
+    "gap_other": "{{count}} dae voor jou volgende geld",
+    "tightUntil": "Knap tot",
+    "unclear": "Nie genoeg om te sê nie",
+    "unclearLead": "Jou datum",
     "line": "{{label}} {{date}}"
   },
   "band": {
-    "between": "Likely between {{from}} and {{to}}",
-    "single": "Likely {{date}}",
-    "lowConfidence": "Low confidence",
-    "legendNext": "Next money",
-    "legendDate": "Your date",
-    "legendRange": "Likely range"
+    "between": "Waarskynlik tussen {{from}} en {{to}}",
+    "single": "Waarskynlik {{date}}",
+    "lowConfidence": "Lae sekerheid",
+    "legendNext": "Volgende geld",
+    "legendDate": "Jou datum",
+    "legendRange": "Waarskynlike reeks"
   },
   "sts": {
-    "title": "Daily budget",
-    "withBills": "Spread evenly until your next money, after {{bills}} in bills.",
-    "noBills": "Spread evenly until your next money. No bills due before it.",
-    "reserveOne": "Keeps {{amount}} back for {{name}} on {{date}}, which your next money may not cover.",
-    "reserveMany": "Keeps {{amount}} back for {{count}} bills just after your next money, which it may not cover.",
-    "noReserve": "No bills due just after your next money, so nothing extra is kept back.",
-    "usual": "Your usual spend is {{amount}} a day.",
-    "notAdvised": "Not advised",
-    "notAdvisedWhy_one": "At your usual {{usual}} a day, money runs out {{count}} day before your next money.",
-    "notAdvisedWhy_other": "At your usual {{usual}} a day, money runs out {{count}} days before your next money.",
-    "disclaimer": "An estimate from your own history, not advice.",
-    "nothingSpare": "Nothing spare",
-    "pending": "Waiting for today's money",
-    "pendingWhy": "Your usual payment is due today. The budget is worked out once it lands.",
-    "unclear": "Not shown yet",
-    "unclearWhy": "Tengo needs more to go on before it suggests a daily figure.",
-    "overdrawnWhy": "You are overdrawn by {{amount}}. Money that comes in covers this first.",
-    "notAdvisedNoMoney": "At your usual {{usual}} a day, money runs out before any money is expected."
+    "title": "Daaglikse begroting",
+    "withBills": "Eweredig versprei tot jou volgende geld, ná {{bills}} aan rekenings.",
+    "noBills": "Eweredig versprei tot jou volgende geld. Geen rekenings is voor dan betaalbaar nie.",
+    "reserveOne": "Hou {{amount}} terug vir {{name}} op {{date}}, wat jou volgende geld dalk nie dek nie.",
+    "reserveMany": "Hou {{amount}} terug vir {{count}} rekenings net ná jou volgende geld, wat dit dalk nie dek nie.",
+    "noReserve": "Geen rekenings is net ná jou volgende geld betaalbaar nie, so niks ekstra word teruggehou nie.",
+    "usual": "Jou gewone besteding is {{amount}} per dag.",
+    "notAdvised": "Nie aanbeveel nie",
+    "notAdvisedWhy_one": "Teen jou gewone {{usual}} per dag raak die geld {{count}} dag voor jou volgende geld op.",
+    "notAdvisedWhy_other": "Teen jou gewone {{usual}} per dag raak die geld {{count}} dae voor jou volgende geld op.",
+    "disclaimer": "'n Skatting uit jou eie geskiedenis, nie advies nie.",
+    "nothingSpare": "Niks oor nie",
+    "pending": "Wag vir vandag se geld",
+    "pendingWhy": "Jou gewone betaling is vandag betaalbaar. Die begroting word bereken sodra dit inkom.",
+    "unclear": "Nog nie gewys nie",
+    "unclearWhy": "Tengo het meer inligting nodig voordat dit 'n daaglikse bedrag voorstel.",
+    "overdrawnWhy": "Jy is {{amount}} oortrokke. Geld wat inkom, dek dit eerste.",
+    "notAdvisedNoMoney": "Teen jou gewone {{usual}} per dag raak die geld op voordat enige geld verwag word."
   },
   "stateCard": {
-    "title": "Cover",
-    "enough": "Covered until your next money, even on a heavy week.",
-    "tight": "Covered on a normal week, not on a heavy one.",
-    "short_one": "Runs out {{count}} day before your next money.",
-    "short_other": "Runs out {{count}} days before your next money.",
-    "tightReserve": "Covered until your next money, but {{amount}} is needed for a bill soon after it.",
-    "unclearThin": "Tengo needs at least 14 days of money history to work out a date. Import a statement or add a few weeks of entries.",
-    "unclearNoIncome": "No money coming in was found in your history. Add your income, or set it up by hand, to get an answer.",
-    "noIncomeRunway": "With nothing coming in, your balance lasts until {{date}} at your usual spend.",
-    "unclearStale": "Your balance is more than two weeks old. Add today's balance to see your date.",
-    "enoughHorizon": "Lasts the next {{days}} days even on a heavy week, with no money expected.",
-    "tightHorizon": "Lasts the next {{days}} days on a normal week, not on a heavy one. No money is expected.",
-    "shortHorizon": "Runs out within the next {{days}} days, and no money is expected.",
-    "enoughDaily": "Lasts the next {{days}} days even on a heavy week, counting half of what usually comes in each day.",
-    "tightDaily": "Lasts the next {{days}} days on a normal week, counting half of what usually comes in each day. Not on a heavy one.",
-    "shortDaily": "Runs out within the next {{days}} days, even counting half of what usually comes in each day."
+    "title": "Dekking",
+    "enough": "Gedek tot jou volgende geld, selfs in 'n swaar week.",
+    "tight": "Gedek in 'n gewone week, nie in 'n swaar een nie.",
+    "short_one": "Raak {{count}} dag voor jou volgende geld op.",
+    "short_other": "Raak {{count}} dae voor jou volgende geld op.",
+    "tightReserve": "Gedek tot jou volgende geld, maar {{amount}} is kort daarna nodig vir 'n rekening.",
+    "unclearThin": "Tengo het minstens 14 dae se geldgeskiedenis nodig om 'n datum uit te werk. Voer 'n staat in of voeg 'n paar weke se inskrywings by.",
+    "unclearNoIncome": "Geen inkomende geld is in jou geskiedenis gevind nie. Voeg jou inkomste by, of stel dit met die hand op, om 'n antwoord te kry.",
+    "noIncomeRunway": "Met niks wat inkom nie, hou jou saldo tot {{date}} teen jou gewone besteding.",
+    "unclearStale": "Jou saldo is meer as twee weke oud. Voeg vandag se saldo by om jou datum te sien.",
+    "enoughHorizon": "Hou die volgende {{days}} dae selfs in 'n swaar week, sonder dat geld verwag word.",
+    "tightHorizon": "Hou die volgende {{days}} dae in 'n gewone week, nie in 'n swaar een nie. Geen geld word verwag nie.",
+    "shortHorizon": "Raak binne die volgende {{days}} dae op, en geen geld word verwag nie.",
+    "enoughDaily": "Hou die volgende {{days}} dae selfs in 'n swaar week, as die helfte van wat gewoonlik elke dag inkom, getel word.",
+    "tightDaily": "Hou die volgende {{days}} dae in 'n gewone week, as die helfte van wat gewoonlik elke dag inkom, getel word. Nie in 'n swaar een nie.",
+    "shortDaily": "Raak binne die volgende {{days}} dae op, selfs as die helfte van wat gewoonlik elke dag inkom, getel word."
   },
   "next": {
-    "title": "Next money",
-    "around": "Around {{date}}",
-    "window": "Likely window",
-    "amount": "Usual amount",
-    "patternWeekday": "Usually lands on a {{day}}.",
-    "patternInterval_one": "Usually lands every {{count}} day.",
-    "patternInterval_other": "Usually lands every {{count}} days.",
-    "unknown": "No regular income found yet. Tengo plans 30 days ahead.",
-    "pendingToday": "Today, not in yet",
-    "none": "None expected",
-    "daily": "Most days"
+    "title": "Volgende geld",
+    "around": "Omtrent {{date}}",
+    "window": "Waarskynlike venster",
+    "amount": "Gewone bedrag",
+    "patternWeekday": "Kom gewoonlik op 'n {{day}} in.",
+    "patternInterval_one": "Kom gewoonlik elke {{count}} dag in.",
+    "patternInterval_other": "Kom gewoonlik elke {{count}} dae in.",
+    "unknown": "Nog geen gereelde inkomste gevind nie. Tengo beplan 30 dae vooruit.",
+    "pendingToday": "Vandag, nog nie in nie",
+    "none": "Niks verwag nie",
+    "daily": "Die meeste dae"
   },
   "recent": {
-    "title": "Recent activity",
-    "all": "See all",
-    "empty": "No transactions yet."
+    "title": "Onlangse aktiwiteit",
+    "all": "Sien alles",
+    "empty": "Nog geen transaksies nie."
   },
   "scrubber": {
-    "title": "Next 30 days",
-    "subtitle": "Expected balance and likely range",
-    "label": "Pick a day in the next 30 days",
-    "valueText": "If money lands as usual. {{date}}: about {{amount}}, likely {{low}} to {{high}}. {{level}}.{{events}}",
-    "range": "Likely {{low}} to {{high}}",
-    "expectedIncome": "Expected money",
-    "billDue": "{{name}} due",
-    "summary": "Projected balance for the next 30 days if money lands as usual. Lowest point {{low}} on {{date}}.",
-    "showTable": "Show numbers",
-    "hideTable": "Hide numbers",
-    "tableCaption": "Projected balance and cover for each of the next 30 days",
-    "colDay": "Day",
-    "colExpected": "Expected",
-    "colRange": "Likely range",
-    "colCover": "Balance",
-    "key": "Line: expected balance. Shading: likely range. Filled dots: money in. Hollow dots: bills.",
-    "ifUsual": "If money lands as usual",
+    "title": "Volgende 30 dae",
+    "subtitle": "Verwagte saldo en waarskynlike reeks",
+    "label": "Kies 'n dag in die volgende 30 dae",
+    "valueText": "As geld soos gewoonlik inkom. {{date}}: omtrent {{amount}}, waarskynlik {{low}} tot {{high}}. {{level}}.{{events}}",
+    "range": "Waarskynlik {{low}} tot {{high}}",
+    "expectedIncome": "Verwagte geld",
+    "billDue": "{{name}} betaalbaar",
+    "summary": "Geprojekteerde saldo vir die volgende 30 dae as geld soos gewoonlik inkom. Laagste punt {{low}} op {{date}}.",
+    "showTable": "Wys syfers",
+    "hideTable": "Versteek syfers",
+    "tableCaption": "Geprojekteerde saldo en dekking vir elk van die volgende 30 dae",
+    "colDay": "Dag",
+    "colExpected": "Verwag",
+    "colRange": "Waarskynlike reeks",
+    "colCover": "Saldo",
+    "key": "Lyn: verwagte saldo. Skaduwee: waarskynlike reeks. Vol kolletjies: geld in. Hol kolletjies: rekenings.",
+    "ifUsual": "As geld soos gewoonlik inkom",
     "level": {
-      "enough": "Above R0 even on a heavy week",
-      "tight": "Could dip below R0 on a heavy week",
-      "short": "Below R0 on a normal week"
+      "enough": "Bo R0 selfs in 'n swaar week",
+      "tight": "Kan in 'n swaar week onder R0 sak",
+      "short": "Onder R0 in 'n gewone week"
     },
     "levelShort": {
-      "enough": "Above R0",
-      "tight": "Could reach R0",
-      "short": "Below R0"
+      "enough": "Bo R0",
+      "tight": "Kan R0 bereik",
+      "short": "Onder R0"
     }
   },
   "why": {
-    "open": "Why this date",
-    "title": "Why this date",
-    "plain": "We start with your balance today, take off bills on their due dates, and spend at your usual daily rate until the money reaches zero. That day is your date. Money you have not received yet is not counted.",
-    "chartLabel": "How the balance runs down on a normal, light and heavy week",
-    "lineCentral": "Normal week",
-    "lineLight": "Light week",
-    "lineHeavy": "Heavy week",
-    "lineNext": "Next money, {{date}}",
-    "inputs": "What went in",
-    "balance": "Balance today",
-    "dailySpend": "Usual daily spend",
-    "dailySpendHint": "Light to heavy week: {{low}} to {{high}} a day",
-    "perDay": "{{amount}} a day",
-    "bills": "Bills before next money",
-    "noBills": "None due",
-    "income": "Expected next money",
+    "open": "Hoekom hierdie datum",
+    "title": "Hoekom hierdie datum",
+    "plain": "Ons begin met jou saldo vandag, trek rekenings op hulle betaaldatums af, en spandeer teen jou gewone daaglikse koers totdat die geld nul bereik. Daardie dag is jou datum. Geld wat jy nog nie ontvang het nie, word nie getel nie.",
+    "chartLabel": "Hoe die saldo afloop in 'n gewone, ligte en swaar week",
+    "lineCentral": "Gewone week",
+    "lineLight": "Ligte week",
+    "lineHeavy": "Swaar week",
+    "lineNext": "Volgende geld, {{date}}",
+    "inputs": "Wat ingegaan het",
+    "balance": "Saldo vandag",
+    "dailySpend": "Gewone daaglikse besteding",
+    "dailySpendHint": "Ligte tot swaar week: {{low}} tot {{high}} per dag",
+    "perDay": "{{amount}} per dag",
+    "bills": "Rekenings voor volgende geld",
+    "noBills": "Niks betaalbaar nie",
+    "income": "Verwagte volgende geld",
     "incomeValue": "{{amount}}, {{date}}",
-    "history": "History used",
-    "historyHint_one": "From {{count}} day on record",
-    "historyHint_other": "From {{count}} days on record",
-    "historyValue_one": "Last {{count}} day",
-    "historyValue_other": "Last {{count}} days",
-    "confidence": "Confidence",
+    "history": "Geskiedenis gebruik",
+    "historyHint_one": "Uit {{count}} dag op rekord",
+    "historyHint_other": "Uit {{count}} dae op rekord",
+    "historyValue_one": "Laaste {{count}} dag",
+    "historyValue_other": "Laaste {{count}} dae",
+    "confidence": "Sekerheid",
     "confidenceHint": {
-      "high": "60 or more days of history",
-      "medium": "28 to 59 days of history",
-      "low": "Under 28 days. The range is wider."
+      "high": "60 of meer dae se geskiedenis",
+      "medium": "28 tot 59 dae se geskiedenis",
+      "low": "Minder as 28 dae. Die reeks is wyer."
     },
-    "rulesTitle": "How the cover is set",
+    "rulesTitle": "Hoe die dekking bepaal word",
     "rule": {
-      "enough": "Even a heavy week lasts until the latest likely next money.",
-      "tight": "A normal week lasts until the usual next money. A heavy week does not.",
-      "short": "A normal week runs out before the usual next money.",
-      "unclear": "Not enough history or no income, so there is no date yet."
+      "enough": "Selfs 'n swaar week hou tot die laatste waarskynlike volgende geld.",
+      "tight": "'n Gewone week hou tot die gewone volgende geld. 'n Swaar week nie.",
+      "short": "'n Gewone week raak op voor die gewone volgende geld.",
+      "unclear": "Nie genoeg geskiedenis nie of geen inkomste nie, so daar is nog geen datum nie."
     },
-    "question": "Question this result",
-    "notAdvice": "This is an estimate from past patterns, not financial advice, and it is not used for any credit or lending decision.",
-    "budgetSpread": "The daily budget is spread to {{date}}, the latest your next money usually lands.",
-    "reserve": "Kept back for bills just after next money",
-    "reserveNone": "None due in the week after",
-    "incomeStatus": "Money in",
+    "question": "Bevraagteken hierdie resultaat",
+    "notAdvice": "Dit is 'n skatting uit vorige patrone, nie finansiële advies nie, en dit word nie vir enige krediet- of leenbesluit gebruik nie.",
+    "budgetSpread": "Die daaglikse begroting word versprei tot {{date}}, die laatste wat jou volgende geld gewoonlik inkom.",
+    "reserve": "Teruggehou vir rekenings net ná volgende geld",
+    "reserveNone": "Niks betaalbaar in die week daarna nie",
+    "incomeStatus": "Geld in",
     "incomeStatusValue": {
-      "regular": "Regular",
-      "pendingToday": "Due today",
-      "paused": "Paused",
-      "irregular": "No pattern",
-      "none": "None found",
-      "daily": "Most days"
+      "regular": "Gereeld",
+      "pendingToday": "Vandag betaalbaar",
+      "paused": "Onderbreek",
+      "irregular": "Geen patroon nie",
+      "none": "Niks gevind nie",
+      "daily": "Die meeste dae"
     },
-    "monthEnd": "Month end",
+    "monthEnd": "Maandeinde",
     "monthEndValue": {
-      "pattern": "Spends more from the 25th",
-      "widened": "Heavy path allows for it",
-      "none": "No pattern"
+      "pattern": "Spandeer meer vanaf die 25ste",
+      "widened": "Swaar pad maak daarvoor voorsiening",
+      "none": "Geen patroon nie"
     },
-    "oneOffs": "Left out as one-off",
-    "oneOffsNone": "Nothing",
-    "horizon": "No money is expected, so the cover is judged over the next {{count}} days.",
-    "horizonDaily": "Money comes in most days, so the cover is judged over the next {{count}} days, counting half of your usual daily income."
+    "oneOffs": "Uitgelaat as eenmalig",
+    "oneOffsNone": "Niks",
+    "horizon": "Geen geld word verwag nie, so die dekking word oor die volgende {{count}} dae beoordeel.",
+    "horizonDaily": "Geld kom die meeste dae in, so die dekking word oor die volgende {{count}} dae beoordeel, met die helfte van jou gewone daaglikse inkomste getel."
   },
   "paused": {
-    "title": "Forecast paused",
-    "body": "You withdrew consent for the forecast, so Tengo is not using your data. Resume to see your date again, or delete your data.",
-    "resume": "Resume forecast",
-    "delete": "Delete my data"
+    "title": "Vooruitskatting onderbreek",
+    "body": "Jy het jou toestemming vir die vooruitskatting teruggetrek, so Tengo gebruik nie jou data nie. Hervat om jou datum weer te sien, of vee jou data uit.",
+    "resume": "Hervat vooruitskatting",
+    "delete": "Vee my data uit"
   },
   "me": {
-    "switchPersona": "Switch person",
-    "title": "Me",
-    "persona": "Who you are in the demo",
-    "current": "Current",
-    "theme": "Theme",
+    "switchPersona": "Wissel persoon",
+    "title": "Ek",
+    "persona": "Wie jy in die demo is",
+    "current": "Huidig",
+    "theme": "Tema",
     "themes": {
-      "light": "Light",
-      "dark": "Dark",
-      "system": "System"
+      "light": "Lig",
+      "dark": "Donker",
+      "system": "Stelsel"
     },
-    "about": "About Tengo",
-    "nameTitle": "The name",
-    "nameBody": "Tengo comes from mutengo, the Tshivenda word for value. This meaning was supplied by the founder and is still to be confirmed by a Tshivenda speaker.",
-    "howTitle": "How the forecast works",
+    "about": "Oor Tengo",
+    "nameTitle": "Die naam",
+    "nameBody": "Tengo kom van mutengo, die Tshivenda-woord vir waarde. Hierdie betekenis is deur die stigter verskaf en moet nog deur 'n Tshivenda-spreker bevestig word.",
+    "howTitle": "Hoe die vooruitskatting werk",
     "how": {
-      "1": "It splits your history into income, regular bills and everyday spending.",
-      "2": "It works out your usual daily spend from the last 60 days, plus a light week and a heavy week.",
-      "3": "It finds when your next money usually lands and how much it usually is.",
-      "4": "It runs your balance down day by day, taking off bills on their dates, until it reaches zero. That day is your date.",
-      "5": "It compares that date with your next money to set your cover: Enough, Tight or Short."
+      "1": "Dit verdeel jou geskiedenis in inkomste, gereelde rekenings en alledaagse besteding.",
+      "2": "Dit bereken jou gewone daaglikse besteding uit die laaste 60 dae, plus 'n ligte week en 'n swaar week.",
+      "3": "Dit vind wanneer jou volgende geld gewoonlik inkom en hoeveel dit gewoonlik is.",
+      "4": "Dit laat jou saldo dag vir dag afloop en trek rekenings op hulle datums af totdat dit nul bereik. Daardie dag is jou datum.",
+      "5": "Dit vergelyk daardie datum met jou volgende geld om jou dekking te bepaal: Genoeg, Knap of Kort."
     },
-    "simTitle": "What is simulated",
+    "simTitle": "Wat gesimuleer is",
     "sim": {
-      "data": "All people and money are fictional composites.",
-      "bank": "There is no bank connection and no open banking.",
-      "messages": "Messages are previews. Nothing is sent.",
-      "privacy": "Privacy controls show good practice. They are not a compliance certification.",
-      "translations": "Built for 11 languages. English today. The other 10 need translating and checking by first-language speakers, and Tshivenda needs a human translator."
+      "data": "Alle mense en geld is fiktiewe samestellings.",
+      "bank": "Daar is geen bankverbinding en geen oopbankwese nie.",
+      "messages": "Boodskappe is voorskoue. Niks word gestuur nie.",
+      "privacy": "Privaatheidskontroles wys goeie praktyk. Dit is nie 'n nakomingsertifisering nie.",
+      "translations": "Engels is die bron. Die ander 10 tale is KI-konsepte wat moedertaalsprekers nog moet nagaan, so sommige bewoording kan verkeerd wees."
     },
-    "reset": "Reset demo data",
-    "resetBody": "Clears the fictional people, your own profile on this device, consent choices and logs, and starts fresh. An account, if you saved one, is not touched.",
-    "resetWarn": "This removes everything Tengo stored on this device, including your own profile.",
-    "resetConfirm": "Yes, reset everything",
-    "themeHint": "Dark is the default. System follows your device.",
-    "profileTitle": "Your profile",
-    "storageMode": "Stored: {{mode}}",
-    "nicknameSave": "Save name",
-    "nicknameSaved": "Name saved",
-    "exportLink": "See and export my data",
-    "deleteProfile": "Delete my profile",
-    "switchPeople": "Switch to the fictional people",
-    "notice": "Privacy notice and terms"
+    "reset": "Herstel demodata",
+    "resetBody": "Vee die fiktiewe mense, jou eie profiel op hierdie toestel, toestemmingskeuses en logboeke uit, en begin van voor af. 'n Rekening, as jy een gestoor het, word nie aangeraak nie.",
+    "resetWarn": "Dit verwyder alles wat Tengo op hierdie toestel gestoor het, insluitend jou eie profiel.",
+    "resetConfirm": "Ja, herstel alles",
+    "themeHint": "Donker is die verstek. Stelsel volg jou toestel.",
+    "profileTitle": "Jou profiel",
+    "storageMode": "Gestoor: {{mode}}",
+    "nicknameSave": "Stoor naam",
+    "nicknameSaved": "Naam gestoor",
+    "exportLink": "Sien en voer my data uit",
+    "deleteProfile": "Vee my profiel uit",
+    "switchPeople": "Wissel na die fiktiewe mense",
+    "notice": "Privaatheidskennisgewing en bepalings"
   },
   "errors": {
-    "loadTitle": "Could not load your data",
-    "loadBody": "Something went wrong reading this device's storage.",
-    "retry": "Try again",
-    "crashTitle": "Something went wrong",
-    "crashBody": "This screen hit an error. Your data on this device has not changed.",
-    "crashCta": "Back to start"
+    "loadTitle": "Kon nie jou data laai nie",
+    "loadBody": "Iets het verkeerd geloop met die lees van hierdie toestel se berging.",
+    "retry": "Probeer weer",
+    "crashTitle": "Iets het verkeerd geloop",
+    "crashBody": "Hierdie skerm het 'n fout teëgekom. Jou data op hierdie toestel het nie verander nie.",
+    "crashCta": "Terug na die begin"
   },
   "notFound": {
-    "title": "Page not found",
-    "body": "This page does not exist in the demo.",
-    "cta": "Back to start"
+    "title": "Bladsy nie gevind nie",
+    "body": "Hierdie bladsy bestaan nie in die demo nie.",
+    "cta": "Terug na die begin"
   },
   "plan": {
-    "title": "Plan",
-    "lead": "Test a change before you make it. Nothing is saved.",
-    "whatIf": "What-if",
-    "whatIfLead": "Add a one-off amount and see your date move.",
-    "itemLabel": "Change {{n}}",
-    "kind": "Money in or out",
-    "income": "Money in",
-    "expense": "Money out",
-    "remove": "Remove change {{n}}",
-    "amount": "Amount",
-    "date": "Date",
-    "label": "Note (optional)",
-    "labelPlaceholder": "For example, school trip",
-    "add": "Add a change",
-    "noItems": "No changes yet. Add one to see the effect.",
-    "result": "Result",
-    "now": "Now",
-    "withChanges": "With these changes",
-    "noChange": "No change",
-    "daysMore_one": "{{count}} day more",
-    "daysMore_other": "{{count}} days more",
-    "daysLess_one": "{{count}} day less",
-    "daysLess_other": "{{count}} days less",
-    "stsChange": "Daily budget: {{before}} now, {{after}} with these changes.",
-    "loan": "Loan check",
-    "loanLead": "See what lending money does to your cover first.",
-    "loanAmount": "Amount someone asked for",
-    "enterAmount": "Enter an amount, or pick one below, to see the effect.",
-    "ifLend": "If you lend {{amount}} today",
-    "afterLoan": "After the loan",
-    "stateDrops": "This drops your cover from {{from}} to {{to}}.",
-    "amountError": "Enter an amount above zero, for example 250.",
-    "whatIfSpoken": "With these changes: {{label}} {{date}}, {{state}}, {{change}}.",
-    "loanSpoken_one": "If you lend {{amount}}: {{label}} {{date}}, {{state}}, {{count}} day less cover.",
-    "loanSpoken_other": "If you lend {{amount}}: {{label}} {{date}}, {{state}}, {{count}} days less cover.",
-    "notAdvised": "not advised",
-    "exampleNote": "An example to start with: a R200 school trip next Friday. Change it or remove it.",
-    "roomToLend": "Room to lend",
-    "roomToLendHint": "Lending or giving up to this keeps you at {{state}} and keeps {{reserve}} back for bills just after your next money.",
-    "roomToLendHintNoReserve": "Lending or giving up to this keeps you at {{state}}.",
-    "roomToLendNone": "Any amount now would drop you below {{state}} or use money kept back for bills.",
-    "roomToLendShort": "You are already Short before your next money. Any amount you lend brings your date closer.",
-    "lendCaution": "Only lend what you could manage without getting back. Tengo cannot tell if or when it comes back.",
-    "useRoom": "Use {{amount}}",
-    "labelPlaceholderValue": "School trip (example)",
-    "roomToLendUnsure": "Tengo is not sure enough about your money coming in to suggest an amount. Check the effect of a specific amount below.",
-    "notAdvice": "Estimates from your own history, not advice. Nothing here is a lending decision or an offer of credit."
+    "title": "Beplan",
+    "lead": "Toets 'n verandering voordat jy dit maak. Niks word gestoor nie.",
+    "whatIf": "Wat-as",
+    "whatIfLead": "Voeg 'n eenmalige bedrag by en sien hoe jou datum skuif.",
+    "itemLabel": "Verandering {{n}}",
+    "kind": "Geld in of uit",
+    "income": "Geld in",
+    "expense": "Geld uit",
+    "remove": "Verwyder verandering {{n}}",
+    "amount": "Bedrag",
+    "date": "Datum",
+    "label": "Nota (opsioneel)",
+    "labelPlaceholder": "Byvoorbeeld, skooluitstappie",
+    "add": "Voeg 'n verandering by",
+    "noItems": "Nog geen veranderinge nie. Voeg een by om die effek te sien.",
+    "result": "Resultaat",
+    "now": "Nou",
+    "withChanges": "Met hierdie veranderinge",
+    "noChange": "Geen verandering nie",
+    "daysMore_one": "{{count}} dag meer",
+    "daysMore_other": "{{count}} dae meer",
+    "daysLess_one": "{{count}} dag minder",
+    "daysLess_other": "{{count}} dae minder",
+    "stsChange": "Daaglikse begroting: {{before}} nou, {{after}} met hierdie veranderinge.",
+    "loan": "Leningtoets",
+    "loanLead": "Sien eers wat geld uitleen aan jou dekking doen.",
+    "loanAmount": "Bedrag waarvoor iemand gevra het",
+    "enterAmount": "Tik 'n bedrag in, of kies een hieronder, om die effek te sien.",
+    "ifLend": "As jy vandag {{amount}} uitleen",
+    "afterLoan": "Ná die lening",
+    "stateDrops": "Dit laat jou dekking van {{from}} na {{to}} daal.",
+    "amountError": "Tik 'n bedrag bo nul in, byvoorbeeld 250.",
+    "whatIfSpoken": "Met hierdie veranderinge: {{label}} {{date}}, {{state}}, {{change}}.",
+    "loanSpoken_one": "As jy {{amount}} uitleen: {{label}} {{date}}, {{state}}, {{count}} dag minder dekking.",
+    "loanSpoken_other": "As jy {{amount}} uitleen: {{label}} {{date}}, {{state}}, {{count}} dae minder dekking.",
+    "notAdvised": "nie aanbeveel nie",
+    "exampleNote": "'n Voorbeeld om mee te begin: 'n skooluitstappie van R200 volgende Vrydag. Verander of verwyder dit.",
+    "roomToLend": "Ruimte om te leen",
+    "roomToLendHint": "As jy tot soveel uitleen of weggee, bly jy op {{state}} en word {{reserve}} teruggehou vir rekenings net ná jou volgende geld.",
+    "roomToLendHintNoReserve": "As jy tot soveel uitleen of weggee, bly jy op {{state}}.",
+    "roomToLendNone": "Enige bedrag nou sou jou onder {{state}} laat sak of geld gebruik wat vir rekenings teruggehou word.",
+    "roomToLendShort": "Jy is reeds Kort voor jou volgende geld. Enige bedrag wat jy uitleen, bring jou datum nader.",
+    "lendCaution": "Leen net uit wat jy sou kon klaarkom sonder om terug te kry. Tengo kan nie sê of en wanneer dit terugkom nie.",
+    "useRoom": "Gebruik {{amount}}",
+    "labelPlaceholderValue": "Skooluitstappie (voorbeeld)",
+    "roomToLendUnsure": "Tengo is nie seker genoeg oor jou inkomende geld om 'n bedrag voor te stel nie. Toets die effek van 'n spesifieke bedrag hieronder.",
+    "notAdvice": "Skattings uit jou eie geskiedenis, nie advies nie. Niks hier is 'n leenbesluit of 'n aanbod van krediet nie."
   },
   "money": {
-    "title": "Money",
-    "lead": "Every transaction Tengo uses, and the bills it found.",
-    "history": "Transaction history",
-    "import": "Import statement",
-    "filter": "Show",
-    "all": "All",
+    "title": "Geld",
+    "lead": "Elke transaksie wat Tengo gebruik, en die rekenings wat dit gevind het.",
+    "history": "Transaksiegeskiedenis",
+    "import": "Voer staat in",
+    "filter": "Wys",
+    "all": "Alles",
     "filters": {
-      "income": "Income",
-      "spend": "Spend",
-      "bill": "Bills"
+      "income": "Inkomste",
+      "spend": "Besteding",
+      "bill": "Rekenings"
     },
-    "search": "Search",
-    "count_one": "{{count}} transaction",
-    "count_other": "{{count}} transactions",
-    "emptyTitle": "Nothing to show",
-    "emptyBodyNone": "No transactions yet. Import a statement to get started.",
-    "emptyBodyFilter": "No transactions match this filter.",
-    "editLabel": "Edit {{name}}, {{date}}",
-    "more": "Show {{count}} more",
-    "last30": "Last 30 days",
-    "in": "Money in",
-    "out": "Money out",
-    "balance": "Balance today: {{amount}}",
-    "bills": "Recurring bills",
-    "billsRule": "Same description and a similar amount, about a month apart.",
-    "noBills": "No recurring bills found.",
-    "billNext_one": "Next {{date}} · seen {{count}} time",
-    "billNext_other": "Next {{date}} · seen {{count}} times",
-    "importTitle": "Bring your own statement",
-    "importBody": "Upload a CSV bank statement. It is read on this device and replaces this person's history.",
-    "movableLabel": "Can be paid later",
-    "movableHint": "Only mark a bill if it can be paid a few days late without a fee.",
-    "protectedBill": "Never suggested to move: paying late can cost fees, cover or credit."
+    "search": "Soek",
+    "count_one": "{{count}} transaksie",
+    "count_other": "{{count}} transaksies",
+    "emptyTitle": "Niks om te wys nie",
+    "emptyBodyNone": "Nog geen transaksies nie. Voer 'n staat in om te begin.",
+    "emptyBodyFilter": "Geen transaksies pas by hierdie filter nie.",
+    "editLabel": "Wysig {{name}}, {{date}}",
+    "more": "Wys {{count}} meer",
+    "last30": "Laaste 30 dae",
+    "in": "Geld in",
+    "out": "Geld uit",
+    "balance": "Saldo vandag: {{amount}}",
+    "bills": "Herhalende rekenings",
+    "billsRule": "Dieselfde beskrywing en 'n soortgelyke bedrag, omtrent 'n maand uitmekaar.",
+    "noBills": "Geen herhalende rekenings gevind nie.",
+    "billNext_one": "Volgende {{date}} · {{count}} keer gesien",
+    "billNext_other": "Volgende {{date}} · {{count}} keer gesien",
+    "importTitle": "Bring jou eie staat",
+    "importBody": "Laai 'n CSV-bankstaat op. Dit word op hierdie toestel gelees en vervang hierdie persoon se geskiedenis.",
+    "movableLabel": "Kan later betaal word",
+    "movableHint": "Merk 'n rekening net as dit 'n paar dae laat sonder 'n fooi betaal kan word.",
+    "protectedBill": "Word nooit voorgestel om te skuif nie: laat betaling kan fooie, dekking of krediet kos."
   },
   "import": {
-    "title": "Import statement",
-    "lead": "Use a CSV bank statement to replace this person's history. It never leaves your browser.",
-    "step1": "1. Choose a file",
-    "useSample": "Use sample statement",
-    "chooseCsv": "Choose a CSV file",
-    "pdf": "PDF statement (coming next)",
-    "pdfNote": "PDF statements are not supported yet.",
-    "downloadSample": "Download sample-statement.csv",
-    "local": "Processed on your device. Nothing leaves your browser.",
-    "formatTitle": "What the file needs",
-    "formatBody": "A date, a description and an amount (negative for money out), or separate debit and credit columns. At least 14 days.",
-    "step2": "2. Check and confirm",
-    "readError": "This file could not be read as a CSV.",
-    "empty": "Choose a file or use the sample statement to see a preview here.",
-    "rowsRead_one": "{{count}} row read",
-    "rowsRead_other": "{{count}} rows read",
-    "mapping": "Columns",
-    "mappingHint": "We guessed these from the headers. Change any that look wrong.",
+    "title": "Voer staat in",
+    "lead": "Gebruik 'n CSV-bankstaat om hierdie persoon se geskiedenis te vervang. Dit verlaat nooit jou blaaier nie.",
+    "step1": "1. Kies 'n lêer",
+    "useSample": "Gebruik voorbeeldstaat",
+    "chooseCsv": "Kies 'n CSV-lêer",
+    "pdf": "PDF-staat (kom volgende)",
+    "pdfNote": "PDF-state word nog nie ondersteun nie.",
+    "downloadSample": "Laai sample-statement.csv af",
+    "local": "Op jou toestel verwerk. Niks verlaat jou blaaier nie.",
+    "formatTitle": "Wat die lêer nodig het",
+    "formatBody": "'n Datum, 'n beskrywing en 'n bedrag (negatief vir geld uit), of aparte debiet- en kredietkolomme. Minstens 14 dae.",
+    "step2": "2. Gaan na en bevestig",
+    "readError": "Hierdie lêer kon nie as 'n CSV gelees word nie.",
+    "empty": "Kies 'n lêer of gebruik die voorbeeldstaat om hier 'n voorskou te sien.",
+    "rowsRead_one": "{{count}} ry gelees",
+    "rowsRead_other": "{{count}} rye gelees",
+    "mapping": "Kolomme",
+    "mappingHint": "Ons het dit uit die opskrifte geraai. Verander enige wat verkeerd lyk.",
     "field": {
-      "date": "Date",
-      "description": "Description",
-      "amount": "Amount",
-      "debit": "Debit",
-      "credit": "Credit",
-      "balance": "Balance"
+      "date": "Datum",
+      "description": "Beskrywing",
+      "amount": "Bedrag",
+      "debit": "Debiet",
+      "credit": "Krediet",
+      "balance": "Saldo"
     },
-    "none": "Not used",
-    "needMapping": "Pick a date, a description, and either an amount or debit and credit columns.",
-    "previewCaption": "The last rows of the statement",
-    "type": "Type",
-    "previewNote_one": "Showing the last rows of {{count}} transaction.",
-    "previewNote_other": "Showing the last rows of {{count}} transactions.",
-    "skipped_one": "{{count}} row skipped because the date, description or amount could not be read.",
-    "skipped_other": "{{count}} rows skipped because the date, description or amount could not be read.",
-    "tooShort": "This statement covers {{count}} days. Tengo needs at least 14.",
-    "noRows": "No usable rows found with these columns.",
-    "wideRange": "Only {{count}} days of history. The forecast will work, but the range will be wide.",
-    "shifted_one": "Dates moved forward by {{count}} day so the statement ends yesterday.",
-    "shifted_other": "Dates moved forward by {{count}} days so the statement ends yesterday.",
-    "days": "Days",
-    "balance": "Current balance",
-    "balanceFromFile": "Taken from the last balance in the file: {{amount}}. Type to change it.",
-    "balanceKept": "No balance column. Keeping the current balance of {{amount}}. Type to change it.",
-    "result": "Forecast with this statement",
-    "confirm": "Replace history and see my date",
-    "replaceNote": "This replaces this person's history on this device and adds an entry to the audit log.",
-    "tooBig": "That file is larger than 2 MB, which is more than a statement needs. Choose a shorter period or a smaller file."
+    "none": "Nie gebruik nie",
+    "needMapping": "Kies 'n datum, 'n beskrywing, en óf 'n bedrag óf debiet- en kredietkolomme.",
+    "previewCaption": "Die laaste rye van die staat",
+    "type": "Soort",
+    "previewNote_one": "Wys die laaste rye van {{count}} transaksie.",
+    "previewNote_other": "Wys die laaste rye van {{count}} transaksies.",
+    "skipped_one": "{{count}} ry oorgeslaan omdat die datum, beskrywing of bedrag nie gelees kon word nie.",
+    "skipped_other": "{{count}} rye oorgeslaan omdat die datum, beskrywing of bedrag nie gelees kon word nie.",
+    "tooShort": "Hierdie staat dek {{count}} dae. Tengo het minstens 14 nodig.",
+    "noRows": "Geen bruikbare rye met hierdie kolomme gevind nie.",
+    "wideRange": "Net {{count}} dae se geskiedenis. Die vooruitskatting sal werk, maar die reeks sal wyd wees.",
+    "shifted_one": "Datums is {{count}} dag vorentoe geskuif sodat die staat gister eindig.",
+    "shifted_other": "Datums is {{count}} dae vorentoe geskuif sodat die staat gister eindig.",
+    "days": "Dae",
+    "balance": "Huidige saldo",
+    "balanceFromFile": "Geneem uit die laaste saldo in die lêer: {{amount}}. Tik om dit te verander.",
+    "balanceKept": "Geen saldokolom nie. Hou die huidige saldo van {{amount}}. Tik om dit te verander.",
+    "result": "Vooruitskatting met hierdie staat",
+    "confirm": "Vervang geskiedenis en sien my datum",
+    "replaceNote": "Dit vervang hierdie persoon se geskiedenis op hierdie toestel en voeg 'n inskrywing by die ouditlogboek.",
+    "tooBig": "Daardie lêer is groter as 2 MB, wat meer is as wat 'n staat nodig het. Kies 'n korter tydperk of 'n kleiner lêer."
   },
   "edit": {
-    "title": "Edit transaction",
-    "description": "Description",
-    "amount": "Amount",
-    "amountHint": "Negative for money out, for example -250.",
-    "category": "Type",
-    "auditNote": "Saving adds an entry to your audit log.",
-    "oneOff": "One-off",
-    "oneOffHint": "Left out of your usual spend and income pattern. It still counts in your balance."
+    "title": "Wysig transaksie",
+    "description": "Beskrywing",
+    "amount": "Bedrag",
+    "amountHint": "Negatief vir geld uit, byvoorbeeld -250.",
+    "category": "Soort",
+    "auditNote": "Stoor voeg 'n inskrywing by jou ouditlogboek.",
+    "oneOff": "Eenmalig",
+    "oneOffHint": "Uitgelaat uit jou gewone bestedings- en inkomstepatroon. Dit tel steeds in jou saldo."
   },
   "audit": {
-    "session_opened": "Opened Tengo",
-    "consent_given": "Gave consent. Messages {{messages}}, analytics {{analytics}}",
-    "consent_changed": "Changed consent: {{item}} {{value}}",
-    "data_viewed": "Viewed all data",
-    "data_exported": "Exported data as {{format}}",
-    "statement_imported": "Imported a statement with {{rows}} transactions",
-    "transaction_edited": "Corrected a transaction: {{fields}}",
-    "review_requested": "Asked for a human review",
-    "forecast_paused": "Paused the forecast",
-    "forecast_resumed": "Resumed the forecast",
-    "transaction_added_one": "Added {{count}} entry",
-    "transaction_added_other": "Added {{count}} entries",
-    "balance_updated": "Updated the balance",
-    "bill_answered": "Answered a question about a bill that looked unpaid",
-    "plan_settings": "Changed which spending can bend or which bills can move",
-    "money_updated": "Changed accounts or money owed",
-    "cash_added": "Recorded cash {{direction}}",
-    "setup_saved": "Set up a history by hand",
-    "account_uploaded": "Saved the profile to an account",
-    "account_created": "Started an empty account",
-    "account_signedIn": "Signed in on a device"
+    "session_opened": "Tengo oopgemaak",
+    "consent_given": "Toestemming gegee. Boodskappe {{messages}}, ontleding {{analytics}}",
+    "consent_changed": "Toestemming verander: {{item}} {{value}}",
+    "data_viewed": "Alle data bekyk",
+    "data_exported": "Data uitgevoer as {{format}}",
+    "statement_imported": "'n Staat met {{rows}} transaksies ingevoer",
+    "transaction_edited": "'n Transaksie reggestel: {{fields}}",
+    "review_requested": "Vir 'n menslike hersiening gevra",
+    "forecast_paused": "Die vooruitskatting onderbreek",
+    "forecast_resumed": "Die vooruitskatting hervat",
+    "transaction_added_one": "{{count}} inskrywing bygevoeg",
+    "transaction_added_other": "{{count}} inskrywings bygevoeg",
+    "balance_updated": "Die saldo bygewerk",
+    "bill_answered": "'n Vraag beantwoord oor 'n rekening wat onbetaal gelyk het",
+    "plan_settings": "Verander watter besteding kan buig of watter rekenings kan skuif",
+    "money_updated": "Rekeninge of skuld verander",
+    "cash_added": "Kontant {{direction}} aangeteken",
+    "setup_saved": "'n Geskiedenis met die hand opgestel",
+    "account_uploaded": "Die profiel in 'n rekening gestoor",
+    "account_created": "'n Leë rekening begin",
+    "account_signedIn": "Op 'n toestel aangemeld"
   },
   "inbox": {
-    "title": "Inbox",
-    "lead": "The daily message Tengo would send.",
-    "simulated": "Simulated. No message is sent.",
-    "offTitle": "Daily messages are off",
-    "offBody": "You turned off daily messages, so there is nothing to preview. Turn them on here or in Privacy.",
-    "turnOn": "Turn on daily messages",
-    "preview": "Today's message",
-    "channel": "Channel",
+    "title": "Inkassie",
+    "lead": "Die daaglikse boodskap wat Tengo sou stuur.",
+    "simulated": "Gesimuleer. Geen boodskap word gestuur nie.",
+    "offTitle": "Daaglikse boodskappe is af",
+    "offBody": "Jy het daaglikse boodskappe afgeskakel, so daar is niks om voor te skou nie. Skakel dit hier of onder Privaatheid aan.",
+    "turnOn": "Skakel daaglikse boodskappe aan",
+    "preview": "Vandag se boodskap",
+    "channel": "Kanaal",
     "channels": {
       "whatsapp": "WhatsApp",
       "sms": "SMS"
     },
-    "todayAt": "Today",
-    "language": "Message language",
-    "languageHint": "Messages can use a different language from the app.",
-    "to": "To {{name}}",
-    "schedule": "Every morning at 07:00",
+    "todayAt": "Vandag",
+    "language": "Boodskaptaal",
+    "languageHint": "Boodskappe kan 'n ander taal as die app gebruik.",
+    "to": "Aan {{name}}",
+    "schedule": "Elke oggend om 07:00",
     "facts": {
-      "what": "Only your date, cover and daily budget.",
-      "never": "Never your balance or transactions.",
-      "stop": "Every message says it is from Tengo and how to stop. You can also turn messages off in Privacy.",
-      "where": "WhatsApp messages would pass through Meta, outside South Africa. SMS is the alternative. Simulated here: nothing is sent."
+      "what": "Net jou datum, dekking en daaglikse begroting.",
+      "never": "Nooit jou saldo of transaksies nie.",
+      "stop": "Elke boodskap sê dat dit van Tengo af is en hoe om dit te stop. Jy kan boodskappe ook onder Privaatheid afskakel.",
+      "where": "WhatsApp-boodskappe sou deur Meta gaan, buite Suid-Afrika. SMS is die alternatief. Hier gesimuleer: niks word gestuur nie."
     },
-    "manage": "Manage messages",
-    "smsCount_one": "1 SMS, {{encoding}}, {{chars}} of {{limit}} characters",
-    "smsCount_other": "{{count}} SMS parts, {{encoding}}, {{chars}} characters"
+    "manage": "Bestuur boodskappe",
+    "smsCount_one": "1 SMS, {{encoding}}, {{chars}} van {{limit}} karakters",
+    "smsCount_other": "{{count}} SMS-dele, {{encoding}}, {{chars}} karakters"
   },
   "messages": {
     "whatsapp": {
-      "greeting": "Hi {{name}}.",
-      "enough": "Your money should last until *{{date}}*. Cover: {{state}}.",
-      "tight": "Your money should last until *{{date}}* on a normal week. Cover: {{state}}.",
-      "short_one": "Your money may run out on *{{date}}*, {{count}} day before your next money. Cover: {{state}}.",
-      "short_other": "Your money may run out on *{{date}}*, {{count}} days before your next money. Cover: {{state}}.",
-      "sts": "Daily budget: *{{sts}}*.",
-      "next": "Next money: around {{next}}.",
-      "noNext": "No next money is expected at the moment.",
+      "greeting": "Hallo {{name}}.",
+      "enough": "Jou geld behoort te hou tot *{{date}}*. Dekking: {{state}}.",
+      "tight": "Jou geld behoort in 'n gewone week te hou tot *{{date}}*. Dekking: {{state}}.",
+      "short_one": "Jou geld kan op *{{date}}* opraak, {{count}} dag voor jou volgende geld. Dekking: {{state}}.",
+      "short_other": "Jou geld kan op *{{date}}* opraak, {{count}} dae voor jou volgende geld. Dekking: {{state}}.",
+      "sts": "Daaglikse begroting: *{{sts}}*.",
+      "next": "Volgende geld: omtrent {{next}}.",
+      "noNext": "Geen volgende geld word tans verwag nie.",
       "tip": {
-        "enough": "Covered until your next money, even on a heavy week.",
-        "tight": "Keep spending close to your daily budget until your next money.",
-        "short": "Check Plan in Tengo to see what helps most."
+        "enough": "Gedek tot jou volgende geld, selfs in 'n swaar week.",
+        "tight": "Hou besteding naby jou daaglikse begroting tot jou volgende geld.",
+        "short": "Kyk na Beplan in Tengo om te sien wat die meeste help."
       },
-      "stsNotAdvised": "Daily budget: not advised until your next money.",
-      "unclear": "Tengo does not have enough to go on yet to give you a date. Open Tengo to see what to add.",
-      "stsPending": "Daily budget: worked out once today's payment lands.",
-      "stop": "From Tengo. Reply STOP to end these updates.",
-      "discreet": "Tengo: your daily update is ready. Open the app to see it.",
-      "noNextDaily": "Money comes in most days, so there is no single next payment."
+      "stsNotAdvised": "Daaglikse begroting: nie aanbeveel nie tot jou volgende geld.",
+      "unclear": "Tengo het nog nie genoeg inligting om vir jou 'n datum te gee nie. Maak Tengo oop om te sien wat om by te voeg.",
+      "stsPending": "Daaglikse begroting: bereken sodra vandag se betaling inkom.",
+      "stop": "Van Tengo. Antwoord STOP om hierdie opdaterings te beëindig.",
+      "discreet": "Tengo: jou daaglikse opdatering is gereed. Maak die app oop om dit te sien.",
+      "noNextDaily": "Geld kom die meeste dae in, so daar is nie een volgende betaling nie."
     },
     "sms": {
-      "enough": "Tengo: Hi {{name}}, money lasts until {{date}} ({{state}}). Budget {{sts}} a day.",
-      "tight": "Tengo: Hi {{name}}, money lasts until {{date}} on a normal week ({{state}}). Budget {{sts}} a day.",
-      "short": "Tengo: Hi {{name}}, money may run out {{date}} ({{state}}). Budget not advised.",
-      "next": "Next money about {{next}}.",
-      "unclear": "Tengo: Hi {{name}}, not enough to go on yet for a date. Open Tengo to see what to add.",
-      "stop": "Reply STOP to end.",
-      "discreet": "Tengo: your daily update is ready. Open the app to see it. Reply STOP to end."
+      "enough": "Tengo: Hallo {{name}}, geld hou tot {{date}} ({{state}}). Begroting {{sts}} per dag.",
+      "tight": "Tengo: Hallo {{name}}, geld hou in 'n gewone week tot {{date}} ({{state}}). Begroting {{sts}} per dag.",
+      "short": "Tengo: Hallo {{name}}, geld kan {{date}} opraak ({{state}}). Begroting nie aanbeveel nie.",
+      "next": "Volgende geld omtrent {{next}}.",
+      "unclear": "Tengo: Hallo {{name}}, nog nie genoeg inligting vir 'n datum nie. Maak Tengo oop om te sien wat om by te voeg.",
+      "stop": "Antwoord STOP om te beëindig.",
+      "discreet": "Tengo: jou daaglikse opdatering is gereed. Maak die app oop om dit te sien. Antwoord STOP om te beëindig."
     }
   },
   "a11y": {
-    "moneyIn": "money in, {{amount}}",
-    "moneyOut": "money out, {{amount}}",
-    "saved": "Transaction saved",
-    "noChanges": "No changes made",
-    "exported": "Data exported as {{format}}",
-    "consentSaved": "Consent updated",
-    "paused": "Consent withdrawn. The forecast is paused.",
-    "belowZero": "{{amount}} below zero"
+    "moneyIn": "geld in, {{amount}}",
+    "moneyOut": "geld uit, {{amount}}",
+    "saved": "Transaksie gestoor",
+    "noChanges": "Geen veranderinge gemaak nie",
+    "exported": "Data uitgevoer as {{format}}",
+    "consentSaved": "Toestemming bygewerk",
+    "paused": "Toestemming teruggetrek. Die vooruitskatting is onderbreek.",
+    "belowZero": "{{amount}} onder nul"
   },
   "help": {
-    "title": "What helps most",
-    "moveBill": "If {{name}} ({{amount}}) can be paid after {{date}} without a fee, that alone reaches {{state}}.",
-    "tryInPlan": "Try it in Plan",
-    "coveredTitle": "You are covered",
-    "setAside": "You could set aside up to {{amount}} today and still be Enough until your next money. This is the same room as Room to lend, not extra.",
-    "coveredBody": "Your money should last until your next money, even on a heavier week.",
-    "toReachState": "Ways to reach {{state}}",
-    "more_one": "{{count}} more way",
-    "more_other": "{{count}} more ways",
-    "fewer": "Show fewer",
-    "earn": "Earn or receive {{amount}} more before {{date}}, for example extra work or money owed to you.",
-    "earnAssume": "Assumes your spending stays as usual. Borrowing to cover a gap usually costs more later.",
-    "trim": "Spend about {{amount}} a day less on {{groups}} until {{date}}.",
-    "trimAssume": "Only spending you marked as able to bend. Assumes everything else stays as usual.",
-    "trimPartial": "That is all the spending you marked as able to bend, so it covers part of the gap. The rest still needs money in.",
-    "moveAssume": "You marked it as movable. Ask first. Never skip debit orders for loans or insurance.",
-    "markFlexible": "Mark which everyday spending can bend to see where you could trim.",
-    "chooseOnMoney": "Choose on Money",
-    "freeHelp": "If you are behind on debt, the National Credit Regulator lists free help:",
-    "ideasNote": "Ideas, not advice. Check fees and penalties before changing a payment."
+    "title": "Wat die meeste help",
+    "moveBill": "As {{name}} ({{amount}}) sonder 'n fooi ná {{date}} betaal kan word, bereik dit alleen {{state}}.",
+    "tryInPlan": "Probeer dit in Beplan",
+    "coveredTitle": "Jy is gedek",
+    "setAside": "Jy kan vandag tot {{amount}} opsy sit en steeds Genoeg wees tot jou volgende geld. Dit is dieselfde ruimte as Ruimte om te leen, nie ekstra nie.",
+    "coveredBody": "Jou geld behoort tot jou volgende geld te hou, selfs in 'n swaarder week.",
+    "toReachState": "Maniere om {{state}} te bereik",
+    "more_one": "{{count}} manier meer",
+    "more_other": "{{count}} maniere meer",
+    "fewer": "Wys minder",
+    "earn": "Verdien of ontvang {{amount}} meer voor {{date}}, byvoorbeeld ekstra werk of geld wat jou geskuld word.",
+    "earnAssume": "Aanvaar dat jou besteding soos gewoonlik bly. Om te leen om 'n gaping te dek, kos gewoonlik later meer.",
+    "trim": "Spandeer omtrent {{amount}} per dag minder op {{groups}} tot {{date}}.",
+    "trimAssume": "Net besteding wat jy gemerk het as besteding wat kan buig. Aanvaar dat alles anders soos gewoonlik bly.",
+    "trimPartial": "Dit is al die besteding wat jy gemerk het as besteding wat kan buig, so dit dek 'n deel van die gaping. Die res het steeds inkomende geld nodig.",
+    "moveAssume": "Jy het dit as skuifbaar gemerk. Vra eers. Slaan nooit debietorders vir lenings of versekering oor nie.",
+    "markFlexible": "Merk watter alledaagse besteding kan buig om te sien waar jy kan besnoei.",
+    "chooseOnMoney": "Kies op Geld",
+    "freeHelp": "As jy agter is met skuld, lys die Nasionale Kredietreguleerder gratis hulp:",
+    "ideasNote": "Idees, nie advies nie. Kyk na fooie en boetes voordat jy 'n betaling verander."
   },
   "spending": {
-    "title": "Where everyday money goes",
-    "lead": "Last 30 days, not counting bills.",
-    "empty": "No everyday spending in the last 30 days.",
+    "title": "Waarheen alledaagse geld gaan",
+    "lead": "Laaste 30 dae, sonder rekenings.",
+    "empty": "Geen alledaagse besteding in die laaste 30 dae nie.",
     "groups": {
-      "food": "Food and groceries",
-      "transport": "Fuel and transport",
-      "airtime": "Airtime and data",
-      "stock": "Stock and supplies",
-      "energy": "Electricity and fuel at home",
-      "other": "Other"
+      "food": "Kos en kruideniersware",
+      "transport": "Brandstof en vervoer",
+      "airtime": "Lugtyd en data",
+      "stock": "Voorraad en benodigdhede",
+      "energy": "Elektrisiteit en brandstof by die huis",
+      "other": "Ander"
     },
-    "flexibleLabel": "Can bend",
-    "flexibleHint": "Mark the spending you could trim if money is short. Work costs like stock and fuel are never suggested for cuts.",
-    "workCost": "Work cost"
+    "flexibleLabel": "Kan buig",
+    "flexibleHint": "Merk die besteding wat jy kan besnoei as geld kort is. Werkskoste soos voorraad en brandstof word nooit vir besnoeiing voorgestel nie.",
+    "workCost": "Werkskoste"
   },
   "palette": {
-    "title": "Command menu",
-    "open": "Search or jump to",
+    "title": "Opdragkieslys",
+    "open": "Soek of spring na",
     "shortcut": "Ctrl K",
-    "search": "Search commands",
-    "placeholder": "Go to a page, switch person, change language",
-    "results": "Commands",
-    "empty": "Nothing matches.",
-    "help": "Arrow keys to move, Enter to choose, Esc to close.",
-    "switchTo": "Switch to {{name}}",
-    "theme": "{{name}} theme",
-    "languageSet": "Language set to {{name}}",
-    "themeSet": "{{name}} theme on",
+    "search": "Soek opdragte",
+    "placeholder": "Gaan na 'n bladsy, wissel persoon, verander taal",
+    "results": "Opdragte",
+    "empty": "Niks pas nie.",
+    "help": "Pyltjiesleutels om te beweeg, Enter om te kies, Esc om toe te maak.",
+    "switchTo": "Wissel na {{name}}",
+    "theme": "{{name}}-tema",
+    "languageSet": "Taal gestel op {{name}}",
+    "themeSet": "{{name}}-tema aan",
     "groups": {
-      "pages": "Pages",
-      "people": "People",
-      "language": "Language",
-      "theme": "Theme"
+      "pages": "Bladsye",
+      "people": "Mense",
+      "language": "Taal",
+      "theme": "Tema"
     }
   },
   "theme": {
-    "button": "Theme: {{current}}. Switch to {{next}}"
+    "button": "Tema: {{current}}. Wissel na {{next}}"
   },
   "notice": {
     "overdrawn": {
-      "title": "Overdrawn by {{amount}}",
-      "body": "Money that comes in covers this first. Your date counts from when the balance is above R0 again."
+      "title": "{{amount}} oortrokke",
+      "body": "Geld wat inkom, dek dit eerste. Jou datum tel vanaf wanneer die saldo weer bo R0 is."
     },
     "asOf": {
-      "title": "From your statement",
-      "body_one": "This forecast is from your statement, which ends {{date}}, {{count}} day ago. Add today's balance to bring it up to date.",
-      "body_other": "This forecast is from your statement, which ends {{date}}, {{count}} days ago. Add today's balance to bring it up to date."
+      "title": "Uit jou staat",
+      "body_one": "Hierdie vooruitskatting kom uit jou staat, wat {{date}} eindig, {{count}} dag gelede. Voeg vandag se saldo by om dit op datum te bring.",
+      "body_other": "Hierdie vooruitskatting kom uit jou staat, wat {{date}} eindig, {{count}} dae gelede. Voeg vandag se saldo by om dit op datum te bring."
     },
     "historyEnds": {
-      "title": "History ends {{date}}",
-      "body": "Spending since then is not in your history, so the forecast uses the pattern up to that day with today's balance."
+      "title": "Geskiedenis eindig {{date}}",
+      "body": "Besteding sedertdien is nie in jou geskiedenis nie, so die vooruitskatting gebruik die patroon tot daardie dag met vandag se saldo."
     },
     "paused": {
-      "title": "Income looks paused",
-      "body": "Nothing like your usual payments has come in since {{date}}. Tengo no longer counts on next money and checks the next 30 days instead."
+      "title": "Inkomste lyk onderbreek",
+      "body": "Niks soos jou gewone betalings het sedert {{date}} ingekom nie. Tengo reken nie meer op volgende geld nie en kyk eerder na die volgende 30 dae."
     },
-    "pausedNoDate": "Nothing like your usual payments has come in for a while. Tengo no longer counts on next money and checks the next 30 days instead.",
+    "pausedNoDate": "Niks soos jou gewone betalings het vir 'n ruk ingekom nie. Tengo reken nie meer op volgende geld nie en kyk eerder na die volgende 30 dae.",
     "irregular": {
-      "title": "No regular pattern yet",
-      "body": "Money comes in, but not in a rhythm Tengo can use. It checks the next 30 days instead of a next-money date."
+      "title": "Nog geen gereelde patroon nie",
+      "body": "Geld kom in, maar nie in 'n ritme wat Tengo kan gebruik nie. Dit kyk na die volgende 30 dae in plaas van 'n datum vir volgende geld."
     },
     "pendingToday": {
-      "title": "Payment due today",
-      "body": "Your usual payment is due today and is not in your balance yet, so it is still counted as coming.",
-      "action": "It has come in",
-      "entry": "Usual payment, marked as received"
+      "title": "Betaling vandag betaalbaar",
+      "body": "Jou gewone betaling is vandag betaalbaar en is nog nie in jou saldo nie, so dit word steeds as inkomend getel.",
+      "action": "Dit het ingekom",
+      "entry": "Gewone betaling, as ontvang gemerk"
     },
     "missedBill": {
-      "title": "{{name}} ({{amount}}) looks unpaid",
-      "body": "It was due around {{date}} and did not show up. Tell Tengo what happened so the date stays right.",
-      "owed": "I still owe it",
-      "settled": "It is paid or stopped"
+      "title": "{{name}} ({{amount}}) lyk onbetaal",
+      "body": "Dit was omtrent {{date}} betaalbaar en het nie verskyn nie. Sê vir Tengo wat gebeur het sodat die datum reg bly.",
+      "owed": "Ek skuld dit nog",
+      "settled": "Dit is betaal of gestop"
     },
     "oneOffs": {
-      "body_one": "{{count}} large one-off amount is left out of your usual spend and income.",
-      "body_other": "{{count}} large one-off amounts are left out of your usual spend and income.",
-      "action": "See them on Money"
+      "body_one": "{{count}} groot eenmalige bedrag is uit jou gewone besteding en inkomste gelaat.",
+      "body_other": "{{count}} groot eenmalige bedrae is uit jou gewone besteding en inkomste gelaat.",
+      "action": "Sien hulle op Geld"
     },
-    "label": "Things to check",
+    "label": "Dinge om na te gaan",
     "askOneOff": {
-      "title": "Was {{name}} ({{amount}}, {{date}}) a one-off?",
-      "body": "It is much bigger than your usual spending, and with a short history Tengo cannot tell. For now it counts as usual spending.",
-      "action": "Yes, a one-off"
+      "title": "Was {{name}} ({{amount}}, {{date}}) eenmalig?",
+      "body": "Dit is baie groter as jou gewone besteding, en met 'n kort geskiedenis kan Tengo nie sê nie. Vir nou tel dit as gewone besteding.",
+      "action": "Ja, eenmalig"
     },
     "estimated": {
-      "title": "Estimated from your answers",
-      "body": "Part of your history comes from the setup questions, so confidence is low. Real entries, cash added here or a statement replace the estimate."
+      "title": "Geskat uit jou antwoorde",
+      "body": "'n Deel van jou geskiedenis kom uit die opstelvrae, so die sekerheid is laag. Regte inskrywings, kontant wat jy hier byvoeg of 'n staat vervang die skatting."
     },
     "sample": {
-      "title": "Sample numbers",
-      "body": "This forecast uses sample numbers, not yours. Change them on Money, or replace them with a statement or your own answers.",
-      "action": "Use my own numbers"
+      "title": "Voorbeeldsyfers",
+      "body": "Hierdie vooruitskatting gebruik voorbeeldsyfers, nie joune nie. Verander dit op Geld, of vervang dit met 'n staat of jou eie antwoorde.",
+      "action": "Gebruik my eie syfers"
     }
   },
   "balance": {
-    "update": "Update bank balance",
-    "label": "Bank account balance today",
-    "save": "Save balance",
-    "saved": "Balance saved",
-    "error": "Enter an amount, for example 1250 or -300."
+    "update": "Werk banksaldo by",
+    "label": "Bankrekeningsaldo vandag",
+    "save": "Stoor saldo",
+    "saved": "Saldo gestoor",
+    "error": "Tik 'n bedrag in, byvoorbeeld 1250 of -300."
   },
   "storage": {
     "quota": {
-      "title": "Could not save on this device",
-      "body": "This browser's storage is full, so your last change was not kept. Export your data, then free some space or delete old data."
+      "title": "Kon nie op hierdie toestel stoor nie",
+      "body": "Hierdie blaaier se berging is vol, so jou laaste verandering is nie gehou nie. Voer jou data uit, en maak dan plek of vee ou data uit."
     },
     "unavailable": {
-      "title": "Could not save on this device",
-      "body": "This browser is blocking storage, for example in a private window, so your last change was not kept."
+      "title": "Kon nie op hierdie toestel stoor nie",
+      "body": "Hierdie blaaier blokkeer berging, byvoorbeeld in 'n privaat venster, so jou laaste verandering is nie gehou nie."
     },
-    "export": "Export my data",
+    "export": "Voer my data uit",
     "corrupt": {
-      "title": "Your saved data could not be read",
-      "body": "Something went wrong with the data saved in this browser. A copy has been kept on this device. Start fresh to keep using Tengo.",
-      "action": "Start fresh"
+      "title": "Jou gestoorde data kon nie gelees word nie",
+      "body": "Iets het verkeerd geloop met die data wat in hierdie blaaier gestoor is. 'n Kopie is op hierdie toestel gehou. Begin van voor af om Tengo verder te gebruik.",
+      "action": "Begin van voor af"
     }
   },
   "cash": {
-    "add": "Add cash",
-    "title": "Cash",
-    "kind": "What happened",
+    "add": "Voeg kontant by",
+    "title": "Kontant",
+    "kind": "Wat gebeur het",
     "modes": {
-      "in": "Cash in",
-      "out": "Cash out",
-      "hand": "Cash in hand"
+      "in": "Kontant in",
+      "out": "Kontant uit",
+      "hand": "Kontant in die hand"
     },
     "hints": {
-      "in": "Cash you received, for example fares, a client or money back from family. It counts as money in.",
-      "out": "Cash you spent. It counts as spending.",
-      "hand": "How much cash you have right now. This sets the cash balance and does not add an entry."
+      "in": "Kontant wat jy ontvang het, byvoorbeeld ritgelde, 'n kliënt of geld terug van familie. Dit tel as geld in.",
+      "out": "Kontant wat jy spandeer het. Dit tel as besteding.",
+      "hand": "Hoeveel kontant jy nou het. Dit stel die kontantsaldo en voeg nie 'n inskrywing by nie."
     },
     "notePlaceholder": {
-      "in": "For example, cash fares",
-      "out": "For example, taxi"
+      "in": "Byvoorbeeld, kontant ritgelde",
+      "out": "Byvoorbeeld, taxi"
     },
-    "saved": "Cash saved"
+    "saved": "Kontant gestoor"
   },
   "accounts": {
-    "title": "Where your money is",
-    "lead": "Your forecast uses the total of all of these.",
-    "edit": "Edit",
-    "total": "Total",
-    "name": "Name",
-    "balance": "Balance",
-    "addWallet": "Add a wallet or account",
-    "walletName": "Mobile wallet",
-    "remove": "Remove",
-    "cashTag": "Cash",
-    "homeLine": "Total {{total}}, including {{cash}} cash on hand.",
-    "homeLineBank": "Total {{total}}.",
-    "bankName": "Bank account",
-    "cashName": "Cash on hand"
+    "title": "Waar jou geld is",
+    "lead": "Jou vooruitskatting gebruik die totaal van al hierdie.",
+    "edit": "Wysig",
+    "total": "Totaal",
+    "name": "Naam",
+    "balance": "Saldo",
+    "addWallet": "Voeg 'n beursie of rekening by",
+    "walletName": "Selfoonbeursie",
+    "remove": "Verwyder",
+    "cashTag": "Kontant",
+    "homeLine": "Totaal {{total}}, insluitend {{cash}} kontant in die hand.",
+    "homeLineBank": "Totaal {{total}}.",
+    "bankName": "Bankrekening",
+    "cashName": "Kontant in die hand"
   },
   "obligations": {
-    "title": "Other money you owe",
-    "lead": "Stokvel, burial society, family support and informal loans. They count like bills.",
-    "none": "Nothing added yet.",
-    "add": "Add one",
-    "addTitle": "Add money you owe",
-    "editTitle": "Change money you owe",
-    "editLabel": "Change {{name}}",
-    "remove": "Remove",
-    "kind": "Kind",
+    "title": "Ander geld wat jy skuld",
+    "lead": "Stokvel, begrafnisvereniging, familieondersteuning en informele lenings. Hulle tel soos rekenings.",
+    "none": "Nog niks bygevoeg nie.",
+    "add": "Voeg een by",
+    "addTitle": "Voeg geld by wat jy skuld",
+    "editTitle": "Verander geld wat jy skuld",
+    "editLabel": "Verander {{name}}",
+    "remove": "Verwyder",
+    "kind": "Soort",
     "kinds": {
       "stokvel": "Stokvel",
-      "burial": "Burial society",
-      "family": "Family support",
-      "loan": "Informal loan",
-      "other": "Other"
+      "burial": "Begrafnisvereniging",
+      "family": "Familieondersteuning",
+      "loan": "Informele lening",
+      "other": "Ander"
     },
     "placeholder": {
-      "stokvel": "For example, Sunday stokvel",
-      "burial": "For example, burial society",
-      "family": "For example, money for my mother",
-      "loan": "For example, paying back my cousin",
-      "other": "Name"
+      "stokvel": "Byvoorbeeld, Sondag-stokvel",
+      "burial": "Byvoorbeeld, begrafnisvereniging",
+      "family": "Byvoorbeeld, geld vir my ma",
+      "loan": "Byvoorbeeld, terugbetaling aan my neef",
+      "other": "Naam"
     },
-    "name": "Name",
-    "nextLabel": "Next due",
-    "howOften": "How often",
+    "name": "Naam",
+    "nextLabel": "Volgende betaaldatum",
+    "howOften": "Hoe gereeld",
     "every": {
-      "week": "Every week",
-      "month": "Every month"
+      "week": "Elke week",
+      "month": "Elke maand"
     },
-    "next": "next {{date}}",
-    "movableHint": "Only if it can be paid a few days late without trouble.",
-    "protected": "Never suggested to move: paying a loan or burial society late can cost you."
+    "next": "volgende {{date}}",
+    "movableHint": "Net as dit 'n paar dae laat sonder moeite betaal kan word.",
+    "protected": "Word nooit voorgestel om te skuif nie: om 'n lening of begrafnisvereniging laat te betaal, kan jou kos."
   },
   "setup": {
-    "title": "Set up by hand",
-    "lead": "No statement? Answer a few questions and Tengo estimates a starting history. Real entries replace it as you add them.",
-    "link": "Set up by hand",
-    "pretend": "You can use pretend numbers to try it. Nothing leaves this device.",
-    "balance": "Balance in your bank account today",
-    "arrives": "How your money usually arrives",
+    "title": "Stel met die hand op",
+    "lead": "Geen staat nie? Beantwoord 'n paar vrae en Tengo skat 'n begingeskiedenis. Regte inskrywings vervang dit soos jy hulle byvoeg.",
+    "link": "Stel met die hand op",
+    "pretend": "Jy kan denkbeeldige syfers gebruik om dit te probeer. Niks verlaat hierdie toestel nie.",
+    "balance": "Saldo in jou bankrekening vandag",
+    "arrives": "Hoe jou geld gewoonlik inkom",
     "arrival": {
-      "daily": "Most days",
-      "weekly": "Weekly",
-      "monthly": "Monthly",
-      "irregular": "Every few days"
+      "daily": "Die meeste dae",
+      "weekly": "Weekliks",
+      "monthly": "Maandeliks",
+      "irregular": "Elke paar dae"
     },
     "arrivalHint": {
-      "daily": "For example cash fares or sales on most days.",
-      "weekly": "For example a weekly payout or Saturday takings.",
-      "monthly": "For example a monthly payment or grant.",
-      "irregular": "For example deposits every week or so, but not on a fixed day."
+      "daily": "Byvoorbeeld kontant ritgelde of verkope op die meeste dae.",
+      "weekly": "Byvoorbeeld 'n weeklikse uitbetaling of Saterdag se inkomste.",
+      "monthly": "Byvoorbeeld 'n maandelikse betaling of toelaag.",
+      "irregular": "Byvoorbeeld deposito's elke week of so, maar nie op 'n vaste dag nie."
     },
-    "amount": "Usual amount each time",
-    "amountDaily": "Usual amount on a day",
-    "weekday": "Usual day",
-    "dayOfMonth": "Usual day of the month",
-    "everyDays": "Roughly every how many days",
-    "dailySpend": "Usual everyday spending a day",
-    "dailySpendHint": "Food, transport, airtime and the like. Not rent or other bills.",
-    "bills": "Regular bills",
-    "billsHint": "Rent, phone contract, school fees and other bills that go off every month.",
-    "billName": "Bill",
-    "billDay": "Day",
-    "addBill": "Add a bill",
-    "removeBill": "Remove bill {{n}}",
-    "billError": "Each bill needs a name, an amount above zero and a day from 1 to 31.",
-    "fieldError": "Enter a number, for example 250.",
-    "estimatedNote": "Tengo makes a starting history from these answers, marked as estimated. Confidence stays low until real entries arrive.",
-    "submit": "See my date",
-    "estimatedTag": "Estimated"
+    "amount": "Gewone bedrag elke keer",
+    "amountDaily": "Gewone bedrag op 'n dag",
+    "weekday": "Gewone dag",
+    "dayOfMonth": "Gewone dag van die maand",
+    "everyDays": "Omtrent elke hoeveel dae",
+    "dailySpend": "Gewone alledaagse besteding per dag",
+    "dailySpendHint": "Kos, vervoer, lugtyd en so meer. Nie huur of ander rekenings nie.",
+    "bills": "Gereelde rekenings",
+    "billsHint": "Huur, selfoonkontrak, skoolgeld en ander rekenings wat elke maand afgaan.",
+    "billName": "Rekening",
+    "billDay": "Dag",
+    "addBill": "Voeg 'n rekening by",
+    "removeBill": "Verwyder rekening {{n}}",
+    "billError": "Elke rekening het 'n naam nodig, 'n bedrag bo nul en 'n dag van 1 tot 31.",
+    "fieldError": "Tik 'n getal in, byvoorbeeld 250.",
+    "estimatedNote": "Tengo maak 'n begingeskiedenis uit hierdie antwoorde, gemerk as geskat. Die sekerheid bly laag totdat regte inskrywings kom.",
+    "submit": "Sien my datum",
+    "estimatedTag": "Geskat"
   },
   "safety": {
-    "quickExit": "Quick exit",
-    "showAmounts": "Show amounts",
-    "hideAmounts": "Hide amounts",
-    "exitTitle": "Notes",
-    "exitBody": "No notes yet.",
-    "exitBack": "Back"
+    "quickExit": "Vinnige uitgang",
+    "showAmounts": "Wys bedrae",
+    "hideAmounts": "Versteek bedrae",
+    "exitTitle": "Notas",
+    "exitBody": "Nog geen notas nie.",
+    "exitBack": "Terug"
   },
   "safetyPolicy": {
-    "title": "Safety and who Tengo is for",
-    "lead": "How Tengo protects people on shared phones, people who are vulnerable, and children.",
-    "draft": "Draft policy for the pilot, to be reviewed by a lawyer and a safeguarding adviser.",
+    "title": "Veiligheid en vir wie Tengo is",
+    "lead": "Hoe Tengo mense op gedeelde fone, kwesbare mense en kinders beskerm.",
+    "draft": "Konsepbeleid vir die proefprojek, om deur 'n prokureur en 'n beskermingsadviseur hersien te word.",
     "adults": {
-      "title": "Adults only",
-      "body": "Tengo is for adults. If you are under 18, please do not use it. Saving to an account asks you to confirm you are 18 or older. Tengo does not ask for a date of birth or an ID number, and the fictional demo people are adults."
+      "title": "Net volwassenes",
+      "body": "Tengo is vir volwassenes. As jy jonger as 18 is, moet dit asseblief nie gebruik nie. As jy in 'n rekening stoor, word jy gevra om te bevestig dat jy 18 of ouer is. Tengo vra nie vir 'n geboortedatum of ID-nommer nie, en die fiktiewe demomense is volwassenes."
     },
     "shared": {
-      "title": "Shared phones",
-      "body": "You can set a PIN so Tengo locks itself after a few minutes, turn on discreet mode so amounts stay hidden until you tap to show them, and use quick exit to leave Tengo for a plain page straight away. Discreet messages carry no amounts, dates or cover words."
+      "title": "Gedeelde fone",
+      "body": "Jy kan 'n PIN stel sodat Tengo homself ná 'n paar minute sluit, diskrete modus aanskakel sodat bedrae versteek bly totdat jy tik om hulle te wys, en vinnige uitgang gebruik om Tengo dadelik vir 'n gewone bladsy te verlaat. Diskrete boodskappe bevat geen bedrae, datums of dekkingswoorde nie."
     },
     "control": {
-      "title": "If someone controls your money",
-      "body": "No one should make you show your forecast, share your PIN or hand over your money. Tengo never asks for a bank password or PIN. If someone checks your phone, quick exit and the PIN lock help, and you can delete your data at any time from Privacy."
+      "title": "As iemand jou geld beheer",
+      "body": "Niemand behoort jou te dwing om jou vooruitskatting te wys, jou PIN te deel of jou geld te oorhandig nie. Tengo vra nooit vir 'n bankwagwoord of PIN nie. As iemand jou foon nagaan, help vinnige uitgang en die PIN-slot, en jy kan jou data enige tyd onder Privaatheid uitvee."
     },
     "care": {
-      "title": "Care for people in a hard spot",
-      "body": "Tengo uses plain words, shows estimates and not advice, and never suggests borrowing, skipping a loan or insurance payment, or cutting stock for a business. When money looks short it points to free help from the National Credit Regulator."
+      "title": "Sorg vir mense in 'n moeilike plek",
+      "body": "Tengo gebruik eenvoudige woorde, wys skattings en nie advies nie, en stel nooit voor dat jy leen, 'n lening- of versekeringspaaiement oorslaan, of voorraad vir 'n besigheid besnoei nie. Wanneer geld kort lyk, wys dit na gratis hulp van die Nasionale Kredietreguleerder."
     },
     "never": {
-      "title": "What Tengo never does",
-      "body": "Tengo does not make lending or credit decisions, does not sell products, and does not share your data with anyone for marketing. Nothing about your forecast is used to judge you."
+      "title": "Wat Tengo nooit doen nie",
+      "body": "Tengo neem nie leen- of kredietbesluite nie, verkoop nie produkte nie, en deel nie jou data met enigiemand vir bemarking nie. Niks oor jou vooruitskatting word gebruik om jou te oordeel nie."
     },
     "help": {
-      "title": "If you need help now",
-      "police": "Police emergency: 10111.",
-      "gbv": "Gender-Based Violence Command Centre: 0800 428 428, free and open all day and night.",
-      "childline": "Childline, for children and anyone worried about a child: 116, free.",
-      "note": "Numbers to be confirmed before launch. Tengo is not an emergency service."
+      "title": "As jy nou hulp nodig het",
+      "police": "Polisienood: 10111.",
+      "gbv": "Bevelsentrum vir geslagsgebaseerde geweld: 0800 428 428, gratis en dag en nag oop.",
+      "childline": "Childline, vir kinders en enigiemand wat oor 'n kind bekommerd is: 116, gratis.",
+      "note": "Nommers moet voor bekendstelling bevestig word. Tengo is nie 'n nooddiens nie."
     }
   },
   "lock": {
-    "title": "Tengo is locked",
-    "lead": "Enter your PIN to open Tengo.",
+    "title": "Tengo is gesluit",
+    "lead": "Tik jou PIN in om Tengo oop te maak.",
     "pin": "PIN",
-    "unlock": "Unlock",
-    "wrong": "That PIN is not right. Try again.",
-    "wait": "Too many tries. Wait a moment and try again.",
-    "waitFor_one": "Too many tries. Try again in {{count}} second.",
-    "waitFor_other": "Too many tries. Try again in {{count}} seconds.",
-    "forgot": "Forgot your PIN?",
-    "forgotBody": "Tengo cannot recover a PIN, because it is never stored. To start again, delete all Tengo data on this device. This cannot be undone.",
-    "erase": "Delete all data on this device"
+    "unlock": "Sluit oop",
+    "wrong": "Daardie PIN is nie reg nie. Probeer weer.",
+    "wait": "Te veel pogings. Wag 'n oomblik en probeer weer.",
+    "waitFor_one": "Te veel pogings. Probeer weer oor {{count}} sekonde.",
+    "waitFor_other": "Te veel pogings. Probeer weer oor {{count}} sekondes.",
+    "forgot": "Jou PIN vergeet?",
+    "forgotBody": "Tengo kan nie 'n PIN herwin nie, want dit word nooit gestoor nie. Om weer te begin, vee alle Tengo-data op hierdie toestel uit. Dit kan nie ongedaan gemaak word nie.",
+    "erase": "Vee alle data op hierdie toestel uit"
   },
   "shared": {
-    "title": "Shared phone safety",
-    "lead": "For a phone other people can pick up.",
-    "lockTitle": "App lock",
-    "lockOff": "Off. Set a 4 to 6 digit PIN to lock Tengo when you are away.",
-    "lockOn": "On. Tengo locks after {{count}} minutes without use.",
-    "newPin": "New PIN",
-    "confirmPin": "Type the PIN again",
-    "pinHint": "4 to 6 digits. It is stored only as a scrambled code on this device and cannot be recovered.",
-    "pinMismatch": "The two PINs do not match.",
-    "pinInvalid": "Use 4 to 6 digits.",
-    "setPin": "Set PIN",
-    "changePin": "Change PIN",
-    "turnOff": "Turn off lock",
-    "currentPin": "Current PIN",
-    "wrongPin": "That PIN is not right.",
-    "autoLock": "Lock after",
-    "minutes_one": "{{count}} minute",
-    "minutes_other": "{{count}} minutes",
-    "lockNow": "Lock now",
-    "discreet": "Discreet mode",
-    "discreetHint": "Hide amounts on screen until you tap Show amounts, and send messages with no amounts or dates.",
-    "quickExitHint": "Quick exit is always at the top of the screen. It hides everything and opens a plain page.",
-    "policy": "Read the safety policy"
+    "title": "Veiligheid op 'n gedeelde foon",
+    "lead": "Vir 'n foon wat ander mense kan optel.",
+    "lockTitle": "Appslot",
+    "lockOff": "Af. Stel 'n PIN van 4 tot 6 syfers om Tengo te sluit wanneer jy weg is.",
+    "lockOn": "Aan. Tengo sluit ná {{count}} minute sonder gebruik.",
+    "newPin": "Nuwe PIN",
+    "confirmPin": "Tik die PIN weer in",
+    "pinHint": "4 tot 6 syfers. Dit word net as 'n deurmekaar kode op hierdie toestel gestoor en kan nie herwin word nie.",
+    "pinMismatch": "Die twee PIN's stem nie ooreen nie.",
+    "pinInvalid": "Gebruik 4 tot 6 syfers.",
+    "setPin": "Stel PIN",
+    "changePin": "Verander PIN",
+    "turnOff": "Skakel slot af",
+    "currentPin": "Huidige PIN",
+    "wrongPin": "Daardie PIN is nie reg nie.",
+    "autoLock": "Sluit ná",
+    "minutes_one": "{{count}} minuut",
+    "minutes_other": "{{count}} minute",
+    "lockNow": "Sluit nou",
+    "discreet": "Diskrete modus",
+    "discreetHint": "Versteek bedrae op die skerm totdat jy Wys bedrae tik, en stuur boodskappe sonder bedrae of datums.",
+    "quickExitHint": "Vinnige uitgang is altyd bo-aan die skerm. Dit versteek alles en maak 'n gewone bladsy oop.",
+    "policy": "Lees die veiligheidsbeleid"
   },
   "diag": {
-    "title": "Diagnostics",
-    "lead": "For help with a problem. No personal data is kept here, and nothing is sent.",
-    "show": "Show",
-    "hide": "Hide",
-    "build": "Build",
-    "schema": "Data version",
-    "storage": "Storage used",
-    "offline": "Offline copy",
-    "offlineNo": "Not installed yet",
-    "language": "Language",
-    "errors": "Errors noted",
-    "copy": "Copy",
-    "copied": "Copied",
-    "clear": "Clear errors",
-    "cleared": "Errors cleared"
+    "title": "Diagnostiek",
+    "lead": "Vir hulp met 'n probleem. Geen persoonlike data word hier gehou nie, en niks word gestuur nie.",
+    "show": "Wys",
+    "hide": "Versteek",
+    "build": "Bouweergawe",
+    "schema": "Dataweergawe",
+    "storage": "Berging gebruik",
+    "offline": "Vanlyn kopie",
+    "offlineNo": "Nog nie geïnstalleer nie",
+    "language": "Taal",
+    "errors": "Foute aangeteken",
+    "copy": "Kopieer",
+    "copied": "Gekopieer",
+    "clear": "Vee foute uit",
+    "cleared": "Foute uitgevee"
   },
   "own": {
-    "you": "You",
-    "chip": "Your profile | {{mode}}",
+    "you": "Jy",
+    "chip": "Jou profiel | {{mode}}",
     "storage": {
-      "device": "This device only",
-      "account": "Saved to your account"
+      "device": "Net hierdie toestel",
+      "account": "In jou rekening gestoor"
     },
-    "cardTitle": "Use your own money",
-    "cardPromise": "Your numbers, your date. Nothing leaves your device unless you save an account.",
-    "cardBody": "Import a statement, answer a few questions, or try it with sample numbers first. No sign up needed.",
-    "start": "Start",
-    "continue": "Continue",
-    "deletedTitle": "Your profile was deleted"
+    "cardTitle": "Gebruik jou eie geld",
+    "cardPromise": "Jou syfers, jou datum. Niks verlaat jou toestel tensy jy 'n rekening stoor nie.",
+    "cardBody": "Voer 'n staat in, beantwoord 'n paar vrae, of probeer dit eers met voorbeeldsyfers. Geen registrasie nodig nie.",
+    "start": "Begin",
+    "continue": "Gaan voort",
+    "deletedTitle": "Jou profiel is uitgevee"
   },
   "welcome": {
-    "title": "Use your own money",
-    "step": "Step {{n}} of {{total}}",
-    "next": "Next",
-    "back": "Back",
-    "nickname": "Name or nickname (optional)",
-    "nicknameHint": "Only used to greet you. Leave it empty if you prefer.",
+    "title": "Gebruik jou eie geld",
+    "step": "Stap {{n}} van {{total}}",
+    "next": "Volgende",
+    "back": "Terug",
+    "nickname": "Naam of bynaam (opsioneel)",
+    "nicknameHint": "Word net gebruik om jou te groet. Laat dit leeg as jy verkies.",
     "s1": {
-      "title": "What Tengo asks for, and why",
-      "lead": "Tengo works out how long your money lasts and when your next money usually lands. It only needs a little to do that.",
+      "title": "Waarvoor Tengo vra, en hoekom",
+      "lead": "Tengo bereken hoe lank jou geld hou en wanneer jou volgende geld gewoonlik inkom. Dit het net 'n bietjie nodig om dit te doen.",
       "money": {
-        "title": "Your money in and out",
-        "body": "Dates, amounts and short descriptions, and your balance. From a statement, from a few answers, or from sample numbers."
+        "title": "Jou geld in en uit",
+        "body": "Datums, bedrae en kort beskrywings, en jou saldo. Uit 'n staat, uit 'n paar antwoorde, of uit voorbeeldsyfers."
       },
       "bills": {
-        "title": "Regular bills and money you owe",
-        "body": "Things like rent, a phone contract or a stokvel, so Tengo can keep money back for them."
+        "title": "Gereelde rekenings en geld wat jy skuld",
+        "body": "Dinge soos huur, 'n selfoonkontrak of 'n stokvel, sodat Tengo geld daarvoor kan terughou."
       },
       "never": {
-        "title": "Never",
-        "body": "Tengo never asks for an ID number, a phone number, a bank login or a PIN."
+        "title": "Nooit",
+        "body": "Tengo vra nooit vir 'n ID-nommer, 'n telefoonnommer, 'n bankaanmelding of 'n PIN nie."
       },
       "where": {
-        "title": "Where it stays",
-        "body": "On this device only, unless you later choose to save it to an account. You can delete it any time."
+        "title": "Waar dit bly",
+        "body": "Net op hierdie toestel, tensy jy later kies om dit in 'n rekening te stoor. Jy kan dit enige tyd uitvee."
       }
     },
     "s2": {
-      "title": "Your choices",
-      "lead": "Only the forecast is needed. Everything else is off until you turn it on.",
-      "core": "Needed to work out your date. It runs on this device. Withdraw any time and it pauses.",
-      "notice": "The full privacy notice says what is kept, where, for how long, and how to complain.",
-      "noticeLink": "Read the privacy notice"
+      "title": "Jou keuses",
+      "lead": "Net die vooruitskatting is nodig. Alles anders is af totdat jy dit aanskakel.",
+      "core": "Nodig om jou datum uit te werk. Dit loop op hierdie toestel. Trek dit enige tyd terug en dit word onderbreek.",
+      "notice": "Die volledige privaatheidskennisgewing sê wat gehou word, waar, vir hoe lank, en hoe om te kla.",
+      "noticeLink": "Lees die privaatheidskennisgewing"
     },
     "s3": {
-      "title": "Add your money",
-      "lead": "Choose one way. You can change or replace it later on Money.",
-      "import": "Import a statement",
-      "importBody": "A CSV file from your bank. It is read on this device.",
-      "manual": "Answer a few questions",
-      "manualBody": "For when you have no statement. Tengo estimates a starting history from your answers.",
-      "sample": "Try with sample numbers",
-      "sampleBody": "Explore without typing anything. The sample is labelled and you can change every number."
+      "title": "Voeg jou geld by",
+      "lead": "Kies een manier. Jy kan dit later op Geld verander of vervang.",
+      "import": "Voer 'n staat in",
+      "importBody": "'n CSV-lêer van jou bank. Dit word op hierdie toestel gelees.",
+      "manual": "Beantwoord 'n paar vrae",
+      "manualBody": "Vir wanneer jy geen staat het nie. Tengo skat 'n begingeskiedenis uit jou antwoorde.",
+      "sample": "Probeer met voorbeeldsyfers",
+      "sampleBody": "Verken sonder om iets in te tik. Die voorbeeld is gemerk en jy kan elke syfer verander."
     },
     "s4": {
-      "eyebrow": "Your first forecast",
-      "lead": "This is an estimate from the numbers you gave, not advice. It gets better as you add real entries.",
-      "sample": "These are sample numbers, not yours. Change them on Money, or replace them with a statement or your own answers.",
-      "open": "Open Home"
+      "eyebrow": "Jou eerste vooruitskatting",
+      "lead": "Dit is 'n skatting uit die syfers wat jy gegee het, nie advies nie. Dit word beter soos jy regte inskrywings byvoeg.",
+      "sample": "Dit is voorbeeldsyfers, nie joune nie. Verander dit op Geld, of vervang dit met 'n staat of jou eie antwoorde.",
+      "open": "Maak Tuis oop"
     },
-    "signIn": "Already saved to an account? Sign in"
+    "signIn": "Reeds in 'n rekening gestoor? Meld aan"
   },
   "legalDoc": {
-    "version": "Version {{version}}",
-    "draft": "Draft for the pilot, to be reviewed by a lawyer before launch. Tengo is not a bank and does not give financial advice. This notice does not claim compliance with any law or certification.",
-    "placeholderWarning": "The responsible party and Information Officer have not been named yet. They must be filled in before any real launch.",
-    "party": "Responsible party",
-    "address": "Address",
-    "officer": "Information Officer",
-    "contact": "Contact",
+    "version": "Weergawe {{version}}",
+    "draft": "Konsep vir die proefprojek, om voor bekendstelling deur 'n prokureur hersien te word. Tengo is nie 'n bank nie en gee nie finansiële advies nie. Hierdie kennisgewing beweer nie nakoming van enige wet of sertifisering nie.",
+    "placeholderWarning": "Die verantwoordelike party en Inligtingsbeampte is nog nie genoem nie. Hulle moet voor enige regte bekendstelling ingevul word.",
+    "party": "Verantwoordelike party",
+    "address": "Adres",
+    "officer": "Inligtingsbeampte",
+    "contact": "Kontak",
     "notice": {
-      "title": "Privacy notice",
+      "title": "Privaatheidskennisgewing",
       "what": {
-        "title": "What Tengo keeps",
-        "body": "The money history you add (dates, amounts, short descriptions and categories), your balances, regular bills and money you owe, your choices and settings, an optional nickname, and a log of what you did in the app. If you save an account, your email address too. Tengo does not ask for or keep ID numbers, phone numbers, bank logins or PINs. Long numbers in imported descriptions are masked."
+        "title": "Wat Tengo hou",
+        "body": "Die geldgeskiedenis wat jy byvoeg (datums, bedrae, kort beskrywings en kategorieë), jou saldo's, gereelde rekenings en geld wat jy skuld, jou keuses en instellings, 'n opsionele bynaam, en 'n logboek van wat jy in die app gedoen het. As jy 'n rekening stoor, ook jou e-posadres. Tengo vra nie vir ID-nommers, telefoonnommers, bankaanmeldings of PIN's nie en hou dit nie. Lang nommers in ingevoerde beskrywings word gemasker."
       },
       "why": {
-        "title": "Why",
-        "body": "Only to work out how long your money lasts, when your next money usually lands, and the estimates on screen. Not for marketing, credit scoring, lending decisions or selling to anyone. Giving the information is voluntary; without it there is no forecast."
+        "title": "Hoekom",
+        "body": "Net om uit te werk hoe lank jou geld hou, wanneer jou volgende geld gewoonlik inkom, en die skattings op die skerm. Nie vir bemarking, kredietpunte, leenbesluite of om aan iemand te verkoop nie. Om die inligting te gee is vrywillig; daarsonder is daar geen vooruitskatting nie."
       },
       "where": {
-        "title": "Where it is processed",
-        "body": "As a guest, everything stays in this browser on this device and the forecast is worked out on the device. Nothing is sent to Tengo.\nIf you choose to save an account, your data is stored with the database provider named in the setup (Supabase), in the region the operator chooses, and sent over an encrypted connection. The forecast is still worked out on your device. Any storage outside South Africa needs adequate protection under POPIA section 72 and is named here before launch."
+        "title": "Waar dit verwerk word",
+        "body": "As gas bly alles in hierdie blaaier op hierdie toestel en word die vooruitskatting op die toestel bereken. Niks word na Tengo gestuur nie.\nAs jy kies om 'n rekening te stoor, word jou data gestoor by die databasisverskaffer wat in die opstelling genoem word (Supabase), in die streek wat die operateur kies, en oor 'n geënkripteerde verbinding gestuur. Die vooruitskatting word steeds op jou toestel bereken. Enige berging buite Suid-Afrika het voldoende beskerming nodig onder artikel 72 van POPIA en word voor bekendstelling hier genoem."
       },
       "who": {
-        "title": "Who can see it",
-        "body": "As a guest: anyone who uses this browser on this device. Use the PIN lock on a shared phone. With an account: you, after signing in. Each person's rows are locked to them in the database. No staff access to your rows is set up. If support ever needs it, this notice will first say how it is limited and recorded."
+        "title": "Wie dit kan sien",
+        "body": "As gas: enigiemand wat hierdie blaaier op hierdie toestel gebruik. Gebruik die PIN-slot op 'n gedeelde foon. Met 'n rekening: jy, nadat jy aangemeld het. Elke persoon se rye is in die databasis aan hulle gesluit. Geen personeeltoegang tot jou rye is opgestel nie. As ondersteuning dit ooit nodig het, sal hierdie kennisgewing eers sê hoe dit beperk en aangeteken word."
       },
       "keep": {
-        "title": "How long it is kept",
-        "body": "Transactions older than 12 months are removed from this device when Tengo opens. On an account, a server job to remove them is written but not yet switched on. You can delete everything at any time; on an account, deletion removes your rows and your sign-in, and you get a receipt with no personal data. Backups kept by the hosting provider are deleted on their own schedule, stated here before launch."
+        "title": "Hoe lank dit gehou word",
+        "body": "Transaksies ouer as 12 maande word van hierdie toestel verwyder wanneer Tengo oopmaak. Op 'n rekening is 'n bedienertaak om hulle te verwyder geskryf, maar nog nie aangeskakel nie. Jy kan alles enige tyd uitvee; op 'n rekening verwyder uitvee jou rye en jou aanmelding, en jy kry 'n kwitansie sonder persoonlike data. Rugsteune wat die gasheerverskaffer hou, word volgens hulle eie skedule uitgevee, wat voor bekendstelling hier genoem word."
       },
       "rights": {
-        "title": "Your rights",
-        "body": "You can see your data and export it as JSON or CSV, correct any entry, ask a person to check a result, withdraw any choice, and delete everything. You can complain to the responsible party above, and to the Information Regulator of South Africa."
+        "title": "Jou regte",
+        "body": "Jy kan jou data sien en as JSON of CSV uitvoer, enige inskrywing regstel, 'n persoon vra om 'n resultaat na te gaan, enige keuse terugtrek, en alles uitvee. Jy kan by die verantwoordelike party hierbo kla, en by die Inligtingsreguleerder van Suid-Afrika."
       },
       "not": {
-        "title": "What Tengo is not",
-        "body": "Tengo is a pilot. It is not a bank, not a credit provider and not a financial adviser. Its figures are estimates from your own history, and it makes no decisions about you."
+        "title": "Wat Tengo nie is nie",
+        "body": "Tengo is 'n proefprojek. Dit is nie 'n bank, nie 'n kredietverskaffer en nie 'n finansiële adviseur nie. Sy syfers is skattings uit jou eie geskiedenis, en dit neem geen besluite oor jou nie."
       },
       "changes": {
-        "title": "Changes",
-        "body": "If this notice changes, the version above changes and Tengo asks you to look at it again before you continue."
+        "title": "Veranderinge",
+        "body": "As hierdie kennisgewing verander, verander die weergawe hierbo en vra Tengo jou om weer daarna te kyk voordat jy voortgaan."
       }
     },
     "terms": {
-      "title": "Terms of use",
+      "title": "Gebruiksbepalings",
       "use": {
-        "title": "Using Tengo",
-        "body": "Tengo is free to use during the pilot. It is for adults, 18 or older. Use it only with your own money or with pretend numbers."
+        "title": "Om Tengo te gebruik",
+        "body": "Tengo is gratis om te gebruik tydens die proefprojek. Dit is vir volwassenes, 18 of ouer. Gebruik dit net met jou eie geld of met denkbeeldige syfers."
       },
       "estimate": {
-        "title": "Estimates, not promises",
-        "body": "Every date, budget and suggestion is an estimate from past patterns. Money can arrive late or not at all, and bills can change. Check before you make a decision that matters."
+        "title": "Skattings, nie beloftes nie",
+        "body": "Elke datum, begroting en voorstel is 'n skatting uit vorige patrone. Geld kan laat of glad nie inkom nie, en rekenings kan verander. Gaan na voordat jy 'n belangrike besluit neem."
       },
       "liability": {
-        "title": "Your decisions",
-        "body": "Tengo does not give financial advice and is not responsible for decisions you make using it. Nothing here limits rights you have under South African law."
+        "title": "Jou besluite",
+        "body": "Tengo gee nie finansiële advies nie en is nie verantwoordelik vir besluite wat jy daarmee neem nie. Niks hier beperk regte wat jy onder Suid-Afrikaanse wetgewing het nie."
       },
       "accounts": {
-        "title": "Accounts",
-        "body": "Accounts are optional. Keep access to your email address, because sign-in is by a one-time code. You can sign out everywhere and delete your account at any time."
+        "title": "Rekeninge",
+        "body": "Rekeninge is opsioneel. Behou toegang tot jou e-posadres, want aanmelding gebeur met 'n eenmalige kode. Jy kan oral afmeld en jou rekening enige tyd uitvee."
       },
       "ending": {
-        "title": "Ending the pilot",
-        "body": "If the pilot ends, you will be told in the app and given time to export your data before it is deleted."
+        "title": "Einde van die proefprojek",
+        "body": "As die proefprojek eindig, sal jy in die app ingelig word en tyd kry om jou data uit te voer voordat dit uitgevee word."
       },
       "complaints": {
-        "title": "Complaints",
-        "body": "Contact the responsible party above. For privacy complaints you can also go to the Information Regulator of South Africa."
+        "title": "Klagtes",
+        "body": "Kontak die verantwoordelike party hierbo. Vir privaatheidsklagtes kan jy ook na die Inligtingsreguleerder van Suid-Afrika gaan."
       }
     }
   },
   "account": {
-    "title": "Account",
-    "unavailable": "Accounts are not set up on this copy of Tengo. Your profile stays on this device.",
-    "lead": "Save to an account to keep this on any device. Optional: Tengo works fully without one.",
-    "leadSaved": "Your profile is saved to your account. Your forecast is still worked out on this device.",
-    "saveTitle": "Save to an account",
-    "manage": "Manage your account",
+    "title": "Rekening",
+    "unavailable": "Rekeninge is nie op hierdie kopie van Tengo opgestel nie. Jou profiel bly op hierdie toestel.",
+    "lead": "Stoor in 'n rekening om dit op enige toestel te hou. Opsioneel: Tengo werk ten volle sonder een.",
+    "leadSaved": "Jou profiel is in jou rekening gestoor. Jou vooruitskatting word steeds op hierdie toestel bereken.",
+    "saveTitle": "Stoor in 'n rekening",
+    "manage": "Bestuur jou rekening",
     "facts": {
-      "passwordless": "No password: you sign in with a one-time code sent to your email.",
-      "device": "Your forecast is still worked out on your device. The account only stores your data.",
-      "where": "Stored with the database provider named in the privacy notice. Only you can read your rows.",
-      "leave": "Sign out everywhere, export or delete everything at any time."
+      "passwordless": "Geen wagwoord nie: jy meld aan met 'n eenmalige kode wat na jou e-pos gestuur word.",
+      "device": "Jou vooruitskatting word steeds op jou toestel bereken. Die rekening stoor net jou data.",
+      "where": "Gestoor by die databasisverskaffer wat in die privaatheidskennisgewing genoem word. Net jy kan jou rye lees.",
+      "leave": "Meld oral af, voer uit of vee alles enige tyd uit."
     },
-    "email": "Email address",
-    "adult": "I am 18 or older.",
-    "adultHint": "Tengo is for adults. It does not ask for or keep a date of birth.",
-    "sendCode": "Send me a code",
-    "codeSent": "Code sent",
-    "codeTitle": "Enter your code",
-    "codeLead": "We sent a one-time code to {{email}}. It works once and expires soon.",
-    "code": "One-time code",
-    "verify": "Sign in",
-    "resend": "Send a new code",
-    "resendIn_one": "Send a new code in {{count}} second",
-    "resendIn_other": "Send a new code in {{count}} seconds",
-    "uploadTitle": "Save what is on this device?",
-    "uploadLead": "Your account is empty. Save your profile from this device to it. It is then removed from this device and kept in your account.",
-    "emptyLead": "Your account is new and empty. Add your money to get your first forecast.",
-    "conflictTitle": "This account already has data",
-    "conflictLead": "This device also has a profile. Usually you keep the account's data. You can replace it with this device's data instead.",
-    "useLead": "Your account's data will be used on this device.",
+    "email": "E-posadres",
+    "adult": "Ek is 18 of ouer.",
+    "adultHint": "Tengo is vir volwassenes. Dit vra nie vir 'n geboortedatum nie en hou dit nie.",
+    "sendCode": "Stuur vir my 'n kode",
+    "codeSent": "Kode gestuur",
+    "codeTitle": "Tik jou kode in",
+    "codeLead": "Ons het 'n eenmalige kode na {{email}} gestuur. Dit werk een keer en verval binnekort.",
+    "code": "Eenmalige kode",
+    "verify": "Meld aan",
+    "resend": "Stuur 'n nuwe kode",
+    "resendIn_one": "Stuur 'n nuwe kode oor {{count}} sekonde",
+    "resendIn_other": "Stuur 'n nuwe kode oor {{count}} sekondes",
+    "uploadTitle": "Stoor wat op hierdie toestel is?",
+    "uploadLead": "Jou rekening is leeg. Stoor jou profiel van hierdie toestel daarin. Dit word dan van hierdie toestel verwyder en in jou rekening gehou.",
+    "emptyLead": "Jou rekening is nuut en leeg. Voeg jou geld by om jou eerste vooruitskatting te kry.",
+    "conflictTitle": "Hierdie rekening het reeds data",
+    "conflictLead": "Hierdie toestel het ook 'n profiel. Gewoonlik hou jy die rekening se data. Jy kan dit eerder met hierdie toestel se data vervang.",
+    "useLead": "Jou rekening se data sal op hierdie toestel gebruik word.",
     "choices": {
-      "upload": "Save this device's profile",
-      "startEmpty": "Start with an empty account",
-      "useAccount": "Use the account's data",
-      "replaceAccount": "Replace it with this device's data"
+      "upload": "Stoor hierdie toestel se profiel",
+      "startEmpty": "Begin met 'n leë rekening",
+      "useAccount": "Gebruik die rekening se data",
+      "replaceAccount": "Vervang dit met hierdie toestel se data"
     },
-    "replaceWarn": "Replacing removes what the account holds now and cannot be undone.",
-    "saved": "Saved to your account",
-    "signedInAs": "Signed in as {{email}}",
-    "savedFacts": "Export everything the server holds at any time, as JSON or CSV.",
-    "signOut": "Sign out",
-    "signOutEverywhere": "Sign out everywhere",
-    "deleteTitle": "Delete my account",
-    "deleteBody": "Removes every row the server holds about you and your sign-in, and gives you a receipt with no personal data. Backups kept by the hosting provider expire on its schedule, stated in the privacy notice.",
-    "deleteWarn": "This cannot be undone. Export first if you want a copy.",
-    "deleteConfirm": "Yes, delete my account",
+    "replaceWarn": "Vervanging verwyder wat die rekening nou hou en kan nie ongedaan gemaak word nie.",
+    "saved": "In jou rekening gestoor",
+    "signedInAs": "Aangemeld as {{email}}",
+    "savedFacts": "Voer enige tyd alles wat die bediener hou uit, as JSON of CSV.",
+    "signOut": "Meld af",
+    "signOutEverywhere": "Meld oral af",
+    "deleteTitle": "Vee my rekening uit",
+    "deleteBody": "Verwyder elke ry wat die bediener oor jou hou en jou aanmelding, en gee jou 'n kwitansie sonder persoonlike data. Rugsteune wat die gasheerverskaffer hou, verval volgens sy skedule, wat in die privaatheidskennisgewing genoem word.",
+    "deleteWarn": "Dit kan nie ongedaan gemaak word nie. Voer eers uit as jy 'n kopie wil hê.",
+    "deleteConfirm": "Ja, vee my rekening uit",
     "errors": {
-      "rate_limited": "A code was sent a moment ago. Wait a minute, then try again.",
-      "invalid_code": "That code did not work. Check it, or send a new one.",
-      "generic": "Something went wrong. Check your connection and try again."
+      "rate_limited": "'n Kode is 'n oomblik gelede gestuur. Wag 'n minuut en probeer dan weer.",
+      "invalid_code": "Daardie kode het nie gewerk nie. Gaan dit na, of stuur 'n nuwe een.",
+      "generic": "Iets het verkeerd geloop. Gaan jou verbinding na en probeer weer."
     }
   }
 }

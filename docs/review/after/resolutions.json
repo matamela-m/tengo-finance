@@ -32,8 +32,8 @@
   "resolution": "Phase 6: the chart table is a focusable, labelled region so it scrolls with the keyboard."
  },
  "A11Y-09": {
-  "status": "Prepared for human action",
-  "resolution": "Translations by first-language speakers and testing with low-literacy users are listed in docs/HUMAN-ACTIONS.md and the research kit."
+  "status": "Partly fixed",
+  "resolution": "Translations by first-language speakers and testing with low-literacy users are listed in docs/HUMAN-ACTIONS.md and the research kit. Languages update: AI drafts exist in all 10 languages with html lang set to match; none is checked by a speaker and no low-literacy testing has been done."
  },
  "A11Y-10": {
   "status": "Partly fixed",
@@ -276,8 +276,8 @@
   "resolution": "Phase 9: docs/pitch/demo-script.md on the strongest screens; overstated lines found by the judges re-review were rewritten."
  },
  "L10N-01": {
-  "status": "Prepared for human action",
-  "resolution": "Phase 3: honest claim and status chips; translations need first-language speakers (docs/HUMAN-ACTIONS.md)."
+  "status": "Partly fixed",
+  "resolution": "Phase 3: honest claim and status chips; translations need first-language speakers (docs/HUMAN-ACTIONS.md). Languages update: all 10 languages now have complete AI drafts (scripts/import-drafts.mjs), labelled \"AI draft\" in the app and marked machine per string. None is reviewed; a first-language speaker still has to check each one, and quality is likely lowest in isiNdebele, siSwati, Xitsonga and Tshivenda."
  },
  "L10N-02": {
   "status": "Fixed",
@@ -285,7 +285,7 @@
  },
  "L10N-03": {
   "status": "Partly fixed",
-  "resolution": "Phase 3: money strings are not machine translated unless --include-money; src/i18n/glossary.json holds money terms for translators. No in-message caveat because nothing is machine translated yet."
+  "resolution": "Phase 3: money strings are not machine translated unless --include-money; src/i18n/glossary.json holds money terms for translators. No in-message caveat because nothing is machine translated yet. Languages update: money strings are drafted too, using one draft term per language recorded in src/i18n/glossary.json, which is itself marked as an unreviewed AI draft."
  },
  "L10N-04": {
   "status": "Fixed",
@@ -304,8 +304,8 @@
   "resolution": "Phase 3: smsSegments() counts GSM-7 and UCS-2 parts; Inbox shows encoding and parts; tests cover both."
  },
  "L10N-08": {
-  "status": "Not fixing",
-  "resolution": "No translated text exists yet, so there is nothing longer to clip. A pseudo-locale layout check is part of the translation round in docs/HUMAN-ACTIONS.md."
+  "status": "Partly fixed",
+  "resolution": "No translated text exists yet, so there is nothing longer to clip. A pseudo-locale layout check is part of the translation round in docs/HUMAN-ACTIONS.md. Languages update: tests/languages.spec.ts checks every drafted language on 9 pages at phone width for overflow, page language, raw keys and axe on Home; status badges, the segmented control and the Why drawer chips now wrap. Pages outside those 9 are checked by eye only."
  },
  "L10N-09": {
   "status": "Fixed",
@@ -397,7 +397,7 @@
  },
  "PROD-08": {
   "status": "Partly fixed",
-  "resolution": "Phase 7: a guest-first own-profile onboarding (four steps, resumable) beside the fictional people. English-only locales and the placeholder brand remain human actions. Re-review (product, partly): The new onboarding is a standalone four-step wizard, which is further from a one-screen in-app opt-in on bank consent, not closer. Locales are still English only."
+  "resolution": "Phase 7: a guest-first own-profile onboarding (four steps, resumable) beside the fictional people. English-only locales and the placeholder brand remain human actions. Re-review (product, partly): The new onboarding is a standalone four-step wizard, which is further from a one-screen in-app opt-in on bank consent, not closer. Locales are still English only. Languages update: locales are no longer English only; they are unreviewed AI drafts."
  },
  "RISK-01": {
   "status": "Partly fixed",

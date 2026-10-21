@@ -45,20 +45,22 @@ test('Tight shows a daily budget with what is kept back and the usual spend', as
   await expect(budget).toContainText(/(Keeps R.* back|nothing extra is kept back)/);
 });
 
-// Changed in build 2: html lang is the language of the text actually shown, so it stays "en" while a
-// translation is pending (WCAG 3.1.1, A11Y-01). The chosen language still persists.
-test('language choice persists, and html lang stays English while the text is English', async ({ page }) => {
+// html lang is the language of the text actually shown (WCAG 3.1.1, A11Y-01). Changed when the AI drafts
+// arrived: isiZulu now shows isiZulu text, so lang follows it, and the chip says the text is an unchecked draft.
+// While a language is pending, lang stays "en"; src/i18n/languages.test.ts keeps that rule covered.
+test('language choice persists, html lang follows the text shown, and drafts are labelled', async ({ page }) => {
   await page.goto('/start');
   await page.getByLabel('Language').selectOption('zu');
-  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'zu');
   await expect(page.locator('html')).toHaveAttribute('data-ui-language', 'zu');
-  await expect(page.locator('span', { hasText: /^English for now$/ })).toBeVisible();
+  await expect(page.locator('span', { hasText: /^Uhlaka lwe-AI$/ })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Khetha ukuthi uhlole kanjani');
   await page.reload();
-  await expect(page.getByLabel('Language')).toHaveValue('zu');
+  await expect(page.getByLabel('Ulimi')).toHaveValue('zu');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'zu');
+  await page.getByLabel('Ulimi').selectOption('en');
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-  await page.getByLabel('Language').selectOption('ve');
-  await expect(page.getByText('Needs a translator')).toBeVisible();
-  await expect(page.getByText('Built for 11 languages. English today.').first()).toBeVisible();
+  await expect(page.getByText('11 languages. English plus 10 AI drafts, still to be checked.').first()).toBeVisible();
 });
 
 test('withdrawing core consent pauses the forecast and resume brings it back', async ({ page }) => {
@@ -280,9 +282,9 @@ test('command palette jumps to a page and changes theme and language', async ({ 
   await page.keyboard.press('Control+k');
   await page.getByRole('combobox', { name: 'Search commands' }).fill('zulu');
   await page.keyboard.press('Enter');
-  // Changed in build 2: html lang stays "en" while isiZulu text is not translated yet.
+  // Changed when the AI drafts arrived: isiZulu text is shown, so html lang is "zu".
   await expect(page.locator('html')).toHaveAttribute('data-ui-language', 'zu');
-  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'zu');
 });
 
 test('theme is set before the app loads, so there is no flash', async ({ page }) => {

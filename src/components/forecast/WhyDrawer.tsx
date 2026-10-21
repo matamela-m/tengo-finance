@@ -151,7 +151,7 @@ export function WhyDrawer({ forecast, open, onClose }: { forecast: Forecast; ope
       <ul className="mt-2 space-y-2 text-sm">
         {(['enough', 'tight', 'short', 'unclear'] as const).map((s) => (
           <li key={s} className="flex items-start gap-3">
-            <StateChip state={s} size="sm" className="mt-0.5 w-[88px] justify-center" />
+            <StateChip state={s} size="sm" className="mt-0.5 min-w-[88px] shrink-0 justify-center" />
             <span className={forecast.status === s ? 'font-semibold' : 'text-muted'}>{t(`why.rule.${s}`)}</span>
           </li>
         ))}

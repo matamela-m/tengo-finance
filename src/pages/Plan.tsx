@@ -44,7 +44,7 @@ function Outcome({ label, f }: { label: string; f: Forecast }) {
       <p className="eyebrow">{label}</p>
       <p className="num mt-2 text-sm text-muted">{t(headlineKey(f))}</p>
       <p className="num font-heading text-[22px] font-extrabold leading-tight tracking-tight sm:text-[26px]">{f.status === 'unclear' ? '-' : d.dayShort(f.headlineDate)}</p>
-      <div className="mt-2 flex items-center gap-2">
+      <div className="mt-2 flex flex-wrap items-center gap-2">
         <StateChip state={f.status} size="sm" />
         <CoverBars state={f.status} size={48} />
       </div>

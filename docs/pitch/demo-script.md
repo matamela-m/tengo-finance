@@ -16,6 +16,6 @@ Prepared 2026-10-21. Replaces the script in `docs/review/judge-qa.md`. Every scr
 
 7. **Evidence and model (2:40 to 3:00).** One slide: on our synthetic backtest, counting small income, the date is off by 3.2 days against 5.9 for a simple baseline; counting outflows only, the baseline wins. "This is data we generated and tuned on, so it shows consistency, not real-world accuracy. Real statements come next." Business: a bank licence of R5 per active user a month with a pilot fee and an annual minimum; next steps a six-person comprehension test and a bank pilot with a control group.
 
-**Do not say:** real users, real accuracy, "about 80 percent", "never" about harmful suggestions, compliance, partnership with any bank, or that 11 languages are live. Say "Built for 11 languages. English today."
+**Do not say:** real users, real accuracy, "about 80 percent", "never" about harmful suggestions, compliance, partnership with any bank, or that 11 languages are reviewed. Say "11 languages: English plus 10 AI drafts that speakers still need to check."
 
 **If something breaks:** stay on Thabo and Ayanda (seeded, offline-ready after first load), skip steps 4 and 5.

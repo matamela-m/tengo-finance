@@ -80,7 +80,7 @@ function ProductPreview() {
         <div className="grid gap-4 p-5 sm:p-7 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
           <div className="min-w-0">
             <DateHero forecast={f} as="p" size="md" />
-            <div className="mt-3 flex items-center gap-3">
+            <div className="mt-3 flex flex-wrap items-center gap-3">
               <StateChip state={f.status} />
               <CoverBars state={f.status} size={64} />
             </div>

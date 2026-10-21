@@ -44,20 +44,20 @@
   "language": {
     "label": "Language",
     "pending": "Translation on the way. This language shows English for now.",
-    "machine": "Machine translated with Google Translate. A first-language speaker still needs to check it.",
+    "machine": "A draft translation made with AI. A first-language speaker still needs to check it.",
     "reviewed": "Translated and checked by a first-language speaker.",
-    "claim": "Built for 11 languages. English today.",
-    "needsTranslator": "Needs a first-language translator. Machine translation does not support Tshivenda, so it shows English for now.",
+    "claim": "11 languages. English plus 10 AI drafts, still to be checked.",
+    "needsTranslator": "Needs a first-language translator. It shows English for now.",
     "short": {
       "pending": "English for now",
       "needsTranslator": "English for now",
-      "machine": "machine translated"
+      "machine": "AI draft"
     },
     "chip": {
       "source": "English",
       "pending": "English for now",
       "needsTranslator": "Needs a translator",
-      "machine": "Machine translated",
+      "machine": "AI draft",
       "reviewed": "Human reviewed"
     }
   },
@@ -99,7 +99,7 @@
     "stats": {
       "history": "Days of history per person",
       "states": "Statuses: Enough, Tight, Short, Not enough to tell",
-      "languages": "Built for 11 languages. English today.",
+      "languages": "11 languages. English plus 10 AI drafts, still to be checked.",
       "logins": "Bank logins needed"
     },
     "closingTitle": "See how long your money lasts.",
@@ -578,7 +578,7 @@
       "bank": "There is no bank connection and no open banking.",
       "messages": "Messages are previews. Nothing is sent.",
       "privacy": "Privacy controls show good practice. They are not a compliance certification.",
-      "translations": "Built for 11 languages. English today. The other 10 need translating and checking by first-language speakers, and Tshivenda needs a human translator."
+      "translations": "English is the source. The other 10 languages are AI drafts that first-language speakers still need to check, so some wording may be wrong."
     },
     "reset": "Reset demo data",
     "resetBody": "Clears the fictional people, your own profile on this device, consent choices and logs, and starts fresh. An account, if you saved one, is not touched.",

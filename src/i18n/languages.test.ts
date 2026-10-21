@@ -9,9 +9,11 @@ describe('language status', () => {
     }
   });
 
-  it('never treats Tshivenda as machine translated', () => {
+  // Changed when the AI drafts arrived: Tshivenda may now be an AI draft, but Google, which does not support
+  // it, is never used for it. Whether "reviewed" is earned string by string is checked by npm run i18n:check.
+  it('never sends Tshivenda to Google, and every status is a known one', () => {
     expect(MACHINE_UNSUPPORTED).toContain('ve');
-    expect(translationStatus('ve')).not.toBe('machine');
+    for (const l of LANGUAGES) expect(['source', 'machine', 'reviewed', 'pending', 'needsTranslator'], l.code).toContain(translationStatus(l.code));
   });
 
   it('counts English as live', () => {

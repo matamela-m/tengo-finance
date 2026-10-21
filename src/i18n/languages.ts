@@ -17,7 +17,7 @@ export const LANGUAGES = [
 
 export type LanguageCode = (typeof LANGUAGES)[number]['code'];
 
-/** Google Cloud Translation does not support Tshivenda, so it can only be translated by a person. */
+/** Google Cloud Translation does not support Tshivenda, so scripts/translate.mjs never sends it. AI drafts are allowed. */
 export const MACHINE_UNSUPPORTED: LanguageCode[] = ['ve'];
 
 export function isLanguageCode(value: string): value is LanguageCode {
@@ -29,9 +29,9 @@ export function languageName(code: LanguageCode): string {
 }
 
 /**
- * source: English. machine: filled by Google Translate, not yet checked. reviewed: every string checked by
- * a first-language speaker. pending: shows English for now. needsTranslator: shows English and cannot be
- * machine translated (Tshivenda).
+ * source: English. machine: a draft by AI or Google Translate, not yet checked. reviewed: every string checked
+ * by a first-language speaker. pending: shows English for now. needsTranslator: shows English until a person
+ * translates it.
  */
 export type TranslationStatus = 'source' | 'machine' | 'reviewed' | 'pending' | 'needsTranslator';
 
@@ -51,5 +51,10 @@ export function liveLanguageCount(): number {
   return LANGUAGES.filter((l) => contentLanguage(l.code) === l.code).length;
 }
 
-// Every language resolves to en-ZA for dates and numbers until translators confirm local formats.
-export const INTL_LOCALE: Record<LanguageCode, string> = Object.fromEntries(LANGUAGES.map((l) => [l.code, 'en-ZA'])) as Record<LanguageCode, string>;
+// Dates use the browser's own month and day names only where its locale data is complete (Afrikaans and
+// isiZulu). Other languages keep en-ZA dates until translators confirm local names: the browser has none for
+// siSwati, Tshivenda, Xitsonga and isiNdebele, and only partial ones for the rest.
+const LOCAL_DATES: Partial<Record<LanguageCode, string>> = { af: 'af-ZA', zu: 'zu-ZA' };
+export const INTL_LOCALE: Record<LanguageCode, string> = Object.fromEntries(
+  LANGUAGES.map((l) => [l.code, LOCAL_DATES[l.code] ?? 'en-ZA']),
+) as Record<LanguageCode, string>;

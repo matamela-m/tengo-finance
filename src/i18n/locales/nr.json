@@ -1,1380 +1,1380 @@
 {
   "common": {
     "demoChip": "Demo | Fictional Data",
-    "skipToContent": "Skip to content",
-    "loading": "Loading",
-    "saving": "Saving",
-    "close": "Close",
-    "cancel": "Cancel",
-    "save": "Save",
-    "today": "Today",
-    "rangeDates": "{{from}} to {{to}}",
-    "rangeAmounts": "{{low}} to {{high}}",
-    "on": "On",
-    "off": "Off",
-    "back": "Back"
+    "skipToContent": "Tjhingela ekuthomeni kwalokho okungaphakathi",
+    "loading": "Iyalayisha",
+    "saving": "Iyabulunga",
+    "close": "Vala",
+    "cancel": "Khansela",
+    "save": "Bulunga",
+    "today": "Namhlanje",
+    "rangeDates": "{{from}} ukuya ku-{{to}}",
+    "rangeAmounts": "{{low}} ukuya ku-{{high}}",
+    "on": "Kuvuliwe",
+    "off": "Kuvaliwe",
+    "back": "Emuva"
   },
   "nav": {
-    "label": "Main",
-    "home": "Home",
-    "plan": "Plan",
-    "money": "Money",
-    "inbox": "Inbox",
-    "privacy": "Privacy",
-    "me": "Me",
-    "collapse": "Collapse sidebar",
-    "expand": "Expand sidebar"
+    "label": "Okukhulu",
+    "home": "Ekhaya",
+    "plan": "Hlela",
+    "money": "Imali",
+    "inbox": "Imilayezo",
+    "privacy": "Ifihlo",
+    "me": "Mina",
+    "collapse": "Songa ibha esecelekapheleni",
+    "expand": "Vula ibha esecelekapheleni"
   },
   "state": {
-    "enough": "Enough",
-    "tight": "Tight",
-    "short": "Short",
-    "unclear": "Not enough to tell"
+    "enough": "Yanele",
+    "tight": "Yanele kancani",
+    "short": "Iyatlhayela",
+    "unclear": "Akwanelanga ukutjho"
   },
   "confidence": {
-    "high": "High",
-    "medium": "Medium",
-    "low": "Low"
+    "high": "Phezulu",
+    "medium": "Phakathi",
+    "low": "Phasi"
   },
   "category": {
-    "income": "Income",
-    "spend": "Spend",
-    "bill": "Bill"
+    "income": "Imali engenako",
+    "spend": "Ukusebenzisa",
+    "bill": "Ibhadelo"
   },
   "language": {
-    "label": "Language",
-    "pending": "Translation on the way. This language shows English for now.",
-    "machine": "Machine translated with Google Translate. A first-language speaker still needs to check it.",
-    "reviewed": "Translated and checked by a first-language speaker.",
-    "claim": "Built for 11 languages. English today.",
-    "needsTranslator": "Needs a first-language translator. Machine translation does not support Tshivenda, so it shows English for now.",
+    "label": "Ilimi",
+    "pending": "Ukutjhugululwa kuyeza. Ilimi leli litjengisa isiNgisi nje.",
+    "machine": "Ihlelo lokutjhugulula elenziwe nge-AI. Isikhulumi selimi leli njengelimi lakhe lokuthoma kusafuze sihlole.",
+    "reviewed": "Litjhugululwe begodu lahlolwa sikhulumi selimi leli njengelimi lakhe lokuthoma.",
+    "claim": "Amalimi ali-11. IsiNgisi kunye namahlelo ali-10 we-AI, asazokuhlolwa.",
+    "needsTranslator": "Kufuneka umtjhuguluri okhuluma ilimi leli njengelimi lakhe lokuthoma. Litjengisa isiNgisi nje.",
     "short": {
-      "pending": "English for now",
-      "needsTranslator": "English for now",
-      "machine": "machine translated"
+      "pending": "IsiNgisi nje",
+      "needsTranslator": "IsiNgisi nje",
+      "machine": "Ihlelo le-AI"
     },
     "chip": {
-      "source": "English",
-      "pending": "English for now",
-      "needsTranslator": "Needs a translator",
-      "machine": "Machine translated",
-      "reviewed": "Human reviewed"
+      "source": "IsiNgisi",
+      "pending": "IsiNgisi nje",
+      "needsTranslator": "Kufuneka umtjhuguluri",
+      "machine": "Ihlelo le-AI",
+      "reviewed": "Kuhlolwe mumuntu"
     }
   },
   "landing": {
-    "title": "Money you can plan around",
-    "pitch": "A balance tells you what you have. Tengo tells you until when.",
-    "cta": "Explore Tengo",
-    "ctaNote": "No sign up. Fictional data only.",
-    "previewLabel": "Live preview of Tengo",
-    "previewWho": "Thabo, e-hailing driver. Fictional.",
-    "previewCaption": "Preview of Tengo for a fictional driver: {{label}} {{date}}, cover {{state}}, daily budget {{amount}}.",
-    "howTitle": "Three steps to a date you can plan around.",
+    "title": "Imali ongahlela ngayo",
+    "pitch": "Ibhalansi ikutjela bona unani. I-Tengo ikutjela bona kube kunini.",
+    "cta": "Hlola i-Tengo",
+    "ctaNote": "Akutlhogeki ukutlolisa. Ilwazi lokwakhiwa kwaphela.",
+    "previewLabel": "Ukubuka kokuthoma kwe-Tengo",
+    "previewWho": "UThabo, umtjhayeli we-e-hailing. Wokwakhiwa.",
+    "previewCaption": "Ukubuka kokuthoma kwe-Tengo kumtjhayeli wokwakhiwa: {{label}} {{date}}, isimo {{state}}, isabelomali selanga {{amount}}.",
+    "howTitle": "Amagadango amathathu aya elangeni ongahlela ngalo.",
     "steps": {
       "history": {
-        "title": "Add your money history",
-        "body": "Use a sample person or bring a bank statement as a CSV file. It stays on your device."
+        "title": "Faka umlando wemali yakho",
+        "body": "Sebenzisa umuntu oyisibonelo nanyana ulethe isitatimende sebhanga njengefayili le-CSV. Sihlala esisetjenzisweni sakho."
       },
       "last": {
-        "title": "See how long it lasts",
-        "body": "Tengo works out the day your money runs out and when your next money usually lands."
+        "title": "Bona bona ihlala isikhathi esingangani",
+        "body": "I-Tengo ibala ilanga imali yakho ezokuphela ngalo nokobana imali yakho elandelako ijayele ukungena nini."
       },
       "plan": {
-        "title": "Plan around the date",
-        "body": "Try a what-if, check a loan to family, and see your daily budget."
+        "title": "Hlela uzungeleze ilanga",
+        "body": "Linga okuthi nangabe, hlola imali oboleka ngayo umndeni, bese ubona isabelomali sakho selanga."
       }
     },
-    "tagline": "Money you can plan around.",
-    "fictional": "All people, places and amounts in this demo are fictional. No bank connection.",
+    "tagline": "Imali ongahlela ngayo.",
+    "fictional": "Boke abantu, iindawo neemali kule demo kwakhiwe. Akunakuthintana nebhanga.",
     "navLabel": "Tengo",
-    "home": "home",
+    "home": "ekhaya",
     "nav": {
-      "how": "How it works",
-      "privacy": "Privacy"
+      "how": "Indlela esebenza ngayo",
+      "privacy": "Ifihlo"
     },
-    "badge": "Built for the FNB App of the Year hackathon",
-    "headlineLead": "Money you can",
-    "headlineDim": "plan around.",
-    "ctaSecondary": "See how it works",
+    "badge": "Yakhelwe i-hackathon ye-FNB App of the Year",
+    "headlineLead": "Imali ongahlela",
+    "headlineDim": "ngayo.",
+    "ctaSecondary": "Bona indlela esebenza ngayo",
     "stats": {
-      "history": "Days of history per person",
-      "states": "Cover states: Enough, Tight, Short",
-      "languages": "Built for 11 languages. English today.",
-      "logins": "Bank logins needed"
+      "history": "Amalanga womlando umuntu ngamunye",
+      "states": "Iimo: Yanele, Yanele kancani, Iyatlhayela, Akwanelanga ukutjho",
+      "languages": "Amalimi ali-11. IsiNgisi kunye namahlelo ali-10 we-AI, asazokuhlolwa.",
+      "logins": "Ukungena ebhanga okutlhogekako"
     },
-    "closingTitle": "See how long your money lasts.",
-    "closingBody": "Pick a fictional person and explore. No sign up, nothing leaves your browser.",
+    "closingTitle": "Bona bona imali yakho ihlala isikhathi esingangani.",
+    "closingBody": "Khetha umuntu wokwakhiwa bese uyahlola. Akutlhogeki ukutlolisa, akukho okuphuma ebhrawuzarini yakho.",
     "footer": {
-      "product": "Product",
-      "privacy": "Privacy",
-      "about": "About",
+      "product": "Umkhiqizo",
+      "privacy": "Ifihlo",
+      "about": "Ngaka",
       "links": {
-        "how": "How it works",
-        "explore": "Explore Tengo",
-        "privacyCentre": "Privacy centre",
-        "fictional": "Fictional data only",
-        "name": "The name Tengo",
-        "hackathon": "Hackathon entry",
-        "safety": "Safety and who it is for"
+        "how": "Indlela esebenza ngayo",
+        "explore": "Hlola i-Tengo",
+        "privacyCentre": "Isikhungo sefihlo",
+        "fictional": "Ilwazi lokwakhiwa kwaphela",
+        "name": "Ibizo elithi Tengo",
+        "hackathon": "Ukungenela i-hackathon",
+        "safety": "Ukuphepha nokobana ngekabani"
       }
     },
-    "status": "Demo environment. Fictional data."
+    "status": "Indawo yedemo. Ilwazi lokwakhiwa."
   },
   "picker": {
-    "title": "Choose how to explore",
-    "lead": "Each fictional person earns in a different way. Pick one to see Tengo with their money, or use your own.",
-    "personas": "People",
-    "enterAs": "Enter as {{name}}",
-    "continueAs": "Continue as {{name}}",
-    "backHome": "home",
-    "deletedTitle": "{{name}}'s data was deleted",
-    "deletedBody": "Receipt {{ref}}, {{date}}. Removed {{count}} transactions and {{audit}} audit entries. Choose a person to start again.",
-    "step": "Step 1 of 2",
-    "startsAt": "Starts at"
+    "title": "Khetha indlela yokuhlola",
+    "lead": "Umuntu ngamunye wokwakhiwa uthola imali ngendlela ehlukileko. Khetha munye bona ubone i-Tengo nemali yakhe, nanyana usebenzise eyakho.",
+    "personas": "Abantu",
+    "enterAs": "Ngena njengo-{{name}}",
+    "continueAs": "Ragela phambili njengo-{{name}}",
+    "backHome": "ekhaya",
+    "deletedTitle": "Ilwazi lika-{{name}} lisuliwe",
+    "deletedBody": "Irasidi {{ref}}, {{date}}. Kususwe amathengiselwano ali-{{count}} kunye nokufakwe kwerekhodi lokuhlola okuli-{{audit}}. Khetha umuntu bona uthome kabutjha.",
+    "step": "Igadango 1 kwama-2",
+    "startsAt": "Ithoma ku-"
   },
   "personas": {
-    "fictional": "Fictional composite",
+    "fictional": "Umuntu wokwakhiwa",
     "thabo": {
-      "role": "E-hailing driver",
-      "situation": "Cash fares most days and an app payout on Mondays. Fuel and the car instalment come first."
+      "role": "Umtjhayeli we-e-hailing",
+      "situation": "Imali yokukhwela ngekheshi amalanga amanengi kunye nebhadelo le-app ngoMvulo. Ipetroli nebhadelo lekoloyi kuza kokuthoma."
     },
     "lerato": {
-      "role": "Hairdresser",
-      "situation": "Saturdays carry the week. Product restocks every two weeks and rent on the 1st."
+      "role": "Umlungisi weenhluthu",
+      "situation": "AmaSathardeyi athwala iveke. Ukuthenga imikhiqizo kabutjha qobe ngemva kweemveke ezimbili nerente ngelanga lokuthoma."
     },
     "ayanda": {
-      "role": "Spaza shop owner",
-      "situation": "Cash takings come in lumps. Big stock runs and prepaid electricity in between."
+      "role": "Umnikazi wesitolo se-spaza",
+      "situation": "Imali yekheshi ingena ngeenqwaba. Ukuthenga isitokhwe esikhulu nombane obhadelwa kusese ngaphambili phakathi."
     }
   },
   "consent": {
-    "title": "Before you start",
-    "as": "Entering as {{name}}",
-    "lead": "Here is what Tengo uses, why, and what you can change.",
+    "title": "Ngaphambi kobana uthome",
+    "as": "Ungena njengo-{{name}}",
+    "lead": "Nakhu i-Tengo ekusebenzisako, bona kubayini, nokobana khuyini ongakutjhugulula.",
     "notice": {
       "what": {
-        "title": "What we use",
-        "body": "Transaction dates, amounts and descriptions, plus your current balance. Nothing else."
+        "title": "Esikusebenzisako",
+        "body": "Amalanga wamathengiselwano, iimali nemihlathiso, kunye nebhalansi yakho yanje. Akukho okhunye."
       },
       "why": {
-        "title": "Why",
-        "body": "To work out how long your money lasts and when your next money is likely. Not for marketing or credit scoring."
+        "title": "Kubayini",
+        "body": "Ukubala bona imali yakho ihlala isikhathi esingangani nokobana imali yakho elandelako ingangena nini. Akusi kokukhangisa nanyana ukulinganisa isikwelede."
       },
       "who": {
-        "title": "Who can see it",
-        "body": "Anyone using this browser on this device. No one at Tengo can see it."
+        "title": "Ngubani ongakubona",
+        "body": "Nanyana ngubani osebenzisa ibhrawuza le esisetjenzisweni lesi. Akakho umuntu e-Tengo ongakubona."
       },
       "where": {
-        "title": "Where it is processed",
-        "body": "In your browser, on this device. Nothing is sent to a server."
+        "title": "Lapho kusetjenzwa khona",
+        "body": "Ebhrawuzarini yakho, esisetjenzisweni lesi. Akukho okuthunyelwa kuseva."
       },
       "how": {
-        "title": "How long we keep it",
-        "body": "Records older than 12 months are removed from this device. You can delete everything any time."
+        "title": "Sikubulunga isikhathi esingangani",
+        "body": "Amarekhodi angaphezu kweenyanga ezili-12 ayasuswa esisetjenzisweni lesi. Ungasula koke nanyana kunini."
       }
     },
-    "choices": "Your choices",
-    "required": "Required",
+    "choices": "Ukukhetha kwakho",
+    "required": "Kuyatlhogeka",
     "core": {
-      "title": "Forecast",
-      "body": "Needed to use Tengo. Withdraw any time and the forecast pauses."
+      "title": "Isibikezelo",
+      "body": "Kuyatlhogeka bona usebenzise i-Tengo. Khupha imvumo nanyana kunini bese isibikezelo siyamiswa."
     },
     "messages": {
-      "title": "Daily messages",
-      "body": "A short daily update with your date, by WhatsApp or SMS. WhatsApp messages pass through Meta, outside South Africa. Off until you turn it on. Simulated, nothing is sent."
+      "title": "Imilayezo yamalanga woke",
+      "body": "Ilwazi elifitjhani lelanga elinelanga lakho, nge-WhatsApp nanyana nge-SMS. Imilayezo ye-WhatsApp idlula ku-Meta, ngaphandle kweSewula Afrika. Ivaliwe bekube uyivula. Kulingiswa, akukho okuthunyelwako."
     },
     "analytics": {
-      "title": "Product analytics",
-      "body": "Helps improve Tengo. Off by default. No analytics runs in this demo."
+      "title": "Ukuhlathulula umkhiqizo",
+      "body": "Kusiza ukuthuthukisa i-Tengo. Kuvaliwe ngokujayelekileko. Akukho kuhlathulula okwenzekako kule demo."
     },
-    "changeLater": "You can change these any time in Privacy.",
-    "agree": "Agree and continue",
-    "notNow": "Not now",
-    "step": "Step 2 of 2"
+    "changeLater": "Ungakutjhugulula lokhu nanyana kunini ku-Ifihlo.",
+    "agree": "Vuma bese uragela phambili",
+    "notNow": "Ingasi nje",
+    "step": "Igadango 2 kwama-2"
   },
   "privacy": {
-    "simulated": "Simulated privacy controls. Not a compliance certification.",
-    "title": "Privacy",
-    "lead": "See, change, export or delete this person's data.",
-    "consentTitle": "Your consent",
-    "coreEffect": "Needed for Tengo to work. Turning it off pauses the forecast.",
-    "messagesEffect": "A short daily update in the Inbox. Turning it off hides the Inbox preview.",
-    "lastChanged": "Last changed {{date}}",
-    "minimisation": "What the forecast uses",
-    "uses": "Uses",
-    "neverUses": "Does not use",
+    "simulated": "Iinlawuli zefihlo ezilingisiweko. Akusi sitifikeyidi sokulandela umthetho.",
+    "title": "Ifihlo",
+    "lead": "Bona, tjhugulula, khupha nanyana usule ilwazi lomuntu lo.",
+    "consentTitle": "Imvumo yakho",
+    "coreEffect": "Kuyatlhogeka bona i-Tengo isebenze. Ukukuvala kumisa isibikezelo.",
+    "messagesEffect": "Ilwazi elifitjhani lelanga ku-Imilayezo. Ukukuvala kufihla ukubuka kokuthoma kwe-Imilayezo.",
+    "lastChanged": "Kutjhugululwe kokugcina ngo-{{date}}",
+    "minimisation": "Lokho isibikezelo esikusebenzisako",
+    "uses": "Kusebenzisa",
+    "neverUses": "Akusebenzisi",
     "used": {
-      "date": "Transaction date",
-      "amount": "Transaction amount",
-      "description": "Transaction description, to spot repeat bills and group spending",
-      "balance": "Your current balance"
+      "date": "Ilanga lethengiselwano",
+      "amount": "Imali yethengiselwano",
+      "description": "Umhlathiso wethengiselwano, ukubona amabhadelo aphindaphindwako nokuhlela ukusebenzisa",
+      "balance": "Ibhalansi yakho yanje"
     },
     "unused": {
-      "id": "ID number",
-      "location": "Location",
-      "contacts": "Contacts",
-      "account": "Account or card numbers"
+      "id": "Inomboro kamazisi",
+      "location": "Indawo",
+      "contacts": "Abantu othintana nabo",
+      "account": "Iinomboro ze-akhawunti nanyana zekarada"
     },
-    "security": "How data is kept",
+    "security": "Indlela ilwazi elibulungwa ngayo",
     "securityItems": {
-      "transit": "With an optional account: an encrypted connection and storage that only you can read.",
-      "access": "No staff access is set up. If support ever needs it, this notice will first say how it is limited and recorded.",
-      "device": "Data stays in this browser's storage on this device. Tengo does not encrypt it on the device.",
-      "server": "Nothing is sent to a server. There is no Tengo account and no staff access.",
-      "shared": "Anyone who uses this browser on this device can open it. Delete it any time.",
-      "accountStore": "Your data is stored with the database provider over an encrypted connection.",
-      "accountRls": "Each row is locked to you in the database, so no other account can read, change or delete it.",
-      "accountForecast": "Your forecast is still worked out on your device. The server only stores data."
+      "transit": "Nge-akhawunti ongayikhetha: ukuthintana okuvikelekileko nokubulunga okufundwa nguwe kwaphela.",
+      "access": "Akukho ukufikelela kwabasebenzi okulungiselelweko. Nangabe isizo sakhe sikutlhoga, isaziso lesi sizokuthoma sitjho bona kukhawulelwa begodu kurekhodwa njani.",
+      "device": "Ilwazi lihlala ebulungelweni lebhrawuza le esisetjenzisweni lesi. I-Tengo ayilivikeli esisetjenzisweni.",
+      "server": "Akukho okuthunyelwa kuseva. Ayikho i-akhawunti ye-Tengo begodu akukho ukufikelela kwabasebenzi.",
+      "shared": "Nanyana ngubani osebenzisa ibhrawuza le esisetjenzisweni lesi angalivula. Lisule nanyana kunini.",
+      "accountStore": "Ilwazi lakho libulungwa mhlinzeki wesizindalwazi ngokuthintana okuvikelekileko.",
+      "accountRls": "Umugqa ngamunye ukhiyelwe kuwe esizindalwazini, ngalokho ayikho enye i-akhawunti engawufunda, iwutjhugulule nanyana iwusule.",
+      "accountForecast": "Isibikezelo sakho sisabalwa esisetjenzisweni sakho. Iseva ibulunga ilwazi kwaphela."
     },
-    "rightsNav": "Your rights",
+    "rightsNav": "Amalungelo wakho",
     "links": {
       "data": {
-        "title": "See my data",
-        "body": "Everything held, and export it"
+        "title": "Bona ilwazi lami",
+        "body": "Koke okubulungiweko, bese ukukhupha"
       },
       "audit": {
-        "title": "Audit log",
-        "body": "Every access and change, with times"
+        "title": "Irekhodi lokuhlola",
+        "body": "Koke ukufikelela neentjhugululo, nesikhathi"
       },
       "review": {
-        "title": "Question this result",
-        "body": "Ask a person to check your date"
+        "title": "Buza ngomphumela lo",
+        "body": "Bawa umuntu bona ahlole ilanga lakho"
       },
       "breach": {
-        "title": "Breach notice",
-        "body": "A sample of what we would send"
+        "title": "Isaziso sokwephulwa kokuphepha",
+        "body": "Isibonelo salokho esingakuthumela"
       },
       "delete": {
-        "title": "Delete my data",
-        "body": "Remove this person's records"
+        "title": "Sula ilwazi lami",
+        "body": "Susa amarekhodi womuntu lo"
       }
     },
-    "retention": "How long we keep it",
-    "retentionRule": "Records older than 12 months are removed from this device when Tengo opens.",
-    "nextRemoval": "Next removal {{date}}, for records from {{from}}.",
-    "nothingStored": "Nothing stored yet.",
-    "crossBorder": "Where data is processed",
-    "crossBorderBody": "On this device only. In this demo nothing is sent to a server, inside or outside South Africa.",
-    "officer": "Information Officer",
-    "officerName": "Name",
-    "officerEmail": "Email",
-    "placeholderName": "To be appointed",
-    "placeholderNote": "Placeholder details. Not a real contact.",
-    "complaints": "If you are not happy with how your data is handled, you can complain to the Information Regulator of South Africa.",
-    "dataLead": "Everything Tengo holds about this person on this device.",
-    "exportJson": "Export JSON",
-    "exportCsv": "Export CSV",
-    "held": "Held about this person",
-    "heldPersona": "Person",
-    "heldBalance": "Balance",
-    "heldTransactions": "Transactions",
-    "heldSource": "Source",
-    "heldConsent": "Consent given",
-    "heldAudit": "Audit entries",
-    "heldReviews": "Review requests",
-    "heldWhere": "Stored",
-    "heldWhereValue": "This browser only",
+    "retention": "Sikubulunga isikhathi esingangani",
+    "retentionRule": "Amarekhodi angaphezu kweenyanga ezili-12 ayasuswa esisetjenzisweni lesi nangabe i-Tengo ivuleka.",
+    "nextRemoval": "Ukususwa okulandelako ngo-{{date}}, kwamarekhodi ukusukela ngo-{{from}}.",
+    "nothingStored": "Akukho okubulungiweko nje.",
+    "crossBorder": "Lapho ilwazi lisetjenzwa khona",
+    "crossBorderBody": "Esidlangalaleni lesi kwaphela. Kule demo akukho okuthunyelwa kuseva, ngaphakathi nanyana ngaphandle kweSewula Afrika.",
+    "officer": "Isiphathimandla seLwazi",
+    "officerName": "Ibizo",
+    "officerEmail": "I-imeyili",
+    "placeholderName": "Usazokukhethwa",
+    "placeholderNote": "Ilwazi lesikhatjhana. Akusi mumuntu wamambala wokuthintana naye.",
+    "complaints": "Nangabe awanelisekanga yindlela ilwazi lakho eliphathwa ngayo, ungakhalaza kuMlawuli weLwazi weSewula Afrika.",
+    "dataLead": "Koke i-Tengo ekubulungako ngomuntu lo esisetjenzisweni lesi.",
+    "exportJson": "Khupha i-JSON",
+    "exportCsv": "Khupha i-CSV",
+    "held": "Okubulungwe ngomuntu lo",
+    "heldPersona": "Umuntu",
+    "heldBalance": "Ibhalansi",
+    "heldTransactions": "Amathengiselwano",
+    "heldSource": "Umthombo",
+    "heldConsent": "Imvumo enikelweko",
+    "heldAudit": "Okufakwe erekhodini lokuhlola",
+    "heldReviews": "Iimbawo zokubuyekezwa",
+    "heldWhere": "Kubulungiwe",
+    "heldWhereValue": "Ebhrawuzarini le kwaphela",
     "source": {
-      "seed": "Sample data",
-      "import": "Imported statement",
-      "edited": "Sample data, corrected",
-      "manual": "Set up by hand, estimated"
+      "seed": "Ilwazi eliyisibonelo",
+      "import": "Isitatimende esingenisiweko",
+      "edited": "Ilwazi eliyisibonelo, lilungisiwe",
+      "manual": "Kulungiselelwe ngesandla, kulinganiselwe"
     },
-    "correctHint": "Something wrong? Correct or recategorise any transaction from the Money page.",
-    "auditLead": "A simulated log of access and changes, newest first.",
-    "auditEmpty": "No entries yet.",
-    "auditActor": "By you, on this device",
-    "reviewLead": "The date is worked out by fixed rules. If it looks wrong, ask a person to check it.",
-    "reviewFormTitle": "Request a human review",
-    "reviewAbout": "About: {{result}}",
-    "reviewReason": "What looks wrong",
+    "correctHint": "Kukhona okungakalungi? Lungisa nanyana utjhugulule isigaba sanyana ngiliphi ithengiselwano ekhasini le-Imali.",
+    "auditLead": "Irekhodi elilingisiweko lokufikelela neentjhugululo, okutjha kokuthoma.",
+    "auditEmpty": "Akukho okufakiweko nje.",
+    "auditActor": "Nguwe, esisetjenzisweni lesi",
+    "reviewLead": "Ilanga libalwa ngemithetho engatjhugululukiko. Nangabe libonakala lingakalungi, bawa umuntu bona alihlole.",
+    "reviewFormTitle": "Bawa ukubuyekezwa mumuntu",
+    "reviewAbout": "Ngaka: {{result}}",
+    "reviewReason": "Khuyini ebonakala ingakalungi",
     "reasons": {
-      "date": "The date looks wrong",
-      "income": "Income is missing or wrong",
-      "bill": "A bill is wrong",
-      "other": "Something else"
+      "date": "Ilanga libonakala lingakalungi",
+      "income": "Imali engenako ayikho nanyana ayikalungi",
+      "bill": "Ibhadelo alikalungi",
+      "other": "Okhunye"
     },
-    "reviewDetails": "Tell us more (optional)",
-    "reviewPlaceholder": "For example, I get paid on the 25th, not on Mondays.",
-    "reviewContact": "How should we reply",
+    "reviewDetails": "Sitjele okunengi (ongakukhetha)",
+    "reviewPlaceholder": "Isibonelo, ngibhadelwa ngomhla wama-25, ingasi ngoMvulo.",
+    "reviewContact": "Kufuze siphendule njani",
     "contact": {
-      "inbox": "In my Tengo Inbox",
-      "none": "No reply needed"
+      "inbox": "Ku-Imilayezo yami ye-Tengo",
+      "none": "Akutlhogeki ipendulo"
     },
-    "reviewSubmit": "Send request",
-    "reviewSimulated": "Simulated. No request leaves this device.",
-    "reviewSent": "Request received",
-    "reviewRef": "Reference {{ref}}",
-    "reviewNext": "In a real service, a person would check the inputs and reply within 5 working days. Until then the forecast keeps working as normal.",
-    "reviewAnother": "Send another",
-    "reviewPast": "Your requests",
-    "reviewNone": "No requests yet.",
-    "reviewStatus": "Received",
-    "breachLead": "If personal data were ever exposed, this is the kind of notice users would get.",
-    "breachSample": "Sample only. There has been no breach.",
-    "sampleStamp": "Sample",
-    "breachDate": "Date of notice: [date]",
-    "breachHeading": "Important: a security incident affecting your Tengo data",
+    "reviewSubmit": "Thumela isibawo",
+    "reviewSimulated": "Kulingiswa. Asikho isibawo esiphuma esisetjenzisweni lesi.",
+    "reviewSent": "Isibawo samukelwe",
+    "reviewRef": "Isikhombo {{ref}}",
+    "reviewNext": "Esizweni samambala, umuntu bekazokuhlola okufakiweko aphendule ngaphakathi kwamalanga ama-5 womsebenzi. Bekube ngesikhathi leso isibikezelo siragela phambili sisebenza njengokujayelekileko.",
+    "reviewAnother": "Thumela esinye",
+    "reviewPast": "Iimbawo zakho",
+    "reviewNone": "Azikho iimbawo nje.",
+    "reviewStatus": "Samukelwe",
+    "breachLead": "Nangabe ilwazi lomuntu lingaveza, lolu luhlobo lwesaziso abasebenzisi ebebazolufumana.",
+    "breachSample": "Isibonelo kwaphela. Akukho ukwephulwa kokuphepha okwenzekileko.",
+    "sampleStamp": "Isibonelo",
+    "breachDate": "Ilanga lesaziso: [ilanga]",
+    "breachHeading": "Kuqakathekile: isehlakalo sokuphepha esithinta ilwazi lakho le-Tengo",
     "breach": {
       "happened": {
-        "title": "What happened",
-        "body": "On [date], we found that [describe the incident]. We stopped it on [date]."
+        "title": "Okwenzekileko",
+        "body": "Ngo-[ilanga], sifumene bona [hlathulula isehlakalo]. Sikumise ngo-[ilanga]."
       },
       "data": {
-        "title": "What data was involved",
-        "body": "[List the data, for example transaction dates, amounts and descriptions]. Your ID number and passwords were not involved."
+        "title": "Ilwazi elithintekileko",
+        "body": "[Bala ilwazi, isibonelo amalanga wamathengiselwano, iimali nemihlathiso]. Inomboro kamazisi wakho namagama ayifihlo akhenge athinteke."
       },
       "doing": {
-        "title": "What we are doing",
-        "body": "We have [steps taken] and told the Information Regulator. We are working with [security partner] to stop this happening again."
+        "title": "Esikwenzako",
+        "body": "Sithethe [amagadango athethweko] begodu sazisa uMlawuli weLwazi. Sisebenzisana no-[umlingani wokuphepha] ukuvimbela bona lokhu kungenzeki godu."
       },
       "you": {
-        "title": "What you can do",
-        "body": "Watch for messages that ask for your PIN or password. Tengo will never ask for them. You can delete your data at any time in Privacy."
+        "title": "Ongakwenza",
+        "body": "Qaphela imilayezo ebawa i-PIN yakho nanyana ibizo lakho elifihlakeleko. I-Tengo angekhe ikubawe. Ungasula ilwazi lakho nanyana kunini ku-Ifihlo."
       },
       "contact": {
-        "title": "Contact us",
-        "body": "Our Information Officer is at [contact details]. You can also complain to the Information Regulator."
+        "title": "Thintana nathi",
+        "body": "Isiphathimandla seLwazi sethu sifumaneka ku-[ilwazi lokuthintana]. Ungakhalaza godu kuMlawuli weLwazi."
       }
     },
-    "deleteLead": "Remove {{name}}'s records from this device.",
-    "deleteWhat": "What will be removed",
-    "deleteTx_one": "{{count}} transaction and the balance",
-    "deleteTx_other": "{{count}} transactions and the balance",
-    "deleteConsent": "Consent choices and review requests",
-    "deleteAudit_one": "{{count}} audit log entry",
-    "deleteAudit_other": "{{count}} audit log entries",
-    "deleteReceipt": "A deletion receipt is kept, with no transaction details.",
-    "deleteStart": "Delete my data",
-    "deleteWarn": "This cannot be undone. You will go back to the start.",
-    "deleteCheck": "I understand this removes the data for good",
-    "deleteConfirm": "Yes, delete everything",
-    "descriptionsNote": "Statement descriptions can include names or references. Long numbers such as account, card or phone numbers are masked when a statement is imported. Descriptions stay on this device and are used only to spot repeat bills and group spending.",
-    "securityNow": "In this demo",
-    "securityPlanned": "Planned, not built yet",
-    "deleteLeadOwn": "Remove your profile and everything in it from this device.",
-    "pilot": "Pilot privacy controls. Not a compliance certification.",
+    "deleteLead": "Susa amarekhodi ka-{{name}} esisetjenzisweni lesi.",
+    "deleteWhat": "Okuzokususwa",
+    "deleteTx_one": "Ithengiselwano eli-{{count}} nebhalansi",
+    "deleteTx_other": "Amathengiselwano ali-{{count}} nebhalansi",
+    "deleteConsent": "Ukukhetha kwemvumo neembawo zokubuyekezwa",
+    "deleteAudit_one": "Okufakwe erekhodini lokuhlola okuli-{{count}}",
+    "deleteAudit_other": "Okufakwe erekhodini lokuhlola okuli-{{count}}",
+    "deleteReceipt": "Irasidi lokusula liyabulungwa, ngaphandle kwelwazi lamathengiselwano.",
+    "deleteStart": "Sula ilwazi lami",
+    "deleteWarn": "Lokhu angekhe kubuyiselwe emuva. Uzokubuyela ekuthomeni.",
+    "deleteCheck": "Ngiyazwisisa bona lokhu kususa ilwazi unomphela",
+    "deleteConfirm": "Iye, sula koke",
+    "descriptionsNote": "Imihlathiso yesitatimende ingaba namabizo nanyana iinkhombo. Iinomboro ezide ezifana neenomboro ze-akhawunti, zekarada nanyana zefowuni ziyafihlwa nangabe isitatimende singeniswa. Imihlathiso ihlala esisetjenzisweni lesi begodu isetjenziswa kwaphela ukubona amabhadelo aphindaphindwako nokuhlela ukusebenzisa.",
+    "securityNow": "Kule demo",
+    "securityPlanned": "Kuhlelwe, akukakhiwa",
+    "deleteLeadOwn": "Susa iphrofayili yakho nakho koke okukiyo esisetjenzisweni lesi.",
+    "pilot": "Iinlawuli zefihlo zokulinga. Akusi sitifikeyidi sokulandela umthetho.",
     "securityNowMode": {
-      "demo": "In this demo",
-      "device": "Your profile, on this device",
-      "account": "Your profile, saved to your account"
+      "demo": "Kule demo",
+      "device": "Iphrofayili yakho, esisetjenzisweni lesi",
+      "account": "Iphrofayili yakho, ibulungwe ku-akhawunti yakho"
     },
-    "retentionAccount": "Records older than 12 months are removed. Deleting your account removes every row and your sign-in.",
-    "crossBorderAccount": "Stored with the database provider in the region named in the privacy notice. Nothing is sent anywhere else."
+    "retentionAccount": "Amarekhodi angaphezu kweenyanga ezili-12 ayasuswa. Ukusula i-akhawunti yakho kususa yoke imigqa nokungena kwakho.",
+    "crossBorderAccount": "Kubulungwe mhlinzeki wesizindalwazi esifundeni esibalwe esazisweni sefihlo. Akukho okuthunyelwa kwenye indawo."
   },
   "home": {
     "greeting": {
-      "morning": "Good morning, {{name}}.",
-      "afternoon": "Good afternoon, {{name}}.",
-      "evening": "Good evening, {{name}}."
+      "morning": "Lotjha ekuseni, {{name}}.",
+      "afternoon": "Lotjha ntambama, {{name}}.",
+      "evening": "Lotjha kusihlwa, {{name}}."
     },
-    "heroLabel": "Your date",
-    "emptyTitle": "No money history yet",
-    "emptyBody": "Import a statement with at least 14 days of transactions to see your date.",
-    "greetingLabel": "Greeting",
-    "unknownShort": "Not found yet",
+    "heroLabel": "Ilanga lakho",
+    "emptyTitle": "Awukabi nomlando wemali",
+    "emptyBody": "Ngenisa isitatimende esinamalanga ali-14 nanyana ngaphezulu wamathengiselwano bona ubone ilanga lakho.",
+    "greetingLabel": "Ukulotjha",
+    "unknownShort": "Akukafunyanwa",
     "greetingNoName": {
-      "morning": "Good morning.",
-      "afternoon": "Good afternoon.",
-      "evening": "Good evening."
+      "morning": "Lotjha ekuseni.",
+      "afternoon": "Lotjha ntambama.",
+      "evening": "Lotjha kusihlwa."
     }
   },
   "hero": {
-    "enoughUntil": "Enough until",
-    "enoughBeyond": "Enough beyond",
-    "shortFrom": "Short from",
-    "gap_one": "{{count}} day before your next money",
-    "gap_other": "{{count}} days before your next money",
-    "tightUntil": "Tight until",
-    "unclear": "Not enough to tell",
-    "unclearLead": "Your date",
+    "enoughUntil": "Yanele bekube",
+    "enoughBeyond": "Yanele ngaphezu ka",
+    "shortFrom": "Iyatlhayela ukusukela",
+    "gap_one": "Ilanga eli-{{count}} ngaphambi kwemali yakho elandelako",
+    "gap_other": "Amalanga ali-{{count}} ngaphambi kwemali yakho elandelako",
+    "tightUntil": "Yanele kancani bekube",
+    "unclear": "Akwanelanga ukutjho",
+    "unclearLead": "Ilanga lakho",
     "line": "{{label}} {{date}}"
   },
   "band": {
-    "between": "Likely between {{from}} and {{to}}",
-    "single": "Likely {{date}}",
-    "lowConfidence": "Low confidence",
-    "legendNext": "Next money",
-    "legendDate": "Your date",
-    "legendRange": "Likely range"
+    "between": "Kungenzeka phakathi kwaka-{{from}} no-{{to}}",
+    "single": "Kungenzeka ngo-{{date}}",
+    "lowConfidence": "Ukuqiniseka okuphasi",
+    "legendNext": "Imali elandelako",
+    "legendDate": "Ilanga lakho",
+    "legendRange": "Ibanga elingenzeka"
   },
   "sts": {
-    "title": "Daily budget",
-    "withBills": "Spread evenly until your next money, after {{bills}} in bills.",
-    "noBills": "Spread evenly until your next money. No bills due before it.",
-    "reserveOne": "Keeps {{amount}} back for {{name}} on {{date}}, which your next money may not cover.",
-    "reserveMany": "Keeps {{amount}} back for {{count}} bills just after your next money, which it may not cover.",
-    "noReserve": "No bills due just after your next money, so nothing extra is kept back.",
-    "usual": "Your usual spend is {{amount}} a day.",
-    "notAdvised": "Not advised",
-    "notAdvisedWhy_one": "At your usual {{usual}} a day, money runs out {{count}} day before your next money.",
-    "notAdvisedWhy_other": "At your usual {{usual}} a day, money runs out {{count}} days before your next money.",
-    "disclaimer": "An estimate from your own history, not advice.",
-    "nothingSpare": "Nothing spare",
-    "pending": "Waiting for today's money",
-    "pendingWhy": "Your usual payment is due today. The budget is worked out once it lands.",
-    "unclear": "Not shown yet",
-    "unclearWhy": "Tengo needs more to go on before it suggests a daily figure.",
-    "overdrawnWhy": "You are overdrawn by {{amount}}. Money that comes in covers this first.",
-    "notAdvisedNoMoney": "At your usual {{usual}} a day, money runs out before any money is expected."
+    "title": "Isabelomali selanga",
+    "withBills": "Kwahlukaniswe ngokulinganako bekube kufike imali yakho elandelako, ngemva kuka-{{bills}} wamabhadelo.",
+    "noBills": "Kwahlukaniswe ngokulinganako bekube kufike imali yakho elandelako. Awekho amabhadelo afaneleko ngaphambi kwayo.",
+    "reserveOne": "Kubulunga u-{{amount}} we-{{name}} ngo-{{date}}, imali yakho elandelako engekhe ilibhadele.",
+    "reserveMany": "Kubulunga u-{{amount}} wamabhadelo ali-{{count}} eza ngemva nje kwemali yakho elandelako, engekhe iwabhadele.",
+    "noReserve": "Awekho amabhadelo eza ngemva nje kwemali yakho elandelako, ngalokho akukho okwengeziweko okubulungwako.",
+    "usual": "Ukusebenzisa kwakho okujayelekileko ngu-{{amount}} ngelanga.",
+    "notAdvised": "Akunconywa",
+    "notAdvisedWhy_one": "Ngokujayelekileko kwakho ku-{{usual}} ngelanga, imali iyaphela ilanga eli-{{count}} ngaphambi kwemali yakho elandelako.",
+    "notAdvisedWhy_other": "Ngokujayelekileko kwakho ku-{{usual}} ngelanga, imali iyaphela amalanga ali-{{count}} ngaphambi kwemali yakho elandelako.",
+    "disclaimer": "Isilinganiso esivela emlandweni wakho, akusi seluleko.",
+    "nothingSpare": "Akukho okuseleko",
+    "pending": "Kulindelwe imali yanamhlanje",
+    "pendingWhy": "Ibhadelo lakho elijayelekileko lifanele namhlanje. Isabelomali sizokubalwa nasele lingenile.",
+    "unclear": "Akukatjengiswa",
+    "unclearWhy": "I-Tengo itlhoga okunengi ngaphambi kokuphakamisa inani lelanga.",
+    "overdrawnWhy": "Ukweleda ngo-{{amount}} ebhanga. Imali engenako ibhadela lokhu kokuthoma.",
+    "notAdvisedNoMoney": "Ngokujayelekileko kwakho ku-{{usual}} ngelanga, imali iyaphela ngaphambi kobana kulindelwe nanyana yiphi imali."
   },
   "stateCard": {
-    "title": "Cover",
-    "enough": "Covered until your next money, even on a heavy week.",
-    "tight": "Covered on a normal week, not on a heavy one.",
-    "short_one": "Runs out {{count}} day before your next money.",
-    "short_other": "Runs out {{count}} days before your next money.",
-    "tightReserve": "Covered until your next money, but {{amount}} is needed for a bill soon after it.",
-    "unclearThin": "Tengo needs at least 14 days of money history to work out a date. Import a statement or add a few weeks of entries.",
-    "unclearNoIncome": "No money coming in was found in your history. Add your income, or set it up by hand, to get an answer.",
-    "noIncomeRunway": "With nothing coming in, your balance lasts until {{date}} at your usual spend.",
-    "unclearStale": "Your balance is more than two weeks old. Add today's balance to see your date.",
-    "enoughHorizon": "Lasts the next {{days}} days even on a heavy week, with no money expected.",
-    "tightHorizon": "Lasts the next {{days}} days on a normal week, not on a heavy one. No money is expected.",
-    "shortHorizon": "Runs out within the next {{days}} days, and no money is expected.",
-    "enoughDaily": "Lasts the next {{days}} days even on a heavy week, counting half of what usually comes in each day.",
-    "tightDaily": "Lasts the next {{days}} days on a normal week, counting half of what usually comes in each day. Not on a heavy one.",
-    "shortDaily": "Runs out within the next {{days}} days, even counting half of what usually comes in each day."
+    "title": "Isimo",
+    "enough": "Uvikelekile bekube kufike imali yakho elandelako, ngitjho neveke ebudisi.",
+    "tight": "Uvikelekile ngeveke ejayelekileko, ingasi ngeveke ebudisi.",
+    "short_one": "Iyaphela ilanga eli-{{count}} ngaphambi kwemali yakho elandelako.",
+    "short_other": "Iyaphela amalanga ali-{{count}} ngaphambi kwemali yakho elandelako.",
+    "tightReserve": "Uvikelekile bekube kufike imali yakho elandelako, kodwana u-{{amount}} uyatlhogeka ebhadelweni elizokufika ngemva kwayo.",
+    "unclearThin": "I-Tengo itlhoga amalanga ali-14 nanyana ngaphezulu womlando wemali bona ibale ilanga. Ngenisa isitatimende nanyana ufake iimveke ezimbalwa zokufakiweko.",
+    "unclearNoIncome": "Ayikho imali engenako efunyenweko emlandweni wakho. Faka imali yakho engenako, nanyana uyilungiselele ngesandla, bona ufumane ipendulo.",
+    "noIncomeRunway": "Nangabe akukho okungenako, ibhalansi yakho ihlala bekube ngu-{{date}} ngokusebenzisa kwakho okujayelekileko.",
+    "unclearStale": "Ibhalansi yakho idala ngaphezu kweemveke ezimbili. Faka ibhalansi yanamhlanje bona ubone ilanga lakho.",
+    "enoughHorizon": "Ihlala amalanga ali-{{days}} ezako ngitjho neveke ebudisi, kungekho imali elindelekileko.",
+    "tightHorizon": "Ihlala amalanga ali-{{days}} ezako ngeveke ejayelekileko, ingasi ebudisi. Ayikho imali elindelekileko.",
+    "shortHorizon": "Iyaphela ngaphakathi kwamalanga ali-{{days}} ezako, begodu ayikho imali elindelekileko.",
+    "enoughDaily": "Ihlala amalanga ali-{{days}} ezako ngitjho neveke ebudisi, kubalwa isiqingatha salokho okujayele ukungena qobe langa.",
+    "tightDaily": "Ihlala amalanga ali-{{days}} ezako ngeveke ejayelekileko, kubalwa isiqingatha salokho okujayele ukungena qobe langa. Ingasi ngeveke ebudisi.",
+    "shortDaily": "Iyaphela ngaphakathi kwamalanga ali-{{days}} ezako, ngitjho kubalwa isiqingatha salokho okujayele ukungena qobe langa."
   },
   "next": {
-    "title": "Next money",
-    "around": "Around {{date}}",
-    "window": "Likely window",
-    "amount": "Usual amount",
-    "patternWeekday": "Usually lands on a {{day}}.",
-    "patternInterval_one": "Usually lands every {{count}} day.",
-    "patternInterval_other": "Usually lands every {{count}} days.",
-    "unknown": "No regular income found yet. Tengo plans 30 days ahead.",
-    "pendingToday": "Today, not in yet",
-    "none": "None expected",
-    "daily": "Most days"
+    "title": "Imali elandelako",
+    "around": "Cishe ngo-{{date}}",
+    "window": "Isikhathi esingenzeka",
+    "amount": "Inani elijayelekileko",
+    "patternWeekday": "Ijayele ukungena ngo-{{day}}.",
+    "patternInterval_one": "Ijayele ukungena ngemva kwelanga eli-{{count}}.",
+    "patternInterval_other": "Ijayele ukungena ngemva kwamalanga ali-{{count}}.",
+    "unknown": "Akukafunyanwa imali engenako ejayelekileko. I-Tengo ihlela amalanga ama-30 phambili.",
+    "pendingToday": "Namhlanje, ayikangeni",
+    "none": "Ayikho elindelekileko",
+    "daily": "Amalanga amanengi"
   },
   "recent": {
-    "title": "Recent activity",
-    "all": "See all",
-    "empty": "No transactions yet."
+    "title": "Okwenzeke kwakutjhana",
+    "all": "Bona koke",
+    "empty": "Awekho amathengiselwano nje."
   },
   "scrubber": {
-    "title": "Next 30 days",
-    "subtitle": "Expected balance and likely range",
-    "label": "Pick a day in the next 30 days",
-    "valueText": "If money lands as usual. {{date}}: about {{amount}}, likely {{low}} to {{high}}. {{level}}.{{events}}",
-    "range": "Likely {{low}} to {{high}}",
-    "expectedIncome": "Expected money",
-    "billDue": "{{name}} due",
-    "summary": "Projected balance for the next 30 days if money lands as usual. Lowest point {{low}} on {{date}}.",
-    "showTable": "Show numbers",
-    "hideTable": "Hide numbers",
-    "tableCaption": "Projected balance and cover for each of the next 30 days",
-    "colDay": "Day",
-    "colExpected": "Expected",
-    "colRange": "Likely range",
-    "colCover": "Balance",
-    "key": "Line: expected balance. Shading: likely range. Filled dots: money in. Hollow dots: bills.",
-    "ifUsual": "If money lands as usual",
+    "title": "Amalanga ama-30 ezako",
+    "subtitle": "Ibhalansi elindelekileko nebanga elingenzeka",
+    "label": "Khetha ilanga emalangeni ama-30 ezako",
+    "valueText": "Nangabe imali ingena njengokujayelekileko. {{date}}: cishe {{amount}}, kungenzeka {{low}} ukuya ku-{{high}}. {{level}}.{{events}}",
+    "range": "Kungenzeka {{low}} ukuya ku-{{high}}",
+    "expectedIncome": "Imali elindelekileko",
+    "billDue": "I-{{name}} kufuze ibhadelwe",
+    "summary": "Ibhalansi ebikezelweko yamalanga ama-30 ezako nangabe imali ingena njengokujayelekileko. Iphuzu eliphasi khulu {{low}} ngo-{{date}}.",
+    "showTable": "Tjengisa iinomboro",
+    "hideTable": "Fihla iinomboro",
+    "tableCaption": "Ibhalansi ebikezelweko nesimo selanga ngalinye emalangeni ama-30 ezako",
+    "colDay": "Ilanga",
+    "colExpected": "Okulindelekileko",
+    "colRange": "Ibanga elingenzeka",
+    "colCover": "Ibhalansi",
+    "key": "Umugqa: ibhalansi elindelekileko. Isithunzi: ibanga elingenzeka. Amabala azeleko: imali engenako. Amabala angenalitho: amabhadelo.",
+    "ifUsual": "Nangabe imali ingena njengokujayelekileko",
     "level": {
-      "enough": "Above R0 even on a heavy week",
-      "tight": "Could dip below R0 on a heavy week",
-      "short": "Below R0 on a normal week"
+      "enough": "Ngaphezu kwaka-R0 ngitjho neveke ebudisi",
+      "tight": "Ingehla ngaphasi kwaka-R0 ngeveke ebudisi",
+      "short": "Ngaphasi kwaka-R0 ngeveke ejayelekileko"
     },
     "levelShort": {
-      "enough": "Above R0",
-      "tight": "Could reach R0",
-      "short": "Below R0"
+      "enough": "Ngaphezu kwaka-R0",
+      "tight": "Ingafika ku-R0",
+      "short": "Ngaphasi kwaka-R0"
     }
   },
   "why": {
-    "open": "Why this date",
-    "title": "Why this date",
-    "plain": "We start with your balance today, take off bills on their due dates, and spend at your usual daily rate until the money reaches zero. That day is your date. Money you have not received yet is not counted.",
-    "chartLabel": "How the balance runs down on a normal, light and heavy week",
-    "lineCentral": "Normal week",
-    "lineLight": "Light week",
-    "lineHeavy": "Heavy week",
-    "lineNext": "Next money, {{date}}",
-    "inputs": "What went in",
-    "balance": "Balance today",
-    "dailySpend": "Usual daily spend",
-    "dailySpendHint": "Light to heavy week: {{low}} to {{high}} a day",
-    "perDay": "{{amount}} a day",
-    "bills": "Bills before next money",
-    "noBills": "None due",
-    "income": "Expected next money",
+    "open": "Kubayini ilanga leli",
+    "title": "Kubayini ilanga leli",
+    "plain": "Sithoma ngebhalansi yakho yanamhlanje, sisuse amabhadelo ngamalanga wawo, bese sisebenzisa ngezinga lakho elijayelekileko lelanga bekube imali ifika ku-ziro. Ilanga lelo lilanga lakho. Imali ongakayifumani ayibalwa.",
+    "chartLabel": "Indlela ibhalansi ehla ngayo ngeveke ejayelekileko, elula nebudisi",
+    "lineCentral": "Iveke ejayelekileko",
+    "lineLight": "Iveke elula",
+    "lineHeavy": "Iveke ebudisi",
+    "lineNext": "Imali elandelako, {{date}}",
+    "inputs": "Okufakiweko",
+    "balance": "Ibhalansi yanamhlanje",
+    "dailySpend": "Ukusebenzisa okujayelekileko kwelanga",
+    "dailySpendHint": "Iveke elula ukuya kwebudisi: {{low}} ukuya ku-{{high}} ngelanga",
+    "perDay": "{{amount}} ngelanga",
+    "bills": "Amabhadelo ngaphambi kwemali elandelako",
+    "noBills": "Awekho afaneleko",
+    "income": "Imali elandelako elindelekileko",
     "incomeValue": "{{amount}}, {{date}}",
-    "history": "History used",
-    "historyHint_one": "From {{count}} day on record",
-    "historyHint_other": "From {{count}} days on record",
-    "historyValue_one": "Last {{count}} day",
-    "historyValue_other": "Last {{count}} days",
-    "confidence": "Confidence",
+    "history": "Umlando osetjenzisiweko",
+    "historyHint_one": "Ukusuka elangeni eli-{{count}} elirekhodiweko",
+    "historyHint_other": "Ukusuka emalangeni ali-{{count}} arekhodiweko",
+    "historyValue_one": "Ilanga eli-{{count}} lokugcina",
+    "historyValue_other": "Amalanga ali-{{count}} wokugcina",
+    "confidence": "Ukuqiniseka",
     "confidenceHint": {
-      "high": "60 or more days of history",
-      "medium": "28 to 59 days of history",
-      "low": "Under 28 days. The range is wider."
+      "high": "Amalanga ama-60 nanyana ngaphezulu womlando",
+      "medium": "Amalanga ama-28 ukuya kuma-59 womlando",
+      "low": "Ngaphasi kwamalanga ama-28. Ibanga libanzi."
     },
-    "rulesTitle": "How the cover is set",
+    "rulesTitle": "Indlela isimo esibekwa ngayo",
     "rule": {
-      "enough": "Even a heavy week lasts until the latest likely next money.",
-      "tight": "A normal week lasts until the usual next money. A heavy week does not.",
-      "short": "A normal week runs out before the usual next money.",
-      "unclear": "Not enough history or no income, so there is no date yet."
+      "enough": "Ngitjho neveke ebudisi ihlala bekube kufike imali elandelako engenzeka isilibele khulu.",
+      "tight": "Iveke ejayelekileko ihlala bekube kufike imali elandelako ejayelekileko. Iveke ebudisi ayihlali.",
+      "short": "Iveke ejayelekileko iyaphela ngaphambi kwemali elandelako ejayelekileko.",
+      "unclear": "Umlando awanelanga nanyana ayikho imali engenako, ngalokho alikho ilanga nje."
     },
-    "question": "Question this result",
-    "notAdvice": "This is an estimate from past patterns, not financial advice, and it is not used for any credit or lending decision.",
-    "budgetSpread": "The daily budget is spread to {{date}}, the latest your next money usually lands.",
-    "reserve": "Kept back for bills just after next money",
-    "reserveNone": "None due in the week after",
-    "incomeStatus": "Money in",
+    "question": "Buza ngomphumela lo",
+    "notAdvice": "Lesi sisilinganiso esivela emaphethinini wangaphambili, akusi seluleko seemali, begodu asisetjenziselwa nanyana ngisiphi isiqunto sesikwelede nanyana sokuboleka.",
+    "budgetSpread": "Isabelomali selanga sahlukaniswa bekube ngu-{{date}}, ilanga lokugcina imali yakho elandelako ejayele ukungena ngalo.",
+    "reserve": "Kubulungelwe amabhadelo eza ngemva nje kwemali elandelako",
+    "reserveNone": "Awekho afaneleko eveke elandelako",
+    "incomeStatus": "Imali engenako",
     "incomeStatusValue": {
-      "regular": "Regular",
-      "pendingToday": "Due today",
-      "paused": "Paused",
-      "irregular": "No pattern",
-      "none": "None found",
-      "daily": "Most days"
+      "regular": "Qobe",
+      "pendingToday": "Ifanele namhlanje",
+      "paused": "Imisiwe",
+      "irregular": "Ayikho iphethini",
+      "none": "Ayifunyanwanga",
+      "daily": "Amalanga amanengi"
     },
-    "monthEnd": "Month end",
+    "monthEnd": "Ukuphela kwenyanga",
     "monthEndValue": {
-      "pattern": "Spends more from the 25th",
-      "widened": "Heavy path allows for it",
-      "none": "No pattern"
+      "pattern": "Usebenzisa khulu ukusukela ngomhla wama-25",
+      "widened": "Indlela ebudisi iyakunaka",
+      "none": "Ayikho iphethini"
     },
-    "oneOffs": "Left out as one-off",
-    "oneOffsNone": "Nothing",
-    "horizon": "No money is expected, so the cover is judged over the next {{count}} days.",
-    "horizonDaily": "Money comes in most days, so the cover is judged over the next {{count}} days, counting half of your usual daily income."
+    "oneOffs": "Okutjhiywe ngaphandle njengokwenzeka kanye",
+    "oneOffsNone": "Litho",
+    "horizon": "Ayikho imali elindelekileko, ngalokho isimo sahlulelwa emalangeni ali-{{count}} ezako.",
+    "horizonDaily": "Imali ingena amalanga amanengi, ngalokho isimo sahlulelwa emalangeni ali-{{count}} ezako, kubalwa isiqingatha semali yakho ejayelekileko engena qobe langa."
   },
   "paused": {
-    "title": "Forecast paused",
-    "body": "You withdrew consent for the forecast, so Tengo is not using your data. Resume to see your date again, or delete your data.",
-    "resume": "Resume forecast",
-    "delete": "Delete my data"
+    "title": "Isibikezelo simisiwe",
+    "body": "Ukhuphe imvumo yesibikezelo, ngalokho i-Tengo ayisebenzisi ilwazi lakho. Ragela phambili godu bona ubone ilanga lakho, nanyana usule ilwazi lakho.",
+    "resume": "Ragela phambili nesibikezelo",
+    "delete": "Sula ilwazi lami"
   },
   "me": {
-    "switchPersona": "Switch person",
-    "title": "Me",
-    "persona": "Who you are in the demo",
-    "current": "Current",
-    "theme": "Theme",
+    "switchPersona": "Tjhugulula umuntu",
+    "title": "Mina",
+    "persona": "Ungubani edemweni",
+    "current": "Nje",
+    "theme": "Isihloko",
     "themes": {
-      "light": "Light",
-      "dark": "Dark",
-      "system": "System"
+      "light": "Kukhanya",
+      "dark": "Kumnyama",
+      "system": "Ihlelo"
     },
-    "about": "About Tengo",
-    "nameTitle": "The name",
-    "nameBody": "Tengo comes from mutengo, the Tshivenda word for value. This meaning was supplied by the founder and is still to be confirmed by a Tshivenda speaker.",
-    "howTitle": "How the forecast works",
+    "about": "Ngaka-Tengo",
+    "nameTitle": "Ibizo",
+    "nameBody": "I-Tengo isuka ebizweni elithi mutengo, ibizo lesiVenda elitjho ukuqakatheka. Umhlathiso lo unikelwe mthomi begodu usazokuqinisekiswa sikhulumi sesiVenda.",
+    "howTitle": "Indlela isibikezelo esisebenza ngayo",
     "how": {
-      "1": "It splits your history into income, regular bills and everyday spending.",
-      "2": "It works out your usual daily spend from the last 60 days, plus a light week and a heavy week.",
-      "3": "It finds when your next money usually lands and how much it usually is.",
-      "4": "It runs your balance down day by day, taking off bills on their dates, until it reaches zero. That day is your date.",
-      "5": "It compares that date with your next money to set your cover: Enough, Tight or Short."
+      "1": "Ihlukanisa umlando wakho ube yimali engenako, amabhadelo ajayelekileko nokusebenzisa kwamalanga woke.",
+      "2": "Ibala ukusebenzisa kwakho okujayelekileko kwelanga ukusuka emalangeni ama-60 wokugcina, kunye neveke elula neveke ebudisi.",
+      "3": "Ifumana bona imali yakho elandelako ijayele ukungena nini nokobana ijayele ukuba malini.",
+      "4": "Yehlisa ibhalansi yakho ilanga ngelanga, isuse amabhadelo ngamalanga wawo, bekube ifika ku-ziro. Ilanga lelo lilanga lakho.",
+      "5": "Imadanisa ilanga lelo nemali yakho elandelako bona ibeke isimo sakho: Yanele, Yanele kancani nanyana Iyatlhayela."
     },
-    "simTitle": "What is simulated",
+    "simTitle": "Okulingisiweko",
     "sim": {
-      "data": "All people and money are fictional composites.",
-      "bank": "There is no bank connection and no open banking.",
-      "messages": "Messages are previews. Nothing is sent.",
-      "privacy": "Privacy controls show good practice. They are not a compliance certification.",
-      "translations": "Built for 11 languages. English today. The other 10 need translating and checking by first-language speakers, and Tshivenda needs a human translator."
+      "data": "Boke abantu nemali kwakhiwe.",
+      "bank": "Akukho ukuthintana nebhanga begodu akukho i-open banking.",
+      "messages": "Imilayezo iimbonelo zokubuka kokuthoma. Akukho okuthunyelwako.",
+      "privacy": "Iinlawuli zefihlo zitjengisa indlela ehle. Akusi sitifikeyidi sokulandela umthetho.",
+      "translations": "IsiNgisi mthombo. Amanye amalimi ali-10 mahlelo we-AI izikhulumi zamalimi lawo njengamalimi wokuthoma ezisafuze ziwahlole, ngalokho amanye amabizo angaba mumbi."
     },
-    "reset": "Reset demo data",
-    "resetBody": "Clears the fictional people, your own profile on this device, consent choices and logs, and starts fresh. An account, if you saved one, is not touched.",
-    "resetWarn": "This removes everything Tengo stored on this device, including your own profile.",
-    "resetConfirm": "Yes, reset everything",
-    "themeHint": "Dark is the default. System follows your device.",
-    "profileTitle": "Your profile",
-    "storageMode": "Stored: {{mode}}",
-    "nicknameSave": "Save name",
-    "nicknameSaved": "Name saved",
-    "exportLink": "See and export my data",
-    "deleteProfile": "Delete my profile",
-    "switchPeople": "Switch to the fictional people",
-    "notice": "Privacy notice and terms"
+    "reset": "Lungiselela kabutjha ilwazi ledemo",
+    "resetBody": "Isula abantu bokwakhiwa, iphrofayili yakho esisetjenzisweni lesi, ukukhetha kwemvumo namarekhodi, bese ithoma kabutjha. I-akhawunti, nangabe ubulunge yinye, ayithintwa.",
+    "resetWarn": "Lokhu kususa koke i-Tengo ekubulunge esisetjenzisweni lesi, kufaka phakathi neprofayili yakho.",
+    "resetConfirm": "Iye, lungiselela koke kabutjha",
+    "themeHint": "Kumnyama ngokujayelekileko. Ihlelo lilandela isisetjenziswa sakho.",
+    "profileTitle": "Iphrofayili yakho",
+    "storageMode": "Kubulungiwe: {{mode}}",
+    "nicknameSave": "Bulunga ibizo",
+    "nicknameSaved": "Ibizo libulungiwe",
+    "exportLink": "Bona begodu ukhuphe ilwazi lami",
+    "deleteProfile": "Sula iphrofayili yami",
+    "switchPeople": "Tjhentjhela ebantwini bokwakhiwa",
+    "notice": "Isaziso sefihlo nemibandela"
   },
   "errors": {
-    "loadTitle": "Could not load your data",
-    "loadBody": "Something went wrong reading this device's storage.",
-    "retry": "Try again",
-    "crashTitle": "Something went wrong",
-    "crashBody": "This screen hit an error. Your data on this device has not changed.",
-    "crashCta": "Back to start"
+    "loadTitle": "Akukghonakalanga ukulayisha ilwazi lakho",
+    "loadBody": "Kukhona okungakahambi kuhle ekufundeni ibulungelo lesisetjenziswa lesi.",
+    "retry": "Linga godu",
+    "crashTitle": "Kukhona okungakahambi kuhle",
+    "crashBody": "Isikrini lesi sihlangane nephoso. Ilwazi lakho esisetjenzisweni lesi alikatjhuguluki.",
+    "crashCta": "Buyela ekuthomeni"
   },
   "notFound": {
-    "title": "Page not found",
-    "body": "This page does not exist in the demo.",
-    "cta": "Back to start"
+    "title": "Ikhasi alikafunyanwa",
+    "body": "Ikhasi leli alikho edemweni.",
+    "cta": "Buyela ekuthomeni"
   },
   "plan": {
-    "title": "Plan",
-    "lead": "Test a change before you make it. Nothing is saved.",
-    "whatIf": "What-if",
-    "whatIfLead": "Add a one-off amount and see your date move.",
-    "itemLabel": "Change {{n}}",
-    "kind": "Money in or out",
-    "income": "Money in",
-    "expense": "Money out",
-    "remove": "Remove change {{n}}",
-    "amount": "Amount",
-    "date": "Date",
-    "label": "Note (optional)",
-    "labelPlaceholder": "For example, school trip",
-    "add": "Add a change",
-    "noItems": "No changes yet. Add one to see the effect.",
-    "result": "Result",
-    "now": "Now",
-    "withChanges": "With these changes",
-    "noChange": "No change",
-    "daysMore_one": "{{count}} day more",
-    "daysMore_other": "{{count}} days more",
-    "daysLess_one": "{{count}} day less",
-    "daysLess_other": "{{count}} days less",
-    "stsChange": "Daily budget: {{before}} now, {{after}} with these changes.",
-    "loan": "Loan check",
-    "loanLead": "See what lending money does to your cover first.",
-    "loanAmount": "Amount someone asked for",
-    "enterAmount": "Enter an amount, or pick one below, to see the effect.",
-    "ifLend": "If you lend {{amount}} today",
-    "afterLoan": "After the loan",
-    "stateDrops": "This drops your cover from {{from}} to {{to}}.",
-    "amountError": "Enter an amount above zero, for example 250.",
-    "whatIfSpoken": "With these changes: {{label}} {{date}}, {{state}}, {{change}}.",
-    "loanSpoken_one": "If you lend {{amount}}: {{label}} {{date}}, {{state}}, {{count}} day less cover.",
-    "loanSpoken_other": "If you lend {{amount}}: {{label}} {{date}}, {{state}}, {{count}} days less cover.",
-    "notAdvised": "not advised",
-    "exampleNote": "An example to start with: a R200 school trip next Friday. Change it or remove it.",
-    "roomToLend": "Room to lend",
-    "roomToLendHint": "Lending or giving up to this keeps you at {{state}} and keeps {{reserve}} back for bills just after your next money.",
-    "roomToLendHintNoReserve": "Lending or giving up to this keeps you at {{state}}.",
-    "roomToLendNone": "Any amount now would drop you below {{state}} or use money kept back for bills.",
-    "roomToLendShort": "You are already Short before your next money. Any amount you lend brings your date closer.",
-    "lendCaution": "Only lend what you could manage without getting back. Tengo cannot tell if or when it comes back.",
-    "useRoom": "Use {{amount}}",
-    "labelPlaceholderValue": "School trip (example)",
-    "roomToLendUnsure": "Tengo is not sure enough about your money coming in to suggest an amount. Check the effect of a specific amount below.",
-    "notAdvice": "Estimates from your own history, not advice. Nothing here is a lending decision or an offer of credit."
+    "title": "Hlela",
+    "lead": "Hlola itjhugululo ngaphambi kobana ulenze. Akukho okubulungwako.",
+    "whatIf": "Kuthiwani nangabe",
+    "whatIfLead": "Faka imali eyenzeka kanye bese ubona ilanga lakho lishukuma.",
+    "itemLabel": "Itjhugululo {{n}}",
+    "kind": "Imali engenako nanyana ephumako",
+    "income": "Imali engenako",
+    "expense": "Imali ephumako",
+    "remove": "Susa itjhugululo {{n}}",
+    "amount": "Inani",
+    "date": "Ilanga",
+    "label": "Inothi (ongakukhetha)",
+    "labelPlaceholder": "Isibonelo, ikambo lesikolo",
+    "add": "Faka itjhugululo",
+    "noItems": "Akukabi khona iintjhugululo. Faka yinye bona ubone umphumela.",
+    "result": "Umphumela",
+    "now": "Nje",
+    "withChanges": "Ngeentjhugululo lezi",
+    "noChange": "Akukho itjhugululo",
+    "daysMore_one": "Ilanga eli-{{count}} elengeziweko",
+    "daysMore_other": "Amalanga ali-{{count}} engeziweko",
+    "daysLess_one": "Ilanga eli-{{count}} elincani",
+    "daysLess_other": "Amalanga ali-{{count}} ambalwa",
+    "stsChange": "Isabelomali selanga: {{before}} nje, {{after}} ngeentjhugululo lezi.",
+    "loan": "Ukuhlola isikwelede",
+    "loanLead": "Bona kokuthoma bona ukuboleka imali kwenzani esimeni sakho.",
+    "loanAmount": "Inani umuntu alibawileko",
+    "enterAmount": "Faka inani, nanyana ukhethe elinye ngaphasi, bona ubone umphumela.",
+    "ifLend": "Nangabe uboleka u-{{amount}} namhlanje",
+    "afterLoan": "Ngemva kokuboleka",
+    "stateDrops": "Lokhu kwehlisa isimo sakho ukusuka ku-{{from}} ukuya ku-{{to}}.",
+    "amountError": "Faka inani elingaphezu kweziro, isibonelo 250.",
+    "whatIfSpoken": "Ngeentjhugululo lezi: {{label}} {{date}}, {{state}}, {{change}}.",
+    "loanSpoken_one": "Nangabe uboleka u-{{amount}}: {{label}} {{date}}, {{state}}, ilanga eli-{{count}} lokuvikeleka elincani.",
+    "loanSpoken_other": "Nangabe uboleka u-{{amount}}: {{label}} {{date}}, {{state}}, amalanga ali-{{count}} wokuvikeleka ambalwa.",
+    "notAdvised": "akunconywa",
+    "exampleNote": "Isibonelo sokuthoma: ikambo lesikolo laka-R200 ngoLesihlanu elizako. Litjhugulule nanyana ulisuse.",
+    "roomToLend": "Isikhala sokuboleka",
+    "roomToLendHint": "Ukuboleka nanyana ukupha bekube kufike kwinani leli kukugcina ku-{{state}} begodu kubulunga u-{{reserve}} wamabhadelo eza ngemva nje kwemali yakho elandelako.",
+    "roomToLendHintNoReserve": "Ukuboleka nanyana ukupha bekube kufike kwinani leli kukugcina ku-{{state}}.",
+    "roomToLendNone": "Nanyana ngiliphi inani nje lingakwehlisela ngaphasi kwaka-{{state}} nanyana lisebenzise imali ebulungelwe amabhadelo.",
+    "roomToLendShort": "Sele uyatlhayela ngaphambi kwemali yakho elandelako. Nanyana ngiliphi inani oliboleka lisondeza ilanga lakho.",
+    "lendCaution": "Boleka kwaphela lokho ongaphila ngaphandle kokukubuyiselwa. I-Tengo ayikghoni ukutjho bona kuzokubuya nanyana nini.",
+    "useRoom": "Sebenzisa {{amount}}",
+    "labelPlaceholderValue": "Ikambo lesikolo (isibonelo)",
+    "roomToLendUnsure": "I-Tengo ayiqinisekanga ngokwaneleko ngemali yakho engenako bona iphakamise inani. Hlola umphumela wenani elithileko ngaphasi.",
+    "notAdvice": "Iinlinganiso ezivela emlandweni wakho, akusi seluleko. Akukho lapha okusiqunto sokuboleka nanyana isipho sesikwelede."
   },
   "money": {
-    "title": "Money",
-    "lead": "Every transaction Tengo uses, and the bills it found.",
-    "history": "Transaction history",
-    "import": "Import statement",
-    "filter": "Show",
-    "all": "All",
+    "title": "Imali",
+    "lead": "Woke amathengiselwano i-Tengo ewasebenzisako, namabhadelo eyiwafumeneko.",
+    "history": "Umlando wamathengiselwano",
+    "import": "Ngenisa isitatimende",
+    "filter": "Tjengisa",
+    "all": "Koke",
     "filters": {
-      "income": "Income",
-      "spend": "Spend",
-      "bill": "Bills"
+      "income": "Imali engenako",
+      "spend": "Ukusebenzisa",
+      "bill": "Amabhadelo"
     },
-    "search": "Search",
-    "count_one": "{{count}} transaction",
-    "count_other": "{{count}} transactions",
-    "emptyTitle": "Nothing to show",
-    "emptyBodyNone": "No transactions yet. Import a statement to get started.",
-    "emptyBodyFilter": "No transactions match this filter.",
-    "editLabel": "Edit {{name}}, {{date}}",
-    "more": "Show {{count}} more",
-    "last30": "Last 30 days",
-    "in": "Money in",
-    "out": "Money out",
-    "balance": "Balance today: {{amount}}",
-    "bills": "Recurring bills",
-    "billsRule": "Same description and a similar amount, about a month apart.",
-    "noBills": "No recurring bills found.",
-    "billNext_one": "Next {{date}} · seen {{count}} time",
-    "billNext_other": "Next {{date}} · seen {{count}} times",
-    "importTitle": "Bring your own statement",
-    "importBody": "Upload a CSV bank statement. It is read on this device and replaces this person's history.",
-    "movableLabel": "Can be paid later",
-    "movableHint": "Only mark a bill if it can be paid a few days late without a fee.",
-    "protectedBill": "Never suggested to move: paying late can cost fees, cover or credit."
+    "search": "Funa",
+    "count_one": "Ithengiselwano eli-{{count}}",
+    "count_other": "Amathengiselwano ali-{{count}}",
+    "emptyTitle": "Akukho okungatjengiswa",
+    "emptyBodyNone": "Awekho amathengiselwano nje. Ngenisa isitatimende bona uthome.",
+    "emptyBodyFilter": "Awekho amathengiselwano afana nesihluzi lesi.",
+    "editLabel": "Hlela {{name}}, {{date}}",
+    "more": "Tjengisa ali-{{count}} engeziweko",
+    "last30": "Amalanga ama-30 wokugcina",
+    "in": "Imali engenako",
+    "out": "Imali ephumako",
+    "balance": "Ibhalansi yanamhlanje: {{amount}}",
+    "bills": "Amabhadelo aphindaphindwako",
+    "billsRule": "Umhlathiso ofanako nenani elifanako, cishe inyanga phakathi.",
+    "noBills": "Awekho amabhadelo aphindaphindwako afunyenweko.",
+    "billNext_one": "Elilandelako {{date}} · kubonwe kali-{{count}}",
+    "billNext_other": "Elilandelako {{date}} · kubonwe kali-{{count}}",
+    "importTitle": "Letha isitatimende sakho",
+    "importBody": "Layisha isitatimende sebhanga se-CSV. Sifundwa esisetjenzisweni lesi begodu sithatha indawo yomlando womuntu lo.",
+    "movableLabel": "Lingabhadelwa ngemva",
+    "movableHint": "Maka ibhadelo kwaphela nangabe lingabhadelwa selibhalele amalanga ambalwa ngaphandle kwenhlawulo.",
+    "protectedBill": "Angekhe kuphakanyiswe bona lihanjiswe: ukubhadela kade kungabiza iinhlawulo, ukuvikelwa nanyana isikwelede."
   },
   "import": {
-    "title": "Import statement",
-    "lead": "Use a CSV bank statement to replace this person's history. It never leaves your browser.",
-    "step1": "1. Choose a file",
-    "useSample": "Use sample statement",
-    "chooseCsv": "Choose a CSV file",
-    "pdf": "PDF statement (coming next)",
-    "pdfNote": "PDF statements are not supported yet.",
-    "downloadSample": "Download sample-statement.csv",
-    "local": "Processed on your device. Nothing leaves your browser.",
-    "formatTitle": "What the file needs",
-    "formatBody": "A date, a description and an amount (negative for money out), or separate debit and credit columns. At least 14 days.",
-    "step2": "2. Check and confirm",
-    "readError": "This file could not be read as a CSV.",
-    "empty": "Choose a file or use the sample statement to see a preview here.",
-    "rowsRead_one": "{{count}} row read",
-    "rowsRead_other": "{{count}} rows read",
-    "mapping": "Columns",
-    "mappingHint": "We guessed these from the headers. Change any that look wrong.",
+    "title": "Ngenisa isitatimende",
+    "lead": "Sebenzisa isitatimende sebhanga se-CSV bona uthathe indawo yomlando womuntu lo. Angekhe siphume ebhrawuzarini yakho.",
+    "step1": "1. Khetha ifayili",
+    "useSample": "Sebenzisa isitatimende esiyisibonelo",
+    "chooseCsv": "Khetha ifayili le-CSV",
+    "pdf": "Isitatimende se-PDF (siyeza)",
+    "pdfNote": "Iintatimende ze-PDF azikasekelwa.",
+    "downloadSample": "Landa i-sample-statement.csv",
+    "local": "Kusetjenzwa esisetjenzisweni sakho. Akukho okuphuma ebhrawuzarini yakho.",
+    "formatTitle": "Okutlhogwa lifayili",
+    "formatBody": "Ilanga, umhlathiso nenani (elingaphasi kweziro emalini ephumako), nanyana amakholomu ahlukeneko we-debit ne-credit. Amalanga ali-14 nanyana ngaphezulu.",
+    "step2": "2. Hlola bese uyaqinisekisa",
+    "readError": "Ifayili leli alikghonanga ukufundwa njenge-CSV.",
+    "empty": "Khetha ifayili nanyana usebenzise isitatimende esiyisibonelo bona ubone ukubuka kokuthoma lapha.",
+    "rowsRead_one": "Kufundwe umugqa o-{{count}}",
+    "rowsRead_other": "Kufundwe imigqa eli-{{count}}",
+    "mapping": "Amakholomu",
+    "mappingHint": "Siqagele lokhu eenhlokweni. Tjhugulula nanyana yiphi ebonakala ingakalungi.",
     "field": {
-      "date": "Date",
-      "description": "Description",
-      "amount": "Amount",
-      "debit": "Debit",
-      "credit": "Credit",
-      "balance": "Balance"
+      "date": "Ilanga",
+      "description": "Umhlathiso",
+      "amount": "Inani",
+      "debit": "I-debit",
+      "credit": "I-credit",
+      "balance": "Ibhalansi"
     },
-    "none": "Not used",
-    "needMapping": "Pick a date, a description, and either an amount or debit and credit columns.",
-    "previewCaption": "The last rows of the statement",
-    "type": "Type",
-    "previewNote_one": "Showing the last rows of {{count}} transaction.",
-    "previewNote_other": "Showing the last rows of {{count}} transactions.",
-    "skipped_one": "{{count}} row skipped because the date, description or amount could not be read.",
-    "skipped_other": "{{count}} rows skipped because the date, description or amount could not be read.",
-    "tooShort": "This statement covers {{count}} days. Tengo needs at least 14.",
-    "noRows": "No usable rows found with these columns.",
-    "wideRange": "Only {{count}} days of history. The forecast will work, but the range will be wide.",
-    "shifted_one": "Dates moved forward by {{count}} day so the statement ends yesterday.",
-    "shifted_other": "Dates moved forward by {{count}} days so the statement ends yesterday.",
-    "days": "Days",
-    "balance": "Current balance",
-    "balanceFromFile": "Taken from the last balance in the file: {{amount}}. Type to change it.",
-    "balanceKept": "No balance column. Keeping the current balance of {{amount}}. Type to change it.",
-    "result": "Forecast with this statement",
-    "confirm": "Replace history and see my date",
-    "replaceNote": "This replaces this person's history on this device and adds an entry to the audit log.",
-    "tooBig": "That file is larger than 2 MB, which is more than a statement needs. Choose a shorter period or a smaller file."
+    "none": "Akusetjenziswa",
+    "needMapping": "Khetha ilanga, umhlathiso, kunye nenani nanyana amakholomu we-debit ne-credit.",
+    "previewCaption": "Imigqa yokugcina yesitatimende",
+    "type": "Uhlobo",
+    "previewNote_one": "Kutjengiswa imigqa yokugcina yethengiselwano eli-{{count}}.",
+    "previewNote_other": "Kutjengiswa imigqa yokugcina yamathengiselwano ali-{{count}}.",
+    "skipped_one": "Kweqiwe umugqa o-{{count}} ngombana ilanga, umhlathiso nanyana inani akukghonanga ukufundwa.",
+    "skipped_other": "Kweqiwe imigqa eli-{{count}} ngombana ilanga, umhlathiso nanyana inani akukghonanga ukufundwa.",
+    "tooShort": "Isitatimende lesi sihlanganisa amalanga ali-{{count}}. I-Tengo itlhoga ali-14 nanyana ngaphezulu.",
+    "noRows": "Ayikho imigqa esebenzisekako efunyenweko ngamakholomu la.",
+    "wideRange": "Amalanga ali-{{count}} kwaphela womlando. Isibikezelo sizokusebenza, kodwana ibanga lizokuba libanzi.",
+    "shifted_one": "Amalanga ahanjiswe phambili ngelanga eli-{{count}} bona isitatimende siphele izolo.",
+    "shifted_other": "Amalanga ahanjiswe phambili ngamalanga ali-{{count}} bona isitatimende siphele izolo.",
+    "days": "Amalanga",
+    "balance": "Ibhalansi yanje",
+    "balanceFromFile": "Ithethwe ebhalansini yokugcina efayilini: {{amount}}. Tlola bona uyitjhugulule.",
+    "balanceKept": "Ayikho ikholomu yebhalansi. Kubulungwa ibhalansi yanje ka-{{amount}}. Tlola bona uyitjhugulule.",
+    "result": "Isibikezelo ngesitatimende lesi",
+    "confirm": "Faka umlando omutjha bese ubona ilanga lami",
+    "replaceNote": "Lokhu kuthatha indawo yomlando womuntu lo esisetjenzisweni lesi begodu kufaka okufakiweko erekhodini lokuhlola.",
+    "tooBig": "Ifayili lelo likhulu kune-2 MB, okungaphezu kwalokho isitatimende esikutlhogako. Khetha isikhathi esifitjhani nanyana ifayili elincani."
   },
   "edit": {
-    "title": "Edit transaction",
-    "description": "Description",
-    "amount": "Amount",
-    "amountHint": "Negative for money out, for example -250.",
-    "category": "Type",
-    "auditNote": "Saving adds an entry to your audit log.",
-    "oneOff": "One-off",
-    "oneOffHint": "Left out of your usual spend and income pattern. It still counts in your balance."
+    "title": "Hlela ithengiselwano",
+    "description": "Umhlathiso",
+    "amount": "Inani",
+    "amountHint": "Elingaphasi kweziro emalini ephumako, isibonelo -250.",
+    "category": "Uhlobo",
+    "auditNote": "Ukubulunga kufaka okufakiweko erekhodini lakho lokuhlola.",
+    "oneOff": "Kwenzeka kanye",
+    "oneOffHint": "Kutjhiywe ngaphandle kwephethini yakho ejayelekileko yokusebenzisa nemali engenako. Kusabalwa ebhalansini yakho."
   },
   "audit": {
-    "session_opened": "Opened Tengo",
-    "consent_given": "Gave consent. Messages {{messages}}, analytics {{analytics}}",
-    "consent_changed": "Changed consent: {{item}} {{value}}",
-    "data_viewed": "Viewed all data",
-    "data_exported": "Exported data as {{format}}",
-    "statement_imported": "Imported a statement with {{rows}} transactions",
-    "transaction_edited": "Corrected a transaction: {{fields}}",
-    "review_requested": "Asked for a human review",
-    "forecast_paused": "Paused the forecast",
-    "forecast_resumed": "Resumed the forecast",
-    "transaction_added_one": "Added {{count}} entry",
-    "transaction_added_other": "Added {{count}} entries",
-    "balance_updated": "Updated the balance",
-    "bill_answered": "Answered a question about a bill that looked unpaid",
-    "plan_settings": "Changed which spending can bend or which bills can move",
-    "money_updated": "Changed accounts or money owed",
-    "cash_added": "Recorded cash {{direction}}",
-    "setup_saved": "Set up a history by hand",
-    "account_uploaded": "Saved the profile to an account",
-    "account_created": "Started an empty account",
-    "account_signedIn": "Signed in on a device"
+    "session_opened": "Kuvulwe i-Tengo",
+    "consent_given": "Kunikelwe imvumo. Imilayezo {{messages}}, ukuhlathulula {{analytics}}",
+    "consent_changed": "Kutjhugululwe imvumo: {{item}} {{value}}",
+    "data_viewed": "Kubukwe woke ilwazi",
+    "data_exported": "Kukhutjhwe ilwazi njenge-{{format}}",
+    "statement_imported": "Kungeniswe isitatimende esinamathengiselwano ali-{{rows}}",
+    "transaction_edited": "Kulungiswe ithengiselwano: {{fields}}",
+    "review_requested": "Kubawe ukubuyekezwa mumuntu",
+    "forecast_paused": "Kumiswe isibikezelo",
+    "forecast_resumed": "Kuragwe phambili nesibikezelo",
+    "transaction_added_one": "Kufakwe okuli-{{count}}",
+    "transaction_added_other": "Kufakwe okuli-{{count}}",
+    "balance_updated": "Kubuyekezwe ibhalansi",
+    "bill_answered": "Kuphendulwe umbuzo ngebhadelo ebelibonakala lingakabhadelwa",
+    "plan_settings": "Kutjhugululwe ukusebenzisa okungancitjhiswa nanyana amabhadelo angahanjiswa",
+    "money_updated": "Kutjhugululwe ii-akhawunti nanyana imali okwelwedwa yona",
+    "cash_added": "Kurekhodwe ikheshi {{direction}}",
+    "setup_saved": "Kulungiselelwe umlando ngesandla",
+    "account_uploaded": "Kubulungwe iphrofayili ku-akhawunti",
+    "account_created": "Kuthonywe i-akhawunti engenalitho",
+    "account_signedIn": "Kungenwe esisetjenzisweni"
   },
   "inbox": {
-    "title": "Inbox",
-    "lead": "The daily message Tengo would send.",
-    "simulated": "Simulated. No message is sent.",
-    "offTitle": "Daily messages are off",
-    "offBody": "You turned off daily messages, so there is nothing to preview. Turn them on here or in Privacy.",
-    "turnOn": "Turn on daily messages",
-    "preview": "Today's message",
-    "channel": "Channel",
+    "title": "Imilayezo",
+    "lead": "Umlayezo welanga i-Tengo ebeyingawuthumela.",
+    "simulated": "Kulingiswa. Awukho umlayezo othunyelwako.",
+    "offTitle": "Imilayezo yamalanga woke ivaliwe",
+    "offBody": "Uvale imilayezo yamalanga woke, ngalokho akukho okungabukwa kokuthoma. Yivule lapha nanyana ku-Ifihlo.",
+    "turnOn": "Vula imilayezo yamalanga woke",
+    "preview": "Umlayezo wanamhlanje",
+    "channel": "Isiteshi",
     "channels": {
       "whatsapp": "WhatsApp",
       "sms": "SMS"
     },
-    "todayAt": "Today",
-    "language": "Message language",
-    "languageHint": "Messages can use a different language from the app.",
-    "to": "To {{name}}",
-    "schedule": "Every morning at 07:00",
+    "todayAt": "Namhlanje",
+    "language": "Ilimi lomlayezo",
+    "languageHint": "Imilayezo ingasebenzisa ilimi elihlukileko kwelinye le-app.",
+    "to": "Ku-{{name}}",
+    "schedule": "Qobe ekuseni ngo-07:00",
     "facts": {
-      "what": "Only your date, cover and daily budget.",
-      "never": "Never your balance or transactions.",
-      "stop": "Every message says it is from Tengo and how to stop. You can also turn messages off in Privacy.",
-      "where": "WhatsApp messages would pass through Meta, outside South Africa. SMS is the alternative. Simulated here: nothing is sent."
+      "what": "Ilanga lakho, isimo nesabelomali selanga kwaphela.",
+      "never": "Angekhe kube yibhalansi yakho nanyana amathengiselwano wakho.",
+      "stop": "Umlayezo ngamunye utjho bona uvela ku-Tengo nokobana ungayimisa njani. Ungavala imilayezo godu ku-Ifihlo.",
+      "where": "Imilayezo ye-WhatsApp ibizokudlula ku-Meta, ngaphandle kweSewula Afrika. I-SMS yenye indlela. Kulingiswa lapha: akukho okuthunyelwako."
     },
-    "manage": "Manage messages",
-    "smsCount_one": "1 SMS, {{encoding}}, {{chars}} of {{limit}} characters",
-    "smsCount_other": "{{count}} SMS parts, {{encoding}}, {{chars}} characters"
+    "manage": "Phatha imilayezo",
+    "smsCount_one": "1 SMS, {{encoding}}, {{chars}} kwamabala ali-{{limit}}",
+    "smsCount_other": "Iingcenye ze-SMS ezili-{{count}}, {{encoding}}, amabala ali-{{chars}}"
   },
   "messages": {
     "whatsapp": {
-      "greeting": "Hi {{name}}.",
-      "enough": "Your money should last until *{{date}}*. Cover: {{state}}.",
-      "tight": "Your money should last until *{{date}}* on a normal week. Cover: {{state}}.",
-      "short_one": "Your money may run out on *{{date}}*, {{count}} day before your next money. Cover: {{state}}.",
-      "short_other": "Your money may run out on *{{date}}*, {{count}} days before your next money. Cover: {{state}}.",
-      "sts": "Daily budget: *{{sts}}*.",
-      "next": "Next money: around {{next}}.",
-      "noNext": "No next money is expected at the moment.",
+      "greeting": "Lotjha {{name}}.",
+      "enough": "Imali yakho kufuze ihlale bekube ngu-*{{date}}*. Isimo: {{state}}.",
+      "tight": "Imali yakho kufuze ihlale bekube ngu-*{{date}}* ngeveke ejayelekileko. Isimo: {{state}}.",
+      "short_one": "Imali yakho ingaphela ngo-*{{date}}*, ilanga eli-{{count}} ngaphambi kwemali yakho elandelako. Isimo: {{state}}.",
+      "short_other": "Imali yakho ingaphela ngo-*{{date}}*, amalanga ali-{{count}} ngaphambi kwemali yakho elandelako. Isimo: {{state}}.",
+      "sts": "Isabelomali selanga: *{{sts}}*.",
+      "next": "Imali elandelako: cishe ngo-{{next}}.",
+      "noNext": "Ayikho imali elandelako elindelekileko nje.",
       "tip": {
-        "enough": "Covered until your next money, even on a heavy week.",
-        "tight": "Keep spending close to your daily budget until your next money.",
-        "short": "Check Plan in Tengo to see what helps most."
+        "enough": "Uvikelekile bekube kufike imali yakho elandelako, ngitjho neveke ebudisi.",
+        "tight": "Gcina ukusebenzisa kwakho eduze nesabelomali sakho selanga bekube kufike imali yakho elandelako.",
+        "short": "Qala u-Hlela ku-Tengo bona ubone okusiza khulu."
       },
-      "stsNotAdvised": "Daily budget: not advised until your next money.",
-      "unclear": "Tengo does not have enough to go on yet to give you a date. Open Tengo to see what to add.",
-      "stsPending": "Daily budget: worked out once today's payment lands.",
-      "stop": "From Tengo. Reply STOP to end these updates.",
-      "discreet": "Tengo: your daily update is ready. Open the app to see it.",
-      "noNextDaily": "Money comes in most days, so there is no single next payment."
+      "stsNotAdvised": "Isabelomali selanga: akunconywa bekube kufike imali yakho elandelako.",
+      "unclear": "I-Tengo ayikabi nokwaneleko bona ikunikele ilanga. Vula i-Tengo bona ubone okufuze ukufake.",
+      "stsPending": "Isabelomali selanga: sizokubalwa nangabe ibhadelo lanamhlanje lingenile.",
+      "stop": "Kuvela ku-Tengo. Phendula nge-STOP bona umise amalwazi la.",
+      "discreet": "Tengo: ilwazi lakho lelanga lilungile. Vula i-app bona ulibone.",
+      "noNextDaily": "Imali ingena amalanga amanengi, ngalokho alikho ibhadelo linye elilandelako."
     },
     "sms": {
-      "enough": "Tengo: Hi {{name}}, money lasts until {{date}} ({{state}}). Budget {{sts}} a day.",
-      "tight": "Tengo: Hi {{name}}, money lasts until {{date}} on a normal week ({{state}}). Budget {{sts}} a day.",
-      "short": "Tengo: Hi {{name}}, money may run out {{date}} ({{state}}). Budget not advised.",
-      "next": "Next money about {{next}}.",
-      "unclear": "Tengo: Hi {{name}}, not enough to go on yet for a date. Open Tengo to see what to add.",
-      "stop": "Reply STOP to end.",
-      "discreet": "Tengo: your daily update is ready. Open the app to see it. Reply STOP to end."
+      "enough": "Tengo: Lotjha {{name}}, imali ihlala bekube ngu-{{date}} ({{state}}). Isabelomali {{sts}} ngelanga.",
+      "tight": "Tengo: Lotjha {{name}}, imali ihlala bekube ngu-{{date}} ngeveke ejayelekileko ({{state}}). Isabelomali {{sts}} ngelanga.",
+      "short": "Tengo: Lotjha {{name}}, imali ingaphela ngo-{{date}} ({{state}}). Isabelomali asinconywa.",
+      "next": "Imali elandelako cishe ngo-{{next}}.",
+      "unclear": "Tengo: Lotjha {{name}}, akukabi nokwaneleko bona sinikele ilanga. Vula i-Tengo bona ubone okufuze ukufake.",
+      "stop": "Phendula nge-STOP bona umise.",
+      "discreet": "Tengo: ilwazi lakho lelanga lilungile. Vula i-app bona ulibone. Phendula nge-STOP bona umise."
     }
   },
   "a11y": {
-    "moneyIn": "money in, {{amount}}",
-    "moneyOut": "money out, {{amount}}",
-    "saved": "Transaction saved",
-    "noChanges": "No changes made",
-    "exported": "Data exported as {{format}}",
-    "consentSaved": "Consent updated",
-    "paused": "Consent withdrawn. The forecast is paused.",
-    "belowZero": "{{amount}} below zero"
+    "moneyIn": "imali engenako, {{amount}}",
+    "moneyOut": "imali ephumako, {{amount}}",
+    "saved": "Ithengiselwano libulungiwe",
+    "noChanges": "Akukho itjhugululo elenziweko",
+    "exported": "Ilwazi likhutjhwe njenge-{{format}}",
+    "consentSaved": "Imvumo ibuyekeziwe",
+    "paused": "Imvumo ikhutjhiwe. Isibikezelo simisiwe.",
+    "belowZero": "{{amount}} ngaphasi kweziro"
   },
   "help": {
-    "title": "What helps most",
-    "moveBill": "If {{name}} ({{amount}}) can be paid after {{date}} without a fee, that alone reaches {{state}}.",
-    "tryInPlan": "Try it in Plan",
-    "coveredTitle": "You are covered",
-    "setAside": "You could set aside up to {{amount}} today and still be Enough until your next money. This is the same room as Room to lend, not extra.",
-    "coveredBody": "Your money should last until your next money, even on a heavier week.",
-    "toReachState": "Ways to reach {{state}}",
-    "more_one": "{{count}} more way",
-    "more_other": "{{count}} more ways",
-    "fewer": "Show fewer",
-    "earn": "Earn or receive {{amount}} more before {{date}}, for example extra work or money owed to you.",
-    "earnAssume": "Assumes your spending stays as usual. Borrowing to cover a gap usually costs more later.",
-    "trim": "Spend about {{amount}} a day less on {{groups}} until {{date}}.",
-    "trimAssume": "Only spending you marked as able to bend. Assumes everything else stays as usual.",
-    "trimPartial": "That is all the spending you marked as able to bend, so it covers part of the gap. The rest still needs money in.",
-    "moveAssume": "You marked it as movable. Ask first. Never skip debit orders for loans or insurance.",
-    "markFlexible": "Mark which everyday spending can bend to see where you could trim.",
-    "chooseOnMoney": "Choose on Money",
-    "freeHelp": "If you are behind on debt, the National Credit Regulator lists free help:",
-    "ideasNote": "Ideas, not advice. Check fees and penalties before changing a payment."
+    "title": "Okusiza khulu",
+    "moveBill": "Nangabe i-{{name}} ({{amount}}) ingabhadelwa ngemva kwaka-{{date}} ngaphandle kwenhlawulo, lokho kwaphela kufikelela ku-{{state}}.",
+    "tryInPlan": "Kulinge ku-Hlela",
+    "coveredTitle": "Uvikelekile",
+    "setAside": "Ungabeka eqadi bekube ngu-{{amount}} namhlanje begodu usahlala ku-Yanele bekube kufike imali yakho elandelako. Lesi sikhala esifanako nesithi Isikhala sokuboleka, ingasi esengeziweko.",
+    "coveredBody": "Imali yakho kufuze ihlale bekube kufike imali yakho elandelako, ngitjho neveke ebudisi khulu.",
+    "toReachState": "Iindlela zokufikelela ku-{{state}}",
+    "more_one": "Indlela eli-{{count}} engeziweko",
+    "more_other": "Iindlela ezili-{{count}} ezingeziweko",
+    "fewer": "Tjengisa ezimbalwa",
+    "earn": "Fumana nanyana wamukele u-{{amount}} owengeziweko ngaphambi kwaka-{{date}}, isibonelo umsebenzi owengeziweko nanyana imali okwelwedwa yona.",
+    "earnAssume": "Kucatjangwa bona ukusebenzisa kwakho kuhlala njengokujayelekileko. Ukuboleka bona uvale isikhala kujayele ukubiza khulu ngemva.",
+    "trim": "Sebenzisa cishe u-{{amount}} ngelanga ngaphasi ku-{{groups}} bekube ngu-{{date}}.",
+    "trimAssume": "Ukusebenzisa kwaphela okumakileko njengokungancitjhiswa. Kucatjangwa bona koke okhunye kuhlala njengokujayelekileko.",
+    "trimPartial": "Lokho kusebenzisa koke okumakileko njengokungancitjhiswa, ngalokho kuvala ingcenye yesikhala. Okuseleko kusatlhoga imali engenako.",
+    "moveAssume": "Ulimake njengelingahanjiswa. Buza kokuthoma. Ungeqi ama-debit order weenkwelede nanyana womshuwaransi.",
+    "markFlexible": "Maka ukusebenzisa kwamalanga woke okungancitjhiswa bona ubone lapho ungaquma khona.",
+    "chooseOnMoney": "Khetha ku-Imali",
+    "freeHelp": "Nangabe usele emuva eenkweledeni, i-National Credit Regulator ibala isizo samahala:",
+    "ideasNote": "Imibono, akusi seluleko. Hlola iimali neenhlawulo ngaphambi kokutjhugulula ibhadelo."
   },
   "spending": {
-    "title": "Where everyday money goes",
-    "lead": "Last 30 days, not counting bills.",
-    "empty": "No everyday spending in the last 30 days.",
+    "title": "Lapho imali yamalanga woke iya khona",
+    "lead": "Amalanga ama-30 wokugcina, ngaphandle kwamabhadelo.",
+    "empty": "Akukho ukusebenzisa kwamalanga woke emalangeni ama-30 wokugcina.",
     "groups": {
-      "food": "Food and groceries",
-      "transport": "Fuel and transport",
-      "airtime": "Airtime and data",
-      "stock": "Stock and supplies",
-      "energy": "Electricity and fuel at home",
-      "other": "Other"
+      "food": "Ukudla nezinto zekhaya",
+      "transport": "Ipetroli nokuthutha",
+      "airtime": "I-airtime nedatha",
+      "stock": "Isitokhwe nezinto zokusebenza",
+      "energy": "Umbane namafutha wekhaya",
+      "other": "Okhunye"
     },
-    "flexibleLabel": "Can bend",
-    "flexibleHint": "Mark the spending you could trim if money is short. Work costs like stock and fuel are never suggested for cuts.",
-    "workCost": "Work cost"
+    "flexibleLabel": "Kungancitjhiswa",
+    "flexibleHint": "Maka ukusebenzisa ongakunciphisa nangabe imali iyatlhayela. Iindleko zomsebenzi ezifana nesitokhwe nepetroli angekhe ziphakanyiselwe ukuncitjhiswa.",
+    "workCost": "Iindleko zomsebenzi"
   },
   "palette": {
-    "title": "Command menu",
-    "open": "Search or jump to",
+    "title": "Imenyu yeenqophiso",
+    "open": "Funa nanyana weqele ku-",
     "shortcut": "Ctrl K",
-    "search": "Search commands",
-    "placeholder": "Go to a page, switch person, change language",
-    "results": "Commands",
-    "empty": "Nothing matches.",
-    "help": "Arrow keys to move, Enter to choose, Esc to close.",
-    "switchTo": "Switch to {{name}}",
-    "theme": "{{name}} theme",
-    "languageSet": "Language set to {{name}}",
-    "themeSet": "{{name}} theme on",
+    "search": "Funa iinqophiso",
+    "placeholder": "Iya ekhasini, tjhugulula umuntu, tjhugulula ilimi",
+    "results": "Iinqophiso",
+    "empty": "Akukho okufanako.",
+    "help": "Iinkinobho zemitjhoba bona uhambe, Enter bona ukhethe, Esc bona uvale.",
+    "switchTo": "Tjhentjhela ku-{{name}}",
+    "theme": "Isihloko esithi {{name}}",
+    "languageSet": "Ilimi libekwe ku-{{name}}",
+    "themeSet": "Isihloko esithi {{name}} sivuliwe",
     "groups": {
-      "pages": "Pages",
-      "people": "People",
-      "language": "Language",
-      "theme": "Theme"
+      "pages": "Amakhasi",
+      "people": "Abantu",
+      "language": "Ilimi",
+      "theme": "Isihloko"
     }
   },
   "theme": {
-    "button": "Theme: {{current}}. Switch to {{next}}"
+    "button": "Isihloko: {{current}}. Tjhentjhela ku-{{next}}"
   },
   "notice": {
     "overdrawn": {
-      "title": "Overdrawn by {{amount}}",
-      "body": "Money that comes in covers this first. Your date counts from when the balance is above R0 again."
+      "title": "Ukweleda ngo-{{amount}} ebhanga",
+      "body": "Imali engenako ibhadela lokhu kokuthoma. Ilanga lakho libalwa ukusukela lapho ibhalansi isingaphezu kwaka-R0 godu."
     },
     "asOf": {
-      "title": "From your statement",
-      "body_one": "This forecast is from your statement, which ends {{date}}, {{count}} day ago. Add today's balance to bring it up to date.",
-      "body_other": "This forecast is from your statement, which ends {{date}}, {{count}} days ago. Add today's balance to bring it up to date."
+      "title": "Ukusuka esitatimendeni sakho",
+      "body_one": "Isibikezelo lesi sivela esitatimendeni sakho, esiphela ngo-{{date}}, ilanga eli-{{count}} elidlulileko. Faka ibhalansi yanamhlanje bona usibuyekeze.",
+      "body_other": "Isibikezelo lesi sivela esitatimendeni sakho, esiphela ngo-{{date}}, amalanga ali-{{count}} adlulileko. Faka ibhalansi yanamhlanje bona usibuyekeze."
     },
     "historyEnds": {
-      "title": "History ends {{date}}",
-      "body": "Spending since then is not in your history, so the forecast uses the pattern up to that day with today's balance."
+      "title": "Umlando uphela ngo-{{date}}",
+      "body": "Ukusebenzisa ukusukela ngesikhathi leso akukho emlandweni wakho, ngalokho isibikezelo sisebenzisa iphethini bekube lilanga lelo nebhalansi yanamhlanje."
     },
     "paused": {
-      "title": "Income looks paused",
-      "body": "Nothing like your usual payments has come in since {{date}}. Tengo no longer counts on next money and checks the next 30 days instead."
+      "title": "Imali engenako ibonakala imisiwe",
+      "body": "Akukho okufana namabhadelo wakho ajayelekileko okungenileko ukusukela ngo-{{date}}. I-Tengo ayisathembi imali elandelako begodu esikhundleni salokho ihlola amalanga ama-30 ezako."
     },
-    "pausedNoDate": "Nothing like your usual payments has come in for a while. Tengo no longer counts on next money and checks the next 30 days instead.",
+    "pausedNoDate": "Akukho okufana namabhadelo wakho ajayelekileko okungenileko isikhathi esithileko. I-Tengo ayisathembi imali elandelako begodu esikhundleni salokho ihlola amalanga ama-30 ezako.",
     "irregular": {
-      "title": "No regular pattern yet",
-      "body": "Money comes in, but not in a rhythm Tengo can use. It checks the next 30 days instead of a next-money date."
+      "title": "Ayikabi khona iphethini ejayelekileko",
+      "body": "Imali iyangena, kodwana ingasi ngesigqi i-Tengo engasisebenzisa. Ihlola amalanga ama-30 ezako esikhundleni selanga lemali elandelako."
     },
     "pendingToday": {
-      "title": "Payment due today",
-      "body": "Your usual payment is due today and is not in your balance yet, so it is still counted as coming.",
-      "action": "It has come in",
-      "entry": "Usual payment, marked as received"
+      "title": "Ibhadelo lifanele namhlanje",
+      "body": "Ibhadelo lakho elijayelekileko lifanele namhlanje begodu alikangeni ebhalansini yakho, ngalokho lisabalwa njengelizako.",
+      "action": "Lingenile",
+      "entry": "Ibhadelo elijayelekileko, limakwe njengelifunyenweko"
     },
     "missedBill": {
-      "title": "{{name}} ({{amount}}) looks unpaid",
-      "body": "It was due around {{date}} and did not show up. Tell Tengo what happened so the date stays right.",
-      "owed": "I still owe it",
-      "settled": "It is paid or stopped"
+      "title": "I-{{name}} ({{amount}}) ibonakala ingakabhadelwa",
+      "body": "Bekufanele cishe ngo-{{date}} begodu akhenge ibonakale. Tjela i-Tengo bona kwenzekeni bona ilanga lihlale lilungile.",
+      "owed": "Ngisayikweleda",
+      "settled": "Ibhadelwe nanyana imisiwe"
     },
     "oneOffs": {
-      "body_one": "{{count}} large one-off amount is left out of your usual spend and income.",
-      "body_other": "{{count}} large one-off amounts are left out of your usual spend and income.",
-      "action": "See them on Money"
+      "body_one": "Imali ekulu eyenzeka kanye eli-{{count}} itjhiywe ngaphandle kokusebenzisa nemali engenako ejayelekileko.",
+      "body_other": "Iimali ezikulu ezenzeka kanye ezili-{{count}} zitjhiywe ngaphandle kokusebenzisa nemali engenako ejayelekileko.",
+      "action": "Zibone ku-Imali"
     },
-    "label": "Things to check",
+    "label": "Izinto okufuze uzihlole",
     "askOneOff": {
-      "title": "Was {{name}} ({{amount}}, {{date}}) a one-off?",
-      "body": "It is much bigger than your usual spending, and with a short history Tengo cannot tell. For now it counts as usual spending.",
-      "action": "Yes, a one-off"
+      "title": "Kghani i-{{name}} ({{amount}}, {{date}}) beyiyinto eyenzeka kanye?",
+      "body": "Ikulu khulu kunokusebenzisa kwakho okujayelekileko, begodu ngomlando omfitjhani i-Tengo ayikghoni ukutjho. Nje ibalwa njengokusebenzisa okujayelekileko.",
+      "action": "Iye, kwenzeka kanye"
     },
     "estimated": {
-      "title": "Estimated from your answers",
-      "body": "Part of your history comes from the setup questions, so confidence is low. Real entries, cash added here or a statement replace the estimate."
+      "title": "Kulinganiselwe eempendulweni zakho",
+      "body": "Ingcenye yomlando wakho ivela emibuzweni yokulungiselela, ngalokho ukuqiniseka kuphasi. Okufakiweko kwamambala, ikheshi oyifaka lapha nanyana isitatimende kuthatha indawo yesilinganiso."
     },
     "sample": {
-      "title": "Sample numbers",
-      "body": "This forecast uses sample numbers, not yours. Change them on Money, or replace them with a statement or your own answers.",
-      "action": "Use my own numbers"
+      "title": "Iinomboro eziyisibonelo",
+      "body": "Isibikezelo lesi sisebenzisa iinomboro eziyisibonelo, ingasi zakho. Zitjhugulule ku-Imali, nanyana uzithathele indawo ngesitatimende nanyana ngeempendulo zakho.",
+      "action": "Sebenzisa iinomboro zami"
     }
   },
   "balance": {
-    "update": "Update bank balance",
-    "label": "Bank account balance today",
-    "save": "Save balance",
-    "saved": "Balance saved",
-    "error": "Enter an amount, for example 1250 or -300."
+    "update": "Buyekeza ibhalansi yebhanga",
+    "label": "Ibhalansi ye-akhawunti yebhanga yanamhlanje",
+    "save": "Bulunga ibhalansi",
+    "saved": "Ibhalansi ibulungiwe",
+    "error": "Faka inani, isibonelo 1250 nanyana -300."
   },
   "storage": {
     "quota": {
-      "title": "Could not save on this device",
-      "body": "This browser's storage is full, so your last change was not kept. Export your data, then free some space or delete old data."
+      "title": "Akukghonakalanga ukubulunga esisetjenzisweni lesi",
+      "body": "Ibulungelo lebhrawuza le lizele, ngalokho itjhugululo lakho lokugcina alikabulungwa. Khupha ilwazi lakho, bese ukhulula isikhala nanyana usule ilwazi elidala."
     },
     "unavailable": {
-      "title": "Could not save on this device",
-      "body": "This browser is blocking storage, for example in a private window, so your last change was not kept."
+      "title": "Akukghonakalanga ukubulunga esisetjenzisweni lesi",
+      "body": "Ibhrawuza le ivimba ibulungelo, isibonelo efesidereni elifihlakeleko, ngalokho itjhugululo lakho lokugcina alikabulungwa."
     },
-    "export": "Export my data",
+    "export": "Khupha ilwazi lami",
     "corrupt": {
-      "title": "Your saved data could not be read",
-      "body": "Something went wrong with the data saved in this browser. A copy has been kept on this device. Start fresh to keep using Tengo.",
-      "action": "Start fresh"
+      "title": "Ilwazi lakho elibulungiweko alikghonanga ukufundwa",
+      "body": "Kukhona okungakahambi kuhle ngelwazi elibulungwe ebhrawuzarini le. Ikopi ibulungwe esisetjenzisweni lesi. Thoma kabutjha bona uragele phambili usebenzisa i-Tengo.",
+      "action": "Thoma kabutjha"
     }
   },
   "cash": {
-    "add": "Add cash",
-    "title": "Cash",
-    "kind": "What happened",
+    "add": "Faka ikheshi",
+    "title": "Ikheshi",
+    "kind": "Kwenzekeni",
     "modes": {
-      "in": "Cash in",
-      "out": "Cash out",
-      "hand": "Cash in hand"
+      "in": "Ikheshi elingenako",
+      "out": "Ikheshi eliphumako",
+      "hand": "Ikheshi elisesandleni"
     },
     "hints": {
-      "in": "Cash you received, for example fares, a client or money back from family. It counts as money in.",
-      "out": "Cash you spent. It counts as spending.",
-      "hand": "How much cash you have right now. This sets the cash balance and does not add an entry."
+      "in": "Ikheshi olifumeneko, isibonelo imali yokukhwela, umthengi nanyana imali ebuyiswe mndeni. Libalwa njengemali engenako.",
+      "out": "Ikheshi olisebenzisileko. Libalwa njengokusebenzisa.",
+      "hand": "Ikheshi onalo nje. Lokhu kubeka ibhalansi yekheshi begodu akufaki okufakiweko."
     },
     "notePlaceholder": {
-      "in": "For example, cash fares",
-      "out": "For example, taxi"
+      "in": "Isibonelo, imali yokukhwela",
+      "out": "Isibonelo, ithekisi"
     },
-    "saved": "Cash saved"
+    "saved": "Ikheshi libulungiwe"
   },
   "accounts": {
-    "title": "Where your money is",
-    "lead": "Your forecast uses the total of all of these.",
-    "edit": "Edit",
-    "total": "Total",
-    "name": "Name",
-    "balance": "Balance",
-    "addWallet": "Add a wallet or account",
-    "walletName": "Mobile wallet",
-    "remove": "Remove",
-    "cashTag": "Cash",
-    "homeLine": "Total {{total}}, including {{cash}} cash on hand.",
-    "homeLineBank": "Total {{total}}.",
-    "bankName": "Bank account",
-    "cashName": "Cash on hand"
+    "title": "Lapho imali yakho ikhona",
+    "lead": "Isibikezelo sakho sisebenzisa isamba sakho koke lokhu.",
+    "edit": "Hlela",
+    "total": "Isamba",
+    "name": "Ibizo",
+    "balance": "Ibhalansi",
+    "addWallet": "Faka i-wallet nanyana i-akhawunti",
+    "walletName": "I-wallet yefowuni",
+    "remove": "Susa",
+    "cashTag": "Ikheshi",
+    "homeLine": "Isamba {{total}}, kufaka phakathi u-{{cash}} wekheshi elisesandleni.",
+    "homeLineBank": "Isamba {{total}}.",
+    "bankName": "I-akhawunti yebhanga",
+    "cashName": "Ikheshi elisesandleni"
   },
   "obligations": {
-    "title": "Other money you owe",
-    "lead": "Stokvel, burial society, family support and informal loans. They count like bills.",
-    "none": "Nothing added yet.",
-    "add": "Add one",
-    "addTitle": "Add money you owe",
-    "editTitle": "Change money you owe",
-    "editLabel": "Change {{name}}",
-    "remove": "Remove",
-    "kind": "Kind",
+    "title": "Enye imali oyikweledako",
+    "lead": "Istokvel, umasingcwabisane, ukusekela umndeni neenkwelede ezingasi zomthetho. Kubalwa njengamabhadelo.",
+    "none": "Akukafakwa litho.",
+    "add": "Faka yinye",
+    "addTitle": "Faka imali oyikweledako",
+    "editTitle": "Tjhugulula imali oyikweledako",
+    "editLabel": "Tjhugulula {{name}}",
+    "remove": "Susa",
+    "kind": "Uhlobo",
     "kinds": {
-      "stokvel": "Stokvel",
-      "burial": "Burial society",
-      "family": "Family support",
-      "loan": "Informal loan",
-      "other": "Other"
+      "stokvel": "Istokvel",
+      "burial": "Umasingcwabisane",
+      "family": "Ukusekela umndeni",
+      "loan": "Isikwelede esingasi somthetho",
+      "other": "Okhunye"
     },
     "placeholder": {
-      "stokvel": "For example, Sunday stokvel",
-      "burial": "For example, burial society",
-      "family": "For example, money for my mother",
-      "loan": "For example, paying back my cousin",
-      "other": "Name"
+      "stokvel": "Isibonelo, istokvel sangeSondo",
+      "burial": "Isibonelo, umasingcwabisane",
+      "family": "Isibonelo, imali kamma",
+      "loan": "Isibonelo, ukubuyisela umzala wami",
+      "other": "Ibizo"
     },
-    "name": "Name",
-    "nextLabel": "Next due",
-    "howOften": "How often",
+    "name": "Ibizo",
+    "nextLabel": "Elilandelako elifaneleko",
+    "howOften": "Kangaki",
     "every": {
-      "week": "Every week",
-      "month": "Every month"
+      "week": "Qobe veke",
+      "month": "Qobe nyanga"
     },
-    "next": "next {{date}}",
-    "movableHint": "Only if it can be paid a few days late without trouble.",
-    "protected": "Never suggested to move: paying a loan or burial society late can cost you."
+    "next": "elilandelako {{date}}",
+    "movableHint": "Kwaphela nangabe ingabhadelwa isilibele amalanga ambalwa ngaphandle kwemiraro.",
+    "protected": "Angekhe kuphakanyiswe bona kuhanjiswe: ukubhadela isikwelede nanyana umasingcwabisane kade kungakubiza."
   },
   "setup": {
-    "title": "Set up by hand",
-    "lead": "No statement? Answer a few questions and Tengo estimates a starting history. Real entries replace it as you add them.",
-    "link": "Set up by hand",
-    "pretend": "You can use pretend numbers to try it. Nothing leaves this device.",
-    "balance": "Balance in your bank account today",
-    "arrives": "How your money usually arrives",
+    "title": "Lungiselela ngesandla",
+    "lead": "Awunasitatimende? Phendula imibuzo embalwa bese i-Tengo ilinganisela umlando wokuthoma. Okufakiweko kwamambala kuthatha indawo yawo njengombana ukufaka.",
+    "link": "Lungiselela ngesandla",
+    "pretend": "Ungasebenzisa iinomboro zokuzenzisa bona ukulinge. Akukho okuphuma esisetjenzisweni lesi.",
+    "balance": "Ibhalansi ye-akhawunti yakho yebhanga namhlanje",
+    "arrives": "Indlela imali yakho ejayele ukungena ngayo",
     "arrival": {
-      "daily": "Most days",
-      "weekly": "Weekly",
-      "monthly": "Monthly",
-      "irregular": "Every few days"
+      "daily": "Amalanga amanengi",
+      "weekly": "Qobe veke",
+      "monthly": "Qobe nyanga",
+      "irregular": "Ngemva kwamalanga ambalwa"
     },
     "arrivalHint": {
-      "daily": "For example cash fares or sales on most days.",
-      "weekly": "For example a weekly payout or Saturday takings.",
-      "monthly": "For example a monthly payment or grant.",
-      "irregular": "For example deposits every week or so, but not on a fixed day."
+      "daily": "Isibonelo imali yokukhwela ngekheshi nanyana ukuthengisa amalanga amanengi.",
+      "weekly": "Isibonelo ibhadelo leveke nanyana imali yaMgqibelo.",
+      "monthly": "Isibonelo ibhadelo lenyanga nanyana isibonelelo.",
+      "irregular": "Isibonelo imali efakwako cishe qobe veke, kodwana ingasi ngelanga elibekiweko."
     },
-    "amount": "Usual amount each time",
-    "amountDaily": "Usual amount on a day",
-    "weekday": "Usual day",
-    "dayOfMonth": "Usual day of the month",
-    "everyDays": "Roughly every how many days",
-    "dailySpend": "Usual everyday spending a day",
-    "dailySpendHint": "Food, transport, airtime and the like. Not rent or other bills.",
-    "bills": "Regular bills",
-    "billsHint": "Rent, phone contract, school fees and other bills that go off every month.",
-    "billName": "Bill",
-    "billDay": "Day",
-    "addBill": "Add a bill",
-    "removeBill": "Remove bill {{n}}",
-    "billError": "Each bill needs a name, an amount above zero and a day from 1 to 31.",
-    "fieldError": "Enter a number, for example 250.",
-    "estimatedNote": "Tengo makes a starting history from these answers, marked as estimated. Confidence stays low until real entries arrive.",
-    "submit": "See my date",
-    "estimatedTag": "Estimated"
+    "amount": "Inani elijayelekileko qobe",
+    "amountDaily": "Inani elijayelekileko ngelanga",
+    "weekday": "Ilanga elijayelekileko",
+    "dayOfMonth": "Ilanga elijayelekileko lenyanga",
+    "everyDays": "Cishe ngemva kwamalanga amangaki",
+    "dailySpend": "Ukusebenzisa okujayelekileko kwamalanga woke ngelanga",
+    "dailySpendHint": "Ukudla, ukuthutha, i-airtime nokhunye okunjalo. Ingasi irente nanyana amanye amabhadelo.",
+    "bills": "Amabhadelo ajayelekileko",
+    "billsHint": "Irente, isivumelwano sefowuni, imali yesikolo namanye amabhadelo abhadelwa qobe nyanga.",
+    "billName": "Ibhadelo",
+    "billDay": "Ilanga",
+    "addBill": "Faka ibhadelo",
+    "removeBill": "Susa ibhadelo {{n}}",
+    "billError": "Ibhadelo ngalinye litlhoga ibizo, inani elingaphezu kweziro nelanga elisuka ku-1 ukuya ku-31.",
+    "fieldError": "Faka inomboro, isibonelo 250.",
+    "estimatedNote": "I-Tengo yenza umlando wokuthoma ukusuka eempendulweni lezi, umakwe njengolinganiselweko. Ukuqiniseka kuhlala kuphasi bekube kufika okufakiweko kwamambala.",
+    "submit": "Bona ilanga lami",
+    "estimatedTag": "Kulinganiselwe"
   },
   "safety": {
-    "quickExit": "Quick exit",
-    "showAmounts": "Show amounts",
-    "hideAmounts": "Hide amounts",
-    "exitTitle": "Notes",
-    "exitBody": "No notes yet.",
-    "exitBack": "Back"
+    "quickExit": "Phuma msinyana",
+    "showAmounts": "Tjengisa iimali",
+    "hideAmounts": "Fihla iimali",
+    "exitTitle": "Amanothi",
+    "exitBody": "Awekho amanothi nje.",
+    "exitBack": "Emuva"
   },
   "safetyPolicy": {
-    "title": "Safety and who Tengo is for",
-    "lead": "How Tengo protects people on shared phones, people who are vulnerable, and children.",
-    "draft": "Draft policy for the pilot, to be reviewed by a lawyer and a safeguarding adviser.",
+    "title": "Ukuphepha nokobana i-Tengo ngekabani",
+    "lead": "Indlela i-Tengo evikela ngayo abantu abasebenzisa iinfowuni ezabelanwako, abantu abasengozini nabantwana.",
+    "draft": "Umthethomgomo oyihlelo wokulinga, ozokubuyekezwa mmeli nomeluleki wokuvikela.",
     "adults": {
-      "title": "Adults only",
-      "body": "Tengo is for adults. If you are under 18, please do not use it. Saving to an account asks you to confirm you are 18 or older. Tengo does not ask for a date of birth or an ID number, and the fictional demo people are adults."
+      "title": "Abantu abadala kwaphela",
+      "body": "I-Tengo ngeyabantu abadala. Nangabe uneminyaka engaphasi kwe-18, siyabawa ungayisebenzisi. Ukubulunga ku-akhawunti kukubawa bona uqinisekise bona uneminyaka eli-18 nanyana ngaphezulu. I-Tengo ayibawi ilanga lokubelethwa nanyana inomboro kamazisi, begodu abantu bokwakhiwa bedemo babantu abadala."
     },
     "shared": {
-      "title": "Shared phones",
-      "body": "You can set a PIN so Tengo locks itself after a few minutes, turn on discreet mode so amounts stay hidden until you tap to show them, and use quick exit to leave Tengo for a plain page straight away. Discreet messages carry no amounts, dates or cover words."
+      "title": "Iinfowuni ezabelanwako",
+      "body": "Ungabeka i-PIN bona i-Tengo izikhiye ngemva kwemizuzu embalwa, uvule indlela yokufihla bona iimali zihlale zifihliwe bekube uzithinta bona uzibone, begodu usebenzise ukuphuma msinyana bona utjhiye i-Tengo uye ekhasini elingenalitho ngesikhathi leso. Imilayezo efihliweko ayinazo iimali, amalanga nanyana amabizo wesimo."
     },
     "control": {
-      "title": "If someone controls your money",
-      "body": "No one should make you show your forecast, share your PIN or hand over your money. Tengo never asks for a bank password or PIN. If someone checks your phone, quick exit and the PIN lock help, and you can delete your data at any time from Privacy."
+      "title": "Nangabe umuntu uphethe imali yakho",
+      "body": "Akakho umuntu okufuze akukatelele bona utjengise isibikezelo sakho, wabelane nge-PIN yakho nanyana unikele ngemali yakho. I-Tengo angekhe ibawe ibizo elifihlakeleko lebhanga nanyana i-PIN. Nangabe umuntu uhlola ifowuni yakho, ukuphuma msinyana nokukhiya nge-PIN kuyasiza, begodu ungasula ilwazi lakho nanyana kunini ku-Ifihlo."
     },
     "care": {
-      "title": "Care for people in a hard spot",
-      "body": "Tengo uses plain words, shows estimates and not advice, and never suggests borrowing, skipping a loan or insurance payment, or cutting stock for a business. When money looks short it points to free help from the National Credit Regulator."
+      "title": "Ukunakekela abantu abasesimeni esibudisi",
+      "body": "I-Tengo isebenzisa amabizo alula, itjengisa iinlinganiso ingasi iinyeluleko, begodu angekhe iphakamise ukuboleka, ukweqa ibhadelo lesikwelede nanyana lomshuwaransi, nanyana ukunciphisa isitokhwe sebhizinisi. Nangabe imali ibonakala itlhayela, ikhomba isizo samahala esivela ku-National Credit Regulator."
     },
     "never": {
-      "title": "What Tengo never does",
-      "body": "Tengo does not make lending or credit decisions, does not sell products, and does not share your data with anyone for marketing. Nothing about your forecast is used to judge you."
+      "title": "Lokho i-Tengo engekhe ikwenze",
+      "body": "I-Tengo ayenzi iinqunto zokuboleka nanyana zesikwelede, ayithengisi imikhiqizo, begodu ayabelani ngelwazi lakho nanyana ngubani ngokukhangisa. Akukho okumalungana nesibikezelo sakho okusetjenziselwa ukukwahlulela."
     },
     "help": {
-      "title": "If you need help now",
-      "police": "Police emergency: 10111.",
-      "gbv": "Gender-Based Violence Command Centre: 0800 428 428, free and open all day and night.",
-      "childline": "Childline, for children and anyone worried about a child: 116, free.",
-      "note": "Numbers to be confirmed before launch. Tengo is not an emergency service."
+      "title": "Nangabe utlhoga isizo nje",
+      "police": "Ubuphuthumako bamapholisa: 10111.",
+      "gbv": "I-Gender-Based Violence Command Centre: 0800 428 428, mahala begodu ivulekile emini nebusuku.",
+      "childline": "I-Childline, yabantwana nanyana ngubani ozwisa ubuhlungu ngomntwana: 116, mahala.",
+      "note": "Iinomboro zizokuqinisekiswa ngaphambi kokuthonywa. I-Tengo akusi sizo sobuphuthumako."
     }
   },
   "lock": {
-    "title": "Tengo is locked",
-    "lead": "Enter your PIN to open Tengo.",
+    "title": "I-Tengo ikhiyiwe",
+    "lead": "Faka i-PIN yakho bona uvule i-Tengo.",
     "pin": "PIN",
-    "unlock": "Unlock",
-    "wrong": "That PIN is not right. Try again.",
-    "wait": "Too many tries. Wait a moment and try again.",
-    "waitFor_one": "Too many tries. Try again in {{count}} second.",
-    "waitFor_other": "Too many tries. Try again in {{count}} seconds.",
-    "forgot": "Forgot your PIN?",
-    "forgotBody": "Tengo cannot recover a PIN, because it is never stored. To start again, delete all Tengo data on this device. This cannot be undone.",
-    "erase": "Delete all data on this device"
+    "unlock": "Vula",
+    "wrong": "I-PIN leyo ayikalungi. Linga godu.",
+    "wait": "Amalingo manengi khulu. Linda kancani bese ulinga godu.",
+    "waitFor_one": "Amalingo manengi khulu. Linga godu ngemva kwesekhondi eli-{{count}}.",
+    "waitFor_other": "Amalingo manengi khulu. Linga godu ngemva kwamasekhondi ali-{{count}}.",
+    "forgot": "Ukhohlwe i-PIN yakho?",
+    "forgotBody": "I-Tengo ayikghoni ukubuyisa i-PIN, ngombana angekhe ibulungwe. Bona uthome kabutjha, sula woke ilwazi le-Tengo esisetjenzisweni lesi. Lokhu angekhe kubuyiselwe emuva.",
+    "erase": "Sula woke ilwazi esisetjenzisweni lesi"
   },
   "shared": {
-    "title": "Shared phone safety",
-    "lead": "For a phone other people can pick up.",
-    "lockTitle": "App lock",
-    "lockOff": "Off. Set a 4 to 6 digit PIN to lock Tengo when you are away.",
-    "lockOn": "On. Tengo locks after {{count}} minutes without use.",
-    "newPin": "New PIN",
-    "confirmPin": "Type the PIN again",
-    "pinHint": "4 to 6 digits. It is stored only as a scrambled code on this device and cannot be recovered.",
-    "pinMismatch": "The two PINs do not match.",
-    "pinInvalid": "Use 4 to 6 digits.",
-    "setPin": "Set PIN",
-    "changePin": "Change PIN",
-    "turnOff": "Turn off lock",
-    "currentPin": "Current PIN",
-    "wrongPin": "That PIN is not right.",
-    "autoLock": "Lock after",
-    "minutes_one": "{{count}} minute",
-    "minutes_other": "{{count}} minutes",
-    "lockNow": "Lock now",
-    "discreet": "Discreet mode",
-    "discreetHint": "Hide amounts on screen until you tap Show amounts, and send messages with no amounts or dates.",
-    "quickExitHint": "Quick exit is always at the top of the screen. It hides everything and opens a plain page.",
-    "policy": "Read the safety policy"
+    "title": "Ukuphepha kwefowuni eyabelanwako",
+    "lead": "Kwefowuni abanye abantu abangayithatha.",
+    "lockTitle": "Ukukhiya i-app",
+    "lockOff": "Kuvaliwe. Beka i-PIN yeenomboro ezi-4 ukuya kwezi-6 bona ukhiye i-Tengo nangabe ungekho.",
+    "lockOn": "Kuvuliwe. I-Tengo iyazikhiya ngemva kwemizuzu eli-{{count}} ingasetjenziswa.",
+    "newPin": "I-PIN etjha",
+    "confirmPin": "Tlola i-PIN godu",
+    "pinHint": "Iinomboro ezi-4 ukuya kwezi-6. Ibulungwa kwaphela njengekhowudi ehlanganisiweko esisetjenzisweni lesi begodu angekhe ibuyiswe.",
+    "pinMismatch": "Ama-PIN amabili akafani.",
+    "pinInvalid": "Sebenzisa iinomboro ezi-4 ukuya kwezi-6.",
+    "setPin": "Beka i-PIN",
+    "changePin": "Tjhugulula i-PIN",
+    "turnOff": "Vala ukukhiya",
+    "currentPin": "I-PIN yanje",
+    "wrongPin": "I-PIN leyo ayikalungi.",
+    "autoLock": "Khiya ngemva kwe-",
+    "minutes_one": "Umzuzu o-{{count}}",
+    "minutes_other": "Imizuzu eli-{{count}}",
+    "lockNow": "Khiya nje",
+    "discreet": "Indlela yokufihla",
+    "discreetHint": "Fihla iimali esikrinini bekube uthinta Tjengisa iimali, begodu uthumele imilayezo engenazo iimali nanyana amalanga.",
+    "quickExitHint": "Ukuphuma msinyana kuhlala phezulu esikrinini. Kufihla koke begodu kuvula ikhasi elingenalitho.",
+    "policy": "Funda umthethomgomo wokuphepha"
   },
   "diag": {
-    "title": "Diagnostics",
-    "lead": "For help with a problem. No personal data is kept here, and nothing is sent.",
-    "show": "Show",
-    "hide": "Hide",
-    "build": "Build",
-    "schema": "Data version",
-    "storage": "Storage used",
-    "offline": "Offline copy",
-    "offlineNo": "Not installed yet",
-    "language": "Language",
-    "errors": "Errors noted",
-    "copy": "Copy",
-    "copied": "Copied",
-    "clear": "Clear errors",
-    "cleared": "Errors cleared"
+    "title": "Ukuhlola iimphoso",
+    "lead": "Kwesizo ngomraro. Alikho ilwazi lomuntu elibulungwa lapha, begodu akukho okuthunyelwako.",
+    "show": "Tjengisa",
+    "hide": "Fihla",
+    "build": "Ukwakhiwa",
+    "schema": "Ihlelo lelwazi",
+    "storage": "Ibulungelo elisetjenzisiweko",
+    "offline": "Ikopi engekho ku-inthanethi",
+    "offlineNo": "Ayikafakwa",
+    "language": "Ilimi",
+    "errors": "Iimphoso eziphawulweko",
+    "copy": "Kopa",
+    "copied": "Kukopiwe",
+    "clear": "Sula iimphoso",
+    "cleared": "Iimphoso zisuliwe"
   },
   "own": {
-    "you": "You",
-    "chip": "Your profile | {{mode}}",
+    "you": "Wena",
+    "chip": "Iphrofayili yakho | {{mode}}",
     "storage": {
-      "device": "This device only",
-      "account": "Saved to your account"
+      "device": "Esisetjenzisweni lesi kwaphela",
+      "account": "Kubulungwe ku-akhawunti yakho"
     },
-    "cardTitle": "Use your own money",
-    "cardPromise": "Your numbers, your date. Nothing leaves your device unless you save an account.",
-    "cardBody": "Import a statement, answer a few questions, or try it with sample numbers first. No sign up needed.",
-    "start": "Start",
-    "continue": "Continue",
-    "deletedTitle": "Your profile was deleted"
+    "cardTitle": "Sebenzisa imali yakho",
+    "cardPromise": "Iinomboro zakho, ilanga lakho. Akukho okuphuma esisetjenzisweni sakho ngaphandle kobana ubulunga i-akhawunti.",
+    "cardBody": "Ngenisa isitatimende, phendula imibuzo embalwa, nanyana ulinge kokuthoma ngeenomboro eziyisibonelo. Akutlhogeki ukutlolisa.",
+    "start": "Thoma",
+    "continue": "Ragela phambili",
+    "deletedTitle": "Iphrofayili yakho isuliwe"
   },
   "welcome": {
-    "title": "Use your own money",
-    "step": "Step {{n}} of {{total}}",
-    "next": "Next",
-    "back": "Back",
-    "nickname": "Name or nickname (optional)",
-    "nicknameHint": "Only used to greet you. Leave it empty if you prefer.",
+    "title": "Sebenzisa imali yakho",
+    "step": "Igadango {{n}} kwali-{{total}}",
+    "next": "Okulandelako",
+    "back": "Emuva",
+    "nickname": "Ibizo nanyana isiteketiso (ongakukhetha)",
+    "nicknameHint": "Lisetjenziselwa ukukulotjhisa kwaphela. Litjhiye lingenalitho nangabe uthanda.",
     "s1": {
-      "title": "What Tengo asks for, and why",
-      "lead": "Tengo works out how long your money lasts and when your next money usually lands. It only needs a little to do that.",
+      "title": "Lokho i-Tengo ekubawako, nokobana kubayini",
+      "lead": "I-Tengo ibala bona imali yakho ihlala isikhathi esingangani nokobana imali yakho elandelako ijayele ukungena nini. Itlhoga okuncani kwaphela bona ikwenze lokho.",
       "money": {
-        "title": "Your money in and out",
-        "body": "Dates, amounts and short descriptions, and your balance. From a statement, from a few answers, or from sample numbers."
+        "title": "Imali yakho engenako nephumako",
+        "body": "Amalanga, iimali nemihlathiso efitjhani, kunye nebhalansi yakho. Ukusuka esitatimendeni, eempendulweni ezimbalwa, nanyana eenomborweni eziyisibonelo."
       },
       "bills": {
-        "title": "Regular bills and money you owe",
-        "body": "Things like rent, a phone contract or a stokvel, so Tengo can keep money back for them."
+        "title": "Amabhadelo ajayelekileko nemali oyikweledako",
+        "body": "Izinto ezifana nerente, isivumelwano sefowuni nanyana i-stokvel, bona i-Tengo ikghone ukuzibulungela imali."
       },
       "never": {
-        "title": "Never",
-        "body": "Tengo never asks for an ID number, a phone number, a bank login or a PIN."
+        "title": "Angekhe",
+        "body": "I-Tengo angekhe ibawe inomboro kamazisi, inomboro yefowuni, ukungena ebhanga nanyana i-PIN."
       },
       "where": {
-        "title": "Where it stays",
-        "body": "On this device only, unless you later choose to save it to an account. You can delete it any time."
+        "title": "Lapho kuhlala khona",
+        "body": "Esisetjenzisweni lesi kwaphela, ngaphandle kobana ngemva ukhethe ukukubulunga ku-akhawunti. Ungakusula nanyana kunini."
       }
     },
     "s2": {
-      "title": "Your choices",
-      "lead": "Only the forecast is needed. Everything else is off until you turn it on.",
-      "core": "Needed to work out your date. It runs on this device. Withdraw any time and it pauses.",
-      "notice": "The full privacy notice says what is kept, where, for how long, and how to complain.",
-      "noticeLink": "Read the privacy notice"
+      "title": "Ukukhetha kwakho",
+      "lead": "Isibikezelo kwaphela esitlhogekako. Koke okhunye kuvaliwe bekube uyakuvula.",
+      "core": "Kuyatlhogeka bona kubalwe ilanga lakho. Kusebenza esisetjenzisweni lesi. Khupha imvumo nanyana kunini bese kuyema.",
+      "notice": "Isaziso esipheleleko sefihlo sitjho okubulungwako, kuphi, isikhathi esingangani, nokobana ungakhalaza njani.",
+      "noticeLink": "Funda isaziso sefihlo"
     },
     "s3": {
-      "title": "Add your money",
-      "lead": "Choose one way. You can change or replace it later on Money.",
-      "import": "Import a statement",
-      "importBody": "A CSV file from your bank. It is read on this device.",
-      "manual": "Answer a few questions",
-      "manualBody": "For when you have no statement. Tengo estimates a starting history from your answers.",
-      "sample": "Try with sample numbers",
-      "sampleBody": "Explore without typing anything. The sample is labelled and you can change every number."
+      "title": "Faka imali yakho",
+      "lead": "Khetha indlela yinye. Ungayitjhugulula nanyana uyithathele indawo ngemva ku-Imali.",
+      "import": "Ngenisa isitatimende",
+      "importBody": "Ifayili le-CSV elivela ebhangeni lakho. Lifundwa esisetjenzisweni lesi.",
+      "manual": "Phendula imibuzo embalwa",
+      "manualBody": "Nangabe ungenasitatimende. I-Tengo ilinganisela umlando wokuthoma ukusuka eempendulweni zakho.",
+      "sample": "Linga ngeenomboro eziyisibonelo",
+      "sampleBody": "Hlola ngaphandle kokutlola litho. Isibonelo simakiwe begodu ungatjhugulula yoke inomboro."
     },
     "s4": {
-      "eyebrow": "Your first forecast",
-      "lead": "This is an estimate from the numbers you gave, not advice. It gets better as you add real entries.",
-      "sample": "These are sample numbers, not yours. Change them on Money, or replace them with a statement or your own answers.",
-      "open": "Open Home"
+      "eyebrow": "Isibikezelo sakho sokuthoma",
+      "lead": "Lesi sisilinganiso esivela eenomborweni ozinikeleko, akusi seluleko. Siba ngcono njengombana ufaka okufakiweko kwamambala.",
+      "sample": "Lezi ziinomboro eziyisibonelo, ingasi zakho. Zitjhugulule ku-Imali, nanyana uzithathele indawo ngesitatimende nanyana ngeempendulo zakho.",
+      "open": "Vula Ekhaya"
     },
-    "signIn": "Already saved to an account? Sign in"
+    "signIn": "Sele ubulunge ku-akhawunti? Ngena"
   },
   "legalDoc": {
-    "version": "Version {{version}}",
-    "draft": "Draft for the pilot, to be reviewed by a lawyer before launch. Tengo is not a bank and does not give financial advice. This notice does not claim compliance with any law or certification.",
-    "placeholderWarning": "The responsible party and Information Officer have not been named yet. They must be filled in before any real launch.",
-    "party": "Responsible party",
-    "address": "Address",
-    "officer": "Information Officer",
-    "contact": "Contact",
+    "version": "Ihlelo {{version}}",
+    "draft": "Ihlelo lokulinga, elizokubuyekezwa mmeli ngaphambi kokuthonywa. I-Tengo akusi libhanga begodu ayinikeli iinyeluleko zeemali. Isaziso lesi asitjho bona silandela nanyana ngimuphi umthetho nanyana isitifikeyidi.",
+    "placeholderWarning": "Ihlangano ephetheko neSiphathimandla seLwazi abakabizwa. Kufuze bagcwaliswe ngaphambi kokuthonywa kwamambala.",
+    "party": "Ihlangano ephetheko",
+    "address": "Ikheli",
+    "officer": "Isiphathimandla seLwazi",
+    "contact": "Thintana",
     "notice": {
-      "title": "Privacy notice",
+      "title": "Isaziso sefihlo",
       "what": {
-        "title": "What Tengo keeps",
-        "body": "The money history you add (dates, amounts, short descriptions and categories), your balances, regular bills and money you owe, your choices and settings, an optional nickname, and a log of what you did in the app. If you save an account, your email address too. Tengo does not ask for or keep ID numbers, phone numbers, bank logins or PINs. Long numbers in imported descriptions are masked."
+        "title": "Lokho i-Tengo ekubulungako",
+        "body": "Umlando wemali owufakako (amalanga, iimali, imihlathiso efitjhani neengaba), iibhalansi zakho, amabhadelo ajayelekileko nemali oyikweledako, ukukhetha kwakho namalungiselelo, isiteketiso ongasikhetha, kunye nerekhodi lalokho okwenzileko ku-app. Nangabe ubulunga i-akhawunti, nekheli lakho le-imeyili. I-Tengo ayibawi begodu ayibulungi iinomboro zikamazisi, iinomboro zefowuni, ukungena ebhanga nanyana ama-PIN. Iinomboro ezide emihlathisweni engenisiweko ziyafihlwa."
       },
       "why": {
-        "title": "Why",
-        "body": "Only to work out how long your money lasts, when your next money usually lands, and the estimates on screen. Not for marketing, credit scoring, lending decisions or selling to anyone. Giving the information is voluntary; without it there is no forecast."
+        "title": "Kubayini",
+        "body": "Kwaphela ukubala bona imali yakho ihlala isikhathi esingangani, imali yakho elandelako ijayele ukungena nini, neenlinganiso ezisesikrinini. Ingasi ngokukhangisa, ukulinganisa isikwelede, iinqunto zokuboleka nanyana ukuthengisela nanyana ngubani. Ukunikela ilwazi kungokuzithandela; ngaphandle kwalo asikho isibikezelo."
       },
       "where": {
-        "title": "Where it is processed",
-        "body": "As a guest, everything stays in this browser on this device and the forecast is worked out on the device. Nothing is sent to Tengo.\nIf you choose to save an account, your data is stored with the database provider named in the setup (Supabase), in the region the operator chooses, and sent over an encrypted connection. The forecast is still worked out on your device. Any storage outside South Africa needs adequate protection under POPIA section 72 and is named here before launch."
+        "title": "Lapho kusetjenzwa khona",
+        "body": "Njengesivakatjhi, koke kuhlala ebhrawuzarini le esisetjenzisweni lesi begodu isibikezelo sibalwa esisetjenzisweni. Akukho okuthunyelwa ku-Tengo.\nNangabe ukhetha ukubulunga i-akhawunti, ilwazi lakho libulungwa mhlinzeki wesizindalwazi obalwe ekulungiseleleni (Supabase), esifundeni esikhethwe msebenzisi, begodu lithunyelwa ngokuthintana okuvikelekileko. Isibikezelo sisabalwa esisetjenzisweni sakho. Nanyana ngikuphi ukubulunga ngaphandle kweSewula Afrika kutlhoga ukuvikelwa okwaneleko ngaphasi kwesigaba 72 se-POPIA begodu kuzokubalwa lapha ngaphambi kokuthonywa."
       },
       "who": {
-        "title": "Who can see it",
-        "body": "As a guest: anyone who uses this browser on this device. Use the PIN lock on a shared phone. With an account: you, after signing in. Each person's rows are locked to them in the database. No staff access to your rows is set up. If support ever needs it, this notice will first say how it is limited and recorded."
+        "title": "Ngubani ongakubona",
+        "body": "Njengesivakatjhi: nanyana ngubani osebenzisa ibhrawuza le esisetjenzisweni lesi. Sebenzisa ukukhiya nge-PIN efowunini eyabelanwako. Nge-akhawunti: wena, ngemva kokungena. Imigqa yomuntu ngamunye ikhiyelwe kuye esizindalwazini. Akukho ukufikelela kwabasebenzi emigqeni yakho okulungiselelweko. Nangabe isizo sakhe sikutlhoga, isaziso lesi sizokuthoma sitjho bona kukhawulelwa begodu kurekhodwa njani."
       },
       "keep": {
-        "title": "How long it is kept",
-        "body": "Transactions older than 12 months are removed from this device when Tengo opens. On an account, a server job to remove them is written but not yet switched on. You can delete everything at any time; on an account, deletion removes your rows and your sign-in, and you get a receipt with no personal data. Backups kept by the hosting provider are deleted on their own schedule, stated here before launch."
+        "title": "Kubulungwa isikhathi esingangani",
+        "body": "Amathengiselwano angaphezu kweenyanga ezili-12 ayasuswa esisetjenzisweni lesi nangabe i-Tengo ivuleka. Ku-akhawunti, umsebenzi weseva wokuwasusa utloliwe kodwana awukavulwa. Ungasula koke nanyana kunini; ku-akhawunti, ukusula kususa imigqa yakho nokungena kwakho, begodu ufumana irasidi elingenalo ilwazi lomuntu. Iinkopi zokubulunga ezibulungwa mhlinzeki wokusingatha zisulwa ngokwehlelo lakhe, elizokubalwa lapha ngaphambi kokuthonywa."
       },
       "rights": {
-        "title": "Your rights",
-        "body": "You can see your data and export it as JSON or CSV, correct any entry, ask a person to check a result, withdraw any choice, and delete everything. You can complain to the responsible party above, and to the Information Regulator of South Africa."
+        "title": "Amalungelo wakho",
+        "body": "Ungabona ilwazi lakho begodu ulikhuphe njenge-JSON nanyana i-CSV, ulungise nanyana ngikuphi okufakiweko, ubawe umuntu bona ahlole umphumela, ukhuphe nanyana ngikuphi ukukhetha, begodu usule koke. Ungakhalaza ehlanganweni ephetheko engehla, nakuMlawuli weLwazi weSewula Afrika."
       },
       "not": {
-        "title": "What Tengo is not",
-        "body": "Tengo is a pilot. It is not a bank, not a credit provider and not a financial adviser. Its figures are estimates from your own history, and it makes no decisions about you."
+        "title": "Lokho i-Tengo engasikho",
+        "body": "I-Tengo kulinga. Akusi libhanga, akusi mhlinzeki wesikwelede begodu akusi meluleki weemali. Iinomboro zayo ziinlinganiso ezivela emlandweni wakho, begodu ayenzi iinqunto ngawe."
       },
       "changes": {
-        "title": "Changes",
-        "body": "If this notice changes, the version above changes and Tengo asks you to look at it again before you continue."
+        "title": "Iintjhugululo",
+        "body": "Nangabe isaziso lesi siyatjhugululeka, ihlelo elingehla liyatjhugululeka begodu i-Tengo ikubawa bona usiqale godu ngaphambi kobana uragele phambili."
       }
     },
     "terms": {
-      "title": "Terms of use",
+      "title": "Imibandela yokusebenzisa",
       "use": {
-        "title": "Using Tengo",
-        "body": "Tengo is free to use during the pilot. It is for adults, 18 or older. Use it only with your own money or with pretend numbers."
+        "title": "Ukusebenzisa i-Tengo",
+        "body": "I-Tengo imahala ukuyisebenzisa ngesikhathi sokulinga. Ngeyabantu abadala, abaneminyaka eli-18 nanyana ngaphezulu. Yisebenzise kwaphela ngemali yakho nanyana ngeenomboro zokuzenzisa."
       },
       "estimate": {
-        "title": "Estimates, not promises",
-        "body": "Every date, budget and suggestion is an estimate from past patterns. Money can arrive late or not at all, and bills can change. Check before you make a decision that matters."
+        "title": "Iinlinganiso, ingasi iinthembiso",
+        "body": "Woke ilanga, isabelomali nesiphakamiso sisilinganiso esivela emaphethinini wangaphambili. Imali ingangena kade nanyana ingangeni nokungena, begodu amabhadelo angatjhugululeka. Hlola ngaphambi kokwenza isiqunto esiqakathekileko."
       },
       "liability": {
-        "title": "Your decisions",
-        "body": "Tengo does not give financial advice and is not responsible for decisions you make using it. Nothing here limits rights you have under South African law."
+        "title": "Iinqunto zakho",
+        "body": "I-Tengo ayinikeli iinyeluleko zeemali begodu ayinasibopho ngeenqunto ozenzako uyisebenzisa. Akukho lapha okukhawulela amalungelo onawo ngaphasi komthetho weSewula Afrika."
       },
       "accounts": {
-        "title": "Accounts",
-        "body": "Accounts are optional. Keep access to your email address, because sign-in is by a one-time code. You can sign out everywhere and delete your account at any time."
+        "title": "Ii-akhawunti",
+        "body": "Ii-akhawunti ngezokuzikhethela. Gcina ukufikelela ekhelini lakho le-imeyili, ngombana ukungena kwenziwa ngekhowudi yesikhathi sinye. Ungaphuma yoke indawo begodu usule i-akhawunti yakho nanyana kunini."
       },
       "ending": {
-        "title": "Ending the pilot",
-        "body": "If the pilot ends, you will be told in the app and given time to export your data before it is deleted."
+        "title": "Ukuphela kokulinga",
+        "body": "Nangabe ukulinga kuyaphela, uzokutjelwa ku-app begodu unikelwe isikhathi sokukhupha ilwazi lakho ngaphambi kobana lisulwe."
       },
       "complaints": {
-        "title": "Complaints",
-        "body": "Contact the responsible party above. For privacy complaints you can also go to the Information Regulator of South Africa."
+        "title": "Iinkhalazo",
+        "body": "Thintana nehlangano ephetheko engehla. Ngeenkhalazo zefihlo ungaya godu kuMlawuli weLwazi weSewula Afrika."
       }
     }
   },
   "account": {
-    "title": "Account",
-    "unavailable": "Accounts are not set up on this copy of Tengo. Your profile stays on this device.",
-    "lead": "Save to an account to keep this on any device. Optional: Tengo works fully without one.",
-    "leadSaved": "Your profile is saved to your account. Your forecast is still worked out on this device.",
-    "saveTitle": "Save to an account",
-    "manage": "Manage your account",
+    "title": "I-akhawunti",
+    "unavailable": "Ii-akhawunti azikalungiselelwa ekopini le ye-Tengo. Iphrofayili yakho ihlala esisetjenzisweni lesi.",
+    "lead": "Bulunga ku-akhawunti bona ukubulunge nanyana ngesiphi isisetjenziswa. Kungokuzikhethela: i-Tengo isebenza ngokupheleleko ngaphandle kwayo.",
+    "leadSaved": "Iphrofayili yakho ibulungwe ku-akhawunti yakho. Isibikezelo sakho sisabalwa esisetjenzisweni lesi.",
+    "saveTitle": "Bulunga ku-akhawunti",
+    "manage": "Phatha i-akhawunti yakho",
     "facts": {
-      "passwordless": "No password: you sign in with a one-time code sent to your email.",
-      "device": "Your forecast is still worked out on your device. The account only stores your data.",
-      "where": "Stored with the database provider named in the privacy notice. Only you can read your rows.",
-      "leave": "Sign out everywhere, export or delete everything at any time."
+      "passwordless": "Alikho ibizo elifihlakeleko: ungena ngekhowudi yesikhathi sinye ethunyelwa ku-imeyili yakho.",
+      "device": "Isibikezelo sakho sisabalwa esisetjenzisweni sakho. I-akhawunti ibulunga ilwazi lakho kwaphela.",
+      "where": "Kubulungwe mhlinzeki wesizindalwazi obalwe esazisweni sefihlo. Nguwe kwaphela ongafunda imigqa yakho.",
+      "leave": "Phuma yoke indawo, khupha nanyana usule koke nanyana kunini."
     },
-    "email": "Email address",
-    "adult": "I am 18 or older.",
-    "adultHint": "Tengo is for adults. It does not ask for or keep a date of birth.",
-    "sendCode": "Send me a code",
-    "codeSent": "Code sent",
-    "codeTitle": "Enter your code",
-    "codeLead": "We sent a one-time code to {{email}}. It works once and expires soon.",
-    "code": "One-time code",
-    "verify": "Sign in",
-    "resend": "Send a new code",
-    "resendIn_one": "Send a new code in {{count}} second",
-    "resendIn_other": "Send a new code in {{count}} seconds",
-    "uploadTitle": "Save what is on this device?",
-    "uploadLead": "Your account is empty. Save your profile from this device to it. It is then removed from this device and kept in your account.",
-    "emptyLead": "Your account is new and empty. Add your money to get your first forecast.",
-    "conflictTitle": "This account already has data",
-    "conflictLead": "This device also has a profile. Usually you keep the account's data. You can replace it with this device's data instead.",
-    "useLead": "Your account's data will be used on this device.",
+    "email": "Ikheli le-imeyili",
+    "adult": "Ngineminyaka eli-18 nanyana ngaphezulu.",
+    "adultHint": "I-Tengo ngeyabantu abadala. Ayibawi begodu ayibulungi ilanga lokubelethwa.",
+    "sendCode": "Ngithumelele ikhowudi",
+    "codeSent": "Ikhowudi ithunyelwe",
+    "codeTitle": "Faka ikhowudi yakho",
+    "codeLead": "Sithumele ikhowudi yesikhathi sinye ku-{{email}}. Isebenza kanye begodu iphelelwa sikhathi msinyana.",
+    "code": "Ikhowudi yesikhathi sinye",
+    "verify": "Ngena",
+    "resend": "Thumela ikhowudi etjha",
+    "resendIn_one": "Thumela ikhowudi etjha ngemva kwesekhondi eli-{{count}}",
+    "resendIn_other": "Thumela ikhowudi etjha ngemva kwamasekhondi ali-{{count}}",
+    "uploadTitle": "Bulunga okusesisetjenzisweni lesi?",
+    "uploadLead": "I-akhawunti yakho ayinalitho. Bulunga iphrofayili yakho ukusuka esisetjenzisweni lesi kiyo. Ngemva kwalokho isuswa esisetjenzisweni lesi begodu ibulungwe ku-akhawunti yakho.",
+    "emptyLead": "I-akhawunti yakho itjha begodu ayinalitho. Faka imali yakho bona ufumane isibikezelo sakho sokuthoma.",
+    "conflictTitle": "I-akhawunti le sele inelwazi",
+    "conflictLead": "Isisetjenziswa lesi naso sineprofayili. Ngokujayelekileko ubulunga ilwazi le-akhawunti. Ungalithathela indawo ngelwazi lesisetjenziswa lesi esikhundleni salokho.",
+    "useLead": "Ilwazi le-akhawunti yakho lizokusetjenziswa esisetjenzisweni lesi.",
     "choices": {
-      "upload": "Save this device's profile",
-      "startEmpty": "Start with an empty account",
-      "useAccount": "Use the account's data",
-      "replaceAccount": "Replace it with this device's data"
+      "upload": "Bulunga iphrofayili yesisetjenziswa lesi",
+      "startEmpty": "Thoma nge-akhawunti engenalitho",
+      "useAccount": "Sebenzisa ilwazi le-akhawunti",
+      "replaceAccount": "Lithathele indawo ngelwazi lesisetjenziswa lesi"
     },
-    "replaceWarn": "Replacing removes what the account holds now and cannot be undone.",
-    "saved": "Saved to your account",
-    "signedInAs": "Signed in as {{email}}",
-    "savedFacts": "Export everything the server holds at any time, as JSON or CSV.",
-    "signOut": "Sign out",
-    "signOutEverywhere": "Sign out everywhere",
-    "deleteTitle": "Delete my account",
-    "deleteBody": "Removes every row the server holds about you and your sign-in, and gives you a receipt with no personal data. Backups kept by the hosting provider expire on its schedule, stated in the privacy notice.",
-    "deleteWarn": "This cannot be undone. Export first if you want a copy.",
-    "deleteConfirm": "Yes, delete my account",
+    "replaceWarn": "Ukuthathela indawo kususa lokho i-akhawunti enakho nje begodu angekhe kubuyiselwe emuva.",
+    "saved": "Kubulungwe ku-akhawunti yakho",
+    "signedInAs": "Ungene njengo-{{email}}",
+    "savedFacts": "Khupha koke iseva ekubulungako nanyana kunini, njenge-JSON nanyana i-CSV.",
+    "signOut": "Phuma",
+    "signOutEverywhere": "Phuma yoke indawo",
+    "deleteTitle": "Sula i-akhawunti yami",
+    "deleteBody": "Kususa yoke imigqa iseva enayo ngawe nokungena kwakho, begodu ikunikele irasidi elingenalo ilwazi lomuntu. Iinkopi zokubulunga ezibulungwa mhlinzeki wokusingatha ziphelelwa sikhathi ngokwehlelo lakhe, elibalwe esazisweni sefihlo.",
+    "deleteWarn": "Lokhu angekhe kubuyiselwe emuva. Khupha kokuthoma nangabe ufuna ikopi.",
+    "deleteConfirm": "Iye, sula i-akhawunti yami",
     "errors": {
-      "rate_limited": "A code was sent a moment ago. Wait a minute, then try again.",
-      "invalid_code": "That code did not work. Check it, or send a new one.",
-      "generic": "Something went wrong. Check your connection and try again."
+      "rate_limited": "Ikhowudi ithunyelwe isikhatjhana esidlulileko. Linda umzuzu, bese ulinga godu.",
+      "invalid_code": "Ikhowudi leyo ayikasebenzi. Yihlole, nanyana uthumele etjha.",
+      "generic": "Kukhona okungakahambi kuhle. Hlola ukuthintana kwakho bese ulinga godu."
     }
   }
 }

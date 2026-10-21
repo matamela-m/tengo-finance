@@ -26,7 +26,7 @@ Recruit through community networks, not the founder's friends. Offer a fair than
 ## Setup
 
 - 45 minutes per person, in a quiet place the participant chooses, or on a video call.
-- A phone with the latest build at its deployed address, in the participant's preferred language where available (English today; offer an interpreter for the session itself).
+- A phone with the latest build at its deployed address, in English for the scored tasks and questions, with an interpreter for the session if wanted. The other 10 languages are unreviewed AI drafts, so their wording errors would mix with design problems in the scores. After the scored part, a participant may switch to their own language and say what reads wrong; note that separately and pass it to the translators.
 - Use the **fictional personas and sample numbers only**. Never ask for or show the participant's own money.
 - Two people: a facilitator who asks, and a note-taker who writes on `note-sheet.md`. No video. Audio only with consent, deleted after notes are checked.
 - Run sessions 1 and 2, fix anything that blocks comprehension, then run 3 to 6 without changes so their results compare.

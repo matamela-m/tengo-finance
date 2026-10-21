@@ -1,1380 +1,1380 @@
 {
   "common": {
     "demoChip": "Demo | Fictional Data",
-    "skipToContent": "Skip to content",
-    "loading": "Loading",
-    "saving": "Saving",
-    "close": "Close",
-    "cancel": "Cancel",
-    "save": "Save",
-    "today": "Today",
-    "rangeDates": "{{from}} to {{to}}",
-    "rangeAmounts": "{{low}} to {{high}}",
-    "on": "On",
-    "off": "Off",
-    "back": "Back"
+    "skipToContent": "Fhira u ye kha zwi re ngomu",
+    "loading": "Zwi khou ḓa",
+    "saving": "Zwi khou vhulungwa",
+    "close": "Vala",
+    "cancel": "Khansela",
+    "save": "Vhulunga",
+    "today": "Ṋamusi",
+    "rangeDates": "{{from}} u swika {{to}}",
+    "rangeAmounts": "{{low}} u swika {{high}}",
+    "on": "Yo vulwa",
+    "off": "Yo valwa",
+    "back": "Murahu"
   },
   "nav": {
-    "label": "Main",
-    "home": "Home",
-    "plan": "Plan",
-    "money": "Money",
-    "inbox": "Inbox",
-    "privacy": "Privacy",
-    "me": "Me",
-    "collapse": "Collapse sidebar",
-    "expand": "Expand sidebar"
+    "label": "Zwihulwane",
+    "home": "Hayani",
+    "plan": "Pulane",
+    "money": "Tshelede",
+    "inbox": "Milaedza",
+    "privacy": "Tshiphiri",
+    "me": "Nṋe",
+    "collapse": "Peta bara ya thungo",
+    "expand": "Andadza bara ya thungo"
   },
   "state": {
-    "enough": "Enough",
-    "tight": "Tight",
-    "short": "Short",
-    "unclear": "Not enough to tell"
+    "enough": "Yo lingana",
+    "tight": "Yo lingana zwiṱuku",
+    "short": "I a ṱahela",
+    "unclear": "A zwo ngo lingana u amba"
   },
   "confidence": {
-    "high": "High",
-    "medium": "Medium",
-    "low": "Low"
+    "high": "Nṱha",
+    "medium": "Vhukati",
+    "low": "Fhasi"
   },
   "category": {
-    "income": "Income",
-    "spend": "Spend",
-    "bill": "Bill"
+    "income": "Tshelede i dzhenaho",
+    "spend": "U shumisa",
+    "bill": "Mbadelo"
   },
   "language": {
-    "label": "Language",
-    "pending": "Translation on the way. This language shows English for now.",
-    "machine": "Machine translated with Google Translate. A first-language speaker still needs to check it.",
-    "reviewed": "Translated and checked by a first-language speaker.",
-    "claim": "Built for 11 languages. English today.",
-    "needsTranslator": "Needs a first-language translator. Machine translation does not support Tshivenda, so it shows English for now.",
+    "label": "Luambo",
+    "pending": "Ṱhalutshedzo i kha ḓi ḓa. Luambo ulu lu sumbedza Luisimane zwino.",
+    "machine": "Ṱhalutshedzo ya mutalukanyo yo itwaho nga AI. Muambi wa luambo ulu sa luambo lwa damuni u kha ḓi tea u lu sedzulusa.",
+    "reviewed": "Lwo ṱalutshedzwa nahone lwa sedzuluswa nga muambi wa luambo ulu sa luambo lwa damuni.",
+    "claim": "Nyambo dza 11. Luisimane na mitalukanyo ya 10 ya AI, i kha ḓi tea u sedzuluswa.",
+    "needsTranslator": "Hu ṱoḓea muṱalutshedzi a ambaho luambo ulu sa luambo lwa damuni. Lu sumbedza Luisimane zwino.",
     "short": {
-      "pending": "English for now",
-      "needsTranslator": "English for now",
-      "machine": "machine translated"
+      "pending": "Luisimane zwino",
+      "needsTranslator": "Luisimane zwino",
+      "machine": "Mutalukanyo wa AI"
     },
     "chip": {
-      "source": "English",
-      "pending": "English for now",
-      "needsTranslator": "Needs a translator",
-      "machine": "Machine translated",
-      "reviewed": "Human reviewed"
+      "source": "Luisimane",
+      "pending": "Luisimane zwino",
+      "needsTranslator": "Hu ṱoḓea muṱalutshedzi",
+      "machine": "Mutalukanyo wa AI",
+      "reviewed": "Zwo sedzuluswa nga muthu"
     }
   },
   "landing": {
-    "title": "Money you can plan around",
-    "pitch": "A balance tells you what you have. Tengo tells you until when.",
-    "cta": "Explore Tengo",
-    "ctaNote": "No sign up. Fictional data only.",
-    "previewLabel": "Live preview of Tengo",
-    "previewWho": "Thabo, e-hailing driver. Fictional.",
-    "previewCaption": "Preview of Tengo for a fictional driver: {{label}} {{date}}, cover {{state}}, daily budget {{amount}}.",
-    "howTitle": "Three steps to a date you can plan around.",
+    "title": "Tshelede ine wa nga dzudzanya ngayo",
+    "pitch": "Balantsi i ni vhudza zwine na vha nazwo. Tengo i ni vhudza uri u swika lini.",
+    "cta": "Ṱolisisa Tengo",
+    "ctaNote": "A hu na u ṅwalisa. Mafhungo a u sikwa fhedzi.",
+    "previewLabel": "Tsumbo i tshilaho ya Tengo",
+    "previewWho": "Thabo, mureili wa e-hailing. Wa u sikwa.",
+    "previewCaption": "Tsumbo ya Tengo ya mureili wa u sikwa: {{label}} {{date}}, tshiimo {{state}}, mugaganyagwama wa ḓuvha {{amount}}.",
+    "howTitle": "Zwiṱepe zwiraru u ya kha ḓuvha ḽine na nga dzudzanya ngaḽo.",
     "steps": {
       "history": {
-        "title": "Add your money history",
-        "body": "Use a sample person or bring a bank statement as a CSV file. It stays on your device."
+        "title": "Dzhenisani ḓivhazwakale ya tshelede yaṋu",
+        "body": "Shumisani muthu wa tsumbo kana ni ḓise tshitatamennde tsha bannga sa faela ya CSV. Tshi dzula kha tshishumiswa tshaṋu."
       },
       "last": {
-        "title": "See how long it lasts",
-        "body": "Tengo works out the day your money runs out and when your next money usually lands."
+        "title": "Vhonani uri i fhedza tshifhinga tshingafhani",
+        "body": "Tengo i vhalela ḓuvha ḽine tshelede yaṋu ya ḓo fhela ngaḽo na uri tshelede yaṋu i tevhelaho kanzhi i dzhena lini."
       },
       "plan": {
-        "title": "Plan around the date",
-        "body": "Try a what-if, check a loan to family, and see your daily budget."
+        "title": "Dzudzanyani zwi tshi ya nga ḓuvha",
+        "body": "Lingani arali zwa nga vha hani, sedzani u adzimisa muṱa, ni vhone mugaganyagwama waṋu wa ḓuvha."
       }
     },
-    "tagline": "Money you can plan around.",
-    "fictional": "All people, places and amounts in this demo are fictional. No bank connection.",
+    "tagline": "Tshelede ine wa nga dzudzanya ngayo.",
+    "fictional": "Vhathu vhoṱhe, fhethu na tshelede kha ino demo ndi zwa u sikwa. A hu na u ṱumana na bannga.",
     "navLabel": "Tengo",
-    "home": "home",
+    "home": "hayani",
     "nav": {
-      "how": "How it works",
-      "privacy": "Privacy"
+      "how": "Nḓila ine ya shuma ngayo",
+      "privacy": "Tshiphiri"
     },
-    "badge": "Built for the FNB App of the Year hackathon",
-    "headlineLead": "Money you can",
-    "headlineDim": "plan around.",
-    "ctaSecondary": "See how it works",
+    "badge": "Yo itelwa hackathon ya FNB App of the Year",
+    "headlineLead": "Tshelede ine wa nga",
+    "headlineDim": "dzudzanya ngayo.",
+    "ctaSecondary": "Vhonani nḓila ine ya shuma ngayo",
     "stats": {
-      "history": "Days of history per person",
-      "states": "Cover states: Enough, Tight, Short",
-      "languages": "Built for 11 languages. English today.",
-      "logins": "Bank logins needed"
+      "history": "Maḓuvha a ḓivhazwakale kha muthu muṅwe na muṅwe",
+      "states": "Zwiimo: Yo lingana, Yo lingana zwiṱuku, I a ṱahela, A zwo ngo lingana u amba",
+      "languages": "Nyambo dza 11. Luisimane na mitalukanyo ya 10 ya AI, i kha ḓi tea u sedzuluswa.",
+      "logins": "U dzhena kha bannga hu ṱoḓeaho"
     },
-    "closingTitle": "See how long your money lasts.",
-    "closingBody": "Pick a fictional person and explore. No sign up, nothing leaves your browser.",
+    "closingTitle": "Vhonani uri tshelede yaṋu i fhedza tshifhinga tshingafhani.",
+    "closingBody": "Nangani muthu wa u sikwa ni ṱolisise. A hu na u ṅwalisa, a hu na tshine tsha bva kha burausa yaṋu.",
     "footer": {
-      "product": "Product",
-      "privacy": "Privacy",
-      "about": "About",
+      "product": "Tshibveledzwa",
+      "privacy": "Tshiphiri",
+      "about": "Nga ha",
       "links": {
-        "how": "How it works",
-        "explore": "Explore Tengo",
-        "privacyCentre": "Privacy centre",
-        "fictional": "Fictional data only",
-        "name": "The name Tengo",
-        "hackathon": "Hackathon entry",
-        "safety": "Safety and who it is for"
+        "how": "Nḓila ine ya shuma ngayo",
+        "explore": "Ṱolisisa Tengo",
+        "privacyCentre": "Senthara ya tshiphiri",
+        "fictional": "Mafhungo a u sikwa fhedzi",
+        "name": "Dzina ḽa Tengo",
+        "hackathon": "U dzhenela hackathon",
+        "safety": "Tsireledzo na uri ndi ya nnyi"
       }
     },
-    "status": "Demo environment. Fictional data."
+    "status": "Fhethu ha demo. Mafhungo a u sikwa."
   },
   "picker": {
-    "title": "Choose how to explore",
-    "lead": "Each fictional person earns in a different way. Pick one to see Tengo with their money, or use your own.",
-    "personas": "People",
-    "enterAs": "Enter as {{name}}",
-    "continueAs": "Continue as {{name}}",
-    "backHome": "home",
-    "deletedTitle": "{{name}}'s data was deleted",
-    "deletedBody": "Receipt {{ref}}, {{date}}. Removed {{count}} transactions and {{audit}} audit entries. Choose a person to start again.",
-    "step": "Step 1 of 2",
-    "startsAt": "Starts at"
+    "title": "Nangani nḓila ya u ṱolisisa",
+    "lead": "Muthu muṅwe na muṅwe wa u sikwa u wana tshelede nga nḓila yo fhambanaho. Nangani muthihi u vhona Tengo na tshelede yawe, kana ni shumise yaṋu.",
+    "personas": "Vhathu",
+    "enterAs": "Dzhenani sa {{name}}",
+    "continueAs": "Bvelani phanḓa sa {{name}}",
+    "backHome": "hayani",
+    "deletedTitle": "Mafhungo a {{name}} o phumulwa",
+    "deletedBody": "Rasiṱi {{ref}}, {{date}}. Ho bviswa thengiselano dza {{count}} na zwo dzheniswaho kha rekhodo ya ṱhoḓisiso zwa {{audit}}. Nangani muthu u thoma hafhu.",
+    "step": "Tshiṱepe 1 kha 2",
+    "startsAt": "I thoma kha"
   },
   "personas": {
-    "fictional": "Fictional composite",
+    "fictional": "Muthu wa u sikwa",
     "thabo": {
-      "role": "E-hailing driver",
-      "situation": "Cash fares most days and an app payout on Mondays. Fuel and the car instalment come first."
+      "role": "Mureili wa e-hailing",
+      "situation": "Tshelede ya u namela nga tshelede ya tshanḓani maḓuvha manzhi na mbadelo ya app nga Musumbuluwo. Phethiroḽo na mbadelo ya goloi zwi thoma."
     },
     "lerato": {
-      "role": "Hairdresser",
-      "situation": "Saturdays carry the week. Product restocks every two weeks and rent on the 1st."
+      "role": "Mulugisi wa mavhudzi",
+      "situation": "Mugivhela u hwala vhege. U renga zwibveledzwa hafhu vhege mbili dziṅwe na dziṅwe na rennde nga ḓuvha ḽa u thoma."
     },
     "ayanda": {
-      "role": "Spaza shop owner",
-      "situation": "Cash takings come in lumps. Big stock runs and prepaid electricity in between."
+      "role": "Mune wa vhengele ḽa spaza",
+      "situation": "Tshelede ya tshanḓani i dzhena nga zwigwada. U renga zwiṱoko zwihulwane na muḓagasi u badelwaho u sa athu u shumiswa vhukati."
     }
   },
   "consent": {
-    "title": "Before you start",
-    "as": "Entering as {{name}}",
-    "lead": "Here is what Tengo uses, why, and what you can change.",
+    "title": "Ni sa athu u thoma",
+    "as": "Ni khou dzhena sa {{name}}",
+    "lead": "Hezwi ndi zwine Tengo ya zwi shumisa, uri ndi ngani, na zwine na nga zwi shandukisa.",
     "notice": {
       "what": {
-        "title": "What we use",
-        "body": "Transaction dates, amounts and descriptions, plus your current balance. Nothing else."
+        "title": "Zwine ra zwi shumisa",
+        "body": "Maḓuvha a thengiselano, tshelede na ṱhaluso, khathihi na balantsi yaṋu ya zwino. A hu na zwiṅwe."
       },
       "why": {
-        "title": "Why",
-        "body": "To work out how long your money lasts and when your next money is likely. Not for marketing or credit scoring."
+        "title": "Ndi ngani",
+        "body": "U vhalela uri tshelede yaṋu i fhedza tshifhinga tshingafhani na uri tshelede yaṋu i tevhelaho i nga dzhena lini. Hu si u ḓadzisa kana u ela tshikolodo."
       },
       "who": {
-        "title": "Who can see it",
-        "body": "Anyone using this browser on this device. No one at Tengo can see it."
+        "title": "Ndi nnyi ane a nga zwi vhona",
+        "body": "Muṅwe na muṅwe ane a shumisa iyi burausa kha tshino tshishumiswa. A hu na muthu kha Tengo ane a nga zwi vhona."
       },
       "where": {
-        "title": "Where it is processed",
-        "body": "In your browser, on this device. Nothing is sent to a server."
+        "title": "Hune zwa shumiwa hone",
+        "body": "Kha burausa yaṋu, kha tshino tshishumiswa. A hu na tshine tsha rumelwa kha seva."
       },
       "how": {
-        "title": "How long we keep it",
-        "body": "Records older than 12 months are removed from this device. You can delete everything any time."
+        "title": "Ri zwi vhulunga tshifhinga tshingafhani",
+        "body": "Rekhodo dzi fhiraho ṅwedzi ya 12 dzi bviswa kha tshino tshishumiswa. Ni nga phumula zwoṱhe tshifhinga tshiṅwe na tshiṅwe."
       }
     },
-    "choices": "Your choices",
-    "required": "Required",
+    "choices": "Khetho dzaṋu",
+    "required": "Zwi a ṱoḓea",
     "core": {
-      "title": "Forecast",
-      "body": "Needed to use Tengo. Withdraw any time and the forecast pauses."
+      "title": "Tsumbanḓila",
+      "body": "Zwi a ṱoḓea u shumisa Tengo. Humisani thendelo tshifhinga tshiṅwe na tshiṅwe nahone tsumbanḓila i a imiswa."
     },
     "messages": {
-      "title": "Daily messages",
-      "body": "A short daily update with your date, by WhatsApp or SMS. WhatsApp messages pass through Meta, outside South Africa. Off until you turn it on. Simulated, nothing is sent."
+      "title": "Milaedza ya ḓuvha ḽiṅwe na ḽiṅwe",
+      "body": "Mbuedzedzo pfufhi ya ḓuvha ḽiṅwe na ḽiṅwe i re na ḓuvha ḽaṋu, nga WhatsApp kana SMS. Milaedza ya WhatsApp i fhira nga Meta, nnḓa ha Afurika Tshipembe. Yo valwa u swikela ni tshi i vula. Ndi u edzisela, a hu na tshine tsha rumelwa."
     },
     "analytics": {
-      "title": "Product analytics",
-      "body": "Helps improve Tengo. Off by default. No analytics runs in this demo."
+      "title": "Ṱhoḓisiso ya tshibveledzwa",
+      "body": "Zwi thusa u khwinisa Tengo. Zwo valwa nga u ḓowela. A hu na ṱhoḓisiso i shumaho kha ino demo."
     },
-    "changeLater": "You can change these any time in Privacy.",
-    "agree": "Agree and continue",
-    "notNow": "Not now",
-    "step": "Step 2 of 2"
+    "changeLater": "Ni nga shandukisa izwi tshifhinga tshiṅwe na tshiṅwe kha Tshiphiri.",
+    "agree": "Tendani ni bvele phanḓa",
+    "notNow": "Hu si zwino",
+    "step": "Tshiṱepe 2 kha 2"
   },
   "privacy": {
-    "simulated": "Simulated privacy controls. Not a compliance certification.",
-    "title": "Privacy",
-    "lead": "See, change, export or delete this person's data.",
-    "consentTitle": "Your consent",
-    "coreEffect": "Needed for Tengo to work. Turning it off pauses the forecast.",
-    "messagesEffect": "A short daily update in the Inbox. Turning it off hides the Inbox preview.",
-    "lastChanged": "Last changed {{date}}",
-    "minimisation": "What the forecast uses",
-    "uses": "Uses",
-    "neverUses": "Does not use",
+    "simulated": "Ndaulo dza tshiphiri dza u edzisela. A si ṱhanziela ya u tevhedza mulayo.",
+    "title": "Tshiphiri",
+    "lead": "Vhonani, shandukisani, bvisani kana ni phumule mafhungo a uyu muthu.",
+    "consentTitle": "Thendelo yaṋu",
+    "coreEffect": "Zwi a ṱoḓea uri Tengo i shume. U i dzima zwi imisa tsumbanḓila.",
+    "messagesEffect": "Mbuedzedzo pfufhi ya ḓuvha kha Milaedza. U i dzima zwi dzumbisa tsumbo ya Milaedza.",
+    "lastChanged": "Yo shandukiswa lwa u fhedza nga {{date}}",
+    "minimisation": "Zwine tsumbanḓila ya zwi shumisa",
+    "uses": "I shumisa",
+    "neverUses": "A i shumisi",
     "used": {
-      "date": "Transaction date",
-      "amount": "Transaction amount",
-      "description": "Transaction description, to spot repeat bills and group spending",
-      "balance": "Your current balance"
+      "date": "Ḓuvha ḽa thengiselano",
+      "amount": "Tshelede ya thengiselano",
+      "description": "Ṱhaluso ya thengiselano, u vhona mbadelo dzi dovhololwaho na u dzudzanya u shumisa",
+      "balance": "Balantsi yaṋu ya zwino"
     },
     "unused": {
-      "id": "ID number",
-      "location": "Location",
-      "contacts": "Contacts",
-      "account": "Account or card numbers"
+      "id": "Nomboro ya vhuḓiḓivhiso",
+      "location": "Fhethu",
+      "contacts": "Vhane na vha kwama",
+      "account": "Nomboro dza akhaunthu kana dza garaṱa"
     },
-    "security": "How data is kept",
+    "security": "Nḓila ine mafhungo a vhulungwa ngayo",
     "securityItems": {
-      "transit": "With an optional account: an encrypted connection and storage that only you can read.",
-      "access": "No staff access is set up. If support ever needs it, this notice will first say how it is limited and recorded.",
-      "device": "Data stays in this browser's storage on this device. Tengo does not encrypt it on the device.",
-      "server": "Nothing is sent to a server. There is no Tengo account and no staff access.",
-      "shared": "Anyone who uses this browser on this device can open it. Delete it any time.",
-      "accountStore": "Your data is stored with the database provider over an encrypted connection.",
-      "accountRls": "Each row is locked to you in the database, so no other account can read, change or delete it.",
-      "accountForecast": "Your forecast is still worked out on your device. The server only stores data."
+      "transit": "Nga akhaunthu ya u ḓinangela: u ṱumana ho tsireledzwaho na vhuvhulungelo vhu vhalwaho nga inwi fhedzi.",
+      "access": "A hu na u swikelela ha vhashumi ho dzudzanywaho. Arali thikhedzo ya ḓo hu ṱoḓa, ino ndivhadzo i ḓo thoma ya amba nḓila ine ha pimiwa na u ṅwalwa ngayo.",
+      "device": "Mafhungo a dzula kha vhuvhulungelo ha iyi burausa kha tshino tshishumiswa. Tengo a i a tsireledzi kha tshishumiswa.",
+      "server": "A hu na tshine tsha rumelwa kha seva. A hu na akhaunthu ya Tengo na u swikelela ha vhashumi.",
+      "shared": "Muṅwe na muṅwe ane a shumisa iyi burausa kha tshino tshishumiswa a nga a vula. A phumuleni tshifhinga tshiṅwe na tshiṅwe.",
+      "accountStore": "Mafhungo aṋu a vhulungwa nga mupfumedzi wa vhuvhulungelo ha mafhungo nga u ṱumana ho tsireledzwaho.",
+      "accountRls": "Mutalo muṅwe na muṅwe wo khiyelwa kha inwi kha vhuvhulungelo ha mafhungo, ngauralo a hu na iṅwe akhaunthu ine ya nga u vhala, ya u shandukisa kana ya u phumula.",
+      "accountForecast": "Tsumbanḓila yaṋu i kha ḓi vhalelwa kha tshishumiswa tshaṋu. Seva i vhulunga mafhungo fhedzi."
     },
-    "rightsNav": "Your rights",
+    "rightsNav": "Pfanelo dzaṋu",
     "links": {
       "data": {
-        "title": "See my data",
-        "body": "Everything held, and export it"
+        "title": "Vhonani mafhungo anga",
+        "body": "Zwoṱhe zwo vhulungwaho, ni zwi bvise"
       },
       "audit": {
-        "title": "Audit log",
-        "body": "Every access and change, with times"
+        "title": "Rekhodo ya ṱhoḓisiso",
+        "body": "U swikelela hoṱhe na tshanduko, na zwifhinga"
       },
       "review": {
-        "title": "Question this result",
-        "body": "Ask a person to check your date"
+        "title": "Vhudzisani nga mvelelo heyi",
+        "body": "Humbelani muthu a sedze ḓuvha ḽaṋu"
       },
       "breach": {
-        "title": "Breach notice",
-        "body": "A sample of what we would send"
+        "title": "Ndivhadzo ya u tshinyiwa ha tsireledzo",
+        "body": "Tsumbo ya zwine ra vha ri tshi ḓo zwi rumela"
       },
       "delete": {
-        "title": "Delete my data",
-        "body": "Remove this person's records"
+        "title": "Phumulani mafhungo anga",
+        "body": "Bvisani rekhodo dza uyu muthu"
       }
     },
-    "retention": "How long we keep it",
-    "retentionRule": "Records older than 12 months are removed from this device when Tengo opens.",
-    "nextRemoval": "Next removal {{date}}, for records from {{from}}.",
-    "nothingStored": "Nothing stored yet.",
-    "crossBorder": "Where data is processed",
-    "crossBorderBody": "On this device only. In this demo nothing is sent to a server, inside or outside South Africa.",
-    "officer": "Information Officer",
-    "officerName": "Name",
-    "officerEmail": "Email",
-    "placeholderName": "To be appointed",
-    "placeholderNote": "Placeholder details. Not a real contact.",
-    "complaints": "If you are not happy with how your data is handled, you can complain to the Information Regulator of South Africa.",
-    "dataLead": "Everything Tengo holds about this person on this device.",
-    "exportJson": "Export JSON",
-    "exportCsv": "Export CSV",
-    "held": "Held about this person",
-    "heldPersona": "Person",
-    "heldBalance": "Balance",
-    "heldTransactions": "Transactions",
-    "heldSource": "Source",
-    "heldConsent": "Consent given",
-    "heldAudit": "Audit entries",
-    "heldReviews": "Review requests",
-    "heldWhere": "Stored",
-    "heldWhereValue": "This browser only",
+    "retention": "Ri zwi vhulunga tshifhinga tshingafhani",
+    "retentionRule": "Rekhodo dzi fhiraho ṅwedzi ya 12 dzi bviswa kha tshino tshishumiswa musi Tengo i tshi vulwa.",
+    "nextRemoval": "U bviswa hu tevhelaho nga {{date}}, ha rekhodo u thoma nga {{from}}.",
+    "nothingStored": "A hu na tsho vhulungwaho zwino.",
+    "crossBorder": "Hune mafhungo a shumiwa hone",
+    "crossBorderBody": "Kha tshino tshishumiswa fhedzi. Kha ino demo a hu na tshine tsha rumelwa kha seva, ngomu kana nnḓa ha Afurika Tshipembe.",
+    "officer": "Muofisiri wa Mafhungo",
+    "officerName": "Dzina",
+    "officerEmail": "Imeiḽi",
+    "placeholderName": "U kha ḓi ḓo nangwa",
+    "placeholderNote": "Mafhungo a tshifhinganyana. A si muthu wa vhukuma wa u kwama.",
+    "complaints": "Arali ni sa fushei nga nḓila ine mafhungo aṋu a farwa ngayo, ni nga vhilaela kha Mulanguli wa Mafhungo wa Afurika Tshipembe.",
+    "dataLead": "Zwoṱhe zwine Tengo ya zwi fara nga ha uyu muthu kha tshino tshishumiswa.",
+    "exportJson": "Bvisani JSON",
+    "exportCsv": "Bvisani CSV",
+    "held": "Zwo farwaho nga ha uyu muthu",
+    "heldPersona": "Muthu",
+    "heldBalance": "Balantsi",
+    "heldTransactions": "Thengiselano",
+    "heldSource": "Tshisima",
+    "heldConsent": "Thendelo yo ṋewaho",
+    "heldAudit": "Zwo dzheniswaho kha ṱhoḓisiso",
+    "heldReviews": "Khumbelo dza u sedzuluswa",
+    "heldWhere": "Zwo vhulungwa",
+    "heldWhereValue": "Kha iyi burausa fhedzi",
     "source": {
-      "seed": "Sample data",
-      "import": "Imported statement",
-      "edited": "Sample data, corrected",
-      "manual": "Set up by hand, estimated"
+      "seed": "Mafhungo a tsumbo",
+      "import": "Tshitatamennde tsho dzheniswaho",
+      "edited": "Mafhungo a tsumbo, o khakhululwa",
+      "manual": "Zwo dzudzanywa nga tshanḓa, zwo anganyelwa"
     },
-    "correctHint": "Something wrong? Correct or recategorise any transaction from the Money page.",
-    "auditLead": "A simulated log of access and changes, newest first.",
-    "auditEmpty": "No entries yet.",
-    "auditActor": "By you, on this device",
-    "reviewLead": "The date is worked out by fixed rules. If it looks wrong, ask a person to check it.",
-    "reviewFormTitle": "Request a human review",
-    "reviewAbout": "About: {{result}}",
-    "reviewReason": "What looks wrong",
+    "correctHint": "Hu na zwi songo luga? Khakhululani kana ni shandukise tshigwada tsha thengiselano iṅwe na iṅwe kha siaṱari ḽa Tshelede.",
+    "auditLead": "Rekhodo ya u edzisela ya u swikelela na tshanduko, zwiswa u thoma.",
+    "auditEmpty": "A hu na zwo dzheniswaho zwino.",
+    "auditActor": "Nga inwi, kha tshino tshishumiswa",
+    "reviewLead": "Ḓuvha ḽi vhalelwa nga milayo i sa shanduki. Arali ḽi tshi vhonala ḽi songo luga, humbelani muthu a ḽi sedze.",
+    "reviewFormTitle": "Humbelani u sedzuluswa nga muthu",
+    "reviewAbout": "Nga ha: {{result}}",
+    "reviewReason": "Ndi mini zwi vhonalaho zwi songo luga",
     "reasons": {
-      "date": "The date looks wrong",
-      "income": "Income is missing or wrong",
-      "bill": "A bill is wrong",
-      "other": "Something else"
+      "date": "Ḓuvha ḽi vhonala ḽi songo luga",
+      "income": "Tshelede i dzhenaho a i hone kana a yo ngo luga",
+      "bill": "Mbadelo a yo ngo luga",
+      "other": "Zwiṅwe"
     },
-    "reviewDetails": "Tell us more (optional)",
-    "reviewPlaceholder": "For example, I get paid on the 25th, not on Mondays.",
-    "reviewContact": "How should we reply",
+    "reviewDetails": "Ri vhudzeni zwinzhi (u ḓinangela)",
+    "reviewPlaceholder": "Tsumbo, ndi badelwa nga ḓuvha ḽa 25, hu si nga Musumbuluwo.",
+    "reviewContact": "Ri fanela u fhindula hani",
     "contact": {
-      "inbox": "In my Tengo Inbox",
-      "none": "No reply needed"
+      "inbox": "Kha Milaedza yanga ya Tengo",
+      "none": "A hu ṱoḓei phindulo"
     },
-    "reviewSubmit": "Send request",
-    "reviewSimulated": "Simulated. No request leaves this device.",
-    "reviewSent": "Request received",
-    "reviewRef": "Reference {{ref}}",
-    "reviewNext": "In a real service, a person would check the inputs and reply within 5 working days. Until then the forecast keeps working as normal.",
-    "reviewAnother": "Send another",
-    "reviewPast": "Your requests",
-    "reviewNone": "No requests yet.",
-    "reviewStatus": "Received",
-    "breachLead": "If personal data were ever exposed, this is the kind of notice users would get.",
-    "breachSample": "Sample only. There has been no breach.",
-    "sampleStamp": "Sample",
-    "breachDate": "Date of notice: [date]",
-    "breachHeading": "Important: a security incident affecting your Tengo data",
+    "reviewSubmit": "Rumelani khumbelo",
+    "reviewSimulated": "Ndi u edzisela. A hu na khumbelo i bvaho kha tshino tshishumiswa.",
+    "reviewSent": "Khumbelo yo ṱanganedzwa",
+    "reviewRef": "Tsumbo {{ref}}",
+    "reviewNext": "Kha tshumelo ya vhukuma, muthu o vha a tshi ḓo sedza zwo dzheniswaho a fhindule nga ngomu ha maḓuvha a 5 a mushumo. U swikela henefho tsumbanḓila i bvela phanḓa i tshi shuma sa zwe zwa ḓowelwa.",
+    "reviewAnother": "Rumelani iṅwe",
+    "reviewPast": "Khumbelo dzaṋu",
+    "reviewNone": "A hu na khumbelo zwino.",
+    "reviewStatus": "Yo ṱanganedzwa",
+    "breachLead": "Arali mafhungo a muthu a nga ḓo dzumbululwa, iyi ndi ndivhadzo ine vhashumisi vha vha vha tshi ḓo i wana.",
+    "breachSample": "Ndi tsumbo fhedzi. A ho ngo vha na u tshinyiwa ha tsireledzo.",
+    "sampleStamp": "Tsumbo",
+    "breachDate": "Ḓuvha ḽa ndivhadzo: [ḓuvha]",
+    "breachHeading": "Zwa ndeme: tshiitea tsha tsireledzo tshi kwamaho mafhungo aṋu a Tengo",
     "breach": {
       "happened": {
-        "title": "What happened",
-        "body": "On [date], we found that [describe the incident]. We stopped it on [date]."
+        "title": "Zwo iteaho",
+        "body": "Nga [ḓuvha], ro wana uri [ṱalutshedzani tshiitea]. Ro tshi imisa nga [ḓuvha]."
       },
       "data": {
-        "title": "What data was involved",
-        "body": "[List the data, for example transaction dates, amounts and descriptions]. Your ID number and passwords were not involved."
+        "title": "Mafhungo o kwameaho",
+        "body": "[Ṅwalani mafhungo, tsumbo maḓuvha a thengiselano, tshelede na ṱhaluso]. Nomboro yaṋu ya vhuḓiḓivhiso na maipfi a tshiphiri a zwo ngo kwamea."
       },
       "doing": {
-        "title": "What we are doing",
-        "body": "We have [steps taken] and told the Information Regulator. We are working with [security partner] to stop this happening again."
+        "title": "Zwine ra khou zwi ita",
+        "body": "Ro dzhia [maga o dzhiiwaho] ra ḓivhadza Mulanguli wa Mafhungo. Ri khou shuma na [mufarisi wa tsireledzo] u thivhela uri hezwi zwi sa itee hafhu."
       },
       "you": {
-        "title": "What you can do",
-        "body": "Watch for messages that ask for your PIN or password. Tengo will never ask for them. You can delete your data at any time in Privacy."
+        "title": "Zwine na nga zwi ita",
+        "body": "Ṱhogomelani milaedza i humbelaho PIN yaṋu kana ipfi ḽaṋu ḽa tshiphiri. Tengo a i nga zwi humbeli. Ni nga phumula mafhungo aṋu tshifhinga tshiṅwe na tshiṅwe kha Tshiphiri."
       },
       "contact": {
-        "title": "Contact us",
-        "body": "Our Information Officer is at [contact details]. You can also complain to the Information Regulator."
+        "title": "Ri kwameni",
+        "body": "Muofisiri washu wa Mafhungo u wanala kha [mafhungo a u kwama]. Ni nga dovha na vhilaela kha Mulanguli wa Mafhungo."
       }
     },
-    "deleteLead": "Remove {{name}}'s records from this device.",
-    "deleteWhat": "What will be removed",
-    "deleteTx_one": "{{count}} transaction and the balance",
-    "deleteTx_other": "{{count}} transactions and the balance",
-    "deleteConsent": "Consent choices and review requests",
-    "deleteAudit_one": "{{count}} audit log entry",
-    "deleteAudit_other": "{{count}} audit log entries",
-    "deleteReceipt": "A deletion receipt is kept, with no transaction details.",
-    "deleteStart": "Delete my data",
-    "deleteWarn": "This cannot be undone. You will go back to the start.",
-    "deleteCheck": "I understand this removes the data for good",
-    "deleteConfirm": "Yes, delete everything",
-    "descriptionsNote": "Statement descriptions can include names or references. Long numbers such as account, card or phone numbers are masked when a statement is imported. Descriptions stay on this device and are used only to spot repeat bills and group spending.",
-    "securityNow": "In this demo",
-    "securityPlanned": "Planned, not built yet",
-    "deleteLeadOwn": "Remove your profile and everything in it from this device.",
-    "pilot": "Pilot privacy controls. Not a compliance certification.",
+    "deleteLead": "Bvisani rekhodo dza {{name}} kha tshino tshishumiswa.",
+    "deleteWhat": "Zwine zwa ḓo bviswa",
+    "deleteTx_one": "Thengiselano ya {{count}} na balantsi",
+    "deleteTx_other": "Thengiselano dza {{count}} na balantsi",
+    "deleteConsent": "Khetho dza thendelo na khumbelo dza u sedzuluswa",
+    "deleteAudit_one": "Tsho dzheniswaho tsha {{count}} kha rekhodo ya ṱhoḓisiso",
+    "deleteAudit_other": "Zwo dzheniswaho zwa {{count}} kha rekhodo ya ṱhoḓisiso",
+    "deleteReceipt": "Rasiṱi ya u phumula i a vhulungwa, i si na mafhungo a thengiselano.",
+    "deleteStart": "Phumulani mafhungo anga",
+    "deleteWarn": "Hezwi a zwi humiselwi murahu. Ni ḓo humela mathomoni.",
+    "deleteCheck": "Ndi a pfesesa uri hezwi zwi bvisa mafhungo tshoṱhe",
+    "deleteConfirm": "Ee, phumulani zwoṱhe",
+    "descriptionsNote": "Ṱhaluso dza tshitatamennde dzi nga vha na madzina kana tsumbo. Nomboro ndapfu u fana na nomboro dza akhaunthu, dza garaṱa kana dza luṱingo dzi a dzumbiswa musi tshitatamennde tshi tshi dzheniswa. Ṱhaluso dzi dzula kha tshino tshishumiswa nahone dzi shumiswa fhedzi u vhona mbadelo dzi dovhololwaho na u dzudzanya u shumisa.",
+    "securityNow": "Kha ino demo",
+    "securityPlanned": "Zwo dzudzanywa, a zwi athu fhaṱiwa",
+    "deleteLeadOwn": "Bvisani phurofaiḽi yaṋu na zwoṱhe zwi re khayo kha tshino tshishumiswa.",
+    "pilot": "Ndaulo dza tshiphiri dza ndingo. A si ṱhanziela ya u tevhedza mulayo.",
     "securityNowMode": {
-      "demo": "In this demo",
-      "device": "Your profile, on this device",
-      "account": "Your profile, saved to your account"
+      "demo": "Kha ino demo",
+      "device": "Phurofaiḽi yaṋu, kha tshino tshishumiswa",
+      "account": "Phurofaiḽi yaṋu, yo vhulungwa kha akhaunthu yaṋu"
     },
-    "retentionAccount": "Records older than 12 months are removed. Deleting your account removes every row and your sign-in.",
-    "crossBorderAccount": "Stored with the database provider in the region named in the privacy notice. Nothing is sent anywhere else."
+    "retentionAccount": "Rekhodo dzi fhiraho ṅwedzi ya 12 dzi a bviswa. U phumula akhaunthu yaṋu zwi bvisa mitalo yoṱhe na u dzhena haṋu.",
+    "crossBorderAccount": "Zwo vhulungwa nga mupfumedzi wa vhuvhulungelo ha mafhungo kha dzingu ḽo bulwaho kha ndivhadzo ya tshiphiri. A hu na tshine tsha rumelwa huṅwe."
   },
   "home": {
     "greeting": {
-      "morning": "Good morning, {{name}}.",
-      "afternoon": "Good afternoon, {{name}}.",
-      "evening": "Good evening, {{name}}."
+      "morning": "Ndi matsheloni, {{name}}.",
+      "afternoon": "Ndi masiari, {{name}}.",
+      "evening": "Ndi madekwana, {{name}}."
     },
-    "heroLabel": "Your date",
-    "emptyTitle": "No money history yet",
-    "emptyBody": "Import a statement with at least 14 days of transactions to see your date.",
-    "greetingLabel": "Greeting",
-    "unknownShort": "Not found yet",
+    "heroLabel": "Ḓuvha ḽaṋu",
+    "emptyTitle": "A hu na ḓivhazwakale ya tshelede zwino",
+    "emptyBody": "Dzhenisani tshitatamennde tshi re na maḓuvha a 14 kana u fhira a thengiselano u vhona ḓuvha ḽaṋu.",
+    "greetingLabel": "Ndumeliso",
+    "unknownShort": "A i athu u wanala",
     "greetingNoName": {
-      "morning": "Good morning.",
-      "afternoon": "Good afternoon.",
-      "evening": "Good evening."
+      "morning": "Ndi matsheloni.",
+      "afternoon": "Ndi masiari.",
+      "evening": "Ndi madekwana."
     }
   },
   "hero": {
-    "enoughUntil": "Enough until",
-    "enoughBeyond": "Enough beyond",
-    "shortFrom": "Short from",
-    "gap_one": "{{count}} day before your next money",
-    "gap_other": "{{count}} days before your next money",
-    "tightUntil": "Tight until",
-    "unclear": "Not enough to tell",
-    "unclearLead": "Your date",
+    "enoughUntil": "Yo lingana u swika",
+    "enoughBeyond": "Yo lingana u fhira",
+    "shortFrom": "I a ṱahela u thoma",
+    "gap_one": "Ḓuvha ḽa {{count}} tshelede yaṋu i tevhelaho i sa athu u swika",
+    "gap_other": "Maḓuvha a {{count}} tshelede yaṋu i tevhelaho i sa athu u swika",
+    "tightUntil": "Yo lingana zwiṱuku u swika",
+    "unclear": "A zwo ngo lingana u amba",
+    "unclearLead": "Ḓuvha ḽaṋu",
     "line": "{{label}} {{date}}"
   },
   "band": {
-    "between": "Likely between {{from}} and {{to}}",
-    "single": "Likely {{date}}",
-    "lowConfidence": "Low confidence",
-    "legendNext": "Next money",
-    "legendDate": "Your date",
-    "legendRange": "Likely range"
+    "between": "Zwi nga itea vhukati ha {{from}} na {{to}}",
+    "single": "Zwi nga itea nga {{date}}",
+    "lowConfidence": "Vhutanzi ha fhasi",
+    "legendNext": "Tshelede i tevhelaho",
+    "legendDate": "Ḓuvha ḽaṋu",
+    "legendRange": "Phimo i konadzeaho"
   },
   "sts": {
-    "title": "Daily budget",
-    "withBills": "Spread evenly until your next money, after {{bills}} in bills.",
-    "noBills": "Spread evenly until your next money. No bills due before it.",
-    "reserveOne": "Keeps {{amount}} back for {{name}} on {{date}}, which your next money may not cover.",
-    "reserveMany": "Keeps {{amount}} back for {{count}} bills just after your next money, which it may not cover.",
-    "noReserve": "No bills due just after your next money, so nothing extra is kept back.",
-    "usual": "Your usual spend is {{amount}} a day.",
-    "notAdvised": "Not advised",
-    "notAdvisedWhy_one": "At your usual {{usual}} a day, money runs out {{count}} day before your next money.",
-    "notAdvisedWhy_other": "At your usual {{usual}} a day, money runs out {{count}} days before your next money.",
-    "disclaimer": "An estimate from your own history, not advice.",
-    "nothingSpare": "Nothing spare",
-    "pending": "Waiting for today's money",
-    "pendingWhy": "Your usual payment is due today. The budget is worked out once it lands.",
-    "unclear": "Not shown yet",
-    "unclearWhy": "Tengo needs more to go on before it suggests a daily figure.",
-    "overdrawnWhy": "You are overdrawn by {{amount}}. Money that comes in covers this first.",
-    "notAdvisedNoMoney": "At your usual {{usual}} a day, money runs out before any money is expected."
+    "title": "Mugaganyagwama wa ḓuvha",
+    "withBills": "Yo kovhekanywa nga u lingana u swikela tshelede yaṋu i tevhelaho, nga murahu ha {{bills}} ya mbadelo.",
+    "noBills": "Yo kovhekanywa nga u lingana u swikela tshelede yaṋu i tevhelaho. A hu na mbadelo dzi fanelaho u badelwa i sa athu u swika.",
+    "reserveOne": "I vhulunga {{amount}} ya {{name}} nga {{date}}, ine tshelede yaṋu i tevhelaho ya nga si i badele.",
+    "reserveMany": "I vhulunga {{amount}} ya mbadelo dza {{count}} dzi ḓaho nga murahu ha tshelede yaṋu i tevhelaho, ine ya nga si dzi badele.",
+    "noReserve": "A hu na mbadelo dzi ḓaho nga murahu ha tshelede yaṋu i tevhelaho, ngauralo a hu na tsho engedzwaho tshi vhulungwaho.",
+    "usual": "U shumisa haṋu ha misi yoṱhe ndi {{amount}} nga ḓuvha.",
+    "notAdvised": "A zwi eletshedzwi",
+    "notAdvisedWhy_one": "Nga u shumisa haṋu ha misi yoṱhe ha {{usual}} nga ḓuvha, tshelede i fhela ḓuvha ḽa {{count}} tshelede yaṋu i tevhelaho i sa athu u swika.",
+    "notAdvisedWhy_other": "Nga u shumisa haṋu ha misi yoṱhe ha {{usual}} nga ḓuvha, tshelede i fhela maḓuvha a {{count}} tshelede yaṋu i tevhelaho i sa athu u swika.",
+    "disclaimer": "Khakhathi i bvaho kha ḓivhazwakale yaṋu, a si nyeletshedzo.",
+    "nothingSpare": "A hu na tsho salaho",
+    "pending": "I khou lindela tshelede ya ṋamusi",
+    "pendingWhy": "Mbadelo yaṋu ya misi yoṱhe i fanela ṋamusi. Mugaganyagwama u ḓo vhalelwa musi yo no dzhena.",
+    "unclear": "A zwi athu u sumbedzwa",
+    "unclearWhy": "Tengo i ṱoḓa zwinzhi i sa athu u eletshedza tshivhalo tsha ḓuvha.",
+    "overdrawnWhy": "No bvisa u fhira nga {{amount}}. Tshelede i dzhenaho i badela hezwi u thoma.",
+    "notAdvisedNoMoney": "Nga u shumisa haṋu ha misi yoṱhe ha {{usual}} nga ḓuvha, tshelede i fhela hu sa athu u lindelwa tshelede iṅwe."
   },
   "stateCard": {
-    "title": "Cover",
-    "enough": "Covered until your next money, even on a heavy week.",
-    "tight": "Covered on a normal week, not on a heavy one.",
-    "short_one": "Runs out {{count}} day before your next money.",
-    "short_other": "Runs out {{count}} days before your next money.",
-    "tightReserve": "Covered until your next money, but {{amount}} is needed for a bill soon after it.",
-    "unclearThin": "Tengo needs at least 14 days of money history to work out a date. Import a statement or add a few weeks of entries.",
-    "unclearNoIncome": "No money coming in was found in your history. Add your income, or set it up by hand, to get an answer.",
-    "noIncomeRunway": "With nothing coming in, your balance lasts until {{date}} at your usual spend.",
-    "unclearStale": "Your balance is more than two weeks old. Add today's balance to see your date.",
-    "enoughHorizon": "Lasts the next {{days}} days even on a heavy week, with no money expected.",
-    "tightHorizon": "Lasts the next {{days}} days on a normal week, not on a heavy one. No money is expected.",
-    "shortHorizon": "Runs out within the next {{days}} days, and no money is expected.",
-    "enoughDaily": "Lasts the next {{days}} days even on a heavy week, counting half of what usually comes in each day.",
-    "tightDaily": "Lasts the next {{days}} days on a normal week, counting half of what usually comes in each day. Not on a heavy one.",
-    "shortDaily": "Runs out within the next {{days}} days, even counting half of what usually comes in each day."
+    "title": "Tshiimo",
+    "enough": "No tsireledzea u swikela tshelede yaṋu i tevhelaho, naho nga vhege i konḓaho.",
+    "tight": "No tsireledzea nga vhege ya misi yoṱhe, hu si nga vhege i konḓaho.",
+    "short_one": "I fhela ḓuvha ḽa {{count}} tshelede yaṋu i tevhelaho i sa athu u swika.",
+    "short_other": "I fhela maḓuvha a {{count}} tshelede yaṋu i tevhelaho i sa athu u swika.",
+    "tightReserve": "No tsireledzea u swikela tshelede yaṋu i tevhelaho, fhedzi {{amount}} i a ṱoḓea kha mbadelo i ḓaho nga murahu hayo.",
+    "unclearThin": "Tengo i ṱoḓa maḓuvha a 14 kana u fhira a ḓivhazwakale ya tshelede u vhalela ḓuvha. Dzhenisani tshitatamennde kana ni engedze vhege dzi si gathi dza zwo dzheniswaho.",
+    "unclearNoIncome": "A hu na tshelede i dzhenaho yo wanalaho kha ḓivhazwakale yaṋu. Engedzani tshelede yaṋu i dzhenaho, kana ni i dzudzanye nga tshanḓa, u wana phindulo.",
+    "noIncomeRunway": "Arali hu si na tshi dzhenaho, balantsi yaṋu i fhedza u swika {{date}} nga u shumisa haṋu ha misi yoṱhe.",
+    "unclearStale": "Balantsi yaṋu yo fhira vhege mbili. Engedzani balantsi ya ṋamusi u vhona ḓuvha ḽaṋu.",
+    "enoughHorizon": "I fhedza maḓuvha a {{days}} a ḓaho naho nga vhege i konḓaho, hu si na tshelede yo lindelwaho.",
+    "tightHorizon": "I fhedza maḓuvha a {{days}} a ḓaho nga vhege ya misi yoṱhe, hu si nga i konḓaho. A hu na tshelede yo lindelwaho.",
+    "shortHorizon": "I fhela nga ngomu ha maḓuvha a {{days}} a ḓaho, nahone a hu na tshelede yo lindelwaho.",
+    "enoughDaily": "I fhedza maḓuvha a {{days}} a ḓaho naho nga vhege i konḓaho, hu tshi vhalwa hafu ya zwine kanzhi zwa dzhena ḓuvha ḽiṅwe na ḽiṅwe.",
+    "tightDaily": "I fhedza maḓuvha a {{days}} a ḓaho nga vhege ya misi yoṱhe, hu tshi vhalwa hafu ya zwine kanzhi zwa dzhena ḓuvha ḽiṅwe na ḽiṅwe. Hu si nga vhege i konḓaho.",
+    "shortDaily": "I fhela nga ngomu ha maḓuvha a {{days}} a ḓaho, naho hu tshi vhalwa hafu ya zwine kanzhi zwa dzhena ḓuvha ḽiṅwe na ḽiṅwe."
   },
   "next": {
-    "title": "Next money",
-    "around": "Around {{date}}",
-    "window": "Likely window",
-    "amount": "Usual amount",
-    "patternWeekday": "Usually lands on a {{day}}.",
-    "patternInterval_one": "Usually lands every {{count}} day.",
-    "patternInterval_other": "Usually lands every {{count}} days.",
-    "unknown": "No regular income found yet. Tengo plans 30 days ahead.",
-    "pendingToday": "Today, not in yet",
-    "none": "None expected",
-    "daily": "Most days"
+    "title": "Tshelede i tevhelaho",
+    "around": "Tsini na {{date}}",
+    "window": "Tshifhinga tshi konadzeaho",
+    "amount": "Tshelede ya misi yoṱhe",
+    "patternWeekday": "Kanzhi i dzhena nga {{day}}.",
+    "patternInterval_one": "Kanzhi i dzhena nga murahu ha ḓuvha ḽa {{count}}.",
+    "patternInterval_other": "Kanzhi i dzhena nga murahu ha maḓuvha a {{count}}.",
+    "unknown": "A hu athu u wanala tshelede i dzhenaho ya misi yoṱhe. Tengo i dzudzanya maḓuvha a 30 phanḓa.",
+    "pendingToday": "Ṋamusi, a i athu u dzhena",
+    "none": "A hu na yo lindelwaho",
+    "daily": "Maḓuvha manzhi"
   },
   "recent": {
-    "title": "Recent activity",
-    "all": "See all",
-    "empty": "No transactions yet."
+    "title": "Zwo iteaho zwino-zwino",
+    "all": "Vhonani zwoṱhe",
+    "empty": "A hu na thengiselano zwino."
   },
   "scrubber": {
-    "title": "Next 30 days",
-    "subtitle": "Expected balance and likely range",
-    "label": "Pick a day in the next 30 days",
-    "valueText": "If money lands as usual. {{date}}: about {{amount}}, likely {{low}} to {{high}}. {{level}}.{{events}}",
-    "range": "Likely {{low}} to {{high}}",
-    "expectedIncome": "Expected money",
-    "billDue": "{{name}} due",
-    "summary": "Projected balance for the next 30 days if money lands as usual. Lowest point {{low}} on {{date}}.",
-    "showTable": "Show numbers",
-    "hideTable": "Hide numbers",
-    "tableCaption": "Projected balance and cover for each of the next 30 days",
-    "colDay": "Day",
-    "colExpected": "Expected",
-    "colRange": "Likely range",
-    "colCover": "Balance",
-    "key": "Line: expected balance. Shading: likely range. Filled dots: money in. Hollow dots: bills.",
-    "ifUsual": "If money lands as usual",
+    "title": "Maḓuvha a 30 a ḓaho",
+    "subtitle": "Balantsi yo lindelwaho na phimo i konadzeaho",
+    "label": "Nangani ḓuvha kha maḓuvha a 30 a ḓaho",
+    "valueText": "Arali tshelede i tshi dzhena sa zwe zwa ḓowelwa. {{date}}: tsini na {{amount}}, zwi nga vha {{low}} u swika {{high}}. {{level}}.{{events}}",
+    "range": "Zwi nga vha {{low}} u swika {{high}}",
+    "expectedIncome": "Tshelede yo lindelwaho",
+    "billDue": "{{name}} i fanela u badelwa",
+    "summary": "Balantsi yo anganyelwaho ya maḓuvha a 30 a ḓaho arali tshelede i tshi dzhena sa zwe zwa ḓowelwa. Fhethu ha fhasisa {{low}} nga {{date}}.",
+    "showTable": "Sumbedzani nomboro",
+    "hideTable": "Dzumbisani nomboro",
+    "tableCaption": "Balantsi yo anganyelwaho na tshiimo tsha ḓuvha ḽiṅwe na ḽiṅwe kha maḓuvha a 30 a ḓaho",
+    "colDay": "Ḓuvha",
+    "colExpected": "Zwo lindelwaho",
+    "colRange": "Phimo i konadzeaho",
+    "colCover": "Balantsi",
+    "key": "Mutalo: balantsi yo lindelwaho. Murunzi: phimo i konadzeaho. Thikho dzo ḓalaho: tshelede i dzhenaho. Thikho dzi si na tshithu: mbadelo.",
+    "ifUsual": "Arali tshelede i tshi dzhena sa zwe zwa ḓowelwa",
     "level": {
-      "enough": "Above R0 even on a heavy week",
-      "tight": "Could dip below R0 on a heavy week",
-      "short": "Below R0 on a normal week"
+      "enough": "Nṱha ha R0 naho nga vhege i konḓaho",
+      "tight": "I nga tsela fhasi ha R0 nga vhege i konḓaho",
+      "short": "Fhasi ha R0 nga vhege ya misi yoṱhe"
     },
     "levelShort": {
-      "enough": "Above R0",
-      "tight": "Could reach R0",
-      "short": "Below R0"
+      "enough": "Nṱha ha R0",
+      "tight": "I nga swika kha R0",
+      "short": "Fhasi ha R0"
     }
   },
   "why": {
-    "open": "Why this date",
-    "title": "Why this date",
-    "plain": "We start with your balance today, take off bills on their due dates, and spend at your usual daily rate until the money reaches zero. That day is your date. Money you have not received yet is not counted.",
-    "chartLabel": "How the balance runs down on a normal, light and heavy week",
-    "lineCentral": "Normal week",
-    "lineLight": "Light week",
-    "lineHeavy": "Heavy week",
-    "lineNext": "Next money, {{date}}",
-    "inputs": "What went in",
-    "balance": "Balance today",
-    "dailySpend": "Usual daily spend",
-    "dailySpendHint": "Light to heavy week: {{low}} to {{high}} a day",
-    "perDay": "{{amount}} a day",
-    "bills": "Bills before next money",
-    "noBills": "None due",
-    "income": "Expected next money",
+    "open": "Ndi ngani ḓuvha iḽi",
+    "title": "Ndi ngani ḓuvha iḽi",
+    "plain": "Ri thoma nga balantsi yaṋu ya ṋamusi, ra bvisa mbadelo nga maḓuvha adzo, nahone ra shumisa nga tshikalo tshaṋu tsha misi yoṱhe tsha ḓuvha u swikela tshelede i tshi swika kha ziro. Ḽeneḽo ḓuvha ndi ḓuvha ḽaṋu. Tshelede ine na sa athu u i wana a i vhalwi.",
+    "chartLabel": "Nḓila ine balantsi ya tsela ngayo nga vhege ya misi yoṱhe, i leluwaho na i konḓaho",
+    "lineCentral": "Vhege ya misi yoṱhe",
+    "lineLight": "Vhege i leluwaho",
+    "lineHeavy": "Vhege i konḓaho",
+    "lineNext": "Tshelede i tevhelaho, {{date}}",
+    "inputs": "Zwo dzheniswaho",
+    "balance": "Balantsi ya ṋamusi",
+    "dailySpend": "U shumisa ha misi yoṱhe ha ḓuvha",
+    "dailySpendHint": "Vhege i leluwaho u ya kha i konḓaho: {{low}} u swika {{high}} nga ḓuvha",
+    "perDay": "{{amount}} nga ḓuvha",
+    "bills": "Mbadelo tshelede i tevhelaho i sa athu u swika",
+    "noBills": "A hu na dzi fanelaho",
+    "income": "Tshelede i tevhelaho yo lindelwaho",
     "incomeValue": "{{amount}}, {{date}}",
-    "history": "History used",
-    "historyHint_one": "From {{count}} day on record",
-    "historyHint_other": "From {{count}} days on record",
-    "historyValue_one": "Last {{count}} day",
-    "historyValue_other": "Last {{count}} days",
-    "confidence": "Confidence",
+    "history": "Ḓivhazwakale yo shumiswaho",
+    "historyHint_one": "U bva kha ḓuvha ḽa {{count}} ḽo ṅwaliwaho",
+    "historyHint_other": "U bva kha maḓuvha a {{count}} o ṅwaliwaho",
+    "historyValue_one": "Ḓuvha ḽa {{count}} ḽa u fhedza",
+    "historyValue_other": "Maḓuvha a {{count}} a u fhedza",
+    "confidence": "Vhutanzi",
     "confidenceHint": {
-      "high": "60 or more days of history",
-      "medium": "28 to 59 days of history",
-      "low": "Under 28 days. The range is wider."
+      "high": "Maḓuvha a 60 kana u fhira a ḓivhazwakale",
+      "medium": "Maḓuvha a 28 u swika 59 a ḓivhazwakale",
+      "low": "Fhasi ha maḓuvha a 28. Phimo yo andaho."
     },
-    "rulesTitle": "How the cover is set",
+    "rulesTitle": "Nḓila ine tshiimo tsha vhewa ngayo",
     "rule": {
-      "enough": "Even a heavy week lasts until the latest likely next money.",
-      "tight": "A normal week lasts until the usual next money. A heavy week does not.",
-      "short": "A normal week runs out before the usual next money.",
-      "unclear": "Not enough history or no income, so there is no date yet."
+      "enough": "Naho vhege i konḓaho i fhedza u swikela tshelede i tevhelaho ya murahu-murahu i konadzeaho.",
+      "tight": "Vhege ya misi yoṱhe i fhedza u swikela tshelede i tevhelaho ya misi yoṱhe. Vhege i konḓaho a i fhedzi.",
+      "short": "Vhege ya misi yoṱhe i fhela tshelede i tevhelaho ya misi yoṱhe i sa athu u swika.",
+      "unclear": "Ḓivhazwakale a yo ngo lingana kana a hu na tshelede i dzhenaho, ngauralo a hu na ḓuvha zwino."
     },
-    "question": "Question this result",
-    "notAdvice": "This is an estimate from past patterns, not financial advice, and it is not used for any credit or lending decision.",
-    "budgetSpread": "The daily budget is spread to {{date}}, the latest your next money usually lands.",
-    "reserve": "Kept back for bills just after next money",
-    "reserveNone": "None due in the week after",
-    "incomeStatus": "Money in",
+    "question": "Vhudzisani nga mvelelo heyi",
+    "notAdvice": "Iyi ndi khakhathi i bvaho kha zwiitwa zwa kale, a si nyeletshedzo ya masheleni, nahone a i shumiswi kha phetho iṅwe na iṅwe ya tshikolodo kana ya u adzima.",
+    "budgetSpread": "Mugaganyagwama wa ḓuvha wo kovhekanywa u swika {{date}}, ḓuvha ḽa murahu-murahu ḽine tshelede yaṋu i tevhelaho kanzhi ya dzhena ngaḽo.",
+    "reserve": "Yo vhulungelwa mbadelo dzi ḓaho nga murahu ha tshelede i tevhelaho",
+    "reserveNone": "A hu na dzi fanelaho kha vhege i tevhelaho",
+    "incomeStatus": "Tshelede i dzhenaho",
     "incomeStatusValue": {
-      "regular": "Regular",
-      "pendingToday": "Due today",
-      "paused": "Paused",
-      "irregular": "No pattern",
-      "none": "None found",
-      "daily": "Most days"
+      "regular": "Misi yoṱhe",
+      "pendingToday": "I fanela ṋamusi",
+      "paused": "Yo imiswa",
+      "irregular": "A hu na nḓila",
+      "none": "A yo ngo wanala",
+      "daily": "Maḓuvha manzhi"
     },
-    "monthEnd": "Month end",
+    "monthEnd": "Mafheloni a ṅwedzi",
     "monthEndValue": {
-      "pattern": "Spends more from the 25th",
-      "widened": "Heavy path allows for it",
-      "none": "No pattern"
+      "pattern": "Vha shumisa nga maanḓa u thoma nga ḓuvha ḽa 25",
+      "widened": "Nḓila i konḓaho i a zwi ṱhogomela",
+      "none": "A hu na nḓila"
     },
-    "oneOffs": "Left out as one-off",
-    "oneOffsNone": "Nothing",
-    "horizon": "No money is expected, so the cover is judged over the next {{count}} days.",
-    "horizonDaily": "Money comes in most days, so the cover is judged over the next {{count}} days, counting half of your usual daily income."
+    "oneOffs": "Zwo sielwaho nnḓa sa zwa luthihi",
+    "oneOffsNone": "A hu na tshithu",
+    "horizon": "A hu na tshelede yo lindelwaho, ngauralo tshiimo tshi haṱulwa kha maḓuvha a {{count}} a ḓaho.",
+    "horizonDaily": "Tshelede i dzhena maḓuvha manzhi, ngauralo tshiimo tshi haṱulwa kha maḓuvha a {{count}} a ḓaho, hu tshi vhalwa hafu ya tshelede yaṋu ya misi yoṱhe i dzhenaho nga ḓuvha."
   },
   "paused": {
-    "title": "Forecast paused",
-    "body": "You withdrew consent for the forecast, so Tengo is not using your data. Resume to see your date again, or delete your data.",
-    "resume": "Resume forecast",
-    "delete": "Delete my data"
+    "title": "Tsumbanḓila yo imiswa",
+    "body": "No humisa thendelo ya tsumbanḓila, ngauralo Tengo a i khou shumisa mafhungo aṋu. Bvelani phanḓa hafhu u vhona ḓuvha ḽaṋu, kana ni phumule mafhungo aṋu.",
+    "resume": "Bvelani phanḓa na tsumbanḓila",
+    "delete": "Phumulani mafhungo anga"
   },
   "me": {
-    "switchPersona": "Switch person",
-    "title": "Me",
-    "persona": "Who you are in the demo",
-    "current": "Current",
-    "theme": "Theme",
+    "switchPersona": "Shandukisani muthu",
+    "title": "Nṋe",
+    "persona": "Ni nnyi kha demo",
+    "current": "Zwino",
+    "theme": "Thero",
     "themes": {
-      "light": "Light",
-      "dark": "Dark",
-      "system": "System"
+      "light": "Tshedza",
+      "dark": "Swiswi",
+      "system": "Sisiṱeme"
     },
-    "about": "About Tengo",
-    "nameTitle": "The name",
-    "nameBody": "Tengo comes from mutengo, the Tshivenda word for value. This meaning was supplied by the founder and is still to be confirmed by a Tshivenda speaker.",
-    "howTitle": "How the forecast works",
+    "about": "Nga ha Tengo",
+    "nameTitle": "Dzina",
+    "nameBody": "Tengo i bva kha mutengo, ipfi ḽa Tshivenḓa ḽine ḽa amba ndeme. Ṱhalutshedzo iyi yo ṋewa nga muthomi nahone i kha ḓi ḓo khwaṱhiswa nga muambi wa Tshivenḓa.",
+    "howTitle": "Nḓila ine tsumbanḓila ya shuma ngayo",
     "how": {
-      "1": "It splits your history into income, regular bills and everyday spending.",
-      "2": "It works out your usual daily spend from the last 60 days, plus a light week and a heavy week.",
-      "3": "It finds when your next money usually lands and how much it usually is.",
-      "4": "It runs your balance down day by day, taking off bills on their dates, until it reaches zero. That day is your date.",
-      "5": "It compares that date with your next money to set your cover: Enough, Tight or Short."
+      "1": "I kovhekanya ḓivhazwakale yaṋu i vhe tshelede i dzhenaho, mbadelo dza misi yoṱhe na u shumisa ha ḓuvha ḽiṅwe na ḽiṅwe.",
+      "2": "I vhalela u shumisa haṋu ha misi yoṱhe ha ḓuvha u bva kha maḓuvha a 60 a u fhedza, khathihi na vhege i leluwaho na vhege i konḓaho.",
+      "3": "I wana uri tshelede yaṋu i tevhelaho kanzhi i dzhena lini na uri kanzhi ndi ngafhi.",
+      "4": "I tsitsa balantsi yaṋu ḓuvha nga ḓuvha, i bvisa mbadelo nga maḓuvha adzo, u swikela i tshi swika kha ziro. Ḽeneḽo ḓuvha ndi ḓuvha ḽaṋu.",
+      "5": "I vhambedza ḽeneḽo ḓuvha na tshelede yaṋu i tevhelaho u vhea tshiimo tshaṋu: Yo lingana, Yo lingana zwiṱuku kana I a ṱahela."
     },
-    "simTitle": "What is simulated",
+    "simTitle": "Zwo edziselwaho",
     "sim": {
-      "data": "All people and money are fictional composites.",
-      "bank": "There is no bank connection and no open banking.",
-      "messages": "Messages are previews. Nothing is sent.",
-      "privacy": "Privacy controls show good practice. They are not a compliance certification.",
-      "translations": "Built for 11 languages. English today. The other 10 need translating and checking by first-language speakers, and Tshivenda needs a human translator."
+      "data": "Vhathu vhoṱhe na tshelede ndi zwa u sikwa.",
+      "bank": "A hu na u ṱumana na bannga na open banking.",
+      "messages": "Milaedza ndi tsumbo. A hu na tshine tsha rumelwa.",
+      "privacy": "Ndaulo dza tshiphiri dzi sumbedza nḓila yavhuḓi. A si ṱhanziela ya u tevhedza mulayo.",
+      "translations": "Luisimane ndi tshisima. Nyambo dziṅwe dza 10 ndi mitalukanyo ya AI ine vhaambi vha nyambo idzo sa nyambo dza damuni vha kha ḓi tea u i sedzulusa, ngauralo maipfi maṅwe a nga khakhea."
     },
-    "reset": "Reset demo data",
-    "resetBody": "Clears the fictional people, your own profile on this device, consent choices and logs, and starts fresh. An account, if you saved one, is not touched.",
-    "resetWarn": "This removes everything Tengo stored on this device, including your own profile.",
-    "resetConfirm": "Yes, reset everything",
-    "themeHint": "Dark is the default. System follows your device.",
-    "profileTitle": "Your profile",
-    "storageMode": "Stored: {{mode}}",
-    "nicknameSave": "Save name",
-    "nicknameSaved": "Name saved",
-    "exportLink": "See and export my data",
-    "deleteProfile": "Delete my profile",
-    "switchPeople": "Switch to the fictional people",
-    "notice": "Privacy notice and terms"
+    "reset": "Thomani hafhu mafhungo a demo",
+    "resetBody": "I phumula vhathu vha u sikwa, phurofaiḽi yaṋu kha tshino tshishumiswa, khetho dza thendelo na rekhodo, nahone ya thoma hafhu. Akhaunthu, arali no vhulunga iṅwe, a i kwamiwi.",
+    "resetWarn": "Hezwi zwi bvisa zwoṱhe zwe Tengo ya zwi vhulunga kha tshino tshishumiswa, hu tshi katelwa na phurofaiḽi yaṋu.",
+    "resetConfirm": "Ee, thomani zwoṱhe hafhu",
+    "themeHint": "Swiswi ndi ḽa u ḓowela. Sisiṱeme i tevhela tshishumiswa tshaṋu.",
+    "profileTitle": "Phurofaiḽi yaṋu",
+    "storageMode": "Zwo vhulungwa: {{mode}}",
+    "nicknameSave": "Vhulungani dzina",
+    "nicknameSaved": "Dzina ḽo vhulungwa",
+    "exportLink": "Vhonani ni bvise mafhungo anga",
+    "deleteProfile": "Phumulani phurofaiḽi yanga",
+    "switchPeople": "Shandukelani kha vhathu vha u sikwa",
+    "notice": "Ndivhadzo ya tshiphiri na zwiimo"
   },
   "errors": {
-    "loadTitle": "Could not load your data",
-    "loadBody": "Something went wrong reading this device's storage.",
-    "retry": "Try again",
-    "crashTitle": "Something went wrong",
-    "crashBody": "This screen hit an error. Your data on this device has not changed.",
-    "crashCta": "Back to start"
+    "loadTitle": "A ro ngo kona u ḓisa mafhungo aṋu",
+    "loadBody": "Hu na zwi songo tshimbila zwavhuḓi musi hu tshi vhalwa vhuvhulungelo ha tshino tshishumiswa.",
+    "retry": "Lingani hafhu",
+    "crashTitle": "Hu na zwi songo tshimbila zwavhuḓi",
+    "crashBody": "Iyi skirini yo ṱangana na khakhathi. Mafhungo aṋu kha tshino tshishumiswa a zwo ngo shanduka.",
+    "crashCta": "Humelani mathomoni"
   },
   "notFound": {
-    "title": "Page not found",
-    "body": "This page does not exist in the demo.",
-    "cta": "Back to start"
+    "title": "Siaṱari a ḽo ngo wanala",
+    "body": "Iḽi siaṱari a ḽi hone kha demo.",
+    "cta": "Humelani mathomoni"
   },
   "plan": {
-    "title": "Plan",
-    "lead": "Test a change before you make it. Nothing is saved.",
-    "whatIf": "What-if",
-    "whatIfLead": "Add a one-off amount and see your date move.",
-    "itemLabel": "Change {{n}}",
-    "kind": "Money in or out",
-    "income": "Money in",
-    "expense": "Money out",
-    "remove": "Remove change {{n}}",
-    "amount": "Amount",
-    "date": "Date",
-    "label": "Note (optional)",
-    "labelPlaceholder": "For example, school trip",
-    "add": "Add a change",
-    "noItems": "No changes yet. Add one to see the effect.",
-    "result": "Result",
-    "now": "Now",
-    "withChanges": "With these changes",
-    "noChange": "No change",
-    "daysMore_one": "{{count}} day more",
-    "daysMore_other": "{{count}} days more",
-    "daysLess_one": "{{count}} day less",
-    "daysLess_other": "{{count}} days less",
-    "stsChange": "Daily budget: {{before}} now, {{after}} with these changes.",
-    "loan": "Loan check",
-    "loanLead": "See what lending money does to your cover first.",
-    "loanAmount": "Amount someone asked for",
-    "enterAmount": "Enter an amount, or pick one below, to see the effect.",
-    "ifLend": "If you lend {{amount}} today",
-    "afterLoan": "After the loan",
-    "stateDrops": "This drops your cover from {{from}} to {{to}}.",
-    "amountError": "Enter an amount above zero, for example 250.",
-    "whatIfSpoken": "With these changes: {{label}} {{date}}, {{state}}, {{change}}.",
-    "loanSpoken_one": "If you lend {{amount}}: {{label}} {{date}}, {{state}}, {{count}} day less cover.",
-    "loanSpoken_other": "If you lend {{amount}}: {{label}} {{date}}, {{state}}, {{count}} days less cover.",
-    "notAdvised": "not advised",
-    "exampleNote": "An example to start with: a R200 school trip next Friday. Change it or remove it.",
-    "roomToLend": "Room to lend",
-    "roomToLendHint": "Lending or giving up to this keeps you at {{state}} and keeps {{reserve}} back for bills just after your next money.",
-    "roomToLendHintNoReserve": "Lending or giving up to this keeps you at {{state}}.",
-    "roomToLendNone": "Any amount now would drop you below {{state}} or use money kept back for bills.",
-    "roomToLendShort": "You are already Short before your next money. Any amount you lend brings your date closer.",
-    "lendCaution": "Only lend what you could manage without getting back. Tengo cannot tell if or when it comes back.",
-    "useRoom": "Use {{amount}}",
-    "labelPlaceholderValue": "School trip (example)",
-    "roomToLendUnsure": "Tengo is not sure enough about your money coming in to suggest an amount. Check the effect of a specific amount below.",
-    "notAdvice": "Estimates from your own history, not advice. Nothing here is a lending decision or an offer of credit."
+    "title": "Pulane",
+    "lead": "Lingani tshanduko ni sa athu u i ita. A hu na tshine tsha vhulungwa.",
+    "whatIf": "Arali zwa nga vha",
+    "whatIfLead": "Engedzani tshelede ya luthihi ni vhone ḓuvha ḽaṋu ḽi tshi tshimbila.",
+    "itemLabel": "Tshanduko {{n}}",
+    "kind": "Tshelede i dzhenaho kana i bvaho",
+    "income": "Tshelede i dzhenaho",
+    "expense": "Tshelede i bvaho",
+    "remove": "Bvisani tshanduko {{n}}",
+    "amount": "Tshelede",
+    "date": "Ḓuvha",
+    "label": "Nouthu (u ḓinangela)",
+    "labelPlaceholder": "Tsumbo, lwendo lwa tshikolo",
+    "add": "Engedzani tshanduko",
+    "noItems": "A hu na tshanduko zwino. Engedzani iṅwe u vhona mvelelo.",
+    "result": "Mvelelo",
+    "now": "Zwino",
+    "withChanges": "Nga tshanduko idzi",
+    "noChange": "A hu na tshanduko",
+    "daysMore_one": "Ḓuvha ḽa {{count}} u fhira",
+    "daysMore_other": "Maḓuvha a {{count}} u fhira",
+    "daysLess_one": "Ḓuvha ḽa {{count}} fhasi",
+    "daysLess_other": "Maḓuvha a {{count}} fhasi",
+    "stsChange": "Mugaganyagwama wa ḓuvha: {{before}} zwino, {{after}} nga tshanduko idzi.",
+    "loan": "U sedza tshikolodo",
+    "loanLead": "Vhonani u thoma uri u adzimisa tshelede zwi ita mini kha tshiimo tshaṋu.",
+    "loanAmount": "Tshelede ine muthu a i humbela",
+    "enterAmount": "Dzhenisani tshelede, kana ni nange iṅwe fhasi, u vhona mvelelo.",
+    "ifLend": "Arali na adzimisa {{amount}} ṋamusi",
+    "afterLoan": "Nga murahu ha u adzimisa",
+    "stateDrops": "Hezwi zwi tsitsa tshiimo tshaṋu u bva kha {{from}} u ya kha {{to}}.",
+    "amountError": "Dzhenisani tshelede i fhiraho ziro, tsumbo 250.",
+    "whatIfSpoken": "Nga tshanduko idzi: {{label}} {{date}}, {{state}}, {{change}}.",
+    "loanSpoken_one": "Arali na adzimisa {{amount}}: {{label}} {{date}}, {{state}}, ḓuvha ḽa {{count}} ḽa tsireledzo fhasi.",
+    "loanSpoken_other": "Arali na adzimisa {{amount}}: {{label}} {{date}}, {{state}}, maḓuvha a {{count}} a tsireledzo fhasi.",
+    "notAdvised": "a zwi eletshedzwi",
+    "exampleNote": "Tsumbo ya u thoma: lwendo lwa tshikolo lwa R200 nga Ḽavhuṱanu ḽi ḓaho. Lu shandukiseni kana ni lu bvise.",
+    "roomToLend": "Tshikhala tsha u adzimisa",
+    "roomToLendHint": "U adzimisa kana u ṋea u swika kha iyi tshelede zwi ni vhulunga kha {{state}} nahone zwi vhulunga {{reserve}} ya mbadelo dzi ḓaho nga murahu ha tshelede yaṋu i tevhelaho.",
+    "roomToLendHintNoReserve": "U adzimisa kana u ṋea u swika kha iyi tshelede zwi ni vhulunga kha {{state}}.",
+    "roomToLendNone": "Tshelede iṅwe na iṅwe zwino i nga ni tsitsela fhasi ha {{state}} kana ya shumisa tshelede yo vhulungelwaho mbadelo.",
+    "roomToLendShort": "No no ṱahelwa tshelede yaṋu i tevhelaho i sa athu u swika. Tshelede iṅwe na iṅwe ine na i adzimisa i sendedza ḓuvha ḽaṋu.",
+    "lendCaution": "Adzimisani fhedzi zwine na nga tshila ni si na zwone zwi sa humiswi. Tengo a i koni u amba arali zwi ḓo vhuya kana lini.",
+    "useRoom": "Shumisani {{amount}}",
+    "labelPlaceholderValue": "Lwendo lwa tshikolo (tsumbo)",
+    "roomToLendUnsure": "Tengo a i na vhutanzi ho linganaho nga tshelede yaṋu i dzhenaho u eletshedza tshelede. Sedzani mvelelo ya tshelede yo itwaho fhasi.",
+    "notAdvice": "Khakhathi dzi bvaho kha ḓivhazwakale yaṋu, a si nyeletshedzo. A hu na tshithu fhano tshine tsha vha phetho ya u adzima kana nyiṋo ya tshikolodo."
   },
   "money": {
-    "title": "Money",
-    "lead": "Every transaction Tengo uses, and the bills it found.",
-    "history": "Transaction history",
-    "import": "Import statement",
-    "filter": "Show",
-    "all": "All",
+    "title": "Tshelede",
+    "lead": "Thengiselano iṅwe na iṅwe ine Tengo ya i shumisa, na mbadelo dze ya dzi wana.",
+    "history": "Ḓivhazwakale ya thengiselano",
+    "import": "Dzhenisani tshitatamennde",
+    "filter": "Sumbedzani",
+    "all": "Zwoṱhe",
     "filters": {
-      "income": "Income",
-      "spend": "Spend",
-      "bill": "Bills"
+      "income": "Tshelede i dzhenaho",
+      "spend": "U shumisa",
+      "bill": "Mbadelo"
     },
-    "search": "Search",
-    "count_one": "{{count}} transaction",
-    "count_other": "{{count}} transactions",
-    "emptyTitle": "Nothing to show",
-    "emptyBodyNone": "No transactions yet. Import a statement to get started.",
-    "emptyBodyFilter": "No transactions match this filter.",
-    "editLabel": "Edit {{name}}, {{date}}",
-    "more": "Show {{count}} more",
-    "last30": "Last 30 days",
-    "in": "Money in",
-    "out": "Money out",
-    "balance": "Balance today: {{amount}}",
-    "bills": "Recurring bills",
-    "billsRule": "Same description and a similar amount, about a month apart.",
-    "noBills": "No recurring bills found.",
-    "billNext_one": "Next {{date}} · seen {{count}} time",
-    "billNext_other": "Next {{date}} · seen {{count}} times",
-    "importTitle": "Bring your own statement",
-    "importBody": "Upload a CSV bank statement. It is read on this device and replaces this person's history.",
-    "movableLabel": "Can be paid later",
-    "movableHint": "Only mark a bill if it can be paid a few days late without a fee.",
-    "protectedBill": "Never suggested to move: paying late can cost fees, cover or credit."
+    "search": "Ṱoḓani",
+    "count_one": "Thengiselano ya {{count}}",
+    "count_other": "Thengiselano dza {{count}}",
+    "emptyTitle": "A hu na tsha u sumbedza",
+    "emptyBodyNone": "A hu na thengiselano zwino. Dzhenisani tshitatamennde u thoma.",
+    "emptyBodyFilter": "A hu na thengiselano dzi tshimbilelanaho na tshino tshiṱaraṱa.",
+    "editLabel": "Khakhululani {{name}}, {{date}}",
+    "more": "Sumbedzani dza {{count}} dziṅwe",
+    "last30": "Maḓuvha a 30 a u fhedza",
+    "in": "Tshelede i dzhenaho",
+    "out": "Tshelede i bvaho",
+    "balance": "Balantsi ya ṋamusi: {{amount}}",
+    "bills": "Mbadelo dzi dovhololwaho",
+    "billsRule": "Ṱhaluso i fanaho na tshelede i fanaho, tsini na ṅwedzi vhukati.",
+    "noBills": "A hu na mbadelo dzi dovhololwaho dzo wanalaho.",
+    "billNext_one": "I tevhelaho {{date}} · yo vhonwa lwa {{count}}",
+    "billNext_other": "I tevhelaho {{date}} · yo vhonwa lwa {{count}}",
+    "importTitle": "Ḓisani tshitatamennde tshaṋu",
+    "importBody": "Lodani tshitatamennde tsha bannga tsha CSV. Tshi vhalwa kha tshino tshishumiswa nahone tshi dzhia vhuimo ha ḓivhazwakale ya uyu muthu.",
+    "movableLabel": "I nga badelwa nga murahu",
+    "movableHint": "Swayani mbadelo fhedzi arali i tshi nga badelwa nga murahu ha maḓuvha a si gathi hu si na ndifho.",
+    "protectedBill": "A i eletshedzwi u shandukiswa ḓuvha: u badela nga u lenga zwi nga ḓura nga ndifho, tsireledzo kana tshikolodo."
   },
   "import": {
-    "title": "Import statement",
-    "lead": "Use a CSV bank statement to replace this person's history. It never leaves your browser.",
-    "step1": "1. Choose a file",
-    "useSample": "Use sample statement",
-    "chooseCsv": "Choose a CSV file",
-    "pdf": "PDF statement (coming next)",
-    "pdfNote": "PDF statements are not supported yet.",
-    "downloadSample": "Download sample-statement.csv",
-    "local": "Processed on your device. Nothing leaves your browser.",
-    "formatTitle": "What the file needs",
-    "formatBody": "A date, a description and an amount (negative for money out), or separate debit and credit columns. At least 14 days.",
-    "step2": "2. Check and confirm",
-    "readError": "This file could not be read as a CSV.",
-    "empty": "Choose a file or use the sample statement to see a preview here.",
-    "rowsRead_one": "{{count}} row read",
-    "rowsRead_other": "{{count}} rows read",
-    "mapping": "Columns",
-    "mappingHint": "We guessed these from the headers. Change any that look wrong.",
+    "title": "Dzhenisani tshitatamennde",
+    "lead": "Shumisani tshitatamennde tsha bannga tsha CSV u dzhia vhuimo ha ḓivhazwakale ya uyu muthu. A tshi bvi kha burausa yaṋu.",
+    "step1": "1. Nangani faela",
+    "useSample": "Shumisani tshitatamennde tsha tsumbo",
+    "chooseCsv": "Nangani faela ya CSV",
+    "pdf": "Tshitatamennde tsha PDF (tshi khou ḓa)",
+    "pdfNote": "Zwitatamennde zwa PDF a zwi athu u tikedzwa.",
+    "downloadSample": "Dauniloudani sample-statement.csv",
+    "local": "Zwi shumiwa kha tshishumiswa tshaṋu. A hu na tshine tsha bva kha burausa yaṋu.",
+    "formatTitle": "Zwine faela ya zwi ṱoḓa",
+    "formatBody": "Ḓuvha, ṱhaluso na tshelede (fhasi ha ziro kha tshelede i bvaho), kana khoḽomu dzo fhambanaho dza debit na credit. Maḓuvha a 14 kana u fhira.",
+    "step2": "2. Sedzani ni khwaṱhise",
+    "readError": "Iyi faela a yo ngo kona u vhalwa sa CSV.",
+    "empty": "Nangani faela kana ni shumise tshitatamennde tsha tsumbo u vhona tsumbo fhano.",
+    "rowsRead_one": "Ho vhalwa mutalo wa {{count}}",
+    "rowsRead_other": "Ho vhalwa mitalo ya {{count}}",
+    "mapping": "Khoḽomu",
+    "mappingHint": "Ro dzi anganyela u bva kha ṱhoho. Shandukisani iṅwe na iṅwe i vhonalaho i songo luga.",
     "field": {
-      "date": "Date",
-      "description": "Description",
-      "amount": "Amount",
+      "date": "Ḓuvha",
+      "description": "Ṱhaluso",
+      "amount": "Tshelede",
       "debit": "Debit",
       "credit": "Credit",
-      "balance": "Balance"
+      "balance": "Balantsi"
     },
-    "none": "Not used",
-    "needMapping": "Pick a date, a description, and either an amount or debit and credit columns.",
-    "previewCaption": "The last rows of the statement",
-    "type": "Type",
-    "previewNote_one": "Showing the last rows of {{count}} transaction.",
-    "previewNote_other": "Showing the last rows of {{count}} transactions.",
-    "skipped_one": "{{count}} row skipped because the date, description or amount could not be read.",
-    "skipped_other": "{{count}} rows skipped because the date, description or amount could not be read.",
-    "tooShort": "This statement covers {{count}} days. Tengo needs at least 14.",
-    "noRows": "No usable rows found with these columns.",
-    "wideRange": "Only {{count}} days of history. The forecast will work, but the range will be wide.",
-    "shifted_one": "Dates moved forward by {{count}} day so the statement ends yesterday.",
-    "shifted_other": "Dates moved forward by {{count}} days so the statement ends yesterday.",
-    "days": "Days",
-    "balance": "Current balance",
-    "balanceFromFile": "Taken from the last balance in the file: {{amount}}. Type to change it.",
-    "balanceKept": "No balance column. Keeping the current balance of {{amount}}. Type to change it.",
-    "result": "Forecast with this statement",
-    "confirm": "Replace history and see my date",
-    "replaceNote": "This replaces this person's history on this device and adds an entry to the audit log.",
-    "tooBig": "That file is larger than 2 MB, which is more than a statement needs. Choose a shorter period or a smaller file."
+    "none": "A i shumiswi",
+    "needMapping": "Nangani ḓuvha, ṱhaluso, na tshelede kana khoḽomu dza debit na credit.",
+    "previewCaption": "Mitalo ya u fhedza ya tshitatamennde",
+    "type": "Tshaka",
+    "previewNote_one": "Hu sumbedzwa mitalo ya u fhedza ya thengiselano ya {{count}}.",
+    "previewNote_other": "Hu sumbedzwa mitalo ya u fhedza ya thengiselano dza {{count}}.",
+    "skipped_one": "Ho fhirwa mutalo wa {{count}} ngauri ḓuvha, ṱhaluso kana tshelede a zwo ngo kona u vhalwa.",
+    "skipped_other": "Ho fhirwa mitalo ya {{count}} ngauri ḓuvha, ṱhaluso kana tshelede a zwo ngo kona u vhalwa.",
+    "tooShort": "Tshino tshitatamennde tshi katela maḓuvha a {{count}}. Tengo i ṱoḓa a 14 kana u fhira.",
+    "noRows": "A hu na mitalo i shumisea yo wanalaho nga khoḽomu idzi.",
+    "wideRange": "Maḓuvha a {{count}} fhedzi a ḓivhazwakale. Tsumbanḓila i ḓo shuma, fhedzi phimo i ḓo anda.",
+    "shifted_one": "Maḓuvha o shandukiselwa phanḓa nga ḓuvha ḽa {{count}} uri tshitatamennde tshi fhele mulovha.",
+    "shifted_other": "Maḓuvha o shandukiselwa phanḓa nga maḓuvha a {{count}} uri tshitatamennde tshi fhele mulovha.",
+    "days": "Maḓuvha",
+    "balance": "Balantsi ya zwino",
+    "balanceFromFile": "Yo dzhiiwa kha balantsi ya u fhedza kha faela: {{amount}}. Thaipani u i shandukisa.",
+    "balanceKept": "A hu na khoḽomu ya balantsi. Hu vhulungwa balantsi ya zwino ya {{amount}}. Thaipani u i shandukisa.",
+    "result": "Tsumbanḓila nga tshino tshitatamennde",
+    "confirm": "Dzhiani vhuimo ha ḓivhazwakale ni vhone ḓuvha ḽanga",
+    "replaceNote": "Hezwi zwi dzhia vhuimo ha ḓivhazwakale ya uyu muthu kha tshino tshishumiswa nahone zwi engedza tsho dzheniswaho kha rekhodo ya ṱhoḓisiso.",
+    "tooBig": "Iyo faela i fhira 2 MB, zwine zwa fhira zwine tshitatamennde tsha zwi ṱoḓa. Nangani tshifhinga tshipfufhi kana faela ṱhukhu."
   },
   "edit": {
-    "title": "Edit transaction",
-    "description": "Description",
-    "amount": "Amount",
-    "amountHint": "Negative for money out, for example -250.",
-    "category": "Type",
-    "auditNote": "Saving adds an entry to your audit log.",
-    "oneOff": "One-off",
-    "oneOffHint": "Left out of your usual spend and income pattern. It still counts in your balance."
+    "title": "Khakhululani thengiselano",
+    "description": "Ṱhaluso",
+    "amount": "Tshelede",
+    "amountHint": "Fhasi ha ziro kha tshelede i bvaho, tsumbo -250.",
+    "category": "Tshaka",
+    "auditNote": "U vhulunga zwi engedza tsho dzheniswaho kha rekhodo yaṋu ya ṱhoḓisiso.",
+    "oneOff": "Ya luthihi",
+    "oneOffHint": "Yo sielwa nnḓa ha nḓila yaṋu ya misi yoṱhe ya u shumisa na tshelede i dzhenaho. I kha ḓi vhalwa kha balantsi yaṋu."
   },
   "audit": {
-    "session_opened": "Opened Tengo",
-    "consent_given": "Gave consent. Messages {{messages}}, analytics {{analytics}}",
-    "consent_changed": "Changed consent: {{item}} {{value}}",
-    "data_viewed": "Viewed all data",
-    "data_exported": "Exported data as {{format}}",
-    "statement_imported": "Imported a statement with {{rows}} transactions",
-    "transaction_edited": "Corrected a transaction: {{fields}}",
-    "review_requested": "Asked for a human review",
-    "forecast_paused": "Paused the forecast",
-    "forecast_resumed": "Resumed the forecast",
-    "transaction_added_one": "Added {{count}} entry",
-    "transaction_added_other": "Added {{count}} entries",
-    "balance_updated": "Updated the balance",
-    "bill_answered": "Answered a question about a bill that looked unpaid",
-    "plan_settings": "Changed which spending can bend or which bills can move",
-    "money_updated": "Changed accounts or money owed",
-    "cash_added": "Recorded cash {{direction}}",
-    "setup_saved": "Set up a history by hand",
-    "account_uploaded": "Saved the profile to an account",
-    "account_created": "Started an empty account",
-    "account_signedIn": "Signed in on a device"
+    "session_opened": "Ho vulwa Tengo",
+    "consent_given": "Ho ṋewa thendelo. Milaedza {{messages}}, ṱhoḓisiso {{analytics}}",
+    "consent_changed": "Ho shandukiswa thendelo: {{item}} {{value}}",
+    "data_viewed": "Ho sedzwa mafhungo oṱhe",
+    "data_exported": "Ho bviswa mafhungo sa {{format}}",
+    "statement_imported": "Ho dzheniswa tshitatamennde tshi re na thengiselano dza {{rows}}",
+    "transaction_edited": "Ho khakhululwa thengiselano: {{fields}}",
+    "review_requested": "Ho humbelwa u sedzuluswa nga muthu",
+    "forecast_paused": "Ho imiswa tsumbanḓila",
+    "forecast_resumed": "Ho bveliswa phanḓa tsumbanḓila",
+    "transaction_added_one": "Ho engedzwa tsho dzheniswaho tsha {{count}}",
+    "transaction_added_other": "Ho engedzwa zwo dzheniswaho zwa {{count}}",
+    "balance_updated": "Ho vusuluswa balantsi",
+    "bill_answered": "Ho fhindulwa mbudziso nga ha mbadelo yo vha i tshi vhonala i songo badelwa",
+    "plan_settings": "Ho shandukiswa u shumisa hune ha nga fhungudzwa kana mbadelo dzine dza nga shandukiswa ḓuvha",
+    "money_updated": "Ho shandukiswa akhaunthu kana tshelede i kolodwaho",
+    "cash_added": "Ho ṅwalwa tshelede ya tshanḓani {{direction}}",
+    "setup_saved": "Ho dzudzanywa ḓivhazwakale nga tshanḓa",
+    "account_uploaded": "Ho vhulungwa phurofaiḽi kha akhaunthu",
+    "account_created": "Ho thomiwa akhaunthu i si na tshithu",
+    "account_signedIn": "Ho dzhenwa kha tshishumiswa"
   },
   "inbox": {
-    "title": "Inbox",
-    "lead": "The daily message Tengo would send.",
-    "simulated": "Simulated. No message is sent.",
-    "offTitle": "Daily messages are off",
-    "offBody": "You turned off daily messages, so there is nothing to preview. Turn them on here or in Privacy.",
-    "turnOn": "Turn on daily messages",
-    "preview": "Today's message",
-    "channel": "Channel",
+    "title": "Milaedza",
+    "lead": "Mulaedza wa ḓuvha une Tengo ya vha i tshi ḓo u rumela.",
+    "simulated": "Ndi u edzisela. A hu na mulaedza u rumelwaho.",
+    "offTitle": "Milaedza ya ḓuvha ḽiṅwe na ḽiṅwe yo valwa",
+    "offBody": "No vala milaedza ya ḓuvha ḽiṅwe na ḽiṅwe, ngauralo a hu na tsha u vhonwa u thoma. I vuleni fhano kana kha Tshiphiri.",
+    "turnOn": "Vulani milaedza ya ḓuvha ḽiṅwe na ḽiṅwe",
+    "preview": "Mulaedza wa ṋamusi",
+    "channel": "Tshanele",
     "channels": {
       "whatsapp": "WhatsApp",
       "sms": "SMS"
     },
-    "todayAt": "Today",
-    "language": "Message language",
-    "languageHint": "Messages can use a different language from the app.",
-    "to": "To {{name}}",
-    "schedule": "Every morning at 07:00",
+    "todayAt": "Ṋamusi",
+    "language": "Luambo lwa mulaedza",
+    "languageHint": "Milaedza i nga shumisa luambo lwo fhambanaho na lwa app.",
+    "to": "Kha {{name}}",
+    "schedule": "Matsheloni maṅwe na maṅwe nga 07:00",
     "facts": {
-      "what": "Only your date, cover and daily budget.",
-      "never": "Never your balance or transactions.",
-      "stop": "Every message says it is from Tengo and how to stop. You can also turn messages off in Privacy.",
-      "where": "WhatsApp messages would pass through Meta, outside South Africa. SMS is the alternative. Simulated here: nothing is sent."
+      "what": "Ḓuvha ḽaṋu, tshiimo na mugaganyagwama wa ḓuvha fhedzi.",
+      "never": "A zwi nga vhi balantsi yaṋu kana thengiselano dzaṋu.",
+      "stop": "Mulaedza muṅwe na muṅwe u amba uri u bva kha Tengo na nḓila ya u u imisa. Ni nga dovha na vala milaedza kha Tshiphiri.",
+      "where": "Milaedza ya WhatsApp yo vha i tshi ḓo fhira nga Meta, nnḓa ha Afurika Tshipembe. SMS ndi iṅwe nḓila. Ndi u edzisela fhano: a hu na tshine tsha rumelwa."
     },
-    "manage": "Manage messages",
-    "smsCount_one": "1 SMS, {{encoding}}, {{chars}} of {{limit}} characters",
-    "smsCount_other": "{{count}} SMS parts, {{encoding}}, {{chars}} characters"
+    "manage": "Langani milaedza",
+    "smsCount_one": "1 SMS, {{encoding}}, {{chars}} kha ḽeḓere dza {{limit}}",
+    "smsCount_other": "Zwipiḓa zwa SMS zwa {{count}}, {{encoding}}, ḽeḓere dza {{chars}}"
   },
   "messages": {
     "whatsapp": {
-      "greeting": "Hi {{name}}.",
-      "enough": "Your money should last until *{{date}}*. Cover: {{state}}.",
-      "tight": "Your money should last until *{{date}}* on a normal week. Cover: {{state}}.",
-      "short_one": "Your money may run out on *{{date}}*, {{count}} day before your next money. Cover: {{state}}.",
-      "short_other": "Your money may run out on *{{date}}*, {{count}} days before your next money. Cover: {{state}}.",
-      "sts": "Daily budget: *{{sts}}*.",
-      "next": "Next money: around {{next}}.",
-      "noNext": "No next money is expected at the moment.",
+      "greeting": "Ndaa {{name}}.",
+      "enough": "Tshelede yaṋu i fanela u fhedza u swika *{{date}}*. Tshiimo: {{state}}.",
+      "tight": "Tshelede yaṋu i fanela u fhedza u swika *{{date}}* nga vhege ya misi yoṱhe. Tshiimo: {{state}}.",
+      "short_one": "Tshelede yaṋu i nga fhela nga *{{date}}*, ḓuvha ḽa {{count}} tshelede yaṋu i tevhelaho i sa athu u swika. Tshiimo: {{state}}.",
+      "short_other": "Tshelede yaṋu i nga fhela nga *{{date}}*, maḓuvha a {{count}} tshelede yaṋu i tevhelaho i sa athu u swika. Tshiimo: {{state}}.",
+      "sts": "Mugaganyagwama wa ḓuvha: *{{sts}}*.",
+      "next": "Tshelede i tevhelaho: tsini na {{next}}.",
+      "noNext": "A hu na tshelede i tevhelaho yo lindelwaho zwino.",
       "tip": {
-        "enough": "Covered until your next money, even on a heavy week.",
-        "tight": "Keep spending close to your daily budget until your next money.",
-        "short": "Check Plan in Tengo to see what helps most."
+        "enough": "No tsireledzea u swikela tshelede yaṋu i tevhelaho, naho nga vhege i konḓaho.",
+        "tight": "Vhulungani u shumisa haṋu hu tsini na mugaganyagwama waṋu wa ḓuvha u swikela tshelede yaṋu i tevhelaho.",
+        "short": "Sedzani Pulane kha Tengo u vhona zwi thusaho nga maanḓa."
       },
-      "stsNotAdvised": "Daily budget: not advised until your next money.",
-      "unclear": "Tengo does not have enough to go on yet to give you a date. Open Tengo to see what to add.",
-      "stsPending": "Daily budget: worked out once today's payment lands.",
-      "stop": "From Tengo. Reply STOP to end these updates.",
-      "discreet": "Tengo: your daily update is ready. Open the app to see it.",
-      "noNextDaily": "Money comes in most days, so there is no single next payment."
+      "stsNotAdvised": "Mugaganyagwama wa ḓuvha: a zwi eletshedzwi u swikela tshelede yaṋu i tevhelaho.",
+      "unclear": "Tengo a i na zwo linganaho zwino u ni ṋea ḓuvha. Vulani Tengo u vhona zwine na fanela u zwi engedza.",
+      "stsPending": "Mugaganyagwama wa ḓuvha: u ḓo vhalelwa musi mbadelo ya ṋamusi yo no dzhena.",
+      "stop": "U bva kha Tengo. Fhindulani nga STOP u imisa mbuedzedzo idzi.",
+      "discreet": "Tengo: mbuedzedzo yaṋu ya ḓuvha yo lugela. Vulani app u i vhona.",
+      "noNextDaily": "Tshelede i dzhena maḓuvha manzhi, ngauralo a hu na mbadelo nthihi i tevhelaho."
     },
     "sms": {
-      "enough": "Tengo: Hi {{name}}, money lasts until {{date}} ({{state}}). Budget {{sts}} a day.",
-      "tight": "Tengo: Hi {{name}}, money lasts until {{date}} on a normal week ({{state}}). Budget {{sts}} a day.",
-      "short": "Tengo: Hi {{name}}, money may run out {{date}} ({{state}}). Budget not advised.",
-      "next": "Next money about {{next}}.",
-      "unclear": "Tengo: Hi {{name}}, not enough to go on yet for a date. Open Tengo to see what to add.",
-      "stop": "Reply STOP to end.",
-      "discreet": "Tengo: your daily update is ready. Open the app to see it. Reply STOP to end."
+      "enough": "Tengo: Ndaa {{name}}, tshelede i fhedza u swika {{date}} ({{state}}). Mugaganyagwama {{sts}} nga ḓuvha.",
+      "tight": "Tengo: Ndaa {{name}}, tshelede i fhedza u swika {{date}} nga vhege ya misi yoṱhe ({{state}}). Mugaganyagwama {{sts}} nga ḓuvha.",
+      "short": "Tengo: Ndaa {{name}}, tshelede i nga fhela {{date}} ({{state}}). Mugaganyagwama a u eletshedzwi.",
+      "next": "Tshelede i tevhelaho tsini na {{next}}.",
+      "unclear": "Tengo: Ndaa {{name}}, a hu na zwo linganaho zwino zwa ḓuvha. Vulani Tengo u vhona zwine na fanela u zwi engedza.",
+      "stop": "Fhindulani nga STOP u imisa.",
+      "discreet": "Tengo: mbuedzedzo yaṋu ya ḓuvha yo lugela. Vulani app u i vhona. Fhindulani nga STOP u imisa."
     }
   },
   "a11y": {
-    "moneyIn": "money in, {{amount}}",
-    "moneyOut": "money out, {{amount}}",
-    "saved": "Transaction saved",
-    "noChanges": "No changes made",
-    "exported": "Data exported as {{format}}",
-    "consentSaved": "Consent updated",
-    "paused": "Consent withdrawn. The forecast is paused.",
-    "belowZero": "{{amount}} below zero"
+    "moneyIn": "tshelede i dzhenaho, {{amount}}",
+    "moneyOut": "tshelede i bvaho, {{amount}}",
+    "saved": "Thengiselano yo vhulungwa",
+    "noChanges": "A hu na tshanduko yo itwaho",
+    "exported": "Mafhungo o bviswa sa {{format}}",
+    "consentSaved": "Thendelo yo vusuluswa",
+    "paused": "Thendelo yo humiswa. Tsumbanḓila yo imiswa.",
+    "belowZero": "{{amount}} fhasi ha ziro"
   },
   "help": {
-    "title": "What helps most",
-    "moveBill": "If {{name}} ({{amount}}) can be paid after {{date}} without a fee, that alone reaches {{state}}.",
-    "tryInPlan": "Try it in Plan",
-    "coveredTitle": "You are covered",
-    "setAside": "You could set aside up to {{amount}} today and still be Enough until your next money. This is the same room as Room to lend, not extra.",
-    "coveredBody": "Your money should last until your next money, even on a heavier week.",
-    "toReachState": "Ways to reach {{state}}",
-    "more_one": "{{count}} more way",
-    "more_other": "{{count}} more ways",
-    "fewer": "Show fewer",
-    "earn": "Earn or receive {{amount}} more before {{date}}, for example extra work or money owed to you.",
-    "earnAssume": "Assumes your spending stays as usual. Borrowing to cover a gap usually costs more later.",
-    "trim": "Spend about {{amount}} a day less on {{groups}} until {{date}}.",
-    "trimAssume": "Only spending you marked as able to bend. Assumes everything else stays as usual.",
-    "trimPartial": "That is all the spending you marked as able to bend, so it covers part of the gap. The rest still needs money in.",
-    "moveAssume": "You marked it as movable. Ask first. Never skip debit orders for loans or insurance.",
-    "markFlexible": "Mark which everyday spending can bend to see where you could trim.",
-    "chooseOnMoney": "Choose on Money",
-    "freeHelp": "If you are behind on debt, the National Credit Regulator lists free help:",
-    "ideasNote": "Ideas, not advice. Check fees and penalties before changing a payment."
+    "title": "Zwi thusaho nga maanḓa",
+    "moveBill": "Arali {{name}} ({{amount}}) i tshi nga badelwa nga murahu ha {{date}} hu si na ndifho, izwo fhedzi zwi swika kha {{state}}.",
+    "tryInPlan": "Zwi lingeni kha Pulane",
+    "coveredTitle": "No tsireledzea",
+    "setAside": "Ni nga vhea thungo u swika {{amount}} ṋamusi nahone na dzula kha Yo lingana u swikela tshelede yaṋu i tevhelaho. Itshi ndi tshikhala tshi fanaho na Tshikhala tsha u adzimisa, hu si tsho engedzwaho.",
+    "coveredBody": "Tshelede yaṋu i fanela u fhedza u swikela tshelede yaṋu i tevhelaho, naho nga vhege i konḓaho vhukuma.",
+    "toReachState": "Nḓila dza u swika kha {{state}}",
+    "more_one": "Nḓila ya {{count}} iṅwe",
+    "more_other": "Nḓila dza {{count}} dziṅwe",
+    "fewer": "Sumbedzani dzi si gathi",
+    "earn": "Wanani kana ni ṱanganedze {{amount}} u fhira nga {{date}}, tsumbo mushumo wo engedzwaho kana tshelede ine na kolodwa yone.",
+    "earnAssume": "Hu humbulwa uri u shumisa haṋu hu dzula sa zwe zwa ḓowelwa. U adzima u vala tshikhala kanzhi zwi ḓura nga maanḓa nga murahu.",
+    "trim": "Shumisani tsini na {{amount}} nga ḓuvha fhasi kha {{groups}} u swika {{date}}.",
+    "trimAssume": "U shumisa fhedzi hune na ho swaya sa hune ha nga fhungudzwa. Hu humbulwa uri zwiṅwe zwoṱhe zwi dzula sa zwe zwa ḓowelwa.",
+    "trimPartial": "Hoyo ndi u shumisa hoṱhe hune na ho swaya sa hune ha nga fhungudzwa, ngauralo hu vala tshipiḓa tsha tshikhala. Zwo salaho zwi kha ḓi ṱoḓa tshelede i dzhenaho.",
+    "moveAssume": "No i swaya sa ine ya nga shandukiswa ḓuvha. Vhudzisani u thoma. Ni songo fhira debit order dza zwikolodo kana inshuwarentsi.",
+    "markFlexible": "Swayani u shumisa ha ḓuvha ḽiṅwe na ḽiṅwe hune ha nga fhungudzwa u vhona hune na nga fhungudza hone.",
+    "chooseOnMoney": "Nangani kha Tshelede",
+    "freeHelp": "Arali no salela murahu nga zwikolodo, National Credit Regulator i ṅwala thuso ya mahala:",
+    "ideasNote": "Mihumbulo, a si nyeletshedzo. Sedzani ndifho na ndatiso ni sa athu u shandukisa mbadelo."
   },
   "spending": {
-    "title": "Where everyday money goes",
-    "lead": "Last 30 days, not counting bills.",
-    "empty": "No everyday spending in the last 30 days.",
+    "title": "Hune tshelede ya ḓuvha ḽiṅwe na ḽiṅwe ya ya hone",
+    "lead": "Maḓuvha a 30 a u fhedza, hu sa katelwi mbadelo.",
+    "empty": "A hu na u shumisa ha ḓuvha ḽiṅwe na ḽiṅwe kha maḓuvha a 30 a u fhedza.",
     "groups": {
-      "food": "Food and groceries",
-      "transport": "Fuel and transport",
-      "airtime": "Airtime and data",
-      "stock": "Stock and supplies",
-      "energy": "Electricity and fuel at home",
-      "other": "Other"
+      "food": "Zwiḽiwa na zwa hayani",
+      "transport": "Phethiroḽo na vhuendi",
+      "airtime": "Airtime na data",
+      "stock": "Zwiṱoko na zwishumiswa",
+      "energy": "Muḓagasi na zwiswiswa zwa hayani",
+      "other": "Zwiṅwe"
     },
-    "flexibleLabel": "Can bend",
-    "flexibleHint": "Mark the spending you could trim if money is short. Work costs like stock and fuel are never suggested for cuts.",
-    "workCost": "Work cost"
+    "flexibleLabel": "Hu nga fhungudzwa",
+    "flexibleHint": "Swayani u shumisa hune na nga fhungudza musi tshelede i tshi ṱahela. Masheleni a mushumo u fana na zwiṱoko na phethiroḽo a eletshedzwi u fhungudzwa.",
+    "workCost": "Masheleni a mushumo"
   },
   "palette": {
-    "title": "Command menu",
-    "open": "Search or jump to",
+    "title": "Mutevhe wa ndaela",
+    "open": "Ṱoḓani kana ni fhire u ya kha",
     "shortcut": "Ctrl K",
-    "search": "Search commands",
-    "placeholder": "Go to a page, switch person, change language",
-    "results": "Commands",
-    "empty": "Nothing matches.",
-    "help": "Arrow keys to move, Enter to choose, Esc to close.",
-    "switchTo": "Switch to {{name}}",
-    "theme": "{{name}} theme",
-    "languageSet": "Language set to {{name}}",
-    "themeSet": "{{name}} theme on",
+    "search": "Ṱoḓani ndaela",
+    "placeholder": "Iyani kha siaṱari, shandukisani muthu, shandukisani luambo",
+    "results": "Ndaela",
+    "empty": "A hu na zwi tshimbilelanaho.",
+    "help": "Khii dza misevhe u tshimbila, Enter u nanga, Esc u vala.",
+    "switchTo": "Shandukelani kha {{name}}",
+    "theme": "Thero ya {{name}}",
+    "languageSet": "Luambo lwo vhewa kha {{name}}",
+    "themeSet": "Thero ya {{name}} yo vulwa",
     "groups": {
-      "pages": "Pages",
-      "people": "People",
-      "language": "Language",
-      "theme": "Theme"
+      "pages": "Masiaṱari",
+      "people": "Vhathu",
+      "language": "Luambo",
+      "theme": "Thero"
     }
   },
   "theme": {
-    "button": "Theme: {{current}}. Switch to {{next}}"
+    "button": "Thero: {{current}}. Shandukelani kha {{next}}"
   },
   "notice": {
     "overdrawn": {
-      "title": "Overdrawn by {{amount}}",
-      "body": "Money that comes in covers this first. Your date counts from when the balance is above R0 again."
+      "title": "No bvisa u fhira nga {{amount}}",
+      "body": "Tshelede i dzhenaho i badela hezwi u thoma. Ḓuvha ḽaṋu ḽi vhalwa u thoma musi balantsi yo no vha nṱha ha R0 hafhu."
     },
     "asOf": {
-      "title": "From your statement",
-      "body_one": "This forecast is from your statement, which ends {{date}}, {{count}} day ago. Add today's balance to bring it up to date.",
-      "body_other": "This forecast is from your statement, which ends {{date}}, {{count}} days ago. Add today's balance to bring it up to date."
+      "title": "U bva kha tshitatamennde tshaṋu",
+      "body_one": "Iyi tsumbanḓila i bva kha tshitatamennde tshaṋu, tshine tsha fhela nga {{date}}, ḓuvha ḽa {{count}} ḽo fhiraho. Engedzani balantsi ya ṋamusi u i vusulusa.",
+      "body_other": "Iyi tsumbanḓila i bva kha tshitatamennde tshaṋu, tshine tsha fhela nga {{date}}, maḓuvha a {{count}} o fhiraho. Engedzani balantsi ya ṋamusi u i vusulusa."
     },
     "historyEnds": {
-      "title": "History ends {{date}}",
-      "body": "Spending since then is not in your history, so the forecast uses the pattern up to that day with today's balance."
+      "title": "Ḓivhazwakale i fhela nga {{date}}",
+      "body": "U shumisa u bva henefho a hu kha ḓivhazwakale yaṋu, ngauralo tsumbanḓila i shumisa nḓila u swika ḽeneḽo ḓuvha na balantsi ya ṋamusi."
     },
     "paused": {
-      "title": "Income looks paused",
-      "body": "Nothing like your usual payments has come in since {{date}}. Tengo no longer counts on next money and checks the next 30 days instead."
+      "title": "Tshelede i dzhenaho i vhonala yo imiswa",
+      "body": "A hu na tshi fanaho na mbadelo dzaṋu dza misi yoṱhe tsho dzhenaho u bva nga {{date}}. Tengo a i tsha ḓitika nga tshelede i tevhelaho nahone nṱhani ha izwo i sedza maḓuvha a 30 a ḓaho."
     },
-    "pausedNoDate": "Nothing like your usual payments has come in for a while. Tengo no longer counts on next money and checks the next 30 days instead.",
+    "pausedNoDate": "A hu na tshi fanaho na mbadelo dzaṋu dza misi yoṱhe tsho dzhenaho lwa tshifhinga. Tengo a i tsha ḓitika nga tshelede i tevhelaho nahone nṱhani ha izwo i sedza maḓuvha a 30 a ḓaho.",
     "irregular": {
-      "title": "No regular pattern yet",
-      "body": "Money comes in, but not in a rhythm Tengo can use. It checks the next 30 days instead of a next-money date."
+      "title": "A hu na nḓila ya misi yoṱhe zwino",
+      "body": "Tshelede i a dzhena, fhedzi hu si nga nḓila ine Tengo ya nga i shumisa. I sedza maḓuvha a 30 a ḓaho nṱhani ha ḓuvha ḽa tshelede i tevhelaho."
     },
     "pendingToday": {
-      "title": "Payment due today",
-      "body": "Your usual payment is due today and is not in your balance yet, so it is still counted as coming.",
-      "action": "It has come in",
-      "entry": "Usual payment, marked as received"
+      "title": "Mbadelo i fanela ṋamusi",
+      "body": "Mbadelo yaṋu ya misi yoṱhe i fanela ṋamusi nahone a i athu u dzhena kha balantsi yaṋu, ngauralo i kha ḓi vhalwa sa i ḓaho.",
+      "action": "Yo dzhena",
+      "entry": "Mbadelo ya misi yoṱhe, yo swaiwa sa yo ṱanganedzwaho"
     },
     "missedBill": {
-      "title": "{{name}} ({{amount}}) looks unpaid",
-      "body": "It was due around {{date}} and did not show up. Tell Tengo what happened so the date stays right.",
-      "owed": "I still owe it",
-      "settled": "It is paid or stopped"
+      "title": "{{name}} ({{amount}}) i vhonala i songo badelwa",
+      "body": "Yo vha i tshi fanela tsini na {{date}} nahone a yo ngo vhonala. Vhudzani Tengo zwo iteaho uri ḓuvha ḽi dzule ḽo luga.",
+      "owed": "Ndi kha ḓi i koloda",
+      "settled": "Yo badelwa kana yo imiswa"
     },
     "oneOffs": {
-      "body_one": "{{count}} large one-off amount is left out of your usual spend and income.",
-      "body_other": "{{count}} large one-off amounts are left out of your usual spend and income.",
-      "action": "See them on Money"
+      "body_one": "Tshelede khulwane ya luthihi ya {{count}} yo sielwa nnḓa ha u shumisa na tshelede yaṋu i dzhenaho ya misi yoṱhe.",
+      "body_other": "Tshelede khulwane dza luthihi dza {{count}} dzo sielwa nnḓa ha u shumisa na tshelede yaṋu i dzhenaho ya misi yoṱhe.",
+      "action": "Dzi vhoneni kha Tshelede"
     },
-    "label": "Things to check",
+    "label": "Zwithu zwa u sedza",
     "askOneOff": {
-      "title": "Was {{name}} ({{amount}}, {{date}}) a one-off?",
-      "body": "It is much bigger than your usual spending, and with a short history Tengo cannot tell. For now it counts as usual spending.",
-      "action": "Yes, a one-off"
+      "title": "Naa {{name}} ({{amount}}, {{date}}) yo vha i ya luthihi?",
+      "body": "I khulwane vhukuma u fhira u shumisa haṋu ha misi yoṱhe, nahone nga ḓivhazwakale pfufhi Tengo a i koni u ḓivha. Zwino i vhalwa sa u shumisa ha misi yoṱhe.",
+      "action": "Ee, ya luthihi"
     },
     "estimated": {
-      "title": "Estimated from your answers",
-      "body": "Part of your history comes from the setup questions, so confidence is low. Real entries, cash added here or a statement replace the estimate."
+      "title": "Zwo anganyelwa u bva kha phindulo dzaṋu",
+      "body": "Tshipiḓa tsha ḓivhazwakale yaṋu tshi bva kha mbudziso dza u dzudzanya, ngauralo vhutanzi ho tsa. Zwo dzheniswaho zwa vhukuma, tshelede ya tshanḓani ine na i engedza fhano kana tshitatamennde zwi dzhia vhuimo ha khakhathi."
     },
     "sample": {
-      "title": "Sample numbers",
-      "body": "This forecast uses sample numbers, not yours. Change them on Money, or replace them with a statement or your own answers.",
-      "action": "Use my own numbers"
+      "title": "Nomboro dza tsumbo",
+      "body": "Iyi tsumbanḓila i shumisa nomboro dza tsumbo, hu si dzaṋu. Dzi shandukiseni kha Tshelede, kana ni dzi dzhiele vhuimo nga tshitatamennde kana nga phindulo dzaṋu.",
+      "action": "Shumisani nomboro dzanga"
     }
   },
   "balance": {
-    "update": "Update bank balance",
-    "label": "Bank account balance today",
-    "save": "Save balance",
-    "saved": "Balance saved",
-    "error": "Enter an amount, for example 1250 or -300."
+    "update": "Vusulusani balantsi ya bannga",
+    "label": "Balantsi ya akhaunthu ya bannga ya ṋamusi",
+    "save": "Vhulungani balantsi",
+    "saved": "Balantsi yo vhulungwa",
+    "error": "Dzhenisani tshelede, tsumbo 1250 kana -300."
   },
   "storage": {
     "quota": {
-      "title": "Could not save on this device",
-      "body": "This browser's storage is full, so your last change was not kept. Export your data, then free some space or delete old data."
+      "title": "A ro ngo kona u vhulunga kha tshino tshishumiswa",
+      "body": "Vhuvhulungelo ha iyi burausa ho ḓala, ngauralo tshanduko yaṋu ya u fhedza a yo ngo vhulungwa. Bvisani mafhungo aṋu, ni vhofholole tshikhala kana ni phumule mafhungo a kale."
     },
     "unavailable": {
-      "title": "Could not save on this device",
-      "body": "This browser is blocking storage, for example in a private window, so your last change was not kept."
+      "title": "A ro ngo kona u vhulunga kha tshino tshishumiswa",
+      "body": "Iyi burausa i khou thivhela vhuvhulungelo, tsumbo kha windo ḽa tshiphiri, ngauralo tshanduko yaṋu ya u fhedza a yo ngo vhulungwa."
     },
-    "export": "Export my data",
+    "export": "Bvisani mafhungo anga",
     "corrupt": {
-      "title": "Your saved data could not be read",
-      "body": "Something went wrong with the data saved in this browser. A copy has been kept on this device. Start fresh to keep using Tengo.",
-      "action": "Start fresh"
+      "title": "Mafhungo aṋu o vhulungwaho a zwo ngo kona u vhalwa",
+      "body": "Hu na zwi songo tshimbila zwavhuḓi nga mafhungo o vhulungwaho kha iyi burausa. Khophi yo vhulungwa kha tshino tshishumiswa. Thomani hafhu u bvela phanḓa ni tshi shumisa Tengo.",
+      "action": "Thomani hafhu"
     }
   },
   "cash": {
-    "add": "Add cash",
-    "title": "Cash",
-    "kind": "What happened",
+    "add": "Engedzani tshelede ya tshanḓani",
+    "title": "Tshelede ya tshanḓani",
+    "kind": "Ho itea mini",
     "modes": {
-      "in": "Cash in",
-      "out": "Cash out",
-      "hand": "Cash in hand"
+      "in": "Tshelede ya tshanḓani i dzhenaho",
+      "out": "Tshelede ya tshanḓani i bvaho",
+      "hand": "Tshelede i re tshanḓani"
     },
     "hints": {
-      "in": "Cash you received, for example fares, a client or money back from family. It counts as money in.",
-      "out": "Cash you spent. It counts as spending.",
-      "hand": "How much cash you have right now. This sets the cash balance and does not add an entry."
+      "in": "Tshelede ya tshanḓani ye na i ṱanganedza, tsumbo tshelede ya u namela, murengi kana tshelede yo humiswaho nga muṱa. I vhalwa sa tshelede i dzhenaho.",
+      "out": "Tshelede ya tshanḓani ye na i shumisa. I vhalwa sa u shumisa.",
+      "hand": "Tshelede ya tshanḓani ine na vha nayo zwino. Hezwi zwi vhea balantsi ya tshelede ya tshanḓani nahone a zwi engedzi tsho dzheniswaho."
     },
     "notePlaceholder": {
-      "in": "For example, cash fares",
-      "out": "For example, taxi"
+      "in": "Tsumbo, tshelede ya u namela",
+      "out": "Tsumbo, thekisi"
     },
-    "saved": "Cash saved"
+    "saved": "Tshelede ya tshanḓani yo vhulungwa"
   },
   "accounts": {
-    "title": "Where your money is",
-    "lead": "Your forecast uses the total of all of these.",
-    "edit": "Edit",
-    "total": "Total",
-    "name": "Name",
-    "balance": "Balance",
-    "addWallet": "Add a wallet or account",
-    "walletName": "Mobile wallet",
-    "remove": "Remove",
-    "cashTag": "Cash",
-    "homeLine": "Total {{total}}, including {{cash}} cash on hand.",
-    "homeLineBank": "Total {{total}}.",
-    "bankName": "Bank account",
-    "cashName": "Cash on hand"
+    "title": "Hune tshelede yaṋu ya vha hone",
+    "lead": "Tsumbanḓila yaṋu i shumisa tshivhalo tshoṱhe tsha izwi zwoṱhe.",
+    "edit": "Khakhululani",
+    "total": "Tshivhalo tshoṱhe",
+    "name": "Dzina",
+    "balance": "Balantsi",
+    "addWallet": "Engedzani wallet kana akhaunthu",
+    "walletName": "Wallet ya selfoni",
+    "remove": "Bvisani",
+    "cashTag": "Tshelede ya tshanḓani",
+    "homeLine": "Tshivhalo tshoṱhe {{total}}, hu tshi katelwa {{cash}} ya tshelede i re tshanḓani.",
+    "homeLineBank": "Tshivhalo tshoṱhe {{total}}.",
+    "bankName": "Akhaunthu ya bannga",
+    "cashName": "Tshelede i re tshanḓani"
   },
   "obligations": {
-    "title": "Other money you owe",
-    "lead": "Stokvel, burial society, family support and informal loans. They count like bills.",
-    "none": "Nothing added yet.",
-    "add": "Add one",
-    "addTitle": "Add money you owe",
-    "editTitle": "Change money you owe",
-    "editLabel": "Change {{name}}",
-    "remove": "Remove",
-    "kind": "Kind",
+    "title": "Iṅwe tshelede ine na i koloda",
+    "lead": "Stokvel, tshitokofela tsha u vhulunga vhafu, thikhedzo ya muṱa na zwikolodo zwi si zwa tshiofisi. Zwi vhalwa sa mbadelo.",
+    "none": "A hu na zwo engedzwaho zwino.",
+    "add": "Engedzani iṅwe",
+    "addTitle": "Engedzani tshelede ine na i koloda",
+    "editTitle": "Shandukisani tshelede ine na i koloda",
+    "editLabel": "Shandukisani {{name}}",
+    "remove": "Bvisani",
+    "kind": "Tshaka",
     "kinds": {
       "stokvel": "Stokvel",
-      "burial": "Burial society",
-      "family": "Family support",
-      "loan": "Informal loan",
-      "other": "Other"
+      "burial": "Tshitokofela tsha u vhulunga vhafu",
+      "family": "Thikhedzo ya muṱa",
+      "loan": "Tshikolodo tshi si tsha tshiofisi",
+      "other": "Zwiṅwe"
     },
     "placeholder": {
-      "stokvel": "For example, Sunday stokvel",
-      "burial": "For example, burial society",
-      "family": "For example, money for my mother",
-      "loan": "For example, paying back my cousin",
-      "other": "Name"
+      "stokvel": "Tsumbo, stokvel ya Swondaha",
+      "burial": "Tsumbo, tshitokofela tsha u vhulunga vhafu",
+      "family": "Tsumbo, tshelede ya mme anga",
+      "loan": "Tsumbo, u humisela muzwala wanga",
+      "other": "Dzina"
     },
-    "name": "Name",
-    "nextLabel": "Next due",
-    "howOften": "How often",
+    "name": "Dzina",
+    "nextLabel": "I tevhelaho i fanelaho",
+    "howOften": "Kangana",
     "every": {
-      "week": "Every week",
-      "month": "Every month"
+      "week": "Vhege iṅwe na iṅwe",
+      "month": "Ṅwedzi muṅwe na muṅwe"
     },
-    "next": "next {{date}}",
-    "movableHint": "Only if it can be paid a few days late without trouble.",
-    "protected": "Never suggested to move: paying a loan or burial society late can cost you."
+    "next": "i tevhelaho {{date}}",
+    "movableHint": "Fhedzi arali i tshi nga badelwa nga murahu ha maḓuvha a si gathi hu si na thaidzo.",
+    "protected": "A i eletshedzwi u shandukiswa ḓuvha: u badela tshikolodo kana tshitokofela tsha u vhulunga vhafu nga u lenga zwi nga ni ḓura."
   },
   "setup": {
-    "title": "Set up by hand",
-    "lead": "No statement? Answer a few questions and Tengo estimates a starting history. Real entries replace it as you add them.",
-    "link": "Set up by hand",
-    "pretend": "You can use pretend numbers to try it. Nothing leaves this device.",
-    "balance": "Balance in your bank account today",
-    "arrives": "How your money usually arrives",
+    "title": "Dzudzanyani nga tshanḓa",
+    "lead": "A ni na tshitatamennde? Fhindulani mbudziso dzi si gathi nahone Tengo i anganyela ḓivhazwakale ya u thoma. Zwo dzheniswaho zwa vhukuma zwi i dzhiela vhuimo musi ni tshi zwi engedza.",
+    "link": "Dzudzanyani nga tshanḓa",
+    "pretend": "Ni nga shumisa nomboro dza u ḓiitela u zwi linga. A hu na tshine tsha bva kha tshino tshishumiswa.",
+    "balance": "Balantsi kha akhaunthu yaṋu ya bannga ṋamusi",
+    "arrives": "Nḓila ine tshelede yaṋu kanzhi ya dzhena ngayo",
     "arrival": {
-      "daily": "Most days",
-      "weekly": "Weekly",
-      "monthly": "Monthly",
-      "irregular": "Every few days"
+      "daily": "Maḓuvha manzhi",
+      "weekly": "Vhege iṅwe na iṅwe",
+      "monthly": "Ṅwedzi muṅwe na muṅwe",
+      "irregular": "Nga murahu ha maḓuvha a si gathi"
     },
     "arrivalHint": {
-      "daily": "For example cash fares or sales on most days.",
-      "weekly": "For example a weekly payout or Saturday takings.",
-      "monthly": "For example a monthly payment or grant.",
-      "irregular": "For example deposits every week or so, but not on a fixed day."
+      "daily": "Tsumbo tshelede ya u namela nga tshelede ya tshanḓani kana u rengisa maḓuvha manzhi.",
+      "weekly": "Tsumbo mbadelo ya vhege kana tshelede ya Mugivhela.",
+      "monthly": "Tsumbo mbadelo ya ṅwedzi kana mundende.",
+      "irregular": "Tsumbo tshelede i vhewaho tsini na vhege iṅwe na iṅwe, fhedzi hu si nga ḓuvha ḽo vhewaho."
     },
-    "amount": "Usual amount each time",
-    "amountDaily": "Usual amount on a day",
-    "weekday": "Usual day",
-    "dayOfMonth": "Usual day of the month",
-    "everyDays": "Roughly every how many days",
-    "dailySpend": "Usual everyday spending a day",
-    "dailySpendHint": "Food, transport, airtime and the like. Not rent or other bills.",
-    "bills": "Regular bills",
-    "billsHint": "Rent, phone contract, school fees and other bills that go off every month.",
-    "billName": "Bill",
-    "billDay": "Day",
-    "addBill": "Add a bill",
-    "removeBill": "Remove bill {{n}}",
-    "billError": "Each bill needs a name, an amount above zero and a day from 1 to 31.",
-    "fieldError": "Enter a number, for example 250.",
-    "estimatedNote": "Tengo makes a starting history from these answers, marked as estimated. Confidence stays low until real entries arrive.",
-    "submit": "See my date",
-    "estimatedTag": "Estimated"
+    "amount": "Tshelede ya misi yoṱhe tshifhinga tshiṅwe na tshiṅwe",
+    "amountDaily": "Tshelede ya misi yoṱhe nga ḓuvha",
+    "weekday": "Ḓuvha ḽa misi yoṱhe",
+    "dayOfMonth": "Ḓuvha ḽa misi yoṱhe ḽa ṅwedzi",
+    "everyDays": "Tsini na nga murahu ha maḓuvha mangana",
+    "dailySpend": "U shumisa ha misi yoṱhe ha ḓuvha ḽiṅwe na ḽiṅwe nga ḓuvha",
+    "dailySpendHint": "Zwiḽiwa, vhuendi, airtime na zwiṅwe zwi ngaho izwo. Hu si rennde kana dziṅwe mbadelo.",
+    "bills": "Mbadelo dza misi yoṱhe",
+    "billsHint": "Rennde, khonthiraka ya luṱingo, tshelede ya tshikolo na dziṅwe mbadelo dzi bvaho ṅwedzi muṅwe na muṅwe.",
+    "billName": "Mbadelo",
+    "billDay": "Ḓuvha",
+    "addBill": "Engedzani mbadelo",
+    "removeBill": "Bvisani mbadelo {{n}}",
+    "billError": "Mbadelo iṅwe na iṅwe i ṱoḓa dzina, tshelede i fhiraho ziro na ḓuvha u bva kha 1 u swika 31.",
+    "fieldError": "Dzhenisani nomboro, tsumbo 250.",
+    "estimatedNote": "Tengo i ita ḓivhazwakale ya u thoma u bva kha idzi phindulo, yo swaiwa sa yo anganyelwaho. Vhutanzi vhu dzula vhu fhasi u swikela zwo dzheniswaho zwa vhukuma zwi tshi swika.",
+    "submit": "Vhonani ḓuvha ḽanga",
+    "estimatedTag": "Zwo anganyelwa"
   },
   "safety": {
-    "quickExit": "Quick exit",
-    "showAmounts": "Show amounts",
-    "hideAmounts": "Hide amounts",
-    "exitTitle": "Notes",
-    "exitBody": "No notes yet.",
-    "exitBack": "Back"
+    "quickExit": "Bvani nga u ṱavhanya",
+    "showAmounts": "Sumbedzani tshelede",
+    "hideAmounts": "Dzumbisani tshelede",
+    "exitTitle": "Nouthu",
+    "exitBody": "A hu na nouthu zwino.",
+    "exitBack": "Murahu"
   },
   "safetyPolicy": {
-    "title": "Safety and who Tengo is for",
-    "lead": "How Tengo protects people on shared phones, people who are vulnerable, and children.",
-    "draft": "Draft policy for the pilot, to be reviewed by a lawyer and a safeguarding adviser.",
+    "title": "Tsireledzo na uri Tengo ndi ya nnyi",
+    "lead": "Nḓila ine Tengo ya tsireledza ngayo vhathu vhane vha kovhekana luṱingo, vhathu vha re khomboni, na vhana.",
+    "draft": "Mbekanyamaitele ya mutalukanyo ya ndingo, ine ya ḓo sedzuluswa nga muṱoḓa-mulayo na mueletshedzi wa tsireledzo.",
     "adults": {
-      "title": "Adults only",
-      "body": "Tengo is for adults. If you are under 18, please do not use it. Saving to an account asks you to confirm you are 18 or older. Tengo does not ask for a date of birth or an ID number, and the fictional demo people are adults."
+      "title": "Vhahulwane fhedzi",
+      "body": "Tengo ndi ya vhahulwane. Arali ni fhasi ha minwaha ya 18, ri humbela ni sa i shumise. U vhulunga kha akhaunthu zwi ni humbela u khwaṱhisa uri ni na minwaha ya 18 kana u fhira. Tengo a i humbeli ḓuvha ḽa mabebo kana nomboro ya vhuḓiḓivhiso, nahone vhathu vha u sikwa vha demo ndi vhahulwane."
     },
     "shared": {
-      "title": "Shared phones",
-      "body": "You can set a PIN so Tengo locks itself after a few minutes, turn on discreet mode so amounts stay hidden until you tap to show them, and use quick exit to leave Tengo for a plain page straight away. Discreet messages carry no amounts, dates or cover words."
+      "title": "Luṱingo lu kovhekanwaho",
+      "body": "Ni nga vhea PIN uri Tengo i ḓivale nga murahu ha mimunithi i si gathi, na vula nḓila ya tshiphiri uri tshelede i dzule yo dzumbiswa u swikela ni tshi i kwama u i vhona, nahone na shumisa u bva nga u ṱavhanya u sia Tengo ni ye kha siaṱari ḽi si na tshithu nga u ṱavhanya. Milaedza ya tshiphiri a i na tshelede, maḓuvha kana maipfi a tshiimo."
     },
     "control": {
-      "title": "If someone controls your money",
-      "body": "No one should make you show your forecast, share your PIN or hand over your money. Tengo never asks for a bank password or PIN. If someone checks your phone, quick exit and the PIN lock help, and you can delete your data at any time from Privacy."
+      "title": "Arali muthu a tshi langa tshelede yaṋu",
+      "body": "A hu na muthu ane a fanela u ni kombetshedza u sumbedza tsumbanḓila yaṋu, u kovhekana PIN yaṋu kana u ṋekedza tshelede yaṋu. Tengo a i humbeli ipfi ḽa tshiphiri ḽa bannga kana PIN. Arali muthu a tshi sedza luṱingo lwaṋu, u bva nga u ṱavhanya na u khiya nga PIN zwi a thusa, nahone ni nga phumula mafhungo aṋu tshifhinga tshiṅwe na tshiṅwe kha Tshiphiri."
     },
     "care": {
-      "title": "Care for people in a hard spot",
-      "body": "Tengo uses plain words, shows estimates and not advice, and never suggests borrowing, skipping a loan or insurance payment, or cutting stock for a business. When money looks short it points to free help from the National Credit Regulator."
+      "title": "U ṱhogomela vhathu vha re kha tshiimo tshi konḓaho",
+      "body": "Tengo i shumisa maipfi a leluwaho, i sumbedza khakhathi hu si nyeletshedzo, nahone a i eletshedzi u adzima, u fhira mbadelo ya tshikolodo kana ya inshuwarentsi, kana u fhungudza zwiṱoko zwa bindu. Musi tshelede i tshi vhonala i tshi ṱahela, i sumbedza thuso ya mahala i bvaho kha National Credit Regulator."
     },
     "never": {
-      "title": "What Tengo never does",
-      "body": "Tengo does not make lending or credit decisions, does not sell products, and does not share your data with anyone for marketing. Nothing about your forecast is used to judge you."
+      "title": "Zwine Tengo i sa zwi ite",
+      "body": "Tengo a i iti phetho dza u adzimisa kana dza tshikolodo, a i rengisi zwibveledzwa, nahone a i kovhekani mafhungo aṋu na muṅwe na muṅwe u itela u ḓadzisa. A hu na tshithu nga ha tsumbanḓila yaṋu tshine tsha shumiswa u ni haṱula."
     },
     "help": {
-      "title": "If you need help now",
-      "police": "Police emergency: 10111.",
-      "gbv": "Gender-Based Violence Command Centre: 0800 428 428, free and open all day and night.",
-      "childline": "Childline, for children and anyone worried about a child: 116, free.",
-      "note": "Numbers to be confirmed before launch. Tengo is not an emergency service."
+      "title": "Arali ni tshi ṱoḓa thuso zwino",
+      "police": "Tshiimo tsha khombo tsha mapholisa: 10111.",
+      "gbv": "Gender-Based Violence Command Centre: 0800 428 428, mahala nahone yo vulwa masiari na vhusiku.",
+      "childline": "Childline, ya vhana na muṅwe na muṅwe a vhilaelaho nga ṅwana: 116, mahala.",
+      "note": "Nomboro dzi ḓo khwaṱhiswa hu sa athu u thomiwa. Tengo a si tshumelo ya tshiimo tsha khombo."
     }
   },
   "lock": {
-    "title": "Tengo is locked",
-    "lead": "Enter your PIN to open Tengo.",
+    "title": "Tengo yo khiywa",
+    "lead": "Dzhenisani PIN yaṋu u vula Tengo.",
     "pin": "PIN",
-    "unlock": "Unlock",
-    "wrong": "That PIN is not right. Try again.",
-    "wait": "Too many tries. Wait a moment and try again.",
-    "waitFor_one": "Too many tries. Try again in {{count}} second.",
-    "waitFor_other": "Too many tries. Try again in {{count}} seconds.",
-    "forgot": "Forgot your PIN?",
-    "forgotBody": "Tengo cannot recover a PIN, because it is never stored. To start again, delete all Tengo data on this device. This cannot be undone.",
-    "erase": "Delete all data on this device"
+    "unlock": "Vulani",
+    "wrong": "Iyo PIN a yo ngo luga. Lingani hafhu.",
+    "wait": "Ndingo nnzhi vhukuma. Lindelani tshifhinganyana ni linge hafhu.",
+    "waitFor_one": "Ndingo nnzhi vhukuma. Lingani hafhu nga murahu ha sekonde ya {{count}}.",
+    "waitFor_other": "Ndingo nnzhi vhukuma. Lingani hafhu nga murahu ha sekonde dza {{count}}.",
+    "forgot": "No hangwa PIN yaṋu?",
+    "forgotBody": "Tengo a i koni u vhuedzedza PIN, ngauri a i vhulungwi. U thoma hafhu, phumulani mafhungo oṱhe a Tengo kha tshino tshishumiswa. Hezwi a zwi humiselwi murahu.",
+    "erase": "Phumulani mafhungo oṱhe kha tshino tshishumiswa"
   },
   "shared": {
-    "title": "Shared phone safety",
-    "lead": "For a phone other people can pick up.",
-    "lockTitle": "App lock",
-    "lockOff": "Off. Set a 4 to 6 digit PIN to lock Tengo when you are away.",
-    "lockOn": "On. Tengo locks after {{count}} minutes without use.",
-    "newPin": "New PIN",
-    "confirmPin": "Type the PIN again",
-    "pinHint": "4 to 6 digits. It is stored only as a scrambled code on this device and cannot be recovered.",
-    "pinMismatch": "The two PINs do not match.",
-    "pinInvalid": "Use 4 to 6 digits.",
-    "setPin": "Set PIN",
-    "changePin": "Change PIN",
-    "turnOff": "Turn off lock",
-    "currentPin": "Current PIN",
-    "wrongPin": "That PIN is not right.",
-    "autoLock": "Lock after",
-    "minutes_one": "{{count}} minute",
-    "minutes_other": "{{count}} minutes",
-    "lockNow": "Lock now",
-    "discreet": "Discreet mode",
-    "discreetHint": "Hide amounts on screen until you tap Show amounts, and send messages with no amounts or dates.",
-    "quickExitHint": "Quick exit is always at the top of the screen. It hides everything and opens a plain page.",
-    "policy": "Read the safety policy"
+    "title": "Tsireledzo ya luṱingo lu kovhekanwaho",
+    "lead": "Kha luṱingo lune vhaṅwe vhathu vha nga lu dzhia.",
+    "lockTitle": "U khiya app",
+    "lockOff": "Yo valwa. Vhea PIN ya nomboro dza 4 u swika 6 u khiya Tengo musi ni si hone.",
+    "lockOn": "Yo vulwa. Tengo i a ḓivala nga murahu ha mimunithi ya {{count}} i sa shumiswi.",
+    "newPin": "PIN ntswa",
+    "confirmPin": "Thaipani PIN hafhu",
+    "pinHint": "Nomboro dza 4 u swika 6. I vhulungwa fhedzi sa khoudu yo ṱanganyiswaho kha tshino tshishumiswa nahone a i vhuedzedzwi.",
+    "pinMismatch": "PIN mbili a dzi fani.",
+    "pinInvalid": "Shumisani nomboro dza 4 u swika 6.",
+    "setPin": "Vheani PIN",
+    "changePin": "Shandukisani PIN",
+    "turnOff": "Dzimani u khiya",
+    "currentPin": "PIN ya zwino",
+    "wrongPin": "Iyo PIN a yo ngo luga.",
+    "autoLock": "Khiyani nga murahu ha",
+    "minutes_one": "Munithi wa {{count}}",
+    "minutes_other": "Mimunithi ya {{count}}",
+    "lockNow": "Khiyani zwino",
+    "discreet": "Nḓila ya tshiphiri",
+    "discreetHint": "Dzumbisani tshelede kha skirini u swikela ni tshi kwama Sumbedzani tshelede, nahone ni rumele milaedza i si na tshelede kana maḓuvha.",
+    "quickExitHint": "U bva nga u ṱavhanya hu dzula nṱha kha skirini. Hu dzumbisa zwoṱhe nahone hu vula siaṱari ḽi si na tshithu.",
+    "policy": "Vhalani mbekanyamaitele ya tsireledzo"
   },
   "diag": {
-    "title": "Diagnostics",
-    "lead": "For help with a problem. No personal data is kept here, and nothing is sent.",
-    "show": "Show",
-    "hide": "Hide",
-    "build": "Build",
-    "schema": "Data version",
-    "storage": "Storage used",
-    "offline": "Offline copy",
-    "offlineNo": "Not installed yet",
-    "language": "Language",
-    "errors": "Errors noted",
-    "copy": "Copy",
-    "copied": "Copied",
-    "clear": "Clear errors",
-    "cleared": "Errors cleared"
+    "title": "U sedza thaidzo",
+    "lead": "U itela thuso nga thaidzo. A hu na mafhungo a muthu a vhulungwaho fhano, nahone a hu na tshine tsha rumelwa.",
+    "show": "Sumbedzani",
+    "hide": "Dzumbisani",
+    "build": "Vhufhaṱo",
+    "schema": "Vesheni ya mafhungo",
+    "storage": "Vhuvhulungelo ho shumiswaho",
+    "offline": "Khophi i si kha inthanethe",
+    "offlineNo": "A i athu u dzheniswa",
+    "language": "Luambo",
+    "errors": "Khakhathi dzo ṅwaliwaho",
+    "copy": "Kopani",
+    "copied": "Zwo kopiwa",
+    "clear": "Phumulani khakhathi",
+    "cleared": "Khakhathi dzo phumulwa"
   },
   "own": {
-    "you": "You",
-    "chip": "Your profile | {{mode}}",
+    "you": "Inwi",
+    "chip": "Phurofaiḽi yaṋu | {{mode}}",
     "storage": {
-      "device": "This device only",
-      "account": "Saved to your account"
+      "device": "Kha tshino tshishumiswa fhedzi",
+      "account": "Yo vhulungwa kha akhaunthu yaṋu"
     },
-    "cardTitle": "Use your own money",
-    "cardPromise": "Your numbers, your date. Nothing leaves your device unless you save an account.",
-    "cardBody": "Import a statement, answer a few questions, or try it with sample numbers first. No sign up needed.",
-    "start": "Start",
-    "continue": "Continue",
-    "deletedTitle": "Your profile was deleted"
+    "cardTitle": "Shumisani tshelede yaṋu",
+    "cardPromise": "Nomboro dzaṋu, ḓuvha ḽaṋu. A hu na tshine tsha bva kha tshishumiswa tshaṋu nga nnḓa ha musi ni tshi vhulunga akhaunthu.",
+    "cardBody": "Dzhenisani tshitatamennde, fhindulani mbudziso dzi si gathi, kana ni linge u thoma nga nomboro dza tsumbo. A hu ṱoḓei u ṅwalisa.",
+    "start": "Thomani",
+    "continue": "Bvelani phanḓa",
+    "deletedTitle": "Phurofaiḽi yaṋu yo phumulwa"
   },
   "welcome": {
-    "title": "Use your own money",
-    "step": "Step {{n}} of {{total}}",
-    "next": "Next",
-    "back": "Back",
-    "nickname": "Name or nickname (optional)",
-    "nicknameHint": "Only used to greet you. Leave it empty if you prefer.",
+    "title": "Shumisani tshelede yaṋu",
+    "step": "Tshiṱepe {{n}} kha {{total}}",
+    "next": "Zwi tevhelaho",
+    "back": "Murahu",
+    "nickname": "Dzina kana dzina ḽa u ṱamba (u ḓinangela)",
+    "nicknameHint": "Ḽi shumiswa fhedzi u ni lumelisa. Ḽi tuweleni ḽi si na tshithu arali ni tshi funa.",
     "s1": {
-      "title": "What Tengo asks for, and why",
-      "lead": "Tengo works out how long your money lasts and when your next money usually lands. It only needs a little to do that.",
+      "title": "Zwine Tengo ya zwi humbela, na uri ndi ngani",
+      "lead": "Tengo i vhalela uri tshelede yaṋu i fhedza tshifhinga tshingafhani na uri tshelede yaṋu i tevhelaho kanzhi i dzhena lini. I ṱoḓa zwiṱuku fhedzi u ita izwo.",
       "money": {
-        "title": "Your money in and out",
-        "body": "Dates, amounts and short descriptions, and your balance. From a statement, from a few answers, or from sample numbers."
+        "title": "Tshelede yaṋu i dzhenaho na i bvaho",
+        "body": "Maḓuvha, tshelede na ṱhaluso pfufhi, na balantsi yaṋu. U bva kha tshitatamennde, kha phindulo dzi si gathi, kana kha nomboro dza tsumbo."
       },
       "bills": {
-        "title": "Regular bills and money you owe",
-        "body": "Things like rent, a phone contract or a stokvel, so Tengo can keep money back for them."
+        "title": "Mbadelo dza misi yoṱhe na tshelede ine na i koloda",
+        "body": "Zwithu u fana na rennde, khonthiraka ya luṱingo kana stokvel, uri Tengo i kone u dzi vhulungela tshelede."
       },
       "never": {
-        "title": "Never",
-        "body": "Tengo never asks for an ID number, a phone number, a bank login or a PIN."
+        "title": "Na luthihi",
+        "body": "Tengo a i humbeli nomboro ya vhuḓiḓivhiso, nomboro ya luṱingo, u dzhena kha bannga kana PIN."
       },
       "where": {
-        "title": "Where it stays",
-        "body": "On this device only, unless you later choose to save it to an account. You can delete it any time."
+        "title": "Hune zwa dzula hone",
+        "body": "Kha tshino tshishumiswa fhedzi, nga nnḓa ha musi nga murahu ni tshi nanga u zwi vhulunga kha akhaunthu. Ni nga zwi phumula tshifhinga tshiṅwe na tshiṅwe."
       }
     },
     "s2": {
-      "title": "Your choices",
-      "lead": "Only the forecast is needed. Everything else is off until you turn it on.",
-      "core": "Needed to work out your date. It runs on this device. Withdraw any time and it pauses.",
-      "notice": "The full privacy notice says what is kept, where, for how long, and how to complain.",
-      "noticeLink": "Read the privacy notice"
+      "title": "Khetho dzaṋu",
+      "lead": "Ndi tsumbanḓila fhedzi i ṱoḓeaho. Zwiṅwe zwoṱhe zwo valwa u swikela ni tshi zwi vula.",
+      "core": "Zwi a ṱoḓea u vhalela ḓuvha ḽaṋu. Zwi shuma kha tshino tshishumiswa. Humisani thendelo tshifhinga tshiṅwe na tshiṅwe nahone zwi a ima.",
+      "notice": "Ndivhadzo yo fhelelaho ya tshiphiri i amba zwine zwa vhulungwa, hani, tshifhinga tshingafhani, na nḓila ya u vhilaela.",
+      "noticeLink": "Vhalani ndivhadzo ya tshiphiri"
     },
     "s3": {
-      "title": "Add your money",
-      "lead": "Choose one way. You can change or replace it later on Money.",
-      "import": "Import a statement",
-      "importBody": "A CSV file from your bank. It is read on this device.",
-      "manual": "Answer a few questions",
-      "manualBody": "For when you have no statement. Tengo estimates a starting history from your answers.",
-      "sample": "Try with sample numbers",
-      "sampleBody": "Explore without typing anything. The sample is labelled and you can change every number."
+      "title": "Engedzani tshelede yaṋu",
+      "lead": "Nangani nḓila nthihi. Ni nga i shandukisa kana na i dzhiela vhuimo nga murahu kha Tshelede.",
+      "import": "Dzhenisani tshitatamennde",
+      "importBody": "Faela ya CSV i bvaho kha bannga yaṋu. I vhalwa kha tshino tshishumiswa.",
+      "manual": "Fhindulani mbudziso dzi si gathi",
+      "manualBody": "Musi ni si na tshitatamennde. Tengo i anganyela ḓivhazwakale ya u thoma u bva kha phindulo dzaṋu.",
+      "sample": "Lingani nga nomboro dza tsumbo",
+      "sampleBody": "Ṱolisisani ni sa thaipi tshithu. Tsumbo yo swaiwa nahone ni nga shandukisa nomboro iṅwe na iṅwe."
     },
     "s4": {
-      "eyebrow": "Your first forecast",
-      "lead": "This is an estimate from the numbers you gave, not advice. It gets better as you add real entries.",
-      "sample": "These are sample numbers, not yours. Change them on Money, or replace them with a statement or your own answers.",
-      "open": "Open Home"
+      "eyebrow": "Tsumbanḓila yaṋu ya u thoma",
+      "lead": "Iyi ndi khakhathi i bvaho kha nomboro dze na dzi ṋea, a si nyeletshedzo. I khwinifhala musi ni tshi engedza zwo dzheniswaho zwa vhukuma.",
+      "sample": "Idzi ndi nomboro dza tsumbo, hu si dzaṋu. Dzi shandukiseni kha Tshelede, kana ni dzi dzhiele vhuimo nga tshitatamennde kana nga phindulo dzaṋu.",
+      "open": "Vulani Hayani"
     },
-    "signIn": "Already saved to an account? Sign in"
+    "signIn": "No no vhulunga kha akhaunthu? Dzhenani"
   },
   "legalDoc": {
-    "version": "Version {{version}}",
-    "draft": "Draft for the pilot, to be reviewed by a lawyer before launch. Tengo is not a bank and does not give financial advice. This notice does not claim compliance with any law or certification.",
-    "placeholderWarning": "The responsible party and Information Officer have not been named yet. They must be filled in before any real launch.",
-    "party": "Responsible party",
-    "address": "Address",
-    "officer": "Information Officer",
-    "contact": "Contact",
+    "version": "Vesheni {{version}}",
+    "draft": "Mutalukanyo wa ndingo, une wa ḓo sedzuluswa nga muṱoḓa-mulayo hu sa athu u thomiwa. Tengo a si bannga nahone a i ṋei nyeletshedzo ya masheleni. Ino ndivhadzo a i ambi uri i tevhedza mulayo muṅwe na muṅwe kana ṱhanziela.",
+    "placeholderWarning": "Dzangano ḽi re na vhuḓifhinduleli na Muofisiri wa Mafhungo a vha athu u bulwa. Vha fanela u ḓadzwa hu sa athu u thomiwa ha vhukuma.",
+    "party": "Dzangano ḽi re na vhuḓifhinduleli",
+    "address": "Aḓirese",
+    "officer": "Muofisiri wa Mafhungo",
+    "contact": "U kwama",
     "notice": {
-      "title": "Privacy notice",
+      "title": "Ndivhadzo ya tshiphiri",
       "what": {
-        "title": "What Tengo keeps",
-        "body": "The money history you add (dates, amounts, short descriptions and categories), your balances, regular bills and money you owe, your choices and settings, an optional nickname, and a log of what you did in the app. If you save an account, your email address too. Tengo does not ask for or keep ID numbers, phone numbers, bank logins or PINs. Long numbers in imported descriptions are masked."
+        "title": "Zwine Tengo ya zwi vhulunga",
+        "body": "Ḓivhazwakale ya tshelede ine na i engedza (maḓuvha, tshelede, ṱhaluso pfufhi na zwigwada), balantsi dzaṋu, mbadelo dza misi yoṱhe na tshelede ine na i koloda, khetho dzaṋu na nyito, dzina ḽa u ṱamba ḽa u ḓinangela, na rekhodo ya zwe na zwi ita kha app. Arali na vhulunga akhaunthu, na aḓirese yaṋu ya imeiḽi. Tengo a i humbeli kana u vhulunga nomboro dza vhuḓiḓivhiso, nomboro dza luṱingo, u dzhena kha bannga kana PIN. Nomboro ndapfu kha ṱhaluso dzo dzheniswaho dzi a dzumbiswa."
       },
       "why": {
-        "title": "Why",
-        "body": "Only to work out how long your money lasts, when your next money usually lands, and the estimates on screen. Not for marketing, credit scoring, lending decisions or selling to anyone. Giving the information is voluntary; without it there is no forecast."
+        "title": "Ndi ngani",
+        "body": "Fhedzi u vhalela uri tshelede yaṋu i fhedza tshifhinga tshingafhani, tshelede yaṋu i tevhelaho kanzhi i dzhena lini, na khakhathi dzi re kha skirini. Hu si u ḓadzisa, u ela tshikolodo, phetho dza u adzimisa kana u rengisela muṅwe na muṅwe. U ṋea mafhungo ndi u ḓiṋekedza; hu si na one a hu na tsumbanḓila."
       },
       "where": {
-        "title": "Where it is processed",
-        "body": "As a guest, everything stays in this browser on this device and the forecast is worked out on the device. Nothing is sent to Tengo.\nIf you choose to save an account, your data is stored with the database provider named in the setup (Supabase), in the region the operator chooses, and sent over an encrypted connection. The forecast is still worked out on your device. Any storage outside South Africa needs adequate protection under POPIA section 72 and is named here before launch."
+        "title": "Hune zwa shumiwa hone",
+        "body": "Sa muenda, zwoṱhe zwi dzula kha iyi burausa kha tshino tshishumiswa nahone tsumbanḓila i vhalelwa kha tshishumiswa. A hu na tshine tsha rumelwa kha Tengo.\nArali na nanga u vhulunga akhaunthu, mafhungo aṋu a vhulungwa nga mupfumedzi wa vhuvhulungelo ha mafhungo o bulwaho kha u dzudzanya (Supabase), kha dzingu ḽine mushumisi a ḽi nanga, nahone a rumelwa nga u ṱumana ho tsireledzwaho. Tsumbanḓila i kha ḓi vhalelwa kha tshishumiswa tshaṋu. Vhuvhulungelo vhuṅwe na vhuṅwe nnḓa ha Afurika Tshipembe vhu ṱoḓa tsireledzo yo linganaho fhasi ha khethekanyo ya 72 ya POPIA nahone vhu ḓo bulwa fhano hu sa athu u thomiwa."
       },
       "who": {
-        "title": "Who can see it",
-        "body": "As a guest: anyone who uses this browser on this device. Use the PIN lock on a shared phone. With an account: you, after signing in. Each person's rows are locked to them in the database. No staff access to your rows is set up. If support ever needs it, this notice will first say how it is limited and recorded."
+        "title": "Ndi nnyi ane a nga zwi vhona",
+        "body": "Sa muenda: muṅwe na muṅwe ane a shumisa iyi burausa kha tshino tshishumiswa. Shumisani u khiya nga PIN kha luṱingo lu kovhekanwaho. Nga akhaunthu: inwi, nga murahu ha u dzhena. Mitalo ya muthu muṅwe na muṅwe yo khiyelwa kha ene kha vhuvhulungelo ha mafhungo. A hu na u swikelela ha vhashumi kha mitalo yaṋu ho dzudzanywaho. Arali thikhedzo ya ḓo hu ṱoḓa, ino ndivhadzo i ḓo thoma ya amba nḓila ine ha pimiwa na u ṅwalwa ngayo."
       },
       "keep": {
-        "title": "How long it is kept",
-        "body": "Transactions older than 12 months are removed from this device when Tengo opens. On an account, a server job to remove them is written but not yet switched on. You can delete everything at any time; on an account, deletion removes your rows and your sign-in, and you get a receipt with no personal data. Backups kept by the hosting provider are deleted on their own schedule, stated here before launch."
+        "title": "Zwi vhulungwa tshifhinga tshingafhani",
+        "body": "Thengiselano dzi fhiraho ṅwedzi ya 12 dzi bviswa kha tshino tshishumiswa musi Tengo i tshi vulwa. Kha akhaunthu, mushumo wa seva wa u dzi bvisa wo ṅwalwa fhedzi a u athu u vulwa. Ni nga phumula zwoṱhe tshifhinga tshiṅwe na tshiṅwe; kha akhaunthu, u phumula zwi bvisa mitalo yaṋu na u dzhena haṋu, nahone ni wana rasiṱi i si na mafhungo a muthu. Khophi dza vhuvhulungelo dzine dza vhulungwa nga mupfumedzi wa u fara dzi phumulwa u ya nga mbekanyo yawe, ine ya ḓo bulwa fhano hu sa athu u thomiwa."
       },
       "rights": {
-        "title": "Your rights",
-        "body": "You can see your data and export it as JSON or CSV, correct any entry, ask a person to check a result, withdraw any choice, and delete everything. You can complain to the responsible party above, and to the Information Regulator of South Africa."
+        "title": "Pfanelo dzaṋu",
+        "body": "Ni nga vhona mafhungo aṋu na a bvisa sa JSON kana CSV, na khakhulula tsho dzheniswaho tshiṅwe na tshiṅwe, na humbela muthu u sedza mvelelo, na humisa khetho iṅwe na iṅwe, nahone na phumula zwoṱhe. Ni nga vhilaela kha dzangano ḽi re na vhuḓifhinduleli ḽo bulwaho afho nṱha, na kha Mulanguli wa Mafhungo wa Afurika Tshipembe."
       },
       "not": {
-        "title": "What Tengo is not",
-        "body": "Tengo is a pilot. It is not a bank, not a credit provider and not a financial adviser. Its figures are estimates from your own history, and it makes no decisions about you."
+        "title": "Zwine Tengo i si zwone",
+        "body": "Tengo ndi ndingo. A si bannga, a si mupfumedzi wa tshikolodo nahone a si mueletshedzi wa masheleni. Nomboro dzayo ndi khakhathi dzi bvaho kha ḓivhazwakale yaṋu, nahone a i iti phetho nga ha inwi."
       },
       "changes": {
-        "title": "Changes",
-        "body": "If this notice changes, the version above changes and Tengo asks you to look at it again before you continue."
+        "title": "Tshanduko",
+        "body": "Arali ino ndivhadzo i tshi shanduka, vesheni ye ya bulwa afho nṱha i a shanduka nahone Tengo i ni humbela u i sedza hafhu ni sa athu u bvela phanḓa."
       }
     },
     "terms": {
-      "title": "Terms of use",
+      "title": "Zwiimo zwa u shumisa",
       "use": {
-        "title": "Using Tengo",
-        "body": "Tengo is free to use during the pilot. It is for adults, 18 or older. Use it only with your own money or with pretend numbers."
+        "title": "U shumisa Tengo",
+        "body": "Tengo ndi ya mahala u i shumisa nga tshifhinga tsha ndingo. Ndi ya vhahulwane, vha minwaha ya 18 kana u fhira. I shumiseni fhedzi nga tshelede yaṋu kana nga nomboro dza u ḓiitela."
       },
       "estimate": {
-        "title": "Estimates, not promises",
-        "body": "Every date, budget and suggestion is an estimate from past patterns. Money can arrive late or not at all, and bills can change. Check before you make a decision that matters."
+        "title": "Khakhathi, hu si fulufhedziso",
+        "body": "Ḓuvha ḽiṅwe na ḽiṅwe, mugaganyagwama na nyeletshedzo ndi khakhathi i bvaho kha zwiitwa zwa kale. Tshelede i nga dzhena nga u lenga kana ya sa dzhene na luthihi, nahone mbadelo dzi nga shanduka. Sedzani ni sa athu u ita phetho ya ndeme."
       },
       "liability": {
-        "title": "Your decisions",
-        "body": "Tengo does not give financial advice and is not responsible for decisions you make using it. Nothing here limits rights you have under South African law."
+        "title": "Phetho dzaṋu",
+        "body": "Tengo a i ṋei nyeletshedzo ya masheleni nahone a i na vhuḓifhinduleli nga phetho dzine na dzi ita ni tshi i shumisa. A hu na tshithu fhano tshine tsha pimela pfanelo dzine na vha nadzo fhasi ha mulayo wa Afurika Tshipembe."
       },
       "accounts": {
-        "title": "Accounts",
-        "body": "Accounts are optional. Keep access to your email address, because sign-in is by a one-time code. You can sign out everywhere and delete your account at any time."
+        "title": "Akhaunthu",
+        "body": "Akhaunthu ndi dza u ḓinangela. Vhulungani u swikelela aḓirese yaṋu ya imeiḽi, ngauri u dzhena hu itwa nga khoudu ya tshifhinga tshithihi. Ni nga bva huṅwe na huṅwe nahone na phumula akhaunthu yaṋu tshifhinga tshiṅwe na tshiṅwe."
       },
       "ending": {
-        "title": "Ending the pilot",
-        "body": "If the pilot ends, you will be told in the app and given time to export your data before it is deleted."
+        "title": "U fhela ha ndingo",
+        "body": "Arali ndingo i tshi fhela, ni ḓo vhudzwa kha app nahone na ṋewa tshifhinga tsha u bvisa mafhungo aṋu a sa athu u phumulwa."
       },
       "complaints": {
-        "title": "Complaints",
-        "body": "Contact the responsible party above. For privacy complaints you can also go to the Information Regulator of South Africa."
+        "title": "Mbilaelo",
+        "body": "Kwamani dzangano ḽi re na vhuḓifhinduleli ḽo bulwaho afho nṱha. Kha mbilaelo dza tshiphiri ni nga dovha na ya kha Mulanguli wa Mafhungo wa Afurika Tshipembe."
       }
     }
   },
   "account": {
-    "title": "Account",
-    "unavailable": "Accounts are not set up on this copy of Tengo. Your profile stays on this device.",
-    "lead": "Save to an account to keep this on any device. Optional: Tengo works fully without one.",
-    "leadSaved": "Your profile is saved to your account. Your forecast is still worked out on this device.",
-    "saveTitle": "Save to an account",
-    "manage": "Manage your account",
+    "title": "Akhaunthu",
+    "unavailable": "Akhaunthu a dzo ngo dzudzanywa kha iyi khophi ya Tengo. Phurofaiḽi yaṋu i dzula kha tshino tshishumiswa.",
+    "lead": "Vhulungani kha akhaunthu u i vhulunga kha tshishumiswa tshiṅwe na tshiṅwe. Ndi u ḓinangela: Tengo i shuma zwoṱhe i si nayo.",
+    "leadSaved": "Phurofaiḽi yaṋu yo vhulungwa kha akhaunthu yaṋu. Tsumbanḓila yaṋu i kha ḓi vhalelwa kha tshino tshishumiswa.",
+    "saveTitle": "Vhulungani kha akhaunthu",
+    "manage": "Langani akhaunthu yaṋu",
     "facts": {
-      "passwordless": "No password: you sign in with a one-time code sent to your email.",
-      "device": "Your forecast is still worked out on your device. The account only stores your data.",
-      "where": "Stored with the database provider named in the privacy notice. Only you can read your rows.",
-      "leave": "Sign out everywhere, export or delete everything at any time."
+      "passwordless": "A hu na ipfi ḽa tshiphiri: ni dzhena nga khoudu ya tshifhinga tshithihi i rumelwaho kha imeiḽi yaṋu.",
+      "device": "Tsumbanḓila yaṋu i kha ḓi vhalelwa kha tshishumiswa tshaṋu. Akhaunthu i vhulunga mafhungo aṋu fhedzi.",
+      "where": "Zwo vhulungwa nga mupfumedzi wa vhuvhulungelo ha mafhungo o bulwaho kha ndivhadzo ya tshiphiri. Ndi inwi fhedzi ane a nga vhala mitalo yaṋu.",
+      "leave": "Bvani huṅwe na huṅwe, bvisani kana ni phumule zwoṱhe tshifhinga tshiṅwe na tshiṅwe."
     },
-    "email": "Email address",
-    "adult": "I am 18 or older.",
-    "adultHint": "Tengo is for adults. It does not ask for or keep a date of birth.",
-    "sendCode": "Send me a code",
-    "codeSent": "Code sent",
-    "codeTitle": "Enter your code",
-    "codeLead": "We sent a one-time code to {{email}}. It works once and expires soon.",
-    "code": "One-time code",
-    "verify": "Sign in",
-    "resend": "Send a new code",
-    "resendIn_one": "Send a new code in {{count}} second",
-    "resendIn_other": "Send a new code in {{count}} seconds",
-    "uploadTitle": "Save what is on this device?",
-    "uploadLead": "Your account is empty. Save your profile from this device to it. It is then removed from this device and kept in your account.",
-    "emptyLead": "Your account is new and empty. Add your money to get your first forecast.",
-    "conflictTitle": "This account already has data",
-    "conflictLead": "This device also has a profile. Usually you keep the account's data. You can replace it with this device's data instead.",
-    "useLead": "Your account's data will be used on this device.",
+    "email": "Aḓirese ya imeiḽi",
+    "adult": "Ndi na minwaha ya 18 kana u fhira.",
+    "adultHint": "Tengo ndi ya vhahulwane. A i humbeli kana u vhulunga ḓuvha ḽa mabebo.",
+    "sendCode": "Nthumeleni khoudu",
+    "codeSent": "Khoudu yo rumelwa",
+    "codeTitle": "Dzhenisani khoudu yaṋu",
+    "codeLead": "Ro rumela khoudu ya tshifhinga tshithihi kha {{email}}. I shuma luthihi nahone i fhela hu si kale.",
+    "code": "Khoudu ya tshifhinga tshithihi",
+    "verify": "Dzhenani",
+    "resend": "Rumelani khoudu ntswa",
+    "resendIn_one": "Rumelani khoudu ntswa nga murahu ha sekonde ya {{count}}",
+    "resendIn_other": "Rumelani khoudu ntswa nga murahu ha sekonde dza {{count}}",
+    "uploadTitle": "Vhulungani zwi re kha tshino tshishumiswa?",
+    "uploadLead": "Akhaunthu yaṋu a i na tshithu. Vhulungani phurofaiḽi yaṋu u bva kha tshino tshishumiswa khayo. Nga murahu i bviswa kha tshino tshishumiswa nahone ya vhulungwa kha akhaunthu yaṋu.",
+    "emptyLead": "Akhaunthu yaṋu ndi ntswa nahone a i na tshithu. Engedzani tshelede yaṋu u wana tsumbanḓila yaṋu ya u thoma.",
+    "conflictTitle": "Iyi akhaunthu i na mafhungo nga u ralo",
+    "conflictLead": "Tshino tshishumiswa na tshone tshi na phurofaiḽi. Kanzhi ni vhulunga mafhungo a akhaunthu. Ni nga a dzhiela vhuimo nga mafhungo a tshino tshishumiswa nṱhani ha izwo.",
+    "useLead": "Mafhungo a akhaunthu yaṋu a ḓo shumiswa kha tshino tshishumiswa.",
     "choices": {
-      "upload": "Save this device's profile",
-      "startEmpty": "Start with an empty account",
-      "useAccount": "Use the account's data",
-      "replaceAccount": "Replace it with this device's data"
+      "upload": "Vhulungani phurofaiḽi ya tshino tshishumiswa",
+      "startEmpty": "Thomani nga akhaunthu i si na tshithu",
+      "useAccount": "Shumisani mafhungo a akhaunthu",
+      "replaceAccount": "A dzhieleni vhuimo nga mafhungo a tshino tshishumiswa"
     },
-    "replaceWarn": "Replacing removes what the account holds now and cannot be undone.",
-    "saved": "Saved to your account",
-    "signedInAs": "Signed in as {{email}}",
-    "savedFacts": "Export everything the server holds at any time, as JSON or CSV.",
-    "signOut": "Sign out",
-    "signOutEverywhere": "Sign out everywhere",
-    "deleteTitle": "Delete my account",
-    "deleteBody": "Removes every row the server holds about you and your sign-in, and gives you a receipt with no personal data. Backups kept by the hosting provider expire on its schedule, stated in the privacy notice.",
-    "deleteWarn": "This cannot be undone. Export first if you want a copy.",
-    "deleteConfirm": "Yes, delete my account",
+    "replaceWarn": "U dzhiela vhuimo zwi bvisa zwine akhaunthu ya vha nazwo zwino nahone a zwi humiselwi murahu.",
+    "saved": "Yo vhulungwa kha akhaunthu yaṋu",
+    "signedInAs": "No dzhena sa {{email}}",
+    "savedFacts": "Bvisani zwoṱhe zwine seva ya zwi fara tshifhinga tshiṅwe na tshiṅwe, sa JSON kana CSV.",
+    "signOut": "Bvani",
+    "signOutEverywhere": "Bvani huṅwe na huṅwe",
+    "deleteTitle": "Phumulani akhaunthu yanga",
+    "deleteBody": "I bvisa mitalo yoṱhe ine seva ya i fara nga ha inwi na u dzhena haṋu, nahone ya ni ṋea rasiṱi i si na mafhungo a muthu. Khophi dza vhuvhulungelo dzine dza vhulungwa nga mupfumedzi wa u fara dzi fhela u ya nga mbekanyo yawe, yo bulwaho kha ndivhadzo ya tshiphiri.",
+    "deleteWarn": "Hezwi a zwi humiselwi murahu. Bvisani u thoma arali ni tshi ṱoḓa khophi.",
+    "deleteConfirm": "Ee, phumulani akhaunthu yanga",
     "errors": {
-      "rate_limited": "A code was sent a moment ago. Wait a minute, then try again.",
-      "invalid_code": "That code did not work. Check it, or send a new one.",
-      "generic": "Something went wrong. Check your connection and try again."
+      "rate_limited": "Khoudu yo rumelwa tshifhinganyana tsho fhiraho. Lindelani munithi, ni linge hafhu.",
+      "invalid_code": "Iyo khoudu a yo ngo shuma. I sedzeni, kana ni rumele ntswa.",
+      "generic": "Hu na zwi songo tshimbila zwavhuḓi. Sedzani u ṱumana haṋu ni linge hafhu."
     }
   }
 }

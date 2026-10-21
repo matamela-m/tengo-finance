@@ -16,8 +16,8 @@ export function StateChip({ state, size = 'md', className = '' }: { state: Statu
   const { t } = useTranslation();
   const sizing = size === 'lg' ? 'min-h-[36px] px-3.5 text-[15px] gap-1.5' : size === 'sm' ? 'min-h-[24px] px-2 text-xs gap-1' : 'min-h-[30px] px-3 text-sm gap-1.5';
   return (
-    <span className={`inline-flex items-center whitespace-nowrap rounded-full border font-semibold ${STYLES[state]} ${sizing} ${className}`}>
-      <Icon name={STATE_ICON[state]} size={size === 'lg' ? 17 : size === 'sm' ? 13 : 15} strokeWidth={2.2} />
+    <span className={`inline-flex max-w-full items-center rounded-full border py-0.5 font-semibold leading-tight ${STYLES[state]} ${sizing} ${className}`}>
+      <Icon name={STATE_ICON[state]} size={size === 'lg' ? 17 : size === 'sm' ? 13 : 15} strokeWidth={2.2} className="shrink-0" />
       {t(`state.${state}`)}
     </span>
   );

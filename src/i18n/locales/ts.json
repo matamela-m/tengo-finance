@@ -1,1380 +1,1380 @@
 {
   "common": {
     "demoChip": "Demo | Fictional Data",
-    "skipToContent": "Skip to content",
-    "loading": "Loading",
-    "saving": "Saving",
-    "close": "Close",
-    "cancel": "Cancel",
-    "save": "Save",
-    "today": "Today",
-    "rangeDates": "{{from}} to {{to}}",
-    "rangeAmounts": "{{low}} to {{high}}",
-    "on": "On",
-    "off": "Off",
-    "back": "Back"
+    "skipToContent": "Tlulela eka leswi nga endzeni",
+    "loading": "Ya layicha",
+    "saving": "Ya hlayisa",
+    "close": "Pfala",
+    "cancel": "Khansela",
+    "save": "Hlayisa",
+    "today": "Namuntlha",
+    "rangeDates": "{{from}} ku ya eka {{to}}",
+    "rangeAmounts": "{{low}} ku ya eka {{high}}",
+    "on": "Yi pfulekile",
+    "off": "Yi pfariwile",
+    "back": "Endzhaku"
   },
   "nav": {
-    "label": "Main",
-    "home": "Home",
-    "plan": "Plan",
-    "money": "Money",
-    "inbox": "Inbox",
-    "privacy": "Privacy",
-    "me": "Me",
-    "collapse": "Collapse sidebar",
-    "expand": "Expand sidebar"
+    "label": "Nkulu",
+    "home": "Ekaya",
+    "plan": "Kunguhata",
+    "money": "Mali",
+    "inbox": "Marungula",
+    "privacy": "Xihundla",
+    "me": "Mina",
+    "collapse": "Songa bara ya le tlhelo",
+    "expand": "Andlala bara ya le tlhelo"
   },
   "state": {
-    "enough": "Enough",
-    "tight": "Tight",
-    "short": "Short",
-    "unclear": "Not enough to tell"
+    "enough": "Ya ringana",
+    "tight": "Ya ringanyana",
+    "short": "Ya kayivela",
+    "unclear": "A swi ringananga ku vula"
   },
   "confidence": {
-    "high": "High",
-    "medium": "Medium",
-    "low": "Low"
+    "high": "Ehenhla",
+    "medium": "Exikarhi",
+    "low": "Ehansi"
   },
   "category": {
-    "income": "Income",
-    "spend": "Spend",
-    "bill": "Bill"
+    "income": "Mali leyi nghenaka",
+    "spend": "Ku tirhisa",
+    "bill": "Hakelo"
   },
   "language": {
-    "label": "Language",
-    "pending": "Translation on the way. This language shows English for now.",
-    "machine": "Machine translated with Google Translate. A first-language speaker still needs to check it.",
-    "reviewed": "Translated and checked by a first-language speaker.",
-    "claim": "Built for 11 languages. English today.",
-    "needsTranslator": "Needs a first-language translator. Machine translation does not support Tshivenda, so it shows English for now.",
+    "label": "Ririmi",
+    "pending": "Vuhundzuluxeri byi le ndleleni. Ririmi leri ri kombisa Xinghezi sweswi.",
+    "machine": "Xivumbeko xa vuhundzuluxeri lexi endliweke hi AI. Muvulavuri wa ririmi leri tanihi ririmi ra xiviri a ha fanele ku xi kambela.",
+    "reviewed": "Ri hundzuluxeriwile naswona ri kambeliwile hi muvulavuri wa ririmi leri tanihi ririmi ra xiviri.",
+    "claim": "Tindzimi ta 11. Xinghezi na swivumbeko swa 10 swa AI, leswi ha ri ku kambeliwa.",
+    "needsTranslator": "Ku laveka muhundzuluxeri loyi a vulavulaka ririmi leri tanihi ririmi ra xiviri. Ri kombisa Xinghezi sweswi.",
     "short": {
-      "pending": "English for now",
-      "needsTranslator": "English for now",
-      "machine": "machine translated"
+      "pending": "Xinghezi sweswi",
+      "needsTranslator": "Xinghezi sweswi",
+      "machine": "Xivumbeko xa AI"
     },
     "chip": {
-      "source": "English",
-      "pending": "English for now",
-      "needsTranslator": "Needs a translator",
-      "machine": "Machine translated",
-      "reviewed": "Human reviewed"
+      "source": "Xinghezi",
+      "pending": "Xinghezi sweswi",
+      "needsTranslator": "Ku laveka muhundzuluxeri",
+      "machine": "Xivumbeko xa AI",
+      "reviewed": "Swi kambeliwile hi munhu"
     }
   },
   "landing": {
-    "title": "Money you can plan around",
-    "pitch": "A balance tells you what you have. Tengo tells you until when.",
-    "cta": "Explore Tengo",
-    "ctaNote": "No sign up. Fictional data only.",
-    "previewLabel": "Live preview of Tengo",
-    "previewWho": "Thabo, e-hailing driver. Fictional.",
-    "previewCaption": "Preview of Tengo for a fictional driver: {{label}} {{date}}, cover {{state}}, daily budget {{amount}}.",
-    "howTitle": "Three steps to a date you can plan around.",
+    "title": "Mali leyi u nga kunguhataka ha yona",
+    "pitch": "Balansi yi ku byela leswi u nga na swona. Tengo yi ku byela leswaku ku fikela rini.",
+    "cta": "Lavisisa Tengo",
+    "ctaNote": "A ku na ku tsarisa. Vuxokoxoko bya ku endliwa ntsena.",
+    "previewLabel": "Nkombiso lowu hanyaka wa Tengo",
+    "previewWho": "Thabo, muchayeri wa e-hailing. Wa ku endliwa.",
+    "previewCaption": "Nkombiso wa Tengo wa muchayeri wa ku endliwa: {{label}} {{date}}, xiyimo {{state}}, bajete ya siku {{amount}}.",
+    "howTitle": "Magoza manharhu ku ya eka siku leri u nga kunguhataka ha rona.",
     "steps": {
       "history": {
-        "title": "Add your money history",
-        "body": "Use a sample person or bring a bank statement as a CSV file. It stays on your device."
+        "title": "Nghenisa matimu ya mali ya wena",
+        "body": "Tirhisa munhu wa xikombiso kumbe u tisa xitatimende xa bangi tanihi fayili ya CSV. Xi tshama eka xitirhisiwa xa wena."
       },
       "last": {
-        "title": "See how long it lasts",
-        "body": "Tengo works out the day your money runs out and when your next money usually lands."
+        "title": "Vona leswaku yi teka nkarhi wo tani hi kwihi",
+        "body": "Tengo yi hlayela siku leri mali ya wena yi nga ta hela ha rona na leswaku mali ya wena leyi landzelaka hi ntolovelo yi nghena rini."
       },
       "plan": {
-        "title": "Plan around the date",
-        "body": "Try a what-if, check a loan to family, and see your daily budget."
+        "title": "Kunguhata u rhendzela siku",
+        "body": "Ringeta loko swi nga va njhani, kambela ku lomba ndyangu, u vona bajete ya wena ya siku."
       }
     },
-    "tagline": "Money you can plan around.",
-    "fictional": "All people, places and amounts in this demo are fictional. No bank connection.",
+    "tagline": "Mali leyi u nga kunguhataka ha yona.",
+    "fictional": "Vanhu hinkwavo, tindhawu na mali eka demo leyi i swa ku endliwa. A ku na vuhlanganisi na bangi.",
     "navLabel": "Tengo",
-    "home": "home",
+    "home": "ekaya",
     "nav": {
-      "how": "How it works",
-      "privacy": "Privacy"
+      "how": "Ndlela leyi yi tirhaka ha yona",
+      "privacy": "Xihundla"
     },
-    "badge": "Built for the FNB App of the Year hackathon",
-    "headlineLead": "Money you can",
-    "headlineDim": "plan around.",
-    "ctaSecondary": "See how it works",
+    "badge": "Yi akeriwe hackathon ya FNB App of the Year",
+    "headlineLead": "Mali leyi u nga",
+    "headlineDim": "kunguhataka ha yona.",
+    "ctaSecondary": "Vona ndlela leyi yi tirhaka ha yona",
     "stats": {
-      "history": "Days of history per person",
-      "states": "Cover states: Enough, Tight, Short",
-      "languages": "Built for 11 languages. English today.",
-      "logins": "Bank logins needed"
+      "history": "Masiku ya matimu eka munhu un'wana na un'wana",
+      "states": "Swiyimo: Ya ringana, Ya ringanyana, Ya kayivela, A swi ringananga ku vula",
+      "languages": "Tindzimi ta 11. Xinghezi na swivumbeko swa 10 swa AI, leswi ha ri ku kambeliwa.",
+      "logins": "Ku nghena ebangi loku lavekaka"
     },
-    "closingTitle": "See how long your money lasts.",
-    "closingBody": "Pick a fictional person and explore. No sign up, nothing leaves your browser.",
+    "closingTitle": "Vona leswaku mali ya wena yi teka nkarhi wo tani hi kwihi.",
+    "closingBody": "Hlawula munhu wa ku endliwa u lavisisa. A ku na ku tsarisa, a ku na nchumu lowu humaka eka bowuzara ya wena.",
     "footer": {
-      "product": "Product",
-      "privacy": "Privacy",
-      "about": "About",
+      "product": "Xiendliwa",
+      "privacy": "Xihundla",
+      "about": "Hi ta",
       "links": {
-        "how": "How it works",
-        "explore": "Explore Tengo",
-        "privacyCentre": "Privacy centre",
-        "fictional": "Fictional data only",
-        "name": "The name Tengo",
-        "hackathon": "Hackathon entry",
-        "safety": "Safety and who it is for"
+        "how": "Ndlela leyi yi tirhaka ha yona",
+        "explore": "Lavisisa Tengo",
+        "privacyCentre": "Ndhawu ya xihundla",
+        "fictional": "Vuxokoxoko bya ku endliwa ntsena",
+        "name": "Vito ra Tengo",
+        "hackathon": "Ku nghenela hackathon",
+        "safety": "Vuhlayiseki na leswaku i ya mani"
       }
     },
-    "status": "Demo environment. Fictional data."
+    "status": "Ndhawu ya demo. Vuxokoxoko bya ku endliwa."
   },
   "picker": {
-    "title": "Choose how to explore",
-    "lead": "Each fictional person earns in a different way. Pick one to see Tengo with their money, or use your own.",
-    "personas": "People",
-    "enterAs": "Enter as {{name}}",
-    "continueAs": "Continue as {{name}}",
-    "backHome": "home",
-    "deletedTitle": "{{name}}'s data was deleted",
-    "deletedBody": "Receipt {{ref}}, {{date}}. Removed {{count}} transactions and {{audit}} audit entries. Choose a person to start again.",
-    "step": "Step 1 of 2",
-    "startsAt": "Starts at"
+    "title": "Hlawula ndlela yo lavisisa",
+    "lead": "Munhu un'wana na un'wana wa ku endliwa u kuma mali hi ndlela yo hambana. Hlawula un'we ku vona Tengo na mali ya yena, kumbe u tirhisa ya wena.",
+    "personas": "Vanhu",
+    "enterAs": "Nghena tanihi {{name}}",
+    "continueAs": "Yisa emahlweni tanihi {{name}}",
+    "backHome": "ekaya",
+    "deletedTitle": "Vuxokoxoko bya {{name}} byi susiwile",
+    "deletedBody": "Rhisiti {{ref}}, {{date}}. Ku susiwe mintirho ya mali ya {{count}} na swingheniso swa ndzavisiso swa {{audit}}. Hlawula munhu ku sungula nakambe.",
+    "step": "Goza 1 eka 2",
+    "startsAt": "Yi sungula eka"
   },
   "personas": {
-    "fictional": "Fictional composite",
+    "fictional": "Munhu wa ku endliwa",
     "thabo": {
-      "role": "E-hailing driver",
-      "situation": "Cash fares most days and an app payout on Mondays. Fuel and the car instalment come first."
+      "role": "Muchayeri wa e-hailing",
+      "situation": "Mali ya ku khandziya hi kheše masiku yo tala na hakelo ya app hi Musumbhunuku. Petirolo na hakelo ya movha swi rhanga."
     },
     "lerato": {
-      "role": "Hairdresser",
-      "situation": "Saturdays carry the week. Product restocks every two weeks and rent on the 1st."
+      "role": "Mulunghisi wa misisi",
+      "situation": "Mugqivela yi rhwala vhiki. Ku xava swiendliwa nakambe mavhiki mambirhi wun'wana na wun'wana na rhende hi siku ro sungula."
     },
     "ayanda": {
-      "role": "Spaza shop owner",
-      "situation": "Cash takings come in lumps. Big stock runs and prepaid electricity in between."
+      "role": "N'wini wa xitolo xa spaza",
+      "situation": "Mali ya kheše yi nghena hi mintlawa. Ku xava xitoko lexikulu na gezi leri hakeriwaka ka ha ri emahlweni exikarhi."
     }
   },
   "consent": {
-    "title": "Before you start",
-    "as": "Entering as {{name}}",
-    "lead": "Here is what Tengo uses, why, and what you can change.",
+    "title": "U nga si sungula",
+    "as": "U nghena tanihi {{name}}",
+    "lead": "Leswi i leswi Tengo yi swi tirhisaka, xivangelo, na leswi u nga swi cincaka.",
     "notice": {
       "what": {
-        "title": "What we use",
-        "body": "Transaction dates, amounts and descriptions, plus your current balance. Nothing else."
+        "title": "Leswi hi swi tirhisaka",
+        "body": "Masiku ya mintirho ya mali, mali na tinhlamuselo, swin'we na balansi ya wena ya sweswi. A ku na swin'wana."
       },
       "why": {
-        "title": "Why",
-        "body": "To work out how long your money lasts and when your next money is likely. Not for marketing or credit scoring."
+        "title": "Hikwalaho ka yini",
+        "body": "Ku hlayela leswaku mali ya wena yi teka nkarhi wo tani hi kwihi na leswaku mali ya wena leyi landzelaka yi nga nghena rini. Ku nga ri ku navetisa kumbe ku pima xikweleti."
       },
       "who": {
-        "title": "Who can see it",
-        "body": "Anyone using this browser on this device. No one at Tengo can see it."
+        "title": "I mani loyi a nga swi vonaka",
+        "body": "Un'wana na un'wana loyi a tirhisaka bowuzara leyi eka xitirhisiwa lexi. A ku na munhu eka Tengo loyi a nga swi vonaka."
       },
       "where": {
-        "title": "Where it is processed",
-        "body": "In your browser, on this device. Nothing is sent to a server."
+        "title": "Laha swi endliwaka kona",
+        "body": "Eka bowuzara ya wena, eka xitirhisiwa lexi. A ku na nchumu lowu rhumeriwaka eka sevha."
       },
       "how": {
-        "title": "How long we keep it",
-        "body": "Records older than 12 months are removed from this device. You can delete everything any time."
+        "title": "Hi swi hlayisa nkarhi wo tani hi kwihi",
+        "body": "Tirhekhodo leti hundzaka tin'hweti ta 12 ti susiwa eka xitirhisiwa lexi. U nga susa hinkwaswo nkarhi wun'wana na wun'wana."
       }
     },
-    "choices": "Your choices",
-    "required": "Required",
+    "choices": "Swihlawulekisi swa wena",
+    "required": "Swa laveka",
     "core": {
-      "title": "Forecast",
-      "body": "Needed to use Tengo. Withdraw any time and the forecast pauses."
+      "title": "Vuhlahluvi",
+      "body": "Swa laveka ku tirhisa Tengo. Teka mpfumelelo endzhaku nkarhi wun'wana na wun'wana kutani vuhlahluvi byi yimisiwa."
     },
     "messages": {
-      "title": "Daily messages",
-      "body": "A short daily update with your date, by WhatsApp or SMS. WhatsApp messages pass through Meta, outside South Africa. Off until you turn it on. Simulated, nothing is sent."
+      "title": "Marungula ya siku na siku",
+      "body": "Mpfuxeto wo koma wa siku na siku lowu nga na siku ra wena, hi WhatsApp kumbe SMS. Marungula ya WhatsApp ma hundza eka Meta, ehandle ka Afrika Dzonga. Ya pfariwile ku fikela u ya pfula. I ku ringeta, a ku na nchumu lowu rhumeriwaka."
     },
     "analytics": {
-      "title": "Product analytics",
-      "body": "Helps improve Tengo. Off by default. No analytics runs in this demo."
+      "title": "Nxopaxopo wa xiendliwa",
+      "body": "Swi pfuna ku antswisa Tengo. Swi pfariwile hi ntolovelo. A ku na nxopaxopo lowu tirhaka eka demo leyi."
     },
-    "changeLater": "You can change these any time in Privacy.",
-    "agree": "Agree and continue",
-    "notNow": "Not now",
-    "step": "Step 2 of 2"
+    "changeLater": "U nga swi cinca leswi nkarhi wun'wana na wun'wana eka Xihundla.",
+    "agree": "Pfumela u yisa emahlweni",
+    "notNow": "Ku nga ri sweswi",
+    "step": "Goza 2 eka 2"
   },
   "privacy": {
-    "simulated": "Simulated privacy controls. Not a compliance certification.",
-    "title": "Privacy",
-    "lead": "See, change, export or delete this person's data.",
-    "consentTitle": "Your consent",
-    "coreEffect": "Needed for Tengo to work. Turning it off pauses the forecast.",
-    "messagesEffect": "A short daily update in the Inbox. Turning it off hides the Inbox preview.",
-    "lastChanged": "Last changed {{date}}",
-    "minimisation": "What the forecast uses",
-    "uses": "Uses",
-    "neverUses": "Does not use",
+    "simulated": "Vulawuri bya xihundla bya ku ringeta. A hi xitifikheti xa ku landzelela nawu.",
+    "title": "Xihundla",
+    "lead": "Vona, cinca, humesa kumbe u susa vuxokoxoko bya munhu loyi.",
+    "consentTitle": "Mpfumelelo wa wena",
+    "coreEffect": "Swa laveka leswaku Tengo yi tirha. Ku swi tima swi yimisa vuhlahluvi.",
+    "messagesEffect": "Mpfuxeto wo koma wa siku na siku eka Marungula. Ku swi tima swi fihla nkombiso wa Marungula.",
+    "lastChanged": "Swi cinciwe ro hetelela hi {{date}}",
+    "minimisation": "Leswi vuhlahluvi byi swi tirhisaka",
+    "uses": "Yi tirhisa",
+    "neverUses": "A yi tirhisi",
     "used": {
-      "date": "Transaction date",
-      "amount": "Transaction amount",
-      "description": "Transaction description, to spot repeat bills and group spending",
-      "balance": "Your current balance"
+      "date": "Siku ra ntirho wa mali",
+      "amount": "Mali ya ntirho",
+      "description": "Nhlamuselo ya ntirho wa mali, ku vona tihakelo leti tlhelelaka na ku hlela matirhisele",
+      "balance": "Balansi ya wena ya sweswi"
     },
     "unused": {
-      "id": "ID number",
-      "location": "Location",
-      "contacts": "Contacts",
-      "account": "Account or card numbers"
+      "id": "Nomboro ya vutitivisi",
+      "location": "Ndhawu",
+      "contacts": "Lava u vulavurisanaka na vona",
+      "account": "Tinomboro ta akhawunti kumbe ta khadi"
     },
-    "security": "How data is kept",
+    "security": "Ndlela leyi vuxokoxoko byi hlayisiwaka ha yona",
     "securityItems": {
-      "transit": "With an optional account: an encrypted connection and storage that only you can read.",
-      "access": "No staff access is set up. If support ever needs it, this notice will first say how it is limited and recorded.",
-      "device": "Data stays in this browser's storage on this device. Tengo does not encrypt it on the device.",
-      "server": "Nothing is sent to a server. There is no Tengo account and no staff access.",
-      "shared": "Anyone who uses this browser on this device can open it. Delete it any time.",
-      "accountStore": "Your data is stored with the database provider over an encrypted connection.",
-      "accountRls": "Each row is locked to you in the database, so no other account can read, change or delete it.",
-      "accountForecast": "Your forecast is still worked out on your device. The server only stores data."
+      "transit": "Hi akhawunti ya ku tihlawulela: vuhlanganisi lebyi sirhelelekeke na vuhlayiselo lebyi hlayiwaka hi wena ntsena.",
+      "access": "A ku na mfikelelo wa vatirhi lowu lulamisiweke. Loko nseketelo wu nga wu lava, xitiviso lexi xi ta rhanga xi vula ndlela leyi wu pimiweke na ku tsariwa ha yona.",
+      "device": "Vuxokoxoko byi tshama eka vuhlayiselo bya bowuzara leyi eka xitirhisiwa lexi. Tengo a yi byi sirheleli eka xitirhisiwa.",
+      "server": "A ku na nchumu lowu rhumeriwaka eka sevha. A ku na akhawunti ya Tengo na mfikelelo wa vatirhi.",
+      "shared": "Un'wana na un'wana loyi a tirhisaka bowuzara leyi eka xitirhisiwa lexi a nga byi pfula. Byi suse nkarhi wun'wana na wun'wana.",
+      "accountStore": "Vuxokoxoko bya wena byi hlayisiwa hi muphakeri wa vuhlayiselo bya vuxokoxoko hi vuhlanganisi lebyi sirhelelekeke.",
+      "accountRls": "Layini yin'wana na yin'wana yi lotleriwile eka wena eka vuhlayiselo bya vuxokoxoko, hikwalaho a ku na akhawunti yin'wana leyi nga yi hlayaka, yi yi cinca kumbe yi yi susa.",
+      "accountForecast": "Vuhlahluvi bya wena byi ha hlayeriwa eka xitirhisiwa xa wena. Sevha yi hlayisa vuxokoxoko ntsena."
     },
-    "rightsNav": "Your rights",
+    "rightsNav": "Timfanelo ta wena",
     "links": {
       "data": {
-        "title": "See my data",
-        "body": "Everything held, and export it"
+        "title": "Vona vuxokoxoko bya mina",
+        "body": "Hinkwaswo leswi hlayisiweke, u swi humesa"
       },
       "audit": {
-        "title": "Audit log",
-        "body": "Every access and change, with times"
+        "title": "Rhekhodo ya ndzavisiso",
+        "body": "Mfikelelo hinkwawo na ku cinca, na minkarhi"
       },
       "review": {
-        "title": "Question this result",
-        "body": "Ask a person to check your date"
+        "title": "Vutisa hi mbuyelo lowu",
+        "body": "Kombela munhu ku kambela siku ra wena"
       },
       "breach": {
-        "title": "Breach notice",
-        "body": "A sample of what we would send"
+        "title": "Xitiviso xa ku tluleriwa ka vuhlayiseki",
+        "body": "Xikombiso xa leswi a hi ta swi rhumela"
       },
       "delete": {
-        "title": "Delete my data",
-        "body": "Remove this person's records"
+        "title": "Susa vuxokoxoko bya mina",
+        "body": "Susa tirhekhodo ta munhu loyi"
       }
     },
-    "retention": "How long we keep it",
-    "retentionRule": "Records older than 12 months are removed from this device when Tengo opens.",
-    "nextRemoval": "Next removal {{date}}, for records from {{from}}.",
-    "nothingStored": "Nothing stored yet.",
-    "crossBorder": "Where data is processed",
-    "crossBorderBody": "On this device only. In this demo nothing is sent to a server, inside or outside South Africa.",
-    "officer": "Information Officer",
-    "officerName": "Name",
-    "officerEmail": "Email",
-    "placeholderName": "To be appointed",
-    "placeholderNote": "Placeholder details. Not a real contact.",
-    "complaints": "If you are not happy with how your data is handled, you can complain to the Information Regulator of South Africa.",
-    "dataLead": "Everything Tengo holds about this person on this device.",
-    "exportJson": "Export JSON",
-    "exportCsv": "Export CSV",
-    "held": "Held about this person",
-    "heldPersona": "Person",
-    "heldBalance": "Balance",
-    "heldTransactions": "Transactions",
-    "heldSource": "Source",
-    "heldConsent": "Consent given",
-    "heldAudit": "Audit entries",
-    "heldReviews": "Review requests",
-    "heldWhere": "Stored",
-    "heldWhereValue": "This browser only",
+    "retention": "Hi swi hlayisa nkarhi wo tani hi kwihi",
+    "retentionRule": "Tirhekhodo leti hundzaka tin'hweti ta 12 ti susiwa eka xitirhisiwa lexi loko Tengo yi pfuleka.",
+    "nextRemoval": "Ku susiwa loku landzelaka hi {{date}}, ka tirhekhodo ku sukela hi {{from}}.",
+    "nothingStored": "A ku na nchumu lowu hlayisiweke sweswi.",
+    "crossBorder": "Laha vuxokoxoko byi endliwaka kona",
+    "crossBorderBody": "Eka xitirhisiwa lexi ntsena. Eka demo leyi a ku na nchumu lowu rhumeriwaka eka sevha, endzeni kumbe ehandle ka Afrika Dzonga.",
+    "officer": "Ofisiri wa Vuxokoxoko",
+    "officerName": "Vito",
+    "officerEmail": "Imeyili",
+    "placeholderName": "A ha ta hlawuriwa",
+    "placeholderNote": "Vuxokoxoko bya nkarhinyana. A hi munhu wa ntiyiso wo vulavurisana na yena.",
+    "complaints": "Loko u nga eneriseki hi ndlela leyi vuxokoxoko bya wena byi khomiwaka ha yona, u nga vilerisa eka Mufambisi wa Vuxokoxoko wa Afrika Dzonga.",
+    "dataLead": "Hinkwaswo leswi Tengo yi swi khomeke hi munhu loyi eka xitirhisiwa lexi.",
+    "exportJson": "Humesa JSON",
+    "exportCsv": "Humesa CSV",
+    "held": "Leswi khomiweke hi munhu loyi",
+    "heldPersona": "Munhu",
+    "heldBalance": "Balansi",
+    "heldTransactions": "Mintirho ya mali",
+    "heldSource": "Xihlovo",
+    "heldConsent": "Mpfumelelo lowu nyikiweke",
+    "heldAudit": "Swingheniso swa ndzavisiso",
+    "heldReviews": "Swikombelo swa nkambelo",
+    "heldWhere": "Swi hlayisiwile",
+    "heldWhereValue": "Eka bowuzara leyi ntsena",
     "source": {
-      "seed": "Sample data",
-      "import": "Imported statement",
-      "edited": "Sample data, corrected",
-      "manual": "Set up by hand, estimated"
+      "seed": "Vuxokoxoko bya xikombiso",
+      "import": "Xitatimende lexi nghenisiweke",
+      "edited": "Vuxokoxoko bya xikombiso, byi lulamisiwile",
+      "manual": "Swi lulamisiwe hi voko, swi ringanyetiwile"
     },
-    "correctHint": "Something wrong? Correct or recategorise any transaction from the Money page.",
-    "auditLead": "A simulated log of access and changes, newest first.",
-    "auditEmpty": "No entries yet.",
-    "auditActor": "By you, on this device",
-    "reviewLead": "The date is worked out by fixed rules. If it looks wrong, ask a person to check it.",
-    "reviewFormTitle": "Request a human review",
-    "reviewAbout": "About: {{result}}",
-    "reviewReason": "What looks wrong",
+    "correctHint": "Ku na leswi hoxeke? Lulamisa kumbe u cinca ntlawa wa ntirho wun'wana na wun'wana eka pheji ya Mali.",
+    "auditLead": "Rhekhodo ya ku ringeta ya mfikelelo na ku cinca, leswintshwa ku rhanga.",
+    "auditEmpty": "A ku na swingheniso sweswi.",
+    "auditActor": "Hi wena, eka xitirhisiwa lexi",
+    "reviewLead": "Siku ri hlayeriwa hi milawu leyi nga cinciki. Loko ri languteka ri hoxile, kombela munhu ku ri kambela.",
+    "reviewFormTitle": "Kombela nkambelo wa munhu",
+    "reviewAbout": "Mayelana na: {{result}}",
+    "reviewReason": "I yini leswi langutekaka swi hoxile",
     "reasons": {
-      "date": "The date looks wrong",
-      "income": "Income is missing or wrong",
-      "bill": "A bill is wrong",
-      "other": "Something else"
+      "date": "Siku ri languteka ri hoxile",
+      "income": "Mali leyi nghenaka a yi kona kumbe yi hoxile",
+      "bill": "Hakelo yi hoxile",
+      "other": "Swin'wana"
     },
-    "reviewDetails": "Tell us more (optional)",
-    "reviewPlaceholder": "For example, I get paid on the 25th, not on Mondays.",
-    "reviewContact": "How should we reply",
+    "reviewDetails": "Hi byele swo tala (ku tihlawulela)",
+    "reviewPlaceholder": "Xikombiso, ndzi hakeriwa hi siku ra 25, ku nga ri hi Musumbhunuku.",
+    "reviewContact": "Hi fanele ku hlamula njhani",
     "contact": {
-      "inbox": "In my Tengo Inbox",
-      "none": "No reply needed"
+      "inbox": "Eka Marungula ya mina ya Tengo",
+      "none": "A ku laveki nhlamulo"
     },
-    "reviewSubmit": "Send request",
-    "reviewSimulated": "Simulated. No request leaves this device.",
-    "reviewSent": "Request received",
-    "reviewRef": "Reference {{ref}}",
-    "reviewNext": "In a real service, a person would check the inputs and reply within 5 working days. Until then the forecast keeps working as normal.",
-    "reviewAnother": "Send another",
-    "reviewPast": "Your requests",
-    "reviewNone": "No requests yet.",
-    "reviewStatus": "Received",
-    "breachLead": "If personal data were ever exposed, this is the kind of notice users would get.",
-    "breachSample": "Sample only. There has been no breach.",
-    "sampleStamp": "Sample",
-    "breachDate": "Date of notice: [date]",
-    "breachHeading": "Important: a security incident affecting your Tengo data",
+    "reviewSubmit": "Rhumela xikombelo",
+    "reviewSimulated": "I ku ringeta. A ku na xikombelo lexi humaka eka xitirhisiwa lexi.",
+    "reviewSent": "Xikombelo xi amukeriwile",
+    "reviewRef": "Nkombo {{ref}}",
+    "reviewNext": "Eka vukorhokeri bya ntiyiso, munhu a a ta kambela leswi nghenisiweke a hlamula endzeni ka masiku ya 5 ya ntirho. Ku fikela hi nkarhi wolowo vuhlahluvi byi ya emahlweni byi tirha hi ntolovelo.",
+    "reviewAnother": "Rhumela xin'wana",
+    "reviewPast": "Swikombelo swa wena",
+    "reviewNone": "A ku na swikombelo sweswi.",
+    "reviewStatus": "Xi amukeriwile",
+    "breachLead": "Loko vuxokoxoko bya munhu byo tshama byi paluxiwa, lexi i xitiviso lexi vatirhisi a va ta xi kuma.",
+    "breachSample": "I xikombiso ntsena. A ku si va na ku tluleriwa ka vuhlayiseki.",
+    "sampleStamp": "Xikombiso",
+    "breachDate": "Siku ra xitiviso: [siku]",
+    "breachHeading": "Swa nkoka: xiendlakalo xa vuhlayiseki lexi khumbaka vuxokoxoko bya wena bya Tengo",
     "breach": {
       "happened": {
-        "title": "What happened",
-        "body": "On [date], we found that [describe the incident]. We stopped it on [date]."
+        "title": "Leswi humeleleke",
+        "body": "Hi [siku], hi kumile leswaku [hlamusela xiendlakalo]. Hi xi yimisile hi [siku]."
       },
       "data": {
-        "title": "What data was involved",
-        "body": "[List the data, for example transaction dates, amounts and descriptions]. Your ID number and passwords were not involved."
+        "title": "Vuxokoxoko lebyi khumbekeke",
+        "body": "[Xaxameta vuxokoxoko, xikombiso masiku ya mintirho ya mali, mali na tinhlamuselo]. Nomboro ya wena ya vutitivisi na marito ya xihundla a swi khumbekanga."
       },
       "doing": {
-        "title": "What we are doing",
-        "body": "We have [steps taken] and told the Information Regulator. We are working with [security partner] to stop this happening again."
+        "title": "Leswi hi swi endlaka",
+        "body": "Hi tekile [magoza lama tekiweke] hi tlhela hi tivisa Mufambisi wa Vuxokoxoko. Hi tirha na [munghana wa vuhlayiseki] ku sivela leswaku leswi swi nga tlheli swi humelela."
       },
       "you": {
-        "title": "What you can do",
-        "body": "Watch for messages that ask for your PIN or password. Tengo will never ask for them. You can delete your data at any time in Privacy."
+        "title": "Leswi u nga swi endlaka",
+        "body": "Tivonela marungula lama kombelaka PIN ya wena kumbe rito ra wena ra xihundla. Tengo a yi nge pfuki yi swi kombela. U nga susa vuxokoxoko bya wena nkarhi wun'wana na wun'wana eka Xihundla."
       },
       "contact": {
-        "title": "Contact us",
-        "body": "Our Information Officer is at [contact details]. You can also complain to the Information Regulator."
+        "title": "Vulavurisana na hina",
+        "body": "Ofisiri wa hina wa Vuxokoxoko u kumeka eka [vuxokoxoko bya vuhlanganisi]. U nga tlhela u vilerisa eka Mufambisi wa Vuxokoxoko."
       }
     },
-    "deleteLead": "Remove {{name}}'s records from this device.",
-    "deleteWhat": "What will be removed",
-    "deleteTx_one": "{{count}} transaction and the balance",
-    "deleteTx_other": "{{count}} transactions and the balance",
-    "deleteConsent": "Consent choices and review requests",
-    "deleteAudit_one": "{{count}} audit log entry",
-    "deleteAudit_other": "{{count}} audit log entries",
-    "deleteReceipt": "A deletion receipt is kept, with no transaction details.",
-    "deleteStart": "Delete my data",
-    "deleteWarn": "This cannot be undone. You will go back to the start.",
-    "deleteCheck": "I understand this removes the data for good",
-    "deleteConfirm": "Yes, delete everything",
-    "descriptionsNote": "Statement descriptions can include names or references. Long numbers such as account, card or phone numbers are masked when a statement is imported. Descriptions stay on this device and are used only to spot repeat bills and group spending.",
-    "securityNow": "In this demo",
-    "securityPlanned": "Planned, not built yet",
-    "deleteLeadOwn": "Remove your profile and everything in it from this device.",
-    "pilot": "Pilot privacy controls. Not a compliance certification.",
+    "deleteLead": "Susa tirhekhodo ta {{name}} eka xitirhisiwa lexi.",
+    "deleteWhat": "Leswi nga ta susiwa",
+    "deleteTx_one": "Ntirho wa mali wa {{count}} na balansi",
+    "deleteTx_other": "Mintirho ya mali ya {{count}} na balansi",
+    "deleteConsent": "Swihlawulekisi swa mpfumelelo na swikombelo swa nkambelo",
+    "deleteAudit_one": "Xingheniso xa {{count}} xa rhekhodo ya ndzavisiso",
+    "deleteAudit_other": "Swingheniso swa {{count}} swa rhekhodo ya ndzavisiso",
+    "deleteReceipt": "Rhisiti ya ku susa ya hlayisiwa, handle ka vuxokoxoko bya mintirho ya mali.",
+    "deleteStart": "Susa vuxokoxoko bya mina",
+    "deleteWarn": "Leswi a swi nge tlheriseki. U ta tlhelela eku sunguleni.",
+    "deleteCheck": "Ndza twisisa leswaku leswi swi susa vuxokoxoko hi laha ku nga heriki",
+    "deleteConfirm": "Ina, susa hinkwaswo",
+    "descriptionsNote": "Tinhlamuselo ta xitatimende ti nga va na mavito kumbe minkombo. Tinomboro to leha to fana na tinomboro ta akhawunti, ta khadi kumbe ta riqingho ta fihliwa loko xitatimende xi nghenisiwa. Tinhlamuselo ti tshama eka xitirhisiwa lexi naswona ti tirhisiwa ntsena ku vona tihakelo leti tlhelelaka na ku hlela matirhisele.",
+    "securityNow": "Eka demo leyi",
+    "securityPlanned": "Swi kunguhatiwile, a swi si akiwa",
+    "deleteLeadOwn": "Susa phurofayili ya wena na hinkwaswo leswi nga eka yona eka xitirhisiwa lexi.",
+    "pilot": "Vulawuri bya xihundla bya ndzingeto. A hi xitifikheti xa ku landzelela nawu.",
     "securityNowMode": {
-      "demo": "In this demo",
-      "device": "Your profile, on this device",
-      "account": "Your profile, saved to your account"
+      "demo": "Eka demo leyi",
+      "device": "Phurofayili ya wena, eka xitirhisiwa lexi",
+      "account": "Phurofayili ya wena, yi hlayisiwile eka akhawunti ya wena"
     },
-    "retentionAccount": "Records older than 12 months are removed. Deleting your account removes every row and your sign-in.",
-    "crossBorderAccount": "Stored with the database provider in the region named in the privacy notice. Nothing is sent anywhere else."
+    "retentionAccount": "Tirhekhodo leti hundzaka tin'hweti ta 12 ta susiwa. Ku susa akhawunti ya wena swi susa tilayini hinkwato na ku nghena ka wena.",
+    "crossBorderAccount": "Swi hlayisiwe hi muphakeri wa vuhlayiselo bya vuxokoxoko eka xifundzha lexi boxiweke eka xitiviso xa xihundla. A ku na nchumu lowu rhumeriwaka kun'wana."
   },
   "home": {
     "greeting": {
-      "morning": "Good morning, {{name}}.",
-      "afternoon": "Good afternoon, {{name}}.",
-      "evening": "Good evening, {{name}}."
+      "morning": "Avuxeni, {{name}}.",
+      "afternoon": "Inhlekanhi, {{name}}.",
+      "evening": "Riperile, {{name}}."
     },
-    "heroLabel": "Your date",
-    "emptyTitle": "No money history yet",
-    "emptyBody": "Import a statement with at least 14 days of transactions to see your date.",
-    "greetingLabel": "Greeting",
-    "unknownShort": "Not found yet",
+    "heroLabel": "Siku ra wena",
+    "emptyTitle": "A ku na matimu ya mali sweswi",
+    "emptyBody": "Nghenisa xitatimende lexi nga na masiku ya 14 ku ya ehenhla ya mintirho ya mali ku vona siku ra wena.",
+    "greetingLabel": "Xinxavelo",
+    "unknownShort": "A yi si kumiwa",
     "greetingNoName": {
-      "morning": "Good morning.",
-      "afternoon": "Good afternoon.",
-      "evening": "Good evening."
+      "morning": "Avuxeni.",
+      "afternoon": "Inhlekanhi.",
+      "evening": "Riperile."
     }
   },
   "hero": {
-    "enoughUntil": "Enough until",
-    "enoughBeyond": "Enough beyond",
-    "shortFrom": "Short from",
-    "gap_one": "{{count}} day before your next money",
-    "gap_other": "{{count}} days before your next money",
-    "tightUntil": "Tight until",
-    "unclear": "Not enough to tell",
-    "unclearLead": "Your date",
+    "enoughUntil": "Ya ringana ku fikela",
+    "enoughBeyond": "Ya ringana ku tlula",
+    "shortFrom": "Ya kayivela ku sukela",
+    "gap_one": "Siku ra {{count}} mali ya wena leyi landzelaka yi nga si fika",
+    "gap_other": "Masiku ya {{count}} mali ya wena leyi landzelaka yi nga si fika",
+    "tightUntil": "Ya ringanyana ku fikela",
+    "unclear": "A swi ringananga ku vula",
+    "unclearLead": "Siku ra wena",
     "line": "{{label}} {{date}}"
   },
   "band": {
-    "between": "Likely between {{from}} and {{to}}",
-    "single": "Likely {{date}}",
-    "lowConfidence": "Low confidence",
-    "legendNext": "Next money",
-    "legendDate": "Your date",
-    "legendRange": "Likely range"
+    "between": "Swi nga humelela exikarhi ka {{from}} na {{to}}",
+    "single": "Swi nga humelela hi {{date}}",
+    "lowConfidence": "Ntshembo wa le hansi",
+    "legendNext": "Mali leyi landzelaka",
+    "legendDate": "Siku ra wena",
+    "legendRange": "Mpimo lowu nga vaka kona"
   },
   "sts": {
-    "title": "Daily budget",
-    "withBills": "Spread evenly until your next money, after {{bills}} in bills.",
-    "noBills": "Spread evenly until your next money. No bills due before it.",
-    "reserveOne": "Keeps {{amount}} back for {{name}} on {{date}}, which your next money may not cover.",
-    "reserveMany": "Keeps {{amount}} back for {{count}} bills just after your next money, which it may not cover.",
-    "noReserve": "No bills due just after your next money, so nothing extra is kept back.",
-    "usual": "Your usual spend is {{amount}} a day.",
-    "notAdvised": "Not advised",
-    "notAdvisedWhy_one": "At your usual {{usual}} a day, money runs out {{count}} day before your next money.",
-    "notAdvisedWhy_other": "At your usual {{usual}} a day, money runs out {{count}} days before your next money.",
-    "disclaimer": "An estimate from your own history, not advice.",
-    "nothingSpare": "Nothing spare",
-    "pending": "Waiting for today's money",
-    "pendingWhy": "Your usual payment is due today. The budget is worked out once it lands.",
-    "unclear": "Not shown yet",
-    "unclearWhy": "Tengo needs more to go on before it suggests a daily figure.",
-    "overdrawnWhy": "You are overdrawn by {{amount}}. Money that comes in covers this first.",
-    "notAdvisedNoMoney": "At your usual {{usual}} a day, money runs out before any money is expected."
+    "title": "Bajete ya siku",
+    "withBills": "Yi avanyisiwile hi ku ringana ku fikela mali ya wena leyi landzelaka, endzhaku ka {{bills}} ya tihakelo.",
+    "noBills": "Yi avanyisiwile hi ku ringana ku fikela mali ya wena leyi landzelaka. A ku na tihakelo leti faneleke ku hakeriwa yi nga si fika.",
+    "reserveOne": "Yi hlayisa {{amount}} ya {{name}} hi {{date}}, leyi mali ya wena leyi landzelaka yi nga ha yi hakeliki.",
+    "reserveMany": "Yi hlayisa {{amount}} ya tihakelo ta {{count}} leti taka endzhaku ka mali ya wena leyi landzelaka, leyi yi nga ha ti hakeliki.",
+    "noReserve": "A ku na tihakelo leti taka endzhaku ka mali ya wena leyi landzelaka, hikwalaho a ku na leswi engetelekeke leswi hlayisiwaka.",
+    "usual": "Matirhisele ya wena ya ntolovelo i {{amount}} hi siku.",
+    "notAdvised": "A swi tsundzuxiwi",
+    "notAdvisedWhy_one": "Hi matirhisele ya wena ya ntolovelo ya {{usual}} hi siku, mali yi hela siku ra {{count}} mali ya wena leyi landzelaka yi nga si fika.",
+    "notAdvisedWhy_other": "Hi matirhisele ya wena ya ntolovelo ya {{usual}} hi siku, mali yi hela masiku ya {{count}} mali ya wena leyi landzelaka yi nga si fika.",
+    "disclaimer": "Xiringanyeto lexi humaka eka matimu ya wena, a hi xitsundzuxo.",
+    "nothingSpare": "A ku na leswi saleke",
+    "pending": "Yi rindzele mali ya namuntlha",
+    "pendingWhy": "Hakelo ya wena ya ntolovelo yi fanele namuntlha. Bajete yi ta hlayeriwa loko yi nghenile.",
+    "unclear": "A yi si kombisiwa",
+    "unclearWhy": "Tengo yi lava swo tala yi nga si ringanyeta nhlayo ya siku.",
+    "overdrawnWhy": "U humesile ku tlula hi {{amount}}. Mali leyi nghenaka yi hakela leswi ku rhanga.",
+    "notAdvisedNoMoney": "Hi matirhisele ya wena ya ntolovelo ya {{usual}} hi siku, mali yi hela ku nga si languteriwa mali yin'wana."
   },
   "stateCard": {
-    "title": "Cover",
-    "enough": "Covered until your next money, even on a heavy week.",
-    "tight": "Covered on a normal week, not on a heavy one.",
-    "short_one": "Runs out {{count}} day before your next money.",
-    "short_other": "Runs out {{count}} days before your next money.",
-    "tightReserve": "Covered until your next money, but {{amount}} is needed for a bill soon after it.",
-    "unclearThin": "Tengo needs at least 14 days of money history to work out a date. Import a statement or add a few weeks of entries.",
-    "unclearNoIncome": "No money coming in was found in your history. Add your income, or set it up by hand, to get an answer.",
-    "noIncomeRunway": "With nothing coming in, your balance lasts until {{date}} at your usual spend.",
-    "unclearStale": "Your balance is more than two weeks old. Add today's balance to see your date.",
-    "enoughHorizon": "Lasts the next {{days}} days even on a heavy week, with no money expected.",
-    "tightHorizon": "Lasts the next {{days}} days on a normal week, not on a heavy one. No money is expected.",
-    "shortHorizon": "Runs out within the next {{days}} days, and no money is expected.",
-    "enoughDaily": "Lasts the next {{days}} days even on a heavy week, counting half of what usually comes in each day.",
-    "tightDaily": "Lasts the next {{days}} days on a normal week, counting half of what usually comes in each day. Not on a heavy one.",
-    "shortDaily": "Runs out within the next {{days}} days, even counting half of what usually comes in each day."
+    "title": "Xiyimo",
+    "enough": "U sirhelelekile ku fikela mali ya wena leyi landzelaka, hambi ku ri hi vhiki ro tika.",
+    "tight": "U sirhelelekile hi vhiki ra ntolovelo, ku nga ri hi vhiki ro tika.",
+    "short_one": "Yi hela siku ra {{count}} mali ya wena leyi landzelaka yi nga si fika.",
+    "short_other": "Yi hela masiku ya {{count}} mali ya wena leyi landzelaka yi nga si fika.",
+    "tightReserve": "U sirhelelekile ku fikela mali ya wena leyi landzelaka, kambe {{amount}} ya laveka eka hakelo leyi taka endzhakunyana ka yona.",
+    "unclearThin": "Tengo yi lava masiku ya 14 ku ya ehenhla ya matimu ya mali ku hlayela siku. Nghenisa xitatimende kumbe u engetela mavhiki ma nga ri mangani ya swingheniso.",
+    "unclearNoIncome": "A ku na mali leyi nghenaka leyi kumiweke eka matimu ya wena. Engetela mali ya wena leyi nghenaka, kumbe u yi lulamisa hi voko, ku kuma nhlamulo.",
+    "noIncomeRunway": "Loko ku nga ri na nchumu lowu nghenaka, balansi ya wena yi teka ku fikela {{date}} hi matirhisele ya wena ya ntolovelo.",
+    "unclearStale": "Balansi ya wena yi hundzile mavhiki mambirhi. Engetela balansi ya namuntlha ku vona siku ra wena.",
+    "enoughHorizon": "Yi teka masiku ya {{days}} lama taka hambi ku ri hi vhiki ro tika, ku nga ri na mali leyi languteriweke.",
+    "tightHorizon": "Yi teka masiku ya {{days}} lama taka hi vhiki ra ntolovelo, ku nga ri hi ro tika. A ku na mali leyi languteriweke.",
+    "shortHorizon": "Yi hela endzeni ka masiku ya {{days}} lama taka, naswona a ku na mali leyi languteriweke.",
+    "enoughDaily": "Yi teka masiku ya {{days}} lama taka hambi ku ri hi vhiki ro tika, ku hlayiwa hafu ya leswi hi ntolovelo swi nghenaka siku na siku.",
+    "tightDaily": "Yi teka masiku ya {{days}} lama taka hi vhiki ra ntolovelo, ku hlayiwa hafu ya leswi hi ntolovelo swi nghenaka siku na siku. Ku nga ri hi vhiki ro tika.",
+    "shortDaily": "Yi hela endzeni ka masiku ya {{days}} lama taka, hambi ku hlayiwa hafu ya leswi hi ntolovelo swi nghenaka siku na siku."
   },
   "next": {
-    "title": "Next money",
-    "around": "Around {{date}}",
-    "window": "Likely window",
-    "amount": "Usual amount",
-    "patternWeekday": "Usually lands on a {{day}}.",
-    "patternInterval_one": "Usually lands every {{count}} day.",
-    "patternInterval_other": "Usually lands every {{count}} days.",
-    "unknown": "No regular income found yet. Tengo plans 30 days ahead.",
-    "pendingToday": "Today, not in yet",
-    "none": "None expected",
-    "daily": "Most days"
+    "title": "Mali leyi landzelaka",
+    "around": "Kwalomu ka {{date}}",
+    "window": "Nkarhi lowu nga vaka kona",
+    "amount": "Mali ya ntolovelo",
+    "patternWeekday": "Hi ntolovelo yi nghena hi {{day}}.",
+    "patternInterval_one": "Hi ntolovelo yi nghena endzhaku ka siku ra {{count}}.",
+    "patternInterval_other": "Hi ntolovelo yi nghena endzhaku ka masiku ya {{count}}.",
+    "unknown": "A ku si kumiwa mali ya ntolovelo leyi nghenaka. Tengo yi kunguhata masiku ya 30 emahlweni.",
+    "pendingToday": "Namuntlha, a yi si nghena",
+    "none": "A ku na leyi languteriweke",
+    "daily": "Masiku yo tala"
   },
   "recent": {
-    "title": "Recent activity",
-    "all": "See all",
-    "empty": "No transactions yet."
+    "title": "Swiendlo swa sweswinyana",
+    "all": "Vona hinkwaswo",
+    "empty": "A ku na mintirho ya mali sweswi."
   },
   "scrubber": {
-    "title": "Next 30 days",
-    "subtitle": "Expected balance and likely range",
-    "label": "Pick a day in the next 30 days",
-    "valueText": "If money lands as usual. {{date}}: about {{amount}}, likely {{low}} to {{high}}. {{level}}.{{events}}",
-    "range": "Likely {{low}} to {{high}}",
-    "expectedIncome": "Expected money",
-    "billDue": "{{name}} due",
-    "summary": "Projected balance for the next 30 days if money lands as usual. Lowest point {{low}} on {{date}}.",
-    "showTable": "Show numbers",
-    "hideTable": "Hide numbers",
-    "tableCaption": "Projected balance and cover for each of the next 30 days",
-    "colDay": "Day",
-    "colExpected": "Expected",
-    "colRange": "Likely range",
-    "colCover": "Balance",
-    "key": "Line: expected balance. Shading: likely range. Filled dots: money in. Hollow dots: bills.",
-    "ifUsual": "If money lands as usual",
+    "title": "Masiku ya 30 lama taka",
+    "subtitle": "Balansi leyi languteriweke na mpimo lowu nga vaka kona",
+    "label": "Hlawula siku eka masiku ya 30 lama taka",
+    "valueText": "Loko mali yi nghena hi ntolovelo. {{date}}: kwalomu ka {{amount}}, swi nga va {{low}} ku ya eka {{high}}. {{level}}.{{events}}",
+    "range": "Swi nga va {{low}} ku ya eka {{high}}",
+    "expectedIncome": "Mali leyi languteriweke",
+    "billDue": "{{name}} yi fanele ku hakeriwa",
+    "summary": "Balansi leyi ringanyetiweke ya masiku ya 30 lama taka loko mali yi nghena hi ntolovelo. Ndhawu ya le hansi swinene {{low}} hi {{date}}.",
+    "showTable": "Kombisa tinomboro",
+    "hideTable": "Fihla tinomboro",
+    "tableCaption": "Balansi leyi ringanyetiweke na xiyimo xa siku rin'wana na rin'wana eka masiku ya 30 lama taka",
+    "colDay": "Siku",
+    "colExpected": "Leswi languteriweke",
+    "colRange": "Mpimo lowu nga vaka kona",
+    "colCover": "Balansi",
+    "key": "Layini: balansi leyi languteriweke. Ndzhuti: mpimo lowu nga vaka kona. Swivoni leswi teleke: mali leyi nghenaka. Swivoni leswi nga riki na nchumu: tihakelo.",
+    "ifUsual": "Loko mali yi nghena hi ntolovelo",
     "level": {
-      "enough": "Above R0 even on a heavy week",
-      "tight": "Could dip below R0 on a heavy week",
-      "short": "Below R0 on a normal week"
+      "enough": "Ehenhla ka R0 hambi ku ri hi vhiki ro tika",
+      "tight": "Yi nga ha rhelela ehansi ka R0 hi vhiki ro tika",
+      "short": "Ehansi ka R0 hi vhiki ra ntolovelo"
     },
     "levelShort": {
-      "enough": "Above R0",
-      "tight": "Could reach R0",
-      "short": "Below R0"
+      "enough": "Ehenhla ka R0",
+      "tight": "Yi nga fika eka R0",
+      "short": "Ehansi ka R0"
     }
   },
   "why": {
-    "open": "Why this date",
-    "title": "Why this date",
-    "plain": "We start with your balance today, take off bills on their due dates, and spend at your usual daily rate until the money reaches zero. That day is your date. Money you have not received yet is not counted.",
-    "chartLabel": "How the balance runs down on a normal, light and heavy week",
-    "lineCentral": "Normal week",
-    "lineLight": "Light week",
-    "lineHeavy": "Heavy week",
-    "lineNext": "Next money, {{date}}",
-    "inputs": "What went in",
-    "balance": "Balance today",
-    "dailySpend": "Usual daily spend",
-    "dailySpendHint": "Light to heavy week: {{low}} to {{high}} a day",
-    "perDay": "{{amount}} a day",
-    "bills": "Bills before next money",
-    "noBills": "None due",
-    "income": "Expected next money",
+    "open": "Hikokwalaho ka siku leri",
+    "title": "Hikokwalaho ka siku leri",
+    "plain": "Hi sungula hi balansi ya wena ya namuntlha, hi susa tihakelo hi masiku ya tona, kutani hi tirhisa hi mpimo wa wena wa ntolovelo wa siku ku fikela mali yi fika eka zero. Siku rero i siku ra wena. Mali leyi u nga si yi amukelaka a yi hlayiwi.",
+    "chartLabel": "Ndlela leyi balansi yi hungutekaka ha yona hi vhiki ra ntolovelo, ro olova na ro tika",
+    "lineCentral": "Vhiki ra ntolovelo",
+    "lineLight": "Vhiki ro olova",
+    "lineHeavy": "Vhiki ro tika",
+    "lineNext": "Mali leyi landzelaka, {{date}}",
+    "inputs": "Leswi nghenisiweke",
+    "balance": "Balansi ya namuntlha",
+    "dailySpend": "Matirhisele ya ntolovelo ya siku",
+    "dailySpendHint": "Vhiki ro olova ku ya eka ro tika: {{low}} ku ya eka {{high}} hi siku",
+    "perDay": "{{amount}} hi siku",
+    "bills": "Tihakelo mali leyi landzelaka yi nga si fika",
+    "noBills": "A ku na leti faneleke",
+    "income": "Mali leyi landzelaka leyi languteriweke",
     "incomeValue": "{{amount}}, {{date}}",
-    "history": "History used",
-    "historyHint_one": "From {{count}} day on record",
-    "historyHint_other": "From {{count}} days on record",
-    "historyValue_one": "Last {{count}} day",
-    "historyValue_other": "Last {{count}} days",
-    "confidence": "Confidence",
+    "history": "Matimu lama tirhisiweke",
+    "historyHint_one": "Ku suka eka siku ra {{count}} leri tsariweke",
+    "historyHint_other": "Ku suka eka masiku ya {{count}} lama tsariweke",
+    "historyValue_one": "Siku ra {{count}} ro hetelela",
+    "historyValue_other": "Masiku ya {{count}} yo hetelela",
+    "confidence": "Ntshembo",
     "confidenceHint": {
-      "high": "60 or more days of history",
-      "medium": "28 to 59 days of history",
-      "low": "Under 28 days. The range is wider."
+      "high": "Masiku ya 60 kumbe ku tlula ya matimu",
+      "medium": "Masiku ya 28 ku ya eka 59 ya matimu",
+      "low": "Ehansi ka masiku ya 28. Mpimo wu anamile."
     },
-    "rulesTitle": "How the cover is set",
+    "rulesTitle": "Ndlela leyi xiyimo xi vekiwaka ha yona",
     "rule": {
-      "enough": "Even a heavy week lasts until the latest likely next money.",
-      "tight": "A normal week lasts until the usual next money. A heavy week does not.",
-      "short": "A normal week runs out before the usual next money.",
-      "unclear": "Not enough history or no income, so there is no date yet."
+      "enough": "Hambi vhiki ro tika ri teka ku fikela mali leyi landzelaka ya le ndzhaku swinene leyi nga vaka kona.",
+      "tight": "Vhiki ra ntolovelo ri teka ku fikela mali leyi landzelaka ya ntolovelo. Vhiki ro tika a ri teki.",
+      "short": "Vhiki ra ntolovelo ri hela mali leyi landzelaka ya ntolovelo yi nga si fika.",
+      "unclear": "Matimu a ma ringananga kumbe a ku na mali leyi nghenaka, hikwalaho a ku na siku sweswi."
     },
-    "question": "Question this result",
-    "notAdvice": "This is an estimate from past patterns, not financial advice, and it is not used for any credit or lending decision.",
-    "budgetSpread": "The daily budget is spread to {{date}}, the latest your next money usually lands.",
-    "reserve": "Kept back for bills just after next money",
-    "reserveNone": "None due in the week after",
-    "incomeStatus": "Money in",
+    "question": "Vutisa hi mbuyelo lowu",
+    "notAdvice": "Lexi i xiringanyeto lexi humaka eka mikhuva ya khale, a hi xitsundzuxo xa timali, naswona a xi tirhisiwi eka xiboho xihi na xihi xa xikweleti kumbe xa ku lomba.",
+    "budgetSpread": "Bajete ya siku yi avanyisiwile ku fikela {{date}}, siku ra le ndzhaku swinene leri mali ya wena leyi landzelaka hi ntolovelo yi nghenaka ha rona.",
+    "reserve": "Yi hlayiseriwe tihakelo leti taka endzhaku ka mali leyi landzelaka",
+    "reserveNone": "A ku na leti faneleke eka vhiki leri landzelaka",
+    "incomeStatus": "Mali leyi nghenaka",
     "incomeStatusValue": {
-      "regular": "Regular",
-      "pendingToday": "Due today",
-      "paused": "Paused",
-      "irregular": "No pattern",
-      "none": "None found",
-      "daily": "Most days"
+      "regular": "Hi ntolovelo",
+      "pendingToday": "Yi fanele namuntlha",
+      "paused": "Yi yimisiwile",
+      "irregular": "A ku na mukhuva",
+      "none": "A yi kumekanga",
+      "daily": "Masiku yo tala"
     },
-    "monthEnd": "Month end",
+    "monthEnd": "Makumu ya n'hweti",
     "monthEndValue": {
-      "pattern": "Spends more from the 25th",
-      "widened": "Heavy path allows for it",
-      "none": "No pattern"
+      "pattern": "U tirhisa ngopfu ku sukela hi siku ra 25",
+      "widened": "Ndlela yo tika yi swi langutela",
+      "none": "A ku na mukhuva"
     },
-    "oneOffs": "Left out as one-off",
-    "oneOffsNone": "Nothing",
-    "horizon": "No money is expected, so the cover is judged over the next {{count}} days.",
-    "horizonDaily": "Money comes in most days, so the cover is judged over the next {{count}} days, counting half of your usual daily income."
+    "oneOffs": "Leswi siyiweke ehandle tanihi swa kan'we",
+    "oneOffsNone": "A ku na nchumu",
+    "horizon": "A ku na mali leyi languteriweke, hikwalaho xiyimo xi avanyisiwa eka masiku ya {{count}} lama taka.",
+    "horizonDaily": "Mali yi nghena masiku yo tala, hikwalaho xiyimo xi avanyisiwa eka masiku ya {{count}} lama taka, ku hlayiwa hafu ya mali ya wena ya ntolovelo ya siku."
   },
   "paused": {
-    "title": "Forecast paused",
-    "body": "You withdrew consent for the forecast, so Tengo is not using your data. Resume to see your date again, or delete your data.",
-    "resume": "Resume forecast",
-    "delete": "Delete my data"
+    "title": "Vuhlahluvi byi yimisiwile",
+    "body": "U tekile mpfumelelo wa vuhlahluvi endzhaku, hikwalaho Tengo a yi tirhisi vuxokoxoko bya wena. Yisa emahlweni nakambe ku vona siku ra wena, kumbe u susa vuxokoxoko bya wena.",
+    "resume": "Yisa vuhlahluvi emahlweni",
+    "delete": "Susa vuxokoxoko bya mina"
   },
   "me": {
-    "switchPersona": "Switch person",
-    "title": "Me",
-    "persona": "Who you are in the demo",
-    "current": "Current",
-    "theme": "Theme",
+    "switchPersona": "Cinca munhu",
+    "title": "Mina",
+    "persona": "U mani eka demo",
+    "current": "Sweswi",
+    "theme": "Nhlokomhaka",
     "themes": {
-      "light": "Light",
-      "dark": "Dark",
-      "system": "System"
+      "light": "Ku vonakala",
+      "dark": "Munyama",
+      "system": "Sisiteme"
     },
-    "about": "About Tengo",
-    "nameTitle": "The name",
-    "nameBody": "Tengo comes from mutengo, the Tshivenda word for value. This meaning was supplied by the founder and is still to be confirmed by a Tshivenda speaker.",
-    "howTitle": "How the forecast works",
+    "about": "Hi ta Tengo",
+    "nameTitle": "Vito",
+    "nameBody": "Tengo yi huma eka mutengo, rito ra Xivenda leri vulaka nkoka. Nhlamuselo leyi yi nyikiwe hi msunguri naswona ya ha ta tiyisisiwa hi muvulavuri wa Xivenda.",
+    "howTitle": "Ndlela leyi vuhlahluvi byi tirhaka ha yona",
     "how": {
-      "1": "It splits your history into income, regular bills and everyday spending.",
-      "2": "It works out your usual daily spend from the last 60 days, plus a light week and a heavy week.",
-      "3": "It finds when your next money usually lands and how much it usually is.",
-      "4": "It runs your balance down day by day, taking off bills on their dates, until it reaches zero. That day is your date.",
-      "5": "It compares that date with your next money to set your cover: Enough, Tight or Short."
+      "1": "Yi avanyisa matimu ya wena ma va mali leyi nghenaka, tihakelo ta ntolovelo na matirhisele ya siku na siku.",
+      "2": "Yi hlayela matirhisele ya wena ya ntolovelo ya siku ku suka eka masiku ya 60 yo hetelela, swin'we na vhiki ro olova na vhiki ro tika.",
+      "3": "Yi kuma leswaku mali ya wena leyi landzelaka hi ntolovelo yi nghena rini na leswaku hi ntolovelo i yingani.",
+      "4": "Yi hunguta balansi ya wena siku hi siku, yi susa tihakelo hi masiku ya tona, ku fikela yi fika eka zero. Siku rero i siku ra wena.",
+      "5": "Yi pimanisa siku rero na mali ya wena leyi landzelaka ku veka xiyimo xa wena: Ya ringana, Ya ringanyana kumbe Ya kayivela."
     },
-    "simTitle": "What is simulated",
+    "simTitle": "Leswi ringetiweke",
     "sim": {
-      "data": "All people and money are fictional composites.",
-      "bank": "There is no bank connection and no open banking.",
-      "messages": "Messages are previews. Nothing is sent.",
-      "privacy": "Privacy controls show good practice. They are not a compliance certification.",
-      "translations": "Built for 11 languages. English today. The other 10 need translating and checking by first-language speakers, and Tshivenda needs a human translator."
+      "data": "Vanhu hinkwavo na mali i swa ku endliwa.",
+      "bank": "A ku na vuhlanganisi na bangi na open banking.",
+      "messages": "Marungula i minkombiso. A ku na nchumu lowu rhumeriwaka.",
+      "privacy": "Vulawuri bya xihundla byi kombisa maendlelo lamanene. A hi xitifikheti xa ku landzelela nawu.",
+      "translations": "Xinghezi i xihlovo. Tindzimi tin'wana ta 10 i swivumbeko swa AI leswi vavulavuri va tindzimi teto tanihi tindzimi ta xiviri va ha faneleke ku swi kambela, hikwalaho marito man'wana ma nga ha hoxeka."
     },
-    "reset": "Reset demo data",
-    "resetBody": "Clears the fictional people, your own profile on this device, consent choices and logs, and starts fresh. An account, if you saved one, is not touched.",
-    "resetWarn": "This removes everything Tengo stored on this device, including your own profile.",
-    "resetConfirm": "Yes, reset everything",
-    "themeHint": "Dark is the default. System follows your device.",
-    "profileTitle": "Your profile",
-    "storageMode": "Stored: {{mode}}",
-    "nicknameSave": "Save name",
-    "nicknameSaved": "Name saved",
-    "exportLink": "See and export my data",
-    "deleteProfile": "Delete my profile",
-    "switchPeople": "Switch to the fictional people",
-    "notice": "Privacy notice and terms"
+    "reset": "Sungula nakambe vuxokoxoko bya demo",
+    "resetBody": "Yi susa vanhu va ku endliwa, phurofayili ya wena eka xitirhisiwa lexi, swihlawulekisi swa mpfumelelo na tirhekhodo, kutani yi sungula nakambe. Akhawunti, loko u hlayisile yin'we, a yi khumbiwi.",
+    "resetWarn": "Leswi swi susa hinkwaswo leswi Tengo yi swi hlayiseke eka xitirhisiwa lexi, ku katsa na phurofayili ya wena.",
+    "resetConfirm": "Ina, sungula hinkwaswo nakambe",
+    "themeHint": "Munyama i wa ntolovelo. Sisiteme yi landzelela xitirhisiwa xa wena.",
+    "profileTitle": "Phurofayili ya wena",
+    "storageMode": "Swi hlayisiwile: {{mode}}",
+    "nicknameSave": "Hlayisa vito",
+    "nicknameSaved": "Vito ri hlayisiwile",
+    "exportLink": "Vona u humesa vuxokoxoko bya mina",
+    "deleteProfile": "Susa phurofayili ya mina",
+    "switchPeople": "Cincela eka vanhu va ku endliwa",
+    "notice": "Xitiviso xa xihundla na swiphemu"
   },
   "errors": {
-    "loadTitle": "Could not load your data",
-    "loadBody": "Something went wrong reading this device's storage.",
-    "retry": "Try again",
-    "crashTitle": "Something went wrong",
-    "crashBody": "This screen hit an error. Your data on this device has not changed.",
-    "crashCta": "Back to start"
+    "loadTitle": "A yi kotanga ku layicha vuxokoxoko bya wena",
+    "loadBody": "Ku na nchumu lowu nga fambangiki kahle loko ku hlayiwa vuhlayiselo bya xitirhisiwa lexi.",
+    "retry": "Ringeta nakambe",
+    "crashTitle": "Ku na nchumu lowu nga fambangiki kahle",
+    "crashBody": "Xikirini lexi xi hlangane na xihoxo. Vuxokoxoko bya wena eka xitirhisiwa lexi a byi cincanga.",
+    "crashCta": "Tlhelela eku sunguleni"
   },
   "notFound": {
-    "title": "Page not found",
-    "body": "This page does not exist in the demo.",
-    "cta": "Back to start"
+    "title": "Pheji a yi kumekanga",
+    "body": "Pheji leyi a yi kona eka demo.",
+    "cta": "Tlhelela eku sunguleni"
   },
   "plan": {
-    "title": "Plan",
-    "lead": "Test a change before you make it. Nothing is saved.",
-    "whatIf": "What-if",
-    "whatIfLead": "Add a one-off amount and see your date move.",
-    "itemLabel": "Change {{n}}",
-    "kind": "Money in or out",
-    "income": "Money in",
-    "expense": "Money out",
-    "remove": "Remove change {{n}}",
-    "amount": "Amount",
-    "date": "Date",
-    "label": "Note (optional)",
-    "labelPlaceholder": "For example, school trip",
-    "add": "Add a change",
-    "noItems": "No changes yet. Add one to see the effect.",
-    "result": "Result",
-    "now": "Now",
-    "withChanges": "With these changes",
-    "noChange": "No change",
-    "daysMore_one": "{{count}} day more",
-    "daysMore_other": "{{count}} days more",
-    "daysLess_one": "{{count}} day less",
-    "daysLess_other": "{{count}} days less",
-    "stsChange": "Daily budget: {{before}} now, {{after}} with these changes.",
-    "loan": "Loan check",
-    "loanLead": "See what lending money does to your cover first.",
-    "loanAmount": "Amount someone asked for",
-    "enterAmount": "Enter an amount, or pick one below, to see the effect.",
-    "ifLend": "If you lend {{amount}} today",
-    "afterLoan": "After the loan",
-    "stateDrops": "This drops your cover from {{from}} to {{to}}.",
-    "amountError": "Enter an amount above zero, for example 250.",
-    "whatIfSpoken": "With these changes: {{label}} {{date}}, {{state}}, {{change}}.",
-    "loanSpoken_one": "If you lend {{amount}}: {{label}} {{date}}, {{state}}, {{count}} day less cover.",
-    "loanSpoken_other": "If you lend {{amount}}: {{label}} {{date}}, {{state}}, {{count}} days less cover.",
-    "notAdvised": "not advised",
-    "exampleNote": "An example to start with: a R200 school trip next Friday. Change it or remove it.",
-    "roomToLend": "Room to lend",
-    "roomToLendHint": "Lending or giving up to this keeps you at {{state}} and keeps {{reserve}} back for bills just after your next money.",
-    "roomToLendHintNoReserve": "Lending or giving up to this keeps you at {{state}}.",
-    "roomToLendNone": "Any amount now would drop you below {{state}} or use money kept back for bills.",
-    "roomToLendShort": "You are already Short before your next money. Any amount you lend brings your date closer.",
-    "lendCaution": "Only lend what you could manage without getting back. Tengo cannot tell if or when it comes back.",
-    "useRoom": "Use {{amount}}",
-    "labelPlaceholderValue": "School trip (example)",
-    "roomToLendUnsure": "Tengo is not sure enough about your money coming in to suggest an amount. Check the effect of a specific amount below.",
-    "notAdvice": "Estimates from your own history, not advice. Nothing here is a lending decision or an offer of credit."
+    "title": "Kunguhata",
+    "lead": "Ringeta ku cinca u nga si ku endla. A ku na nchumu lowu hlayisiwaka.",
+    "whatIf": "Loko swi nga va njhani",
+    "whatIfLead": "Engetela mali ya kan'we u vona siku ra wena ri famba.",
+    "itemLabel": "Ku cinca {{n}}",
+    "kind": "Mali leyi nghenaka kumbe leyi humaka",
+    "income": "Mali leyi nghenaka",
+    "expense": "Mali leyi humaka",
+    "remove": "Susa ku cinca {{n}}",
+    "amount": "Mali",
+    "date": "Siku",
+    "label": "Xitsundzuxo (ku tihlawulela)",
+    "labelPlaceholder": "Xikombiso, riendzo ra xikolo",
+    "add": "Engetela ku cinca",
+    "noItems": "A ku na ku cinca sweswi. Engetela kun'we ku vona mbuyelo.",
+    "result": "Mbuyelo",
+    "now": "Sweswi",
+    "withChanges": "Hi ku cinca loku",
+    "noChange": "A ku na ku cinca",
+    "daysMore_one": "Siku ra {{count}} ku tlula",
+    "daysMore_other": "Masiku ya {{count}} ku tlula",
+    "daysLess_one": "Siku ra {{count}} ehansi",
+    "daysLess_other": "Masiku ya {{count}} ehansi",
+    "stsChange": "Bajete ya siku: {{before}} sweswi, {{after}} hi ku cinca loku.",
+    "loan": "Nkambelo wa ku lomba",
+    "loanLead": "Vona ku rhanga leswaku ku lombisa mali swi endla yini eka xiyimo xa wena.",
+    "loanAmount": "Mali leyi munhu a yi kombeleke",
+    "enterAmount": "Nghenisa mali, kumbe u hlawula yin'we ehansi, ku vona mbuyelo.",
+    "ifLend": "Loko u lombisa {{amount}} namuntlha",
+    "afterLoan": "Endzhaku ka ku lomba",
+    "stateDrops": "Leswi swi rhelerisa xiyimo xa wena ku suka eka {{from}} ku ya eka {{to}}.",
+    "amountError": "Nghenisa mali leyi tlulaka zero, xikombiso 250.",
+    "whatIfSpoken": "Hi ku cinca loku: {{label}} {{date}}, {{state}}, {{change}}.",
+    "loanSpoken_one": "Loko u lombisa {{amount}}: {{label}} {{date}}, {{state}}, siku ra {{count}} ra nsirhelelo ehansi.",
+    "loanSpoken_other": "Loko u lombisa {{amount}}: {{label}} {{date}}, {{state}}, masiku ya {{count}} ya nsirhelelo ehansi.",
+    "notAdvised": "a swi tsundzuxiwi",
+    "exampleNote": "Xikombiso xo sungula: riendzo ra xikolo ra R200 hi Ravuntlhanu leri taka. Ri cince kumbe u ri susa.",
+    "roomToLend": "Ndhawu yo lombisa",
+    "roomToLendHint": "Ku lombisa kumbe ku nyika ku fikela mali leyi swi ku hlayisa eka {{state}} naswona swi hlayisa {{reserve}} ya tihakelo leti taka endzhaku ka mali ya wena leyi landzelaka.",
+    "roomToLendHintNoReserve": "Ku lombisa kumbe ku nyika ku fikela mali leyi swi ku hlayisa eka {{state}}.",
+    "roomToLendNone": "Mali yihi na yihi sweswi yi nga ku rhelerisela ehansi ka {{state}} kumbe yi tirhisa mali leyi hlayiseriweke tihakelo.",
+    "roomToLendShort": "U se u kayivela mali ya wena leyi landzelaka yi nga si fika. Mali yihi na yihi leyi u yi lombisaka yi tshinelerisa siku ra wena.",
+    "lendCaution": "Lombisa ntsena leswi u nga hanyaka handle ka ku swi tlheriseriwa. Tengo a yi swi koti ku vula loko swi ta vuya kumbe rini.",
+    "useRoom": "Tirhisa {{amount}}",
+    "labelPlaceholderValue": "Riendzo ra xikolo (xikombiso)",
+    "roomToLendUnsure": "Tengo a yi na ntshembo lowu ringaneke hi mali ya wena leyi nghenaka ku ringanyeta mali. Kambela mbuyelo wa mali yo karhi ehansi.",
+    "notAdvice": "Swiringanyeto leswi humaka eka matimu ya wena, a hi xitsundzuxo. A ku na nchumu laha lexi nga xiboho xa ku lomba kumbe xinyikiwo xa xikweleti."
   },
   "money": {
-    "title": "Money",
-    "lead": "Every transaction Tengo uses, and the bills it found.",
-    "history": "Transaction history",
-    "import": "Import statement",
-    "filter": "Show",
-    "all": "All",
+    "title": "Mali",
+    "lead": "Ntirho wun'wana na wun'wana wa mali lowu Tengo yi wu tirhisaka, na tihakelo leti yi ti kumeke.",
+    "history": "Matimu ya mintirho ya mali",
+    "import": "Nghenisa xitatimende",
+    "filter": "Kombisa",
+    "all": "Hinkwaswo",
     "filters": {
-      "income": "Income",
-      "spend": "Spend",
-      "bill": "Bills"
+      "income": "Mali leyi nghenaka",
+      "spend": "Ku tirhisa",
+      "bill": "Tihakelo"
     },
-    "search": "Search",
-    "count_one": "{{count}} transaction",
-    "count_other": "{{count}} transactions",
-    "emptyTitle": "Nothing to show",
-    "emptyBodyNone": "No transactions yet. Import a statement to get started.",
-    "emptyBodyFilter": "No transactions match this filter.",
-    "editLabel": "Edit {{name}}, {{date}}",
-    "more": "Show {{count}} more",
-    "last30": "Last 30 days",
-    "in": "Money in",
-    "out": "Money out",
-    "balance": "Balance today: {{amount}}",
-    "bills": "Recurring bills",
-    "billsRule": "Same description and a similar amount, about a month apart.",
-    "noBills": "No recurring bills found.",
-    "billNext_one": "Next {{date}} · seen {{count}} time",
-    "billNext_other": "Next {{date}} · seen {{count}} times",
-    "importTitle": "Bring your own statement",
-    "importBody": "Upload a CSV bank statement. It is read on this device and replaces this person's history.",
-    "movableLabel": "Can be paid later",
-    "movableHint": "Only mark a bill if it can be paid a few days late without a fee.",
-    "protectedBill": "Never suggested to move: paying late can cost fees, cover or credit."
+    "search": "Lavisisa",
+    "count_one": "Ntirho wa mali wa {{count}}",
+    "count_other": "Mintirho ya mali ya {{count}}",
+    "emptyTitle": "A ku na nchumu wo kombisa",
+    "emptyBodyNone": "A ku na mintirho ya mali sweswi. Nghenisa xitatimende ku sungula.",
+    "emptyBodyFilter": "A ku na mintirho leyi fambelanaka na xihlungi lexi.",
+    "editLabel": "Lulamisa {{name}}, {{date}}",
+    "more": "Kombisa ta {{count}} ku tlula",
+    "last30": "Masiku ya 30 yo hetelela",
+    "in": "Mali leyi nghenaka",
+    "out": "Mali leyi humaka",
+    "balance": "Balansi ya namuntlha: {{amount}}",
+    "bills": "Tihakelo leti tlhelelaka",
+    "billsRule": "Nhlamuselo yo fana na mali yo fana, kwalomu ka n'hweti exikarhi.",
+    "noBills": "A ku na tihakelo leti tlhelelaka leti kumiweke.",
+    "billNext_one": "Leyi landzelaka {{date}} · yi voniwe ka {{count}}",
+    "billNext_other": "Leyi landzelaka {{date}} · yi voniwe ka {{count}}",
+    "importTitle": "Tisa xitatimende xa wena",
+    "importBody": "Layicha xitatimende xa bangi xa CSV. Xi hlayiwa eka xitirhisiwa lexi naswona xi siva matimu ya munhu loyi.",
+    "movableLabel": "Yi nga hakeriwa endzhaku",
+    "movableHint": "Funga hakelo ntsena loko yi nga hakeriwa endzhaku ka masiku ma nga ri mangani handle ka hakelo yo engetela.",
+    "protectedBill": "A yi tsundzuxiwi ku susiwa: ku hakela hi ku hlwela swi nga durha hi tihakelo, nsirhelelo kumbe xikweleti."
   },
   "import": {
-    "title": "Import statement",
-    "lead": "Use a CSV bank statement to replace this person's history. It never leaves your browser.",
-    "step1": "1. Choose a file",
-    "useSample": "Use sample statement",
-    "chooseCsv": "Choose a CSV file",
-    "pdf": "PDF statement (coming next)",
-    "pdfNote": "PDF statements are not supported yet.",
-    "downloadSample": "Download sample-statement.csv",
-    "local": "Processed on your device. Nothing leaves your browser.",
-    "formatTitle": "What the file needs",
-    "formatBody": "A date, a description and an amount (negative for money out), or separate debit and credit columns. At least 14 days.",
-    "step2": "2. Check and confirm",
-    "readError": "This file could not be read as a CSV.",
-    "empty": "Choose a file or use the sample statement to see a preview here.",
-    "rowsRead_one": "{{count}} row read",
-    "rowsRead_other": "{{count}} rows read",
-    "mapping": "Columns",
-    "mappingHint": "We guessed these from the headers. Change any that look wrong.",
+    "title": "Nghenisa xitatimende",
+    "lead": "Tirhisa xitatimende xa bangi xa CSV ku siva matimu ya munhu loyi. A xi pfuki xi huma eka bowuzara ya wena.",
+    "step1": "1. Hlawula fayili",
+    "useSample": "Tirhisa xitatimende xa xikombiso",
+    "chooseCsv": "Hlawula fayili ya CSV",
+    "pdf": "Xitatimende xa PDF (xa ta)",
+    "pdfNote": "Swiitatimende swa PDF a swi si seketeriwa.",
+    "downloadSample": "Dawuniloda sample-statement.csv",
+    "local": "Swi endliwa eka xitirhisiwa xa wena. A ku na nchumu lowu humaka eka bowuzara ya wena.",
+    "formatTitle": "Leswi fayili yi swi lavaka",
+    "formatBody": "Siku, nhlamuselo na mali (ehansi ka zero eka mali leyi humaka), kumbe tikholomu to hambana ta debit na credit. Masiku ya 14 ku ya ehenhla.",
+    "step2": "2. Kambela u tiyisisa",
+    "readError": "Fayili leyi a yi kotanga ku hlayiwa tanihi CSV.",
+    "empty": "Hlawula fayili kumbe u tirhisa xitatimende xa xikombiso ku vona nkombiso laha.",
+    "rowsRead_one": "Ku hlayiwe layini ya {{count}}",
+    "rowsRead_other": "Ku hlayiwe tilayini ta {{count}}",
+    "mapping": "Tikholomu",
+    "mappingHint": "Hi ti ringanyetile ku suka eka tinhloko. Cinca yihi na yihi leyi langutekaka yi hoxile.",
     "field": {
-      "date": "Date",
-      "description": "Description",
-      "amount": "Amount",
+      "date": "Siku",
+      "description": "Nhlamuselo",
+      "amount": "Mali",
       "debit": "Debit",
       "credit": "Credit",
-      "balance": "Balance"
+      "balance": "Balansi"
     },
-    "none": "Not used",
-    "needMapping": "Pick a date, a description, and either an amount or debit and credit columns.",
-    "previewCaption": "The last rows of the statement",
-    "type": "Type",
-    "previewNote_one": "Showing the last rows of {{count}} transaction.",
-    "previewNote_other": "Showing the last rows of {{count}} transactions.",
-    "skipped_one": "{{count}} row skipped because the date, description or amount could not be read.",
-    "skipped_other": "{{count}} rows skipped because the date, description or amount could not be read.",
-    "tooShort": "This statement covers {{count}} days. Tengo needs at least 14.",
-    "noRows": "No usable rows found with these columns.",
-    "wideRange": "Only {{count}} days of history. The forecast will work, but the range will be wide.",
-    "shifted_one": "Dates moved forward by {{count}} day so the statement ends yesterday.",
-    "shifted_other": "Dates moved forward by {{count}} days so the statement ends yesterday.",
-    "days": "Days",
-    "balance": "Current balance",
-    "balanceFromFile": "Taken from the last balance in the file: {{amount}}. Type to change it.",
-    "balanceKept": "No balance column. Keeping the current balance of {{amount}}. Type to change it.",
-    "result": "Forecast with this statement",
-    "confirm": "Replace history and see my date",
-    "replaceNote": "This replaces this person's history on this device and adds an entry to the audit log.",
-    "tooBig": "That file is larger than 2 MB, which is more than a statement needs. Choose a shorter period or a smaller file."
+    "none": "A yi tirhisiwi",
+    "needMapping": "Hlawula siku, nhlamuselo, na mali kumbe tikholomu ta debit na credit.",
+    "previewCaption": "Tilayini to hetelela ta xitatimende",
+    "type": "Muxaka",
+    "previewNote_one": "Ku kombisiwa tilayini to hetelela ta ntirho wa mali wa {{count}}.",
+    "previewNote_other": "Ku kombisiwa tilayini to hetelela ta mintirho ya mali ya {{count}}.",
+    "skipped_one": "Ku tluriwe layini ya {{count}} hikuva siku, nhlamuselo kumbe mali swi nga kotekanga ku hlayiwa.",
+    "skipped_other": "Ku tluriwe tilayini ta {{count}} hikuva siku, nhlamuselo kumbe mali swi nga kotekanga ku hlayiwa.",
+    "tooShort": "Xitatimende lexi xi katsa masiku ya {{count}}. Tengo yi lava ya 14 ku ya ehenhla.",
+    "noRows": "A ku na tilayini leti tirhisekaka leti kumiweke hi tikholomu leti.",
+    "wideRange": "Masiku ya {{count}} ntsena ya matimu. Vuhlahluvi byi ta tirha, kambe mpimo wu ta anama.",
+    "shifted_one": "Masiku ma rhurhisiwe emahlweni hi siku ra {{count}} leswaku xitatimende xi hela tolo.",
+    "shifted_other": "Masiku ma rhurhisiwe emahlweni hi masiku ya {{count}} leswaku xitatimende xi hela tolo.",
+    "days": "Masiku",
+    "balance": "Balansi ya sweswi",
+    "balanceFromFile": "Yi tekiwe eka balansi yo hetelela eka fayili: {{amount}}. Thayipa ku yi cinca.",
+    "balanceKept": "A ku na kholomu ya balansi. Ku hlayisiwa balansi ya sweswi ya {{amount}}. Thayipa ku yi cinca.",
+    "result": "Vuhlahluvi hi xitatimende lexi",
+    "confirm": "Siva matimu u vona siku ra mina",
+    "replaceNote": "Leswi swi siva matimu ya munhu loyi eka xitirhisiwa lexi naswona swi engetela xingheniso eka rhekhodo ya ndzavisiso.",
+    "tooBig": "Fayili yoleyo yi tlula 2 MB, leswi tlulaka leswi xitatimende xi swi lavaka. Hlawula nkarhi wo koma kumbe fayili ntsongo."
   },
   "edit": {
-    "title": "Edit transaction",
-    "description": "Description",
-    "amount": "Amount",
-    "amountHint": "Negative for money out, for example -250.",
-    "category": "Type",
-    "auditNote": "Saving adds an entry to your audit log.",
-    "oneOff": "One-off",
-    "oneOffHint": "Left out of your usual spend and income pattern. It still counts in your balance."
+    "title": "Lulamisa ntirho wa mali",
+    "description": "Nhlamuselo",
+    "amount": "Mali",
+    "amountHint": "Ehansi ka zero eka mali leyi humaka, xikombiso -250.",
+    "category": "Muxaka",
+    "auditNote": "Ku hlayisa swi engetela xingheniso eka rhekhodo ya wena ya ndzavisiso.",
+    "oneOff": "Ya kan'we",
+    "oneOffHint": "Yi siyiwe ehandle ka mukhuva wa wena wa ntolovelo wa matirhisele na mali leyi nghenaka. Ya ha hlayiwa eka balansi ya wena."
   },
   "audit": {
-    "session_opened": "Opened Tengo",
-    "consent_given": "Gave consent. Messages {{messages}}, analytics {{analytics}}",
-    "consent_changed": "Changed consent: {{item}} {{value}}",
-    "data_viewed": "Viewed all data",
-    "data_exported": "Exported data as {{format}}",
-    "statement_imported": "Imported a statement with {{rows}} transactions",
-    "transaction_edited": "Corrected a transaction: {{fields}}",
-    "review_requested": "Asked for a human review",
-    "forecast_paused": "Paused the forecast",
-    "forecast_resumed": "Resumed the forecast",
-    "transaction_added_one": "Added {{count}} entry",
-    "transaction_added_other": "Added {{count}} entries",
-    "balance_updated": "Updated the balance",
-    "bill_answered": "Answered a question about a bill that looked unpaid",
-    "plan_settings": "Changed which spending can bend or which bills can move",
-    "money_updated": "Changed accounts or money owed",
-    "cash_added": "Recorded cash {{direction}}",
-    "setup_saved": "Set up a history by hand",
-    "account_uploaded": "Saved the profile to an account",
-    "account_created": "Started an empty account",
-    "account_signedIn": "Signed in on a device"
+    "session_opened": "Ku pfuriwe Tengo",
+    "consent_given": "Ku nyikiwe mpfumelelo. Marungula {{messages}}, nxopaxopo {{analytics}}",
+    "consent_changed": "Ku cinciwe mpfumelelo: {{item}} {{value}}",
+    "data_viewed": "Ku languteriwe vuxokoxoko hinkwabyo",
+    "data_exported": "Ku humesiwe vuxokoxoko tanihi {{format}}",
+    "statement_imported": "Ku nghenisiwe xitatimende lexi nga na mintirho ya mali ya {{rows}}",
+    "transaction_edited": "Ku lulamisiwe ntirho wa mali: {{fields}}",
+    "review_requested": "Ku kombeliwe nkambelo wa munhu",
+    "forecast_paused": "Ku yimisiwe vuhlahluvi",
+    "forecast_resumed": "Ku yisiwe vuhlahluvi emahlweni",
+    "transaction_added_one": "Ku engeteriwe xingheniso xa {{count}}",
+    "transaction_added_other": "Ku engeteriwe swingheniso swa {{count}}",
+    "balance_updated": "Ku pfuxetiwe balansi",
+    "bill_answered": "Ku hlamuriwe xivutiso hi hakelo leyi a yi languteka yi nga hakeriwanga",
+    "plan_settings": "Ku cinciwe matirhisele lama nga hungutiwaka kumbe tihakelo leti nga rhurhisiwaka",
+    "money_updated": "Ku cinciwe tiakhawunti kumbe mali leyi kolotiwaka",
+    "cash_added": "Ku tsariwe kheše {{direction}}",
+    "setup_saved": "Ku lulamisiwe matimu hi voko",
+    "account_uploaded": "Ku hlayisiwe phurofayili eka akhawunti",
+    "account_created": "Ku sunguriwe akhawunti leyi nga riki na nchumu",
+    "account_signedIn": "Ku nghene eka xitirhisiwa"
   },
   "inbox": {
-    "title": "Inbox",
-    "lead": "The daily message Tengo would send.",
-    "simulated": "Simulated. No message is sent.",
-    "offTitle": "Daily messages are off",
-    "offBody": "You turned off daily messages, so there is nothing to preview. Turn them on here or in Privacy.",
-    "turnOn": "Turn on daily messages",
-    "preview": "Today's message",
-    "channel": "Channel",
+    "title": "Marungula",
+    "lead": "Rungula ra siku na siku leri Tengo a yi ta ri rhumela.",
+    "simulated": "I ku ringeta. A ku na rungula leri rhumeriwaka.",
+    "offTitle": "Marungula ya siku na siku ma pfariwile",
+    "offBody": "U pfarile marungula ya siku na siku, hikwalaho a ku na nchumu wo vona ku rhanga. Ma pfule laha kumbe eka Xihundla.",
+    "turnOn": "Pfula marungula ya siku na siku",
+    "preview": "Rungula ra namuntlha",
+    "channel": "Kanele",
     "channels": {
       "whatsapp": "WhatsApp",
       "sms": "SMS"
     },
-    "todayAt": "Today",
-    "language": "Message language",
-    "languageHint": "Messages can use a different language from the app.",
-    "to": "To {{name}}",
-    "schedule": "Every morning at 07:00",
+    "todayAt": "Namuntlha",
+    "language": "Ririmi ra rungula",
+    "languageHint": "Marungula ma nga tirhisa ririmi ro hambana na ra app.",
+    "to": "Eka {{name}}",
+    "schedule": "Mixo wun'wana na wun'wana hi 07:00",
     "facts": {
-      "what": "Only your date, cover and daily budget.",
-      "never": "Never your balance or transactions.",
-      "stop": "Every message says it is from Tengo and how to stop. You can also turn messages off in Privacy.",
-      "where": "WhatsApp messages would pass through Meta, outside South Africa. SMS is the alternative. Simulated here: nothing is sent."
+      "what": "Siku ra wena, xiyimo na bajete ya siku ntsena.",
+      "never": "A swi nge pfuki swi va balansi ya wena kumbe mintirho ya wena ya mali.",
+      "stop": "Rungula rin'wana na rin'wana ri vula leswaku ri huma eka Tengo na ndlela yo ri yimisa. U nga tlhela u pfala marungula eka Xihundla.",
+      "where": "Marungula ya WhatsApp a ma ta hundza eka Meta, ehandle ka Afrika Dzonga. SMS i ndlela yin'wana. I ku ringeta laha: a ku na nchumu lowu rhumeriwaka."
     },
-    "manage": "Manage messages",
-    "smsCount_one": "1 SMS, {{encoding}}, {{chars}} of {{limit}} characters",
-    "smsCount_other": "{{count}} SMS parts, {{encoding}}, {{chars}} characters"
+    "manage": "Lawula marungula",
+    "smsCount_one": "1 SMS, {{encoding}}, {{chars}} eka swiletelo swa {{limit}}",
+    "smsCount_other": "Swiphemu swa SMS swa {{count}}, {{encoding}}, swiletelo swa {{chars}}"
   },
   "messages": {
     "whatsapp": {
-      "greeting": "Hi {{name}}.",
-      "enough": "Your money should last until *{{date}}*. Cover: {{state}}.",
-      "tight": "Your money should last until *{{date}}* on a normal week. Cover: {{state}}.",
-      "short_one": "Your money may run out on *{{date}}*, {{count}} day before your next money. Cover: {{state}}.",
-      "short_other": "Your money may run out on *{{date}}*, {{count}} days before your next money. Cover: {{state}}.",
-      "sts": "Daily budget: *{{sts}}*.",
-      "next": "Next money: around {{next}}.",
-      "noNext": "No next money is expected at the moment.",
+      "greeting": "Xewani {{name}}.",
+      "enough": "Mali ya wena yi fanele ku teka ku fikela *{{date}}*. Xiyimo: {{state}}.",
+      "tight": "Mali ya wena yi fanele ku teka ku fikela *{{date}}* hi vhiki ra ntolovelo. Xiyimo: {{state}}.",
+      "short_one": "Mali ya wena yi nga hela hi *{{date}}*, siku ra {{count}} mali ya wena leyi landzelaka yi nga si fika. Xiyimo: {{state}}.",
+      "short_other": "Mali ya wena yi nga hela hi *{{date}}*, masiku ya {{count}} mali ya wena leyi landzelaka yi nga si fika. Xiyimo: {{state}}.",
+      "sts": "Bajete ya siku: *{{sts}}*.",
+      "next": "Mali leyi landzelaka: kwalomu ka {{next}}.",
+      "noNext": "A ku na mali leyi landzelaka leyi languteriweke sweswi.",
       "tip": {
-        "enough": "Covered until your next money, even on a heavy week.",
-        "tight": "Keep spending close to your daily budget until your next money.",
-        "short": "Check Plan in Tengo to see what helps most."
+        "enough": "U sirhelelekile ku fikela mali ya wena leyi landzelaka, hambi ku ri hi vhiki ro tika.",
+        "tight": "Hlayisa matirhisele ya wena kusuhi na bajete ya wena ya siku ku fikela mali ya wena leyi landzelaka.",
+        "short": "Languta Kunguhata eka Tengo ku vona leswi pfunaka swinene."
       },
-      "stsNotAdvised": "Daily budget: not advised until your next money.",
-      "unclear": "Tengo does not have enough to go on yet to give you a date. Open Tengo to see what to add.",
-      "stsPending": "Daily budget: worked out once today's payment lands.",
-      "stop": "From Tengo. Reply STOP to end these updates.",
-      "discreet": "Tengo: your daily update is ready. Open the app to see it.",
-      "noNextDaily": "Money comes in most days, so there is no single next payment."
+      "stsNotAdvised": "Bajete ya siku: a swi tsundzuxiwi ku fikela mali ya wena leyi landzelaka.",
+      "unclear": "Tengo a yi na leswi ringaneke sweswi ku ku nyika siku. Pfula Tengo ku vona leswi u faneleke ku swi engetela.",
+      "stsPending": "Bajete ya siku: yi ta hlayeriwa loko hakelo ya namuntlha yi nghenile.",
+      "stop": "Ku suka eka Tengo. Hlamula hi STOP ku yimisa mapfuxeto lawa.",
+      "discreet": "Tengo: mpfuxeto wa wena wa siku wu lulamile. Pfula app ku wu vona.",
+      "noNextDaily": "Mali yi nghena masiku yo tala, hikwalaho a ku na hakelo yin'we leyi landzelaka."
     },
     "sms": {
-      "enough": "Tengo: Hi {{name}}, money lasts until {{date}} ({{state}}). Budget {{sts}} a day.",
-      "tight": "Tengo: Hi {{name}}, money lasts until {{date}} on a normal week ({{state}}). Budget {{sts}} a day.",
-      "short": "Tengo: Hi {{name}}, money may run out {{date}} ({{state}}). Budget not advised.",
-      "next": "Next money about {{next}}.",
-      "unclear": "Tengo: Hi {{name}}, not enough to go on yet for a date. Open Tengo to see what to add.",
-      "stop": "Reply STOP to end.",
-      "discreet": "Tengo: your daily update is ready. Open the app to see it. Reply STOP to end."
+      "enough": "Tengo: Xewani {{name}}, mali yi teka ku fikela {{date}} ({{state}}). Bajete {{sts}} hi siku.",
+      "tight": "Tengo: Xewani {{name}}, mali yi teka ku fikela {{date}} hi vhiki ra ntolovelo ({{state}}). Bajete {{sts}} hi siku.",
+      "short": "Tengo: Xewani {{name}}, mali yi nga hela {{date}} ({{state}}). Bajete a yi tsundzuxiwi.",
+      "next": "Mali leyi landzelaka kwalomu ka {{next}}.",
+      "unclear": "Tengo: Xewani {{name}}, a ku na leswi ringaneke sweswi swa siku. Pfula Tengo ku vona leswi u faneleke ku swi engetela.",
+      "stop": "Hlamula hi STOP ku yimisa.",
+      "discreet": "Tengo: mpfuxeto wa wena wa siku wu lulamile. Pfula app ku wu vona. Hlamula hi STOP ku yimisa."
     }
   },
   "a11y": {
-    "moneyIn": "money in, {{amount}}",
-    "moneyOut": "money out, {{amount}}",
-    "saved": "Transaction saved",
-    "noChanges": "No changes made",
-    "exported": "Data exported as {{format}}",
-    "consentSaved": "Consent updated",
-    "paused": "Consent withdrawn. The forecast is paused.",
-    "belowZero": "{{amount}} below zero"
+    "moneyIn": "mali leyi nghenaka, {{amount}}",
+    "moneyOut": "mali leyi humaka, {{amount}}",
+    "saved": "Ntirho wa mali wu hlayisiwile",
+    "noChanges": "A ku na ku cinca loku endliweke",
+    "exported": "Vuxokoxoko byi humesiwile tanihi {{format}}",
+    "consentSaved": "Mpfumelelo wu pfuxetiwile",
+    "paused": "Mpfumelelo wu tekiwile endzhaku. Vuhlahluvi byi yimisiwile.",
+    "belowZero": "{{amount}} ehansi ka zero"
   },
   "help": {
-    "title": "What helps most",
-    "moveBill": "If {{name}} ({{amount}}) can be paid after {{date}} without a fee, that alone reaches {{state}}.",
-    "tryInPlan": "Try it in Plan",
-    "coveredTitle": "You are covered",
-    "setAside": "You could set aside up to {{amount}} today and still be Enough until your next money. This is the same room as Room to lend, not extra.",
-    "coveredBody": "Your money should last until your next money, even on a heavier week.",
-    "toReachState": "Ways to reach {{state}}",
-    "more_one": "{{count}} more way",
-    "more_other": "{{count}} more ways",
-    "fewer": "Show fewer",
-    "earn": "Earn or receive {{amount}} more before {{date}}, for example extra work or money owed to you.",
-    "earnAssume": "Assumes your spending stays as usual. Borrowing to cover a gap usually costs more later.",
-    "trim": "Spend about {{amount}} a day less on {{groups}} until {{date}}.",
-    "trimAssume": "Only spending you marked as able to bend. Assumes everything else stays as usual.",
-    "trimPartial": "That is all the spending you marked as able to bend, so it covers part of the gap. The rest still needs money in.",
-    "moveAssume": "You marked it as movable. Ask first. Never skip debit orders for loans or insurance.",
-    "markFlexible": "Mark which everyday spending can bend to see where you could trim.",
-    "chooseOnMoney": "Choose on Money",
-    "freeHelp": "If you are behind on debt, the National Credit Regulator lists free help:",
-    "ideasNote": "Ideas, not advice. Check fees and penalties before changing a payment."
+    "title": "Leswi pfunaka swinene",
+    "moveBill": "Loko {{name}} ({{amount}}) yi nga hakeriwa endzhaku ka {{date}} handle ka hakelo yo engetela, sweswo ntsena swi fika eka {{state}}.",
+    "tryInPlan": "Swi ringete eka Kunguhata",
+    "coveredTitle": "U sirhelelekile",
+    "setAside": "U nga veka etlhelo ku fikela {{amount}} namuntlha naswona u tshama eka Ya ringana ku fikela mali ya wena leyi landzelaka. Leyi i ndhawu yo fana na Ndhawu yo lombisa, ku nga ri yo engetela.",
+    "coveredBody": "Mali ya wena yi fanele ku teka ku fikela mali ya wena leyi landzelaka, hambi ku ri hi vhiki ro tika ngopfu.",
+    "toReachState": "Tindlela to fika eka {{state}}",
+    "more_one": "Ndlela yin'wana ya {{count}}",
+    "more_other": "Tindlela tin'wana ta {{count}}",
+    "fewer": "Kombisa ti nga ri tingani",
+    "earn": "Kuma kumbe u amukela {{amount}} ku tlula hi nkarhi wa {{date}}, xikombiso ntirho wo engetela kumbe mali leyi u kolotiwaka yona.",
+    "earnAssume": "Swi ehleketiwa leswaku matirhisele ya wena ma tshama hi ntolovelo. Ku lomba ku vala xivandla hi ntolovelo swi durha ngopfu endzhaku.",
+    "trim": "Tirhisa kwalomu ka {{amount}} hi siku ehansi eka {{groups}} ku fikela {{date}}.",
+    "trimAssume": "Matirhisele ntsena lama u ma fungheke tanihi lama nga hungutiwaka. Swi ehleketiwa leswaku swin'wana hinkwaswo swi tshama hi ntolovelo.",
+    "trimPartial": "Wolawo i matirhisele hinkwawo lama u ma fungheke tanihi lama nga hungutiwaka, hikwalaho ma vala xiphemu xa xivandla. Leswi saleke swa ha lava mali leyi nghenaka.",
+    "moveAssume": "U yi funghile tanihi leyi nga rhurhisiwaka. Vutisa ku rhanga. U nga tluli ti-debit order ta swikweleti kumbe inshurensi.",
+    "markFlexible": "Funga matirhisele ya siku na siku lama nga hungutiwaka ku vona laha u nga hungutaka kona.",
+    "chooseOnMoney": "Hlawula eka Mali",
+    "freeHelp": "Loko u sale endzhaku hi swikweleti, National Credit Regulator yi xaxameta mpfuno wa mahala:",
+    "ideasNote": "Miehleketo, a hi xitsundzuxo. Kambela tihakelo to engetela na swigwevo u nga si cinca hakelo."
   },
   "spending": {
-    "title": "Where everyday money goes",
-    "lead": "Last 30 days, not counting bills.",
-    "empty": "No everyday spending in the last 30 days.",
+    "title": "Laha mali ya siku na siku yi yaka kona",
+    "lead": "Masiku ya 30 yo hetelela, handle ka tihakelo.",
+    "empty": "A ku na matirhisele ya siku na siku eka masiku ya 30 yo hetelela.",
     "groups": {
-      "food": "Food and groceries",
-      "transport": "Fuel and transport",
-      "airtime": "Airtime and data",
-      "stock": "Stock and supplies",
-      "energy": "Electricity and fuel at home",
-      "other": "Other"
+      "food": "Swakudya na swilo swa le kaya",
+      "transport": "Petirolo na vutleketli",
+      "airtime": "Airtime na datha",
+      "stock": "Xitoko na switirhisiwa",
+      "energy": "Gezi na swihisi swa le kaya",
+      "other": "Swin'wana"
     },
-    "flexibleLabel": "Can bend",
-    "flexibleHint": "Mark the spending you could trim if money is short. Work costs like stock and fuel are never suggested for cuts.",
-    "workCost": "Work cost"
+    "flexibleLabel": "Ya hungutiwa",
+    "flexibleHint": "Funga matirhisele lama u nga ma hungutaka loko mali yi kayivela. Ntsengo wa ntirho wo fana na xitoko na petirolo a wu tsundzuxiwi ku hungutiwa.",
+    "workCost": "Ntsengo wa ntirho"
   },
   "palette": {
-    "title": "Command menu",
-    "open": "Search or jump to",
+    "title": "Nxaxamelo wa swileriso",
+    "open": "Lavisisa kumbe u tlulela eka",
     "shortcut": "Ctrl K",
-    "search": "Search commands",
-    "placeholder": "Go to a page, switch person, change language",
-    "results": "Commands",
-    "empty": "Nothing matches.",
-    "help": "Arrow keys to move, Enter to choose, Esc to close.",
-    "switchTo": "Switch to {{name}}",
-    "theme": "{{name}} theme",
-    "languageSet": "Language set to {{name}}",
-    "themeSet": "{{name}} theme on",
+    "search": "Lavisisa swileriso",
+    "placeholder": "Ya eka pheji, cinca munhu, cinca ririmi",
+    "results": "Swileriso",
+    "empty": "A ku na leswi fambelanaka.",
+    "help": "Swikonokono swa miseve ku famba, Enter ku hlawula, Esc ku pfala.",
+    "switchTo": "Cincela eka {{name}}",
+    "theme": "Nhlokomhaka ya {{name}}",
+    "languageSet": "Ririmi ri vekiwe eka {{name}}",
+    "themeSet": "Nhlokomhaka ya {{name}} yi pfulekile",
     "groups": {
-      "pages": "Pages",
-      "people": "People",
-      "language": "Language",
-      "theme": "Theme"
+      "pages": "Tipheji",
+      "people": "Vanhu",
+      "language": "Ririmi",
+      "theme": "Nhlokomhaka"
     }
   },
   "theme": {
-    "button": "Theme: {{current}}. Switch to {{next}}"
+    "button": "Nhlokomhaka: {{current}}. Cincela eka {{next}}"
   },
   "notice": {
     "overdrawn": {
-      "title": "Overdrawn by {{amount}}",
-      "body": "Money that comes in covers this first. Your date counts from when the balance is above R0 again."
+      "title": "U humesile ku tlula hi {{amount}}",
+      "body": "Mali leyi nghenaka yi hakela leswi ku rhanga. Siku ra wena ri hlayiwa ku sukela loko balansi yi tlhela yi va ehenhla ka R0."
     },
     "asOf": {
-      "title": "From your statement",
-      "body_one": "This forecast is from your statement, which ends {{date}}, {{count}} day ago. Add today's balance to bring it up to date.",
-      "body_other": "This forecast is from your statement, which ends {{date}}, {{count}} days ago. Add today's balance to bring it up to date."
+      "title": "Ku suka eka xitatimende xa wena",
+      "body_one": "Vuhlahluvi lebyi byi huma eka xitatimende xa wena, lexi helaka hi {{date}}, siku ra {{count}} leri hundzeke. Engetela balansi ya namuntlha ku byi pfuxeta.",
+      "body_other": "Vuhlahluvi lebyi byi huma eka xitatimende xa wena, lexi helaka hi {{date}}, masiku ya {{count}} lama hundzeke. Engetela balansi ya namuntlha ku byi pfuxeta."
     },
     "historyEnds": {
-      "title": "History ends {{date}}",
-      "body": "Spending since then is not in your history, so the forecast uses the pattern up to that day with today's balance."
+      "title": "Matimu ma hela hi {{date}}",
+      "body": "Matirhisele ku sukela hi nkarhi wolowo a ma kona eka matimu ya wena, hikwalaho vuhlahluvi byi tirhisa mukhuva ku fikela siku rero na balansi ya namuntlha."
     },
     "paused": {
-      "title": "Income looks paused",
-      "body": "Nothing like your usual payments has come in since {{date}}. Tengo no longer counts on next money and checks the next 30 days instead."
+      "title": "Mali leyi nghenaka yi languteka yi yimisiwile",
+      "body": "A ku na nchumu lowu fanaka na tihakelo ta wena ta ntolovelo lowu ngheneke ku sukela hi {{date}}. Tengo a ya ha titshegi hi mali leyi landzelaka naswona ematshan'weni ya sweswo yi kambela masiku ya 30 lama taka."
     },
-    "pausedNoDate": "Nothing like your usual payments has come in for a while. Tengo no longer counts on next money and checks the next 30 days instead.",
+    "pausedNoDate": "A ku na nchumu lowu fanaka na tihakelo ta wena ta ntolovelo lowu ngheneke nkarhi wo karhi. Tengo a ya ha titshegi hi mali leyi landzelaka naswona ematshan'weni ya sweswo yi kambela masiku ya 30 lama taka.",
     "irregular": {
-      "title": "No regular pattern yet",
-      "body": "Money comes in, but not in a rhythm Tengo can use. It checks the next 30 days instead of a next-money date."
+      "title": "A ku na mukhuva wa ntolovelo sweswi",
+      "body": "Mali ya nghena, kambe ku nga ri hi ndlela leyi Tengo yi nga yi tirhisaka. Yi kambela masiku ya 30 lama taka ematshan'weni ya siku ra mali leyi landzelaka."
     },
     "pendingToday": {
-      "title": "Payment due today",
-      "body": "Your usual payment is due today and is not in your balance yet, so it is still counted as coming.",
-      "action": "It has come in",
-      "entry": "Usual payment, marked as received"
+      "title": "Hakelo yi fanele namuntlha",
+      "body": "Hakelo ya wena ya ntolovelo yi fanele namuntlha naswona a yi si nghena eka balansi ya wena, hikwalaho ya ha hlayiwa tanihi leyi taka.",
+      "action": "Yi nghenile",
+      "entry": "Hakelo ya ntolovelo, yi funghiwile tanihi leyi amukeriweke"
     },
     "missedBill": {
-      "title": "{{name}} ({{amount}}) looks unpaid",
-      "body": "It was due around {{date}} and did not show up. Tell Tengo what happened so the date stays right.",
-      "owed": "I still owe it",
-      "settled": "It is paid or stopped"
+      "title": "{{name}} ({{amount}}) yi languteka yi nga hakeriwanga",
+      "body": "A yi fanele kwalomu ka {{date}} naswona a yi humelelanga. Byela Tengo leswi humeleleke leswaku siku ri tshama ri lulamile.",
+      "owed": "Ndza ha yi kolota",
+      "settled": "Yi hakeriwile kumbe yi yimisiwile"
     },
     "oneOffs": {
-      "body_one": "{{count}} large one-off amount is left out of your usual spend and income.",
-      "body_other": "{{count}} large one-off amounts are left out of your usual spend and income.",
-      "action": "See them on Money"
+      "body_one": "Mali leyikulu ya kan'we ya {{count}} yi siyiwe ehandle ka matirhisele na mali ya wena leyi nghenaka ya ntolovelo.",
+      "body_other": "Timali letikulu ta kan'we ta {{count}} ti siyiwe ehandle ka matirhisele na mali ya wena leyi nghenaka ya ntolovelo.",
+      "action": "Ti vone eka Mali"
     },
-    "label": "Things to check",
+    "label": "Swilo swo kambela",
     "askOneOff": {
-      "title": "Was {{name}} ({{amount}}, {{date}}) a one-off?",
-      "body": "It is much bigger than your usual spending, and with a short history Tengo cannot tell. For now it counts as usual spending.",
-      "action": "Yes, a one-off"
+      "title": "Xana {{name}} ({{amount}}, {{date}}) a ku ri ya kan'we?",
+      "body": "Yi kulu swinene ku tlula matirhisele ya wena ya ntolovelo, naswona hi matimu yo koma Tengo a yi swi koti ku swi tiva. Sweswi yi hlayiwa tanihi matirhisele ya ntolovelo.",
+      "action": "Ina, ya kan'we"
     },
     "estimated": {
-      "title": "Estimated from your answers",
-      "body": "Part of your history comes from the setup questions, so confidence is low. Real entries, cash added here or a statement replace the estimate."
+      "title": "Swi ringanyetiwe ku suka eka tinhlamulo ta wena",
+      "body": "Xiphemu xa matimu ya wena xi huma eka swivutiso swa ku lulamisa, hikwalaho ntshembo wu le hansi. Swingheniso swa ntiyiso, kheše leyi u yi engetelaka laha kumbe xitatimende swi siva xiringanyeto."
     },
     "sample": {
-      "title": "Sample numbers",
-      "body": "This forecast uses sample numbers, not yours. Change them on Money, or replace them with a statement or your own answers.",
-      "action": "Use my own numbers"
+      "title": "Tinomboro ta xikombiso",
+      "body": "Vuhlahluvi lebyi byi tirhisa tinomboro ta xikombiso, ku nga ri ta wena. Ti cince eka Mali, kumbe u ti siva hi xitatimende kumbe hi tinhlamulo ta wena.",
+      "action": "Tirhisa tinomboro ta mina"
     }
   },
   "balance": {
-    "update": "Update bank balance",
-    "label": "Bank account balance today",
-    "save": "Save balance",
-    "saved": "Balance saved",
-    "error": "Enter an amount, for example 1250 or -300."
+    "update": "Pfuxeta balansi ya bangi",
+    "label": "Balansi ya akhawunti ya bangi ya namuntlha",
+    "save": "Hlayisa balansi",
+    "saved": "Balansi yi hlayisiwile",
+    "error": "Nghenisa mali, xikombiso 1250 kumbe -300."
   },
   "storage": {
     "quota": {
-      "title": "Could not save on this device",
-      "body": "This browser's storage is full, so your last change was not kept. Export your data, then free some space or delete old data."
+      "title": "A yi kotanga ku hlayisa eka xitirhisiwa lexi",
+      "body": "Vuhlayiselo bya bowuzara leyi byi tele, hikwalaho ku cinca ka wena ko hetelela a ku hlayisiwanga. Humesa vuxokoxoko bya wena, kutani u ntshunxa ndhawu kumbe u susa vuxokoxoko bya khale."
     },
     "unavailable": {
-      "title": "Could not save on this device",
-      "body": "This browser is blocking storage, for example in a private window, so your last change was not kept."
+      "title": "A yi kotanga ku hlayisa eka xitirhisiwa lexi",
+      "body": "Bowuzara leyi yi sivela vuhlayiselo, xikombiso eka fasitere ra xihundla, hikwalaho ku cinca ka wena ko hetelela a ku hlayisiwanga."
     },
-    "export": "Export my data",
+    "export": "Humesa vuxokoxoko bya mina",
     "corrupt": {
-      "title": "Your saved data could not be read",
-      "body": "Something went wrong with the data saved in this browser. A copy has been kept on this device. Start fresh to keep using Tengo.",
-      "action": "Start fresh"
+      "title": "Vuxokoxoko bya wena lebyi hlayisiweke a byi kotanga ku hlayiwa",
+      "body": "Ku na nchumu lowu nga fambangiki kahle hi vuxokoxoko lebyi hlayisiweke eka bowuzara leyi. Khopi yi hlayisiwile eka xitirhisiwa lexi. Sungula nakambe ku ya emahlweni u tirhisa Tengo.",
+      "action": "Sungula nakambe"
     }
   },
   "cash": {
-    "add": "Add cash",
-    "title": "Cash",
-    "kind": "What happened",
+    "add": "Engetela kheše",
+    "title": "Kheše",
+    "kind": "Ku humelele yini",
     "modes": {
-      "in": "Cash in",
-      "out": "Cash out",
-      "hand": "Cash in hand"
+      "in": "Kheše leyi nghenaka",
+      "out": "Kheše leyi humaka",
+      "hand": "Kheše evokweni"
     },
     "hints": {
-      "in": "Cash you received, for example fares, a client or money back from family. It counts as money in.",
-      "out": "Cash you spent. It counts as spending.",
-      "hand": "How much cash you have right now. This sets the cash balance and does not add an entry."
+      "in": "Kheše leyi u yi amukeleke, xikombiso mali ya ku khandziya, mukhastomere kumbe mali leyi vuyisiweke hi ndyangu. Yi hlayiwa tanihi mali leyi nghenaka.",
+      "out": "Kheše leyi u yi tirhiseke. Yi hlayiwa tanihi matirhisele.",
+      "hand": "Kheše leyi u nga na yona sweswi. Leswi swi veka balansi ya kheše naswona a swi engeteli xingheniso."
     },
     "notePlaceholder": {
-      "in": "For example, cash fares",
-      "out": "For example, taxi"
+      "in": "Xikombiso, mali ya ku khandziya hi kheše",
+      "out": "Xikombiso, thekisi"
     },
-    "saved": "Cash saved"
+    "saved": "Kheše yi hlayisiwile"
   },
   "accounts": {
-    "title": "Where your money is",
-    "lead": "Your forecast uses the total of all of these.",
-    "edit": "Edit",
-    "total": "Total",
-    "name": "Name",
-    "balance": "Balance",
-    "addWallet": "Add a wallet or account",
-    "walletName": "Mobile wallet",
-    "remove": "Remove",
-    "cashTag": "Cash",
-    "homeLine": "Total {{total}}, including {{cash}} cash on hand.",
-    "homeLineBank": "Total {{total}}.",
-    "bankName": "Bank account",
-    "cashName": "Cash on hand"
+    "title": "Laha mali ya wena yi nga kona",
+    "lead": "Vuhlahluvi bya wena byi tirhisa ntsengo hinkwawo wa leswi hinkwaswo.",
+    "edit": "Lulamisa",
+    "total": "Ntsengo hinkwawo",
+    "name": "Vito",
+    "balance": "Balansi",
+    "addWallet": "Engetela wallet kumbe akhawunti",
+    "walletName": "Wallet ya riqingho",
+    "remove": "Susa",
+    "cashTag": "Kheše",
+    "homeLine": "Ntsengo hinkwawo {{total}}, ku katsa {{cash}} ya kheše evokweni.",
+    "homeLineBank": "Ntsengo hinkwawo {{total}}.",
+    "bankName": "Akhawunti ya bangi",
+    "cashName": "Kheše evokweni"
   },
   "obligations": {
-    "title": "Other money you owe",
-    "lead": "Stokvel, burial society, family support and informal loans. They count like bills.",
-    "none": "Nothing added yet.",
-    "add": "Add one",
-    "addTitle": "Add money you owe",
-    "editTitle": "Change money you owe",
-    "editLabel": "Change {{name}}",
-    "remove": "Remove",
-    "kind": "Kind",
+    "title": "Mali yin'wana leyi u yi kolotaka",
+    "lead": "Stokvel, nhlangano wa ku lahla, nseketelo wa ndyangu na swikweleti leswi nga riki swa xiofisi. Swi hlayiwa tanihi tihakelo.",
+    "none": "A ku na leswi engeteriweke sweswi.",
+    "add": "Engetela yin'we",
+    "addTitle": "Engetela mali leyi u yi kolotaka",
+    "editTitle": "Cinca mali leyi u yi kolotaka",
+    "editLabel": "Cinca {{name}}",
+    "remove": "Susa",
+    "kind": "Muxaka",
     "kinds": {
       "stokvel": "Stokvel",
-      "burial": "Burial society",
-      "family": "Family support",
-      "loan": "Informal loan",
-      "other": "Other"
+      "burial": "Nhlangano wa ku lahla",
+      "family": "Nseketelo wa ndyangu",
+      "loan": "Xikweleti lexi nga riki xa xiofisi",
+      "other": "Swin'wana"
     },
     "placeholder": {
-      "stokvel": "For example, Sunday stokvel",
-      "burial": "For example, burial society",
-      "family": "For example, money for my mother",
-      "loan": "For example, paying back my cousin",
-      "other": "Name"
+      "stokvel": "Xikombiso, stokvel ya Sonto",
+      "burial": "Xikombiso, nhlangano wa ku lahla",
+      "family": "Xikombiso, mali ya manana",
+      "loan": "Xikombiso, ku tlherisela xaka ra mina",
+      "other": "Vito"
     },
-    "name": "Name",
-    "nextLabel": "Next due",
-    "howOften": "How often",
+    "name": "Vito",
+    "nextLabel": "Leyi landzelaka leyi faneleke",
+    "howOften": "Kangani",
     "every": {
-      "week": "Every week",
-      "month": "Every month"
+      "week": "Vhiki na vhiki",
+      "month": "N'hweti na n'hweti"
     },
-    "next": "next {{date}}",
-    "movableHint": "Only if it can be paid a few days late without trouble.",
-    "protected": "Never suggested to move: paying a loan or burial society late can cost you."
+    "next": "leyi landzelaka {{date}}",
+    "movableHint": "Ntsena loko yi nga hakeriwa endzhaku ka masiku ma nga ri mangani handle ka xiphiqo.",
+    "protected": "A yi tsundzuxiwi ku rhurhisiwa: ku hakela xikweleti kumbe nhlangano wa ku lahla hi ku hlwela swi nga ku durhela."
   },
   "setup": {
-    "title": "Set up by hand",
-    "lead": "No statement? Answer a few questions and Tengo estimates a starting history. Real entries replace it as you add them.",
-    "link": "Set up by hand",
-    "pretend": "You can use pretend numbers to try it. Nothing leaves this device.",
-    "balance": "Balance in your bank account today",
-    "arrives": "How your money usually arrives",
+    "title": "Lulamisa hi voko",
+    "lead": "A wu na xitatimende? Hlamula swivutiso swi nga ri swingani kutani Tengo yi ringanyeta matimu yo sungula. Swingheniso swa ntiyiso swa ma siva loko u swi engetela.",
+    "link": "Lulamisa hi voko",
+    "pretend": "U nga tirhisa tinomboro ta ku endliwa ku swi ringeta. A ku na nchumu lowu humaka eka xitirhisiwa lexi.",
+    "balance": "Balansi eka akhawunti ya wena ya bangi namuntlha",
+    "arrives": "Ndlela leyi mali ya wena hi ntolovelo yi nghenaka ha yona",
     "arrival": {
-      "daily": "Most days",
-      "weekly": "Weekly",
-      "monthly": "Monthly",
-      "irregular": "Every few days"
+      "daily": "Masiku yo tala",
+      "weekly": "Vhiki na vhiki",
+      "monthly": "N'hweti na n'hweti",
+      "irregular": "Endzhaku ka masiku ma nga ri mangani"
     },
     "arrivalHint": {
-      "daily": "For example cash fares or sales on most days.",
-      "weekly": "For example a weekly payout or Saturday takings.",
-      "monthly": "For example a monthly payment or grant.",
-      "irregular": "For example deposits every week or so, but not on a fixed day."
+      "daily": "Xikombiso mali ya ku khandziya hi kheše kumbe ku xavisa masiku yo tala.",
+      "weekly": "Xikombiso hakelo ya vhiki kumbe mali ya Mugqivela.",
+      "monthly": "Xikombiso hakelo ya n'hweti kumbe mpfuno wa mfumo.",
+      "irregular": "Xikombiso mali leyi vekiwaka kwalomu ka vhiki na vhiki, kambe ku nga ri hi siku leri vekiweke."
     },
-    "amount": "Usual amount each time",
-    "amountDaily": "Usual amount on a day",
-    "weekday": "Usual day",
-    "dayOfMonth": "Usual day of the month",
-    "everyDays": "Roughly every how many days",
-    "dailySpend": "Usual everyday spending a day",
-    "dailySpendHint": "Food, transport, airtime and the like. Not rent or other bills.",
-    "bills": "Regular bills",
-    "billsHint": "Rent, phone contract, school fees and other bills that go off every month.",
-    "billName": "Bill",
-    "billDay": "Day",
-    "addBill": "Add a bill",
-    "removeBill": "Remove bill {{n}}",
-    "billError": "Each bill needs a name, an amount above zero and a day from 1 to 31.",
-    "fieldError": "Enter a number, for example 250.",
-    "estimatedNote": "Tengo makes a starting history from these answers, marked as estimated. Confidence stays low until real entries arrive.",
-    "submit": "See my date",
-    "estimatedTag": "Estimated"
+    "amount": "Mali ya ntolovelo nkarhi wun'wana na wun'wana",
+    "amountDaily": "Mali ya ntolovelo hi siku",
+    "weekday": "Siku ra ntolovelo",
+    "dayOfMonth": "Siku ra ntolovelo ra n'hweti",
+    "everyDays": "Kwalomu ka endzhaku ka masiku mangani",
+    "dailySpend": "Matirhisele ya ntolovelo ya siku na siku hi siku",
+    "dailySpendHint": "Swakudya, vutleketli, airtime na swin'wana swo tano. Ku nga ri rhende kumbe tihakelo tin'wana.",
+    "bills": "Tihakelo ta ntolovelo",
+    "billsHint": "Rhende, khontiraka ya riqingho, mali ya xikolo na tihakelo tin'wana leti humaka n'hweti na n'hweti.",
+    "billName": "Hakelo",
+    "billDay": "Siku",
+    "addBill": "Engetela hakelo",
+    "removeBill": "Susa hakelo {{n}}",
+    "billError": "Hakelo yin'wana na yin'wana yi lava vito, mali leyi tlulaka zero na siku ku suka eka 1 ku ya eka 31.",
+    "fieldError": "Nghenisa nomboro, xikombiso 250.",
+    "estimatedNote": "Tengo yi endla matimu yo sungula ku suka eka tinhlamulo leti, ya ma funga tanihi lama ringanyetiweke. Ntshembo wu tshama wu ri ehansi ku fikela swingheniso swa ntiyiso swi fika.",
+    "submit": "Vona siku ra mina",
+    "estimatedTag": "Swi ringanyetiwile"
   },
   "safety": {
-    "quickExit": "Quick exit",
-    "showAmounts": "Show amounts",
-    "hideAmounts": "Hide amounts",
-    "exitTitle": "Notes",
-    "exitBody": "No notes yet.",
-    "exitBack": "Back"
+    "quickExit": "Huma hi ku hatlisa",
+    "showAmounts": "Kombisa mali",
+    "hideAmounts": "Fihla mali",
+    "exitTitle": "Swilaveko",
+    "exitBody": "A ku na swilaveko sweswi.",
+    "exitBack": "Endzhaku"
   },
   "safetyPolicy": {
-    "title": "Safety and who Tengo is for",
-    "lead": "How Tengo protects people on shared phones, people who are vulnerable, and children.",
-    "draft": "Draft policy for the pilot, to be reviewed by a lawyer and a safeguarding adviser.",
+    "title": "Vuhlayiseki na leswaku Tengo i ya mani",
+    "lead": "Ndlela leyi Tengo yi sirhelelaka ha yona vanhu lava avelanaka tifoni, vanhu lava nga ekhombyeni, na vana.",
+    "draft": "Pholisi ya xivumbeko ya ndzingeto, leyi nga ta kambeliwa hi gqweta na mutsundzuxi wa nsirhelelo.",
     "adults": {
-      "title": "Adults only",
-      "body": "Tengo is for adults. If you are under 18, please do not use it. Saving to an account asks you to confirm you are 18 or older. Tengo does not ask for a date of birth or an ID number, and the fictional demo people are adults."
+      "title": "Vanhu lavakulu ntsena",
+      "body": "Tengo i ya vanhu lavakulu. Loko u ri ehansi ka malembe ya 18, hi kombela u nga yi tirhisi. Ku hlayisa eka akhawunti swi ku kombela ku tiyisisa leswaku u na malembe ya 18 kumbe ku tlula. Tengo a yi kombeli siku ra ku velekiwa kumbe nomboro ya vutitivisi, naswona vanhu va ku endliwa va demo i vanhu lavakulu."
     },
     "shared": {
-      "title": "Shared phones",
-      "body": "You can set a PIN so Tengo locks itself after a few minutes, turn on discreet mode so amounts stay hidden until you tap to show them, and use quick exit to leave Tengo for a plain page straight away. Discreet messages carry no amounts, dates or cover words."
+      "title": "Tifoni leti avelaniwaka",
+      "body": "U nga veka PIN leswaku Tengo yi tilotlela endzhaku ka timinete ti nga ri tingani, u pfula ndlela ya xihundla leswaku mali yi tshama yi fihlekile ku fikela u kwana ku yi vona, naswona u tirhisa ku huma hi ku hatlisa ku siya Tengo u ya eka pheji leyi nga riki na nchumu hi nkarhi wolowo. Marungula ya xihundla a ma na mali, masiku kumbe marito ya xiyimo."
     },
     "control": {
-      "title": "If someone controls your money",
-      "body": "No one should make you show your forecast, share your PIN or hand over your money. Tengo never asks for a bank password or PIN. If someone checks your phone, quick exit and the PIN lock help, and you can delete your data at any time from Privacy."
+      "title": "Loko munhu a lawula mali ya wena",
+      "body": "A ku na munhu loyi a faneleke ku ku sindzisa ku kombisa vuhlahluvi bya wena, ku avelana PIN ya wena kumbe ku nyiketa mali ya wena. Tengo a yi pfuki yi kombela rito ra xihundla ra bangi kumbe PIN. Loko munhu a kambela riqingho ra wena, ku huma hi ku hatlisa na ku lotlela hi PIN swa pfuna, naswona u nga susa vuxokoxoko bya wena nkarhi wun'wana na wun'wana eka Xihundla."
     },
     "care": {
-      "title": "Care for people in a hard spot",
-      "body": "Tengo uses plain words, shows estimates and not advice, and never suggests borrowing, skipping a loan or insurance payment, or cutting stock for a business. When money looks short it points to free help from the National Credit Regulator."
+      "title": "Ku khathalela vanhu lava nga eka xiyimo xo tika",
+      "body": "Tengo yi tirhisa marito yo olova, yi kombisa swiringanyeto ku nga ri switsundzuxo, naswona a yi pfuki yi ringanyeta ku lomba, ku tlula hakelo ya xikweleti kumbe ya inshurensi, kumbe ku hunguta xitoko xa bindzu. Loko mali yi languteka yi kayivela, yi komba mpfuno wa mahala ku suka eka National Credit Regulator."
     },
     "never": {
-      "title": "What Tengo never does",
-      "body": "Tengo does not make lending or credit decisions, does not sell products, and does not share your data with anyone for marketing. Nothing about your forecast is used to judge you."
+      "title": "Leswi Tengo yi nga swi endliki nikatsongo",
+      "body": "Tengo a yi endli swiboho swa ku lomba kumbe swa xikweleti, a yi xavisi swiendliwa, naswona a yi avelani vuxokoxoko bya wena na munhu wihi na wihi hi ku navetisa. A ku na nchumu hi vuhlahluvi bya wena lowu tirhisiwaka ku ku avanyisa."
     },
     "help": {
-      "title": "If you need help now",
-      "police": "Police emergency: 10111.",
-      "gbv": "Gender-Based Violence Command Centre: 0800 428 428, free and open all day and night.",
-      "childline": "Childline, for children and anyone worried about a child: 116, free.",
-      "note": "Numbers to be confirmed before launch. Tengo is not an emergency service."
+      "title": "Loko u lava mpfuno sweswi",
+      "police": "Xihatla xa maphorisa: 10111.",
+      "gbv": "Gender-Based Violence Command Centre: 0800 428 428, mahala naswona yi pfulekile nhlikanhi na vusiku.",
+      "childline": "Childline, ya vana na un'wana na un'wana loyi a vilelaka hi n'wana: 116, mahala.",
+      "note": "Tinomboro ti ta tiyisisiwa ku nga si sunguriwa. Tengo a hi vukorhokeri bya xihatla."
     }
   },
   "lock": {
-    "title": "Tengo is locked",
-    "lead": "Enter your PIN to open Tengo.",
+    "title": "Tengo yi lotleriwile",
+    "lead": "Nghenisa PIN ya wena ku pfula Tengo.",
     "pin": "PIN",
-    "unlock": "Unlock",
-    "wrong": "That PIN is not right. Try again.",
-    "wait": "Too many tries. Wait a moment and try again.",
-    "waitFor_one": "Too many tries. Try again in {{count}} second.",
-    "waitFor_other": "Too many tries. Try again in {{count}} seconds.",
-    "forgot": "Forgot your PIN?",
-    "forgotBody": "Tengo cannot recover a PIN, because it is never stored. To start again, delete all Tengo data on this device. This cannot be undone.",
-    "erase": "Delete all data on this device"
+    "unlock": "Pfula",
+    "wrong": "PIN yoleyo a yi lulamanga. Ringeta nakambe.",
+    "wait": "Matshalatshala yo tala swinene. Yima nkarhinyana u ringeta nakambe.",
+    "waitFor_one": "Matshalatshala yo tala swinene. Ringeta nakambe endzhaku ka sekoni ya {{count}}.",
+    "waitFor_other": "Matshalatshala yo tala swinene. Ringeta nakambe endzhaku ka tisekoni ta {{count}}.",
+    "forgot": "U rivele PIN ya wena?",
+    "forgotBody": "Tengo a yi swi koti ku vuyisa PIN, hikuva a yi pfuki yi hlayisiwa. Ku sungula nakambe, susa vuxokoxoko hinkwabyo bya Tengo eka xitirhisiwa lexi. Leswi a swi nge tlheriseki.",
+    "erase": "Susa vuxokoxoko hinkwabyo eka xitirhisiwa lexi"
   },
   "shared": {
-    "title": "Shared phone safety",
-    "lead": "For a phone other people can pick up.",
-    "lockTitle": "App lock",
-    "lockOff": "Off. Set a 4 to 6 digit PIN to lock Tengo when you are away.",
-    "lockOn": "On. Tengo locks after {{count}} minutes without use.",
-    "newPin": "New PIN",
-    "confirmPin": "Type the PIN again",
-    "pinHint": "4 to 6 digits. It is stored only as a scrambled code on this device and cannot be recovered.",
-    "pinMismatch": "The two PINs do not match.",
-    "pinInvalid": "Use 4 to 6 digits.",
-    "setPin": "Set PIN",
-    "changePin": "Change PIN",
-    "turnOff": "Turn off lock",
-    "currentPin": "Current PIN",
-    "wrongPin": "That PIN is not right.",
-    "autoLock": "Lock after",
-    "minutes_one": "{{count}} minute",
-    "minutes_other": "{{count}} minutes",
-    "lockNow": "Lock now",
-    "discreet": "Discreet mode",
-    "discreetHint": "Hide amounts on screen until you tap Show amounts, and send messages with no amounts or dates.",
-    "quickExitHint": "Quick exit is always at the top of the screen. It hides everything and opens a plain page.",
-    "policy": "Read the safety policy"
+    "title": "Vuhlayiseki bya riqingho leri avelaniwaka",
+    "lead": "Eka riqingho leri vanhu van'wana va nga ri tekaka.",
+    "lockTitle": "Ku lotlela app",
+    "lockOff": "Yi pfariwile. Veka PIN ya tinomboro ta 4 ku ya eka 6 ku lotlela Tengo loko u nga ri kona.",
+    "lockOn": "Yi pfulekile. Tengo yi tilotlela endzhaku ka timinete ta {{count}} yi nga tirhisiwi.",
+    "newPin": "PIN leyintshwa",
+    "confirmPin": "Thayipa PIN nakambe",
+    "pinHint": "Tinomboro ta 4 ku ya eka 6. Yi hlayisiwa ntsena tanihi khodi leyi pfanganisiweke eka xitirhisiwa lexi naswona a yi nge vuyisiwi.",
+    "pinMismatch": "Ti-PIN timbirhi a ti fani.",
+    "pinInvalid": "Tirhisa tinomboro ta 4 ku ya eka 6.",
+    "setPin": "Veka PIN",
+    "changePin": "Cinca PIN",
+    "turnOff": "Tima ku lotlela",
+    "currentPin": "PIN ya sweswi",
+    "wrongPin": "PIN yoleyo a yi lulamanga.",
+    "autoLock": "Lotlela endzhaku ka",
+    "minutes_one": "Minete ya {{count}}",
+    "minutes_other": "Timinete ta {{count}}",
+    "lockNow": "Lotlela sweswi",
+    "discreet": "Ndlela ya xihundla",
+    "discreetHint": "Fihla mali eka xikirini ku fikela u kwana Kombisa mali, naswona u rhumela marungula lama nga riki na mali kumbe masiku.",
+    "quickExitHint": "Ku huma hi ku hatlisa ku tshama ehenhla ka xikirini. Ku fihla hinkwaswo naswona ku pfula pheji leyi nga riki na nchumu.",
+    "policy": "Hlaya pholisi ya vuhlayiseki"
   },
   "diag": {
-    "title": "Diagnostics",
-    "lead": "For help with a problem. No personal data is kept here, and nothing is sent.",
-    "show": "Show",
-    "hide": "Hide",
-    "build": "Build",
-    "schema": "Data version",
-    "storage": "Storage used",
-    "offline": "Offline copy",
-    "offlineNo": "Not installed yet",
-    "language": "Language",
-    "errors": "Errors noted",
-    "copy": "Copy",
-    "copied": "Copied",
-    "clear": "Clear errors",
-    "cleared": "Errors cleared"
+    "title": "Ku kambela swiphiqo",
+    "lead": "Eka mpfuno hi xiphiqo. A ku na vuxokoxoko bya munhu lebyi hlayisiwaka laha, naswona a ku na nchumu lowu rhumeriwaka.",
+    "show": "Kombisa",
+    "hide": "Fihla",
+    "build": "Vuako",
+    "schema": "Vuxokoxoko bya nkandziyiso",
+    "storage": "Vuhlayiselo lebyi tirhisiweke",
+    "offline": "Khopi leyi nga riki eka inthanete",
+    "offlineNo": "A yi si nghenisiwa",
+    "language": "Ririmi",
+    "errors": "Swihoxo leswi tsariweke",
+    "copy": "Kopa",
+    "copied": "Swi kopiwile",
+    "clear": "Susa swihoxo",
+    "cleared": "Swihoxo swi susiwile"
   },
   "own": {
-    "you": "You",
-    "chip": "Your profile | {{mode}}",
+    "you": "Wena",
+    "chip": "Phurofayili ya wena | {{mode}}",
     "storage": {
-      "device": "This device only",
-      "account": "Saved to your account"
+      "device": "Eka xitirhisiwa lexi ntsena",
+      "account": "Yi hlayisiwile eka akhawunti ya wena"
     },
-    "cardTitle": "Use your own money",
-    "cardPromise": "Your numbers, your date. Nothing leaves your device unless you save an account.",
-    "cardBody": "Import a statement, answer a few questions, or try it with sample numbers first. No sign up needed.",
-    "start": "Start",
-    "continue": "Continue",
-    "deletedTitle": "Your profile was deleted"
+    "cardTitle": "Tirhisa mali ya wena",
+    "cardPromise": "Tinomboro ta wena, siku ra wena. A ku na nchumu lowu humaka eka xitirhisiwa xa wena handle ka loko u hlayisa akhawunti.",
+    "cardBody": "Nghenisa xitatimende, hlamula swivutiso swi nga ri swingani, kumbe u ringeta ku rhanga hi tinomboro ta xikombiso. A ku laveki ku tsarisa.",
+    "start": "Sungula",
+    "continue": "Yisa emahlweni",
+    "deletedTitle": "Phurofayili ya wena yi susiwile"
   },
   "welcome": {
-    "title": "Use your own money",
-    "step": "Step {{n}} of {{total}}",
-    "next": "Next",
-    "back": "Back",
-    "nickname": "Name or nickname (optional)",
-    "nicknameHint": "Only used to greet you. Leave it empty if you prefer.",
+    "title": "Tirhisa mali ya wena",
+    "step": "Goza {{n}} eka {{total}}",
+    "next": "Lexi landzelaka",
+    "back": "Endzhaku",
+    "nickname": "Vito kumbe vito ro tlanga (ku tihlawulela)",
+    "nicknameHint": "Ri tirhisiwa ntsena ku ku xeweta. Ri siye ri nga ri na nchumu loko u lava.",
     "s1": {
-      "title": "What Tengo asks for, and why",
-      "lead": "Tengo works out how long your money lasts and when your next money usually lands. It only needs a little to do that.",
+      "title": "Leswi Tengo yi swi kombelaka, na xivangelo",
+      "lead": "Tengo yi hlayela leswaku mali ya wena yi teka nkarhi wo tani hi kwihi na leswaku mali ya wena leyi landzelaka hi ntolovelo yi nghena rini. Yi lava swintsongo ntsena ku endla sweswo.",
       "money": {
-        "title": "Your money in and out",
-        "body": "Dates, amounts and short descriptions, and your balance. From a statement, from a few answers, or from sample numbers."
+        "title": "Mali ya wena leyi nghenaka na leyi humaka",
+        "body": "Masiku, mali na tinhlamuselo to koma, na balansi ya wena. Ku suka eka xitatimende, eka tinhlamulo ti nga ri tingani, kumbe eka tinomboro ta xikombiso."
       },
       "bills": {
-        "title": "Regular bills and money you owe",
-        "body": "Things like rent, a phone contract or a stokvel, so Tengo can keep money back for them."
+        "title": "Tihakelo ta ntolovelo na mali leyi u yi kolotaka",
+        "body": "Swilo swo fana na rhende, khontiraka ya riqingho kumbe stokvel, leswaku Tengo yi kota ku ti hlayisela mali."
       },
       "never": {
-        "title": "Never",
-        "body": "Tengo never asks for an ID number, a phone number, a bank login or a PIN."
+        "title": "Nikatsongo",
+        "body": "Tengo a yi pfuki yi kombela nomboro ya vutitivisi, nomboro ya riqingho, ku nghena ebangi kumbe PIN."
       },
       "where": {
-        "title": "Where it stays",
-        "body": "On this device only, unless you later choose to save it to an account. You can delete it any time."
+        "title": "Laha swi tshamaka kona",
+        "body": "Eka xitirhisiwa lexi ntsena, handle ka loko endzhaku u hlawula ku swi hlayisa eka akhawunti. U nga swi susa nkarhi wun'wana na wun'wana."
       }
     },
     "s2": {
-      "title": "Your choices",
-      "lead": "Only the forecast is needed. Everything else is off until you turn it on.",
-      "core": "Needed to work out your date. It runs on this device. Withdraw any time and it pauses.",
-      "notice": "The full privacy notice says what is kept, where, for how long, and how to complain.",
-      "noticeLink": "Read the privacy notice"
+      "title": "Swihlawulekisi swa wena",
+      "lead": "I vuhlahluvi ntsena lebyi lavekaka. Swin'wana hinkwaswo swi pfariwile ku fikela u swi pfula.",
+      "core": "Swa laveka ku hlayela siku ra wena. Swi tirha eka xitirhisiwa lexi. Teka mpfumelelo endzhaku nkarhi wun'wana na wun'wana kutani swi yima.",
+      "notice": "Xitiviso lexi heleleke xa xihundla xi vula leswi hlayisiwaka, kwihi, nkarhi wo tani hi kwihi, na ndlela yo vilerisa.",
+      "noticeLink": "Hlaya xitiviso xa xihundla"
     },
     "s3": {
-      "title": "Add your money",
-      "lead": "Choose one way. You can change or replace it later on Money.",
-      "import": "Import a statement",
-      "importBody": "A CSV file from your bank. It is read on this device.",
-      "manual": "Answer a few questions",
-      "manualBody": "For when you have no statement. Tengo estimates a starting history from your answers.",
-      "sample": "Try with sample numbers",
-      "sampleBody": "Explore without typing anything. The sample is labelled and you can change every number."
+      "title": "Engetela mali ya wena",
+      "lead": "Hlawula ndlela yin'we. U nga yi cinca kumbe u yi siva endzhaku eka Mali.",
+      "import": "Nghenisa xitatimende",
+      "importBody": "Fayili ya CSV ku suka eka bangi ya wena. Yi hlayiwa eka xitirhisiwa lexi.",
+      "manual": "Hlamula swivutiso swi nga ri swingani",
+      "manualBody": "Loko u nga ri na xitatimende. Tengo yi ringanyeta matimu yo sungula ku suka eka tinhlamulo ta wena.",
+      "sample": "Ringeta hi tinomboro ta xikombiso",
+      "sampleBody": "Lavisisa handle ka ku thayipa nchumu. Xikombiso xi funghiwile naswona u nga cinca nomboro yin'wana na yin'wana."
     },
     "s4": {
-      "eyebrow": "Your first forecast",
-      "lead": "This is an estimate from the numbers you gave, not advice. It gets better as you add real entries.",
-      "sample": "These are sample numbers, not yours. Change them on Money, or replace them with a statement or your own answers.",
-      "open": "Open Home"
+      "eyebrow": "Vuhlahluvi bya wena byo sungula",
+      "lead": "Lexi i xiringanyeto lexi humaka eka tinomboro leti u ti nyikeke, a hi xitsundzuxo. Xi antswa loko u engetela swingheniso swa ntiyiso.",
+      "sample": "Leti i tinomboro ta xikombiso, ku nga ri ta wena. Ti cince eka Mali, kumbe u ti siva hi xitatimende kumbe hi tinhlamulo ta wena.",
+      "open": "Pfula Ekaya"
     },
-    "signIn": "Already saved to an account? Sign in"
+    "signIn": "U se u hlayisile eka akhawunti? Nghena"
   },
   "legalDoc": {
-    "version": "Version {{version}}",
-    "draft": "Draft for the pilot, to be reviewed by a lawyer before launch. Tengo is not a bank and does not give financial advice. This notice does not claim compliance with any law or certification.",
-    "placeholderWarning": "The responsible party and Information Officer have not been named yet. They must be filled in before any real launch.",
-    "party": "Responsible party",
-    "address": "Address",
-    "officer": "Information Officer",
-    "contact": "Contact",
+    "version": "Nkandziyiso {{version}}",
+    "draft": "Xivumbeko xa ndzingeto, lexi nga ta kambeliwa hi gqweta ku nga si sunguriwa. Tengo a hi bangi naswona a yi nyiki xitsundzuxo xa timali. Xitiviso lexi a xi vuli leswaku xi landzelela nawu wihi na wihi kumbe xitifikheti.",
+    "placeholderWarning": "Nhlangano lowu nga na vutihlamuleri na Ofisiri wa Vuxokoxoko a va si boxiwa. Va fanele ku tatiwa ku nga si sunguriwa hi ntiyiso.",
+    "party": "Nhlangano lowu nga na vutihlamuleri",
+    "address": "Adirese",
+    "officer": "Ofisiri wa Vuxokoxoko",
+    "contact": "Vuhlanganisi",
     "notice": {
-      "title": "Privacy notice",
+      "title": "Xitiviso xa xihundla",
       "what": {
-        "title": "What Tengo keeps",
-        "body": "The money history you add (dates, amounts, short descriptions and categories), your balances, regular bills and money you owe, your choices and settings, an optional nickname, and a log of what you did in the app. If you save an account, your email address too. Tengo does not ask for or keep ID numbers, phone numbers, bank logins or PINs. Long numbers in imported descriptions are masked."
+        "title": "Leswi Tengo yi swi hlayisaka",
+        "body": "Matimu ya mali lama u ma engetelaka (masiku, mali, tinhlamuselo to koma na mintlawa), tibalansi ta wena, tihakelo ta ntolovelo na mali leyi u yi kolotaka, swihlawulekisi swa wena na swilulamiso, vito ro tlanga ra ku tihlawulela, na rhekhodo ya leswi u swi endleke eka app. Loko u hlayisa akhawunti, na adirese ya wena ya imeyili. Tengo a yi kombeli kumbe ku hlayisa tinomboro ta vutitivisi, tinomboro ta riqingho, ku nghena ebangi kumbe ti-PIN. Tinomboro to leha eka tinhlamuselo leti nghenisiweke ta fihliwa."
       },
       "why": {
-        "title": "Why",
-        "body": "Only to work out how long your money lasts, when your next money usually lands, and the estimates on screen. Not for marketing, credit scoring, lending decisions or selling to anyone. Giving the information is voluntary; without it there is no forecast."
+        "title": "Hikokwalaho ka yini",
+        "body": "Ntsena ku hlayela leswaku mali ya wena yi teka nkarhi wo tani hi kwihi, mali ya wena leyi landzelaka hi ntolovelo yi nghena rini, na swiringanyeto leswi nga eka xikirini. Ku nga ri ku navetisa, ku pima xikweleti, swiboho swa ku lomba kumbe ku xavisela munhu wihi na wihi. Ku nyika vuxokoxoko i ku tirhandzela; handle ka byona a ku na vuhlahluvi."
       },
       "where": {
-        "title": "Where it is processed",
-        "body": "As a guest, everything stays in this browser on this device and the forecast is worked out on the device. Nothing is sent to Tengo.\nIf you choose to save an account, your data is stored with the database provider named in the setup (Supabase), in the region the operator chooses, and sent over an encrypted connection. The forecast is still worked out on your device. Any storage outside South Africa needs adequate protection under POPIA section 72 and is named here before launch."
+        "title": "Laha swi endliwaka kona",
+        "body": "Tanihi muendzi, hinkwaswo swi tshama eka bowuzara leyi eka xitirhisiwa lexi naswona vuhlahluvi byi hlayeriwa eka xitirhisiwa. A ku na nchumu lowu rhumeriwaka eka Tengo.\nLoko u hlawula ku hlayisa akhawunti, vuxokoxoko bya wena byi hlayisiwa hi muphakeri wa vuhlayiselo bya vuxokoxoko loyi a boxiweke eka ku lulamisa (Supabase), eka xifundzha lexi mutirhisi a xi hlawulaka, naswona byi rhumeriwa hi vuhlanganisi lebyi sirhelelekeke. Vuhlahluvi bya ha hlayeriwa eka xitirhisiwa xa wena. Vuhlayiselo byihi na byihi ehandle ka Afrika Dzonga byi lava nsirhelelo lowu ringaneke ehansi ka xiyenge xa 72 xa POPIA naswona byi ta boxiwa laha ku nga si sunguriwa."
       },
       "who": {
-        "title": "Who can see it",
-        "body": "As a guest: anyone who uses this browser on this device. Use the PIN lock on a shared phone. With an account: you, after signing in. Each person's rows are locked to them in the database. No staff access to your rows is set up. If support ever needs it, this notice will first say how it is limited and recorded."
+        "title": "I mani loyi a nga swi vonaka",
+        "body": "Tanihi muendzi: un'wana na un'wana loyi a tirhisaka bowuzara leyi eka xitirhisiwa lexi. Tirhisa ku lotlela hi PIN eka riqingho leri avelaniwaka. Hi akhawunti: wena, endzhaku ka ku nghena. Tilayini ta munhu un'wana na un'wana ti lotleriwile eka yena eka vuhlayiselo bya vuxokoxoko. A ku na mfikelelo wa vatirhi eka tilayini ta wena lowu lulamisiweke. Loko nseketelo wu nga wu lava, xitiviso lexi xi ta rhanga xi vula ndlela leyi wu pimiweke na ku tsariwa ha yona."
       },
       "keep": {
-        "title": "How long it is kept",
-        "body": "Transactions older than 12 months are removed from this device when Tengo opens. On an account, a server job to remove them is written but not yet switched on. You can delete everything at any time; on an account, deletion removes your rows and your sign-in, and you get a receipt with no personal data. Backups kept by the hosting provider are deleted on their own schedule, stated here before launch."
+        "title": "Swi hlayisiwa nkarhi wo tani hi kwihi",
+        "body": "Mintirho ya mali leyi hundzaka tin'hweti ta 12 yi susiwa eka xitirhisiwa lexi loko Tengo yi pfuleka. Eka akhawunti, ntirho wa sevha wo yi susa wu tsariwile kambe a wu si pfuriwa. U nga susa hinkwaswo nkarhi wun'wana na wun'wana; eka akhawunti, ku susa swi susa tilayini ta wena na ku nghena ka wena, naswona u kuma rhisiti leyi nga riki na vuxokoxoko bya munhu. Tikhopi ta vuhlayiselo leti hlayisiwaka hi muphakeri wa ku khoma ti susiwa hi ku ya hi nxaxamelo wa yena, lowu nga ta boxiwa laha ku nga si sunguriwa."
       },
       "rights": {
-        "title": "Your rights",
-        "body": "You can see your data and export it as JSON or CSV, correct any entry, ask a person to check a result, withdraw any choice, and delete everything. You can complain to the responsible party above, and to the Information Regulator of South Africa."
+        "title": "Timfanelo ta wena",
+        "body": "U nga vona vuxokoxoko bya wena u byi humesa tanihi JSON kumbe CSV, u lulamisa xingheniso xihi na xihi, u kombela munhu ku kambela mbuyelo, u teka xihlawulekisi xihi na xihi endzhaku, naswona u susa hinkwaswo. U nga vilerisa eka nhlangano lowu nga na vutihlamuleri lowu nga laha henhla, na le ka Mufambisi wa Vuxokoxoko wa Afrika Dzonga."
       },
       "not": {
-        "title": "What Tengo is not",
-        "body": "Tengo is a pilot. It is not a bank, not a credit provider and not a financial adviser. Its figures are estimates from your own history, and it makes no decisions about you."
+        "title": "Leswi Tengo yi nga riki swona",
+        "body": "Tengo i ndzingeto. A hi bangi, a hi muphakeri wa xikweleti naswona a hi mutsundzuxi wa timali. Tinomboro ta yona i swiringanyeto leswi humaka eka matimu ya wena, naswona a yi endli swiboho hi wena."
       },
       "changes": {
-        "title": "Changes",
-        "body": "If this notice changes, the version above changes and Tengo asks you to look at it again before you continue."
+        "title": "Ku cinca",
+        "body": "Loko xitiviso lexi xi cinca, nkandziyiso lowu nga laha henhla wa cinca naswona Tengo yi ku kombela ku xi languta nakambe u nga si ya emahlweni."
       }
     },
     "terms": {
-      "title": "Terms of use",
+      "title": "Swiphemu swa matirhiselo",
       "use": {
-        "title": "Using Tengo",
-        "body": "Tengo is free to use during the pilot. It is for adults, 18 or older. Use it only with your own money or with pretend numbers."
+        "title": "Ku tirhisa Tengo",
+        "body": "Tengo i ya mahala ku yi tirhisa hi nkarhi wa ndzingeto. I ya vanhu lavakulu, va malembe ya 18 kumbe ku tlula. Yi tirhise ntsena hi mali ya wena kumbe hi tinomboro ta ku endliwa."
       },
       "estimate": {
-        "title": "Estimates, not promises",
-        "body": "Every date, budget and suggestion is an estimate from past patterns. Money can arrive late or not at all, and bills can change. Check before you make a decision that matters."
+        "title": "Swiringanyeto, ku nga ri switshembiso",
+        "body": "Siku rin'wana na rin'wana, bajete na xiringanyeto i xiringanyeto lexi humaka eka mikhuva ya khale. Mali yi nga nghena hi ku hlwela kumbe yi nga nghenisi nikatsongo, naswona tihakelo ti nga cinca. Kambela u nga si endla xiboho xa nkoka."
       },
       "liability": {
-        "title": "Your decisions",
-        "body": "Tengo does not give financial advice and is not responsible for decisions you make using it. Nothing here limits rights you have under South African law."
+        "title": "Swiboho swa wena",
+        "body": "Tengo a yi nyiki xitsundzuxo xa timali naswona a yi na vutihlamuleri hi swiboho leswi u swi endlaka u yi tirhisa. A ku na nchumu laha lowu pimaka timfanelo leti u nga na tona ehansi ka nawu wa Afrika Dzonga."
       },
       "accounts": {
-        "title": "Accounts",
-        "body": "Accounts are optional. Keep access to your email address, because sign-in is by a one-time code. You can sign out everywhere and delete your account at any time."
+        "title": "Tiakhawunti",
+        "body": "Tiakhawunti i ta ku tihlawulela. Hlayisa mfikelelo wa adirese ya wena ya imeyili, hikuva ku nghena ku endliwa hi khodi ya nkarhi wun'we. U nga huma hinkwako naswona u susa akhawunti ya wena nkarhi wun'wana na wun'wana."
       },
       "ending": {
-        "title": "Ending the pilot",
-        "body": "If the pilot ends, you will be told in the app and given time to export your data before it is deleted."
+        "title": "Makumu ya ndzingeto",
+        "body": "Loko ndzingeto wu hela, u ta byeriwa eka app naswona u nyikiwa nkarhi wo humesa vuxokoxoko bya wena byi nga si susiwa."
       },
       "complaints": {
-        "title": "Complaints",
-        "body": "Contact the responsible party above. For privacy complaints you can also go to the Information Regulator of South Africa."
+        "title": "Swivilelo",
+        "body": "Vulavurisana na nhlangano lowu nga na vutihlamuleri lowu nga laha henhla. Eka swivilelo swa xihundla u nga tlhela u ya eka Mufambisi wa Vuxokoxoko wa Afrika Dzonga."
       }
     }
   },
   "account": {
-    "title": "Account",
-    "unavailable": "Accounts are not set up on this copy of Tengo. Your profile stays on this device.",
-    "lead": "Save to an account to keep this on any device. Optional: Tengo works fully without one.",
-    "leadSaved": "Your profile is saved to your account. Your forecast is still worked out on this device.",
-    "saveTitle": "Save to an account",
-    "manage": "Manage your account",
+    "title": "Akhawunti",
+    "unavailable": "Tiakhawunti a ti lulamisiwanga eka khopi leyi ya Tengo. Phurofayili ya wena yi tshama eka xitirhisiwa lexi.",
+    "lead": "Hlayisa eka akhawunti ku yi hlayisa eka xitirhisiwa xihi na xihi. I ku tihlawulela: Tengo yi tirha hi ku helela handle ka yona.",
+    "leadSaved": "Phurofayili ya wena yi hlayisiwile eka akhawunti ya wena. Vuhlahluvi bya wena bya ha hlayeriwa eka xitirhisiwa lexi.",
+    "saveTitle": "Hlayisa eka akhawunti",
+    "manage": "Lawula akhawunti ya wena",
     "facts": {
-      "passwordless": "No password: you sign in with a one-time code sent to your email.",
-      "device": "Your forecast is still worked out on your device. The account only stores your data.",
-      "where": "Stored with the database provider named in the privacy notice. Only you can read your rows.",
-      "leave": "Sign out everywhere, export or delete everything at any time."
+      "passwordless": "A ku na rito ra xihundla: u nghena hi khodi ya nkarhi wun'we leyi rhumeriwaka eka imeyili ya wena.",
+      "device": "Vuhlahluvi bya wena bya ha hlayeriwa eka xitirhisiwa xa wena. Akhawunti yi hlayisa vuxokoxoko bya wena ntsena.",
+      "where": "Swi hlayisiwe hi muphakeri wa vuhlayiselo bya vuxokoxoko loyi a boxiweke eka xitiviso xa xihundla. I wena ntsena loyi a nga hlayaka tilayini ta wena.",
+      "leave": "Huma hinkwako, humesa kumbe u susa hinkwaswo nkarhi wun'wana na wun'wana."
     },
-    "email": "Email address",
-    "adult": "I am 18 or older.",
-    "adultHint": "Tengo is for adults. It does not ask for or keep a date of birth.",
-    "sendCode": "Send me a code",
-    "codeSent": "Code sent",
-    "codeTitle": "Enter your code",
-    "codeLead": "We sent a one-time code to {{email}}. It works once and expires soon.",
-    "code": "One-time code",
-    "verify": "Sign in",
-    "resend": "Send a new code",
-    "resendIn_one": "Send a new code in {{count}} second",
-    "resendIn_other": "Send a new code in {{count}} seconds",
-    "uploadTitle": "Save what is on this device?",
-    "uploadLead": "Your account is empty. Save your profile from this device to it. It is then removed from this device and kept in your account.",
-    "emptyLead": "Your account is new and empty. Add your money to get your first forecast.",
-    "conflictTitle": "This account already has data",
-    "conflictLead": "This device also has a profile. Usually you keep the account's data. You can replace it with this device's data instead.",
-    "useLead": "Your account's data will be used on this device.",
+    "email": "Adirese ya imeyili",
+    "adult": "Ndzi na malembe ya 18 kumbe ku tlula.",
+    "adultHint": "Tengo i ya vanhu lavakulu. A yi kombeli kumbe ku hlayisa siku ra ku velekiwa.",
+    "sendCode": "Ndzi rhumele khodi",
+    "codeSent": "Khodi yi rhumeriwile",
+    "codeTitle": "Nghenisa khodi ya wena",
+    "codeLead": "Hi rhumele khodi ya nkarhi wun'we eka {{email}}. Yi tirha kan'we naswona yi hela ku nga ri khale.",
+    "code": "Khodi ya nkarhi wun'we",
+    "verify": "Nghena",
+    "resend": "Rhumela khodi leyintshwa",
+    "resendIn_one": "Rhumela khodi leyintshwa endzhaku ka sekoni ya {{count}}",
+    "resendIn_other": "Rhumela khodi leyintshwa endzhaku ka tisekoni ta {{count}}",
+    "uploadTitle": "Hlayisa leswi nga eka xitirhisiwa lexi?",
+    "uploadLead": "Akhawunti ya wena a yi na nchumu. Hlayisa phurofayili ya wena ku suka eka xitirhisiwa lexi eka yona. Endzhaku yi susiwa eka xitirhisiwa lexi yi hlayisiwa eka akhawunti ya wena.",
+    "emptyLead": "Akhawunti ya wena i yintshwa naswona a yi na nchumu. Engetela mali ya wena ku kuma vuhlahluvi bya wena byo sungula.",
+    "conflictTitle": "Akhawunti leyi yi se yi na vuxokoxoko",
+    "conflictLead": "Xitirhisiwa lexi na xona xi na phurofayili. Hi ntolovelo u hlayisa vuxokoxoko bya akhawunti. U nga byi siva hi vuxokoxoko bya xitirhisiwa lexi ematshan'weni ya sweswo.",
+    "useLead": "Vuxokoxoko bya akhawunti ya wena byi ta tirhisiwa eka xitirhisiwa lexi.",
     "choices": {
-      "upload": "Save this device's profile",
-      "startEmpty": "Start with an empty account",
-      "useAccount": "Use the account's data",
-      "replaceAccount": "Replace it with this device's data"
+      "upload": "Hlayisa phurofayili ya xitirhisiwa lexi",
+      "startEmpty": "Sungula hi akhawunti leyi nga riki na nchumu",
+      "useAccount": "Tirhisa vuxokoxoko bya akhawunti",
+      "replaceAccount": "Byi siva hi vuxokoxoko bya xitirhisiwa lexi"
     },
-    "replaceWarn": "Replacing removes what the account holds now and cannot be undone.",
-    "saved": "Saved to your account",
-    "signedInAs": "Signed in as {{email}}",
-    "savedFacts": "Export everything the server holds at any time, as JSON or CSV.",
-    "signOut": "Sign out",
-    "signOutEverywhere": "Sign out everywhere",
-    "deleteTitle": "Delete my account",
-    "deleteBody": "Removes every row the server holds about you and your sign-in, and gives you a receipt with no personal data. Backups kept by the hosting provider expire on its schedule, stated in the privacy notice.",
-    "deleteWarn": "This cannot be undone. Export first if you want a copy.",
-    "deleteConfirm": "Yes, delete my account",
+    "replaceWarn": "Ku siva swi susa leswi akhawunti yi nga na swona sweswi naswona a swi nge tlheriseki.",
+    "saved": "Yi hlayisiwile eka akhawunti ya wena",
+    "signedInAs": "U nghene tanihi {{email}}",
+    "savedFacts": "Humesa hinkwaswo leswi sevha yi swi khomeke nkarhi wun'wana na wun'wana, tanihi JSON kumbe CSV.",
+    "signOut": "Huma",
+    "signOutEverywhere": "Huma hinkwako",
+    "deleteTitle": "Susa akhawunti ya mina",
+    "deleteBody": "Yi susa tilayini hinkwato leti sevha yi ti khomeke hi wena na ku nghena ka wena, yi ku nyika rhisiti leyi nga riki na vuxokoxoko bya munhu. Tikhopi ta vuhlayiselo leti hlayisiwaka hi muphakeri wa ku khoma ti hela hi ku ya hi nxaxamelo wa yena, lowu boxiweke eka xitiviso xa xihundla.",
+    "deleteWarn": "Leswi a swi nge tlheriseki. Humesa ku rhanga loko u lava khopi.",
+    "deleteConfirm": "Ina, susa akhawunti ya mina",
     "errors": {
-      "rate_limited": "A code was sent a moment ago. Wait a minute, then try again.",
-      "invalid_code": "That code did not work. Check it, or send a new one.",
-      "generic": "Something went wrong. Check your connection and try again."
+      "rate_limited": "Khodi yi rhumeriwe nkarhinyana lowu hundzeke. Yima minete, kutani u ringeta nakambe.",
+      "invalid_code": "Khodi yoleyo a yi tirhanga. Yi kambele, kumbe u rhumela leyintshwa.",
+      "generic": "Ku na nchumu lowu nga fambangiki kahle. Kambela vuhlanganisi bya wena u ringeta nakambe."
     }
   }
 }

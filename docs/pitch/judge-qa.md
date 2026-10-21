@@ -30,7 +30,7 @@ Partly. Cash in, cash out and cash on hand in one tap; bank, cash and wallet bal
 Answer a few questions (how money arrives, usual amounts, regular bills). Tengo builds an estimated history, labelled as such and kept at low confidence until real entries replace it. The estimate can still show Enough from answers alone; capping it is open (RISK-A5).
 
 **10. Can I see isiZulu?**
-Not yet. Built for 11 languages, English today. Each language shows its status; Tshivenda needs a human translator because machine translation does not support it, and nothing is marked reviewed until a first-language speaker checks it.
+Yes, as an AI draft. All 10 other official languages have complete AI drafts, labelled "AI draft" in the app. No first-language speaker has checked them yet, so wording may be wrong, especially in isiNdebele, siSwati, Xitsonga and Tshivenda. Nothing is marked reviewed until a speaker checks it.
 
 **11. Where is the data and who can see it?**
 As a guest, on the phone only, and nothing is sent. The optional account is a demo path, not for real data yet: it stores data in Supabase with row-level security on every table, tested with two users on a local test database that does not copy every Supabase default, and the forecast still runs on the phone. Only the public key is in the app.

@@ -24,7 +24,7 @@ export function Segmented<T extends string>({ label, value, options, onChange, v
   return (
     <fieldset className={className}>
       <legend className="sr-only">{label}</legend>
-      <div className={variant === 'track' ? 'inline-flex flex-wrap rounded-full bg-surface-2 p-1' : 'flex flex-wrap gap-2'}>
+      <div className={variant === 'track' ? 'inline-flex flex-wrap rounded-[24px] bg-surface-2 p-1' : 'flex flex-wrap gap-2'}>
         {options.map((o) => {
           const active = o.value === value;
           const look =

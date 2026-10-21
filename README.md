@@ -82,7 +82,7 @@ The "Why this date" drawer on Home shows every input behind the date and doubles
 | Optional accounts on Supabase with row-level security, a server consent log, server export and real deletion | Product analytics: off, and nothing runs |
 | PIN lock, discreet mode, quick exit | Human review of a result: the request is recorded, nobody replies yet |
 | 12 month retention, enforced on open and by a server function | The breach notice: a sample |
-| Offline after the first visit | Translations: English today |
+| Offline after the first visit | Translations: English plus 10 unreviewed AI drafts |
 
 ## Security and privacy
 
@@ -102,7 +102,7 @@ The "Why this date" drawer on Home shows every input behind the date and doubles
 
 ## Translations
 
-Built for 11 languages. English today. Each language shows its status (English for now, machine translated, human reviewed, or needs a translator). Tshivenda needs a first-language translator because Google Cloud Translation does not support it. Review status is tracked per string (`src/i18n/review-status.json`), money terms are agreed first in `src/i18n/glossary.json`, and money strings are not machine translated unless asked. Only English is bundled; other languages load when chosen.
+11 languages: English is the source and the other 10 are complete AI drafts that no first-language speaker has checked yet. The app labels each draft "AI draft" in the language picker, sets the page language to match, and keeps the demo chip in English. Drafts go in through `scripts/import-drafts.mjs`, which rejects any string that loses a placeholder, a protected word such as STOP, or the house rules, and marks every imported string `machine` in `src/i18n/review-status.json`; nothing is ever marked reviewed except by a person. Draft money terms are listed per language in `src/i18n/glossary.json` for translators to confirm. `tests/languages.spec.ts` checks every drafted language on a phone for overflow, page language, leaked keys and axe. Dates use local month and day names only in Afrikaans and isiZulu, where the browser's data is complete; the rest keep English-style dates. Expect the weakest drafts in isiNdebele, siSwati, Xitsonga and Tshivenda. To see a page in one language: `node docs/tools/lang-shot.mjs zu /app out.png` with `vite preview` running. Only English is bundled; other languages load when chosen.
 
 ## Brand and placeholders to replace
 

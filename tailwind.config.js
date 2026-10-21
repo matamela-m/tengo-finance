@@ -21,16 +21,18 @@ export default {
         short: { DEFAULT: ch('short'), soft: 'var(--color-short-soft)' },
         scrim: 'rgb(var(--scrim) / var(--scrim-a))',
       },
+      // A touch lighter than the standard scale for a sleeker look; both fonts are variable, so these render exactly.
+      fontWeight: { normal: '380', medium: '470', semibold: '565', bold: '660', extrabold: '760' },
       fontFamily: {
         sans: ['var(--font-body)'],
         heading: ['var(--font-heading)'],
       },
       fontSize: {
         // Fluid type scale. Never below 12px.
-        display: ['clamp(2.75rem, 1.6rem + 4.6vw, 5.5rem)', { lineHeight: '1', letterSpacing: '-0.03em', fontWeight: '700' }],
-        h1: ['clamp(2rem, 1.6rem + 1.4vw, 2.5rem)', { lineHeight: '1.1', letterSpacing: '-0.025em', fontWeight: '700' }],
-        h2: ['clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem)', { lineHeight: '1.2', letterSpacing: '-0.015em', fontWeight: '650' }],
-        h3: ['1.25rem', { lineHeight: '1.3', letterSpacing: '-0.01em', fontWeight: '600' }],
+        display: ['clamp(2.75rem, 1.6rem + 4.6vw, 5.5rem)', { lineHeight: '1', letterSpacing: '-0.03em', fontWeight: '660' }],
+        h1: ['clamp(2rem, 1.6rem + 1.4vw, 2.5rem)', { lineHeight: '1.1', letterSpacing: '-0.025em', fontWeight: '660' }],
+        h2: ['clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem)', { lineHeight: '1.2', letterSpacing: '-0.015em', fontWeight: '615' }],
+        h3: ['1.25rem', { lineHeight: '1.3', letterSpacing: '-0.01em', fontWeight: '565' }],
         caption: ['0.75rem', { lineHeight: '1.4' }],
       },
       borderRadius: { xl: '0.75rem', '2xl': '1rem', '3xl': '1.5rem' },

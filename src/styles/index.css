@@ -107,6 +107,7 @@
 
   body {
     @apply bg-bg font-sans text-base text-ink antialiased;
+    font-weight: 380;
     font-feature-settings: 'cv11', 'ss01';
   }
 

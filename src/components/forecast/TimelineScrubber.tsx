@@ -167,7 +167,7 @@ export function TimelineScrubber({ forecast }: { forecast: Forecast }) {
                   strokeDasharray={v === 0 ? '4 4' : undefined}
                   strokeWidth={1}
                 />
-                <text x={PAD.left - 10} y={geo.y(v) + 4} textAnchor="end" className="num" fontSize="12" fontWeight={v === 0 ? 600 : 500} fill={v === 0 ? 'var(--color-short)' : 'var(--color-text-subtle)'}>
+                <text x={PAD.left - 10} y={geo.y(v) + 4} textAnchor="end" className="num" fontSize="12" fontWeight={v === 0 ? 565 : 470} fill={v === 0 ? 'var(--color-short)' : 'var(--color-text-subtle)'}>
                   {compactZAR(v)}
                 </text>
               </g>

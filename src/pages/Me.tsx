@@ -7,6 +7,7 @@ import { Icon } from '../components/Icon';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { FLAGS } from '../lib/flags';
 import { SharedPhoneCard } from '../components/SharedPhoneCard';
+import { OwnProfileCard } from '../components/OwnProfileCard';
 import { DiagnosticsCard } from '../components/DiagnosticsCard';
 import { PageHeader } from '../components/PageHeader';
 import { StateChip } from '../components/StateChip';
@@ -19,7 +20,7 @@ import { ThemeToggle } from '../components/ThemeToggle';
 export default function MePage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { personaId } = usePersona();
+  const { personaId, isOwn } = usePersona();
   const setActive = useSession((s) => s.setActivePersona);
   const setTheme = useSession((s) => s.setTheme);
   const [confirmReset, setConfirmReset] = useState(false);
@@ -43,6 +44,7 @@ export default function MePage() {
       <PageHeader title={t('me.title')} />
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <div className="flex min-w-0 flex-col gap-6">
+          {isOwn && <OwnProfileCard />}
           <section className="card p-6" aria-labelledby="who-title">
             <h2 id="who-title" className="font-heading text-h3 text-ink">
               {t('me.persona')}

@@ -3,7 +3,7 @@ import { Link, NavLink, Outlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Avatar } from '../components/Avatar';
 import { Brand } from '../components/Brand';
-import { DemoChip } from '../components/DemoChip';
+import { ModeChip } from '../components/DemoChip';
 import { Icon } from '../components/Icon';
 import { ThemeButton } from '../components/ThemeToggle';
 import { usePersona } from '../data/PersonaProvider';
@@ -138,7 +138,7 @@ export function AppLayout({ children }: { children?: ReactNode }) {
             </>
           ) : (
             <div className="flex items-center justify-between gap-2">
-              <DemoChip />
+              <ModeChip />
               <ThemeButton />
             </div>
           )}
@@ -152,7 +152,7 @@ export function AppLayout({ children }: { children?: ReactNode }) {
             <Brand size={20} decorative />
           </Link>
           <div className="flex items-center gap-1">
-            <DemoChip />
+            <ModeChip />
             <SafetyControls compact />
             <NavLink
               to="/app/privacy"

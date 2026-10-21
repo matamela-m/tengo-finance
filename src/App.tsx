@@ -24,6 +24,8 @@ const MePage = lazy(() => import('./pages/Me'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const ExitPage = lazy(() => import('./pages/Exit'));
 const SafetyPolicy = lazy(() => import('./pages/SafetyPolicy'));
+const Welcome = lazy(() => import('./pages/Welcome'));
+const PrivacyNotice = lazy(() => import('./pages/PrivacyNotice'));
 
 export default function App() {
   return (
@@ -42,6 +44,9 @@ export default function App() {
           <Route path="/consent" element={<Consent />} />
           <Route path="/exit" element={<ExitPage />} />
           <Route path="/safety" element={<SafetyPolicy />} />
+          <Route path="/welcome" element={<Welcome />} />
+          <Route path="/privacy-notice" element={<PrivacyNotice kind="notice" />} />
+          <Route path="/terms" element={<PrivacyNotice kind="terms" />} />
           <Route path="/app" element={<AppGate />}>
             <Route index element={<HomePage />} />
             <Route path="plan" element={<PlanPage />} />

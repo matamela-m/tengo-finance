@@ -5,15 +5,18 @@ import type { BillDecision, Forecast, ForecastInput, ISODate, Transaction } from
 import { useSession } from '../store/session';
 import { repository } from './index';
 import { StorageError, type StorageProblem } from './localRepository';
-import { accountsOf, type Account, type AuditEntry, type AuditType, type ConsentRecord, type DeletionReceipt, type MoneyChange, type PersonaRecord, type PlanSettings, type ReviewRequest, type TransactionPatch } from './repository';
+import { accountsOf, type Account, type AuditEntry, type AuditType, type ConsentRecord, type DeletionReceipt, type MoneyChange, type OwnProfile, type PersonaRecord, type PlanSettings, type ReviewRequest, type TransactionPatch } from './repository';
 import { mergeEstimated } from '../engine/setup';
 import { recordDiagnostic } from '../lib/diagnostics';
-import { getPersona, type PersonaId, type PersonaProfile } from './seed/personas';
+import i18n from '../i18n';
+import { getPersona, isProfileId, OWN_ID, ownProfile, type PersonaProfile, type ProfileId } from './seed/personas';
 
 type Status = 'idle' | 'loading' | 'ready' | 'error';
 
 interface PersonaContextValue {
-  personaId: PersonaId | null;
+  personaId: ProfileId | null;
+  /** True for the person's own profile, never for the fictional people. */
+  isOwn: boolean;
   profile: PersonaProfile | undefined;
   today: ISODate;
   status: Status;
@@ -41,6 +44,8 @@ interface PersonaContextValue {
   setBillDecision: (missedBillId: string, decision: BillDecision) => Promise<void>;
   setPlanSettings: (settings: PlanSettings) => Promise<void>;
   updateMoney: (change: MoneyChange) => Promise<void>;
+  /** Own profile details: nickname, sample flag, onboarding step. Not logged with values. */
+  updateProfile: (patch: Partial<OwnProfile>) => Promise<void>;
   /** Cash in or out: an entry on the cash account and a matching change to cash on hand. */
   addCash: (direction: 'in' | 'out', amount: number, note: string) => Promise<void>;
   /** Sets how much cash is on hand now, without an entry. */
@@ -52,8 +57,9 @@ interface PersonaContextValue {
 const Ctx = createContext<PersonaContextValue | null>(null);
 
 export function PersonaProvider({ children }: { children: ReactNode }) {
-  const personaId = useSession((s) => s.activePersonaId) as PersonaId | null;
-  const profile = getPersona(personaId);
+  const rawId = useSession((s) => s.activePersonaId);
+  const personaId: ProfileId | null = isProfileId(rawId) ? rawId : null;
+  const isOwn = personaId === OWN_ID;
   const [today, setToday] = useState(() => localToday());
   // "Today" moves on when the app comes back after midnight, so the forecast never sits on yesterday.
   useEffect(() => {
@@ -68,13 +74,18 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
   const [status, setStatus] = useState<Status>('idle');
   const [record, setRecord] = useState<PersonaRecord | null>(null);
   const [consent, setConsentState] = useState<ConsentRecord | null>(null);
+  const nickname = record?.personaId === OWN_ID ? record.profile?.nickname : undefined;
+  const profile: PersonaProfile | undefined = useMemo(
+    () => (isOwn ? ownProfile(nickname, i18n.t('own.you')) : getPersona(personaId)),
+    [isOwn, nickname, personaId],
+  );
   const [audit, setAudit] = useState<AuditEntry[]>([]);
   const [reviews, setReviews] = useState<ReviewRequest[]>([]);
   const opened = useRef<Set<string>>(new Set());
   const [problem, setProblem] = useState<StorageProblem | null>(null);
 
   const load = useCallback(
-    async (id: PersonaId, quiet = false) => {
+    async (id: ProfileId, quiet = false) => {
       if (!quiet) setStatus('loading');
       try {
         const [r, c, a, rv] = await Promise.all([
@@ -97,7 +108,7 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
   );
 
   useEffect(() => {
-    if (!personaId || !getPersona(personaId)) {
+    if (!personaId) {
       setRecord(null);
       setConsentState(null);
       setStatus('idle');
@@ -123,7 +134,7 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
       if (!personaId) throw new Error('No active persona');
       return personaId;
     };
-    const refreshAudit = async (id: PersonaId) => setAudit(await repository.getAudit(id));
+    const refreshAudit = async (id: ProfileId) => setAudit(await repository.getAudit(id));
     // Every write goes through this, so a full or blocked storage shows a visible message (TECH-04).
     const guard =
       <A extends unknown[], R>(fn: (...args: A) => Promise<R>) =>
@@ -143,6 +154,7 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
     const plain: Omit<PersonaContextValue, 'storageProblem' | 'dismissStorageProblem' | 'startFresh'> = {
       personaId,
       profile,
+      isOwn,
       today,
       status,
       record,
@@ -188,6 +200,10 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
         setRecord(await repository.setBalance(id, balance, today));
         await repository.appendAudit(id, 'balance.updated');
         await refreshAudit(id);
+      },
+      updateProfile: async (patch) => {
+        const id = requireId();
+        setRecord(await repository.updateProfile(id, patch));
       },
       updateMoney: async (change) => {
         const id = requireId();
@@ -272,7 +288,7 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
         if (personaId) await load(personaId);
       },
     };
-  }, [personaId, profile, today, status, record, consent, input, forecast, audit, reviews, load, problem]);
+  }, [personaId, isOwn, profile, today, status, record, consent, input, forecast, audit, reviews, load, problem]);
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

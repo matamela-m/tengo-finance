@@ -170,7 +170,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col gap-4 sm:gap-5">
       <Greeting name={profile.name} forecast={forecast} />
-      <HomeNotices notices={view.notices} />
+      <HomeNotices notices={record.profile?.sample ? view.notices.map((n) => (n.kind === 'estimated' ? { kind: 'sample' as const } : n)) : view.notices} />
 
       {/* Two independent columns on desktop; one ordered stack below 1024px via display: contents. */}
       <div className="flex flex-col gap-4 sm:gap-5 lg:flex-row lg:items-start">

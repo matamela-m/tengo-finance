@@ -5,6 +5,7 @@ import type {
   AuditType,
   ConsentRecord,
   DeletionReceipt,
+  OwnProfile,
   PersonaRecord,
   PlanSettings,
   ReviewRequest,
@@ -13,7 +14,7 @@ import type {
 } from './repository';
 import { applyRetention } from './retention';
 import { generateHistory, PERSONA_EXTRAS, personaObligations, startingBalance } from './seed/generate';
-import { getPersona, type PersonaId } from './seed/personas';
+import { getPersona, OWN_ID, type PersonaId, type ProfileId } from './seed/personas';
 
 const KEY = 'tengo.data.v1';
 /** Where unreadable data is kept, so a bad write never silently wipes it. */
@@ -72,7 +73,7 @@ export interface PersonaSlot {
 
 export interface Stored {
   schema?: number;
-  personas: Partial<Record<PersonaId, PersonaSlot>>;
+  personas: Partial<Record<ProfileId, PersonaSlot>>;
   receipts: DeletionReceipt[];
 }
 
@@ -86,6 +87,24 @@ export interface KeyValueStore {
 function uid(prefix: string): string {
   const rand = Math.random().toString(36).slice(2, 8);
   return `${prefix}_${Date.now().toString(36)}${rand}`;
+}
+
+/** An empty own profile, before onboarding adds any money. */
+export function emptyOwnRecord(today: ISODate): PersonaRecord {
+  const now = new Date().toISOString();
+  return {
+    personaId: OWN_ID,
+    transactions: [],
+    balance: 0,
+    accounts: [{ id: 'bank', kind: 'bank', name: 'Bank account', balance: 0 }],
+    obligations: [],
+    source: 'manual',
+    seededOn: today,
+    balanceDate: today,
+    profile: { onboardingStep: 0 },
+    createdAt: now,
+    updatedAt: now,
+  };
 }
 
 export function seedRecord(personaId: PersonaId, today: ISODate): PersonaRecord {
@@ -108,12 +127,18 @@ export class LocalRepository implements TengoRepository {
     private readonly store: KeyValueStore,
     /** Artificial delay so loading states are real. */
     private readonly latencyMs = 0,
+    /** Storage key. The own profile uses its own namespace, apart from the fictional people. */
+    private readonly key = KEY,
   ) {}
+
+  private get corruptKey() {
+    return this.key === KEY ? CORRUPT_KEY : `${this.key}.unreadable`;
+  }
 
   private read(): Stored {
     let raw: string | null;
     try {
-      raw = this.store.getItem(KEY);
+      raw = this.store.getItem(this.key);
     } catch {
       throw new StorageError('unavailable', 'Storage cannot be read on this device');
     }
@@ -125,7 +150,7 @@ export class LocalRepository implements TengoRepository {
     } catch {
       // Keep the unreadable copy rather than overwrite it, and tell the person.
       try {
-        this.store.setItem(CORRUPT_KEY, raw);
+        this.store.setItem(this.corruptKey, raw);
       } catch {
         // Nothing more can be done; the error below still reaches the person.
       }
@@ -136,13 +161,13 @@ export class LocalRepository implements TengoRepository {
 
   private write(data: Stored) {
     try {
-      this.store.setItem(KEY, JSON.stringify({ ...data, schema: SCHEMA_VERSION }));
+      this.store.setItem(this.key, JSON.stringify({ ...data, schema: SCHEMA_VERSION }));
     } catch (e) {
       throw new StorageError(isQuota(e) ? 'quota' : 'unavailable', 'Could not save on this device');
     }
   }
 
-  private slot(data: Stored, id: PersonaId): PersonaSlot {
+  private slot(data: Stored, id: ProfileId): PersonaSlot {
     const existing = data.personas[id];
     if (existing) return existing;
     const created: PersonaSlot = { audit: [], reviews: [] };
@@ -154,11 +179,17 @@ export class LocalRepository implements TengoRepository {
     if (this.latencyMs > 0) await new Promise((r) => setTimeout(r, this.latencyMs));
   }
 
-  async getRecord(personaId: PersonaId, today: ISODate): Promise<PersonaRecord> {
+  async getRecord(personaId: ProfileId, today: ISODate): Promise<PersonaRecord> {
     await this.wait();
     const data = this.read();
     const slot = this.slot(data, personaId);
-    if (!slot.record || (slot.record.source === 'seed' && slot.record.seededOn !== today)) {
+    if (personaId === OWN_ID) {
+      // The own profile is never seeded: it starts empty and onboarding fills it.
+      if (!slot.record) {
+        slot.record = emptyOwnRecord(today);
+        this.write(data);
+      }
+    } else if (!slot.record || (slot.record.source === 'seed' && slot.record.seededOn !== today)) {
       slot.record = seedRecord(personaId, today);
       this.write(data);
     }
@@ -171,7 +202,7 @@ export class LocalRepository implements TengoRepository {
     return slot.record;
   }
 
-  async replaceHistory(personaId: PersonaId, transactions: Transaction[], balance: number, balanceDate?: ISODate, source: RecordSource = 'import'): Promise<PersonaRecord> {
+  async replaceHistory(personaId: ProfileId, transactions: Transaction[], balance: number, balanceDate?: ISODate, source: RecordSource = 'import'): Promise<PersonaRecord> {
     await this.wait();
     const data = this.read();
     const slot = this.slot(data, personaId);
@@ -185,6 +216,10 @@ export class LocalRepository implements TengoRepository {
       balance: totalOf(accounts),
       accounts,
       obligations: slot.record?.obligations,
+      // Replacing the money history keeps the person's own details and plan settings.
+      profile: slot.record?.profile,
+      flexibleGroups: slot.record?.flexibleGroups,
+      movableBills: slot.record?.movableBills,
       source,
       seededOn: slot.record?.seededOn ?? now.slice(0, 10),
       balanceDate,
@@ -197,7 +232,7 @@ export class LocalRepository implements TengoRepository {
   }
 
   /** Applies a change to an existing record, marks seeds as edited and saves. */
-  private change(personaId: PersonaId, fn: (record: PersonaRecord) => void): PersonaRecord {
+  private change(personaId: ProfileId, fn: (record: PersonaRecord) => void): PersonaRecord {
     const data = this.read();
     const record = this.slot(data, personaId).record;
     if (!record) throw new Error('No record for persona');
@@ -208,7 +243,7 @@ export class LocalRepository implements TengoRepository {
     return record;
   }
 
-  async addTransactions(personaId: PersonaId, transactions: Transaction[], balance?: number): Promise<PersonaRecord> {
+  async addTransactions(personaId: ProfileId, transactions: Transaction[], balance?: number): Promise<PersonaRecord> {
     await this.wait();
     return this.change(personaId, (r) => {
       r.transactions = [...r.transactions, ...transactions];
@@ -217,7 +252,7 @@ export class LocalRepository implements TengoRepository {
   }
 
   /** Sets the bank account balance (the one a statement shows); the total follows. */
-  async setBalance(personaId: PersonaId, balance: number, balanceDate: ISODate): Promise<PersonaRecord> {
+  async setBalance(personaId: ProfileId, balance: number, balanceDate: ISODate): Promise<PersonaRecord> {
     await this.wait();
     return this.change(personaId, (r) => {
       const accounts = accountsOf(r).map((a) => (a.kind === 'bank' ? { ...a, balance } : a));
@@ -228,7 +263,7 @@ export class LocalRepository implements TengoRepository {
     });
   }
 
-  async updateMoney(personaId: PersonaId, change: MoneyChange): Promise<PersonaRecord> {
+  async updateMoney(personaId: ProfileId, change: MoneyChange): Promise<PersonaRecord> {
     await this.wait();
     return this.change(personaId, (r) => {
       if (change.add?.length) r.transactions = [...r.transactions, ...change.add];
@@ -240,7 +275,14 @@ export class LocalRepository implements TengoRepository {
     });
   }
 
-  async setPlanSettings(personaId: PersonaId, settings: PlanSettings): Promise<PersonaRecord> {
+  async updateProfile(personaId: ProfileId, patch: Partial<OwnProfile>): Promise<PersonaRecord> {
+    await this.wait();
+    return this.change(personaId, (r) => {
+      r.profile = { ...(r.profile ?? {}), ...patch };
+    });
+  }
+
+  async setPlanSettings(personaId: ProfileId, settings: PlanSettings): Promise<PersonaRecord> {
     await this.wait();
     return this.change(personaId, (r) => {
       if (settings.flexibleGroups) r.flexibleGroups = settings.flexibleGroups;
@@ -248,14 +290,14 @@ export class LocalRepository implements TengoRepository {
     });
   }
 
-  async setBillDecision(personaId: PersonaId, missedBillId: string, decision: BillDecision): Promise<PersonaRecord> {
+  async setBillDecision(personaId: ProfileId, missedBillId: string, decision: BillDecision): Promise<PersonaRecord> {
     await this.wait();
     return this.change(personaId, (r) => {
       r.billDecisions = { ...(r.billDecisions ?? {}), [missedBillId]: decision };
     });
   }
 
-  async updateTransaction(personaId: PersonaId, transactionId: string, patch: TransactionPatch): Promise<PersonaRecord> {
+  async updateTransaction(personaId: ProfileId, transactionId: string, patch: TransactionPatch): Promise<PersonaRecord> {
     await this.wait();
     const data = this.read();
     const record = this.slot(data, personaId).record;
@@ -267,12 +309,12 @@ export class LocalRepository implements TengoRepository {
     return record;
   }
 
-  async getConsent(personaId: PersonaId): Promise<ConsentRecord | null> {
+  async getConsent(personaId: ProfileId): Promise<ConsentRecord | null> {
     await this.wait();
     return this.read().personas[personaId]?.consent ?? null;
   }
 
-  async setConsent(personaId: PersonaId, consent: Omit<ConsentRecord, 'decidedAt'>): Promise<ConsentRecord> {
+  async setConsent(personaId: ProfileId, consent: Omit<ConsentRecord, 'decidedAt'>): Promise<ConsentRecord> {
     const data = this.read();
     const saved = { ...consent, decidedAt: new Date().toISOString() };
     this.slot(data, personaId).consent = saved;
@@ -280,12 +322,12 @@ export class LocalRepository implements TengoRepository {
     return saved;
   }
 
-  async getAudit(personaId: PersonaId): Promise<AuditEntry[]> {
+  async getAudit(personaId: ProfileId): Promise<AuditEntry[]> {
     await this.wait();
     return [...(this.read().personas[personaId]?.audit ?? [])].reverse();
   }
 
-  async appendAudit(personaId: PersonaId, type: AuditType, params?: AuditEntry['params']): Promise<AuditEntry> {
+  async appendAudit(personaId: ProfileId, type: AuditType, params?: AuditEntry['params']): Promise<AuditEntry> {
     const data = this.read();
     const slot = this.slot(data, personaId);
     const entry: AuditEntry = { id: uid('a'), at: new Date().toISOString(), type, params };
@@ -294,11 +336,11 @@ export class LocalRepository implements TengoRepository {
     return entry;
   }
 
-  async getReviewRequests(personaId: PersonaId): Promise<ReviewRequest[]> {
+  async getReviewRequests(personaId: ProfileId): Promise<ReviewRequest[]> {
     return [...(this.read().personas[personaId]?.reviews ?? [])].reverse();
   }
 
-  async addReviewRequest(personaId: PersonaId, request: Omit<ReviewRequest, 'id' | 'at'>): Promise<ReviewRequest> {
+  async addReviewRequest(personaId: ProfileId, request: Omit<ReviewRequest, 'id' | 'at'>): Promise<ReviewRequest> {
     await this.wait();
     const data = this.read();
     const saved: ReviewRequest = { ...request, id: uid('r'), at: new Date().toISOString() };
@@ -308,7 +350,7 @@ export class LocalRepository implements TengoRepository {
     return saved;
   }
 
-  async deletePersona(personaId: PersonaId): Promise<DeletionReceipt> {
+  async deletePersona(personaId: ProfileId): Promise<DeletionReceipt> {
     await this.wait();
     const data = this.read();
     const slot = data.personas[personaId];
@@ -330,11 +372,11 @@ export class LocalRepository implements TengoRepository {
   }
 
   async startFresh(): Promise<void> {
-    this.store.removeItem(KEY);
+    this.store.removeItem(this.key);
   }
 
   async resetAll(): Promise<void> {
-    this.store.removeItem(KEY);
-    this.store.removeItem(CORRUPT_KEY);
+    this.store.removeItem(this.key);
+    this.store.removeItem(this.corruptKey);
   }
 }

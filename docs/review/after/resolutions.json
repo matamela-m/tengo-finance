@@ -287,6 +287,10 @@
   "status": "Partly fixed",
   "resolution": "Phase 5: the cash-heavy persona now has cash on hand and a burial society, and daily earners get a daily rhythm. Segment fit still needs the user study (docs/research)."
  },
+ "PROD-08": {
+  "status": "Partly fixed",
+  "resolution": "Phase 7: a guest-first own-profile onboarding (four steps, resumable) beside the fictional people. English-only locales and the placeholder brand remain human actions."
+ },
  "RISK-01": {
   "status": "Fixed",
   "resolution": "Phase 2: income is paused after more than two usual gaps; no next money is counted, confidence is low, room to lend is R0 and Home says Income looks paused (S09, S11, S11b)."
@@ -350,6 +354,10 @@
  "SEC-04": {
   "status": "Partly fixed",
   "resolution": "Phase 4: security headers and dependency upgrades are done. Auth, encrypted server storage and row-level security follow in Phase 8; device data stays in browser storage by design."
+ },
+ "SEC-05": {
+  "status": "Partly fixed",
+  "resolution": "Phase 7: own-profile deletion removes every record on the device, the receipt holds no personal data and the receipt id is no longer put in the URL. Server deletion follows in Phase 8."
  },
  "SEC-06": {
   "status": "Partly fixed",

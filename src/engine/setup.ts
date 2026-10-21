@@ -29,7 +29,9 @@ export const ESTIMATED_DAYS = 60;
  * which keeps confidence low, and the screens label it "estimated from your answers". Spend alternates
  * a little around the stated amount so a light and a heavy week exist.
  */
-export function estimatedHistory(a: SetupAnswers, today: ISODate, days = ESTIMATED_DAYS): Transaction[] {
+export function estimatedHistory(a: SetupAnswers, today: ISODate, days = ESTIMATED_DAYS, label: 'answers' | 'sample' = 'answers'): Transaction[] {
+  const moneyIn = label === 'sample' ? 'Sample money in' : 'Money in (estimated from your answers)';
+  const spending = label === 'sample' ? 'Sample everyday spending' : 'Everyday spending (estimated from your answers)';
   const out: Transaction[] = [];
   const add = (date: ISODate, amount: number, description: string, category: Transaction['category']) =>
     out.push({ id: `est-${date}-${out.length}`, date, amount: Math.round(amount * 100) / 100, description, category, estimated: true });
@@ -45,10 +47,10 @@ export function estimatedHistory(a: SetupAnswers, today: ISODate, days = ESTIMAT
     else if (a.arrives === 'monthly') paid = dom === Math.min(a.dayOfMonth ?? 25, lastDom);
     // Irregular: every N days, sometimes a day early or late, the same way every time.
     else paid = i % every === 0 || (i % (every * 3) === 1 && every > 3);
-    if (paid && a.amount > 0) add(date, a.amount, 'Money in (estimated from your answers)', 'income');
+    if (paid && a.amount > 0) add(date, a.amount, moneyIn, 'income');
     if (a.dailySpend > 0) {
       const week = Math.floor(i / 7);
-      add(date, -a.dailySpend * (week % 2 === 0 ? 0.85 : 1.15), 'Everyday spending (estimated from your answers)', 'spend');
+      add(date, -a.dailySpend * (week % 2 === 0 ? 0.85 : 1.15), spending, 'spend');
     }
     for (const b of a.bills) if (b.amount > 0 && dom === Math.min(b.dayOfMonth, lastDom)) add(date, -b.amount, b.name, 'bill');
   }
@@ -65,3 +67,17 @@ export function mergeEstimated(transactions: Transaction[]): Transaction[] {
   const firstReal = real.reduce((m, t) => (t.date < m ? t.date : m), real[0]!.date);
   return transactions.filter((t) => !t.estimated || t.date < firstReal);
 }
+
+/** The editable sample a guest can try without typing anything. Clearly labelled as sample numbers. */
+export const SAMPLE_ANSWERS: SetupAnswers = {
+  arrives: 'weekly',
+  amount: 2400,
+  weekday: 5,
+  dailySpend: 190,
+  bills: [
+    { name: 'Rent (sample)', amount: 1800, dayOfMonth: 1 },
+    { name: 'Phone contract (sample)', amount: 199, dayOfMonth: 20 },
+  ],
+};
+export const SAMPLE_BANK_BALANCE = 1650;
+export const SAMPLE_CASH = 200;

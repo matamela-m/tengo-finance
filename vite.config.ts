@@ -2,7 +2,7 @@
 import { createHash } from 'node:crypto';
 import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
-import { defineConfig, type Plugin } from 'vite';
+import { defineConfig, loadEnv, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 
 /**
@@ -34,8 +34,21 @@ function precacheManifest(): Plugin {
   };
 }
 
-export default defineConfig({
-  plugins: [react(), precacheManifest()],
+/** Warns at build time while the responsible party or Information Officer are still placeholders. */
+function operatorWarning(mode: string): Plugin {
+  return {
+    name: 'tengo-operator-warning',
+    apply: 'build',
+    buildStart() {
+      const env = loadEnv(mode, process.cwd(), 'VITE_');
+      const missing = ['VITE_RESPONSIBLE_PARTY', 'VITE_RESPONSIBLE_PARTY_ADDRESS', 'VITE_INFORMATION_OFFICER', 'VITE_PRIVACY_EMAIL'].filter((k) => !env[k]?.trim());
+      if (missing.length) this.warn(`Privacy notice placeholders still in use: ${missing.join(', ')}. Fill them before any real launch (docs/SETUP-SUPABASE.md).`);
+    },
+  };
+}
+
+export default defineConfig(({ mode }) => ({
+  plugins: [react(), precacheManifest(), operatorWarning(mode)],
   // Shown in the diagnostics panel on Me.
   define: { __BUILD_ID__: JSON.stringify(`${process.env.npm_package_version ?? '0'}-${new Date().toISOString().slice(0, 16)}`) },
   build: { manifest: true },
@@ -51,4 +64,4 @@ export default defineConfig({
       thresholds: { statements: 40, lines: 40 },
     },
   },
-});
+}));

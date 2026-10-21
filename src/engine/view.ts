@@ -60,6 +60,8 @@ export type Notice =
   | { kind: 'oneOffs'; count: number }
   /** Some of the history is estimated from setup answers. */
   | { kind: 'estimated' }
+  /** The own profile is using the labelled sample numbers. Set by the screen, not the engine. */
+  | { kind: 'sample' }
   /** A large spend in a short history: still counted, the person can mark it as a one-off. */
   | { kind: 'askOneOff'; id: string; description: string; amount: number; date: ISODate };
 

@@ -14,7 +14,7 @@ import { useAnnounce } from '../../components/A11y';
 export default function MyData() {
   const { t } = useTranslation();
   const d = useDates();
-  const { record, profile, consent, audit, reviews, log } = useRecordPersona();
+  const { record, profile, consent, audit, reviews, log, isOwn } = useRecordPersona();
   const logged = useRef(false);
   const announce = useAnnounce();
 
@@ -28,8 +28,9 @@ export default function MyData() {
   const exportJson = () => {
     const payload = {
       exportedAt: new Date().toISOString(),
-      note: 'Fictional demo data from Tengo. Not real personal information.',
-      persona: { id: profile.id, name: profile.name, fictional: true },
+      note: isOwn ? 'Your Tengo data, exported from this device. It is personal: keep the file safe.' : 'Fictional demo data from Tengo. Not real personal information.',
+      persona: isOwn ? { id: profile.id, nickname: record.profile?.nickname ?? null, fictional: false } : { id: profile.id, name: profile.name, fictional: true },
+      noticeVersion: record.profile?.noticeVersion ?? consent?.noticeVersion ?? null,
       balance: record.balance,
       accounts: accountsOf(record),
       obligations: record.obligations ?? [],
@@ -83,7 +84,7 @@ export default function MyData() {
           </h2>
           <dl className="mt-3 divide-y divide-line text-sm">
             {[
-              [t('privacy.heldPersona'), `${profile.name} (${t('personas.fictional').toLowerCase()})`],
+              [t('privacy.heldPersona'), isOwn ? t('me.profileTitle') : `${profile.name} (${t('personas.fictional').toLowerCase()})`],
               [t('privacy.heldBalance'), formatZAR(record.balance)],
               [t('privacy.heldTransactions'), String(record.transactions.length)],
               [t('privacy.heldSource'), t(`privacy.source.${record.source}`)],

@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Notice } from '../components/Feedback';
 import type { DeletionReceipt } from '../data/repository';
-import { getPersona } from '../data/seed/personas';
+import { getPersona, OWN_ID } from '../data/seed/personas';
+import { localToday } from '../engine/dates';
+import { IconTile } from '../components/ui';
+import { ProfileChip } from '../components/DemoChip';
 import { useDates } from '../lib/useLang';
 import { useTranslation } from 'react-i18next';
 import { Avatar } from '../components/Avatar';
@@ -26,14 +29,21 @@ export default function Picker() {
   const active = useSession((s) => s.activePersonaId);
   const setActive = useSession((s) => s.setActivePersona);
   const d = useDates();
-  const [params] = useSearchParams();
-  const deletedId = params.get('deleted');
+  const location = useLocation();
+  const deletedId = (location.state as { deleted?: string } | null)?.deleted ?? null;
   const [receipt, setReceipt] = useState<DeletionReceipt | null>(null);
 
   useEffect(() => {
     if (!deletedId) return;
     void repository.getDeletionReceipts().then((all) => setReceipt(all.find((r) => r.id === deletedId) ?? null));
   }, [deletedId]);
+
+  // The own profile goes through onboarding until it is done, then straight to Home.
+  const chooseOwn = async () => {
+    setActive(OWN_ID);
+    const [record, consent] = await Promise.all([repository.getRecord(OWN_ID, localToday()), repository.getConsent(OWN_ID)]);
+    navigate(consent?.core && (record.profile?.onboardingStep ?? 0) >= 4 ? '/app' : '/welcome');
+  };
 
   const choose = async (p: PersonaProfile) => {
     setActive(p.id);
@@ -66,7 +76,7 @@ export default function Picker() {
         </div>
         {receipt && (
           <Notice tone="ok" icon="receipt" className="mt-6 max-w-3xl">
-            <p className="font-semibold">{t('picker.deletedTitle', { name: getPersona(receipt.personaId)?.name ?? '' })}</p>
+            <p className="font-semibold">{receipt.personaId === OWN_ID ? t('own.deletedTitle') : t('picker.deletedTitle', { name: getPersona(receipt.personaId)?.name ?? '' })}</p>
             <p className="num mt-1">
               {t('picker.deletedBody', { ref: receipt.id, date: d.stamp(receipt.at), count: receipt.transactionsRemoved, audit: receipt.auditEntriesRemoved })}
             </p>
@@ -77,7 +87,7 @@ export default function Picker() {
           <h2 id="persona-heading" className="sr-only">
             {t('picker.personas')}
           </h2>
-          <ul className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <ul className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {PERSONAS.map((p) => (
               <li key={p.id}>
                 <article
@@ -112,6 +122,29 @@ export default function Picker() {
                 </article>
               </li>
             ))}
+            <li>
+              <article
+                className={`group card-interactive relative flex h-full w-full flex-col p-6 focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[var(--color-focus)] sm:p-7 ${
+                  active === OWN_ID ? 'border-accent ring-1 ring-accent' : ''
+                }`}
+              >
+                <IconTile name="wallet" tone="accent" size={48} />
+                <h3 className="mt-6 font-heading text-h2 text-ink">{t('own.cardTitle')}</h3>
+                <p className="mt-1 text-[15px] font-medium text-ink">{t('own.cardPromise')}</p>
+                <p className="mt-3 flex-1 text-[15px] text-muted">{t('own.cardBody')}</p>
+                <div className="mt-6 flex w-full flex-wrap items-center justify-between gap-3 border-t border-line pt-4">
+                  <ProfileChip />
+                  <button
+                    type="button"
+                    onClick={() => void chooseOwn()}
+                    className="inline-flex min-h-[44px] items-center gap-1 font-heading text-sm font-semibold text-ink after:absolute after:inset-0 after:rounded-2xl after:content-[''] focus-visible:outline-none"
+                  >
+                    {active === OWN_ID ? t('own.continue') : t('own.start')}
+                    <Icon name="arrowRight" size={16} className="transition-transform group-hover:translate-x-0.5" />
+                  </button>
+                </div>
+              </article>
+            </li>
           </ul>
         </section>
 

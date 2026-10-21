@@ -1,6 +1,6 @@
 import type { SpendGroup } from '../engine/spending';
 import type { BillDecision, ISODate, Obligation, Transaction } from '../engine/types';
-import type { PersonaId } from './seed/personas';
+import type { ProfileId } from './seed/personas';
 
 export type RecordSource = 'seed' | 'import' | 'edited' | 'manual';
 
@@ -25,7 +25,7 @@ export function totalOf(accounts: Account[]): number {
 }
 
 export interface PersonaRecord {
-  personaId: PersonaId;
+  personaId: ProfileId;
   transactions: Transaction[];
   /** Current balance in rands: the total of every account. */
   balance: number;
@@ -44,8 +44,22 @@ export interface PersonaRecord {
   flexibleGroups?: SpendGroup[];
   /** Recurring bill keys the person says can be paid later without a fee. Protected bills are never moved. */
   movableBills?: string[];
+  /** Only for the person's own profile. Never an ID number, phone number or bank credential. */
+  profile?: OwnProfile;
   createdAt: string;
   updatedAt: string;
+}
+
+/** What the own profile keeps about the person, beyond their money. Collect only what the forecast needs. */
+export interface OwnProfile {
+  /** Optional. Shown in the greeting only. */
+  nickname?: string;
+  /** The version of the notice the person accepted. */
+  noticeVersion?: string;
+  /** True while the money is the editable sample, so it is labelled as such. */
+  sample?: boolean;
+  /** Onboarding step reached, so the wizard can be resumed. 4 means done. */
+  onboardingStep?: number;
 }
 
 export interface ConsentRecord {
@@ -54,6 +68,8 @@ export interface ConsentRecord {
   messages: boolean;
   /** Off by default. No analytics runs either way. */
   analytics: boolean;
+  /** The notice version the choices were made against. */
+  noticeVersion?: string;
   decidedAt: string;
 }
 
@@ -85,7 +101,7 @@ export interface AuditEntry {
 
 export interface DeletionReceipt {
   id: string;
-  personaId: PersonaId;
+  personaId: ProfileId;
   at: string;
   transactionsRemoved: number;
   auditEntriesRemoved: number;
@@ -126,32 +142,34 @@ export interface TransactionPatch {
  */
 export interface TengoRepository {
   /** Loads the persona's record, creating it from seed data when missing or stale. */
-  getRecord(personaId: PersonaId, today: ISODate): Promise<PersonaRecord>;
+  getRecord(personaId: ProfileId, today: ISODate): Promise<PersonaRecord>;
   /** `balanceDate` is the day the balance was true for, usually the statement end or today. */
-  replaceHistory(personaId: PersonaId, transactions: Transaction[], balance: number, balanceDate?: ISODate, source?: RecordSource): Promise<PersonaRecord>;
-  updateTransaction(personaId: PersonaId, transactionId: string, patch: TransactionPatch): Promise<PersonaRecord>;
+  replaceHistory(personaId: ProfileId, transactions: Transaction[], balance: number, balanceDate?: ISODate, source?: RecordSource): Promise<PersonaRecord>;
+  updateTransaction(personaId: ProfileId, transactionId: string, patch: TransactionPatch): Promise<PersonaRecord>;
   /** Adds entries such as a confirmed payment or cash. Does not change the balance unless `balance` is given. */
-  addTransactions(personaId: PersonaId, transactions: Transaction[], balance?: number): Promise<PersonaRecord>;
-  setBalance(personaId: PersonaId, balance: number, balanceDate: ISODate): Promise<PersonaRecord>;
-  setBillDecision(personaId: PersonaId, missedBillId: string, decision: BillDecision): Promise<PersonaRecord>;
-  setPlanSettings(personaId: PersonaId, settings: PlanSettings): Promise<PersonaRecord>;
+  addTransactions(personaId: ProfileId, transactions: Transaction[], balance?: number): Promise<PersonaRecord>;
+  setBalance(personaId: ProfileId, balance: number, balanceDate: ISODate): Promise<PersonaRecord>;
+  setBillDecision(personaId: ProfileId, missedBillId: string, decision: BillDecision): Promise<PersonaRecord>;
+  setPlanSettings(personaId: ProfileId, settings: PlanSettings): Promise<PersonaRecord>;
   /**
    * Changes accounts and obligations, and adds entries, in one write. When accounts are given the balance
    * becomes their total. Used by cash quick add, wallets and obligations.
    */
-  updateMoney(personaId: PersonaId, change: MoneyChange): Promise<PersonaRecord>;
+  updateMoney(personaId: ProfileId, change: MoneyChange): Promise<PersonaRecord>;
+  /** Changes the own profile's details (nickname, sample flag, onboarding step). */
+  updateProfile(personaId: ProfileId, patch: Partial<OwnProfile>): Promise<PersonaRecord>;
 
-  getConsent(personaId: PersonaId): Promise<ConsentRecord | null>;
-  setConsent(personaId: PersonaId, consent: Omit<ConsentRecord, 'decidedAt'>): Promise<ConsentRecord>;
+  getConsent(personaId: ProfileId): Promise<ConsentRecord | null>;
+  setConsent(personaId: ProfileId, consent: Omit<ConsentRecord, 'decidedAt'>): Promise<ConsentRecord>;
 
-  getAudit(personaId: PersonaId): Promise<AuditEntry[]>;
-  appendAudit(personaId: PersonaId, type: AuditType, params?: AuditEntry['params']): Promise<AuditEntry>;
+  getAudit(personaId: ProfileId): Promise<AuditEntry[]>;
+  appendAudit(personaId: ProfileId, type: AuditType, params?: AuditEntry['params']): Promise<AuditEntry>;
 
-  getReviewRequests(personaId: PersonaId): Promise<ReviewRequest[]>;
-  addReviewRequest(personaId: PersonaId, request: Omit<ReviewRequest, 'id' | 'at'>): Promise<ReviewRequest>;
+  getReviewRequests(personaId: ProfileId): Promise<ReviewRequest[]>;
+  addReviewRequest(personaId: ProfileId, request: Omit<ReviewRequest, 'id' | 'at'>): Promise<ReviewRequest>;
 
   /** Wipes the persona's records and returns a receipt. The receipt itself is kept. */
-  deletePersona(personaId: PersonaId): Promise<DeletionReceipt>;
+  deletePersona(personaId: ProfileId): Promise<DeletionReceipt>;
   getDeletionReceipts(): Promise<DeletionReceipt[]>;
 
   /** Removes everything this demo stored. */

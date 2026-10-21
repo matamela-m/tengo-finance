@@ -137,7 +137,8 @@ test('delete my data writes a receipt and returns to the picker', async ({ page 
   await page.getByRole('button', { name: 'Delete my data' }).click();
   await page.getByLabel('I understand this removes the data for good').check();
   await page.getByRole('button', { name: 'Yes, delete everything' }).click();
-  await expect(page).toHaveURL(/\/start\?deleted=/);
+  // Changed in build 2: the receipt id is no longer put in the URL (SEC-05).
+  await expect(page).toHaveURL(/\/start$/);
   await expect(page.getByText("Ayanda's data was deleted")).toBeVisible();
   // Entering again asks for consent afresh.
   await page.getByRole('button', { name: /Ayanda/ }).click();

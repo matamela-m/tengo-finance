@@ -9,7 +9,7 @@ import { SubPage } from './Sub';
 export default function Delete() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { record, profile, audit } = useRecordPersona();
+  const { record, profile, audit, isOwn } = useRecordPersona();
   const { deleteData } = usePersona();
   const [step, setStep] = useState<'ask' | 'confirm'>('ask');
   const [understood, setUnderstood] = useState(false);
@@ -18,11 +18,12 @@ export default function Delete() {
   const remove = async () => {
     setBusy(true);
     const receipt = await deleteData();
-    navigate(`/start?deleted=${encodeURIComponent(receipt.id)}`, { replace: true });
+    // The receipt travels in navigation state, not the URL, so it is not kept in history or logs (SEC-05).
+    navigate('/start', { replace: true, state: { deleted: receipt.id } });
   };
 
   return (
-    <SubPage title={t('privacy.links.delete.title')} lead={t('privacy.deleteLead', { name: profile.name })}>
+    <SubPage title={t('privacy.links.delete.title')} lead={isOwn ? t('privacy.deleteLeadOwn') : t('privacy.deleteLead', { name: profile.name })}>
       <section className="card mx-auto max-w-2xl p-6 sm:p-8">
         <h2 className="font-heading text-h3 text-ink">{t('privacy.deleteWhat')}</h2>
         <ul className="mt-3 space-y-2 text-[15px]">

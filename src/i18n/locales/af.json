@@ -348,7 +348,8 @@
     "deleteConfirm": "Yes, delete everything",
     "descriptionsNote": "Statement descriptions can include names or references. Long numbers such as account, card or phone numbers are masked when a statement is imported. Descriptions stay on this device and are used only to spot repeat bills and group spending.",
     "securityNow": "In this demo",
-    "securityPlanned": "Planned, not built yet"
+    "securityPlanned": "Planned, not built yet",
+    "deleteLeadOwn": "Remove your profile and everything in it from this device."
   },
   "home": {
     "greeting": {
@@ -567,7 +568,15 @@
     "resetBody": "Clears every person, consent choice and log on this device and starts fresh.",
     "resetWarn": "This removes everything the demo stored on this device.",
     "resetConfirm": "Yes, reset everything",
-    "themeHint": "Dark is the default. System follows your device."
+    "themeHint": "Dark is the default. System follows your device.",
+    "profileTitle": "Your profile",
+    "storageMode": "Stored: {{mode}}",
+    "nicknameSave": "Save name",
+    "nicknameSaved": "Name saved",
+    "exportLink": "See and export my data",
+    "deleteProfile": "Delete my profile",
+    "switchPeople": "Switch to the fictional people",
+    "notice": "Privacy notice and terms"
   },
   "errors": {
     "loadTitle": "Could not load your data",
@@ -925,6 +934,11 @@
     "estimated": {
       "title": "Estimated from your answers",
       "body": "Part of your history comes from the setup questions, so confidence is low. Real entries, cash added here or a statement replace the estimate."
+    },
+    "sample": {
+      "title": "Sample numbers",
+      "body": "This forecast uses sample numbers, not yours. Change them on Money, or replace them with a statement or your own answers.",
+      "action": "Use my own numbers"
     }
   },
   "balance": {
@@ -982,7 +996,9 @@
     "remove": "Remove",
     "cashTag": "Cash",
     "homeLine": "Total {{total}}, including {{cash}} cash on hand.",
-    "homeLineBank": "Total {{total}}."
+    "homeLineBank": "Total {{total}}.",
+    "bankName": "Bank account",
+    "cashName": "Cash on hand"
   },
   "obligations": {
     "title": "Other money you owe",
@@ -1151,5 +1167,141 @@
     "copied": "Copied",
     "clear": "Clear errors",
     "cleared": "Errors cleared"
+  },
+  "own": {
+    "you": "You",
+    "chip": "Your profile | {{mode}}",
+    "storage": {
+      "device": "This device only",
+      "account": "Saved to your account"
+    },
+    "cardTitle": "Use your own money",
+    "cardPromise": "Your numbers, your date. Nothing leaves your device unless you save an account.",
+    "cardBody": "Import a statement, answer a few questions, or try it with sample numbers first. No sign up needed.",
+    "start": "Start",
+    "continue": "Continue",
+    "deletedTitle": "Your profile was deleted"
+  },
+  "welcome": {
+    "title": "Use your own money",
+    "step": "Step {{n}} of {{total}}",
+    "next": "Next",
+    "back": "Back",
+    "nickname": "Name or nickname (optional)",
+    "nicknameHint": "Only used to greet you. Leave it empty if you prefer.",
+    "s1": {
+      "title": "What Tengo asks for, and why",
+      "lead": "Tengo works out how long your money lasts and when your next money usually lands. It only needs a little to do that.",
+      "money": {
+        "title": "Your money in and out",
+        "body": "Dates, amounts and short descriptions, and your balance. From a statement, from a few answers, or from sample numbers."
+      },
+      "bills": {
+        "title": "Regular bills and money you owe",
+        "body": "Things like rent, a phone contract or a stokvel, so Tengo can keep money back for them."
+      },
+      "never": {
+        "title": "Never",
+        "body": "Tengo never asks for an ID number, a phone number, a bank login or a PIN."
+      },
+      "where": {
+        "title": "Where it stays",
+        "body": "On this device only, unless you later choose to save it to an account. You can delete it any time."
+      }
+    },
+    "s2": {
+      "title": "Your choices",
+      "lead": "Only the forecast is needed. Everything else is off until you turn it on.",
+      "core": "Needed to work out your date. It runs on this device. Withdraw any time and it pauses.",
+      "notice": "The full privacy notice says what is kept, where, for how long, and how to complain.",
+      "noticeLink": "Read the privacy notice"
+    },
+    "s3": {
+      "title": "Add your money",
+      "lead": "Choose one way. You can change or replace it later on Money.",
+      "import": "Import a statement",
+      "importBody": "A CSV file from your bank. It is read on this device.",
+      "manual": "Answer a few questions",
+      "manualBody": "For when you have no statement. Tengo estimates a starting history from your answers.",
+      "sample": "Try with sample numbers",
+      "sampleBody": "Explore without typing anything. The sample is labelled and you can change every number."
+    },
+    "s4": {
+      "eyebrow": "Your first forecast",
+      "lead": "This is an estimate from the numbers you gave, not advice. It gets better as you add real entries.",
+      "sample": "These are sample numbers, not yours. Change them on Money, or replace them with a statement or your own answers.",
+      "open": "Open Home"
+    }
+  },
+  "legalDoc": {
+    "version": "Version {{version}}",
+    "draft": "Draft for the pilot, to be reviewed by a lawyer before launch. Tengo is not a bank and does not give financial advice. This notice does not claim compliance with any law or certification.",
+    "placeholderWarning": "The responsible party and Information Officer have not been named yet. They must be filled in before any real launch.",
+    "party": "Responsible party",
+    "address": "Address",
+    "officer": "Information Officer",
+    "contact": "Contact",
+    "notice": {
+      "title": "Privacy notice",
+      "what": {
+        "title": "What Tengo keeps",
+        "body": "The money history you add (dates, amounts, short descriptions and categories), your balances, regular bills and money you owe, your choices and settings, an optional nickname, and a log of what you did in the app. If you save an account, your email address too. Tengo does not ask for or keep ID numbers, phone numbers, bank logins or PINs. Long numbers in imported descriptions are masked."
+      },
+      "why": {
+        "title": "Why",
+        "body": "Only to work out how long your money lasts, when your next money usually lands, and the estimates on screen. Not for marketing, credit scoring, lending decisions or selling to anyone. Giving the information is voluntary; without it there is no forecast."
+      },
+      "where": {
+        "title": "Where it is processed",
+        "body": "As a guest, everything stays in this browser on this device and the forecast is worked out on the device. Nothing is sent to Tengo.\nIf you choose to save an account, your data is stored with the database provider named in the setup (Supabase), in the region the operator chooses, and sent over an encrypted connection. The forecast is still worked out on your device. Any storage outside South Africa needs adequate protection under POPIA section 72 and is named here before launch."
+      },
+      "who": {
+        "title": "Who can see it",
+        "body": "As a guest: anyone who uses this browser on this device. Use the PIN lock on a shared phone. With an account: you, after signing in. Each person's rows are locked to them in the database. Staff access, if ever needed for support, is limited and logged."
+      },
+      "keep": {
+        "title": "How long it is kept",
+        "body": "Transactions older than 12 months are removed when Tengo opens. You can delete everything at any time; on an account, deletion removes your rows and your sign-in, and you get a receipt with no personal data. Backups kept by the hosting provider are deleted on their own schedule, stated here before launch."
+      },
+      "rights": {
+        "title": "Your rights",
+        "body": "You can see your data and export it as JSON or CSV, correct any entry, ask a person to check a result, withdraw any choice, and delete everything. You can complain to the responsible party above, and to the Information Regulator of South Africa."
+      },
+      "not": {
+        "title": "What Tengo is not",
+        "body": "Tengo is a pilot. It is not a bank, not a credit provider and not a financial adviser. Its figures are estimates from your own history, and it makes no decisions about you."
+      },
+      "changes": {
+        "title": "Changes",
+        "body": "If this notice changes, the version above changes and Tengo asks you to look at it again before you continue."
+      }
+    },
+    "terms": {
+      "title": "Terms of use",
+      "use": {
+        "title": "Using Tengo",
+        "body": "Tengo is free to use during the pilot. It is for adults, 18 or older. Use it only with your own money or with pretend numbers."
+      },
+      "estimate": {
+        "title": "Estimates, not promises",
+        "body": "Every date, budget and suggestion is an estimate from past patterns. Money can arrive late or not at all, and bills can change. Check before you make a decision that matters."
+      },
+      "liability": {
+        "title": "Your decisions",
+        "body": "Tengo does not give financial advice and is not responsible for decisions you make using it. Nothing here limits rights you have under South African law."
+      },
+      "accounts": {
+        "title": "Accounts",
+        "body": "Accounts are optional. Keep access to your email address, because sign-in is by a one-time code. You can sign out everywhere and delete your account at any time."
+      },
+      "ending": {
+        "title": "Ending the pilot",
+        "body": "If the pilot ends, you will be told in the app and given time to export your data before it is deleted."
+      },
+      "complaints": {
+        "title": "Complaints",
+        "body": "Contact the responsible party above. For privacy complaints you can also go to the Information Regulator of South Africa."
+      }
+    }
   }
 }

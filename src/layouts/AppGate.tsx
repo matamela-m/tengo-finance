@@ -12,13 +12,16 @@ const OPEN_WHEN_PAUSED = ['/app/privacy', '/app/me'];
 
 export function AppGate() {
   const { t } = useTranslation();
-  const { personaId, status, consent, record, reload, storageProblem, startFresh } = usePersona();
+  const { personaId, isOwn, status, consent, record, reload, storageProblem, startFresh } = usePersona();
   const { pathname } = useLocation();
   const { locked } = useLock();
 
   if (!personaId) return <Navigate to="/start" replace />;
   // A locked app shows only the PIN screen: no names, amounts or dates.
   if (locked) return <LockScreen />;
+  // The person's own profile goes through onboarding; the fictional people through the consent page.
+  if (status === 'ready' && isOwn && (!consent || (record && record.transactions.length === 0 && (record.profile?.onboardingStep ?? 0) < 4)))
+    return <Navigate to="/welcome" replace />;
   if (status === 'ready' && !consent) return <Navigate to="/consent" replace />;
 
   let content;

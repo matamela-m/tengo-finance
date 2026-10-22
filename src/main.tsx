@@ -20,6 +20,20 @@ window.addEventListener('unhandledrejection', (e) => recordDiagnostic('promise',
 // Offline support and install, production builds only so development always sees fresh code.
 if (import.meta.env.PROD && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    void navigator.serviceWorker.register('/sw.js');
+    void navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' });
   });
 }
+
+// After a redeploy, a tab opened on the previous build can ask for a code chunk that no longer exists. Reload to
+// pick up the new build instead of showing an error, at most once every 30 seconds so an outage cannot loop.
+window.addEventListener('vite:preloadError', (e) => {
+  try {
+    const last = Number(sessionStorage.getItem('tengo.reloadedForNewBuild') ?? 0);
+    if (Date.now() - last < 30_000) return;
+    sessionStorage.setItem('tengo.reloadedForNewBuild', String(Date.now()));
+  } catch {
+    return;
+  }
+  e.preventDefault();
+  window.location.reload();
+});

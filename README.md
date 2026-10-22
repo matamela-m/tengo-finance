@@ -90,7 +90,8 @@ The "Why this date" drawer on Home shows every input behind the date and doubles
 - **Account:** passwordless one-time codes, a 60 second code cooldown on top of Supabase's rate limits, short sessions and "sign out everywhere". Row-level security on every table so a person reads and writes only their own rows; logs are append only. `delete_my_account()` removes every row and the sign-in and returns a receipt with no personal data. Only the public anon key is in the browser; `npm run lint` and CI (gitleaks) fail on secrets.
 - **Never collected:** ID numbers, phone numbers, bank logins or PINs. Long numbers in imported descriptions are masked. Audit entries hold no descriptions or amounts. Local diagnostics keep only an error's name, kind, route pattern and time.
 - **Headers:** CSP allowing only this site and the Supabase host, no frames, no referrer, a strict permissions policy and HSTS (`vercel.json`), checked on the built app.
-- **Offline cache:** only the app's own files; never data.
+- **Offline cache:** only the app's own files; never data. Each build stamps a version into `sw.js`, so a redeploy replaces the cached build (tested in `tests/deploy.spec.ts`).
+- **Not indexed:** `robots.txt` disallows crawling and every page sends `noindex`, while Tengo is a pilot.
 - **Notice and terms:** drafts at `/privacy-notice` and `/terms` for a lawyer to review. The responsible party and Information Officer come from environment variables and must be filled before launch. Tengo makes no claim of POPIA compliance or certification.
 
 ## Accessibility

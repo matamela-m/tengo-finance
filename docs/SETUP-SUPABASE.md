@@ -70,10 +70,12 @@ Register the Information Officer with the Information Regulator first. Have a la
 
 ## 7. Vercel
 
-1. Import the repository in Vercel. The build command is `npm run build` and the output folder is `dist`.
-2. Project settings, Environment variables: add every `VITE_` variable above for Production (and Preview if you use it).
-3. `vercel.json` already sets the security headers. Its Content Security Policy allows `https://*.supabase.co` for the database only; if you use a custom Supabase domain, add it to `connect-src`.
-4. After the first deploy, open the site, check that accounts appear under Me, Save to an account, and that the privacy notice shows your details with no warning.
+1. Import the repository in Vercel. Framework preset: Vite. Install command `npm ci`, build command `npm run build`, output folder `dist`. Node 20 or newer.
+2. Project settings, Environment variables: add every `VITE_` variable above for Production (and Preview if you use it). For a guest-only first deploy, set none of the Supabase ones; the app works fully without them.
+3. `vercel.json` already sets the security headers, a `noindex` header and the single-page rewrite, which sends every path except `/assets/` to the app so a missing build file is a real 404. Its Content Security Policy allows `https://*.supabase.co` for the database only; if you use a custom Supabase domain, add it to `connect-src`.
+4. While Tengo is a pilot it asks search engines not to index it: `robots.txt` disallows all crawling, and every page carries a `noindex` meta tag and header. Remove all three when you want it found.
+5. Each build stamps its own version into `sw.js`, so returning visitors get the new build after a redeploy; a tab left open on an older build reloads itself if it asks for a file that is gone.
+6. After the first deploy, open the site, check that accounts appear under Me, Save to an account, and that the privacy notice shows your details with no warning.
 
 ## 8. What still needs a person
 

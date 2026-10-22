@@ -62,7 +62,7 @@ Lighthouse mobile, on `vite preview` of the production build (`lighthouse/run.mj
 | Home `/app` (Thabo) | 93 | 100 | 100 | 91 | 2 254 | 2 254 |
 | Onboarding `/welcome` | 92 | 100 | 100 | 91 | 2 514 | 2 919 |
 
-SEO was 91 only because `robots.txt` was missing; it is now added. Lighthouse accessibility of 100 is an automated score and does not cover the manual issues in `accessibility.md`.
+SEO was 91 only because `robots.txt` was missing; it was added. For the pilot deployment it now disallows all crawling and pages send `noindex`, so Lighthouse SEO will score lower on purpose. Lighthouse accessibility of 100 is an automated score and does not cover the manual issues in `accessibility.md`.
 
 ## New findings from the second pass
 
@@ -79,7 +79,7 @@ The panel raised 57 new findings. They are not in `findings.csv`, which keeps th
 | TECH-A2 | High | Transactions past the first server page were lost | Fixed, untested against a real server |
 | TECH-A3 | Medium | The in-memory test server hides real failure modes and ships in the bundle | Open |
 | TECH-A4 | Medium | Signed-in accounts have no offline or failed-save path | Open |
-| TECH-A5 | Medium | Tabs open on an old build break after a deploy | Open |
+| TECH-A5 | Medium | Tabs open on an old build break after a deploy | Fixed: versioned sw.js, 404 for missing build files, one reload on a missing chunk |
 | SEC-A1 | High | Forgot PIN erase left a signed-in user signed in | Fixed |
 | SEC-A2 | Medium | The local RLS harness does not copy Supabase's default grants | Open |
 | SEC-A3 | Medium | Consent and audit times can be set by the browser | Open |

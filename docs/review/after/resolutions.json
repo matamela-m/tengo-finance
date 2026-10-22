@@ -521,7 +521,7 @@
  },
  "TECH-05": {
   "status": "Partly fixed",
-  "resolution": "Phase 4: precache from a manifest, cache first only for app files, network only for everything else, cross-origin untouched, old caches removed; documented in sw.js and README. Re-review (technology, partly): Manifest precache and versioned caches are good (sw.js:14-36, vite.config.ts:13-35). The recommended asset exclusion from the rewrite was not done: vercel.json:2 still rewrites every path, including missing /assets files, to index.html."
+  "resolution": "Phase 4: precache from a manifest, cache first only for app files, network only for everything else, cross-origin untouched, old caches removed; documented in sw.js and README. Re-review (technology, partly): Manifest precache and versioned caches are good (sw.js:14-36, vite.config.ts:13-35). The recommended asset exclusion from the rewrite was not done: vercel.json:2 still rewrites every path, including missing /assets files, to index.html. Deploy update: each build stamps its version into sw.js, the worker reads only the current cache, and /assets/ is excluded from the rewrite so missing build files return 404 (tests/deploy.spec.ts)."
  },
  "TECH-06": {
   "status": "Fixed",

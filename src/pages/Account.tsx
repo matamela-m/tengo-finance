@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAnnounce } from '../components/A11y';
+import { CodeInput } from '../components/CodeInput';
 import { Notice } from '../components/Feedback';
 import { Icon } from '../components/Icon';
 import { PageHeader } from '../components/PageHeader';
 import { deviceProfileRepository, setOwnStorage } from '../data';
-import { accountBackend, accountsAvailable, afterVerify, applyChoice, useAccount, type SignInChoice, type SignInSituation } from '../data/account';
+import { accountBackend, accountsAvailable, afterVerify, applyChoice, CODE_LENGTH, useAccount, type SignInChoice, type SignInSituation } from '../data/account';
 import { CODE_COOLDOWN_S } from '../data/account/memoryBackend';
 import { usePersona } from '../data/PersonaProvider';
 import { OWN_ID } from '../data/seed/personas';
@@ -74,9 +75,9 @@ export default function AccountPage() {
       announce(t('account.codeSent'));
     });
 
-  const verify = () =>
+  const verify = (entered = code) =>
     run(async () => {
-      const user = await accountBackend().verifyCode(email.trim(), code);
+      const user = await accountBackend().verifyCode(email.trim(), entered);
       const local = await deviceProfileRepository.getRecord(OWN_ID, today);
       setSituation(await afterVerify(user, local));
       setStage('choose');
@@ -185,10 +186,11 @@ export default function AccountPage() {
                 <label className="label" htmlFor="acc-otp">
                   {t('account.code')}
                 </label>
-                <input id="acc-otp" inputMode="numeric" autoComplete="one-time-code" maxLength={8} className="field num text-lg tracking-[0.3em]" value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, ''))} />
+                {/* The code submits itself once every box is filled; the Sign in button stays for anyone who prefers it. */}
+                <CodeInput id="acc-otp" length={CODE_LENGTH} value={code} onChange={setCode} onComplete={(full) => !busy && void verify(full)} disabled={busy} />
               </div>
               <div className="flex flex-wrap gap-2">
-                <button type="submit" className="btn-primary min-h-[48px]" disabled={busy || code.length < 6}>
+                <button type="submit" className="btn-primary min-h-[48px]" disabled={busy || code.length < CODE_LENGTH}>
                   {t('account.verify')}
                 </button>
                 <button type="button" className="btn-ghost min-h-[48px]" disabled={busy || cooldown > 0} onClick={() => void sendCode()}>

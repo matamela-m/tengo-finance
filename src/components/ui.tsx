@@ -63,28 +63,62 @@ export function Badge({ children, dot, tone = 'neutral', className = '' }: { chi
   );
 }
 
-interface StatTileProps {
-  label: string;
+type StatTone = 'enough' | 'tight' | 'short';
+const STAT_TINT: Record<StatTone, string> = { enough: 'bg-enough-soft', tight: 'bg-tight-soft', short: 'bg-short-soft' };
+const STAT_SIZE = {
+  // The hero figure of a card, such as the daily budget.
+  lg: 'mt-2 text-[40px] font-bold leading-none tracking-[-0.035em]',
+  // A figure that is words rather than a number, such as "Not advised".
+  words: 'mt-2 text-[30px] font-bold leading-[1.05] tracking-[-0.03em]',
+  // A quiet figure beside others, such as next money or confidence.
+  md: 'mt-1.5 text-[19px] font-semibold tracking-[-0.01em]',
+};
+
+interface StatProps {
+  label: ReactNode;
   value: ReactNode;
-  /** Small line under the label, such as a delta or a date. */
+  /** Small lines under the figure, such as a range, a source or a date. */
   hint?: ReactNode;
-  icon?: IconName;
+  /** A change against something, always in words: never shown by colour alone. */
+  delta?: { text: ReactNode; direction: 'up' | 'down' | 'flat' };
+  /** A soft state tint behind the stat. The state word must still appear elsewhere. */
+  tone?: StatTone;
+  size?: keyof typeof STAT_SIZE;
+  /** Render as a dt and dd pair, for use inside a dl. */
+  inList?: boolean;
+  /** Use a heading for the label, for a stat that heads its card. */
+  labelAs?: 'h2' | 'h3';
+  labelId?: string;
   className?: string;
-  size?: 'md' | 'lg';
 }
 
-/** Large number with a small label under it. Tabular numerals. */
-export function StatTile({ label, value, hint, icon, className = '', size = 'md' }: StatTileProps) {
+/**
+ * One figure with its label: tabular numerals, the label above in the eyebrow style, optional delta, hint and
+ * state tint. Inside a dl it renders dt and dd, so screen readers pair each label with its value.
+ */
+export function Stat({ label, value, hint, delta, tone, size = 'md', inList, labelAs, labelId, className = '' }: StatProps) {
+  const Label = inList ? 'dt' : (labelAs ?? 'p');
+  const Value = inList ? 'dd' : 'p';
+  const deltaIcon: IconName = delta?.direction === 'up' ? 'arrowUp' : delta?.direction === 'down' ? 'arrowDown' : 'minus';
   return (
-    <div className={`card relative flex flex-col p-5 ${className}`}>
-      {icon && (
-        <span className="mb-4">
-          <IconTile name={icon} />
-        </span>
+    <div className={`${tone ? `rounded-xl p-3 ${STAT_TINT[tone]}` : ''} ${className}`}>
+      <Label id={labelId} className="eyebrow">
+        {label}
+      </Label>
+      <Value className={`num font-heading text-ink ${STAT_SIZE[size]}`}>{value}</Value>
+      {delta && (
+        <Value className="num mt-1 inline-flex items-center gap-1 text-xs font-medium text-muted">
+          <Icon name={deltaIcon} size={14} />
+          {delta.text}
+        </Value>
       )}
-      <p className={`num font-heading font-bold leading-none tracking-[-0.03em] text-ink ${size === 'lg' ? 'text-[44px] sm:text-[52px]' : 'text-[30px]'}`}>{value}</p>
-      <p className="mt-2 text-sm text-muted">{label}</p>
-      {hint && <p className="num mt-1 text-xs text-subtle">{hint}</p>}
+      {hint}
     </div>
   );
+}
+
+/** A hint line under a Stat; pass several for several lines. */
+export function StatHint({ children, inList, className = '' }: { children: ReactNode; inList?: boolean; className?: string }) {
+  const Tag = inList ? 'dd' : 'p';
+  return <Tag className={`num mt-1 text-xs text-subtle ${className}`}>{children}</Tag>;
 }

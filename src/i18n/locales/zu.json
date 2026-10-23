@@ -689,7 +689,8 @@
     "importBody": "Layisha isitatimende sasebhange se-CSV. Sifundwa kule divayisi futhi sithatha indawo yomlando walo muntu.",
     "movableLabel": "Ingakhokhwa kamuva",
     "movableHint": "Maka inkokhelo kuphela uma ingakhokhwa sekwephuze izinsuku ezimbalwa ngaphandle kwemali yenhlawulo.",
-    "protectedBill": "Akusoze kwaphakanyiswa ukuthi ihanjiswe: ukukhokha sekwephuzile kungabiza izimali, ukuvikelwa noma isikweletu."
+    "protectedBill": "Akusoze kwaphakanyiswa ukuthi ihanjiswe: ukukhokha sekwephuzile kungabiza izimali, ukuvikelwa noma isikweletu.",
+    "sortBy": "Hlela ngo-{{column}}"
   },
   "import": {
     "title": "Ngenisa isitatimende",
@@ -1251,7 +1252,16 @@
       "sample": "Lezi yizinombolo eziyisibonelo, hhayi ezakho. Zishintshe ku-Imali, noma uzithathele indawo ngesitatimende noma ngezimpendulo zakho.",
       "open": "Vula Ekhaya"
     },
-    "signIn": "Usugcine ku-akhawunti? Ngena"
+    "signIn": "Usugcine ku-akhawunti? Ngena",
+    "stepper": {
+      "label": "Izinyathelo zokusetha",
+      "s1": "Mayelana",
+      "s2": "Ukukhetha",
+      "s3": "Imali yakho",
+      "s4": "Isibikezelo",
+      "done": "kuqediwe",
+      "current": "isinyathelo samanje"
+    }
   },
   "legalDoc": {
     "version": "Inguqulo {{version}}",
@@ -1376,5 +1386,13 @@
       "invalid_code": "Leyo khodi ayisebenzanga. Yihlole, noma uthumele entsha.",
       "generic": "Kukhona okungahambanga kahle. Hlola ukuxhumana kwakho bese uzama futhi."
     }
+  },
+  "calendar": {
+    "open": "Khetha kukhalenda",
+    "title": "Ikhalenda",
+    "next": "Inyanga ezayo",
+    "previous": "Inyanga edlule",
+    "today": "namuhla",
+    "selected": "kukhethiwe"
   }
 }

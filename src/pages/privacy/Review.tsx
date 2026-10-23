@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { EmptyState } from '../../components/Feedback';
 import { useTranslation } from 'react-i18next';
 import { Notice } from '../../components/Feedback';
 import { Icon } from '../../components/Icon';
@@ -102,7 +103,9 @@ export default function Review() {
             {t('privacy.reviewPast')}
           </h2>
           {reviews.length === 0 ? (
-            <p className="mt-3 text-sm text-muted">{t('privacy.reviewNone')}</p>
+            <div className="mt-3">
+              <EmptyState compact icon="inbox" title={t('privacy.reviewNone')} />
+            </div>
           ) : (
             <ul className="mt-3 divide-y divide-line">
               {reviews.map((r) => (

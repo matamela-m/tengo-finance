@@ -23,6 +23,9 @@ function testServerOn(): boolean {
   }
 }
 
+/** Digits in the sign-in code. Supabase sets this per project (Authentication, Email, OTP length); 6 is its default. */
+export const CODE_LENGTH = 6;
+
 export function accountsAvailable(): boolean {
   return Boolean(URL && KEY) || testServerOn();
 }

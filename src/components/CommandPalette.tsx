@@ -26,12 +26,12 @@ interface Command {
  * Follows the combobox pattern: typing filters, arrow keys move, Enter runs, Escape closes,
  * and focus returns to where it was.
  */
-export function CommandPalette() {
+/** The palette itself. Loaded on first open by CommandPaletteHost, so it costs nothing until then. */
+export default function CommandPalette({ onClose }: { onClose: () => void }) {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const announce = useAnnounce();
   const id = useId();
-  const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [active, setActive] = useState(0);
   const input = useRef<HTMLInputElement>(null);
@@ -42,26 +42,6 @@ export function CommandPalette() {
   const personaId = useSession((s) => s.activePersonaId);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      // Leave the shortcut alone while someone is typing in a field that has text.
-      const el = e.target as HTMLInputElement | HTMLTextAreaElement | null;
-      const typing = el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') && el.value !== '' && !el.closest('[role="dialog"]');
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k' && !typing) {
-        e.preventDefault();
-        setOpen((v) => !v);
-      }
-    };
-    const onOpen = () => setOpen(true);
-    window.addEventListener('keydown', onKey);
-    window.addEventListener('tengo:palette', onOpen);
-    return () => {
-      window.removeEventListener('keydown', onKey);
-      window.removeEventListener('tengo:palette', onOpen);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!open) return;
     returnTo.current = document.activeElement;
     setQuery('');
     setActive(0);
@@ -74,7 +54,7 @@ export function CommandPalette() {
       root?.removeAttribute('aria-hidden');
       (returnTo.current as HTMLElement | null)?.focus?.();
     };
-  }, [open]);
+  }, []);
 
   const commands = useMemo<Command[]>(() => {
     const pages: Command[] = (personaId ? NAV : []).map((n) => ({
@@ -128,14 +108,13 @@ export function CommandPalette() {
 
   const runCommand = (c: Command | undefined) => {
     if (!c) return;
-    setOpen(false);
+    onClose();
     void c.run();
   };
 
-  if (!open) return null;
   return createPortal(
     <div className="fixed inset-0 z-[80] flex items-start justify-center px-4 pt-[12vh]">
-      <div className="absolute inset-0 animate-fade bg-scrim backdrop-blur-sm" onClick={() => setOpen(false)} aria-hidden />
+      <div className="absolute inset-0 animate-fade bg-scrim backdrop-blur-sm" onClick={() => onClose()} aria-hidden />
       <div role="dialog" aria-modal="true" aria-label={t('palette.title')} className="relative w-full max-w-xl animate-rise overflow-hidden rounded-2xl border border-line bg-surface shadow-lift">
         <div className="flex items-center gap-3 border-b border-line px-4">
           <Icon name="search" size={18} className="shrink-0 text-subtle" />
@@ -165,7 +144,7 @@ export function CommandPalette() {
                 runCommand(current);
               } else if (e.key === 'Escape') {
                 e.preventDefault();
-                setOpen(false);
+                onClose();
               }
             }}
             className="min-h-[56px] w-full bg-transparent text-base text-ink placeholder:text-subtle focus:outline-none"

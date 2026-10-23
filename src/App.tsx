@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { A11yProvider, SkipLink } from './components/A11y';
 import { ErrorBoundary } from './components/ErrorBoundary';
-import { CommandPalette } from './components/CommandPalette';
+import { CommandPaletteHost } from './components/CommandPaletteHost';
 import { Preferences } from './components/Preferences';
 import { PersonaProvider } from './data/PersonaProvider';
 import { AppGate } from './layouts/AppGate';
@@ -37,7 +37,7 @@ export default function App() {
       <A11yProvider>
       <LockProvider>
       <PersonaProvider>
-        <CommandPalette />
+        <CommandPaletteHost />
         <Suspense fallback={<PageLoading />}>
         <Routes>
           <Route path="/" element={<Landing />} />

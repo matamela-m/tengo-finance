@@ -689,7 +689,8 @@
     "importBody": "Tsenya setatemente sa banka sa CSV. Se balwa mo sedirisiweng se mme se tsaya legato la hisitori ya motho yo.",
     "movableLabel": "E ka duelwa morago",
     "movableHint": "Tshwaya tuelo fela fa e ka duelwa morago ga malatsi a le mmalwa kwa ntle ga tuediso.",
-    "protectedBill": "Ga e ke e tshitshinyediwa go sutisiwa: go duela morago ga nako go ka tura ka dituediso, tshireletso kgotsa sekoloto."
+    "protectedBill": "Ga e ke e tshitshinyediwa go sutisiwa: go duela morago ga nako go ka tura ka dituediso, tshireletso kgotsa sekoloto.",
+    "sortBy": "Rulaganya ka {{column}}"
   },
   "import": {
     "title": "Tsenya setatemente",
@@ -1251,7 +1252,16 @@
       "sample": "Tse ke dinomoro tsa sekao, e seng tsa gago. Di fetole mo Madi, kgotsa o di tseele legato ka setatemente kgotsa ka dikarabo tsa gago.",
       "open": "Bula Gae"
     },
-    "signIn": "O setse o bolokile mo akhaonteng? Tsena"
+    "signIn": "O setse o bolokile mo akhaonteng? Tsena",
+    "stepper": {
+      "label": "Dikgato tsa thulaganyo",
+      "s1": "Ka ga",
+      "s2": "Ditlhopho",
+      "s3": "Madi a gago",
+      "s4": "Ponelopele",
+      "done": "e weditswe",
+      "current": "kgato ya jaanong"
+    }
   },
   "legalDoc": {
     "version": "Mofuta {{version}}",
@@ -1376,5 +1386,13 @@
       "invalid_code": "Khoutu eo ga e a dira. E sekaseke, kgotsa o romele e ntšhwa.",
       "generic": "Go na le sengwe se se sa tsamaeng sentle. Sekaseka kgolagano ya gago mme o leke gape."
     }
+  },
+  "calendar": {
+    "open": "Tlhopha mo khalendareng",
+    "title": "Khalendara",
+    "next": "Kgwedi e e latelang",
+    "previous": "Kgwedi e e fetileng",
+    "today": "gompieno",
+    "selected": "e tlhophilwe"
   }
 }

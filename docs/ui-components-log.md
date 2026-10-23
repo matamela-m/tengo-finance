@@ -114,4 +114,9 @@ Bundled with esbuild, minified, gzipped, React excluded. Measured 2026-10-24.
 
 ## Record of components taken
 
-None yet. Each component taken will be added here with source site, author, page URL, stated licence, date, size and whether it animates.
+| Phase | Component | Source and author | URL | Licence | Date | Size gz | Animated | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | Code boxes (`components/CodeInput.tsx`) | Pattern after shadcn/ui Input OTP; package input-otp by Guilherme Rodz | ui.shadcn.com/docs/components/input-otp, github.com/guilhermerodz/input-otp | MIT (package LICENSE checked) | 2026-10-24 | 4.0 KB, Account chunk only | Caret blink only, stopped under reduced motion | Source read: no network, storage or raw HTML; it adds one style element through the CSS object model, which our CSP allows |
+| 1 | Calendar (`components/date/CalendarPopover.tsx`) | Pattern after shadcn/ui Calendar; package react-day-picker by Giampaolo Bellavite and contributors (date-fns, MIT) | ui.shadcn.com/docs/components/calendar, daypicker.dev | MIT (package.json checked) | 2026-10-24 | 20.4 KB, loaded on first open | No | Source read: URLs only in doc strings. Our tokens via classNames; the library stylesheet is not loaded. Month and day names from our Intl formatter |
+
+Built ourselves in Phase 1, with no new dependency: stat (`Stat` and `StatHint` in `components/ui.tsx`), stepper (`components/Stepper.tsx`), transaction table (`components/money/TransactionTable.tsx`), compact empty state (`components/Feedback.tsx`), and the command palette host (`components/CommandPaletteHost.tsx`), which now loads the existing palette on first open.

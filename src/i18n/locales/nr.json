@@ -689,7 +689,8 @@
     "importBody": "Layisha isitatimende sebhanga se-CSV. Sifundwa esisetjenzisweni lesi begodu sithatha indawo yomlando womuntu lo.",
     "movableLabel": "Lingabhadelwa ngemva",
     "movableHint": "Maka ibhadelo kwaphela nangabe lingabhadelwa selibhalele amalanga ambalwa ngaphandle kwenhlawulo.",
-    "protectedBill": "Angekhe kuphakanyiswe bona lihanjiswe: ukubhadela kade kungabiza iinhlawulo, ukuvikelwa nanyana isikwelede."
+    "protectedBill": "Angekhe kuphakanyiswe bona lihanjiswe: ukubhadela kade kungabiza iinhlawulo, ukuvikelwa nanyana isikwelede.",
+    "sortBy": "Hlela nge-{{column}}"
   },
   "import": {
     "title": "Ngenisa isitatimende",
@@ -1251,7 +1252,16 @@
       "sample": "Lezi ziinomboro eziyisibonelo, ingasi zakho. Zitjhugulule ku-Imali, nanyana uzithathele indawo ngesitatimende nanyana ngeempendulo zakho.",
       "open": "Vula Ekhaya"
     },
-    "signIn": "Sele ubulunge ku-akhawunti? Ngena"
+    "signIn": "Sele ubulunge ku-akhawunti? Ngena",
+    "stepper": {
+      "label": "Amagadango wokulungiselela",
+      "s1": "Ngaka",
+      "s2": "Ukukhetha",
+      "s3": "Imali yakho",
+      "s4": "Isibikezelo",
+      "done": "kuphelile",
+      "current": "igadango lanje"
+    }
   },
   "legalDoc": {
     "version": "Ihlelo {{version}}",
@@ -1376,5 +1386,13 @@
       "invalid_code": "Ikhowudi leyo ayikasebenzi. Yihlole, nanyana uthumele etjha.",
       "generic": "Kukhona okungakahambi kuhle. Hlola ukuthintana kwakho bese ulinga godu."
     }
+  },
+  "calendar": {
+    "open": "Khetha ekhalendeni",
+    "title": "Ikhalenda",
+    "next": "Inyanga ezako",
+    "previous": "Inyanga edlulileko",
+    "today": "namhlanje",
+    "selected": "kukhethiwe"
   }
 }

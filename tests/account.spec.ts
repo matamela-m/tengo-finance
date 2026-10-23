@@ -27,8 +27,9 @@ async function signIn(page: Page, email: string) {
   await page.getByLabel('Email address').fill(email);
   await page.getByLabel('I am 18 or older.').check();
   await page.getByRole('button', { name: 'Send me a code' }).click();
+  // Changed with the code boxes: a full code submits itself, so there is no Sign in click.
   await page.getByLabel('One-time code').fill('123456');
-  await page.getByRole('button', { name: 'Sign in' }).click();
+  await expect(page.getByRole('heading', { name: 'Enter your code' })).toHaveCount(0);
 }
 
 test('a guest saves to an account after seeing value; the device copy is removed', async ({ browser }) => {
@@ -152,5 +153,26 @@ test('erasing after a forgotten PIN also signs out, so the account data does not
   expect(left.session).toBe('');
   await page.goto('/app');
   await expect(page.getByText(/Your profile \| Saved to your account/)).toHaveCount(0);
+  await context.close();
+});
+
+test('the code boxes take typed digits one by one, reject a wrong code, and submit a full code by themselves', async ({ browser }) => {
+  const context = await browser.newContext();
+  const page = await device(context);
+  await guestWithSample(page);
+  await page.goto('/app/account');
+  await page.getByLabel('Email address').fill('box@example.test');
+  await page.getByLabel('I am 18 or older.').check();
+  await page.getByRole('button', { name: 'Send me a code' }).click();
+  const code = page.getByLabel('One-time code');
+  await expect(code).toHaveAttribute('autocomplete', 'one-time-code');
+  await expect(code).toHaveAttribute('inputmode', 'numeric');
+  // Letters are refused; a wrong six-digit code shows the error and stays on the code step.
+  await code.pressSequentially('ab999999');
+  await expect(page.getByText('That code did not work. Check it, or send a new one.')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Enter your code' })).toBeVisible();
+  await code.fill('');
+  await code.pressSequentially('123456');
+  await expect(page.getByRole('heading', { name: 'Save what is on this device?' })).toBeVisible();
   await context.close();
 });

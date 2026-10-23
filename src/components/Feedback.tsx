@@ -3,7 +3,20 @@ import { useTranslation } from 'react-i18next';
 import { Icon, type IconName } from './Icon';
 import { IconTile } from './ui';
 
-export function EmptyState({ icon = 'info', title, body, action }: { icon?: IconName; title: string; body?: ReactNode; action?: ReactNode }) {
+/** Shown where a list or section has nothing yet. Compact is for empty parts of a card, not a whole page. */
+export function EmptyState({ icon = 'info', title, body, action, compact }: { icon?: IconName; title: string; body?: ReactNode; action?: ReactNode; compact?: boolean }) {
+  if (compact) {
+    return (
+      <div className="flex items-center gap-3 rounded-xl border border-dashed border-line-strong px-4 py-4">
+        <Icon name={icon} size={18} className="shrink-0 text-muted" />
+        <div className="min-w-0">
+          <p className="text-sm font-medium text-ink">{title}</p>
+          {body && <p className="text-sm text-muted">{body}</p>}
+        </div>
+        {action && <div className="ml-auto shrink-0">{action}</div>}
+      </div>
+    );
+  }
   return (
     <div className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-line-strong px-6 py-12 text-center">
       <IconTile name={icon} />

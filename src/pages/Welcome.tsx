@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Stepper } from '../components/Stepper';
 import { Brand } from '../components/Brand';
 import { ProfileChip } from '../components/DemoChip';
 import { Notice, PageLoading } from '../components/Feedback';
@@ -47,15 +48,26 @@ export default function Welcome() {
   const [way, setWay] = useState<Way>('choose');
   const [busy, setBusy] = useState(false);
   const named = useRef(false);
+  // Set when the person moves between steps, so focus goes to the new step's heading (not on first load).
+  const moved = useRef(false);
+
+  useEffect(() => {
+    if (!moved.current) return;
+    moved.current = false;
+    document.getElementById(`w${step}`)?.focus();
+  }, [step]);
   const accountMode = useAccount((s) => s.mode);
 
   useEffect(() => {
     if (active !== OWN_ID) setActive(OWN_ID);
   }, [active, setActive]);
 
-  // Resume where the person left off.
+  // Resume where the person left off, once, when the profile first loads. Later changes to the profile (such as
+  // going back a step) must not push the step forward again.
+  const resumed = useRef(false);
   useEffect(() => {
-    if (status !== 'ready' || !record) return;
+    if (status !== 'ready' || !record || resumed.current) return;
+    resumed.current = true;
     const saved = record.profile?.onboardingStep ?? 0;
     const reached = consent?.core ? Math.max(3, saved) : Math.max(1, Math.min(saved, 2));
     setStep((s) => Math.max(s, Math.min(reached, record.transactions.length > 0 ? 4 : 3)));
@@ -76,7 +88,9 @@ export default function Welcome() {
 
   const go = async (n: number, extra: { nickname?: string } = {}) => {
     await updateProfile({ onboardingStep: n, ...extra });
+    if (n === 3) setWay('choose');
     setStep(n);
+    moved.current = true;
     window.scrollTo({ top: 0 });
   };
 
@@ -129,10 +143,10 @@ export default function Welcome() {
   };
 
   return (
-    <Shell step={step}>
+    <Shell step={step} onGo={(n) => void go(n)}>
       {step === 1 && (
         <section aria-labelledby="w1">
-          <h1 id="w1" className="font-heading text-h1 text-ink">
+          <h1 id="w1" tabIndex={-1} className="font-heading text-h1 text-ink outline-none">
             {t('welcome.s1.title')}
           </h1>
           <p className="mt-3 text-lg text-muted">{t('welcome.s1.lead')}</p>
@@ -161,6 +175,9 @@ export default function Welcome() {
               {t('welcome.next')}
               <Icon name="arrowRight" size={18} />
             </button>
+            <button type="button" className="btn-ghost min-h-[52px]" onClick={() => void go(3)}>
+              {t('welcome.back')}
+            </button>
             {accountsAvailable() && accountMode === 'device' && (
               <Link to="/app/account" className="btn-ghost min-h-[52px]">
                 {t('welcome.signIn')}
@@ -172,7 +189,7 @@ export default function Welcome() {
 
       {step === 2 && (
         <section aria-labelledby="w2">
-          <h1 id="w2" className="font-heading text-h1 text-ink">
+          <h1 id="w2" tabIndex={-1} className="font-heading text-h1 text-ink outline-none">
             {t('welcome.s2.title')}
           </h1>
           <p className="mt-3 text-lg text-muted">{t('welcome.s2.lead')}</p>
@@ -203,7 +220,7 @@ export default function Welcome() {
 
       {step === 3 && (
         <section aria-labelledby="w3">
-          <h1 id="w3" className="font-heading text-h1 text-ink">
+          <h1 id="w3" tabIndex={-1} className="font-heading text-h1 text-ink outline-none">
             {t('welcome.s3.title')}
           </h1>
           <p className="mt-3 text-lg text-muted">{t('welcome.s3.lead')}</p>
@@ -234,7 +251,13 @@ export default function Welcome() {
                 </button>
               </li>
             </ul>
-          ) : (
+          ) : null}
+          {way === 'choose' && (
+            <button type="button" className="btn-ghost mt-6 min-h-[48px]" onClick={() => void go(2)}>
+              {t('welcome.back')}
+            </button>
+          )}
+          {way === 'choose' ? null : (
             <div className="card mt-6 p-5 sm:p-7">
               <ManualSetupForm onSubmit={(r) => void manual(r)} submitLabel={t('setup.submit')} busy={busy} />
               <button type="button" className="btn-ghost mt-4" onClick={() => setWay('choose')}>
@@ -248,7 +271,7 @@ export default function Welcome() {
       {step === 4 && forecast && (
         <section aria-labelledby="w4">
           <p className="eyebrow">{t('welcome.s4.eyebrow')}</p>
-          <div id="w4" className="mt-3">
+          <div id="w4" tabIndex={-1} className="mt-3 outline-none">
             <DateHero forecast={forecast} />
           </div>
           {forecast.status !== 'unclear' && <StateChip state={forecast.status} size="lg" className="mt-4" />}
@@ -257,6 +280,9 @@ export default function Welcome() {
             <button type="button" className="btn-primary min-h-[52px]" onClick={() => navigate('/app')}>
               {t('welcome.s4.open')}
               <Icon name="arrowRight" size={18} />
+            </button>
+            <button type="button" className="btn-ghost min-h-[52px]" onClick={() => void go(3)}>
+              {t('welcome.back')}
             </button>
             {accountsAvailable() && accountMode === 'device' && (
               <Link to="/app/account" className="btn-ghost min-h-[52px]">
@@ -271,7 +297,7 @@ export default function Welcome() {
   );
 }
 
-function Shell({ step, children }: { step: number; children: React.ReactNode }) {
+function Shell({ step, children, onGo }: { step: number; children: React.ReactNode; onGo?: (n: number) => void }) {
   const { t } = useTranslation();
   return (
     <div className="min-h-dvh">
@@ -288,11 +314,16 @@ function Shell({ step, children }: { step: number; children: React.ReactNode }) 
           <p className="eyebrow">{t('welcome.step', { n: Math.min(step, 4), total: 4 })}</p>
           <LanguageSelector className="w-full sm:w-72" />
         </div>
-        <ol className="mt-4 grid grid-cols-4 gap-2" aria-hidden>
-          {[1, 2, 3, 4].map((n) => (
-            <li key={n} className={`h-1.5 rounded-full ${n <= step ? 'bg-accent' : 'bg-surface-3'}`} />
-          ))}
-        </ol>
+        <div className="mt-4">
+          <Stepper
+            label={t('welcome.stepper.label')}
+            steps={[t('welcome.stepper.s1'), t('welcome.stepper.s2'), t('welcome.stepper.s3'), t('welcome.stepper.s4')]}
+            current={Math.min(step, 4)}
+            doneLabel={t('welcome.stepper.done')}
+            currentLabel={t('welcome.stepper.current')}
+            onGo={onGo}
+          />
+        </div>
         <div className="mt-8">{children}</div>
       </main>
     </div>

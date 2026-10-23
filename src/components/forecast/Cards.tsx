@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { EmptyState } from '../Feedback';
 import { useTranslation } from 'react-i18next';
 import type { Transaction } from '../../engine/types';
 import { formatZAR } from '../../lib/format';
@@ -47,7 +48,9 @@ export function RecentActivity({ transactions }: { transactions: Transaction[] }
         </Link>
       </div>
       {recent.length === 0 ? (
-        <p className="mt-3 text-sm text-muted">{t('recent.empty')}</p>
+        <div className="mt-3">
+          <EmptyState compact icon="receipt" title={t('recent.empty')} />
+        </div>
       ) : (
         <ul className="mt-2 divide-y divide-line">
           {recent.map((tx, i) => (

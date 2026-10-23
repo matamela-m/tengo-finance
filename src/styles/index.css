@@ -257,3 +257,30 @@
     scroll-padding-bottom: 24px;
   }
 }
+
+@layer components {
+  /* Caret in the one-time code boxes. Stops under reduced motion with every other animation. */
+  @keyframes code-caret {
+    0%,
+    70%,
+    100% {
+      opacity: 1;
+    }
+    20%,
+    50% {
+      opacity: 0;
+    }
+  }
+  .code-caret {
+    animation: code-caret 1.2s ease-out infinite;
+  }
+}
+
+@layer components {
+  /* Date fields: on a mouse or trackpad the app's calendar button stands in for the browser's own icon. */
+  @media (pointer: fine) {
+    .date-field::-webkit-calendar-picker-indicator {
+      display: none;
+    }
+  }
+}

@@ -689,7 +689,8 @@
     "importBody": "Upload a CSV bank statement. It is read on this device and replaces this person's history.",
     "movableLabel": "Can be paid later",
     "movableHint": "Only mark a bill if it can be paid a few days late without a fee.",
-    "protectedBill": "Never suggested to move: paying late can cost fees, cover or credit."
+    "protectedBill": "Never suggested to move: paying late can cost fees, cover or credit.",
+    "sortBy": "Sort by {{column}}"
   },
   "import": {
     "title": "Import statement",
@@ -1251,7 +1252,16 @@
       "sample": "These are sample numbers, not yours. Change them on Money, or replace them with a statement or your own answers.",
       "open": "Open Home"
     },
-    "signIn": "Already saved to an account? Sign in"
+    "signIn": "Already saved to an account? Sign in",
+    "stepper": {
+      "label": "Setup steps",
+      "s1": "About",
+      "s2": "Choices",
+      "s3": "Your money",
+      "s4": "Forecast",
+      "done": "done",
+      "current": "current step"
+    }
   },
   "legalDoc": {
     "version": "Version {{version}}",
@@ -1376,5 +1386,13 @@
       "invalid_code": "That code did not work. Check it, or send a new one.",
       "generic": "Something went wrong. Check your connection and try again."
     }
+  },
+  "calendar": {
+    "open": "Choose on a calendar",
+    "title": "Calendar",
+    "next": "Next month",
+    "previous": "Previous month",
+    "today": "today",
+    "selected": "selected"
   }
 }

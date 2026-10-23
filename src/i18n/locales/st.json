@@ -689,7 +689,8 @@
     "importBody": "Kenya setatemente sa banka sa CSV. Se balwa sesebedisweng sena mme se nka sebaka sa nalane ya motho enwa.",
     "movableLabel": "E ka lefuwa hamorao",
     "movableHint": "Tshwaya tefo feela haeba e ka lefuwa ka mora matsatsi a mmalwa ntle le tefiso.",
-    "protectedBill": "Ha ho mohla e sisinyetswang ho suthiswa: ho lefa morao ho nako ho ka bitsa ditefiso, tshireletso kapa mokitlane."
+    "protectedBill": "Ha ho mohla e sisinyetswang ho suthiswa: ho lefa morao ho nako ho ka bitsa ditefiso, tshireletso kapa mokitlane.",
+    "sortBy": "Hlophisa ka {{column}}"
   },
   "import": {
     "title": "Kenya setatemente",
@@ -1251,7 +1252,16 @@
       "sample": "Tsena ke dinomoro tsa mohlala, eseng tsa hao. Di fetole ho Tjhelete, kapa o di nkele sebaka ka setatemente kapa ka dikarabo tsa hao.",
       "open": "Bula Lehae"
     },
-    "signIn": "O se o bolokile akhaonteng? Kena"
+    "signIn": "O se o bolokile akhaonteng? Kena",
+    "stepper": {
+      "label": "Mehato ya ho hlophisa",
+      "s1": "Ka",
+      "s2": "Dikgetho",
+      "s3": "Tjhelete ya hao",
+      "s4": "Ponelopele",
+      "done": "e phethilwe",
+      "current": "mohato wa hajwale"
+    }
   },
   "legalDoc": {
     "version": "Mofuta {{version}}",
@@ -1376,5 +1386,13 @@
       "invalid_code": "Khoutu eo ha e a sebetsa. E hlahlobe, kapa o romele e ntjha.",
       "generic": "Ho na le se sa tsamaeng hantle. Hlahloba kgokahano ya hao mme o leke hape."
     }
+  },
+  "calendar": {
+    "open": "Kgetha khalendareng",
+    "title": "Khalendara",
+    "next": "Kgwedi e latelang",
+    "previous": "Kgwedi e fetileng",
+    "today": "kajeno",
+    "selected": "e kgethilwe"
   }
 }

@@ -1,0 +1,75 @@
+import AxeBuilder from '@axe-core/playwright';
+import { test, expect, type Page } from '@playwright/test';
+
+// The Phase 1 primitives: onboarding stepper, calendar date field and the sortable transaction table.
+
+async function asLerato(page: Page) {
+  await page.goto('/start');
+  await page.getByRole('button', { name: /Lerato/ }).click();
+  await page.getByRole('button', { name: 'Agree and continue' }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+}
+
+test('the onboarding stepper marks the current step, moves focus to each new step, and Back never bounces forward', async ({ page }) => {
+  await page.goto('/start');
+  await page.getByRole('button', { name: 'Start' }).click();
+  const steps = page.getByRole('navigation', { name: 'Setup steps' });
+  await expect(steps.locator('[aria-current="step"]')).toContainText('About');
+  await page.getByRole('button', { name: 'Next' }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'Your choices' })).toBeFocused();
+  await expect(steps.locator('[aria-current="step"]')).toContainText('Choices');
+  await page.getByRole('button', { name: 'Agree and continue' }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'Add your money' })).toBeFocused();
+  // Back from step 3 lands on step 2 and stays there, even though consent is already given.
+  await page.getByRole('button', { name: 'Back' }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'Your choices' })).toBeFocused();
+  await page.waitForTimeout(300);
+  await expect(page.getByRole('heading', { level: 1, name: 'Your choices' })).toBeVisible();
+  // A finished step can be revisited from the stepper.
+  await steps.getByRole('button', { name: /About/ }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'What Tengo asks for, and why' })).toBeFocused();
+  const axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
+  expect(axe.violations.map((v) => v.id)).toEqual([]);
+});
+
+test('the calendar picks a date by keyboard, closes on Escape and returns focus', async ({ page }) => {
+  await asLerato(page);
+  await page.goto('/app/plan');
+  const date = page.getByLabel('Date').first();
+  const before = await date.inputValue();
+  const open = page.getByRole('button', { name: 'Choose on a calendar' }).first();
+  await open.click();
+  const dialog = page.getByRole('dialog', { name: 'Calendar' });
+  await expect(dialog).toBeVisible();
+  const axe = await new AxeBuilder({ page }).include('[role="dialog"]').withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
+  expect(axe.violations.map((v) => v.id)).toEqual([]);
+  await page.keyboard.press('Escape');
+  await expect(dialog).toHaveCount(0);
+  await expect(open).toBeFocused();
+  // Open again, move one day on with the arrow key and choose it.
+  await open.click();
+  await expect(dialog.locator('button[aria-label*="selected"]')).toBeFocused();
+  await page.keyboard.press('ArrowRight');
+  await page.keyboard.press('Enter');
+  await expect(dialog).toHaveCount(0);
+  await expect(open).toBeFocused();
+  const after = await date.inputValue();
+  expect(new Date(`${after}T12:00:00`).getTime() - new Date(`${before}T12:00:00`).getTime()).toBe(86_400_000);
+});
+
+test('the transaction table sorts by amount and says so to screen readers', async ({ page }) => {
+  await asLerato(page);
+  await page.goto('/app/money');
+  const table = page.getByRole('table', { name: 'Transaction history' });
+  await expect(table).toBeVisible();
+  const amount = table.getByRole('columnheader', { name: /Amount/ });
+  await expect(amount).toHaveAttribute('aria-sort', 'none');
+  await table.getByRole('button', { name: 'Sort by Amount' }).click();
+  await expect(amount).toHaveAttribute('aria-sort', 'descending');
+  const first = await table.locator('tbody tr').first().locator('td').nth(3).innerText();
+  await table.getByRole('button', { name: 'Sort by Amount' }).click();
+  await expect(amount).toHaveAttribute('aria-sort', 'ascending');
+  const firstAsc = await table.locator('tbody tr').first().locator('td').nth(3).innerText();
+  expect(first.startsWith('+')).toBe(true);
+  expect(firstAsc.startsWith('-')).toBe(true);
+});

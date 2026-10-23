@@ -689,7 +689,8 @@
     "importBody": "Laiša setatamente sa panka sa CSV. Se balwa sedirišweng se gomme se tšea legato la histori ya motho yo.",
     "movableLabel": "E ka lefšwa ka morago",
     "movableHint": "Swaya tefo fela ge e ka lefšwa ka morago ga matšatši a mmalwa ntle le tefišo.",
-    "protectedBill": "Ga e ke e šišinywa go šuthišwa: go lefa ka morago ga nako go ka bitša ditefišo, tšhireletšo goba mokitlana."
+    "protectedBill": "Ga e ke e šišinywa go šuthišwa: go lefa ka morago ga nako go ka bitša ditefišo, tšhireletšo goba mokitlana.",
+    "sortBy": "Beakanya ka {{column}}"
   },
   "import": {
     "title": "Tsenya setatamente",
@@ -1251,7 +1252,16 @@
       "sample": "Tše ke dinomoro tša mohlala, e sego tša gago. Di fetoše go Tšhelete, goba o di tšeele legato ka setatamente goba ka dikarabo tša gago.",
       "open": "Bula Gae"
     },
-    "signIn": "O šetše o bolokile akhaonteng? Tsena"
+    "signIn": "O šetše o bolokile akhaonteng? Tsena",
+    "stepper": {
+      "label": "Dikgato tša peakanyo",
+      "s1": "Ka ga",
+      "s2": "Dikgetho",
+      "s3": "Tšhelete ya gago",
+      "s4": "Ponelopele",
+      "done": "e feditšwe",
+      "current": "kgato ya bjale"
+    }
   },
   "legalDoc": {
     "version": "Phetolelo {{version}}",
@@ -1376,5 +1386,13 @@
       "invalid_code": "Khoutu yeo ga se ya šoma. E lekole, goba o romele ye mpsha.",
       "generic": "Go na le se se sa sepelago gabotse. Lekola kgokagano ya gago gomme o leke gape."
     }
+  },
+  "calendar": {
+    "open": "Kgetha khalendareng",
+    "title": "Khalendara",
+    "next": "Kgwedi ye e latelago",
+    "previous": "Kgwedi ye e fetilego",
+    "today": "lehono",
+    "selected": "e kgethilwe"
   }
 }

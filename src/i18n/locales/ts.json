@@ -689,7 +689,8 @@
     "importBody": "Layicha xitatimende xa bangi xa CSV. Xi hlayiwa eka xitirhisiwa lexi naswona xi siva matimu ya munhu loyi.",
     "movableLabel": "Yi nga hakeriwa endzhaku",
     "movableHint": "Funga hakelo ntsena loko yi nga hakeriwa endzhaku ka masiku ma nga ri mangani handle ka hakelo yo engetela.",
-    "protectedBill": "A yi tsundzuxiwi ku susiwa: ku hakela hi ku hlwela swi nga durha hi tihakelo, nsirhelelo kumbe xikweleti."
+    "protectedBill": "A yi tsundzuxiwi ku susiwa: ku hakela hi ku hlwela swi nga durha hi tihakelo, nsirhelelo kumbe xikweleti.",
+    "sortBy": "Hlela hi {{column}}"
   },
   "import": {
     "title": "Nghenisa xitatimende",
@@ -1251,7 +1252,16 @@
       "sample": "Leti i tinomboro ta xikombiso, ku nga ri ta wena. Ti cince eka Mali, kumbe u ti siva hi xitatimende kumbe hi tinhlamulo ta wena.",
       "open": "Pfula Ekaya"
     },
-    "signIn": "U se u hlayisile eka akhawunti? Nghena"
+    "signIn": "U se u hlayisile eka akhawunti? Nghena",
+    "stepper": {
+      "label": "Magoza yo lulamisa",
+      "s1": "Hi ta",
+      "s2": "Swihlawulekisi",
+      "s3": "Mali ya wena",
+      "s4": "Vuhlahluvi",
+      "done": "swi herile",
+      "current": "goza ra sweswi"
+    }
   },
   "legalDoc": {
     "version": "Nkandziyiso {{version}}",
@@ -1376,5 +1386,13 @@
       "invalid_code": "Khodi yoleyo a yi tirhanga. Yi kambele, kumbe u rhumela leyintshwa.",
       "generic": "Ku na nchumu lowu nga fambangiki kahle. Kambela vuhlanganisi bya wena u ringeta nakambe."
     }
+  },
+  "calendar": {
+    "open": "Hlawula eka khalendara",
+    "title": "Khalendara",
+    "next": "N’hweti leyi taka",
+    "previous": "N’hweti leyi hundzeke",
+    "today": "namuntlha",
+    "selected": "swi hlawuriwile"
   }
 }

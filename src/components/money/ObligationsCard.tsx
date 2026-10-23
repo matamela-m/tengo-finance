@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { EmptyState } from '../Feedback';
 import { useTranslation } from 'react-i18next';
+import { DateField } from '../date/DateField';
 import { usePersona, useRecordPersona } from '../../data/PersonaProvider';
 import { PROTECTED_OBLIGATIONS } from '../../engine/help';
 import type { Obligation, ObligationKind } from '../../engine/types';
@@ -65,7 +67,9 @@ export function ObligationsCard() {
       </div>
       <p className="mt-1 text-sm text-muted">{t('obligations.lead')}</p>
       {items.length === 0 ? (
-        <p className="mt-3 text-sm text-muted">{t('obligations.none')}</p>
+        <div className="mt-3">
+          <EmptyState compact icon="handCoins" title={t('obligations.none')} />
+        </div>
       ) : (
         <ul className="mt-2 divide-y divide-line">
           {items.map((o) => (
@@ -147,7 +151,7 @@ export function ObligationsCard() {
                 <label className="label" htmlFor="ob-next">
                   {t('obligations.nextLabel')}
                 </label>
-                <input id="ob-next" type="date" min={today} className="field num" value={draft.nextDate} onChange={(e) => setDraft({ ...draft, nextDate: e.target.value })} />
+                <DateField id="ob-next" min={today} value={draft.nextDate} onChange={(nextDate) => setDraft({ ...draft, nextDate })} />
               </div>
             </div>
             <Segmented

@@ -1,4 +1,4 @@
-import { useMemo, useState, type CSSProperties, type ReactNode } from 'react';
+import { useMemo, useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { CoverBars } from '../components/CoverBars';
@@ -14,6 +14,7 @@ import { TimelineScrubber } from '../components/forecast/TimelineScrubber';
 import { WhyDrawer } from '../components/forecast/WhyDrawer';
 import { Icon } from '../components/Icon';
 import { StateChip } from '../components/StateChip';
+import { Stat, StatHint } from '../components/ui';
 import { useReadyPersona } from '../data/PersonaProvider';
 import type { Forecast, UpcomingBill } from '../engine/types';
 import { homeView, type HomeView } from '../engine/view';
@@ -50,9 +51,6 @@ function Greeting({ name, forecast }: { name: string; forecast: Forecast }) {
   );
 }
 
-function BigWords({ children }: { children: ReactNode }) {
-  return <p className="mt-2 font-heading text-[30px] font-bold leading-[1.05] tracking-[-0.03em] text-ink">{children}</p>;
-}
 
 /** The daily budget leads, ruled by the state; next money and confidence sit beside it as quiet figures. */
 function Stats({ view, historyDays, accounts }: { view: HomeView; historyDays: number; accounts: Account[] }) {
@@ -72,46 +70,66 @@ function Stats({ view, historyDays, accounts }: { view: HomeView; historyDays: n
   const others = accounts.filter((a) => a.kind === 'wallet').length;
   return (
     <section className="card p-5 sm:p-6" aria-labelledby="sts-title">
-      <h2 id="sts-title" className="eyebrow">
-        {t('sts.title')}
-      </h2>
       {b.kind === 'amount' ? (
-        <>
-          <p className="num mt-2 font-heading text-[40px] font-bold leading-none tracking-[-0.035em] text-ink">
-            <span aria-hidden>{formatZAR(shown)}</span>
-            <span className="sr-only">{formatZAR(b.amount)}</span>
-          </p>
-          <p className="num mt-2 text-sm text-muted">{b.bills > 0 ? t('sts.withBills', { bills: formatZAR(b.bills) }) : t('sts.noBills')}</p>
-          <p className="num mt-1 text-sm text-muted">{reserveLine(b.reserve, b.reserveBills)}</p>
-          <p className="num mt-1 text-sm text-muted">{t('sts.usual', { amount: formatZAR(b.usual) })}</p>
-        </>
+        <Stat
+          labelAs="h2"
+          labelId="sts-title"
+          label={t('sts.title')}
+          size="lg"
+          value={
+            <>
+              <span aria-hidden>{formatZAR(shown)}</span>
+              <span className="sr-only">{formatZAR(b.amount)}</span>
+            </>
+          }
+          hint={
+            <>
+              <p className="num mt-2 text-sm text-muted">{b.bills > 0 ? t('sts.withBills', { bills: formatZAR(b.bills) }) : t('sts.noBills')}</p>
+              <p className="num mt-1 text-sm text-muted">{reserveLine(b.reserve, b.reserveBills)}</p>
+              <p className="num mt-1 text-sm text-muted">{t('sts.usual', { amount: formatZAR(b.usual) })}</p>
+            </>
+          }
+        />
       ) : b.kind === 'nothingSpare' ? (
-        <>
-          <BigWords>{t('sts.nothingSpare')}</BigWords>
-          <p className="num mt-2 text-sm text-muted">{reserveLine(b.reserve, b.reserveBills)}</p>
-          <p className="num mt-1 text-sm text-muted">{t('sts.usual', { amount: formatZAR(b.usual) })}</p>
-        </>
+        <Stat
+          labelAs="h2"
+          labelId="sts-title"
+          label={t('sts.title')}
+          size="words"
+          value={t('sts.nothingSpare')}
+          hint={
+            <>
+              <p className="num mt-2 text-sm text-muted">{reserveLine(b.reserve, b.reserveBills)}</p>
+              <p className="num mt-1 text-sm text-muted">{t('sts.usual', { amount: formatZAR(b.usual) })}</p>
+            </>
+          }
+        />
       ) : b.kind === 'notAdvised' ? (
-        <>
-          <BigWords>{t('sts.notAdvised')}</BigWords>
-          <p className="num mt-2 text-sm text-muted">
-            {b.overdrawn > 0
-              ? t('sts.overdrawnWhy', { amount: formatZAR(b.overdrawn) })
-              : b.gapDays === null
-                ? t('sts.notAdvisedNoMoney', { usual: formatZAR(b.usual) })
-                : t('sts.notAdvisedWhy', { usual: formatZAR(b.usual), count: b.gapDays })}
-          </p>
-        </>
-      ) : b.kind === 'pending' ? (
-        <>
-          <BigWords>{t('sts.pending')}</BigWords>
-          <p className="mt-2 text-sm text-muted">{t('sts.pendingWhy')}</p>
-        </>
+        <Stat
+          labelAs="h2"
+          labelId="sts-title"
+          label={t('sts.title')}
+          size="words"
+          value={t('sts.notAdvised')}
+          hint={
+            <p className="num mt-2 text-sm text-muted">
+              {b.overdrawn > 0
+                ? t('sts.overdrawnWhy', { amount: formatZAR(b.overdrawn) })
+                : b.gapDays === null
+                  ? t('sts.notAdvisedNoMoney', { usual: formatZAR(b.usual) })
+                  : t('sts.notAdvisedWhy', { usual: formatZAR(b.usual), count: b.gapDays })}
+            </p>
+          }
+        />
       ) : (
-        <>
-          <BigWords>{t('sts.unclear')}</BigWords>
-          <p className="mt-2 text-sm text-muted">{t('sts.unclearWhy')}</p>
-        </>
+        <Stat
+          labelAs="h2"
+          labelId="sts-title"
+          label={t('sts.title')}
+          size="words"
+          value={b.kind === 'pending' ? t('sts.pending') : t('sts.unclear')}
+          hint={<p className="mt-2 text-sm text-muted">{b.kind === 'pending' ? t('sts.pendingWhy') : t('sts.unclearWhy')}</p>}
+        />
       )}
       <p className="mt-3 text-xs text-subtle">{t('sts.disclaimer')}</p>
       <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-line pt-4">
@@ -123,22 +141,30 @@ function Stats({ view, historyDays, accounts }: { view: HomeView; historyDays: n
         <CashQuickAdd />
       </div>
       <dl className="mt-5 grid grid-cols-2 border-t border-line pt-4">
-        <div className="pr-4">
-          <dt className="eyebrow">{t('next.title')}</dt>
-          <dd className="num mt-1.5 font-heading text-[19px] font-semibold tracking-[-0.01em] text-ink">
-            {n ? (n.pendingToday ? t('next.pendingToday') : d.dayShort(n.date)) : view.status === 'unclear' ? t('home.unknownShort') : view.dailyIncome ? t('next.daily') : t('next.none')}
-          </dd>
-          {n && (
-            <dd className="num mt-0.5 text-xs text-subtle">
-              {n.amountLow === n.amountHigh ? formatZAR(n.amountTypical) : t('common.rangeAmounts', { low: formatZAR(n.amountLow), high: formatZAR(n.amountHigh) })}
-            </dd>
-          )}
-        </div>
-        <div className="border-l border-line pl-4">
-          <dt className="eyebrow">{t('why.confidence')}</dt>
-          <dd className="mt-1.5 font-heading text-[19px] font-semibold tracking-[-0.01em] text-ink">{t(`confidence.${view.confidence}`)}</dd>
-          <dd className="num mt-0.5 text-xs text-subtle">{t('why.historyHint', { count: historyDays })}</dd>
-        </div>
+        <Stat
+          inList
+          className="pr-4"
+          label={t('next.title')}
+          value={n ? (n.pendingToday ? t('next.pendingToday') : d.dayShort(n.date)) : view.status === 'unclear' ? t('home.unknownShort') : view.dailyIncome ? t('next.daily') : t('next.none')}
+          hint={
+            n && (
+              <StatHint inList className="mt-0.5">
+                {n.amountLow === n.amountHigh ? formatZAR(n.amountTypical) : t('common.rangeAmounts', { low: formatZAR(n.amountLow), high: formatZAR(n.amountHigh) })}
+              </StatHint>
+            )
+          }
+        />
+        <Stat
+          inList
+          className="border-l border-line pl-4"
+          label={t('why.confidence')}
+          value={t(`confidence.${view.confidence}`)}
+          hint={
+            <StatHint inList className="mt-0.5">
+              {t('why.historyHint', { count: historyDays })}
+            </StatHint>
+          }
+        />
       </dl>
     </section>
   );

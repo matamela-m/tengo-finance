@@ -1,52 +1,68 @@
-import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { TransactionRow } from '../components/forecast/Cards';
-import { EmptyState } from '../components/Feedback';
-import { Icon } from '../components/Icon';
-import { PageHeader } from '../components/PageHeader';
-import { Segmented } from '../components/Segmented';
-import { BalanceUpdate } from '../components/BalanceUpdate';
-import { AccountsCard } from '../components/money/AccountsCard';
-import { ObligationsCard } from '../components/money/ObligationsCard';
-import { TransactionEditor } from '../components/TransactionEditor';
-import { SpendingCard } from '../components/SpendingCard';
-import { usePersona, useReadyPersona } from '../data/PersonaProvider';
-import { canMarkMovable } from '../engine/help';
-import { addDays } from '../engine/dates';
-import type { Category, Transaction } from '../engine/types';
-import { formatZAR } from '../lib/format';
-import { useDates } from '../lib/useLang';
-import { INTL_LOCALE } from '../i18n/languages';
+import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { TransactionTable } from "../components/money/TransactionTable";
+import { TransactionRow } from "../components/forecast/Cards";
+import { EmptyState } from "../components/Feedback";
+import { Icon } from "../components/Icon";
+import { PageHeader } from "../components/PageHeader";
+import { Segmented } from "../components/Segmented";
+import { BalanceUpdate } from "../components/BalanceUpdate";
+import { AccountsCard } from "../components/money/AccountsCard";
+import { ObligationsCard } from "../components/money/ObligationsCard";
+import { TransactionEditor } from "../components/TransactionEditor";
+import { SpendingCard } from "../components/SpendingCard";
+import { usePersona, useReadyPersona } from "../data/PersonaProvider";
+import { canMarkMovable } from "../engine/help";
+import { addDays } from "../engine/dates";
+import type { Category, Transaction } from "../engine/types";
+import { formatZAR } from "../lib/format";
+import { useDates } from "../lib/useLang";
+import { INTL_LOCALE } from "../i18n/languages";
 
-type Filter = 'all' | Category;
-const FILTERS: Filter[] = ['all', 'income', 'spend', 'bill'];
+type Filter = "all" | Category;
+const FILTERS: Filter[] = ["all", "income", "spend", "bill"];
 const PAGE = 40;
 
 export default function MoneyPage() {
   const { t } = useTranslation();
   const d = useDates();
   const { record, forecast, today } = useReadyPersona();
-  const oneOffIds = useMemo(() => new Set(forecast.oneOffs.map((o) => o.id)), [forecast]);
+  const oneOffIds = useMemo(
+    () => new Set(forecast.oneOffs.map((o) => o.id)),
+    [forecast],
+  );
   const [editBalance, setEditBalance] = useState(false);
   const { setPlanSettings } = usePersona();
   const movable = record.movableBills ?? [];
-  const [filter, setFilter] = useState<Filter>('all');
-  const [query, setQuery] = useState('');
+  const [filter, setFilter] = useState<Filter>("all");
+  const [query, setQuery] = useState("");
   const [shown, setShown] = useState(PAGE);
   const [editing, setEditing] = useState<Transaction | null>(null);
 
-  const sorted = useMemo(() => [...record.transactions].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0)), [record.transactions]);
+  const sorted = useMemo(
+    () =>
+      [...record.transactions].sort((a, b) =>
+        a.date < b.date ? 1 : a.date > b.date ? -1 : 0,
+      ),
+    [record.transactions],
+  );
   const list = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return sorted.filter((tx) => (filter === 'all' || tx.category === filter) && (!q || tx.description.toLowerCase().includes(q)));
+    return sorted.filter(
+      (tx) =>
+        (filter === "all" || tx.category === filter) &&
+        (!q || tx.description.toLowerCase().includes(q)),
+    );
   }, [sorted, filter, query]);
 
   const last30 = useMemo(() => {
     const from = addDays(today, -30);
     const recent = record.transactions.filter((x) => x.date >= from);
     return {
-      income: recent.filter((x) => x.amount > 0).reduce((s, x) => s + x.amount, 0),
+      income: recent
+        .filter((x) => x.amount > 0)
+        .reduce((s, x) => s + x.amount, 0),
       out: recent.filter((x) => x.amount < 0).reduce((s, x) => s - x.amount, 0),
     };
   }, [record.transactions, today]);
@@ -63,87 +79,144 @@ export default function MoneyPage() {
     return out;
   }, [list, shown]);
 
-  const monthLabel = (ym: string) => new Intl.DateTimeFormat(INTL_LOCALE[d.lang], { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${ym}-01T00:00:00Z`));
+  const monthLabel = (ym: string) =>
+    new Intl.DateTimeFormat(INTL_LOCALE[d.lang], {
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC",
+    }).format(new Date(`${ym}-01T00:00:00Z`));
 
   return (
     <>
       <PageHeader
-        title={t('money.title')}
-        lead={t('money.lead')}
+        title={t("money.title")}
+        lead={t("money.lead")}
         actions={
           <div className="flex flex-wrap gap-2">
             <Link to="/app/money/setup" className="btn-secondary">
               <Icon name="sliders" size={18} />
-              {t('setup.link')}
+              {t("setup.link")}
             </Link>
             <Link to="/app/money/import" className="btn-primary">
               <Icon name="upload" size={18} />
-              {t('money.import')}
+              {t("money.import")}
             </Link>
           </div>
         }
       />
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
-        <section className="card min-w-0 p-5 sm:p-7" aria-labelledby="history-title">
+        <section
+          className="card min-w-0 p-5 sm:p-7"
+          aria-labelledby="history-title"
+        >
           <h2 id="history-title" className="sr-only">
-            {t('money.history')}
+            {t("money.history")}
           </h2>
           <div className="flex flex-col gap-3 2xl:flex-row 2xl:items-center 2xl:justify-between">
             <Segmented
-              label={t('money.filter')}
+              label={t("money.filter")}
               variant="pills"
               value={filter}
               onChange={(f) => {
                 setFilter(f);
                 setShown(PAGE);
               }}
-              options={FILTERS.map((f) => ({ value: f, label: f === 'all' ? t('money.all') : t(`money.filters.${f}`) }))}
+              options={FILTERS.map((f) => ({
+                value: f,
+                label: f === "all" ? t("money.all") : t(`money.filters.${f}`),
+              }))}
             />
             <div className="relative 2xl:w-56">
               <label htmlFor="money-search" className="sr-only">
-                {t('money.search')}
+                {t("money.search")}
               </label>
-              <Icon name="search" size={16} className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-muted" />
-              <input id="money-search" type="search" className="field pl-9" placeholder={t('money.search')} value={query} onChange={(e) => setQuery(e.target.value)} />
+              <Icon
+                name="search"
+                size={16}
+                className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-muted"
+              />
+              <input
+                id="money-search"
+                type="search"
+                className="field pl-9"
+                placeholder={t("money.search")}
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
             </div>
           </div>
 
           <p className="mt-4 text-sm text-muted" aria-live="polite">
-            {t('money.count', { count: list.length })}
+            {t("money.count", { count: list.length })}
           </p>
 
           {list.length === 0 ? (
             <div className="mt-4">
-              <EmptyState icon="money" title={t('money.emptyTitle')} body={record.transactions.length === 0 ? t('money.emptyBodyNone') : t('money.emptyBodyFilter')} />
+              <EmptyState
+                icon="money"
+                title={t("money.emptyTitle")}
+                body={
+                  record.transactions.length === 0
+                    ? t("money.emptyBodyNone")
+                    : t("money.emptyBodyFilter")
+                }
+              />
             </div>
           ) : (
             <div className="mt-2">
-              {groups.map((g) => (
-                <div key={g.month}>
-                  <h3 className="eyebrow sticky top-[56px] z-10 -mx-2 bg-surface px-2 pb-1.5 pt-5 lg:top-0">{monthLabel(g.month)}</h3>
-                  <ul className="divide-y divide-line">
-                    {g.items.map((tx) => (
-                      <li key={tx.id} className="-mx-2 flex items-center gap-2 rounded-lg px-2 transition-colors duration-150 hover:bg-surface-2/60">
-                        <div className="min-w-0 flex-1">
-                          <TransactionRow tx={tx} oneOff={oneOffIds.has(tx.id)} />
-                        </div>
-                        <button
-                          type="button"
-                          onClick={() => setEditing(tx)}
-                          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-muted hover:bg-surface-2 hover:text-ink"
-                          aria-label={t('money.editLabel', { name: tx.description, date: d.dayShort(tx.date) })}
+              <div className="hidden md:block">
+                <TransactionTable
+                  transactions={list}
+                  limit={shown}
+                  oneOffIds={oneOffIds}
+                  onEdit={setEditing}
+                />
+              </div>
+              <div className="md:hidden">
+                {groups.map((g) => (
+                  <div key={g.month}>
+                    <h3 className="eyebrow sticky top-[56px] z-10 -mx-2 bg-surface px-2 pb-1.5 pt-5 lg:top-0">
+                      {monthLabel(g.month)}
+                    </h3>
+                    <ul className="divide-y divide-line">
+                      {g.items.map((tx) => (
+                        <li
+                          key={tx.id}
+                          className="-mx-2 flex items-center gap-2 rounded-lg px-2 transition-colors duration-150 hover:bg-surface-2/60"
                         >
-                          <Icon name="edit" size={18} />
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+                          <div className="min-w-0 flex-1">
+                            <TransactionRow
+                              tx={tx}
+                              oneOff={oneOffIds.has(tx.id)}
+                            />
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => setEditing(tx)}
+                            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-muted hover:bg-surface-2 hover:text-ink"
+                            aria-label={t("money.editLabel", {
+                              name: tx.description,
+                              date: d.dayShort(tx.date),
+                            })}
+                          >
+                            <Icon name="edit" size={18} />
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
               {list.length > shown && (
-                <button type="button" className="btn-secondary mt-4 w-full" onClick={() => setShown((s) => s + PAGE)}>
-                  {t('money.more', { count: Math.min(PAGE, list.length - shown) })}
+                <button
+                  type="button"
+                  className="btn-secondary mt-4 w-full"
+                  onClick={() => setShown((s) => s + PAGE)}
+                >
+                  {t("money.more", {
+                    count: Math.min(PAGE, list.length - shown),
+                  })}
                 </button>
               )}
             </div>
@@ -153,31 +226,47 @@ export default function MoneyPage() {
         <div className="order-first flex flex-col gap-6 lg:order-none">
           <section className="card p-5 sm:p-6" aria-labelledby="summary-title">
             <h2 id="summary-title" className="eyebrow">
-              {t('money.last30')}
+              {t("money.last30")}
             </h2>
             <dl className="mt-3 grid grid-cols-2 gap-3">
               <div className="rounded-xl bg-enough-soft p-4">
                 <dt className="flex items-center gap-1.5 text-xs font-medium text-muted">
                   <Icon name="arrowDown" size={14} />
-                  {t('money.in')}
+                  {t("money.in")}
                 </dt>
-                <dd className="num mt-2 font-heading text-[26px] font-bold leading-none tracking-[-0.03em] text-ink">{formatZAR(Math.round(last30.income))}</dd>
+                <dd className="num mt-2 font-heading text-[26px] font-bold leading-none tracking-[-0.03em] text-ink">
+                  {formatZAR(Math.round(last30.income))}
+                </dd>
               </div>
               <div className="rounded-xl bg-surface-2 p-4">
                 <dt className="flex items-center gap-1.5 text-xs font-semibold text-muted">
                   <Icon name="arrowUp" size={14} />
-                  {t('money.out')}
+                  {t("money.out")}
                 </dt>
-                <dd className="num mt-2 font-heading text-[26px] font-bold leading-none tracking-[-0.03em] text-ink">{formatZAR(Math.round(last30.out))}</dd>
+                <dd className="num mt-2 font-heading text-[26px] font-bold leading-none tracking-[-0.03em] text-ink">
+                  {formatZAR(Math.round(last30.out))}
+                </dd>
               </div>
             </dl>
             <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
-              <p className="num text-sm text-muted">{t('money.balance', { amount: formatZAR(record.balance) })}</p>
-              <button type="button" className="btn-ghost -mr-3 min-h-[44px] px-3 text-sm text-link" aria-expanded={editBalance} onClick={() => setEditBalance((v) => !v)}>
-                {t('balance.update')}
+              <p className="num text-sm text-muted">
+                {t("money.balance", { amount: formatZAR(record.balance) })}
+              </p>
+              <button
+                type="button"
+                className="btn-ghost -mr-3 min-h-[44px] px-3 text-sm text-link"
+                aria-expanded={editBalance}
+                onClick={() => setEditBalance((v) => !v)}
+              >
+                {t("balance.update")}
               </button>
             </div>
-            {editBalance && <BalanceUpdate initial={record.balance} onDone={() => setEditBalance(false)} />}
+            {editBalance && (
+              <BalanceUpdate
+                initial={record.balance}
+                onDone={() => setEditBalance(false)}
+              />
+            )}
           </section>
 
           <AccountsCard />
@@ -187,20 +276,26 @@ export default function MoneyPage() {
             transactions={record.transactions}
             today={today}
             flexible={record.flexibleGroups ?? []}
-            onFlexibleChange={(groups) => void setPlanSettings({ flexibleGroups: groups })}
+            onFlexibleChange={(groups) =>
+              void setPlanSettings({ flexibleGroups: groups })
+            }
           />
 
           <section className="card p-6" aria-labelledby="bills-title">
             <div className="flex items-center gap-2">
               <Icon name="repeat" size={18} className="text-link" />
               <h2 id="bills-title" className="font-heading text-h3 text-ink">
-                {t('money.bills')}
+                {t("money.bills")}
               </h2>
             </div>
-            <p className="mt-1 text-sm text-muted">{t('money.billsRule')}</p>
-            {forecast.recurringBills.length > 0 && <p className="mt-1 text-sm text-muted">{t('money.movableHint')}</p>}
+            <p className="mt-1 text-sm text-muted">{t("money.billsRule")}</p>
+            {forecast.recurringBills.length > 0 && (
+              <p className="mt-1 text-sm text-muted">
+                {t("money.movableHint")}
+              </p>
+            )}
             {forecast.recurringBills.length === 0 ? (
-              <p className="mt-4 text-sm text-muted">{t('money.noBills')}</p>
+              <p className="mt-4 text-sm text-muted">{t("money.noBills")}</p>
             ) : (
               <ul className="mt-3 divide-y divide-line">
                 {forecast.recurringBills.map((b) => (
@@ -208,9 +303,16 @@ export default function MoneyPage() {
                     <div className="flex items-center justify-between gap-3">
                       <div className="min-w-0">
                         <p className="truncate font-medium">{b.description}</p>
-                        <p className="num text-xs text-muted">{t('money.billNext', { date: d.dayShort(b.nextDate), count: b.occurrences })}</p>
+                        <p className="num text-xs text-muted">
+                          {t("money.billNext", {
+                            date: d.dayShort(b.nextDate),
+                            count: b.occurrences,
+                          })}
+                        </p>
                       </div>
-                      <p className="num shrink-0 font-semibold">{formatZAR(b.amount)}</p>
+                      <p className="num shrink-0 font-semibold">
+                        {formatZAR(b.amount)}
+                      </p>
                     </div>
                     {canMarkMovable(b) ? (
                       <label className="mt-1 inline-flex min-h-[36px] cursor-pointer items-center gap-2 text-sm text-muted">
@@ -218,13 +320,21 @@ export default function MoneyPage() {
                           type="checkbox"
                           className="h-5 w-5 accent-[var(--color-accent)]"
                           checked={movable.includes(b.key)}
-                          onChange={(e) => void setPlanSettings({ movableBills: e.target.checked ? [...movable, b.key] : movable.filter((k) => k !== b.key) })}
-                          aria-label={`${t('money.movableLabel')}: ${b.description}`}
+                          onChange={(e) =>
+                            void setPlanSettings({
+                              movableBills: e.target.checked
+                                ? [...movable, b.key]
+                                : movable.filter((k) => k !== b.key),
+                            })
+                          }
+                          aria-label={`${t("money.movableLabel")}: ${b.description}`}
                         />
-                        {t('money.movableLabel')}
+                        {t("money.movableLabel")}
                       </label>
                     ) : (
-                      <p className="mt-1 text-xs text-subtle">{t('money.protectedBill')}</p>
+                      <p className="mt-1 text-xs text-subtle">
+                        {t("money.protectedBill")}
+                      </p>
                     )}
                   </li>
                 ))}
@@ -232,14 +342,17 @@ export default function MoneyPage() {
             )}
           </section>
 
-          <section className="card hidden p-6 lg:block" aria-labelledby="import-title">
+          <section
+            className="card hidden p-6 lg:block"
+            aria-labelledby="import-title"
+          >
             <h2 id="import-title" className="font-heading text-h3 text-ink">
-              {t('money.importTitle')}
+              {t("money.importTitle")}
             </h2>
-            <p className="mt-1 text-sm text-muted">{t('money.importBody')}</p>
+            <p className="mt-1 text-sm text-muted">{t("money.importBody")}</p>
             <Link to="/app/money/import" className="btn-secondary mt-4 w-full">
               <Icon name="upload" size={18} />
-              {t('money.import')}
+              {t("money.import")}
             </Link>
           </section>
         </div>

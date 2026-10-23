@@ -689,7 +689,8 @@
     "importBody": "Layisha sitatimende sasebhange se-CSV. Sifundvwa kulelithuluzi futsi sitsatsa indzawo yemlandvo walomuntfu.",
     "movableLabel": "Ingakhokhwa kamuva",
     "movableHint": "Maka inkokhelo kuphela nangabe ingakhokhwa sekwephuze emalanga lambalwa ngaphandle kwemali yenhlawulo.",
-    "protectedBill": "Ngeke kuphakanyiswe kutsi ihanjiswe: kukhokha sekwephuzile kungabita timali, kuvikelwa noma sikweleti."
+    "protectedBill": "Ngeke kuphakanyiswe kutsi ihanjiswe: kukhokha sekwephuzile kungabita timali, kuvikelwa noma sikweleti.",
+    "sortBy": "Hlela nge-{{column}}"
   },
   "import": {
     "title": "Ngenisa sitatimende",
@@ -1251,7 +1252,16 @@
       "sample": "Leti tinombolo letitibonelo, hhayi takho. Tishintje ku-Imali, noma utitsatsele indzawo ngesitatimende noma ngetimphendvulo takho.",
       "open": "Vula Ekhaya"
     },
-    "signIn": "Sewugcine ku-akhawunti? Ngena"
+    "signIn": "Sewugcine ku-akhawunti? Ngena",
+    "stepper": {
+      "label": "Tinyatselo tekusetha",
+      "s1": "Mayelana",
+      "s2": "Kukhetsa",
+      "s3": "Imali yakho",
+      "s4": "Sibikelo",
+      "done": "kuphelile",
+      "current": "sinyatselo samanje"
+    }
   },
   "legalDoc": {
     "version": "Inguculo {{version}}",
@@ -1376,5 +1386,13 @@
       "invalid_code": "Leyo khodi ayikasebenti. Yihlole, noma utfumele lensha.",
       "generic": "Kukhona lokungakahambi kahle. Hlola kuchumana kwakho bese uzama futsi."
     }
+  },
+  "calendar": {
+    "open": "Khetsa ekhalendeni",
+    "title": "Likhalenda",
+    "next": "Inyanga letako",
+    "previous": "Inyanga lendlulile",
+    "today": "lamuhla",
+    "selected": "kukhetsiwe"
   }
 }

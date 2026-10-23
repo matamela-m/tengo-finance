@@ -1,5 +1,7 @@
 import { useMemo, useState } from 'react';
+import { EmptyState } from '../components/Feedback';
 import { useTranslation } from 'react-i18next';
+import { DateField } from '../components/date/DateField';
 import { CoverBars } from '../components/CoverBars';
 import { Notice } from '../components/Feedback';
 import { Icon } from '../components/Icon';
@@ -152,7 +154,7 @@ function WhatIf() {
                   <label className="label" htmlFor={`date-${item.id}`}>
                     {t('plan.date')}
                   </label>
-                  <input id={`date-${item.id}`} type="date" min={today} className="field num" value={item.date} onChange={(e) => update(item.id, { date: e.target.value })} />
+                  <DateField id={`date-${item.id}`} min={today} value={item.date} onChange={(date) => update(item.id, { date })} />
                 </div>
                 <div className="sm:col-span-2">
                   <label className="label" htmlFor={`lbl-${item.id}`}>
@@ -165,7 +167,11 @@ function WhatIf() {
           </li>
         ))}
       </ul>
-      {items.length === 0 && <p className="mt-4 text-sm text-muted">{t('plan.noItems')}</p>}
+      {items.length === 0 && (
+        <div className="mt-4">
+          <EmptyState compact icon="sliders" title={t('plan.noItems')} />
+        </div>
+      )}
       <button
         type="button"
         className="btn-secondary mt-3"

@@ -689,7 +689,8 @@
     "importBody": "Lodani tshitatamennde tsha bannga tsha CSV. Tshi vhalwa kha tshino tshishumiswa nahone tshi dzhia vhuimo ha ḓivhazwakale ya uyu muthu.",
     "movableLabel": "I nga badelwa nga murahu",
     "movableHint": "Swayani mbadelo fhedzi arali i tshi nga badelwa nga murahu ha maḓuvha a si gathi hu si na ndifho.",
-    "protectedBill": "A i eletshedzwi u shandukiswa ḓuvha: u badela nga u lenga zwi nga ḓura nga ndifho, tsireledzo kana tshikolodo."
+    "protectedBill": "A i eletshedzwi u shandukiswa ḓuvha: u badela nga u lenga zwi nga ḓura nga ndifho, tsireledzo kana tshikolodo.",
+    "sortBy": "Dzudzanyani nga {{column}}"
   },
   "import": {
     "title": "Dzhenisani tshitatamennde",
@@ -1251,7 +1252,16 @@
       "sample": "Idzi ndi nomboro dza tsumbo, hu si dzaṋu. Dzi shandukiseni kha Tshelede, kana ni dzi dzhiele vhuimo nga tshitatamennde kana nga phindulo dzaṋu.",
       "open": "Vulani Hayani"
     },
-    "signIn": "No no vhulunga kha akhaunthu? Dzhenani"
+    "signIn": "No no vhulunga kha akhaunthu? Dzhenani",
+    "stepper": {
+      "label": "Zwiṱepe zwa u dzudzanya",
+      "s1": "Nga ha",
+      "s2": "Khetho",
+      "s3": "Tshelede yaṋu",
+      "s4": "Tsumbanḓila",
+      "done": "zwo fhela",
+      "current": "tshiṱepe tsha zwino"
+    }
   },
   "legalDoc": {
     "version": "Vesheni {{version}}",
@@ -1376,5 +1386,13 @@
       "invalid_code": "Iyo khoudu a yo ngo shuma. I sedzeni, kana ni rumele ntswa.",
       "generic": "Hu na zwi songo tshimbila zwavhuḓi. Sedzani u ṱumana haṋu ni linge hafhu."
     }
+  },
+  "calendar": {
+    "open": "Nangani kha khalenda",
+    "title": "Khalenda",
+    "next": "Ṅwedzi u tevhelaho",
+    "previous": "Ṅwedzi wo fhiraho",
+    "today": "ṋamusi",
+    "selected": "zwo nangwa"
   }
 }

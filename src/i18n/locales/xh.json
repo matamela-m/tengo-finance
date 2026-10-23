@@ -689,7 +689,8 @@
     "importBody": "Layisha ingxelo yebhanki ye-CSV. Ifundwa kwesi sixhobo kwaye ithatha indawo yembali yalo mntu.",
     "movableLabel": "Ingahlawulwa kamva",
     "movableHint": "Phawula intlawulo kuphela ukuba ingahlawulwa emva kwexesha ngeentsuku ezimbalwa ngaphandle kwemali yesohlwayo.",
-    "protectedBill": "Ayisoze icetyiswe ukuba ishenxiswe: ukuhlawula emva kwexesha kunokubiza iifizi, ukhuseleko okanye ityala."
+    "protectedBill": "Ayisoze icetyiswe ukuba ishenxiswe: ukuhlawula emva kwexesha kunokubiza iifizi, ukhuseleko okanye ityala.",
+    "sortBy": "Lungelelanisa ngo-{{column}}"
   },
   "import": {
     "title": "Ngenisa ingxelo",
@@ -1251,7 +1252,16 @@
       "sample": "La ngamanani angumzekelo, hayi awakho. Watshintshe ku-Imali, okanye uwathathele indawo ngengxelo okanye ngeempendulo zakho.",
       "open": "Vula Ekhaya"
     },
-    "signIn": "Sele ugcine kwi-akhawunti? Ngena"
+    "signIn": "Sele ugcine kwi-akhawunti? Ngena",
+    "stepper": {
+      "label": "Amanyathelo okuseta",
+      "s1": "Malunga",
+      "s2": "Ukhetho",
+      "s3": "Imali yakho",
+      "s4": "Uqikelelo",
+      "done": "igqityiwe",
+      "current": "inyathelo langoku"
+    }
   },
   "legalDoc": {
     "version": "Inguqulelo {{version}}",
@@ -1376,5 +1386,13 @@
       "invalid_code": "Loo khowudi ayisebenzanga. Yijonge, okanye uthumele entsha.",
       "generic": "Kukho into engahambanga kakuhle. Jonga uqhagamshelwano lwakho uze uzame kwakhona."
     }
+  },
+  "calendar": {
+    "open": "Khetha kwikhalenda",
+    "title": "Ikhalenda",
+    "next": "Inyanga ezayo",
+    "previous": "Inyanga edlulileyo",
+    "today": "namhlanje",
+    "selected": "ikhethiwe"
   }
 }

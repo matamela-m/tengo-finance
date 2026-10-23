@@ -689,7 +689,8 @@
     "importBody": "Laai 'n CSV-bankstaat op. Dit word op hierdie toestel gelees en vervang hierdie persoon se geskiedenis.",
     "movableLabel": "Kan later betaal word",
     "movableHint": "Merk 'n rekening net as dit 'n paar dae laat sonder 'n fooi betaal kan word.",
-    "protectedBill": "Word nooit voorgestel om te skuif nie: laat betaling kan fooie, dekking of krediet kos."
+    "protectedBill": "Word nooit voorgestel om te skuif nie: laat betaling kan fooie, dekking of krediet kos.",
+    "sortBy": "Sorteer volgens {{column}}"
   },
   "import": {
     "title": "Voer staat in",
@@ -1251,7 +1252,16 @@
       "sample": "Dit is voorbeeldsyfers, nie joune nie. Verander dit op Geld, of vervang dit met 'n staat of jou eie antwoorde.",
       "open": "Maak Tuis oop"
     },
-    "signIn": "Reeds in 'n rekening gestoor? Meld aan"
+    "signIn": "Reeds in 'n rekening gestoor? Meld aan",
+    "stepper": {
+      "label": "Opstelstappe",
+      "s1": "Oor",
+      "s2": "Keuses",
+      "s3": "Jou geld",
+      "s4": "Vooruitskatting",
+      "done": "klaar",
+      "current": "huidige stap"
+    }
   },
   "legalDoc": {
     "version": "Weergawe {{version}}",
@@ -1376,5 +1386,13 @@
       "invalid_code": "Daardie kode het nie gewerk nie. Gaan dit na, of stuur 'n nuwe een.",
       "generic": "Iets het verkeerd geloop. Gaan jou verbinding na en probeer weer."
     }
+  },
+  "calendar": {
+    "open": "Kies op 'n kalender",
+    "title": "Kalender",
+    "next": "Volgende maand",
+    "previous": "Vorige maand",
+    "today": "vandag",
+    "selected": "gekies"
   }
 }

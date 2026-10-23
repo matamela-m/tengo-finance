@@ -56,17 +56,19 @@ export function Drawer({ open, onClose, title, children, footer }: DrawerProps) 
 
   if (!open) return null;
   return createPortal(
-    <div className="fixed inset-0 z-50 flex items-end justify-center md:items-stretch md:justify-end">
+    <div className="fixed inset-0 z-50 flex items-end justify-center md:items-stretch md:justify-end md:p-2">
       <div className="absolute inset-0 animate-fade bg-scrim backdrop-blur-sm" onClick={onClose} aria-hidden />
       <div
         ref={panel}
         role="dialog"
         aria-modal="true"
         aria-labelledby="drawer-title"
-        className="relative flex max-h-[92dvh] w-full animate-slide-up flex-col rounded-t-3xl border border-line bg-surface md:h-full md:max-h-none md:w-[480px] md:animate-slide-in md:rounded-none md:border-y-0 md:border-r-0"
+        className="relative flex max-h-[92dvh] w-full animate-slide-up flex-col rounded-t-3xl border border-line bg-surface shadow-lift md:h-full md:max-h-none md:w-[480px] md:animate-slide-in md:rounded-2xl"
       >
+        {/* A grab handle on phones, where the drawer is a bottom sheet. Decorative: Close and Escape still close it. */}
+        <span aria-hidden className="mx-auto mt-2.5 h-1 w-10 shrink-0 rounded-full bg-line-strong md:hidden" />
         <div className="flex items-center justify-between gap-4 border-b border-line px-6 py-4">
-          <h2 id="drawer-title" className="font-heading text-h2">
+          <h2 id="drawer-title" className="font-heading text-h3">
             {title}
           </h2>
           <button type="button" onClick={onClose} data-autofocus className="inline-flex h-11 w-11 items-center justify-center rounded-full hover:bg-surface-2" aria-label={t('common.close')}>

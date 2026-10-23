@@ -23,13 +23,13 @@ function SideLink({ item, collapsed }: { item: NavItem; collapsed: boolean }) {
       title={collapsed ? label : undefined}
       className={({ isActive }) =>
         `group flex min-h-[44px] items-center gap-3 rounded-lg px-2.5 text-[15px] transition-colors duration-150 ${
-          isActive ? 'bg-surface-2 font-medium text-ink' : 'text-muted hover:bg-surface-2/60 hover:text-ink'
+          isActive ? 'bg-accent-soft font-medium text-ink' : 'text-muted hover:bg-surface-2 hover:text-ink'
         } ${collapsed ? 'justify-center' : ''}`
       }
     >
       {({ isActive }) => (
         <>
-          <Icon name={item.icon} size={18} className={`shrink-0 ${isActive ? 'text-link' : 'text-subtle group-hover:text-ink'}`} />
+          <Icon name={item.icon} size={18} className={`shrink-0 ${isActive ? 'text-ink' : 'text-subtle group-hover:text-ink'}`} />
           <span className={collapsed ? 'sr-only' : 'truncate'}>{label}</span>
         </>
       )}

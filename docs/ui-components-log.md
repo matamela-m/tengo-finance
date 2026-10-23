@@ -120,3 +120,13 @@ Bundled with esbuild, minified, gzipped, React excluded. Measured 2026-10-24.
 | 1 | Calendar (`components/date/CalendarPopover.tsx`) | Pattern after shadcn/ui Calendar; package react-day-picker by Giampaolo Bellavite and contributors (date-fns, MIT) | ui.shadcn.com/docs/components/calendar, daypicker.dev | MIT (package.json checked) | 2026-10-24 | 20.4 KB, loaded on first open | No | Source read: URLs only in doc strings. Our tokens via classNames; the library stylesheet is not loaded. Month and day names from our Intl formatter |
 
 Built ourselves in Phase 1, with no new dependency: stat (`Stat` and `StatHint` in `components/ui.tsx`), stepper (`components/Stepper.tsx`), transaction table (`components/money/TransactionTable.tsx`), compact empty state (`components/Feedback.tsx`), and the command palette host (`components/CommandPaletteHost.tsx`), which now loads the existing palette on first open.
+
+Phase 2, restyled in place with no new dependency and every existing behaviour kept (focus trap, inert background, Escape to close and focus return are unchanged and still tested):
+
+- Sidebar: the active item uses the accent fill with main-text colour; nav structure and the phone bottom bar are unchanged.
+- Drawer: a floating rounded panel with a shadow on wide screens; a decorative grab handle on the phone bottom sheet; the title is one size smaller.
+- Switch: the off track now has the form-field border (at least 3:1), so its edge is visible on every surface.
+- Segmented control: selected option uses the accent fill with a blue outline (done in the colour pass).
+- Cover gauge: segments are slightly taller, and when the state is unclear they are dashed outlines, so an unknown cover never looks like an empty one. It stays decorative beside the state word and icon.
+- Toast: kept as is (inverted pill, paired with the screen reader announcer).
+- Dialog, dropdown and tabs: Tengo has none outside the drawer, command palette and segmented control, so nothing was added.

@@ -90,7 +90,8 @@
     "home": "ekhaya",
     "nav": {
       "how": "Indlela esebenza ngayo",
-      "privacy": "Ubumfihlo"
+      "privacy": "Ubumfihlo",
+      "faq": "Imibuzo"
     },
     "badge": "Yakhelwe i-hackathon ye-FNB App of the Year",
     "headlineLead": "Imali onokucwangcisa",
@@ -118,7 +119,27 @@
         "safety": "Ukhuseleko nokuba ingabani"
       }
     },
-    "status": "Indawo yedemo. Iinkcukacha eziyintsomi."
+    "status": "Indawo yedemo. Iinkcukacha eziyintsomi.",
+    "faq": {
+      "label": "Imibuzo",
+      "title": "Phambi kokuba uyizame",
+      "bank": {
+        "q": "Ingaba i-Tengo yibhanki?",
+        "a": "Hayi. I-Tengo yi-app yovavanyo eqikelela ukuba imali yakho ihlala ixesha elingakanani. Ayigcini mali, ayibolekisi, ayithengisi mveliso kwaye ayiniki ngcebiso yezemali."
+      },
+      "data": {
+        "q": "Ingaba iinkcukacha zam zikhuselekile?",
+        "a": "Njengondwendwe, iinkcukacha zakho zihlala kule bhrawuza kwisixhobo sakho kwaye akukho nto ithunyelwa ku-Tengo. Nabani na osebenzisa le bhrawuza angazivula, ngoko sebenzisa ukutshixa nge-PIN kwifowuni ekwabelwana ngayo. I-akhawunti yeyokuzikhethela; igcina iinkcukacha zakho ngumboneleli wovimba weenkcukacha okhankanywe kwisaziso sobumfihlo."
+      },
+      "cost": {
+        "q": "Ixabisa malini?",
+        "a": "Akukho nto. I-Tengo isimahla ngexesha lovavanyo, akukho kubhalisa kufunekayo."
+      },
+      "wrong": {
+        "q": "Kuthekani ukuba umhla awulunganga?",
+        "a": "Luqikelelo oluvela kwimbali yakho, ngoko lusenokungalungi. Vula u-Kutheni lo mhla ukuze ubone okufakiweyo, lungisa nayiphi na intengiselwano ku-Imali, okanye usebenzise u-Buza ngesi siphumo ukuze ucele ukujongwa. Kule demo eso sicelo siyalinganiswa kwaye sihlala kwisixhobo sakho."
+      }
+    }
   },
   "picker": {
     "title": "Khetha indlela yokuphonononga",

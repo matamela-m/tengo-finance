@@ -1052,7 +1052,18 @@
   "welcome.stepper.s4": "machine",
   "welcome.stepper.done": "machine",
   "welcome.stepper.current": "machine",
-  "money.sortBy": "machine"
+  "money.sortBy": "machine",
+  "landing.nav.faq": "machine",
+  "landing.faq.label": "machine",
+  "landing.faq.title": "machine",
+  "landing.faq.bank.q": "machine",
+  "landing.faq.bank.a": "machine",
+  "landing.faq.data.q": "machine",
+  "landing.faq.data.a": "machine",
+  "landing.faq.cost.q": "machine",
+  "landing.faq.cost.a": "machine",
+  "landing.faq.wrong.q": "machine",
+  "landing.faq.wrong.a": "machine"
  },
  "zu": {
   "common.skipToContent": "machine",
@@ -2107,7 +2118,18 @@
   "welcome.stepper.s4": "machine",
   "welcome.stepper.done": "machine",
   "welcome.stepper.current": "machine",
-  "money.sortBy": "machine"
+  "money.sortBy": "machine",
+  "landing.nav.faq": "machine",
+  "landing.faq.label": "machine",
+  "landing.faq.title": "machine",
+  "landing.faq.bank.q": "machine",
+  "landing.faq.bank.a": "machine",
+  "landing.faq.data.q": "machine",
+  "landing.faq.data.a": "machine",
+  "landing.faq.cost.q": "machine",
+  "landing.faq.cost.a": "machine",
+  "landing.faq.wrong.q": "machine",
+  "landing.faq.wrong.a": "machine"
  },
  "xh": {
   "common.skipToContent": "machine",
@@ -3162,7 +3184,18 @@
   "welcome.stepper.s4": "machine",
   "welcome.stepper.done": "machine",
   "welcome.stepper.current": "machine",
-  "money.sortBy": "machine"
+  "money.sortBy": "machine",
+  "landing.nav.faq": "machine",
+  "landing.faq.label": "machine",
+  "landing.faq.title": "machine",
+  "landing.faq.bank.q": "machine",
+  "landing.faq.bank.a": "machine",
+  "landing.faq.data.q": "machine",
+  "landing.faq.data.a": "machine",
+  "landing.faq.cost.q": "machine",
+  "landing.faq.cost.a": "machine",
+  "landing.faq.wrong.q": "machine",
+  "landing.faq.wrong.a": "machine"
  },
  "nso": {
   "common.skipToContent": "machine",
@@ -4217,7 +4250,18 @@
   "welcome.stepper.s4": "machine",
   "welcome.stepper.done": "machine",
   "welcome.stepper.current": "machine",
-  "money.sortBy": "machine"
+  "money.sortBy": "machine",
+  "landing.nav.faq": "machine",
+  "landing.faq.label": "machine",
+  "landing.faq.title": "machine",
+  "landing.faq.bank.q": "machine",
+  "landing.faq.bank.a": "machine",
+  "landing.faq.data.q": "machine",
+  "landing.faq.data.a": "machine",
+  "landing.faq.cost.q": "machine",
+  "landing.faq.cost.a": "machine",
+  "landing.faq.wrong.q": "machine",
+  "landing.faq.wrong.a": "machine"
  },
  "st": {
   "common.skipToContent": "machine",
@@ -5272,7 +5316,18 @@
   "welcome.stepper.s4": "machine",
   "welcome.stepper.done": "machine",
   "welcome.stepper.current": "machine",
-  "money.sortBy": "machine"
+  "money.sortBy": "machine",
+  "landing.nav.faq": "machine",
+  "landing.faq.label": "machine",
+  "landing.faq.title": "machine",
+  "landing.faq.bank.q": "machine",
+  "landing.faq.bank.a": "machine",
+  "landing.faq.data.q": "machine",
+  "landing.faq.data.a": "machine",
+  "landing.faq.cost.q": "machine",
+  "landing.faq.cost.a": "machine",
+  "landing.faq.wrong.q": "machine",
+  "landing.faq.wrong.a": "machine"
  },
  "tn": {
   "common.skipToContent": "machine",
@@ -6327,7 +6382,18 @@
   "welcome.stepper.s4": "machine",
   "welcome.stepper.done": "machine",
   "welcome.stepper.current": "machine",
-  "money.sortBy": "machine"
+  "money.sortBy": "machine",
+  "landing.nav.faq": "machine",
+  "landing.faq.label": "machine",
+  "landing.faq.title": "machine",
+  "landing.faq.bank.q": "machine",
+  "landing.faq.bank.a": "machine",
+  "landing.faq.data.q": "machine",
+  "landing.faq.data.a": "machine",
+  "landing.faq.cost.q": "machine",
+  "landing.faq.cost.a": "machine",
+  "landing.faq.wrong.q": "machine",
+  "landing.faq.wrong.a": "machine"
  },
  "ts": {
   "common.skipToContent": "machine",
@@ -7382,7 +7448,18 @@
   "welcome.stepper.s4": "machine",
   "welcome.stepper.done": "machine",
   "welcome.stepper.current": "machine",
-  "money.sortBy": "machine"
+  "money.sortBy": "machine",
+  "landing.nav.faq": "machine",
+  "landing.faq.label": "machine",
+  "landing.faq.title": "machine",
+  "landing.faq.bank.q": "machine",
+  "landing.faq.bank.a": "machine",
+  "landing.faq.data.q": "machine",
+  "landing.faq.data.a": "machine",
+  "landing.faq.cost.q": "machine",
+  "landing.faq.cost.a": "machine",
+  "landing.faq.wrong.q": "machine",
+  "landing.faq.wrong.a": "machine"
  },
  "ss": {
   "common.skipToContent": "machine",
@@ -8437,7 +8514,18 @@
   "welcome.stepper.s4": "machine",
   "welcome.stepper.done": "machine",
   "welcome.stepper.current": "machine",
-  "money.sortBy": "machine"
+  "money.sortBy": "machine",
+  "landing.nav.faq": "machine",
+  "landing.faq.label": "machine",
+  "landing.faq.title": "machine",
+  "landing.faq.bank.q": "machine",
+  "landing.faq.bank.a": "machine",
+  "landing.faq.data.q": "machine",
+  "landing.faq.data.a": "machine",
+  "landing.faq.cost.q": "machine",
+  "landing.faq.cost.a": "machine",
+  "landing.faq.wrong.q": "machine",
+  "landing.faq.wrong.a": "machine"
  },
  "nr": {
   "common.skipToContent": "machine",
@@ -9492,7 +9580,18 @@
   "welcome.stepper.s4": "machine",
   "welcome.stepper.done": "machine",
   "welcome.stepper.current": "machine",
-  "money.sortBy": "machine"
+  "money.sortBy": "machine",
+  "landing.nav.faq": "machine",
+  "landing.faq.label": "machine",
+  "landing.faq.title": "machine",
+  "landing.faq.bank.q": "machine",
+  "landing.faq.bank.a": "machine",
+  "landing.faq.data.q": "machine",
+  "landing.faq.data.a": "machine",
+  "landing.faq.cost.q": "machine",
+  "landing.faq.cost.a": "machine",
+  "landing.faq.wrong.q": "machine",
+  "landing.faq.wrong.a": "machine"
  },
  "ve": {
   "common.skipToContent": "machine",
@@ -10547,6 +10646,17 @@
   "welcome.stepper.s4": "machine",
   "welcome.stepper.done": "machine",
   "welcome.stepper.current": "machine",
-  "money.sortBy": "machine"
+  "money.sortBy": "machine",
+  "landing.nav.faq": "machine",
+  "landing.faq.label": "machine",
+  "landing.faq.title": "machine",
+  "landing.faq.bank.q": "machine",
+  "landing.faq.bank.a": "machine",
+  "landing.faq.data.q": "machine",
+  "landing.faq.data.a": "machine",
+  "landing.faq.cost.q": "machine",
+  "landing.faq.cost.a": "machine",
+  "landing.faq.wrong.q": "machine",
+  "landing.faq.wrong.a": "machine"
  }
 }

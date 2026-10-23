@@ -90,7 +90,8 @@
     "home": "hayani",
     "nav": {
       "how": "Nḓila ine ya shuma ngayo",
-      "privacy": "Tshiphiri"
+      "privacy": "Tshiphiri",
+      "faq": "Mbudziso"
     },
     "badge": "Yo itelwa hackathon ya FNB App of the Year",
     "headlineLead": "Tshelede ine wa nga",
@@ -118,7 +119,27 @@
         "safety": "Tsireledzo na uri ndi ya nnyi"
       }
     },
-    "status": "Fhethu ha demo. Mafhungo a u sikwa."
+    "status": "Fhethu ha demo. Mafhungo a u sikwa.",
+    "faq": {
+      "label": "Mbudziso",
+      "title": "Ni sa athu u i linga",
+      "bank": {
+        "q": "Naa Tengo ndi bannga?",
+        "a": "Hai. Tengo ndi app ya ndingo ine ya anganyela uri tshelede yaṋu i fhedza tshifhinga tshingafhani. A i vhulungi tshelede, a i adzimisi, a i rengisi zwibveledzwa nahone a i ṋei nyeletshedzo ya masheleni."
+      },
+      "data": {
+        "q": "Naa mafhungo anga o tsireledzea?",
+        "a": "Sa muenda, mafhungo aṋu a dzula kha iyi burausa kha tshishumiswa tshaṋu nahone a hu na tshine tsha rumelwa kha Tengo. Muṅwe na muṅwe ane a shumisa iyi burausa a nga a vula, ngauralo shumisani u khiya nga PIN kha luṭingo lu kovhekanwaho. Akhaunthu ndi ya u ḓinangela; i vhulunga mafhungo aṋu kha mupfumedzi wa vhuvhulungelo ha mafhungo o bulwaho kha ndivhadzo ya tshiphiri."
+      },
+      "cost": {
+        "q": "I ḓura vhugai?",
+        "a": "A i ḓuri tshithu. Tengo ndi ya mahala nga tshifhinga tsha ndingo, a hu ṱoḓei u ṅwalisa."
+      },
+      "wrong": {
+        "q": "Hu itea mini arali ḓuvha ḽi songo luga?",
+        "a": "Ndi khakhathi i bvaho kha ḓivhazwakale yaṋu, ngauralo i nga khakhea. Vulani Ndi ngani ḓuvha iḽi u vhona zwo dzheniswaho, khakhululani thengiselano iṅwe na iṅwe kha Tshelede, kana ni shumise Vhudzisani nga mvelelo heyi u humbela u sedzwa. Kha ino demo iyo khumbelo ndi u edzisela nahone i dzula kha tshishumiswa tshaṋu."
+      }
+    }
   },
   "picker": {
     "title": "Nangani nḓila ya u ṱolisisa",

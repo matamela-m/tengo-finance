@@ -90,7 +90,8 @@
     "home": "home",
     "nav": {
       "how": "How it works",
-      "privacy": "Privacy"
+      "privacy": "Privacy",
+      "faq": "Questions"
     },
     "badge": "Built for the FNB App of the Year hackathon",
     "headlineLead": "Money you can",
@@ -118,7 +119,27 @@
         "safety": "Safety and who it is for"
       }
     },
-    "status": "Demo environment. Fictional data."
+    "status": "Demo environment. Fictional data.",
+    "faq": {
+      "label": "Questions",
+      "title": "Before you try it",
+      "bank": {
+        "q": "Is Tengo a bank?",
+        "a": "No. Tengo is a pilot app that estimates how long your money lasts. It does not hold money, lend, sell products or give financial advice."
+      },
+      "data": {
+        "q": "Is my data safe?",
+        "a": "As a guest, your data stays in this browser on your device and nothing is sent to Tengo. Anyone who uses this browser can open it, so use the PIN lock on a shared phone. An account is optional; it stores your data with the database provider named in the privacy notice."
+      },
+      "cost": {
+        "q": "What does it cost?",
+        "a": "Nothing. Tengo is free to use during the pilot, with no sign up needed."
+      },
+      "wrong": {
+        "q": "What if the date is wrong?",
+        "a": "It is an estimate from your own history, so it can be wrong. Open Why this date to see what went in, correct any transaction on Money, or use Question this result to ask for a check. In this demo that request is simulated and stays on your device."
+      }
+    }
   },
   "picker": {
     "title": "Choose how to explore",

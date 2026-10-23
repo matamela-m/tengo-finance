@@ -90,7 +90,8 @@
     "home": "ekhaya",
     "nav": {
       "how": "Indlela esebenza ngayo",
-      "privacy": "Ubumfihlo"
+      "privacy": "Ubumfihlo",
+      "faq": "Imibuzo"
     },
     "badge": "Yakhelwe i-hackathon ye-FNB App of the Year",
     "headlineLead": "Imali ongahlela",
@@ -118,7 +119,27 @@
         "safety": "Ukuphepha nokuthi kungelikabani"
       }
     },
-    "status": "Indawo yedemo. Imininingwane eqanjiwe."
+    "status": "Indawo yedemo. Imininingwane eqanjiwe.",
+    "faq": {
+      "label": "Imibuzo",
+      "title": "Ngaphambi kokuthi uyizame",
+      "bank": {
+        "q": "Ingabe i-Tengo yibhange?",
+        "a": "Cha. I-Tengo yi-app yocwaningo lokulinga elinganisela ukuthi imali yakho ihlala isikhathi esingakanani. Ayigcini imali, ayibolekisi, ayithengisi imikhiqizo futhi ayinikezi iseluleko sezezimali."
+      },
+      "data": {
+        "q": "Ingabe imininingwane yami iphephile?",
+        "a": "Njengesivakashi, imininingwane yakho ihlala kulesi siphequluli kudivayisi yakho futhi akukho okuthunyelwa ku-Tengo. Noma ubani osebenzisa lesi siphequluli angayivula, ngakho sebenzisa ukukhiya nge-PIN efonini eyabiwe. I-akhawunti ingeyokuzikhethela; igcina imininingwane yakho kumhlinzeki wesizindalwazi obalwe esazisweni sobumfihlo."
+      },
+      "cost": {
+        "q": "Kubiza malini?",
+        "a": "Lutho. I-Tengo imahhala ngesikhathi socwaningo lokulinga, akudingeki ukubhalisa."
+      },
+      "wrong": {
+        "q": "Kuthiwani uma usuku lungalungile?",
+        "a": "Yisilinganiso esivela emlandweni wakho, ngakho singase singalungi. Vula u-Kungani lolu suku ukuze ubone okufakiwe, lungisa noma yikuphi ukuthengiselana ku-Imali, noma usebenzise u-Buza ngalo mphumela ukuze ucele ukuhlolwa. Kule demo leso sicelo siyalingiswa futhi sihlala kudivayisi yakho."
+      }
+    }
   },
   "picker": {
     "title": "Khetha ukuthi uhlole kanjani",

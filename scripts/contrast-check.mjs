@@ -93,6 +93,11 @@ function pairsFor(t) {
   add('On-danger text on destructive button', t['on-danger'], t.danger, 4.5);
   add('Primary pill: background-colour label on text-colour fill', t.bg, t.text, 4.5);
   add('Dimmed headline half (display size) on bg', t['text-muted'], t.bg, 3);
+  // Landing hero glow: the primary blue at 12% over the background, under the headline and pitch.
+  const glow = blend(t.accent, t.bg, 0.12);
+  add('Text on the landing hero glow', t.text, glow, 4.5);
+  add('Muted text on the landing hero glow', t['text-muted'], glow, 4.5);
+  add('Subtle text on the landing hero glow', t['text-subtle'], glow, 4.5);
   for (const s of ['bg', 'surface-1', 'surface-2']) add(`Form field border on ${s}`, t['field-border'], t[s], 3);
   for (const s of SURFACES) add(`Focus ring and handle (accent) on ${s}`, t.accent, t[s], 3);
   add('Selected segment outline (accent) on its track (surface-2)', t.accent, t['surface-2'], 3);

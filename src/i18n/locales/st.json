@@ -90,7 +90,8 @@
     "home": "lehae",
     "nav": {
       "how": "Kamoo e sebetsang",
-      "privacy": "Lekunutu"
+      "privacy": "Lekunutu",
+      "faq": "Dipotso"
     },
     "badge": "E ahetswe hackathon ya FNB App of the Year",
     "headlineLead": "Tjhelete eo o ka",
@@ -118,7 +119,27 @@
         "safety": "Polokeho le hore ke ya mang"
       }
     },
-    "status": "Tikoloho ya demo. Dintlha tsa boiqapelo."
+    "status": "Tikoloho ya demo. Dintlha tsa boiqapelo.",
+    "faq": {
+      "label": "Dipotso",
+      "title": "Pele o e leka",
+      "bank": {
+        "q": "Na Tengo ke banka?",
+        "a": "Tjhe. Tengo ke app ya teko e hakanyang hore tjhelete ya hao e nka nako e kae. Ha e boloke tjhelete, ha e adimise, ha e rekise dihlahiswa mme ha e fane ka keletso ya ditjhelete."
+      },
+      "data": {
+        "q": "Na dintlha tsa ka di sireletsehile?",
+        "a": "Jwalo ka moeti, dintlha tsa hao di dula sebading sena sesebedisweng sa hao mme ha ho letho le romelwang ho Tengo. Mang kapa mang ya sebedisang sebadi sena a ka di bula, kahoo sebedisa ho notlela ka PIN mohaleng o arolelanwang. Akhaonte ke ya boikgethelo; e boloka dintlha tsa hao ho mofani wa polokelo ya dintlha ya boletsweng tsebisong ya lekunutu."
+      },
+      "cost": {
+        "q": "E bitsa bokae?",
+        "a": "Ha e bitse letho. Tengo ke ya mahala nakong ya teko, ha ho hlokahale ngodiso."
+      },
+      "wrong": {
+        "q": "Ho ka etsahala eng haeba letsatsi le fositse?",
+        "a": "Ke kakanyo e tswang nalaneng ya hao, kahoo e ka fosahala. Bula Hobaneng letsatsi lena ho bona tse kentsweng, lokisa transekshene efe kapa efe ho Tjhelete, kapa o sebedise Botsa ka sephetho sena ho kopa tlhahlobo. Demong ena kopo eo ke ketsiso mme e dula sesebedisweng sa hao."
+      }
+    }
   },
   "picker": {
     "title": "Kgetha kamoo o tla hlahloba",

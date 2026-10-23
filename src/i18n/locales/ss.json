@@ -90,7 +90,8 @@
     "home": "ekhaya",
     "nav": {
       "how": "Indlela lesebenta ngayo",
-      "privacy": "Imfihlo"
+      "privacy": "Imfihlo",
+      "faq": "Imibuto"
     },
     "badge": "Yakhelwe i-hackathon ye-FNB App of the Year",
     "headlineLead": "Imali longahlela",
@@ -118,7 +119,27 @@
         "safety": "Kuphepha nekutsi ngelabani"
       }
     },
-    "status": "Indzawo yedemo. Imininingwane yekucamba."
+    "status": "Indzawo yedemo. Imininingwane yekucamba.",
+    "faq": {
+      "label": "Imibuto",
+      "title": "Ngembi kwekutsi uyizame",
+      "bank": {
+        "q": "Ingabe i-Tengo libhange?",
+        "a": "Cha. I-Tengo yi-app yekuhlolwa lelinganisela kutsi imali yakho ihlala sikhatsi lesingakanani. Ayigcini imali, ayibolekisi, ayitsengisi imikhicito futsi ayiniketi seluleko setimali."
+      },
+      "data": {
+        "q": "Ingabe imininingwane yami iphephile?",
+        "a": "Njengesivakashi, imininingwane yakho ihlala kulebhrawuza elithuluzini lakho futsi kute lokutfunyelwa ku-Tengo. Nobe ngubani lowusebentisa lebhrawuza angayivula, ngako sebentisa kukhiya nge-PIN efonini leyabiwako. I-akhawunti ingekutikhetsela; igcina imininingwane yakho kumhlinzeki welulwati lobalwe esatisweni semfihlo."
+      },
+      "cost": {
+        "q": "Kubita malini?",
+        "a": "Lutfo. I-Tengo imahhala ngesikhatsi sekuhlolwa, akudingeki kubhalisa."
+      },
+      "wrong": {
+        "q": "Kutsiwani nangabe lilanga lingakalungi?",
+        "a": "Silinganiso lesivela emlandvweni wakho, ngako singase singalungi. Vula Kungani lelilanga kute ubone lokufakiwe, lungisa nobe nguliphi kutsengiselana ku-Imali, noma usebentise Buta ngalomphumela kute ucele kuhlolwa. Kulendemo leso sicelo siyalingiswa futsi sihlala elithuluzini lakho."
+      }
+    }
   },
   "picker": {
     "title": "Khetsa indlela yekuhlola",

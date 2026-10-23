@@ -130,3 +130,14 @@ Phase 2, restyled in place with no new dependency and every existing behaviour k
 - Cover gauge: segments are slightly taller, and when the state is unclear they are dashed outlines, so an unknown cover never looks like an empty one. It stays decorative beside the state word and icon.
 - Toast: kept as is (inverted pill, paired with the screen reader announcer).
 - Dialog, dropdown and tabs: Tengo has none outside the drawer, command palette and segmented control, so nothing was added.
+
+Phase 3, landing page, all built in CSS and native HTML with no new dependency and nothing copied:
+
+- Hero: the pill badge with a status dot, the dimmed second line and the pill buttons were already ours. Each headline line now rises in once (CSS keyframes, about 0.5 s, none under reduced motion).
+- Glow: a radial gradient behind the hero and the closing card, built from the accent token at low opacity. The contrast check now tests text, muted and subtle text on the glow in both themes.
+- Window frame: the existing frame around the real Home preview with Thabo's seeded data, unchanged.
+- Feature cards: the three steps are now cards in a three-column grid on wide screens, with icon tiles.
+- Counters: `CountWhenSeen` counts up once when the stats come into view (our `useCountUp`, requestAnimationFrame, IntersectionObserver). Under reduced motion it shows the final number at once. Screen readers get the final value only, never the moving one.
+- FAQ: four native `<details>` items (is it a bank, is my data safe, what does it cost, what if the date is wrong), linked from the nav as Questions. Eleven new keys in all 11 locales, drafted as AI drafts like the rest.
+- Footer: kept as is (columns, demo note with status dot).
+- Scroll reveal: `Reveal` now runs 200 ms with an 8 px rise, still off under reduced motion.

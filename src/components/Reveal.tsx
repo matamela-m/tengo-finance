@@ -30,7 +30,7 @@ export function Reveal({ children, className = '', delay = 0 }: { children: Reac
   return (
     <div
       ref={ref}
-      className={`${className} ${state === 'waiting' ? 'translate-y-3 opacity-0' : ''} ${state === 'shown' ? 'transition-[opacity,transform] duration-500 ease-out' : ''}`}
+      className={`${className} ${state === 'waiting' ? 'translate-y-2 opacity-0' : ''} ${state === 'shown' ? 'transition-[opacity,transform] duration-200 ease-out' : ''}`}
       style={state === 'shown' ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}

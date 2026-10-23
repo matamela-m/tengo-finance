@@ -1052,7 +1052,18 @@
   "welcome.stepper.s4": "Forecast",
   "welcome.stepper.done": "done",
   "welcome.stepper.current": "current step",
-  "money.sortBy": "Sort by {{column}}"
+  "money.sortBy": "Sort by {{column}}",
+  "landing.nav.faq": "Questions",
+  "landing.faq.label": "Questions",
+  "landing.faq.title": "Before you try it",
+  "landing.faq.bank.q": "Is Tengo a bank?",
+  "landing.faq.bank.a": "No. Tengo is a pilot app that estimates how long your money lasts. It does not hold money, lend, sell products or give financial advice.",
+  "landing.faq.data.q": "Is my data safe?",
+  "landing.faq.data.a": "As a guest, your data stays in this browser on your device and nothing is sent to Tengo. Anyone who uses this browser can open it, so use the PIN lock on a shared phone. An account is optional; it stores your data with the database provider named in the privacy notice.",
+  "landing.faq.cost.q": "What does it cost?",
+  "landing.faq.cost.a": "Nothing. Tengo is free to use during the pilot, with no sign up needed.",
+  "landing.faq.wrong.q": "What if the date is wrong?",
+  "landing.faq.wrong.a": "It is an estimate from your own history, so it can be wrong. Open Why this date to see what went in, correct any transaction on Money, or use Question this result to ask for a check. In this demo that request is simulated and stays on your device."
  },
  "zu": {
   "common.skipToContent": "Skip to content",
@@ -2107,7 +2118,18 @@
   "welcome.stepper.s4": "Forecast",
   "welcome.stepper.done": "done",
   "welcome.stepper.current": "current step",
-  "money.sortBy": "Sort by {{column}}"
+  "money.sortBy": "Sort by {{column}}",
+  "landing.nav.faq": "Questions",
+  "landing.faq.label": "Questions",
+  "landing.faq.title": "Before you try it",
+  "landing.faq.bank.q": "Is Tengo a bank?",
+  "landing.faq.bank.a": "No. Tengo is a pilot app that estimates how long your money lasts. It does not hold money, lend, sell products or give financial advice.",
+  "landing.faq.data.q": "Is my data safe?",
+  "landing.faq.data.a": "As a guest, your data stays in this browser on your device and nothing is sent to Tengo. Anyone who uses this browser can open it, so use the PIN lock on a shared phone. An account is optional; it stores your data with the database provider named in the privacy notice.",
+  "landing.faq.cost.q": "What does it cost?",
+  "landing.faq.cost.a": "Nothing. Tengo is free to use during the pilot, with no sign up needed.",
+  "landing.faq.wrong.q": "What if the date is wrong?",
+  "landing.faq.wrong.a": "It is an estimate from your own history, so it can be wrong. Open Why this date to see what went in, correct any transaction on Money, or use Question this result to ask for a check. In this demo that request is simulated and stays on your device."
  },
  "xh": {
   "common.skipToContent": "Skip to content",
@@ -3162,7 +3184,18 @@
   "welcome.stepper.s4": "Forecast",
   "welcome.stepper.done": "done",
   "welcome.stepper.current": "current step",
-  "money.sortBy": "Sort by {{column}}"
+  "money.sortBy": "Sort by {{column}}",
+  "landing.nav.faq": "Questions",
+  "landing.faq.label": "Questions",
+  "landing.faq.title": "Before you try it",
+  "landing.faq.bank.q": "Is Tengo a bank?",
+  "landing.faq.bank.a": "No. Tengo is a pilot app that estimates how long your money lasts. It does not hold money, lend, sell products or give financial advice.",
+  "landing.faq.data.q": "Is my data safe?",
+  "landing.faq.data.a": "As a guest, your data stays in this browser on your device and nothing is sent to Tengo. Anyone who uses this browser can open it, so use the PIN lock on a shared phone. An account is optional; it stores your data with the database provider named in the privacy notice.",
+  "landing.faq.cost.q": "What does it cost?",
+  "landing.faq.cost.a": "Nothing. Tengo is free to use during the pilot, with no sign up needed.",
+  "landing.faq.wrong.q": "What if the date is wrong?",
+  "landing.faq.wrong.a": "It is an estimate from your own history, so it can be wrong. Open Why this date to see what went in, correct any transaction on Money, or use Question this result to ask for a check. In this demo that request is simulated and stays on your device."
  },
  "nso": {
   "common.skipToContent": "Skip to content",
@@ -4217,7 +4250,18 @@
   "welcome.stepper.s4": "Forecast",
   "welcome.stepper.done": "done",
   "welcome.stepper.current": "current step",
-  "money.sortBy": "Sort by {{column}}"
+  "money.sortBy": "Sort by {{column}}",
+  "landing.nav.faq": "Questions",
+  "landing.faq.label": "Questions",
+  "landing.faq.title": "Before you try it",
+  "landing.faq.bank.q": "Is Tengo a bank?",
+  "landing.faq.bank.a": "No. Tengo is a pilot app that estimates how long your money lasts. It does not hold money, lend, sell products or give financial advice.",
+  "landing.faq.data.q": "Is my data safe?",
+  "landing.faq.data.a": "As a guest, your data stays in this browser on your device and nothing is sent to Tengo. Anyone who uses this browser can open it, so use the PIN lock on a shared phone. An account is optional; it stores your data with the database provider named in the privacy notice.",
+  "landing.faq.cost.q": "What does it cost?",
+  "landing.faq.cost.a": "Nothing. Tengo is free to use during the pilot, with no sign up needed.",
+  "landing.faq.wrong.q": "What if the date is wrong?",
+  "landing.faq.wrong.a": "It is an estimate from your own history, so it can be wrong. Open Why this date to see what went in, correct any transaction on Money, or use Question this result to ask for a check. In this demo that request is simulated and stays on your device."
  },
  "st": {
   "common.skipToContent": "Skip to content",
@@ -5272,7 +5316,18 @@
   "welcome.stepper.s4": "Forecast",
   "welcome.stepper.done": "done",
   "welcome.stepper.current": "current step",
-  "money.sortBy": "Sort by {{column}}"
+  "money.sortBy": "Sort by {{column}}",
+  "landing.nav.faq": "Questions",
+  "landing.faq.label": "Questions",
+  "landing.faq.title": "Before you try it",
+  "landing.faq.bank.q": "Is Tengo a bank?",
+  "landing.faq.bank.a": "No. Tengo is a pilot app that estimates how long your money lasts. It does not hold money, lend, sell products or give financial advice.",
+  "landing.faq.data.q": "Is my data safe?",
+  "landing.faq.data.a": "As a guest, your data stays in this browser on your device and nothing is sent to Tengo. Anyone who uses this browser can open it, so use the PIN lock on a shared phone. An account is optional; it stores your data with the database provider named in the privacy notice.",
+  "landing.faq.cost.q": "What does it cost?",
+  "landing.faq.cost.a": "Nothing. Tengo is free to use during the pilot, with no sign up needed.",
+  "landing.faq.wrong.q": "What if the date is wrong?",
+  "landing.faq.wrong.a": "It is an estimate from your own history, so it can be wrong. Open Why this date to see what went in, correct any transaction on Money, or use Question this result to ask for a check. In this demo that request is simulated and stays on your device."
  },
  "tn": {
   "common.skipToContent": "Skip to content",
@@ -6327,7 +6382,18 @@
   "welcome.stepper.s4": "Forecast",
   "welcome.stepper.done": "done",
   "welcome.stepper.current": "current step",
-  "money.sortBy": "Sort by {{column}}"
+  "money.sortBy": "Sort by {{column}}",
+  "landing.nav.faq": "Questions",
+  "landing.faq.label": "Questions",
+  "landing.faq.title": "Before you try it",
+  "landing.faq.bank.q": "Is Tengo a bank?",
+  "landing.faq.bank.a": "No. Tengo is a pilot app that estimates how long your money lasts. It does not hold money, lend, sell products or give financial advice.",
+  "landing.faq.data.q": "Is my data safe?",
+  "landing.faq.data.a": "As a guest, your data stays in this browser on your device and nothing is sent to Tengo. Anyone who uses this browser can open it, so use the PIN lock on a shared phone. An account is optional; it stores your data with the database provider named in the privacy notice.",
+  "landing.faq.cost.q": "What does it cost?",
+  "landing.faq.cost.a": "Nothing. Tengo is free to use during the pilot, with no sign up needed.",
+  "landing.faq.wrong.q": "What if the date is wrong?",
+  "landing.faq.wrong.a": "It is an estimate from your own history, so it can be wrong. Open Why this date to see what went in, correct any transaction on Money, or use Question this result to ask for a check. In this demo that request is simulated and stays on your device."
  },
  "ts": {
   "common.skipToContent": "Skip to content",
@@ -7382,7 +7448,18 @@
   "welcome.stepper.s4": "Forecast",
   "welcome.stepper.done": "done",
   "welcome.stepper.current": "current step",
-  "money.sortBy": "Sort by {{column}}"
+  "money.sortBy": "Sort by {{column}}",
+  "landing.nav.faq": "Questions",
+  "landing.faq.label": "Questions",
+  "landing.faq.title": "Before you try it",
+  "landing.faq.bank.q": "Is Tengo a bank?",
+  "landing.faq.bank.a": "No. Tengo is a pilot app that estimates how long your money lasts. It does not hold money, lend, sell products or give financial advice.",
+  "landing.faq.data.q": "Is my data safe?",
+  "landing.faq.data.a": "As a guest, your data stays in this browser on your device and nothing is sent to Tengo. Anyone who uses this browser can open it, so use the PIN lock on a shared phone. An account is optional; it stores your data with the database provider named in the privacy notice.",
+  "landing.faq.cost.q": "What does it cost?",
+  "landing.faq.cost.a": "Nothing. Tengo is free to use during the pilot, with no sign up needed.",
+  "landing.faq.wrong.q": "What if the date is wrong?",
+  "landing.faq.wrong.a": "It is an estimate from your own history, so it can be wrong. Open Why this date to see what went in, correct any transaction on Money, or use Question this result to ask for a check. In this demo that request is simulated and stays on your device."
  },
  "ss": {
   "common.skipToContent": "Skip to content",
@@ -8437,7 +8514,18 @@
   "welcome.stepper.s4": "Forecast",
   "welcome.stepper.done": "done",
   "welcome.stepper.current": "current step",
-  "money.sortBy": "Sort by {{column}}"
+  "money.sortBy": "Sort by {{column}}",
+  "landing.nav.faq": "Questions",
+  "landing.faq.label": "Questions",
+  "landing.faq.title": "Before you try it",
+  "landing.faq.bank.q": "Is Tengo a bank?",
+  "landing.faq.bank.a": "No. Tengo is a pilot app that estimates how long your money lasts. It does not hold money, lend, sell products or give financial advice.",
+  "landing.faq.data.q": "Is my data safe?",
+  "landing.faq.data.a": "As a guest, your data stays in this browser on your device and nothing is sent to Tengo. Anyone who uses this browser can open it, so use the PIN lock on a shared phone. An account is optional; it stores your data with the database provider named in the privacy notice.",
+  "landing.faq.cost.q": "What does it cost?",
+  "landing.faq.cost.a": "Nothing. Tengo is free to use during the pilot, with no sign up needed.",
+  "landing.faq.wrong.q": "What if the date is wrong?",
+  "landing.faq.wrong.a": "It is an estimate from your own history, so it can be wrong. Open Why this date to see what went in, correct any transaction on Money, or use Question this result to ask for a check. In this demo that request is simulated and stays on your device."
  },
  "nr": {
   "common.skipToContent": "Skip to content",
@@ -9492,7 +9580,18 @@
   "welcome.stepper.s4": "Forecast",
   "welcome.stepper.done": "done",
   "welcome.stepper.current": "current step",
-  "money.sortBy": "Sort by {{column}}"
+  "money.sortBy": "Sort by {{column}}",
+  "landing.nav.faq": "Questions",
+  "landing.faq.label": "Questions",
+  "landing.faq.title": "Before you try it",
+  "landing.faq.bank.q": "Is Tengo a bank?",
+  "landing.faq.bank.a": "No. Tengo is a pilot app that estimates how long your money lasts. It does not hold money, lend, sell products or give financial advice.",
+  "landing.faq.data.q": "Is my data safe?",
+  "landing.faq.data.a": "As a guest, your data stays in this browser on your device and nothing is sent to Tengo. Anyone who uses this browser can open it, so use the PIN lock on a shared phone. An account is optional; it stores your data with the database provider named in the privacy notice.",
+  "landing.faq.cost.q": "What does it cost?",
+  "landing.faq.cost.a": "Nothing. Tengo is free to use during the pilot, with no sign up needed.",
+  "landing.faq.wrong.q": "What if the date is wrong?",
+  "landing.faq.wrong.a": "It is an estimate from your own history, so it can be wrong. Open Why this date to see what went in, correct any transaction on Money, or use Question this result to ask for a check. In this demo that request is simulated and stays on your device."
  },
  "ve": {
   "common.skipToContent": "Skip to content",
@@ -10547,6 +10646,17 @@
   "welcome.stepper.s4": "Forecast",
   "welcome.stepper.done": "done",
   "welcome.stepper.current": "current step",
-  "money.sortBy": "Sort by {{column}}"
+  "money.sortBy": "Sort by {{column}}",
+  "landing.nav.faq": "Questions",
+  "landing.faq.label": "Questions",
+  "landing.faq.title": "Before you try it",
+  "landing.faq.bank.q": "Is Tengo a bank?",
+  "landing.faq.bank.a": "No. Tengo is a pilot app that estimates how long your money lasts. It does not hold money, lend, sell products or give financial advice.",
+  "landing.faq.data.q": "Is my data safe?",
+  "landing.faq.data.a": "As a guest, your data stays in this browser on your device and nothing is sent to Tengo. Anyone who uses this browser can open it, so use the PIN lock on a shared phone. An account is optional; it stores your data with the database provider named in the privacy notice.",
+  "landing.faq.cost.q": "What does it cost?",
+  "landing.faq.cost.a": "Nothing. Tengo is free to use during the pilot, with no sign up needed.",
+  "landing.faq.wrong.q": "What if the date is wrong?",
+  "landing.faq.wrong.a": "It is an estimate from your own history, so it can be wrong. Open Why this date to see what went in, correct any transaction on Money, or use Question this result to ask for a check. In this demo that request is simulated and stays on your device."
  }
 }

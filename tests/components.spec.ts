@@ -73,3 +73,21 @@ test('the transaction table sorts by amount and says so to screen readers', asyn
   expect(first.startsWith('+')).toBe(true);
   expect(firstAsc.startsWith('-')).toBe(true);
 });
+
+test('landing: the FAQ opens by keyboard, stats read their real numbers, and nothing moves under reduced motion', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  const faq = page.locator('#faq');
+  const first = faq.locator('summary').first();
+  await expect(first).toHaveText('Is Tengo a bank?');
+  await first.focus();
+  await page.keyboard.press('Enter');
+  await expect(faq.getByText(/does not hold money, lend, sell products or give financial advice/)).toBeVisible();
+  await expect(page.locator('#how').getByText('90', { exact: true }).first()).toBeAttached();
+  const animated = await page.evaluate(() => getComputedStyle(document.querySelector('.hero-line')!).animationDuration);
+  expect(parseFloat(animated)).toBeLessThan(0.01);
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  expect(overflow).toBeLessThanOrEqual(0);
+  const axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
+  expect(axe.violations.map((v) => v.id)).toEqual([]);
+});

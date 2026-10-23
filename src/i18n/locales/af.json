@@ -90,7 +90,8 @@
     "home": "tuis",
     "nav": {
       "how": "Hoe dit werk",
-      "privacy": "Privaatheid"
+      "privacy": "Privaatheid",
+      "faq": "Vrae"
     },
     "badge": "Gebou vir die FNB App of the Year-hackathon",
     "headlineLead": "Geld waarmee jy",
@@ -118,7 +119,27 @@
         "safety": "Veiligheid en vir wie dit is"
       }
     },
-    "status": "Demo-omgewing. Fiktiewe data."
+    "status": "Demo-omgewing. Fiktiewe data.",
+    "faq": {
+      "label": "Vrae",
+      "title": "Voordat jy dit probeer",
+      "bank": {
+        "q": "Is Tengo 'n bank?",
+        "a": "Nee. Tengo is 'n proefprojek-app wat skat hoe lank jou geld hou. Dit hou nie geld nie, leen nie uit nie, verkoop nie produkte nie en gee nie finansiële advies nie."
+      },
+      "data": {
+        "q": "Is my data veilig?",
+        "a": "As gas bly jou data in hierdie blaaier op jou toestel en niks word na Tengo gestuur nie. Enigiemand wat hierdie blaaier gebruik, kan dit oopmaak, so gebruik die PIN-slot op 'n gedeelde foon. 'n Rekening is opsioneel; dit stoor jou data by die databasisverskaffer wat in die privaatheidskennisgewing genoem word."
+      },
+      "cost": {
+        "q": "Wat kos dit?",
+        "a": "Niks. Tengo is gratis tydens die proefprojek, sonder registrasie."
+      },
+      "wrong": {
+        "q": "Wat as die datum verkeerd is?",
+        "a": "Dit is 'n skatting uit jou eie geskiedenis, so dit kan verkeerd wees. Maak Hoekom hierdie datum oop om te sien wat ingegaan het, stel enige transaksie op Geld reg, of gebruik Bevraagteken hierdie resultaat om vir 'n nagaan te vra. In hierdie demo is daardie versoek gesimuleer en bly dit op jou toestel."
+      }
+    }
   },
   "picker": {
     "title": "Kies hoe om te verken",

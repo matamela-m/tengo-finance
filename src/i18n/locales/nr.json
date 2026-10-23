@@ -90,7 +90,8 @@
     "home": "ekhaya",
     "nav": {
       "how": "Indlela esebenza ngayo",
-      "privacy": "Ifihlo"
+      "privacy": "Ifihlo",
+      "faq": "Imibuzo"
     },
     "badge": "Yakhelwe i-hackathon ye-FNB App of the Year",
     "headlineLead": "Imali ongahlela",
@@ -118,7 +119,27 @@
         "safety": "Ukuphepha nokobana ngekabani"
       }
     },
-    "status": "Indawo yedemo. Ilwazi lokwakhiwa."
+    "status": "Indawo yedemo. Ilwazi lokwakhiwa.",
+    "faq": {
+      "label": "Imibuzo",
+      "title": "Ngaphambi kobana uyilinge",
+      "bank": {
+        "q": "Kghani i-Tengo libhanga?",
+        "a": "Awa. I-Tengo yi-app yokulinga elinganisela bona imali yakho ihlala isikhathi esingangani. Ayibulungi imali, ayibolekisi, ayithengisi imikhiqizo begodu ayinikeli iinyeluleko zeemali."
+      },
+      "data": {
+        "q": "Kghani ilwazi lami liphephile?",
+        "a": "Njengesivakatjhi, ilwazi lakho lihlala ebhrawuzarini le esisetjenzisweni sakho begodu akukho okuthunyelwa ku-Tengo. Nanyana ngubani osebenzisa ibhrawuza le angalivula, ngalokho sebenzisa ukukhiya nge-PIN efowunini eyabelanwako. I-akhawunti ngeyokuzikhethela; ibulunga ilwazi lakho kumhlinzeki wesizindalwazi obalwe esazisweni sefihlo."
+      },
+      "cost": {
+        "q": "Kubiza malini?",
+        "a": "Litho. I-Tengo imahala ngesikhathi sokulinga, akutlhogeki ukutlolisa."
+      },
+      "wrong": {
+        "q": "Kuthiwani nangabe ilanga alikalungi?",
+        "a": "Sisilinganiso esivela emlandweni wakho, ngalokho singaba simbi. Vula Kubayini ilanga leli bona ubone okufakiweko, lungisa nanyana ngiliphi ithengiselwano ku-Imali, nanyana usebenzise Buza ngomphumela lo bona ubawe ukuhlolwa. Kule demo isibawo leso siyalingiswa begodu sihlala esisetjenzisweni sakho."
+      }
+    }
   },
   "picker": {
     "title": "Khetha indlela yokuhlola",

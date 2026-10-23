@@ -90,7 +90,8 @@
     "home": "ekaya",
     "nav": {
       "how": "Ndlela leyi yi tirhaka ha yona",
-      "privacy": "Xihundla"
+      "privacy": "Xihundla",
+      "faq": "Swivutiso"
     },
     "badge": "Yi akeriwe hackathon ya FNB App of the Year",
     "headlineLead": "Mali leyi u nga",
@@ -118,7 +119,27 @@
         "safety": "Vuhlayiseki na leswaku i ya mani"
       }
     },
-    "status": "Ndhawu ya demo. Vuxokoxoko bya ku endliwa."
+    "status": "Ndhawu ya demo. Vuxokoxoko bya ku endliwa.",
+    "faq": {
+      "label": "Swivutiso",
+      "title": "U nga si yi ringeta",
+      "bank": {
+        "q": "Xana Tengo i bangi?",
+        "a": "E-e. Tengo i app ya ndzingeto leyi ringanyetaka leswaku mali ya wena yi teka nkarhi wo tani hi kwihi. A yi hlayisi mali, a yi lombisi, a yi xavisi swiendliwa naswona a yi nyiki xitsundzuxo xa timali."
+      },
+      "data": {
+        "q": "Xana vuxokoxoko bya mina byi sirhelelekile?",
+        "a": "Tanihi muendzi, vuxokoxoko bya wena byi tshama eka bowuzara leyi eka xitirhisiwa xa wena naswona a ku na nchumu lowu rhumeriwaka eka Tengo. Un’wana na un’wana loyi a tirhisaka bowuzara leyi a nga byi pfula, hikwalaho tirhisa ku lotlela hi PIN eka riqingho leri avelaniwaka. Akhawunti i ya ku tihlawulela; yi hlayisa vuxokoxoko bya wena eka muphakeri wa vuhlayiselo bya vuxokoxoko loyi a boxiweke eka xitiviso xa xihundla."
+      },
+      "cost": {
+        "q": "Yi durha njhani?",
+        "a": "A yi durhi nchumu. Tengo i ya mahala hi nkarhi wa ndzingeto, a ku laveki ku tsarisa."
+      },
+      "wrong": {
+        "q": "Ku humelela yini loko siku ri hoxile?",
+        "a": "I xiringanyeto lexi humaka eka matimu ya wena, hikwalaho xi nga hoxeka. Pfula Hikokwalaho ka siku leri ku vona leswi nghenisiweke, lulamisa ntirho wun’wana na wun’wana wa mali eka Mali, kumbe u tirhisa Vutisa hi mbuyelo lowu ku kombela nkambelo. Eka demo leyi xikombelo xexo i ku ringeta naswona xi tshama eka xitirhisiwa xa wena."
+      }
+    }
   },
   "picker": {
     "title": "Hlawula ndlela yo lavisisa",

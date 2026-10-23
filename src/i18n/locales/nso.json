@@ -90,7 +90,8 @@
     "home": "gae",
     "nav": {
       "how": "Ka moo e šomago",
-      "privacy": "Sephiri"
+      "privacy": "Sephiri",
+      "faq": "Dipotšišo"
     },
     "badge": "E agetšwe hackathon ya FNB App of the Year",
     "headlineLead": "Tšhelete yeo o ka",
@@ -118,7 +119,27 @@
         "safety": "Polokego le gore ke ya mang"
       }
     },
-    "status": "Tikologo ya demo. Tshedimošo ya maitirelo."
+    "status": "Tikologo ya demo. Tshedimošo ya maitirelo.",
+    "faq": {
+      "label": "Dipotšišo",
+      "title": "Pele o e leka",
+      "bank": {
+        "q": "Na Tengo ke panka?",
+        "a": "Aowa. Tengo ke app ya teko yeo e akanyetšago gore tšhelete ya gago e tšea nako ye kae. Ga e boloke tšhelete, ga e adimiše, ga e rekiše ditšweletšwa gomme ga e fe keletšo ya ditšhelete."
+      },
+      "data": {
+        "q": "Na tshedimošo ya ka e bolokegile?",
+        "a": "Bjalo ka moeng, tshedimošo ya gago e dula sefetlekong se sedirišweng sa gago gomme ga go selo seo se romelwago go Tengo. Mang le mang yo a šomišago sefetleki se a ka e bula, ka fao šomiša go notlela ka PIN mogaleng wo o abelanwago. Akhaonte ke ya boikgethelo; e boloka tshedimošo ya gago go mofani wa polokelo ya tshedimošo yo a bolelwago tsebišong ya sephiri."
+      },
+      "cost": {
+        "q": "E bitša bokae?",
+        "a": "Ga e bitše selo. Tengo ke ya mahala nakong ya teko, ga go nyakege ngwadišo."
+      },
+      "wrong": {
+        "q": "Go ka direga eng ge letšatši le fošagetše?",
+        "a": "Ke kakanyo go tšwa historing ya gago, ka fao e ka fošagala. Bula Ke ka lebaka la eng letšatši le go bona tše di tsentšwego, lokiša tirelano efe goba efe go Tšhelete, goba o šomiše Botšiša ka sephetho se go kgopela tekolo. Ka gare ga demo ye kgopelo yeo ke ekišo gomme e dula sedirišweng sa gago."
+      }
+    }
   },
   "picker": {
     "title": "Kgetha ka moo o tlago go hlahloba",

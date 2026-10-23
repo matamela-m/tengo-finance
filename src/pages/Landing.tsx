@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Brand } from '../components/Brand';
@@ -21,6 +21,7 @@ import { LANGUAGES } from '../i18n/languages';
 import { formatZAR } from '../lib/format';
 import { useDates } from '../lib/useLang';
 import { usePageTitle } from '../lib/usePageTitle';
+import { useCountUp } from '../lib/useCountUp';
 
 function MiniChart({ forecast }: { forecast: Forecast }) {
   const pts = forecast.timeline;
@@ -108,6 +109,36 @@ function ProductPreview() {
   );
 }
 
+/**
+ * A stat that counts up once when it scrolls into view. The final number is read by screen readers from the
+ * start, and it shows at once under reduced motion or when it is already on screen.
+ */
+function CountWhenSeen({ value }: { value: number }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [target, setTarget] = useState(value);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    if (el.getBoundingClientRect().top < window.innerHeight) return;
+    setTarget(0);
+    const io = new IntersectionObserver(([entry]) => {
+      if (entry?.isIntersecting) {
+        setTarget(value);
+        io.disconnect();
+      }
+    });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [value]);
+  const shown = useCountUp(target, 700);
+  return (
+    <span ref={ref}>
+      <span aria-hidden>{shown}</span>
+      <span className="sr-only">{value}</span>
+    </span>
+  );
+}
+
 const STEPS: { key: string; icon: IconName }[] = [
   { key: 'history', icon: 'upload' },
   { key: 'last', icon: 'calendar' },
@@ -139,7 +170,7 @@ export default function Landing() {
             <Brand size={22} />
           </Link>
           <div className="hidden items-center gap-1 md:flex">
-            {(['how', 'privacy'] as const).map((k) => (
+            {(['how', 'faq', 'privacy'] as const).map((k) => (
               <a key={k} href={`#${k}`} className="inline-flex min-h-[44px] items-center rounded-full px-3 text-sm text-muted transition-colors hover:text-ink">
                 {t(`landing.nav.${k}`)}
               </a>
@@ -156,12 +187,18 @@ export default function Landing() {
 
       <main id="main">
         <section className="relative mx-auto w-full max-w-[1280px] px-5 pb-16 pt-14 sm:px-8 md:pt-20 lg:pb-24">
+          {/* Soft glow behind the hero, CSS only and clipped to its own box so the page never widens. Text over it
+              keeps its contrast (checked in scripts/contrast-check.mjs). */}
+          <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] overflow-hidden">
+            <div className="absolute left-1/2 top-[-160px] h-[520px] w-[min(1100px,140%)] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(var(--accent)/0.12),transparent)]" />
+          </div>
           <div className="mx-auto max-w-4xl text-center">
             <Badge dot tone="accent">
               {t('landing.badge')}
             </Badge>
+            {/* The one text effect on the page: each half fades up once on load. Off under reduced motion. */}
             <h1 className="mt-6 font-heading text-display text-ink">
-              {t('landing.headlineLead')} <span className="text-muted sm:block">{t('landing.headlineDim')}</span>
+              <span className="hero-line inline-block">{t('landing.headlineLead')}</span> <span className="hero-line hero-line-2 inline-block text-muted sm:block">{t('landing.headlineDim')}</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted sm:text-xl">{t('landing.pitch')}</p>
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -190,11 +227,11 @@ export default function Landing() {
                 {t('landing.howTitle')}
               </h2>
             </Reveal>
-            <ol className="mt-10 grid gap-10 md:grid-cols-3 md:gap-8">
+            <ol className="mt-10 grid gap-4 md:grid-cols-3 md:gap-5">
               {STEPS.map((s, i) => (
                 <li key={s.key}>
                   <Reveal delay={i * 60} className="h-full">
-                    <div className="h-full">
+                    <div className="card h-full p-6">
                       <div className="flex items-center justify-between">
                         <IconTile name={s.icon} tone="accent" />
                         <span aria-hidden className="num font-heading text-sm font-semibold text-subtle">
@@ -212,12 +249,34 @@ export default function Landing() {
               <ul className="mt-12 grid grid-cols-2 border-t border-line lg:grid-cols-4">
                 {stats.map((st, i) => (
                   <li key={st.label} className={`py-6 pr-4 ${i % 2 === 1 ? 'border-l border-line pl-6' : ''} ${i >= 2 ? 'border-t border-line lg:border-t-0' : ''} ${i === 2 ? 'lg:border-l lg:pl-6' : ''}`}>
-                    <p className="num font-heading text-[40px] font-bold leading-none tracking-[-0.03em] text-ink">{st.value}</p>
+                    <p className="num font-heading text-[40px] font-bold leading-none tracking-[-0.03em] text-ink">
+                      <CountWhenSeen value={Number(st.value)} />
+                    </p>
                     <p className="mt-2 text-sm text-muted">{st.label}</p>
                   </li>
                 ))}
               </ul>
             </Reveal>
+          </div>
+        </section>
+
+        <section id="faq" aria-labelledby="faq-title" className="mx-auto w-full max-w-[1280px] scroll-mt-16 px-5 pt-16 sm:px-8 lg:pt-24">
+          <Reveal>
+            <SectionLabel as="p">{t('landing.faq.label')}</SectionLabel>
+            <h2 id="faq-title" className="mt-3 font-heading text-h1 text-ink">
+              {t('landing.faq.title')}
+            </h2>
+          </Reveal>
+          <div className="mt-8 divide-y divide-line border-y border-line">
+            {(['bank', 'data', 'cost', 'wrong'] as const).map((k) => (
+              <details key={k} className="faq group">
+                <summary className="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-heading text-[17px] font-semibold text-ink">
+                  {t(`landing.faq.${k}.q`)}
+                  <Icon name="plus" size={18} className="shrink-0 text-muted transition-transform duration-200 group-open:rotate-45" />
+                </summary>
+                <p className="max-w-3xl pb-5 text-[15px] text-muted">{t(`landing.faq.${k}.a`)}</p>
+              </details>
+            ))}
           </div>
         </section>
 

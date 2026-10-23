@@ -90,7 +90,8 @@
     "home": "gae",
     "nav": {
       "how": "Ka fa e dirang ka teng",
-      "privacy": "Sephiri"
+      "privacy": "Sephiri",
+      "faq": "Dipotso"
     },
     "badge": "E agetswe hackathon ya FNB App of the Year",
     "headlineLead": "Madi a o ka",
@@ -118,7 +119,27 @@
         "safety": "Pabalesego le gore ke ya ga mang"
       }
     },
-    "status": "Tikologo ya demo. Tshedimosetso ya boitlhamedi."
+    "status": "Tikologo ya demo. Tshedimosetso ya boitlhamedi.",
+    "faq": {
+      "label": "Dipotso",
+      "title": "Pele o e leka",
+      "bank": {
+        "q": "A Tengo ke banka?",
+        "a": "Nnyaa. Tengo ke app ya teko e e fopholetsang gore madi a gago a nna sebaka se se kae. Ga e boloke madi, ga e adimise, ga e rekise ditlhagiswa mme ga e neye kgakololo ya madi."
+      },
+      "data": {
+        "q": "A tshedimosetso ya me e babalesegile?",
+        "a": "Jaaka moeng, tshedimosetso ya gago e nna mo sebatling se mo sedirisiweng sa gago mme ga go sepe se se romelwang kwa Tengo. Mongwe le mongwe yo o dirisang sebatli se a ka e bula, ka jalo dirisa go notlela ka PIN mo mogaleng o o abelanwang. Akhaonte ke ya boithaopo; e boloka tshedimosetso ya gago kwa moabing wa polokelo ya tshedimosetso yo o umakilweng mo kitsisong ya sephiri."
+      },
+      "cost": {
+        "q": "E tura bokae?",
+        "a": "Ga e ture sepe. Tengo ke ya mahala mo nakong ya teko, ga go tlhokege kwadiso."
+      },
+      "wrong": {
+        "q": "Go diragala eng fa letsatsi le le phoso?",
+        "a": "Ke fopholetso e e tswang mo hisitoring ya gago, ka jalo e ka nna phoso. Bula Goreng letsatsi le go bona tse di tsentsweng, baakanya tiragalo nngwe le nngwe ya madi mo Madi, kgotsa o dirise Botsa ka ga maduo a go kopa tlhatlhobo. Mo demong e kopo eo ke ketsiso mme e nna mo sedirisiweng sa gago."
+      }
+    }
   },
   "picker": {
     "title": "Tlhopha ka fa o tla tlhotlhomisang ka teng",

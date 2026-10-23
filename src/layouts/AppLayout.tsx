@@ -29,7 +29,7 @@ function SideLink({ item, collapsed }: { item: NavItem; collapsed: boolean }) {
     >
       {({ isActive }) => (
         <>
-          <Icon name={item.icon} size={18} className={`shrink-0 ${isActive ? 'text-accent' : 'text-subtle group-hover:text-ink'}`} />
+          <Icon name={item.icon} size={18} className={`shrink-0 ${isActive ? 'text-link' : 'text-subtle group-hover:text-ink'}`} />
           <span className={collapsed ? 'sr-only' : 'truncate'}>{label}</span>
         </>
       )}
@@ -157,7 +157,7 @@ export function AppLayout({ children }: { children?: ReactNode }) {
             <NavLink
               to="/app/privacy"
               className={({ isActive }) =>
-                `inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors hover:bg-surface-2 ${isActive ? 'text-accent' : 'text-muted'}`
+                `inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors hover:bg-surface-2 ${isActive ? 'text-link' : 'text-muted'}`
               }
               aria-label={t('nav.privacy')}
             >
@@ -193,7 +193,7 @@ export function AppLayout({ children }: { children?: ReactNode }) {
                   {({ isActive }) => (
                     <>
                       <span aria-hidden className={`absolute top-0 h-0.5 w-8 rounded-full transition-colors ${isActive ? 'bg-accent' : 'bg-transparent'}`} />
-                      <Icon name={item.icon} size={20} className={isActive ? 'text-accent' : ''} />
+                      <Icon name={item.icon} size={20} className={isActive ? 'text-link' : ''} />
                       <span className="max-w-full truncate">{t(`nav.${item.key}`)}</span>
                     </>
                   )}

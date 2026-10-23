@@ -60,7 +60,7 @@ export function OwnProfileCard() {
           ] as const
         ).map(([to, icon, key]) => (
           <li key={to}>
-            <Link to={to} className="flex min-h-[48px] items-center gap-3 text-[15px] hover:text-accent">
+            <Link to={to} className="flex min-h-[48px] items-center gap-3 text-[15px] hover:text-link">
               <Icon name={icon} size={18} className="text-muted" />
               <span className="flex-1">{t(key)}</span>
               <Icon name="chevronRight" size={16} className="text-muted" />

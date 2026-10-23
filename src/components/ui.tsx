@@ -40,7 +40,7 @@ export function Card({ children, className = '', brackets, as: Tag = 'section', 
 export function IconTile({ name, tone = 'neutral', size = 36 }: { name: IconName; tone?: 'neutral' | 'accent' | 'enough' | 'tight' | 'short'; size?: number }) {
   const tones = {
     neutral: 'border-line bg-surface-2 text-ink',
-    accent: 'border-accent/25 bg-accent-soft text-accent',
+    accent: 'border-accent/25 bg-accent-soft text-ink',
     enough: 'border-enough/25 bg-enough-soft text-enough',
     tight: 'border-tight/25 bg-tight-soft text-tight',
     short: 'border-short/25 bg-short-soft text-short',

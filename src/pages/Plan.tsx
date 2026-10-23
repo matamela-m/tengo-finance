@@ -143,7 +143,7 @@ function WhatIf() {
                     aria-describedby={item.amount !== '' && !(parseAmount(item.amount)! > 0) ? `amt-err-${item.id}` : undefined}
                   />
                   {item.amount !== '' && !(parseAmount(item.amount)! > 0) && (
-                    <p id={`amt-err-${item.id}`} className="mt-1 text-xs font-medium text-short">
+                    <p id={`amt-err-${item.id}`} className="mt-1 text-xs font-medium text-danger-text">
                       {t('plan.amountError')}
                     </p>
                   )}
@@ -258,7 +258,7 @@ function LoanCheck() {
           />
         </div>
         {!valid && amount !== '' && (
-          <p id="loan-err" className="mt-1 text-xs font-medium text-short">
+          <p id="loan-err" className="mt-1 text-xs font-medium text-danger-text">
             {t('plan.amountError')}
           </p>
         )}
@@ -270,7 +270,7 @@ function LoanCheck() {
           ))}
           {/* No one-tap amount in Tight: a heavy week already runs out there, so the person types any amount. */}
           {result.roomToLend > 0 && result.before.status === 'enough' && (
-            <button type="button" className="num min-h-[44px] rounded-full border border-accent/40 bg-accent-soft px-4 text-sm font-medium text-accent" onClick={() => setAmount(String(result.roomToLend))}>
+            <button type="button" className="num min-h-[44px] rounded-full border border-accent/40 bg-accent-soft px-4 text-sm font-medium text-ink" onClick={() => setAmount(String(result.roomToLend))}>
               {t('plan.useRoom', { amount: formatZAR(result.roomToLend) })}
             </button>
           )}

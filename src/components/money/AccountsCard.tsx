@@ -38,7 +38,7 @@ export function AccountsCard() {
           {t('accounts.title')}
         </h2>
         {!editing && (
-          <button type="button" className="btn-ghost -mr-3 min-h-[44px] px-3 text-sm text-accent" onClick={start}>
+          <button type="button" className="btn-ghost -mr-3 min-h-[44px] px-3 text-sm text-link" onClick={start}>
             <Icon name="edit" size={16} />
             {t('accounts.edit')}
           </button>

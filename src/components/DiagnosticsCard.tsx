@@ -43,7 +43,7 @@ export function DiagnosticsCard() {
     <section className="card p-5 sm:p-6" aria-labelledby="diag-title">
       <div className="flex items-center justify-between gap-3">
         <h2 id="diag-title" className="flex items-center gap-2 font-heading text-h3 text-ink">
-          <Icon name="activity" size={18} className="text-accent" />
+          <Icon name="activity" size={18} className="text-link" />
           {t('diag.title')}
         </h2>
         <button type="button" className="btn-ghost -mr-3 min-h-[44px] px-3 text-sm text-muted" aria-expanded={open} aria-controls="diag-body" onClick={() => setOpen((v) => !v)}>

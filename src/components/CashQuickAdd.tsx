@@ -95,7 +95,7 @@ export function CashQuickAdd({ className = '' }: { className?: string }) {
               />
             </div>
             {amount !== '' && !valid && (
-              <p id="cash-err" role="alert" className="mt-1 text-xs font-medium text-short">
+              <p id="cash-err" role="alert" className="mt-1 text-xs font-medium text-danger-text">
                 {t('plan.amountError')}
               </p>
             )}

@@ -141,7 +141,7 @@ export function HomeNotices({ notices }: { notices: NoticeItem[] }) {
             return (
               <Notice key="oneOffs" icon="info">
                 <p>{t('notice.oneOffs.body', { count: n.count })}</p>
-                <Link to="/app/money" className="mt-1 inline-flex min-h-[44px] items-center font-medium text-accent underline-offset-4 hover:underline">
+                <Link to="/app/money" className="mt-1 inline-flex min-h-[44px] items-center font-medium text-link underline-offset-4 hover:underline">
                   {t('notice.oneOffs.action')}
                 </Link>
               </Notice>

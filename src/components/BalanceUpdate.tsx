@@ -50,7 +50,7 @@ export function BalanceUpdate({ initial, onDone, compact = false }: { initial?: 
         {t('balance.save')}
       </button>
       {invalid && (
-        <p id={`${id}-err`} className="w-full text-xs font-medium text-short">
+        <p id={`${id}-err`} className="w-full text-xs font-medium text-danger-text">
           {t('balance.error')}
         </p>
       )}

@@ -185,7 +185,7 @@ export default function Welcome() {
             <p className="mt-4 text-sm text-muted">{t('consent.changeLater')}</p>
             <p className="mt-2 text-sm text-muted">
               {t('welcome.s2.notice')}{' '}
-              <Link to="/privacy-notice" className="font-medium text-accent underline-offset-4 hover:underline">
+              <Link to="/privacy-notice" className="font-medium text-link underline-offset-4 hover:underline">
                 {t('welcome.s2.noticeLink')}
               </Link>
             </p>

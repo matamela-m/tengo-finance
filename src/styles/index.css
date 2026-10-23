@@ -5,55 +5,63 @@
 /*
  * Design tokens. Every colour is defined once here, for dark and light.
  * Channels (--text: r g b) feed Tailwind with alpha support; --color-* are full colours for
- * inline styles and SVG. Change the accent in one place: --accent.
+ * inline styles and SVG. Keep scripts/contrast-check.mjs in step with these values.
  */
 @layer base {
   :root,
   [data-theme='dark'] {
-    --bg: 11 11 12;
-    --surface-1: 18 18 20;
-    --surface-2: 24 24 27;
-    --surface-3: 31 31 35;
-    --border: 38 38 43;
-    --border-strong: 52 52 58;
-    /* Form field borders: at least 3:1 against the surfaces they sit on (WCAG 1.4.11). */
-    --field-border: 110 110 120;
-    --text: 244 244 245;
-    --text-muted: 161 161 170;
-    --text-subtle: 139 139 148;
-    --accent: 114 145 255;
-    --on-accent: 11 11 12;
+    /* Primary blue fills buttons and focus; on it, dark text (white is 3.7:1). Links use --link, the lighter blue.
+       --accent-fill (navy) is only ever a background: never text. Muted text clears 4.5:1 on every surface, the navy
+       fill included. Short is coral-orange, kept apart in hue from Tight and from the destructive red. */
+    --bg: 23 23 23;
+    --surface-1: 38 38 38;
+    --surface-2: 31 31 31;
+    --surface-3: 46 46 46;
+    --border: 64 64 64;
+    --border-strong: 82 82 82;
+    --field-border: 115 115 115;
+    --text: 250 250 250;
+    --text-muted: 176 176 176;
+    --text-subtle: 173 173 173;
+    --accent: 59 130 246;
+    --on-accent: 23 23 23;
+    --link: 96 165 250;
+    --accent-fill: 30 58 138;
+    --danger: 239 68 68;
+    --on-danger: 23 23 23;
+    --danger-text: 248 120 120;
     --enough: 52 211 153;
     --tight: 251 191 36;
-    --short: 249 115 98;
-    --accent-soft-a: 0.14;
-    --state-soft-a: 0.13;
+    --short: 255 138 91;
+    --state-soft-a: 0.14;
     --scrim: 0 0 0;
     --scrim-a: 0.6;
-    color-scheme: dark;
   }
 
   [data-theme='light'] {
-    --bg: 251 251 250;
+    --bg: 250 250 250;
     --surface-1: 255 255 255;
-    --surface-2: 244 243 241;
-    --surface-3: 236 234 230;
-    --border: 231 229 225;
-    --border-strong: 214 211 205;
-    --field-border: 134 131 123;
-    --text: 28 27 25;
-    --text-muted: 102 99 93;
-    --text-subtle: 108 105 99;
-    --accent: 55 85 204;
+    --surface-2: 245 245 245;
+    --surface-3: 235 235 235;
+    --border: 229 229 229;
+    --border-strong: 212 212 212;
+    --field-border: 133 133 133;
+    --text: 23 23 23;
+    --text-muted: 82 82 82;
+    --text-subtle: 92 92 92;
+    --accent: 37 99 235;
     --on-accent: 255 255 255;
-    --enough: 4 110 80;
-    --tight: 133 87 0;
-    --short: 180 35 24;
-    --accent-soft-a: 0.1;
+    --link: 29 78 216;
+    --accent-fill: 219 234 254;
+    --danger: 220 38 38;
+    --on-danger: 255 255 255;
+    --danger-text: 185 28 28;
+    --enough: 6 95 70;
+    --tight: 115 84 0;
+    --short: 169 58 11;
     --state-soft-a: 0.1;
-    --scrim: 28 27 25;
+    --scrim: 23 23 23;
     --scrim-a: 0.35;
-    color-scheme: light;
   }
 
   :root {
@@ -68,8 +76,11 @@
     --color-text-muted: rgb(var(--text-muted));
     --color-text-subtle: rgb(var(--text-subtle));
     --color-accent: rgb(var(--accent));
-    --color-accent-soft: rgb(var(--accent) / var(--accent-soft-a));
+    --color-accent-soft: rgb(var(--accent-fill));
     --color-on-accent: rgb(var(--on-accent));
+    --color-link: rgb(var(--link));
+    --color-danger: rgb(var(--danger));
+    --color-danger-text: rgb(var(--danger-text));
     --color-enough: rgb(var(--enough));
     --color-enough-soft: rgb(var(--enough) / var(--state-soft-a));
     --color-tight: rgb(var(--tight));
@@ -173,7 +184,7 @@
   }
 
   .btn-danger {
-    @apply btn bg-short text-on-accent hover:opacity-90;
+    @apply btn bg-danger text-on-danger hover:opacity-90;
   }
 
   .field {

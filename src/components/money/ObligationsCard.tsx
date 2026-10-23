@@ -58,7 +58,7 @@ export function ObligationsCard() {
   return (
     <section className="card p-5 sm:p-6" aria-labelledby="ob-title">
       <div className="flex items-center gap-2">
-        <Icon name="users" size={18} className="text-accent" />
+        <Icon name="users" size={18} className="text-link" />
         <h2 id="ob-title" className="font-heading text-h3 text-ink">
           {t('obligations.title')}
         </h2>

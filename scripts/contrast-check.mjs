@@ -1,41 +1,49 @@
 // WCAG contrast check for every text and UI pair the interface uses, in both themes.
-// Translucent fills (soft state and accent tints) are blended over the surface they sit on first.
+// Translucent fills (soft state tints and the destructive notice) are blended over the surface they sit on first.
 // Run: npm run contrast (also runs as part of npm run test). Add --md for a README table.
 // Keep the values in step with src/styles/index.css.
 
 const THEMES = {
   dark: {
-    bg: '#0B0B0C',
-    'surface-1': '#121214',
-    'surface-2': '#18181B',
-    'surface-3': '#1F1F23',
-    text: '#F4F4F5',
-    'text-muted': '#A1A1AA',
-    'text-subtle': '#8B8B94',
-    accent: '#7291FF',
-    'on-accent': '#0B0B0C',
+    bg: '#171717',
+    'surface-1': '#262626',
+    'surface-2': '#1F1F1F',
+    'surface-3': '#2E2E2E',
+    text: '#FAFAFA',
+    'text-muted': '#B0B0B0',
+    'text-subtle': '#ADADAD',
+    accent: '#3B82F6',
+    'on-accent': '#171717',
+    link: '#60A5FA',
+    'accent-fill': '#1E3A8A',
+    danger: '#EF4444',
+    'on-danger': '#171717',
+    'danger-text': '#F87878',
     enough: '#34D399',
     tight: '#FBBF24',
-    short: '#F97362',
-    'field-border': '#6E6E78',
-    accentSoftA: 0.14,
-    stateSoftA: 0.13,
+    short: '#FF8A5B',
+    'field-border': '#737373',
+    stateSoftA: 0.14,
   },
   light: {
-    bg: '#FBFBFA',
+    bg: '#FAFAFA',
     'surface-1': '#FFFFFF',
-    'surface-2': '#F4F3F1',
-    'surface-3': '#ECEAE6',
-    text: '#1C1B19',
-    'text-muted': '#66635D',
-    'text-subtle': '#6C6963',
-    accent: '#3755CC',
+    'surface-2': '#F5F5F5',
+    'surface-3': '#EBEBEB',
+    text: '#171717',
+    'text-muted': '#525252',
+    'text-subtle': '#5C5C5C',
+    accent: '#2563EB',
     'on-accent': '#FFFFFF',
-    enough: '#046E50',
-    tight: '#855700',
-    short: '#B42318',
-    'field-border': '#86837B',
-    accentSoftA: 0.1,
+    link: '#1D4ED8',
+    'accent-fill': '#DBEAFE',
+    danger: '#DC2626',
+    'on-danger': '#FFFFFF',
+    'danger-text': '#B91C1C',
+    enough: '#065F46',
+    tight: '#735400',
+    short: '#A93A0B',
+    'field-border': '#858585',
     stateSoftA: 0.1,
   },
 };
@@ -65,25 +73,29 @@ export function ratio(a, b) {
 function pairsFor(t) {
   const out = [];
   const add = (label, fg, bg, min) => out.push({ label, fg, bg, min });
-  for (const s of SURFACES) {
+  // Every surface text can sit on, the navy accent fill included.
+  const TEXT_SURFACES = [...SURFACES, 'accent-fill'];
+  for (const s of TEXT_SURFACES) {
     add(`Text on ${s}`, t.text, t[s], 4.5);
     add(`Muted text on ${s}`, t['text-muted'], t[s], 4.5);
     add(`Subtle text on ${s}`, t['text-subtle'], t[s], 4.5);
-    for (const st of STATES) add(`${st} text on ${s}`, t[st], t[s], 4.5);
   }
-  for (const s of ['bg', 'surface-1', 'surface-2']) add(`Accent link on ${s}`, t.accent, t[s], 4.5);
   for (const s of SURFACES) {
-    const soft = blend(t.accent, t[s], t.accentSoftA);
-    add(`Accent text on accent-soft over ${s}`, t.accent, soft, 4.5);
-    add(`Text on accent-soft over ${s}`, t.text, soft, 4.5);
+    for (const st of STATES) add(`${st} text on ${s}`, t[st], t[s], 4.5);
+    add(`Link and small blue text on ${s}`, t.link, t[s], 4.5);
+    add(`Destructive text on ${s}`, t['danger-text'], t[s], 4.5);
+    const dangerSoft = blend(t.danger, t[s], 0.1);
+    add(`Destructive text on destructive notice over ${s}`, t['danger-text'], dangerSoft, 4.5);
+    add(`Text on destructive notice over ${s}`, t.text, dangerSoft, 4.5);
     for (const st of STATES) add(`${st} text on ${st}-soft over ${s}`, t[st], blend(t[st], t[s], t.stateSoftA), 4.5);
   }
+  add('On-accent text on primary button', t['on-accent'], t.accent, 4.5);
+  add('On-danger text on destructive button', t['on-danger'], t.danger, 4.5);
   add('Primary pill: background-colour label on text-colour fill', t.bg, t.text, 4.5);
-  add('On-accent on accent (mark, selected)', t['on-accent'], t.accent, 4.5);
-  add('On-accent on short (destructive button)', t['on-accent'], t.short, 4.5);
   add('Dimmed headline half (display size) on bg', t['text-muted'], t.bg, 3);
   for (const s of ['bg', 'surface-1', 'surface-2']) add(`Form field border on ${s}`, t['field-border'], t[s], 3);
-  for (const s of ['bg', 'surface-1', 'surface-2']) add(`Focus ring and handle (accent) on ${s}`, t.accent, t[s], 3);
+  for (const s of SURFACES) add(`Focus ring and handle (accent) on ${s}`, t.accent, t[s], 3);
+  add('Selected segment outline (accent) on its track (surface-2)', t.accent, t['surface-2'], 3);
   for (const st of STATES) add(`${st} gauge segment on surface-1`, t[st], t['surface-1'], 3);
   add('Gauge empty segment (surface-3) vs lit is decorative: state word always shown', t['surface-3'], t['surface-1'], 1);
   return out;
@@ -110,12 +122,37 @@ function hue(h) {
   const raw = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
   return (raw * 60 + 360) % 360;
 }
+// Short is coral-orange and must not read as the destructive red: at least 15 degrees from both its reds.
+const apart = (a, b) => {
+  const diff = Math.abs(hue(a) - hue(b));
+  return Math.min(diff, 360 - diff);
+};
 for (const [name, t] of Object.entries(THEMES)) {
-  const diff = Math.abs(hue(t.tight) - hue(t.short));
-  const apart = Math.min(diff, 360 - diff);
-  const ok = apart >= 25;
-  if (!ok) failed++;
-  tables.push({ theme: name, pair: 'Tight and Short hue difference (degrees)', fg: t.tight, bg: t.short, ratio: apart.toFixed(0), min: 25, result: ok ? 'pass' : 'FAIL' });
+  for (const [label, a, b, min] of [
+    ['Tight and Short hue difference (degrees)', t.tight, t.short, 25],
+    ['Short and destructive fill hue difference (degrees)', t.short, t.danger, 15],
+    ['Short and destructive text hue difference (degrees)', t.short, t['danger-text'], 15],
+  ]) {
+    const d = apart(a, b);
+    const ok = d >= min;
+    if (!ok) failed++;
+    tables.push({ theme: name, pair: label, fg: a, bg: b, ratio: d.toFixed(0), min, result: ok ? 'pass' : 'FAIL' });
+  }
+}
+
+// The navy accent fill is only ever a background, and the primary blue is too dark for small text on dark
+// surfaces: both are banned as text colours in the source. Links and small blue text use text-link.
+import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { join } from 'node:path';
+const walk = (dir) => readdirSync(dir).flatMap((f) => (statSync(join(dir, f)).isDirectory() ? walk(join(dir, f)) : [join(dir, f)]));
+for (const file of walk('src').filter((f) => /\.(tsx?|css)$/.test(f))) {
+  const src = readFileSync(file, 'utf8');
+  for (const bad of [/\btext-accent(-soft)?\b/g, /color:\s*var\(--color-accent-soft\)/g, /fill="var\(--color-accent-soft\)"/g]) {
+    for (const m of src.matchAll(bad)) {
+      failed++;
+      tables.push({ theme: 'both', pair: `Forbidden text colour ${m[0]} in ${file}`, fg: '', bg: '', ratio: '0', min: 0, result: 'FAIL' });
+    }
+  }
 }
 
 const fails = tables.filter((r) => r.result === 'FAIL');

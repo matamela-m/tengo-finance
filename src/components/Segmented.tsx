@@ -30,7 +30,7 @@ export function Segmented<T extends string>({ label, value, options, onChange, v
           const look =
             variant === 'track'
               ? active
-                ? 'bg-surface-3 text-ink'
+                ? 'bg-accent-soft text-ink ring-1 ring-inset ring-accent'
                 : 'text-muted hover:text-ink'
               : active
                 ? 'border border-ink bg-ink text-bg'

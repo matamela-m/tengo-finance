@@ -125,7 +125,7 @@ export default function InboxPage() {
                       channel === 'whatsapp' ? 'border border-line bg-surface' : 'bg-surface-3'
                     }`}
                   >
-                    <p className="mb-1 text-xs font-semibold text-accent">Tengo</p>
+                    <p className="mb-1 text-xs font-semibold text-link">Tengo</p>
                     {message ? (
                       <p lang={contentLanguage(message.language)} className="num break-words">
                         {channel === 'whatsapp' ? <WhatsAppText text={message.text} /> : message.text}

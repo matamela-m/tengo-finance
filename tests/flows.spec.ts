@@ -108,6 +108,9 @@ test('Plan opens with a labelled example and Room to lend', async ({ page }) => 
 });
 
 test('Room to lend has a one-tap amount only in Enough, never in Tight', async ({ page }) => {
+  // Fixed to a Wednesday: on Saturdays Lerato's usual payment is due that day, and Plan rightly offers no
+  // amount while income is pending, which made this test depend on the day it ran.
+  await page.clock.setFixedTime(new Date('2026-10-21T10:00:00'));
   await page.goto('/start');
   await page.getByRole('button', { name: /Lerato/ }).click();
   await page.getByRole('button', { name: 'Agree and continue' }).click();

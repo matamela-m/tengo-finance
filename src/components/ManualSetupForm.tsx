@@ -65,7 +65,7 @@ export function ManualSetupForm({ onSubmit, submitLabel, busy = false }: { onSub
 
   const err = (show: boolean, id: string) =>
     tried && show ? (
-      <p id={id} role="alert" className="mt-1 text-xs font-medium text-short">
+      <p id={id} role="alert" className="mt-1 text-xs font-medium text-danger-text">
         {t('setup.fieldError')}
       </p>
     ) : null;
@@ -179,7 +179,7 @@ export function ManualSetupForm({ onSubmit, submitLabel, busy = false }: { onSub
           ))}
         </ul>
         {tried && !billsOk && (
-          <p role="alert" className="mt-1 text-xs font-medium text-short">
+          <p role="alert" className="mt-1 text-xs font-medium text-danger-text">
             {t('setup.billError')}
           </p>
         )}

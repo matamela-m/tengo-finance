@@ -46,7 +46,7 @@ export function PageLoading() {
 const NOTICE = {
   info: { box: 'bg-surface-2 text-ink', icon: 'text-muted', fallback: 'info' as IconName },
   warn: { box: 'bg-tight-soft text-ink', icon: 'text-tight', fallback: 'alert' as IconName },
-  danger: { box: 'bg-short-soft text-ink', icon: 'text-short', fallback: 'shortCircle' as IconName },
+  danger: { box: 'bg-danger/10 text-ink', icon: 'text-danger-text', fallback: 'shortCircle' as IconName },
   ok: { box: 'bg-enough-soft text-ink', icon: 'text-enough', fallback: 'checkCircle' as IconName },
 };
 

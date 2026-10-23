@@ -16,6 +16,11 @@ export default {
         subtle: ch('text-subtle'),
         accent: { DEFAULT: ch('accent'), soft: 'var(--color-accent-soft)' },
         'on-accent': ch('on-accent'),
+        // Text-safe blue for links and small text; the accent itself is for fills, borders and focus.
+        link: ch('link'),
+        // Destructive actions and errors: a fill with its on-colour, and a text-safe variant.
+        danger: { DEFAULT: ch('danger'), text: ch('danger-text') },
+        'on-danger': ch('on-danger'),
         enough: { DEFAULT: ch('enough'), soft: 'var(--color-enough-soft)' },
         tight: { DEFAULT: ch('tight'), soft: 'var(--color-tight-soft)' },
         short: { DEFAULT: ch('short'), soft: 'var(--color-short-soft)' },

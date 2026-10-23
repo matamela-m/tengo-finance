@@ -220,7 +220,7 @@ export default function AccountPage() {
           <>
             <section className="card p-5 sm:p-7" aria-labelledby="acc-done">
               <h2 id="acc-done" className="flex items-center gap-2 font-heading text-h3 text-ink">
-                <Icon name="cloud" size={20} className="text-accent" />
+                <Icon name="cloud" size={20} className="text-link" />
                 {t('account.signedInAs', { email: savedEmail ?? record?.profile?.nickname ?? '' })}
               </h2>
               <p className="mt-1 text-sm text-muted">{t('account.savedFacts')}</p>

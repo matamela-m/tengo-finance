@@ -2,7 +2,7 @@ import { initials } from '../lib/format';
 import type { PersonaProfile } from '../data/seed/personas';
 
 const TONES: Record<PersonaProfile['avatar'], string> = {
-  accent: 'bg-accent-soft text-accent border-accent/30',
+  accent: 'bg-accent-soft text-ink border-accent/30',
   neutral: 'bg-surface-3 text-ink border-line-strong',
   inverse: 'bg-ink text-bg border-transparent',
 };

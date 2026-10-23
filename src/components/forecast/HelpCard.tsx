@@ -72,7 +72,7 @@ export function HelpCard() {
           const { main, assume } = text(s);
           return (
             <li key={s.kind} className="flex items-start gap-3 py-3 text-[15px] text-ink">
-              <Icon name={ICON[s.kind]} size={18} className="mt-0.5 shrink-0 text-accent" />
+              <Icon name={ICON[s.kind]} size={18} className="mt-0.5 shrink-0 text-link" />
               <span className="num">
                 {main}
                 <span className="mt-1 block text-sm text-muted">{assume}</span>
@@ -84,7 +84,7 @@ export function HelpCard() {
       {plan.needsFlexible && (
         <p className="mt-1 text-sm text-muted">
           {t('help.markFlexible')}{' '}
-          <Link to="/app/money" className="font-medium text-accent underline-offset-4 hover:underline">
+          <Link to="/app/money" className="font-medium text-link underline-offset-4 hover:underline">
             {t('help.chooseOnMoney')}
           </Link>
         </p>
@@ -92,7 +92,7 @@ export function HelpCard() {
       {plan.current === 'short' && (
         <p className="mt-2 text-sm text-muted">
           {t('help.freeHelp')}{' '}
-          <a href="https://www.ncr.org.za" target="_blank" rel="noreferrer noopener" className="font-medium text-accent underline-offset-4 hover:underline">
+          <a href="https://www.ncr.org.za" target="_blank" rel="noreferrer noopener" className="font-medium text-link underline-offset-4 hover:underline">
             ncr.org.za
           </a>
         </p>
@@ -105,7 +105,7 @@ export function HelpCard() {
             {showAll ? t('help.fewer') : t('help.more', { count: rest.length })}
           </button>
         )}
-        <Link to="/app/plan" className="btn-ghost min-h-[44px] px-3 text-sm text-accent">
+        <Link to="/app/plan" className="btn-ghost min-h-[44px] px-3 text-sm text-link">
           {t('help.tryInPlan')}
           <Icon name="arrowRight" size={16} />
         </Link>

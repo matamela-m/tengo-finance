@@ -181,7 +181,7 @@ export function LockScreen() {
             aria-describedby="lock-msg"
             autoFocus
           />
-          <p id="lock-msg" role="alert" className="min-h-[20px] text-sm font-medium text-short">
+          <p id="lock-msg" role="alert" className="min-h-[20px] text-sm font-medium text-danger-text">
             {waitMs > 0 ? t('lock.waitFor', { count: Math.ceil(waitMs / 1000) }) : message}
           </p>
           <button type="submit" className="btn-primary min-h-[52px] w-full" disabled={busy || pin.length < 4 || waitMs > 0}>

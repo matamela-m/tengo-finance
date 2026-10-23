@@ -47,7 +47,7 @@ export function SharedPhoneCard() {
   return (
     <section className="card p-5 sm:p-6" aria-labelledby="shared-title">
       <div className="flex items-center gap-2">
-        <Icon name="lock" size={18} className="text-accent" />
+        <Icon name="lock" size={18} className="text-link" />
         <h2 id="shared-title" className="font-heading text-h3 text-ink">
           {t('shared.title')}
         </h2>
@@ -114,7 +114,7 @@ export function SharedPhoneCard() {
               </div>
             </>
           )}
-          <p id="pin-err" role="alert" className="min-h-[18px] text-xs font-medium text-short">
+          <p id="pin-err" role="alert" className="min-h-[18px] text-xs font-medium text-danger-text">
             {error}
           </p>
           <div className="flex gap-2">

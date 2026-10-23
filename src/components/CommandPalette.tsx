@@ -196,7 +196,7 @@ export function CommandPalette() {
                   onClick={() => runCommand(c)}
                   className={`flex min-h-[44px] cursor-pointer items-center gap-3 rounded-xl px-3 text-[15px] ${selected ? 'bg-surface-3 text-ink' : 'text-muted'}`}
                 >
-                  <Icon name={c.icon} size={17} className={selected ? 'text-accent' : 'text-subtle'} />
+                  <Icon name={c.icon} size={17} className={selected ? 'text-link' : 'text-subtle'} />
                   <span className="flex-1 truncate">
                     <span className="sr-only">{t(`palette.groups.${c.group}`)}: </span>
                     {c.label}

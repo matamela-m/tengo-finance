@@ -23,7 +23,7 @@ export default function PrivacyNotice({ kind = 'notice' }: { kind?: 'notice' | '
           <Link to="/" className="inline-flex min-h-[44px] items-center rounded-md" aria-label={`Tengo, ${t('landing.home')}`}>
             <Brand size={22} decorative />
           </Link>
-          <Link to={kind === 'notice' ? '/terms' : '/privacy-notice'} className="text-sm text-accent underline-offset-4 hover:underline">
+          <Link to={kind === 'notice' ? '/terms' : '/privacy-notice'} className="text-sm text-link underline-offset-4 hover:underline">
             {t(`legalDoc.${kind === 'notice' ? 'terms' : 'notice'}.title`)}
           </Link>
         </div>

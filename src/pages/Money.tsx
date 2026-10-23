@@ -173,7 +173,7 @@ export default function MoneyPage() {
             </dl>
             <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
               <p className="num text-sm text-muted">{t('money.balance', { amount: formatZAR(record.balance) })}</p>
-              <button type="button" className="btn-ghost -mr-3 min-h-[44px] px-3 text-sm text-accent" aria-expanded={editBalance} onClick={() => setEditBalance((v) => !v)}>
+              <button type="button" className="btn-ghost -mr-3 min-h-[44px] px-3 text-sm text-link" aria-expanded={editBalance} onClick={() => setEditBalance((v) => !v)}>
                 {t('balance.update')}
               </button>
             </div>
@@ -192,7 +192,7 @@ export default function MoneyPage() {
 
           <section className="card p-6" aria-labelledby="bills-title">
             <div className="flex items-center gap-2">
-              <Icon name="repeat" size={18} className="text-accent" />
+              <Icon name="repeat" size={18} className="text-link" />
               <h2 id="bills-title" className="font-heading text-h3 text-ink">
                 {t('money.bills')}
               </h2>

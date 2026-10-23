@@ -135,15 +135,15 @@ The "Why this date" drawer on Home shows every input behind the date and doubles
 
 | Token | Dark | Light |
 | --- | --- | --- |
-| bg | #171717 | #FAFAFA |
-| surface-1 (cards) / 2 (muted) / 3 | #262626 / #1F1F1F / #2E2E2E | #FFFFFF / #F5F5F5 / #EBEBEB |
-| border / border-strong | #404040 / #525252 | #E5E5E5 / #D4D4D4 |
+| bg | #0B0B0C | #FAFAFA |
+| surface-1 (cards) / 2 (muted) / 3 | #121214 / #18181B / #1F1F23 | #FFFFFF / #F5F5F5 / #EBEBEB |
+| border / border-strong | #26262B / #34343A | #E5E5E5 / #D4D4D4 |
 | field border | #737373 | #858585 (the specified #A3A3A3 is 2.5:1, below the 3:1 a field needs) |
 | text / muted / subtle | #FAFAFA / #B0B0B0 / #ADADAD | #171717 / #525252 / #5C5C5C |
-| primary (accent) / text on it | #3B82F6 / #171717 (white is 3.7:1) | #2563EB / #FFFFFF |
+| primary (accent) / text on it | #3B82F6 / #0B0B0C (white is 3.7:1) | #2563EB / #FFFFFF |
 | link and small blue text | #60A5FA | #1D4ED8 (#2563EB fails on the light-blue fill) |
 | accent fill, backgrounds only, never text | #1E3A8A | #DBEAFE |
-| destructive fill / text on it / text-safe | #EF4444 / #171717 / #F87878 | #DC2626 / #FFFFFF / #B91C1C |
+| destructive fill / text on it / text-safe | #EF4444 / #0B0B0C / #F87878 | #DC2626 / #FFFFFF / #B91C1C |
 | enough / tight / short | #34D399 / #FBBF24 / #FF8A5B | #065F46 / #735400 / #A93A0B |
 | soft fills | state colour at 14%, destructive at 10% | state colour at 10%, destructive at 10% |
 
@@ -153,77 +153,77 @@ Measured by `npm run contrast` (also part of `npm test`):
 
 | Theme | Pair | Foreground | Background | Ratio | Target |
 | --- | --- | --- | --- | --- | --- |
-| dark | Text on bg | #FAFAFA | #171717 | 17.18:1 | 4.5:1 |
-| dark | Muted text on bg | #B0B0B0 | #171717 | 8.27:1 | 4.5:1 |
-| dark | Subtle text on bg | #ADADAD | #171717 | 7.99:1 | 4.5:1 |
-| dark | Text on surface-1 | #FAFAFA | #262626 | 14.50:1 | 4.5:1 |
-| dark | Muted text on surface-1 | #B0B0B0 | #262626 | 6.98:1 | 4.5:1 |
-| dark | Subtle text on surface-1 | #ADADAD | #262626 | 6.74:1 | 4.5:1 |
-| dark | Text on surface-2 | #FAFAFA | #1F1F1F | 15.79:1 | 4.5:1 |
-| dark | Muted text on surface-2 | #B0B0B0 | #1F1F1F | 7.60:1 | 4.5:1 |
-| dark | Subtle text on surface-2 | #ADADAD | #1F1F1F | 7.34:1 | 4.5:1 |
-| dark | Text on surface-3 | #FAFAFA | #2E2E2E | 13.01:1 | 4.5:1 |
-| dark | Muted text on surface-3 | #B0B0B0 | #2E2E2E | 6.26:1 | 4.5:1 |
-| dark | Subtle text on surface-3 | #ADADAD | #2E2E2E | 6.05:1 | 4.5:1 |
+| dark | Text on bg | #FAFAFA | #0B0B0C | 18.85:1 | 4.5:1 |
+| dark | Muted text on bg | #B0B0B0 | #0B0B0C | 9.07:1 | 4.5:1 |
+| dark | Subtle text on bg | #ADADAD | #0B0B0C | 8.77:1 | 4.5:1 |
+| dark | Text on surface-1 | #FAFAFA | #121214 | 17.93:1 | 4.5:1 |
+| dark | Muted text on surface-1 | #B0B0B0 | #121214 | 8.63:1 | 4.5:1 |
+| dark | Subtle text on surface-1 | #ADADAD | #121214 | 8.34:1 | 4.5:1 |
+| dark | Text on surface-2 | #FAFAFA | #18181B | 16.97:1 | 4.5:1 |
+| dark | Muted text on surface-2 | #B0B0B0 | #18181B | 8.17:1 | 4.5:1 |
+| dark | Subtle text on surface-2 | #ADADAD | #18181B | 7.89:1 | 4.5:1 |
+| dark | Text on surface-3 | #FAFAFA | #1F1F23 | 15.74:1 | 4.5:1 |
+| dark | Muted text on surface-3 | #B0B0B0 | #1F1F23 | 7.57:1 | 4.5:1 |
+| dark | Subtle text on surface-3 | #ADADAD | #1F1F23 | 7.32:1 | 4.5:1 |
 | dark | Text on accent-fill | #FAFAFA | #1E3A8A | 9.92:1 | 4.5:1 |
 | dark | Muted text on accent-fill | #B0B0B0 | #1E3A8A | 4.78:1 | 4.5:1 |
 | dark | Subtle text on accent-fill | #ADADAD | #1E3A8A | 4.62:1 | 4.5:1 |
-| dark | enough text on bg | #34D399 | #171717 | 9.33:1 | 4.5:1 |
-| dark | tight text on bg | #FBBF24 | #171717 | 10.74:1 | 4.5:1 |
-| dark | short text on bg | #FF8A5B | #171717 | 7.72:1 | 4.5:1 |
-| dark | Link and small blue text on bg | #60A5FA | #171717 | 7.05:1 | 4.5:1 |
-| dark | Destructive text on bg | #F87878 | #171717 | 6.79:1 | 4.5:1 |
-| dark | Destructive text on destructive notice over bg | #F87878 | #2D1C1C | 6.14:1 | 4.5:1 |
-| dark | Text on destructive notice over bg | #FAFAFA | #2D1C1C | 15.54:1 | 4.5:1 |
-| dark | enough text on enough-soft over bg | #34D399 | #1B3129 | 7.20:1 | 4.5:1 |
-| dark | tight text on tight-soft over bg | #FBBF24 | #372F19 | 7.95:1 | 4.5:1 |
-| dark | short text on short-soft over bg | #FF8A5B | #372721 | 6.13:1 | 4.5:1 |
-| dark | enough text on surface-1 | #34D399 | #262626 | 7.87:1 | 4.5:1 |
-| dark | tight text on surface-1 | #FBBF24 | #262626 | 9.07:1 | 4.5:1 |
-| dark | short text on surface-1 | #FF8A5B | #262626 | 6.51:1 | 4.5:1 |
-| dark | Link and small blue text on surface-1 | #60A5FA | #262626 | 5.95:1 | 4.5:1 |
-| dark | Destructive text on surface-1 | #F87878 | #262626 | 5.73:1 | 4.5:1 |
-| dark | Destructive text on destructive notice over surface-1 | #F87878 | #3A2929 | 5.20:1 | 4.5:1 |
-| dark | Text on destructive notice over surface-1 | #FAFAFA | #3A2929 | 13.16:1 | 4.5:1 |
-| dark | enough text on enough-soft over surface-1 | #34D399 | #283E36 | 5.96:1 | 4.5:1 |
-| dark | tight text on tight-soft over surface-1 | #FBBF24 | #443B26 | 6.62:1 | 4.5:1 |
-| dark | short text on short-soft over surface-1 | #FF8A5B | #44342D | 5.09:1 | 4.5:1 |
-| dark | enough text on surface-2 | #34D399 | #1F1F1F | 8.57:1 | 4.5:1 |
-| dark | tight text on surface-2 | #FBBF24 | #1F1F1F | 9.87:1 | 4.5:1 |
-| dark | short text on surface-2 | #FF8A5B | #1F1F1F | 7.09:1 | 4.5:1 |
-| dark | Link and small blue text on surface-2 | #60A5FA | #1F1F1F | 6.48:1 | 4.5:1 |
-| dark | Destructive text on surface-2 | #F87878 | #1F1F1F | 6.24:1 | 4.5:1 |
-| dark | Destructive text on destructive notice over surface-2 | #F87878 | #342323 | 5.63:1 | 4.5:1 |
-| dark | Text on destructive notice over surface-2 | #FAFAFA | #342323 | 14.26:1 | 4.5:1 |
-| dark | enough text on enough-soft over surface-2 | #34D399 | #223830 | 6.52:1 | 4.5:1 |
-| dark | tight text on tight-soft over surface-2 | #FBBF24 | #3E3520 | 7.25:1 | 4.5:1 |
-| dark | short text on short-soft over surface-2 | #FF8A5B | #3E2E27 | 5.56:1 | 4.5:1 |
-| dark | enough text on surface-3 | #34D399 | #2E2E2E | 7.06:1 | 4.5:1 |
-| dark | tight text on surface-3 | #FBBF24 | #2E2E2E | 8.13:1 | 4.5:1 |
-| dark | short text on surface-3 | #FF8A5B | #2E2E2E | 5.84:1 | 4.5:1 |
-| dark | Link and small blue text on surface-3 | #60A5FA | #2E2E2E | 5.34:1 | 4.5:1 |
-| dark | Destructive text on surface-3 | #F87878 | #2E2E2E | 5.14:1 | 4.5:1 |
-| dark | Destructive text on destructive notice over surface-3 | #F87878 | #413030 | 4.70:1 | 4.5:1 |
-| dark | Text on destructive notice over surface-3 | #FAFAFA | #413030 | 11.90:1 | 4.5:1 |
-| dark | enough text on enough-soft over surface-3 | #34D399 | #2F453D | 5.36:1 | 4.5:1 |
-| dark | tight text on tight-soft over surface-3 | #FBBF24 | #4B422D | 5.94:1 | 4.5:1 |
-| dark | short text on short-soft over surface-3 | #FF8A5B | #4B3B34 | 4.58:1 | 4.5:1 |
-| dark | On-accent text on primary button | #171717 | #3B82F6 | 4.87:1 | 4.5:1 |
-| dark | On-danger text on destructive button | #171717 | #EF4444 | 4.76:1 | 4.5:1 |
-| dark | Primary pill: background-colour label on text-colour fill | #171717 | #FAFAFA | 17.18:1 | 4.5:1 |
-| dark | Dimmed headline half (display size) on bg | #B0B0B0 | #171717 | 8.27:1 | 3:1 |
-| dark | Form field border on bg | #737373 | #171717 | 3.78:1 | 3:1 |
-| dark | Form field border on surface-1 | #737373 | #262626 | 3.19:1 | 3:1 |
-| dark | Form field border on surface-2 | #737373 | #1F1F1F | 3.48:1 | 3:1 |
-| dark | Focus ring and handle (accent) on bg | #3B82F6 | #171717 | 4.87:1 | 3:1 |
-| dark | Focus ring and handle (accent) on surface-1 | #3B82F6 | #262626 | 4.11:1 | 3:1 |
-| dark | Focus ring and handle (accent) on surface-2 | #3B82F6 | #1F1F1F | 4.48:1 | 3:1 |
-| dark | Focus ring and handle (accent) on surface-3 | #3B82F6 | #2E2E2E | 3.69:1 | 3:1 |
-| dark | Selected segment outline (accent) on its track (surface-2) | #3B82F6 | #1F1F1F | 4.48:1 | 3:1 |
-| dark | enough gauge segment on surface-1 | #34D399 | #262626 | 7.87:1 | 3:1 |
-| dark | tight gauge segment on surface-1 | #FBBF24 | #262626 | 9.07:1 | 3:1 |
-| dark | short gauge segment on surface-1 | #FF8A5B | #262626 | 6.51:1 | 3:1 |
-| dark | Gauge empty segment (surface-3) vs lit is decorative: state word always shown | #2E2E2E | #262626 | 1.11:1 | 1:1 |
+| dark | enough text on bg | #34D399 | #0B0B0C | 10.23:1 | 4.5:1 |
+| dark | tight text on bg | #FBBF24 | #0B0B0C | 11.79:1 | 4.5:1 |
+| dark | short text on bg | #FF8A5B | #0B0B0C | 8.47:1 | 4.5:1 |
+| dark | Link and small blue text on bg | #60A5FA | #0B0B0C | 7.74:1 | 4.5:1 |
+| dark | Destructive text on bg | #F87878 | #0B0B0C | 7.45:1 | 4.5:1 |
+| dark | Destructive text on destructive notice over bg | #F87878 | #221112 | 6.87:1 | 4.5:1 |
+| dark | Text on destructive notice over bg | #FAFAFA | #221112 | 17.39:1 | 4.5:1 |
+| dark | enough text on enough-soft over bg | #34D399 | #112720 | 8.18:1 | 4.5:1 |
+| dark | tight text on tight-soft over bg | #FBBF24 | #2D240F | 9.18:1 | 4.5:1 |
+| dark | short text on short-soft over bg | #FF8A5B | #2D1D17 | 6.95:1 | 4.5:1 |
+| dark | enough text on surface-1 | #34D399 | #121214 | 9.73:1 | 4.5:1 |
+| dark | tight text on surface-1 | #FBBF24 | #121214 | 11.21:1 | 4.5:1 |
+| dark | short text on surface-1 | #FF8A5B | #121214 | 8.05:1 | 4.5:1 |
+| dark | Link and small blue text on surface-1 | #60A5FA | #121214 | 7.36:1 | 4.5:1 |
+| dark | Destructive text on surface-1 | #F87878 | #121214 | 7.08:1 | 4.5:1 |
+| dark | Destructive text on destructive notice over surface-1 | #F87878 | #281719 | 6.48:1 | 4.5:1 |
+| dark | Text on destructive notice over surface-1 | #FAFAFA | #281719 | 16.40:1 | 4.5:1 |
+| dark | enough text on enough-soft over surface-1 | #34D399 | #172D27 | 7.58:1 | 4.5:1 |
+| dark | tight text on tight-soft over surface-1 | #FBBF24 | #332A16 | 8.48:1 | 4.5:1 |
+| dark | short text on short-soft over surface-1 | #FF8A5B | #33231E | 6.46:1 | 4.5:1 |
+| dark | enough text on surface-2 | #34D399 | #18181B | 9.22:1 | 4.5:1 |
+| dark | tight text on surface-2 | #FBBF24 | #18181B | 10.61:1 | 4.5:1 |
+| dark | short text on surface-2 | #FF8A5B | #18181B | 7.63:1 | 4.5:1 |
+| dark | Link and small blue text on surface-2 | #60A5FA | #18181B | 6.97:1 | 4.5:1 |
+| dark | Destructive text on surface-2 | #F87878 | #18181B | 6.71:1 | 4.5:1 |
+| dark | Destructive text on destructive notice over surface-2 | #F87878 | #2E1C1F | 6.11:1 | 4.5:1 |
+| dark | Text on destructive notice over surface-2 | #FAFAFA | #2E1C1F | 15.45:1 | 4.5:1 |
+| dark | enough text on enough-soft over surface-2 | #34D399 | #1C322D | 7.08:1 | 4.5:1 |
+| dark | tight text on tight-soft over surface-2 | #FBBF24 | #382F1C | 7.90:1 | 4.5:1 |
+| dark | short text on short-soft over surface-2 | #FF8A5B | #382824 | 6.04:1 | 4.5:1 |
+| dark | enough text on surface-3 | #34D399 | #1F1F23 | 8.54:1 | 4.5:1 |
+| dark | tight text on surface-3 | #FBBF24 | #1F1F23 | 9.84:1 | 4.5:1 |
+| dark | short text on surface-3 | #FF8A5B | #1F1F23 | 7.07:1 | 4.5:1 |
+| dark | Link and small blue text on surface-3 | #60A5FA | #1F1F23 | 6.46:1 | 4.5:1 |
+| dark | Destructive text on surface-3 | #F87878 | #1F1F23 | 6.22:1 | 4.5:1 |
+| dark | Destructive text on destructive notice over surface-3 | #F87878 | #342326 | 5.62:1 | 4.5:1 |
+| dark | Text on destructive notice over surface-3 | #FAFAFA | #342326 | 14.22:1 | 4.5:1 |
+| dark | enough text on enough-soft over surface-3 | #34D399 | #223834 | 6.49:1 | 4.5:1 |
+| dark | tight text on tight-soft over surface-3 | #FBBF24 | #3E3523 | 7.24:1 | 4.5:1 |
+| dark | short text on short-soft over surface-3 | #FF8A5B | #3E2E2B | 5.54:1 | 4.5:1 |
+| dark | On-accent text on primary button | #0B0B0C | #3B82F6 | 5.35:1 | 4.5:1 |
+| dark | On-danger text on destructive button | #0B0B0C | #EF4444 | 5.23:1 | 4.5:1 |
+| dark | Primary pill: background-colour label on text-colour fill | #0B0B0C | #FAFAFA | 18.85:1 | 4.5:1 |
+| dark | Dimmed headline half (display size) on bg | #B0B0B0 | #0B0B0C | 9.07:1 | 3:1 |
+| dark | Form field border on bg | #737373 | #0B0B0C | 4.15:1 | 3:1 |
+| dark | Form field border on surface-1 | #737373 | #121214 | 3.95:1 | 3:1 |
+| dark | Form field border on surface-2 | #737373 | #18181B | 3.74:1 | 3:1 |
+| dark | Focus ring and handle (accent) on bg | #3B82F6 | #0B0B0C | 5.35:1 | 3:1 |
+| dark | Focus ring and handle (accent) on surface-1 | #3B82F6 | #121214 | 5.09:1 | 3:1 |
+| dark | Focus ring and handle (accent) on surface-2 | #3B82F6 | #18181B | 4.82:1 | 3:1 |
+| dark | Focus ring and handle (accent) on surface-3 | #3B82F6 | #1F1F23 | 4.47:1 | 3:1 |
+| dark | Selected segment outline (accent) on its track (surface-2) | #3B82F6 | #18181B | 4.82:1 | 3:1 |
+| dark | enough gauge segment on surface-1 | #34D399 | #121214 | 9.73:1 | 3:1 |
+| dark | tight gauge segment on surface-1 | #FBBF24 | #121214 | 11.21:1 | 3:1 |
+| dark | short gauge segment on surface-1 | #FF8A5B | #121214 | 8.05:1 | 3:1 |
+| dark | Gauge empty segment (surface-3) vs lit is decorative: state word always shown | #1F1F23 | #121214 | 1.14:1 | 1:1 |
 | light | Text on bg | #171717 | #FAFAFA | 17.18:1 | 4.5:1 |
 | light | Muted text on bg | #525252 | #FAFAFA | 7.49:1 | 4.5:1 |
 | light | Subtle text on bg | #5C5C5C | #FAFAFA | 6.41:1 | 4.5:1 |

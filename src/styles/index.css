@@ -10,25 +10,26 @@
 @layer base {
   :root,
   [data-theme='dark'] {
-    /* Primary blue fills buttons and focus; on it, dark text (white is 3.7:1). Links use --link, the lighter blue.
+    /* Background and surfaces are near-black, as the founder prefers to the grey #171717 scheme.
+       Primary blue fills buttons and focus; on it, dark text (white is 3.7:1). Links use --link, the lighter blue.
        --accent-fill (navy) is only ever a background: never text. Muted text clears 4.5:1 on every surface, the navy
        fill included. Short is coral-orange, kept apart in hue from Tight and from the destructive red. */
-    --bg: 23 23 23;
-    --surface-1: 38 38 38;
-    --surface-2: 31 31 31;
-    --surface-3: 46 46 46;
-    --border: 64 64 64;
-    --border-strong: 82 82 82;
+    --bg: 11 11 12;
+    --surface-1: 18 18 20;
+    --surface-2: 24 24 27;
+    --surface-3: 31 31 35;
+    --border: 38 38 43;
+    --border-strong: 52 52 58;
     --field-border: 115 115 115;
     --text: 250 250 250;
     --text-muted: 176 176 176;
     --text-subtle: 173 173 173;
     --accent: 59 130 246;
-    --on-accent: 23 23 23;
+    --on-accent: 11 11 12;
     --link: 96 165 250;
     --accent-fill: 30 58 138;
     --danger: 239 68 68;
-    --on-danger: 23 23 23;
+    --on-danger: 11 11 12;
     --danger-text: 248 120 120;
     --enough: 52 211 153;
     --tight: 251 191 36;

@@ -611,7 +611,14 @@
     "exportLink": "Bona mme o ntshe tshedimosetso ya me",
     "deleteProfile": "Phimola porofaele ya me",
     "switchPeople": "Fetogela kwa bathong ba boitlhamedi",
-    "notice": "Kitsiso ya sephiri le dipeelo"
+    "notice": "Kitsiso ya sephiri le dipeelo",
+    "photoTitle": "Setshwantsho sa porofaele",
+    "photoChoose": "Tlhopha setshwantsho",
+    "photoRemove": "Tlosa setshwantsho",
+    "photoHint": "Se dirwa se sennye mo sedirisiweng seno mme se bolokwa le porofaele ya gago. Ke wena fela yo o se bonang.",
+    "photoSaved": "Setshwantsho se bolokilwe",
+    "photoRemoved": "Setshwantsho se tlositswe",
+    "photoError": "Faele eo ga e a kgona go dirisiwa. Leka setshwantsho sa JPG kgotsa PNG."
   },
   "errors": {
     "loadTitle": "Ga e a kgona go laela tshedimosetso ya gago",
@@ -1115,11 +1122,7 @@
   "safety": {
     "quickExit": "Tswa ka bonako",
     "showAmounts": "Bontsha madi",
-    "hideAmounts": "Fitlha madi",
-    "exitTitle": "Sebadi",
-    "exitBack": "Morago",
-    "calcResult": "Dipholo",
-    "calcClear": "Phimola"
+    "hideAmounts": "Fitlha madi"
   },
   "safetyPolicy": {
     "title": "Pabalesego le gore Tengo ke ya ga mang",
@@ -1131,7 +1134,7 @@
     },
     "shared": {
       "title": "Megala e e abelanwang",
-      "body": "O ka baya PIN gore Tengo e itshware morago ga metsotso e le mmalwa, wa bula mokgwa wa sephiri gore madi a nne a fitlhilwe go fitlha o tobetsa go a bona, mme wa dirisa go tswa ka bonako go tlogela Tengo go ya kwa tsebeng e e se nang sepe ka yone nako eo. Melaetsa ya sephiri ga e na madi, matlha kgotsa mafoko a maemo."
+      "body": "O ka baya PIN gore Tengo e itshware morago ga metsotso e le mmalwa, wa bula mokgwa wa sephiri gore madi a nne a fitlhilwe go fitlha o tobetsa go a bona, mme wa dirisa go tswa ka bonako go tlogela ditsebe tsa madi o boele kwa diporofaeleng ka bonako. Melaetsa ya sephiri ga e na madi, matlha kgotsa mafoko a maemo."
     },
     "control": {
       "title": "Fa motho a laola madi a gago",
@@ -1188,7 +1191,7 @@
     "lockNow": "Notlela jaanong",
     "discreet": "Mokgwa wa sephiri",
     "discreetHint": "Fitlha madi mo sekirining go fitlha o tobetsa Bontsha madi, mme o romele melaetsa e e se nang madi kgotsa matlha.",
-    "quickExitHint": "Go tswa ka bonako go nna go le kwa godimo mo sekirining. Go fitlha tsotlhe mme go bula tsebe e e se nang sepe.",
+    "quickExitHint": "Go tswa ka bonako go nna go le kwa godimo mo sekirining. Go fitlha madi mme go boela kwa diporofaeleng ka bonako.",
     "policy": "Bala pholisi ya pabalesego"
   },
   "diag": {

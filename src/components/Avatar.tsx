@@ -7,7 +7,22 @@ const TONES: Record<PersonaProfile['avatar'], string> = {
   inverse: 'bg-ink text-bg border-transparent',
 };
 
+/** The person's portrait when there is one, otherwise their initials. Decorative: the name is always beside it. */
 export function Avatar({ persona, size = 44 }: { persona: PersonaProfile; size?: number }) {
+  if (persona.photo) {
+    return (
+      <img
+        src={persona.photo}
+        alt=""
+        aria-hidden
+        width={size}
+        height={size}
+        draggable={false}
+        className="shrink-0 select-none rounded-full border border-line bg-surface-2 object-cover"
+        style={{ width: size, height: size }}
+      />
+    );
+  }
   return (
     <span
       aria-hidden

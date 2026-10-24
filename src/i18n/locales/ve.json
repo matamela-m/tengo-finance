@@ -611,7 +611,14 @@
     "exportLink": "Vhonani ni bvise mafhungo anga",
     "deleteProfile": "Phumulani phurofaiḽi yanga",
     "switchPeople": "Shandukelani kha vhathu vha u sikwa",
-    "notice": "Ndivhadzo ya tshiphiri na zwiimo"
+    "notice": "Ndivhadzo ya tshiphiri na zwiimo",
+    "photoTitle": "Tshifanyiso tsha phurofaela",
+    "photoChoose": "Khethani tshifanyiso",
+    "photoRemove": "Bvisani tshifanyiso",
+    "photoHint": "Tshi itwa tshiṱuku kha tshishumiswa itshi nahone tsha vhulungwa na phurofaela yaṋu. Ndi inwi fhedzi ane na tshi vhona.",
+    "photoSaved": "Tshifanyiso tsho vhulungwa",
+    "photoRemoved": "Tshifanyiso tsho bviswa",
+    "photoError": "Faela iyo a yo ngo kona u shumiswa. Lingani tshifanyiso tsha JPG kana PNG."
   },
   "errors": {
     "loadTitle": "A ro ngo kona u ḓisa mafhungo aṋu",
@@ -1115,11 +1122,7 @@
   "safety": {
     "quickExit": "Bvani nga u ṱavhanya",
     "showAmounts": "Sumbedzani tshelede",
-    "hideAmounts": "Dzumbisani tshelede",
-    "exitTitle": "Khalikhuleitha",
-    "exitBack": "Murahu",
-    "calcResult": "Mvelelo",
-    "calcClear": "Phumula"
+    "hideAmounts": "Dzumbisani tshelede"
   },
   "safetyPolicy": {
     "title": "Tsireledzo na uri Tengo ndi ya nnyi",
@@ -1131,7 +1134,7 @@
     },
     "shared": {
       "title": "Luṱingo lu kovhekanwaho",
-      "body": "Ni nga vhea PIN uri Tengo i ḓivale nga murahu ha mimunithi i si gathi, na vula nḓila ya tshiphiri uri tshelede i dzule yo dzumbiswa u swikela ni tshi i kwama u i vhona, nahone na shumisa u bva nga u ṱavhanya u sia Tengo ni ye kha siaṱari ḽi si na tshithu nga u ṱavhanya. Milaedza ya tshiphiri a i na tshelede, maḓuvha kana maipfi a tshiimo."
+      "body": "Ni nga vhea PIN uri Tengo i ḓivale nga murahu ha mimunithi i si gathi, na vula nḓila ya tshiphiri uri tshelede i dzule yo dzumbiswa u swikela ni tshi i kwama u i vhona, nahone na shumisa u bva nga u ṱavhanya u sia masiaṱari a tshelede na humela kha phurofaela nga u ṱavhanya. Milaedza ya tshiphiri a i na tshelede, maḓuvha kana maipfi a tshiimo."
     },
     "control": {
       "title": "Arali muthu a tshi langa tshelede yaṋu",
@@ -1188,7 +1191,7 @@
     "lockNow": "Khiyani zwino",
     "discreet": "Nḓila ya tshiphiri",
     "discreetHint": "Dzumbisani tshelede kha skirini u swikela ni tshi kwama Sumbedzani tshelede, nahone ni rumele milaedza i si na tshelede kana maḓuvha.",
-    "quickExitHint": "U bva nga u ṱavhanya hu dzula nṱha kha skirini. Hu dzumbisa zwoṱhe nahone hu vula siaṱari ḽi si na tshithu.",
+    "quickExitHint": "U bva nga u ṱavhanya hu dzula nṱha kha skirini. Hu dzumbisa tshelede nahone hu humela kha phurofaela nga u ṱavhanya.",
     "policy": "Vhalani mbekanyamaitele ya tsireledzo"
   },
   "diag": {

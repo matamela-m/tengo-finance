@@ -611,7 +611,14 @@
     "exportLink": "Bona futsi ukhiphe imininingwane yami",
     "deleteProfile": "Susa iphrofayili yami",
     "switchPeople": "Shintjela kubantfu labacanjiwe",
-    "notice": "Satiso semfihlo nemibandzela"
+    "notice": "Satiso semfihlo nemibandzela",
+    "photoTitle": "Sitfombe seprofayili",
+    "photoChoose": "Khetsa sitfombe",
+    "photoRemove": "Susa sitfombe",
+    "photoHint": "Senziwa sibe sincane kulesisetjentiswa futsi sigcinwe neprofayili yakho. Nguwe kuphela losibonako.",
+    "photoSaved": "Sitfombe sigciniwe",
+    "photoRemoved": "Sitfombe sisusiwe",
+    "photoError": "Lelo fayela alikhonanga kusetjentiswa. Zama sitfombe se-JPG nobe se-PNG."
   },
   "errors": {
     "loadTitle": "Ayikhonanga kulayisha imininingwane yakho",
@@ -1115,11 +1122,7 @@
   "safety": {
     "quickExit": "Phuma ngekushesha",
     "showAmounts": "Khombisa timali",
-    "hideAmounts": "Fihla timali",
-    "exitTitle": "Sibali",
-    "exitBack": "Emuva",
-    "calcResult": "Imiphumela",
-    "calcClear": "Sula"
+    "hideAmounts": "Fihla timali"
   },
   "safetyPolicy": {
     "title": "Kuphepha nekutsi i-Tengo ngeyabani",
@@ -1131,7 +1134,7 @@
     },
     "shared": {
       "title": "Tifoni letabiwako",
-      "body": "Ungasetha i-PIN kute i-Tengo itikhiye emva kwemizuzu lembalwa, uvule indlela yekufihla kute timali tihlale tifihliwe uze uticindzetele kute utibone, futsi usebentise kuphuma ngekushesha kute ushiye i-Tengo uye ekhasini lelingenalutfo ngaso leso sikhatsi. Imilayeto lefihliwe ayinato timali, emalanga noma emagama esimo."
+      "body": "Ungasetha i-PIN kute i-Tengo itikhiye emva kwemizuzu lembalwa, uvule indlela yekufihla kute timali tihlale tifihliwe uze uticindzetele kute utibone, futsi usebentise kuphuma ngekushesha kute ushiye emakhasi emali ubuyele ngekushesha kumaphrofayili. Imilayeto lefihliwe ayinato timali, emalanga noma emagama esimo."
     },
     "control": {
       "title": "Nangabe umuntfu aphetse imali yakho",
@@ -1188,7 +1191,7 @@
     "lockNow": "Khiya nyalo",
     "discreet": "Indlela yekufihla",
     "discreetHint": "Fihla timali esikrinini uze ucindzetele Khombisa timali, futsi utfumele imilayeto lengenato timali noma emalanga.",
-    "quickExitHint": "Kuphuma ngekushesha kuhlala kungetulu esikrinini. Kufihla konkhe futsi kuvule likhasi lelingenalutfo.",
+    "quickExitHint": "Kuphuma ngekushesha kuhlala kungetulu esikrinini. Kufihla timali futsi kubuyela ngekushesha kumaphrofayili.",
     "policy": "Fundza inchubomgomo yekuphepha"
   },
   "diag": {

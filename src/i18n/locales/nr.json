@@ -611,7 +611,14 @@
     "exportLink": "Bona begodu ukhuphe ilwazi lami",
     "deleteProfile": "Sula iphrofayili yami",
     "switchPeople": "Tjhentjhela ebantwini bokwakhiwa",
-    "notice": "Isaziso sefihlo nemibandela"
+    "notice": "Isaziso sefihlo nemibandela",
+    "photoTitle": "Isithombe sephrofayili",
+    "photoChoose": "Khetha isithombe",
+    "photoRemove": "Susa isithombe",
+    "photoHint": "Senziwa sibe sincani esisetjenziswenesi begodu sigcinwe nephrofayili yakho. Nguwe kwaphela osibonako.",
+    "photoSaved": "Isithombe sigciniwe",
+    "photoRemoved": "Isithombe sisusiwe",
+    "photoError": "Ifayela leyo ayikghonanga ukusetjenziswa. Zama isithombe se-JPG namkha se-PNG."
   },
   "errors": {
     "loadTitle": "Akukghonakalanga ukulayisha ilwazi lakho",
@@ -1115,11 +1122,7 @@
   "safety": {
     "quickExit": "Phuma msinyana",
     "showAmounts": "Tjengisa iimali",
-    "hideAmounts": "Fihla iimali",
-    "exitTitle": "Isibali",
-    "exitBack": "Emuva",
-    "calcResult": "Umphumela",
-    "calcClear": "Sula"
+    "hideAmounts": "Fihla iimali"
   },
   "safetyPolicy": {
     "title": "Ukuphepha nokobana i-Tengo ngekabani",
@@ -1131,7 +1134,7 @@
     },
     "shared": {
       "title": "Iinfowuni ezabelanwako",
-      "body": "Ungabeka i-PIN bona i-Tengo izikhiye ngemva kwemizuzu embalwa, uvule indlela yokufihla bona iimali zihlale zifihliwe bekube uzithinta bona uzibone, begodu usebenzise ukuphuma msinyana bona utjhiye i-Tengo uye ekhasini elingenalitho ngesikhathi leso. Imilayezo efihliweko ayinazo iimali, amalanga nanyana amabizo wesimo."
+      "body": "Ungabeka i-PIN bona i-Tengo izikhiye ngemva kwemizuzu embalwa, uvule indlela yokufihla bona iimali zihlale zifihliwe bekube uzithinta bona uzibone, begodu usebenzise ukuphuma msinyana bona utjhiye amakhasi wemali ubuyele msinyana kumaphrofayili. Imilayezo efihliweko ayinazo iimali, amalanga nanyana amabizo wesimo."
     },
     "control": {
       "title": "Nangabe umuntu uphethe imali yakho",
@@ -1188,7 +1191,7 @@
     "lockNow": "Khiya nje",
     "discreet": "Indlela yokufihla",
     "discreetHint": "Fihla iimali esikrinini bekube uthinta Tjengisa iimali, begodu uthumele imilayezo engenazo iimali nanyana amalanga.",
-    "quickExitHint": "Ukuphuma msinyana kuhlala phezulu esikrinini. Kufihla koke begodu kuvula ikhasi elingenalitho.",
+    "quickExitHint": "Ukuphuma msinyana kuhlala phezulu esikrinini. Kufihla iimali begodu kubuyela msinyana kumaphrofayili.",
     "policy": "Funda umthethomgomo wokuphepha"
   },
   "diag": {

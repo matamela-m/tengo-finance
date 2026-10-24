@@ -611,7 +611,14 @@
     "exportLink": "Sien en voer my data uit",
     "deleteProfile": "Vee my profiel uit",
     "switchPeople": "Wissel na die fiktiewe mense",
-    "notice": "Privaatheidskennisgewing en bepalings"
+    "notice": "Privaatheidskennisgewing en bepalings",
+    "photoTitle": "Profielfoto",
+    "photoChoose": "Kies 'n foto",
+    "photoRemove": "Verwyder foto",
+    "photoHint": "Op hierdie toestel klein gemaak en saam met jou profiel gestoor. Net jy sien dit.",
+    "photoSaved": "Foto gestoor",
+    "photoRemoved": "Foto verwyder",
+    "photoError": "Daardie lêer kon nie gebruik word nie. Probeer 'n JPG- of PNG-foto."
   },
   "errors": {
     "loadTitle": "Kon nie jou data laai nie",
@@ -1115,11 +1122,7 @@
   "safety": {
     "quickExit": "Vinnige uitgang",
     "showAmounts": "Wys bedrae",
-    "hideAmounts": "Versteek bedrae",
-    "exitTitle": "Sakrekenaar",
-    "exitBack": "Terug",
-    "calcResult": "Resultaat",
-    "calcClear": "Vee uit"
+    "hideAmounts": "Versteek bedrae"
   },
   "safetyPolicy": {
     "title": "Veiligheid en vir wie Tengo is",
@@ -1131,7 +1134,7 @@
     },
     "shared": {
       "title": "Gedeelde fone",
-      "body": "Jy kan 'n PIN stel sodat Tengo homself ná 'n paar minute sluit, diskrete modus aanskakel sodat bedrae versteek bly totdat jy tik om hulle te wys, en vinnige uitgang gebruik om Tengo dadelik vir 'n gewone bladsy te verlaat. Diskrete boodskappe bevat geen bedrae, datums of dekkingswoorde nie."
+      "body": "Jy kan 'n PIN stel sodat Tengo homself ná 'n paar minute sluit, diskrete modus aanskakel sodat bedrae versteek bly totdat jy tik om hulle te wys, en vinnige uitgang gebruik om die geldskerms te verlaat en dadelik terug te gaan na die profiele. Diskrete boodskappe bevat geen bedrae, datums of dekkingswoorde nie."
     },
     "control": {
       "title": "As iemand jou geld beheer",
@@ -1188,7 +1191,7 @@
     "lockNow": "Sluit nou",
     "discreet": "Diskrete modus",
     "discreetHint": "Versteek bedrae op die skerm totdat jy Wys bedrae tik, en stuur boodskappe sonder bedrae of datums.",
-    "quickExitHint": "Vinnige uitgang is altyd bo-aan die skerm. Dit versteek alles en maak 'n gewone bladsy oop.",
+    "quickExitHint": "Vinnige uitgang is altyd bo-aan die skerm. Dit versteek bedrae en gaan dadelik terug na die profiele.",
     "policy": "Lees die veiligheidsbeleid"
   },
   "diag": {

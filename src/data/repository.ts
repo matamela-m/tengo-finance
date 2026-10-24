@@ -60,6 +60,8 @@ export interface OwnProfile {
   sample?: boolean;
   /** Onboarding step reached, so the wizard can be resumed. 4 means done. */
   onboardingStep?: number;
+  /** Optional profile photo the person chose, shrunk on the device to a small square image (a data URL). */
+  photo?: string;
 }
 
 export interface ConsentRecord {

@@ -611,7 +611,14 @@
     "exportLink": "Bona futhi ukhiphe imininingwane yami",
     "deleteProfile": "Susa iphrofayela yami",
     "switchPeople": "Shintshela kubantu abaqanjiwe",
-    "notice": "Isaziso sobumfihlo nemigomo"
+    "notice": "Isaziso sobumfihlo nemigomo",
+    "photoTitle": "Isithombe sephrofayela",
+    "photoChoose": "Khetha isithombe",
+    "photoRemove": "Susa isithombe",
+    "photoHint": "Senziwa sibe sincane kule divayisi futhi silondolozwe nephrofayela yakho. Nguwe kuphela osibonayo.",
+    "photoSaved": "Isithombe silondoloziwe",
+    "photoRemoved": "Isithombe sisusiwe",
+    "photoError": "Lelo fayela alikwazanga ukusetshenziswa. Zama isithombe se-JPG noma se-PNG."
   },
   "errors": {
     "loadTitle": "Ayikwazanga ukulayisha imininingwane yakho",
@@ -1115,11 +1122,7 @@
   "safety": {
     "quickExit": "Phuma ngokushesha",
     "showAmounts": "Khombisa izimali",
-    "hideAmounts": "Fihla izimali",
-    "exitTitle": "Isibali",
-    "exitBack": "Emuva",
-    "calcResult": "Umphumela",
-    "calcClear": "Sula"
+    "hideAmounts": "Fihla izimali"
   },
   "safetyPolicy": {
     "title": "Ukuphepha nokuthi i-Tengo ingeyabani",
@@ -1131,7 +1134,7 @@
     },
     "shared": {
       "title": "Amafoni abiwe",
-      "body": "Ungasetha i-PIN ukuze i-Tengo izikhiye ngemuva kwemizuzu embalwa, uvule imodi yokufihla ukuze izimali zihlale zifihliwe uze uthinte ukuze uzibone, futhi usebenzise ukuphuma ngokushesha ukuze ushiye i-Tengo uye ekhasini elingenalutho ngaso leso sikhathi. Imilayezo efihliwe ayinazo izimali, izinsuku noma amagama esimo."
+      "body": "Ungasetha i-PIN ukuze i-Tengo izikhiye ngemuva kwemizuzu embalwa, uvule imodi yokufihla ukuze izimali zihlale zifihliwe uze uthinte ukuze uzibone, futhi usebenzise ukuphuma ngokushesha ukuze ushiye izikrini zemali ubuyele ngokushesha kumaphrofayela. Imilayezo efihliwe ayinazo izimali, izinsuku noma amagama esimo."
     },
     "control": {
       "title": "Uma umuntu ephethe imali yakho",
@@ -1188,7 +1191,7 @@
     "lockNow": "Khiya manje",
     "discreet": "Imodi yokufihla",
     "discreetHint": "Fihla izimali esikrinini uze uthinte u-Khombisa izimali, futhi uthumele imilayezo engenazo izimali noma izinsuku.",
-    "quickExitHint": "Ukuphuma ngokushesha kuhlala kuphezulu esikrinini. Kufihla konke futhi kuvule ikhasi elingenalutho.",
+    "quickExitHint": "Ukuphuma ngokushesha kuhlala kuphezulu esikrinini. Kufihla izimali futhi kubuyela ngokushesha kumaphrofayela.",
     "policy": "Funda inqubomgomo yokuphepha"
   },
   "diag": {

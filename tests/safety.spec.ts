@@ -53,16 +53,15 @@ test('discreet mode hides amounts until Show amounts is tapped', async ({ page }
   await expect(budget).not.toContainText(/R\d/);
 });
 
-test('quick exit leaves for a neutral page and Back does not return to the forecast', async ({ page }) => {
+test('quick exit goes straight back to the profiles and Back does not return to the forecast', async ({ page }) => {
   await enterAsLerato(page);
   await page.goto('/app/plan');
   await page.getByRole('button', { name: 'Quick exit' }).first().click();
-  await expect(page).toHaveURL(/\/exit$/);
-  // A plain working calculator: an ordinary phone tool, with no empty notes list to look odd.
-  await expect(page.getByRole('heading', { name: 'Calculator' })).toBeVisible();
-  await expect(page.locator('body')).not.toContainText(/Tengo|Lerato|R\d/);
-  for (const k of ['7', '×', '6', '=']) await page.getByRole('button', { name: k, exact: true }).click();
-  await expect(page.getByLabel('Result')).toHaveText('42');
+  await expect(page).toHaveURL(/\/start$/);
+  await expect(page.getByRole('heading', { level: 1, name: 'Choose how to explore' })).toBeVisible();
+  // No amounts and no one chosen: nothing of Lerato's money is left on screen.
+  await expect(page.locator('body')).not.toContainText(/R\d/);
+  await expect(page.getByRole('button', { name: /Continue as/ })).toHaveCount(0);
   await page.goBack();
   await expect(page).not.toHaveURL(/\/app\/plan$/);
 });

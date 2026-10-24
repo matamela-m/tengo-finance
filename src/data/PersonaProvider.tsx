@@ -76,9 +76,10 @@ export function PersonaProvider({ children }: { children: ReactNode }) {
   const [record, setRecord] = useState<PersonaRecord | null>(null);
   const [consent, setConsentState] = useState<ConsentRecord | null>(null);
   const nickname = record?.personaId === OWN_ID ? record.profile?.nickname : undefined;
+  const photo = record?.personaId === OWN_ID ? record.profile?.photo : undefined;
   const profile: PersonaProfile | undefined = useMemo(
-    () => (isOwn ? ownProfile(nickname, i18n.t('own.you')) : getPersona(personaId)),
-    [isOwn, nickname, personaId],
+    () => (isOwn ? ownProfile(nickname, i18n.t('own.you'), photo) : getPersona(personaId)),
+    [isOwn, nickname, photo, personaId],
   );
   const [audit, setAudit] = useState<AuditEntry[]>([]);
   const [reviews, setReviews] = useState<ReviewRequest[]>([]);

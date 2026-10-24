@@ -611,7 +611,14 @@
     "exportLink": "Bona gomme o ntšhe tshedimošo ya ka",
     "deleteProfile": "Phumola profaele ya ka",
     "switchPeople": "Fetogela go batho ba maitirelo",
-    "notice": "Tsebišo ya sephiri le mabaka"
+    "notice": "Tsebišo ya sephiri le mabaka",
+    "photoTitle": "Seswantšho sa profaele",
+    "photoChoose": "Kgetha seswantšho",
+    "photoRemove": "Tloša seswantšho",
+    "photoHint": "Se dirwa se sennyane sedirišweng se gomme sa bolokwa le profaele ya gago. Ke wena feela yo a se bonago.",
+    "photoSaved": "Seswantšho se bolokilwe",
+    "photoRemoved": "Seswantšho se tlošitšwe",
+    "photoError": "Faele yeo ga e a kgona go šomišwa. Leka seswantšho sa JPG goba PNG."
   },
   "errors": {
     "loadTitle": "Ga se ya kgona go laiša tshedimošo ya gago",
@@ -1115,11 +1122,7 @@
   "safety": {
     "quickExit": "Tšwa ka pela",
     "showAmounts": "Bontšha ditšhelete",
-    "hideAmounts": "Uta ditšhelete",
-    "exitTitle": "Khalkhuleitha",
-    "exitBack": "Morago",
-    "calcResult": "Dipoelo",
-    "calcClear": "Phumola"
+    "hideAmounts": "Uta ditšhelete"
   },
   "safetyPolicy": {
     "title": "Polokego le gore Tengo ke ya mang",
@@ -1131,7 +1134,7 @@
     },
     "shared": {
       "title": "Megala ye e abelanwago",
-      "body": "O ka bea PIN gore Tengo e iphate ka morago ga metsotso ye mmalwa, wa bula mokgwa wa sephiri gore ditšhelete di dule di utilwe go fihla o kgotla go di bona, gomme wa šomiša go tšwa ka pela go tlogela Tengo go ya letlakaleng le le se nago selo ka yona nako yeo. Melaetša ya sephiri ga e na ditšhelete, matšatši goba mantšu a boemo."
+      "body": "O ka bea PIN gore Tengo e iphate ka morago ga metsotso ye mmalwa, wa bula mokgwa wa sephiri gore ditšhelete di dule di utilwe go fihla o kgotla go di bona, gomme wa šomiša go tšwa ka pela go tlogela matlakala a tšhelete o boele go diprofaele ka pela. Melaetša ya sephiri ga e na ditšhelete, matšatši goba mantšu a boemo."
     },
     "control": {
       "title": "Ge motho a laola tšhelete ya gago",
@@ -1188,7 +1191,7 @@
     "lockNow": "Notlela bjale",
     "discreet": "Mokgwa wa sephiri",
     "discreetHint": "Uta ditšhelete sešireng go fihla o kgotla Bontšha ditšhelete, gomme o romele melaetša ye e se nago ditšhelete goba matšatši.",
-    "quickExitHint": "Go tšwa ka pela go dula go le godimo sešireng. Go uta tšohle gomme go bula letlakala le le se nago selo.",
+    "quickExitHint": "Go tšwa ka pela go dula go le godimo sešireng. Go uta ditšhelete gomme go boela go diprofaele ka pela.",
     "policy": "Bala pholisi ya polokego"
   },
   "diag": {

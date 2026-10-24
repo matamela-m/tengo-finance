@@ -611,7 +611,14 @@
     "exportLink": "Bona mme o ntshe dintlha tsa ka",
     "deleteProfile": "Hlakola profaele ya ka",
     "switchPeople": "Fetohela ho batho ba boiqapelo",
-    "notice": "Tsebiso ya lekunutu le dipehelo"
+    "notice": "Tsebiso ya lekunutu le dipehelo",
+    "photoTitle": "Setshwantsho sa profaele",
+    "photoChoose": "Kgetha setshwantsho",
+    "photoRemove": "Tlosa setshwantsho",
+    "photoHint": "Se etswa se senyenyane sesebedisweng sena mme se bolokwa le profaele ya hao. Ke wena feela ya se bonang.",
+    "photoSaved": "Setshwantsho se bolokilwe",
+    "photoRemoved": "Setshwantsho se tlositswe",
+    "photoError": "Faele eo ha e a kgona ho sebediswa. Leka setshwantsho sa JPG kapa PNG."
   },
   "errors": {
     "loadTitle": "Ha e a kgona ho jarolla dintlha tsa hao",
@@ -1115,11 +1122,7 @@
   "safety": {
     "quickExit": "Tswa kapele",
     "showAmounts": "Bontsha ditjhelete",
-    "hideAmounts": "Pata ditjhelete",
-    "exitTitle": "Khalkhuleitha",
-    "exitBack": "Morao",
-    "calcResult": "Sephetho",
-    "calcClear": "Hlakola"
+    "hideAmounts": "Pata ditjhelete"
   },
   "safetyPolicy": {
     "title": "Polokeho le hore Tengo ke ya mang",
@@ -1131,7 +1134,7 @@
     },
     "shared": {
       "title": "Mehala e arolelanwang",
-      "body": "O ka beha PIN hore Tengo e itshware ka mora metsotso e mmalwa, wa bula mokgwa wa lekunutu hore ditjhelete di dule di patilwe ho fihlela o tobetsa ho di bona, mme wa sebedisa ho tswa kapele ho tlohela Tengo ho ya leqepheng le se nang letho hanghang. Melaetsa ya lekunutu ha e na ditjhelete, matsatsi kapa mantswe a boemo."
+      "body": "O ka beha PIN hore Tengo e itshware ka mora metsotso e mmalwa, wa bula mokgwa wa lekunutu hore ditjhelete di dule di patilwe ho fihlela o tobetsa ho di bona, mme wa sebedisa ho tswa kapele ho tlohela maqephe a tjhelete o kgutlele diprofaeleng hanghang. Melaetsa ya lekunutu ha e na ditjhelete, matsatsi kapa mantswe a boemo."
     },
     "control": {
       "title": "Haeba motho a laola tjhelete ya hao",
@@ -1188,7 +1191,7 @@
     "lockNow": "Notlela hona jwale",
     "discreet": "Mokgwa wa lekunutu",
     "discreetHint": "Pata ditjhelete skrineng ho fihlela o tobetsa Bontsha ditjhelete, mme o romele melaetsa e se nang ditjhelete kapa matsatsi.",
-    "quickExitHint": "Ho tswa kapele ho dula ho le hodimo skrineng. Ho pata tsohle mme ho bula leqephe le se nang letho.",
+    "quickExitHint": "Ho tswa kapele ho dula ho le hodimo skrineng. Ho pata ditjhelete mme ho kgutlela diprofaeleng hanghang.",
     "policy": "Bala leano la polokeho"
   },
   "diag": {

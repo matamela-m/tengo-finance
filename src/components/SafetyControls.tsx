@@ -8,8 +8,8 @@ import { useLock } from './Lock';
 
 /**
  * Shared-phone controls, always in reach: quick exit, and in discreet mode a button to show amounts
- * for a short while. Quick exit hides amounts, locks the app if a PIN is set, and replaces the page
- * with a neutral one, so Back does not return to the forecast.
+ * for a short while. Quick exit hides amounts, locks the app if a PIN is set, and goes straight back to
+ * the profiles, replacing the page so Back does not return to the forecast.
  */
 export function SafetyControls({ compact = false }: { compact?: boolean }) {
   const { t } = useTranslation();
@@ -17,6 +17,7 @@ export function SafetyControls({ compact = false }: { compact?: boolean }) {
   const discreet = useSession((s) => s.discreet);
   const { until, reveal, hide } = useReveal();
   const { lockNow } = useLock();
+  const setActive = useSession((s) => s.setActivePersona);
   const shown = discreet && until > Date.now();
 
   // Hide again when the reveal time runs out.
@@ -29,7 +30,8 @@ export function SafetyControls({ compact = false }: { compact?: boolean }) {
   const quickExit = () => {
     hide();
     lockNow();
-    navigate('/exit', { replace: true });
+    setActive(null);
+    navigate('/start', { replace: true });
   };
 
   const btn = compact

@@ -611,7 +611,14 @@
     "exportLink": "Bona uze uthumele ngaphandle iinkcukacha zam",
     "deleteProfile": "Cima iprofayile yam",
     "switchPeople": "Tshintshela kubantu abayintsomi",
-    "notice": "Isaziso sobumfihlo nemiqathango"
+    "notice": "Isaziso sobumfihlo nemiqathango",
+    "photoTitle": "Umfanekiso weprofayile",
+    "photoChoose": "Khetha umfanekiso",
+    "photoRemove": "Susa umfanekiso",
+    "photoHint": "Wenziwa mncinci kwesi sixhobo kwaye ugcinwe neprofayile yakho. Nguwe kuphela owubonayo.",
+    "photoSaved": "Umfanekiso ugciniwe",
+    "photoRemoved": "Umfanekiso ususiwe",
+    "photoError": "Loo fayile ayikwazanga ukusetyenziswa. Zama umfanekiso we-JPG okanye we-PNG."
   },
   "errors": {
     "loadTitle": "Akukwazekanga ukulayisha iinkcukacha zakho",
@@ -1115,11 +1122,7 @@
   "safety": {
     "quickExit": "Phuma ngokukhawuleza",
     "showAmounts": "Bonisa izixa",
-    "hideAmounts": "Fihla izixa",
-    "exitTitle": "Isibali",
-    "exitBack": "Emva",
-    "calcResult": "Isiphumo",
-    "calcClear": "Cima"
+    "hideAmounts": "Fihla izixa"
   },
   "safetyPolicy": {
     "title": "Ukhuseleko nokuba i-Tengo ingabani",
@@ -1131,7 +1134,7 @@
     },
     "shared": {
       "title": "Iifowuni ekwabelwana ngazo",
-      "body": "Ungaseta i-PIN ukuze i-Tengo izitshixe emva kwemizuzu embalwa, uvule imowudi yokufihla ukuze izixa zihlale zifihliwe ude ucofe ukuze uzibone, kwaye usebenzise ukuphuma ngokukhawuleza ukuze ushiye i-Tengo uye kwiphepha elingenanto kwangoko. Imiyalezo efihliweyo ayinazo izixa, imihla okanye amagama emeko."
+      "body": "Ungaseta i-PIN ukuze i-Tengo izitshixe emva kwemizuzu embalwa, uvule imowudi yokufihla ukuze izixa zihlale zifihliwe ude ucofe ukuze uzibone, kwaye usebenzise ukuphuma ngokukhawuleza ukuze ushiye izikrini zemali ubuyele kwangoko kwiiprofayile. Imiyalezo efihliweyo ayinazo izixa, imihla okanye amagama emeko."
     },
     "control": {
       "title": "Ukuba umntu ulawula imali yakho",
@@ -1188,7 +1191,7 @@
     "lockNow": "Tshixa ngoku",
     "discreet": "Imowudi yokufihla",
     "discreetHint": "Fihla izixa esikrinini ude ucofe u-Bonisa izixa, kwaye uthumele imiyalezo engenazo izixa okanye imihla.",
-    "quickExitHint": "Ukuphuma ngokukhawuleza kusoloko kuphezulu esikrinini. Kufihla yonke into kwaye kuvule iphepha elingenanto.",
+    "quickExitHint": "Ukuphuma ngokukhawuleza kusoloko kuphezulu esikrinini. Kufihla izixa kwaye kubuyela ngokukhawuleza kwiiprofayile.",
     "policy": "Funda umgaqo-nkqubo wokhuseleko"
   },
   "diag": {

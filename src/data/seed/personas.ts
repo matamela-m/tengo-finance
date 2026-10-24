@@ -17,12 +17,14 @@ export interface PersonaProfile {
   avatar: 'accent' | 'neutral' | 'inverse';
   /** True for the person's own profile: never shown as fictional. */
   own?: boolean;
+  /** Portrait image URL. The fictional people have illustrations; the own profile can add a photo. */
+  photo?: string;
 }
 
 export const PERSONAS: (PersonaProfile & { id: PersonaId })[] = [
-  { id: 'thabo', name: 'Thabo', place: 'Tshwane', startState: 'tight', avatar: 'accent' },
-  { id: 'lerato', name: 'Lerato', place: 'Mamelodi', startState: 'enough', avatar: 'neutral' },
-  { id: 'ayanda', name: 'Ayanda', place: 'Tembisa', startState: 'short', avatar: 'inverse' },
+  { id: 'thabo', name: 'Thabo', place: 'Tshwane', startState: 'tight', avatar: 'accent', photo: '/avatars/thabo.webp' },
+  { id: 'lerato', name: 'Lerato', place: 'Mamelodi', startState: 'enough', avatar: 'neutral', photo: '/avatars/lerato.webp' },
+  { id: 'ayanda', name: 'Ayanda', place: 'Tembisa', startState: 'short', avatar: 'inverse', photo: '/avatars/ayanda.webp' },
 ];
 
 export function getPersona(id: string | null | undefined): (PersonaProfile & { id: PersonaId }) | undefined {
@@ -34,6 +36,6 @@ export function isProfileId(id: string | null | undefined): id is ProfileId {
 }
 
 /** The own profile as a PersonaProfile, named by the nickname when there is one. */
-export function ownProfile(nickname: string | undefined, fallbackName: string): PersonaProfile {
-  return { id: OWN_ID, name: nickname?.trim() || fallbackName, place: '', startState: 'tight', avatar: 'accent', own: true };
+export function ownProfile(nickname: string | undefined, fallbackName: string, photo?: string): PersonaProfile {
+  return { id: OWN_ID, name: nickname?.trim() || fallbackName, place: '', startState: 'tight', avatar: 'accent', own: true, photo };
 }

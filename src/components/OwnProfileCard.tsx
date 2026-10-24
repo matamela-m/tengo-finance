@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { usePersona, useRecordPersona } from '../data/PersonaProvider';
@@ -7,6 +7,8 @@ import { accountsAvailable, useAccount } from '../data/account';
 import { useAnnounce } from './A11y';
 import { ProfileChip } from './DemoChip';
 import { Icon } from './Icon';
+import { Avatar } from './Avatar';
+import { squarePhoto } from '../lib/photo';
 
 /** Profile management for the person's own profile: name, storage mode, export, delete, switch back. */
 export function OwnProfileCard() {
@@ -14,7 +16,21 @@ export function OwnProfileCard() {
   const navigate = useNavigate();
   const announce = useAnnounce();
   const { record } = useRecordPersona();
-  const { updateProfile } = usePersona();
+  const { updateProfile, profile } = usePersona();
+  const fileInput = useRef<HTMLInputElement>(null);
+  const [photoError, setPhotoError] = useState(false);
+  const photo = record.profile?.photo;
+
+  const choosePhoto = async (file: File | undefined) => {
+    if (!file) return;
+    setPhotoError(false);
+    try {
+      await updateProfile({ photo: await squarePhoto(file) });
+      announce(t('me.photoSaved'));
+    } catch {
+      setPhotoError(true);
+    }
+  };
   const setActive = useSession((s) => s.setActivePersona);
   const [nickname, setNickname] = useState(record.profile?.nickname ?? '');
   const mode = useAccount((s) => s.mode);
@@ -34,6 +50,48 @@ export function OwnProfileCard() {
           {mode === 'account' ? t('account.manage') : t('account.saveTitle')}
         </Link>
       )}
+      <div className="mt-4 flex flex-wrap items-center gap-4">
+        {profile && <Avatar persona={profile} size={64} />}
+        <div className="min-w-0 flex-1">
+          <p className="text-sm font-semibold text-ink">{t('me.photoTitle')}</p>
+          <p className="mt-0.5 text-xs text-muted">{t('me.photoHint')}</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            <input
+              ref={fileInput}
+              type="file"
+              accept="image/*"
+              className="sr-only"
+              tabIndex={-1}
+              aria-hidden
+              onChange={(e) => {
+                void choosePhoto(e.target.files?.[0]);
+                e.target.value = '';
+              }}
+            />
+            <button type="button" className="btn-secondary min-h-[44px]" onClick={() => fileInput.current?.click()}>
+              <Icon name="upload" size={16} />
+              {t('me.photoChoose')}
+            </button>
+            {photo && (
+              <button
+                type="button"
+                className="btn-ghost min-h-[44px]"
+                onClick={() => {
+                  setPhotoError(false);
+                  void updateProfile({ photo: undefined }).then(() => announce(t('me.photoRemoved')));
+                }}
+              >
+                {t('me.photoRemove')}
+              </button>
+            )}
+          </div>
+          {photoError && (
+            <p role="alert" className="mt-2 text-sm text-danger-text">
+              {t('me.photoError')}
+            </p>
+          )}
+        </div>
+      </div>
       <form
         className="mt-4 flex flex-wrap items-end gap-2"
         onSubmit={(e) => {

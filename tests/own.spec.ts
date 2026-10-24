@@ -97,3 +97,32 @@ test('onboarding can be resumed where it stopped', async ({ page }) => {
   await page.goto('/app');
   await expect(page).toHaveURL(/\/welcome$/);
 });
+
+test('a profile photo can be chosen, shows beside the name, and can be removed', async ({ page }) => {
+  await startOwn(page);
+  await page.getByRole('button', { name: /Try with sample numbers/ }).click();
+  await page.getByRole('button', { name: 'Open Home' }).click();
+  await page.goto('/app/me');
+  // A 400 x 300 photo, made in the page so the test needs no file on disk.
+  const png = await page.evaluate(() => {
+    const c = document.createElement('canvas');
+    c.width = 400;
+    c.height = 300;
+    const ctx = c.getContext('2d')!;
+    ctx.fillStyle = '#c0392b';
+    ctx.fillRect(0, 0, 400, 300);
+    return c.toDataURL('image/png').split(',')[1]!;
+  });
+  await page.locator('input[type=file][accept="image/*"]').setInputFiles({ name: 'me.png', mimeType: 'image/png', buffer: Buffer.from(png, 'base64') });
+  await expect(page.getByText('Photo saved')).toBeAttached();
+  // Saved small and square with the profile, and used for the avatar.
+  const photo = await page.evaluate(() => (JSON.parse(localStorage.getItem('tengo.profile.v1') ?? '{}') as { personas?: Record<string, { record?: { profile?: { photo?: string } } }> }).personas?.own?.record?.profile?.photo ?? '');
+  expect(photo).toMatch(/^data:image\/(webp|jpeg);base64,/);
+  expect(photo.length).toBeLessThan(40_000);
+  await expect(page.locator(`img[src="${photo}"]`).first()).toBeVisible();
+  // A file that is not an image is refused with a message.
+  await page.locator('input[type=file][accept="image/*"]').setInputFiles({ name: 'notes.txt', mimeType: 'text/plain', buffer: Buffer.from('hello') });
+  await expect(page.getByRole('alert')).toHaveText('That file could not be used. Try a JPG or PNG photo.');
+  await page.getByRole('button', { name: 'Remove photo' }).click();
+  await expect(page.locator(`img[src="${photo}"]`)).toHaveCount(0);
+});

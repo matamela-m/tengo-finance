@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { A11yProvider, SkipLink } from './components/A11y';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { CommandPaletteHost } from './components/CommandPaletteHost';
@@ -23,7 +23,6 @@ const InboxPage = lazy(() => import('./pages/Inbox'));
 const PrivacyPage = lazy(() => import('./pages/Privacy'));
 const MePage = lazy(() => import('./pages/Me'));
 const NotFound = lazy(() => import('./pages/NotFound'));
-const ExitPage = lazy(() => import('./pages/Exit'));
 const SafetyPolicy = lazy(() => import('./pages/SafetyPolicy'));
 const Welcome = lazy(() => import('./pages/Welcome'));
 const PrivacyNotice = lazy(() => import('./pages/PrivacyNotice'));
@@ -59,7 +58,8 @@ export default function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/start" element={<Picker />} />
           <Route path="/consent" element={<Consent />} />
-          <Route path="/exit" element={<ExitPage />} />
+          {/* Quick exit used to land here. Old links go to the profiles. */}
+          <Route path="/exit" element={<Navigate to="/start" replace />} />
           <Route path="/safety" element={<SafetyPolicy />} />
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/privacy-notice" element={<PrivacyNotice kind="notice" />} />

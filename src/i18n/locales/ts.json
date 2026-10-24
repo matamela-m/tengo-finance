@@ -611,7 +611,14 @@
     "exportLink": "Vona u humesa vuxokoxoko bya mina",
     "deleteProfile": "Susa phurofayili ya mina",
     "switchPeople": "Cincela eka vanhu va ku endliwa",
-    "notice": "Xitiviso xa xihundla na swiphemu"
+    "notice": "Xitiviso xa xihundla na swiphemu",
+    "photoTitle": "Xifaniso xa phurofayili",
+    "photoChoose": "Hlawula xifaniso",
+    "photoRemove": "Susa xifaniso",
+    "photoHint": "Xi endliwa xitsongo eka xitirhisiwa lexi naswona xi hlayisiwa na phurofayili ya wena. I wena ntsena u xi vonaka.",
+    "photoSaved": "Xifaniso xi hlayisiwile",
+    "photoRemoved": "Xifaniso xi susiwile",
+    "photoError": "Fayili yoleyo a yi tirhisekanga. Ringeta xifaniso xa JPG kumbe PNG."
   },
   "errors": {
     "loadTitle": "A yi kotanga ku layicha vuxokoxoko bya wena",
@@ -1115,11 +1122,7 @@
   "safety": {
     "quickExit": "Huma hi ku hatlisa",
     "showAmounts": "Kombisa mali",
-    "hideAmounts": "Fihla mali",
-    "exitTitle": "Xihlayi",
-    "exitBack": "Endzhaku",
-    "calcResult": "Mbuyelo",
-    "calcClear": "Sula"
+    "hideAmounts": "Fihla mali"
   },
   "safetyPolicy": {
     "title": "Vuhlayiseki na leswaku Tengo i ya mani",
@@ -1131,7 +1134,7 @@
     },
     "shared": {
       "title": "Tifoni leti avelaniwaka",
-      "body": "U nga veka PIN leswaku Tengo yi tilotlela endzhaku ka timinete ti nga ri tingani, u pfula ndlela ya xihundla leswaku mali yi tshama yi fihlekile ku fikela u kwana ku yi vona, naswona u tirhisa ku huma hi ku hatlisa ku siya Tengo u ya eka pheji leyi nga riki na nchumu hi nkarhi wolowo. Marungula ya xihundla a ma na mali, masiku kumbe marito ya xiyimo."
+      "body": "U nga veka PIN leswaku Tengo yi tilotlela endzhaku ka timinete ti nga ri tingani, u pfula ndlela ya xihundla leswaku mali yi tshama yi fihlekile ku fikela u kwana ku yi vona, naswona u tirhisa ku huma hi ku hatlisa ku siya tipheji ta mali u tlhelela eka tiphurofayili hi ku hatlisa. Marungula ya xihundla a ma na mali, masiku kumbe marito ya xiyimo."
     },
     "control": {
       "title": "Loko munhu a lawula mali ya wena",
@@ -1188,7 +1191,7 @@
     "lockNow": "Lotlela sweswi",
     "discreet": "Ndlela ya xihundla",
     "discreetHint": "Fihla mali eka xikirini ku fikela u kwana Kombisa mali, naswona u rhumela marungula lama nga riki na mali kumbe masiku.",
-    "quickExitHint": "Ku huma hi ku hatlisa ku tshama ehenhla ka xikirini. Ku fihla hinkwaswo naswona ku pfula pheji leyi nga riki na nchumu.",
+    "quickExitHint": "Ku huma hi ku hatlisa ku tshama ehenhla ka xikirini. Ku fihla mali naswona ku tlhelela eka tiphurofayili hi ku hatlisa.",
     "policy": "Hlaya pholisi ya vuhlayiseki"
   },
   "diag": {

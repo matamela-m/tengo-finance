@@ -611,7 +611,14 @@
     "exportLink": "See and export my data",
     "deleteProfile": "Delete my profile",
     "switchPeople": "Switch to the fictional people",
-    "notice": "Privacy notice and terms"
+    "notice": "Privacy notice and terms",
+    "photoTitle": "Profile photo",
+    "photoChoose": "Choose a photo",
+    "photoRemove": "Remove photo",
+    "photoHint": "Made small on this device and saved with your profile. Only you see it.",
+    "photoSaved": "Photo saved",
+    "photoRemoved": "Photo removed",
+    "photoError": "That file could not be used. Try a JPG or PNG photo."
   },
   "errors": {
     "loadTitle": "Could not load your data",
@@ -1115,11 +1122,7 @@
   "safety": {
     "quickExit": "Quick exit",
     "showAmounts": "Show amounts",
-    "hideAmounts": "Hide amounts",
-    "exitTitle": "Calculator",
-    "exitBack": "Back",
-    "calcResult": "Result",
-    "calcClear": "Clear"
+    "hideAmounts": "Hide amounts"
   },
   "safetyPolicy": {
     "title": "Safety and who Tengo is for",
@@ -1131,7 +1134,7 @@
     },
     "shared": {
       "title": "Shared phones",
-      "body": "You can set a PIN so Tengo locks itself after a few minutes, turn on discreet mode so amounts stay hidden until you tap to show them, and use quick exit to leave Tengo for a plain page straight away. Discreet messages carry no amounts, dates or cover words."
+      "body": "You can set a PIN so Tengo locks itself after a few minutes, turn on discreet mode so amounts stay hidden until you tap to show them, and use quick exit to leave the money screens and go straight back to the profiles. Discreet messages carry no amounts, dates or cover words."
     },
     "control": {
       "title": "If someone controls your money",
@@ -1188,7 +1191,7 @@
     "lockNow": "Lock now",
     "discreet": "Discreet mode",
     "discreetHint": "Hide amounts on screen until you tap Show amounts, and send messages with no amounts or dates.",
-    "quickExitHint": "Quick exit is always at the top of the screen. It hides everything and opens a plain page.",
+    "quickExitHint": "Quick exit is always at the top of the screen. It hides amounts and goes straight back to the profiles.",
     "policy": "Read the safety policy"
   },
   "diag": {

@@ -9,7 +9,7 @@ export default function NotFound({ embedded = false }: { embedded?: boolean }) {
   const Tag = embedded ? 'div' : 'main';
   return (
     <Tag id={embedded ? undefined : 'main'} className={`flex ${embedded ? 'min-h-[60vh]' : 'min-h-dvh'} flex-col items-center justify-center gap-6 px-6 text-center`}>
-      <Brand variant="mark" size={56} decorative />
+      <Brand variant="mark" size={48} decorative />
       <h1 className="font-heading text-4xl font-extrabold">{t('notFound.title')}</h1>
       <p className="max-w-md text-muted">{t('notFound.body')}</p>
       <Link to="/" className="btn-primary">

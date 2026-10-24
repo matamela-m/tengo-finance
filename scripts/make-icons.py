@@ -1,62 +1,47 @@
-"""Builds placeholder favicons and app icons: the "T" mark from the Brand component.
+"""Builds the app's logo and icon files from the founder's brand folder (tengo-brand/).
 
-A rounded square in the accent colour with a bold T. Placeholders until the new logo lands;
-replace the files in public/icons (and the Brand component) when it does.
+The artwork is never redrawn or recoloured here: files are only scaled down (never up) and
+re-saved, so the app ships small images instead of the full-size masters.
+
+  public/brand/  lockups and marks for the Brand component, one per theme
+  public/icons/  favicons, the Apple touch icon and the web app manifest icons
+  public/favicon.ico
 
 Run: pip install pillow && python3 scripts/make-icons.py
 """
+import shutil
 from pathlib import Path
 
-from PIL import Image, ImageDraw
+from PIL import Image
 
-OUT = Path('public/icons')
-ACCENT = (114, 145, 255, 255)  # dark theme --accent
-ON_ACCENT = (11, 11, 12, 255)  # dark theme --on-accent
-SS = 4  # supersample for smooth edges
-
-
-def t_glyph(draw: ImageDraw.ImageDraw, size: int, scale: float) -> None:
-    """A geometric bold T, centred. scale is the T height as a share of the canvas."""
-    h = size * scale
-    w = h * 0.86
-    bar = h * 0.24
-    stem = h * 0.27
-    x0 = (size - w) / 2
-    y0 = (size - h) / 2
-    r = bar * 0.22
-    draw.rounded_rectangle((x0, y0, x0 + w, y0 + bar), radius=r, fill=ON_ACCENT)
-    sx = (size - stem) / 2
-    draw.rounded_rectangle((sx, y0, sx + stem, y0 + h), radius=r, fill=ON_ACCENT)
+SRC = Path('tengo-brand')
+BRAND = Path('public/brand')
+ICONS = Path('public/icons')
 
 
-def icon(size: int, rounded: bool, scale: float) -> Image.Image:
-    big = size * SS
-    img = Image.new('RGBA', (big, big), (0, 0, 0, 0))
-    d = ImageDraw.Draw(img)
-    if rounded:
-        d.rounded_rectangle((0, 0, big - 1, big - 1), radius=big * 0.28, fill=ACCENT)
-    else:
-        d.rectangle((0, 0, big, big), fill=ACCENT)
-    t_glyph(d, big, scale)
-    return img.resize((size, size), Image.LANCZOS)
+def scaled(src: Path, width: int) -> Image.Image:
+    im = Image.open(src)
+    if im.width <= width:
+        return im.copy()
+    return im.resize((width, round(im.height * width / im.width)), Image.LANCZOS)
 
 
 def main() -> None:
-    OUT.mkdir(parents=True, exist_ok=True)
-    for name, size in {'favicon-32.png': 32, 'favicon-64.png': 64, 'icon-192.png': 192, 'icon-512.png': 512}.items():
-        icon(size, rounded=True, scale=0.52).save(OUT / name, optimize=True)
-    # Full bleed: iOS and Android apply their own mask. Keep the T inside the safe zone.
-    icon(180, rounded=False, scale=0.5).convert('RGB').save(OUT / 'apple-touch-icon.png', optimize=True)
-    icon(512, rounded=False, scale=0.42).convert('RGB').save(OUT / 'icon-maskable-512.png', optimize=True)
-    svg = (
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
-        '<rect width="64" height="64" rx="18" fill="#7291FF"/>'
-        '<rect x="17.7" y="15.4" width="28.6" height="8" rx="1.8" fill="#0B0B0C"/>'
-        '<rect x="27.5" y="15.4" width="9" height="33.3" rx="1.8" fill="#0B0B0C"/>'
-        '</svg>\n'
-    )
-    (OUT / 'favicon.svg').write_text(svg)
-    print(f'Placeholder icons written to {OUT}')
+    BRAND.mkdir(parents=True, exist_ok=True)
+    ICONS.mkdir(parents=True, exist_ok=True)
+    # Shown at up to about 160 px wide, so 480 px covers 3x screens.
+    for theme in ('light', 'dark'):
+        scaled(SRC / f'png/tengo-horizontal-on-{theme}.png', 480).save(BRAND / f'tengo-horizontal-on-{theme}.png', optimize=True)
+        scaled(SRC / f'png/tengo-mark-on-{theme}.png', 270).save(BRAND / f'tengo-mark-on-{theme}.png', optimize=True)
+        # Square tile, used where the mark stands in for an avatar.
+        scaled(SRC / f'icons/icon-{theme}-192.png', 96).save(BRAND / f'tengo-tile-{theme}.png', optimize=True)
+    # The app opens in the dark theme, so its icons are the mark on dark.
+    for size, name in ((32, 'favicon-32.png'), (180, 'apple-touch-icon.png'), (192, 'icon-192.png'), (512, 'icon-512.png')):
+        shutil.copyfile(SRC / f'icons/icon-dark-{size}.png', ICONS / name)
+    scaled(SRC / 'icons/icon-dark-1024.png', 64).save(ICONS / 'favicon-64.png', optimize=True)
+    shutil.copyfile(SRC / 'icons/icon-maskable-512.png', ICONS / 'icon-maskable-512.png')
+    shutil.copyfile(SRC / 'icons/favicon.ico', Path('public/favicon.ico'))
+    print(f'Logo files written to {BRAND}, icons to {ICONS}')
 
 
 if __name__ == '__main__':

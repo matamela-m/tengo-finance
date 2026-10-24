@@ -1,41 +1,47 @@
 /**
- * The only place the Tengo brand is drawn. The final logo replaces this one file.
- * wordmark: "Tengo" in Figtree 700 with slight negative tracking, in the current text colour.
- * mark: a rounded square in the accent colour with a bold "T". A placeholder until the new logo lands.
+ * The only place the Tengo brand is drawn, from the founder's logo files (tengo-brand/, scaled into
+ * public/brand by scripts/make-icons.py).
+ * wordmark: the horizontal lockup. mark: the three bars only. tile: the mark on a square, for avatars.
+ * Each comes in an on-light and an on-dark version; the theme shows the right one.
  */
 interface BrandProps {
-  variant?: 'wordmark' | 'mark';
-  /** Font size of the wordmark, or edge length of the mark, in px. */
+  variant?: 'wordmark' | 'mark' | 'tile';
+  /** Height of the wordmark or mark, or edge length of the tile, in px. */
   size?: number;
   className?: string;
   /** Set when the brand sits beside visible text that already says Tengo. */
   decorative?: boolean;
 }
 
-// Figtree directly, not the heading variable: "Tengo" has no Tshivenda letters, so it can always use it.
-const FIGTREE = "'Figtree Variable', 'Inter Variable', system-ui, sans-serif";
+// Width over height of the supplied artwork.
+const RATIO = { wordmark: 1583 / 303, mark: 1076 / 675, tile: 1 };
+const FILE = { wordmark: 'tengo-horizontal-on-', mark: 'tengo-mark-on-', tile: 'tengo-tile-' };
+// The brand rules ask for the lockup to be at least 120 px wide on screen.
+const MIN_WORDMARK_HEIGHT = Math.ceil(120 / RATIO.wordmark);
 
 export function Brand({ variant = 'wordmark', size = 22, className = '', decorative }: BrandProps) {
-  if (variant === 'mark') {
-    return (
-      <span
-        role={decorative ? undefined : 'img'}
-        aria-label={decorative ? undefined : 'Tengo'}
-        aria-hidden={decorative || undefined}
-        className={`inline-flex shrink-0 select-none items-center justify-center bg-accent font-bold leading-none text-on-accent ${className}`}
-        style={{ width: size, height: size, borderRadius: size * 0.28, fontSize: size * 0.62, fontFamily: FIGTREE, letterSpacing: '-0.02em' }}
-      >
-        T
-      </span>
-    );
-  }
+  const height = variant === 'wordmark' ? Math.max(size, MIN_WORDMARK_HEIGHT) : size;
+  const width = Math.round(height * RATIO[variant]);
+  const img = (theme: 'light' | 'dark', show: string) => (
+    <img
+      src={`/brand/${FILE[variant]}${theme}.png`}
+      alt=""
+      width={width}
+      height={height}
+      draggable={false}
+      className={`${show} max-w-none`}
+      style={{ width, height }}
+    />
+  );
   return (
     <span
+      role={decorative ? undefined : 'img'}
+      aria-label={decorative ? undefined : 'Tengo'}
       aria-hidden={decorative || undefined}
-      className={`inline-block select-none font-bold leading-none text-ink ${className}`}
-      style={{ fontSize: size, fontFamily: FIGTREE, letterSpacing: '-0.035em' }}
+      className={`inline-flex shrink-0 select-none ${variant === 'tile' ? 'overflow-hidden rounded-[28%]' : ''} ${className}`}
     >
-      Tengo
+      {img('light', 'block dark:hidden')}
+      {img('dark', 'hidden dark:block')}
     </span>
   );
 }

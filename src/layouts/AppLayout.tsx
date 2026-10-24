@@ -75,7 +75,7 @@ export function AppLayout({ children }: { children?: ReactNode }) {
       >
         <div className={`flex items-center px-1.5 ${collapsed ? 'justify-center' : 'justify-between'}`}>
           <Link to="/app" className="inline-flex min-h-[44px] items-center rounded-md" aria-label={`Tengo, ${t('nav.home')}`}>
-            {collapsed ? <Brand variant="mark" size={30} decorative /> : <Brand size={22} decorative />}
+            {collapsed ? <Brand variant="mark" size={22} decorative /> : <Brand size={22} decorative />}
           </Link>
           {!collapsed && (
             <button

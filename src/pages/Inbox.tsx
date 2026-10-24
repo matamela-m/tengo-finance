@@ -119,7 +119,7 @@ export default function InboxPage() {
                   <span className="rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-muted">{t('inbox.todayAt')}</span>
                 </div>
                 <div className="flex items-end gap-2">
-                  <Brand variant="mark" size={30} decorative className="rounded-full" />
+                  <Brand variant="tile" size={30} decorative />
                   <div
                     className={`relative min-w-0 max-w-[85%] rounded-[18px] rounded-bl-[6px] px-4 py-3 text-[15px] leading-relaxed text-ink ${
                       channel === 'whatsapp' ? 'border border-line bg-surface' : 'bg-surface-3'

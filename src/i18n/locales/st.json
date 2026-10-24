@@ -67,8 +67,6 @@
     "cta": "Hlahloba Tengo",
     "ctaNote": "Ha ho ngodiso. Dintlha tsa boiqapelo feela.",
     "previewLabel": "Ponelopele e phelang ya Tengo",
-    "previewWho": "Thabo, mokganni wa e-hailing. Wa boiqapelo.",
-    "previewCaption": "Ponelopele ya Tengo bakeng sa mokganni wa boiqapelo: {{label}} {{date}}, boemo {{state}}, tekanyetso ya letsatsi {{amount}}.",
     "howTitle": "Mehato e meraro ho ya letsatsing leo o ka rerang ka lona.",
     "steps": {
       "history": {
@@ -99,7 +97,6 @@
     "ctaSecondary": "Bona kamoo e sebetsang",
     "stats": {
       "history": "Matsatsi a nalane ho motho ka mong",
-      "states": "Maemo: E lekane, E lekanyana, E a haella, Ha ho a lekana ho bolela",
       "languages": "Dipuo tse 11. Senyesemane le meralo e 10 ya AI, e sa ntsaneng e tla hlahlojwa.",
       "logins": "Ho kena bankeng ho hlokahalang"
     },
@@ -139,7 +136,8 @@
         "q": "Ho ka etsahala eng haeba letsatsi le fositse?",
         "a": "Ke kakanyo e tswang nalaneng ya hao, kahoo e ka fosahala. Bula Hobaneng letsatsi lena ho bona tse kentsweng, lokisa transekshene efe kapa efe ho Tjhelete, kapa o sebedise Botsa ka sephetho sena ho kopa tlhahlobo. Demong ena kopo eo ke ketsiso mme e dula sesebedisweng sa hao."
       }
-    }
+    },
+    "previewAlt": "Tengo Lehae: letsatsi la Lerato, tekanyetso ya letsatsi le tjhelete e latelang. Motho wa boiqapelo."
   },
   "picker": {
     "title": "Kgetha kamoo o tla hlahloba",
@@ -1118,9 +1116,10 @@
     "quickExit": "Tswa kapele",
     "showAmounts": "Bontsha ditjhelete",
     "hideAmounts": "Pata ditjhelete",
-    "exitTitle": "Dintlha",
-    "exitBody": "Ha ho dintlha hajwale.",
-    "exitBack": "Morao"
+    "exitTitle": "Khalkhuleitha",
+    "exitBack": "Morao",
+    "calcResult": "Sephetho",
+    "calcClear": "Hlakola"
   },
   "safetyPolicy": {
     "title": "Polokeho le hore Tengo ke ya mang",

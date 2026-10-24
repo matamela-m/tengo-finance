@@ -58,8 +58,11 @@ test('quick exit leaves for a neutral page and Back does not return to the forec
   await page.goto('/app/plan');
   await page.getByRole('button', { name: 'Quick exit' }).first().click();
   await expect(page).toHaveURL(/\/exit$/);
-  await expect(page.getByRole('heading', { name: 'Notes' })).toBeVisible();
+  // A plain working calculator: an ordinary phone tool, with no empty notes list to look odd.
+  await expect(page.getByRole('heading', { name: 'Calculator' })).toBeVisible();
   await expect(page.locator('body')).not.toContainText(/Tengo|Lerato|R\d/);
+  for (const k of ['7', '×', '6', '=']) await page.getByRole('button', { name: k, exact: true }).click();
+  await expect(page.getByLabel('Result')).toHaveText('42');
   await page.goBack();
   await expect(page).not.toHaveURL(/\/app\/plan$/);
 });

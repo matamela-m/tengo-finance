@@ -67,8 +67,6 @@
     "cta": "Lavisisa Tengo",
     "ctaNote": "A ku na ku tsarisa. Vuxokoxoko bya ku endliwa ntsena.",
     "previewLabel": "Nkombiso lowu hanyaka wa Tengo",
-    "previewWho": "Thabo, muchayeri wa e-hailing. Wa ku endliwa.",
-    "previewCaption": "Nkombiso wa Tengo wa muchayeri wa ku endliwa: {{label}} {{date}}, xiyimo {{state}}, bajete ya siku {{amount}}.",
     "howTitle": "Magoza manharhu ku ya eka siku leri u nga kunguhataka ha rona.",
     "steps": {
       "history": {
@@ -99,7 +97,6 @@
     "ctaSecondary": "Vona ndlela leyi yi tirhaka ha yona",
     "stats": {
       "history": "Masiku ya matimu eka munhu un'wana na un'wana",
-      "states": "Swiyimo: Ya ringana, Ya ringanyana, Ya kayivela, A swi ringananga ku vula",
       "languages": "Tindzimi ta 11. Xinghezi na swivumbeko swa 10 swa AI, leswi ha ri ku kambeliwa.",
       "logins": "Ku nghena ebangi loku lavekaka"
     },
@@ -139,7 +136,8 @@
         "q": "Ku humelela yini loko siku ri hoxile?",
         "a": "I xiringanyeto lexi humaka eka matimu ya wena, hikwalaho xi nga hoxeka. Pfula Hikokwalaho ka siku leri ku vona leswi nghenisiweke, lulamisa ntirho wun’wana na wun’wana wa mali eka Mali, kumbe u tirhisa Vutisa hi mbuyelo lowu ku kombela nkambelo. Eka demo leyi xikombelo xexo i ku ringeta naswona xi tshama eka xitirhisiwa xa wena."
       }
-    }
+    },
+    "previewAlt": "Tengo Ekaya: siku ra Lerato, bajete ya siku na mali leyi landzelaka. Munhu wa ku endliwa."
   },
   "picker": {
     "title": "Hlawula ndlela yo lavisisa",
@@ -1118,9 +1116,10 @@
     "quickExit": "Huma hi ku hatlisa",
     "showAmounts": "Kombisa mali",
     "hideAmounts": "Fihla mali",
-    "exitTitle": "Swilaveko",
-    "exitBody": "A ku na swilaveko sweswi.",
-    "exitBack": "Endzhaku"
+    "exitTitle": "Xihlayi",
+    "exitBack": "Endzhaku",
+    "calcResult": "Mbuyelo",
+    "calcClear": "Sula"
   },
   "safetyPolicy": {
     "title": "Vuhlayiseki na leswaku Tengo i ya mani",

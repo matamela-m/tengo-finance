@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Icon } from './Icon';
@@ -46,6 +46,10 @@ export function A11yProvider({ children }: { children: ReactNode }) {
 function RouteFocus({ announce }: { announce: Announce }) {
   const { pathname } = useLocation();
   const first = useRef(true);
+  // A new page starts at the top straight away, before it paints, and without the smooth scroll animation.
+  useLayoutEffect(() => {
+    if (!first.current) window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [pathname]);
   useEffect(() => {
     if (first.current) {
       first.current = false;
@@ -58,7 +62,6 @@ function RouteFocus({ announce }: { announce: Announce }) {
         main.setAttribute('tabindex', '-1');
         main.focus({ preventScroll: true });
       }
-      window.scrollTo({ top: 0 });
       announce(document.title.replace(' | Tengo', ''), { toast: false });
     }, 120);
     return () => window.clearTimeout(id);

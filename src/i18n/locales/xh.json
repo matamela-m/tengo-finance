@@ -67,8 +67,6 @@
     "cta": "Phonononga i-Tengo",
     "ctaNote": "Akukho kubhalisa. Iinkcukacha eziyintsomi kuphela.",
     "previewLabel": "Imbonakalo ephilayo ye-Tengo",
-    "previewWho": "UThabo, umqhubi we-e-hailing. Uyintsomi.",
-    "previewCaption": "Imbonakalo ye-Tengo yomqhubi oyintsomi: {{label}} {{date}}, imeko {{state}}, uhlahlo lwemihla ngemihla {{amount}}.",
     "howTitle": "Amanyathelo amathathu ukuya kumhla onokucwangcisa ngawo.",
     "steps": {
       "history": {
@@ -99,7 +97,6 @@
     "ctaSecondary": "Bona indlela esebenza ngayo",
     "stats": {
       "history": "Iintsuku zembali kumntu ngamnye",
-      "states": "Iimeko: Yanele, Iqinile, Iyasilela, Akwanelanga ukuxela",
       "languages": "Iilwimi ezili-11. IsiNgesi kunye noyilo lwe-AI oluli-10, olusaza kujongwa.",
       "logins": "Ukungena ebhankini okufunekayo"
     },
@@ -139,7 +136,8 @@
         "q": "Kuthekani ukuba umhla awulunganga?",
         "a": "Luqikelelo oluvela kwimbali yakho, ngoko lusenokungalungi. Vula u-Kutheni lo mhla ukuze ubone okufakiweyo, lungisa nayiphi na intengiselwano ku-Imali, okanye usebenzise u-Buza ngesi siphumo ukuze ucele ukujongwa. Kule demo eso sicelo siyalinganiswa kwaye sihlala kwisixhobo sakho."
       }
-    }
+    },
+    "previewAlt": "Tengo Ekhaya: umhla kaLerato, uhlahlo lwemihla ngemihla nemali elandelayo. Umntu oyintsomi."
   },
   "picker": {
     "title": "Khetha indlela yokuphonononga",
@@ -1118,9 +1116,10 @@
     "quickExit": "Phuma ngokukhawuleza",
     "showAmounts": "Bonisa izixa",
     "hideAmounts": "Fihla izixa",
-    "exitTitle": "Amanqaku",
-    "exitBody": "Akukho manqaku okwangoku.",
-    "exitBack": "Emva"
+    "exitTitle": "Isibali",
+    "exitBack": "Emva",
+    "calcResult": "Isiphumo",
+    "calcClear": "Cima"
   },
   "safetyPolicy": {
     "title": "Ukhuseleko nokuba i-Tengo ingabani",

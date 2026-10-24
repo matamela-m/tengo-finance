@@ -67,8 +67,6 @@
     "cta": "Hlola i-Tengo",
     "ctaNote": "Akutlhogeki ukutlolisa. Ilwazi lokwakhiwa kwaphela.",
     "previewLabel": "Ukubuka kokuthoma kwe-Tengo",
-    "previewWho": "UThabo, umtjhayeli we-e-hailing. Wokwakhiwa.",
-    "previewCaption": "Ukubuka kokuthoma kwe-Tengo kumtjhayeli wokwakhiwa: {{label}} {{date}}, isimo {{state}}, isabelomali selanga {{amount}}.",
     "howTitle": "Amagadango amathathu aya elangeni ongahlela ngalo.",
     "steps": {
       "history": {
@@ -99,7 +97,6 @@
     "ctaSecondary": "Bona indlela esebenza ngayo",
     "stats": {
       "history": "Amalanga womlando umuntu ngamunye",
-      "states": "Iimo: Yanele, Yanele kancani, Iyatlhayela, Akwanelanga ukutjho",
       "languages": "Amalimi ali-11. IsiNgisi kunye namahlelo ali-10 we-AI, asazokuhlolwa.",
       "logins": "Ukungena ebhanga okutlhogekako"
     },
@@ -139,7 +136,8 @@
         "q": "Kuthiwani nangabe ilanga alikalungi?",
         "a": "Sisilinganiso esivela emlandweni wakho, ngalokho singaba simbi. Vula Kubayini ilanga leli bona ubone okufakiweko, lungisa nanyana ngiliphi ithengiselwano ku-Imali, nanyana usebenzise Buza ngomphumela lo bona ubawe ukuhlolwa. Kule demo isibawo leso siyalingiswa begodu sihlala esisetjenzisweni sakho."
       }
-    }
+    },
+    "previewAlt": "Tengo Ekhaya: ilanga lakaLerato, isabelomali selanga nemali elandelako. Umuntu wokwakhiwa."
   },
   "picker": {
     "title": "Khetha indlela yokuhlola",
@@ -1118,9 +1116,10 @@
     "quickExit": "Phuma msinyana",
     "showAmounts": "Tjengisa iimali",
     "hideAmounts": "Fihla iimali",
-    "exitTitle": "Amanothi",
-    "exitBody": "Awekho amanothi nje.",
-    "exitBack": "Emuva"
+    "exitTitle": "Isibali",
+    "exitBack": "Emuva",
+    "calcResult": "Umphumela",
+    "calcClear": "Sula"
   },
   "safetyPolicy": {
     "title": "Ukuphepha nokobana i-Tengo ngekabani",

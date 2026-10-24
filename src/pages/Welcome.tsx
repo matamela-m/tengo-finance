@@ -91,7 +91,7 @@ export default function Welcome() {
     if (n === 3) setWay('choose');
     setStep(n);
     moved.current = true;
-    window.scrollTo({ top: 0 });
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const agree = async () => {

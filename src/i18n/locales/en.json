@@ -67,8 +67,6 @@
     "cta": "Explore Tengo",
     "ctaNote": "No sign up. Fictional data only.",
     "previewLabel": "Live preview of Tengo",
-    "previewWho": "Thabo, e-hailing driver. Fictional.",
-    "previewCaption": "Preview of Tengo for a fictional driver: {{label}} {{date}}, cover {{state}}, daily budget {{amount}}.",
     "howTitle": "Three steps to a date you can plan around.",
     "steps": {
       "history": {
@@ -99,7 +97,6 @@
     "ctaSecondary": "See how it works",
     "stats": {
       "history": "Days of history per person",
-      "states": "Statuses: Enough, Tight, Short, Not enough to tell",
       "languages": "11 languages. English plus 10 AI drafts, still to be checked.",
       "logins": "Bank logins needed"
     },
@@ -139,7 +136,8 @@
         "q": "What if the date is wrong?",
         "a": "It is an estimate from your own history, so it can be wrong. Open Why this date to see what went in, correct any transaction on Money, or use Question this result to ask for a check. In this demo that request is simulated and stays on your device."
       }
-    }
+    },
+    "previewAlt": "Tengo Home: Lerato's date, daily budget and next money. Fictional."
   },
   "picker": {
     "title": "Choose how to explore",
@@ -1118,9 +1116,10 @@
     "quickExit": "Quick exit",
     "showAmounts": "Show amounts",
     "hideAmounts": "Hide amounts",
-    "exitTitle": "Notes",
-    "exitBody": "No notes yet.",
-    "exitBack": "Back"
+    "exitTitle": "Calculator",
+    "exitBack": "Back",
+    "calcResult": "Result",
+    "calcClear": "Clear"
   },
   "safetyPolicy": {
     "title": "Safety and who Tengo is for",

@@ -67,8 +67,6 @@
     "cta": "Hlola i-Tengo",
     "ctaNote": "Akudzingeki kubhalisa. Imininingwane yekucamba kuphela.",
     "previewLabel": "Kubuka kucala kwe-Tengo",
-    "previewWho": "Thabo, umshayeli we-e-hailing. Ucanjiwe.",
-    "previewCaption": "Kubuka kucala kwe-Tengo kumshayeli locanjiwe: {{label}} {{date}}, simo {{state}}, sabelomali selilanga {{amount}}.",
     "howTitle": "Tinyatselo letintsatfu letiya elilangeni longahlela ngalo.",
     "steps": {
       "history": {
@@ -99,7 +97,6 @@
     "ctaSecondary": "Bona indlela lesebenta ngayo",
     "stats": {
       "history": "Emalanga emlandvo kumuntfu ngamunye",
-      "states": "Timo: Yenele, Yenele kancane, Iyashoda, Akwenele kusho",
       "languages": "Tilwimi leti-11. SiNgisi kanye netinhlaka leti-10 te-AI, letisatawuhlolwa.",
       "logins": "Kungena ebhange lokudzingekako"
     },
@@ -139,7 +136,8 @@
         "q": "Kutsiwani nangabe lilanga lingakalungi?",
         "a": "Silinganiso lesivela emlandvweni wakho, ngako singase singalungi. Vula Kungani lelilanga kute ubone lokufakiwe, lungisa nobe nguliphi kutsengiselana ku-Imali, noma usebentise Buta ngalomphumela kute ucele kuhlolwa. Kulendemo leso sicelo siyalingiswa futsi sihlala elithuluzini lakho."
       }
-    }
+    },
+    "previewAlt": "Tengo Ekhaya: lilanga laLerato, sabelomali selilanga nemali lelandzelako. Umuntfu locanjiwe."
   },
   "picker": {
     "title": "Khetsa indlela yekuhlola",
@@ -1118,9 +1116,10 @@
     "quickExit": "Phuma ngekushesha",
     "showAmounts": "Khombisa timali",
     "hideAmounts": "Fihla timali",
-    "exitTitle": "Emanothi",
-    "exitBody": "Kute emanothi kwanyalo.",
-    "exitBack": "Emuva"
+    "exitTitle": "Sibali",
+    "exitBack": "Emuva",
+    "calcResult": "Imiphumela",
+    "calcClear": "Sula"
   },
   "safetyPolicy": {
     "title": "Kuphepha nekutsi i-Tengo ngeyabani",

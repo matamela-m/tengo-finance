@@ -67,8 +67,6 @@
     "cta": "Hlahloba Tengo",
     "ctaNote": "Ga go ngwadišo. Tshedimošo ya maitirelo fela.",
     "previewLabel": "Ponelopele ye e phelago ya Tengo",
-    "previewWho": "Thabo, mootledi wa e-hailing. Wa maitirelo.",
-    "previewCaption": "Ponelopele ya Tengo ya mootledi wa maitirelo: {{label}} {{date}}, boemo {{state}}, tekanyetšo ya letšatši {{amount}}.",
     "howTitle": "Dikgato tše tharo go ya letšatšing leo o ka beakanyago ka lona.",
     "steps": {
       "history": {
@@ -99,7 +97,6 @@
     "ctaSecondary": "Bona ka moo e šomago",
     "stats": {
       "history": "Matšatši a histori go motho yo mongwe le yo mongwe",
-      "states": "Maemo: E lekane, E lekanyana, E a hlaela, Ga go lekane go bolela",
       "languages": "Dipolelo tše 11. Seisemane le dikakanyo tše 10 tša AI, tšeo di sa swanetšego go lekolwa.",
       "logins": "Go tsena pankeng go go nyakegago"
     },
@@ -139,7 +136,8 @@
         "q": "Go ka direga eng ge letšatši le fošagetše?",
         "a": "Ke kakanyo go tšwa historing ya gago, ka fao e ka fošagala. Bula Ke ka lebaka la eng letšatši le go bona tše di tsentšwego, lokiša tirelano efe goba efe go Tšhelete, goba o šomiše Botšiša ka sephetho se go kgopela tekolo. Ka gare ga demo ye kgopelo yeo ke ekišo gomme e dula sedirišweng sa gago."
       }
-    }
+    },
+    "previewAlt": "Tengo Gae: letšatšikgwedi la Lerato, tekanyetšo ya letšatši le tšhelete ye e latelago. Motho wa maitirelo."
   },
   "picker": {
     "title": "Kgetha ka moo o tlago go hlahloba",
@@ -1118,9 +1116,10 @@
     "quickExit": "Tšwa ka pela",
     "showAmounts": "Bontšha ditšhelete",
     "hideAmounts": "Uta ditšhelete",
-    "exitTitle": "Dintlha",
-    "exitBody": "Ga go dintlha gabjale.",
-    "exitBack": "Morago"
+    "exitTitle": "Khalkhuleitha",
+    "exitBack": "Morago",
+    "calcResult": "Dipoelo",
+    "calcClear": "Phumola"
   },
   "safetyPolicy": {
     "title": "Polokego le gore Tengo ke ya mang",

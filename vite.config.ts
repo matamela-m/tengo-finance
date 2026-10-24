@@ -53,8 +53,19 @@ function operatorWarning(mode: string): Plugin {
   };
 }
 
+/**
+ * Fills %SITE_URL% in index.html, for the link preview tags. Chat apps such as WhatsApp only show the preview image
+ * from a full address. VITE_SITE_URL wins; on Vercel the production domain is used; otherwise the path stays relative.
+ */
+function siteUrl(mode: string): Plugin {
+  const env = loadEnv(mode, process.cwd(), 'VITE_');
+  const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  const url = (env.VITE_SITE_URL?.trim() || (vercel ? `https://${vercel}` : '')).replace(/\/$/, '');
+  return { name: 'tengo-site-url', transformIndexHtml: (html) => html.replaceAll('%SITE_URL%', url) };
+}
+
 export default defineConfig(({ mode }) => ({
-  plugins: [react(), precacheManifest(), operatorWarning(mode)],
+  plugins: [react(), precacheManifest(), operatorWarning(mode), siteUrl(mode)],
   // Shown in the diagnostics panel on Me.
   define: { __BUILD_ID__: JSON.stringify(`${process.env.npm_package_version ?? '0'}-${new Date().toISOString().slice(0, 16)}`) },
   build: { manifest: true },

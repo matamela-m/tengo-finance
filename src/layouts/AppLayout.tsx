@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import { useEffect, useRef, type ReactNode } from 'react';
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Avatar } from '../components/Avatar';
 import { Brand } from '../components/Brand';
@@ -12,6 +12,7 @@ import { StorageBanner } from '../components/StorageBanner';
 import { SafetyControls } from '../components/SafetyControls';
 import { useMasked } from '../components/Preferences';
 import { NAV, type NavItem } from './nav';
+import { prefetchAppPages } from '../lib/prefetch';
 
 function SideLink({ item, collapsed }: { item: NavItem; collapsed: boolean }) {
   const { t } = useTranslation();
@@ -59,6 +60,10 @@ function PersonaRow({ collapsed }: { collapsed: boolean }) {
 
 export function AppLayout({ children }: { children?: ReactNode }) {
   const { t } = useTranslation();
+  const { pathname } = useLocation();
+  // The page the app opened on appears at once; later pages fade in.
+  const firstPath = useRef(pathname);
+  useEffect(prefetchAppPages, []);
   const collapsed = useSession((s) => s.sidebarCollapsed);
   const setCollapsed = useSession((s) => s.setSidebarCollapsed);
   const main = NAV.filter((n) => !n.secondary);
@@ -174,7 +179,10 @@ export function AppLayout({ children }: { children?: ReactNode }) {
           <StorageBanner />
           {/* Re-rendered when discreet masking changes, so every amount follows it. */}
           <div key={masked ? 'masked' : 'shown'} className="contents">
-            {children ?? <Outlet />}
+            {/* Each page fades in as it opens (off under reduced motion). */}
+            <div key={pathname} className={pathname === firstPath.current ? undefined : 'page-enter'}>
+              {children ?? <Outlet />}
+            </div>
           </div>
         </main>
 

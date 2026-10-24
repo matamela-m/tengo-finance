@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { A11yProvider, SkipLink } from './components/A11y';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { CommandPaletteHost } from './components/CommandPaletteHost';
@@ -6,7 +6,7 @@ import { Preferences } from './components/Preferences';
 import { PersonaProvider } from './data/PersonaProvider';
 import { AppGate } from './layouts/AppGate';
 import { LockProvider } from './components/Lock';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useRef, type ReactNode } from 'react';
 import { PageLoading } from './components/Feedback';
 import Landing from './pages/Landing';
 
@@ -28,6 +28,21 @@ const SafetyPolicy = lazy(() => import('./pages/SafetyPolicy'));
 const Welcome = lazy(() => import('./pages/Welcome'));
 const PrivacyNotice = lazy(() => import('./pages/PrivacyNotice'));
 
+/**
+ * Fades each top-level page in as it opens. The app pages share one key, so the sidebar never fades.
+ * The first page of a visit appears at once: only moving between pages fades.
+ */
+function PageFade({ children }: { children: ReactNode }) {
+  const { pathname } = useLocation();
+  const key = pathname.startsWith('/app') ? '/app' : pathname;
+  const firstKey = useRef(key);
+  return (
+    <div key={key} className={key === firstKey.current ? undefined : 'page-fade'}>
+      {children}
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <ErrorBoundary>
@@ -39,6 +54,7 @@ export default function App() {
       <PersonaProvider>
         <CommandPaletteHost />
         <Suspense fallback={<PageLoading />}>
+        <PageFade>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/start" element={<Picker />} />
@@ -62,6 +78,7 @@ export default function App() {
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </PageFade>
         </Suspense>
       </PersonaProvider>
       </LockProvider>

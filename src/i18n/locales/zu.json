@@ -67,8 +67,6 @@
     "cta": "Hlola i-Tengo",
     "ctaNote": "Akudingeki ukubhalisa. Imininingwane eqanjiwe kuphela.",
     "previewLabel": "Ukubuka kuqala kwe-Tengo",
-    "previewWho": "UThabo, umshayeli we-e-hailing. Uqanjiwe.",
-    "previewCaption": "Ukubuka kuqala kwe-Tengo kumshayeli oqanjiwe: {{label}} {{date}}, isimo {{state}}, isabelomali sansuku {{amount}}.",
     "howTitle": "Izinyathelo ezintathu eziya osukwini ongahlela ngalo.",
     "steps": {
       "history": {
@@ -99,7 +97,6 @@
     "ctaSecondary": "Bona ukuthi isebenza kanjani",
     "stats": {
       "history": "Izinsuku zomlando umuntu ngamunye",
-      "states": "Izimo: Yanele, Iqinile, Iyashoda, Akwanele ukusho",
       "languages": "Izilimi ezingu-11. IsiNgisi kanye nezinhlaka eziyi-10 ze-AI, ezisazohlolwa.",
       "logins": "Ukungena ebhange okudingekayo"
     },
@@ -139,7 +136,8 @@
         "q": "Kuthiwani uma usuku lungalungile?",
         "a": "Yisilinganiso esivela emlandweni wakho, ngakho singase singalungi. Vula u-Kungani lolu suku ukuze ubone okufakiwe, lungisa noma yikuphi ukuthengiselana ku-Imali, noma usebenzise u-Buza ngalo mphumela ukuze ucele ukuhlolwa. Kule demo leso sicelo siyalingiswa futhi sihlala kudivayisi yakho."
       }
-    }
+    },
+    "previewAlt": "Tengo Ekhaya: usuku lukaLerato, isabelomali sansuku nemali elandelayo. Umuntu oqanjiwe."
   },
   "picker": {
     "title": "Khetha ukuthi uhlole kanjani",
@@ -1118,9 +1116,10 @@
     "quickExit": "Phuma ngokushesha",
     "showAmounts": "Khombisa izimali",
     "hideAmounts": "Fihla izimali",
-    "exitTitle": "Amanothi",
-    "exitBody": "Awekho amanothi okwamanje.",
-    "exitBack": "Emuva"
+    "exitTitle": "Isibali",
+    "exitBack": "Emuva",
+    "calcResult": "Umphumela",
+    "calcClear": "Sula"
   },
   "safetyPolicy": {
     "title": "Ukuphepha nokuthi i-Tengo ingeyabani",

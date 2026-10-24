@@ -67,8 +67,6 @@
     "cta": "Verken Tengo",
     "ctaNote": "Geen registrasie nie. Net fiktiewe data.",
     "previewLabel": "Lewendige voorskou van Tengo",
-    "previewWho": "Thabo, e-ry-bestuurder. Fiktief.",
-    "previewCaption": "Voorskou van Tengo vir 'n fiktiewe bestuurder: {{label}} {{date}}, dekking {{state}}, daaglikse begroting {{amount}}.",
     "howTitle": "Drie stappe na 'n datum waarmee jy kan beplan.",
     "steps": {
       "history": {
@@ -99,7 +97,6 @@
     "ctaSecondary": "Sien hoe dit werk",
     "stats": {
       "history": "Dae se geskiedenis per persoon",
-      "states": "Statusse: Genoeg, Knap, Kort, Nie genoeg om te sê nie",
       "languages": "11 tale. Engels plus 10 KI-konsepte wat nog nagegaan moet word.",
       "logins": "Bankaanmeldings nodig"
     },
@@ -139,7 +136,8 @@
         "q": "Wat as die datum verkeerd is?",
         "a": "Dit is 'n skatting uit jou eie geskiedenis, so dit kan verkeerd wees. Maak Hoekom hierdie datum oop om te sien wat ingegaan het, stel enige transaksie op Geld reg, of gebruik Bevraagteken hierdie resultaat om vir 'n nagaan te vra. In hierdie demo is daardie versoek gesimuleer en bly dit op jou toestel."
       }
-    }
+    },
+    "previewAlt": "Tengo Tuis: Lerato se datum, daaglikse begroting en volgende geld. Fiktief."
   },
   "picker": {
     "title": "Kies hoe om te verken",
@@ -1118,9 +1116,10 @@
     "quickExit": "Vinnige uitgang",
     "showAmounts": "Wys bedrae",
     "hideAmounts": "Versteek bedrae",
-    "exitTitle": "Notas",
-    "exitBody": "Nog geen notas nie.",
-    "exitBack": "Terug"
+    "exitTitle": "Sakrekenaar",
+    "exitBack": "Terug",
+    "calcResult": "Resultaat",
+    "calcClear": "Vee uit"
   },
   "safetyPolicy": {
     "title": "Veiligheid en vir wie Tengo is",

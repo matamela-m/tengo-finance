@@ -67,8 +67,6 @@
     "cta": "Ṱolisisa Tengo",
     "ctaNote": "A hu na u ṅwalisa. Mafhungo a u sikwa fhedzi.",
     "previewLabel": "Tsumbo i tshilaho ya Tengo",
-    "previewWho": "Thabo, mureili wa e-hailing. Wa u sikwa.",
-    "previewCaption": "Tsumbo ya Tengo ya mureili wa u sikwa: {{label}} {{date}}, tshiimo {{state}}, mugaganyagwama wa ḓuvha {{amount}}.",
     "howTitle": "Zwiṱepe zwiraru u ya kha ḓuvha ḽine na nga dzudzanya ngaḽo.",
     "steps": {
       "history": {
@@ -99,7 +97,6 @@
     "ctaSecondary": "Vhonani nḓila ine ya shuma ngayo",
     "stats": {
       "history": "Maḓuvha a ḓivhazwakale kha muthu muṅwe na muṅwe",
-      "states": "Zwiimo: Yo lingana, Yo lingana zwiṱuku, I a ṱahela, A zwo ngo lingana u amba",
       "languages": "Nyambo dza 11. Luisimane na mitalukanyo ya 10 ya AI, i kha ḓi tea u sedzuluswa.",
       "logins": "U dzhena kha bannga hu ṱoḓeaho"
     },
@@ -139,7 +136,8 @@
         "q": "Hu itea mini arali ḓuvha ḽi songo luga?",
         "a": "Ndi khakhathi i bvaho kha ḓivhazwakale yaṋu, ngauralo i nga khakhea. Vulani Ndi ngani ḓuvha iḽi u vhona zwo dzheniswaho, khakhululani thengiselano iṅwe na iṅwe kha Tshelede, kana ni shumise Vhudzisani nga mvelelo heyi u humbela u sedzwa. Kha ino demo iyo khumbelo ndi u edzisela nahone i dzula kha tshishumiswa tshaṋu."
       }
-    }
+    },
+    "previewAlt": "Tengo Hayani: ḓuvha ḽa Lerato, mugaganyagwama wa ḓuvha na tshelede i tevhelaho. Muthu wa u sikwa."
   },
   "picker": {
     "title": "Nangani nḓila ya u ṱolisisa",
@@ -1118,9 +1116,10 @@
     "quickExit": "Bvani nga u ṱavhanya",
     "showAmounts": "Sumbedzani tshelede",
     "hideAmounts": "Dzumbisani tshelede",
-    "exitTitle": "Nouthu",
-    "exitBody": "A hu na nouthu zwino.",
-    "exitBack": "Murahu"
+    "exitTitle": "Khalikhuleitha",
+    "exitBack": "Murahu",
+    "calcResult": "Mvelelo",
+    "calcClear": "Phumula"
   },
   "safetyPolicy": {
     "title": "Tsireledzo na uri Tengo ndi ya nnyi",

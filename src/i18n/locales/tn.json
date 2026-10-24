@@ -67,8 +67,6 @@
     "cta": "Tlhotlhomisa Tengo",
     "ctaNote": "Ga go kwadiso. Tshedimosetso ya boitlhamedi fela.",
     "previewLabel": "Ponelopele e e tshelang ya Tengo",
-    "previewWho": "Thabo, mokgweetsi wa e-hailing. Wa boitlhamedi.",
-    "previewCaption": "Ponelopele ya Tengo ya mokgweetsi wa boitlhamedi: {{label}} {{date}}, maemo {{state}}, tekanyetso ya letsatsi {{amount}}.",
     "howTitle": "Dikgato di le tharo go ya kwa letsatsing le o ka rulaganyang ka lone.",
     "steps": {
       "history": {
@@ -99,7 +97,6 @@
     "ctaSecondary": "Bona ka fa e dirang ka teng",
     "stats": {
       "history": "Malatsi a hisitori mo mothong mongwe le mongwe",
-      "states": "Maemo: A lekane, A lekanyana, A a tlhaela, Ga go a lekana go bolela",
       "languages": "Dipuo di le 11. Sekgoa le dithadiso di le 10 tsa AI, tse di santseng di tla sekasekiwa.",
       "logins": "Go tsena mo bankeng go go tlhokegang"
     },
@@ -139,7 +136,8 @@
         "q": "Go diragala eng fa letsatsi le le phoso?",
         "a": "Ke fopholetso e e tswang mo hisitoring ya gago, ka jalo e ka nna phoso. Bula Goreng letsatsi le go bona tse di tsentsweng, baakanya tiragalo nngwe le nngwe ya madi mo Madi, kgotsa o dirise Botsa ka ga maduo a go kopa tlhatlhobo. Mo demong e kopo eo ke ketsiso mme e nna mo sedirisiweng sa gago."
       }
-    }
+    },
+    "previewAlt": "Tengo Gae: letlha la ga Lerato, tekanyetso ya letsatsi le madi a a latelang. Motho wa boitlhamedi."
   },
   "picker": {
     "title": "Tlhopha ka fa o tla tlhotlhomisang ka teng",
@@ -1118,9 +1116,10 @@
     "quickExit": "Tswa ka bonako",
     "showAmounts": "Bontsha madi",
     "hideAmounts": "Fitlha madi",
-    "exitTitle": "Dintlha",
-    "exitBody": "Ga go dintlha ga jaana.",
-    "exitBack": "Morago"
+    "exitTitle": "Sebadi",
+    "exitBack": "Morago",
+    "calcResult": "Dipholo",
+    "calcClear": "Phimola"
   },
   "safetyPolicy": {
     "title": "Pabalesego le gore Tengo ke ya ga mang",

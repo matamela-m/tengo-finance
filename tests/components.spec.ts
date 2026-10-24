@@ -84,6 +84,11 @@ test('landing: the FAQ opens by keyboard, stats read their real numbers, and not
   await page.keyboard.press('Enter');
   await expect(faq.getByText(/does not hold money, lend, sell products or give financial advice/)).toBeVisible();
   await expect(page.locator('#how').getByText('90', { exact: true }).first()).toBeAttached();
+  // The product shot under the hero, described for screen readers.
+  await expect(page.getByRole('img', { name: /Tengo Home: Lerato's date/ })).toBeVisible();
+  // Link preview tags for chat apps.
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', /\/og-image\.png$/);
+  await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute('content', 'summary_large_image');
   const animated = await page.evaluate(() => getComputedStyle(document.querySelector('.hero-line')!).animationDuration);
   expect(parseFloat(animated)).toBeLessThan(0.01);
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);

@@ -141,3 +141,16 @@ Phase 3, landing page, all built in CSS and native HTML with no new dependency a
 - FAQ: four native `<details>` items (is it a bank, is my data safe, what does it cost, what if the date is wrong), linked from the nav as Questions. Eleven new keys in all 11 locales, drafted as AI drafts like the rest.
 - Footer: kept as is (columns, demo note with status dot).
 - Scroll reveal: `Reveal` now runs 200 ms with an 8 px rise, still off under reduced motion.
+
+## Phase 4: QA (2026-10-24)
+
+- **Screenshots:** the screens suite captured 29 page states (every route, all three people, all four onboarding steps, the drawer and the account page) at 390, 768, 1280 and 1600 in both themes, 232 in all, with motion turned off. Each was looked at on a contact sheet, with full-size checks at 1280 and 1600. No clipping, overflow or misalignment was found. A scripted scan found no horizontal page scroll at any width. The only wide elements are the decorative glows on the landing and consent pages, which are clipped.
+- **Theme change flash, fixed:** cards, buttons and fields fade their colours, so switching theme showed both themes for about 200 ms. `Preferences` now turns transitions off for two frames while the theme attribute changes. A new test reads every fading element on the first frame after the switch and checks it already has its final colour (it fails without the fix). The first paint was already right, because `theme-init.js` sets the theme before the page draws.
+- **Checks:** 471 Playwright tests pass, including axe in both themes. 171 unit tests, lint, i18n, fonts and contrast (154 pairs) pass. Initial JavaScript is 134.6 KB of the 142 KB budget.
+- **Lighthouse mobile** (built app): landing 95, picker 94, Home 92, onboarding 92 for performance; 100 for accessibility and best practices on all four. SEO is 63 because the pilot is deliberately set to noindex.
+- **npm audit:** no issues in production dependencies. There are 3 moderate issues in build-time tooling only (postcss-selector-parser, through Tailwind 3). The fix is Tailwind 4, which this pass rules out, and the code never runs in the browser.
+- **Motion off:** every page was captured with reduced motion and is complete and readable. The headline, counters, reveals and code caret all show their final state at once.
+
+### Final list
+
+Taken as packages: input-otp 1.5.0 (MIT, Account chunk only, 4.0 KB) and react-day-picker 10.0.2 (MIT, loaded on first calendar open, 20.4 KB). Nothing was copied from 21st.dev or React Bits. Everything else was rebuilt ourselves on our tokens, either because a dependency would break the budget (motion, GSAP, Radix accordion) or because the licence was unclear (21st.dev). That covers the stat, stepper, transaction table, empty states, palette host, the Phase 2 restyles, the hero animation, glow, counters, FAQ and scroll reveal. Animated pieces: the code caret, hero headline, counters, scroll reveal and drawer. All of them stop under reduced motion.

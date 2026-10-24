@@ -91,3 +91,37 @@ test('landing: the FAQ opens by keyboard, stats read their real numbers, and not
   const axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
   expect(axe.violations.map((v) => v.id)).toEqual([]);
 });
+
+test('changing theme switches every colour at once, with no half-dark frame', async ({ page }) => {
+  await asLerato(page);
+  await page.goto('/app/me');
+  await page.getByRole('heading', { level: 1 }).waitFor();
+  // Colours of every element that animates its colours, read on the first frame after the click
+  // and again once any transition would have finished.
+  const animated = await page.evaluate(() => {
+    const els = [...document.querySelectorAll<HTMLElement>('body *')].filter(
+      (e) => /color|all/.test(getComputedStyle(e).transitionProperty) && parseFloat(getComputedStyle(e).transitionDuration) > 0,
+    );
+    els.forEach((e) => (e.dataset.fades = ''));
+    return els.length;
+  });
+  expect(animated).toBeGreaterThan(3);
+  const read = () =>
+    [...document.querySelectorAll<HTMLElement>('[data-fades]')].map(
+      (e) => getComputedStyle(e).backgroundColor + ' ' + getComputedStyle(e).color + ' ' + getComputedStyle(e).borderTopColor,
+    );
+  const during = await page.getByRole('radio', { name: 'Light' }).evaluate((el, src) => {
+    // Read on the first frame after the theme attribute changes.
+    const done = new Promise<string[]>((r) => {
+      new MutationObserver((_, obs) => {
+        obs.disconnect();
+        requestAnimationFrame(() => r((0, eval)(`(${src})()`)));
+      }).observe(document.documentElement, { attributeFilter: ['data-theme'] });
+    });
+    (el as HTMLElement).click();
+    return done;
+  }, read.toString());
+  await page.waitForTimeout(600);
+  const after: string[] = await page.evaluate(`(${read.toString()})()`);
+  expect(during).toEqual(after);
+});

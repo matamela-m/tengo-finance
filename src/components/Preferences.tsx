@@ -31,7 +31,14 @@ export function Preferences() {
     const media = window.matchMedia('(prefers-color-scheme: dark)');
     const apply = () => {
       const dark = theme === 'dark' || (theme === 'system' && media.matches);
-      root.dataset.theme = dark ? 'dark' : 'light';
+      const next = dark ? 'dark' : 'light';
+      if (root.dataset.theme !== next) {
+        // Switch every colour at once: without this, cards, buttons and fields fade over at their own
+        // speeds and the page shows both themes for a moment.
+        root.classList.add('theme-switching');
+        requestAnimationFrame(() => requestAnimationFrame(() => root.classList.remove('theme-switching')));
+        root.dataset.theme = next;
+      }
       // Browser chrome follows the page background token.
       const bg = getComputedStyle(root).getPropertyValue('--color-bg').trim();
       document.querySelectorAll('meta[name="theme-color"]').forEach((m) => m.setAttribute('content', bg));

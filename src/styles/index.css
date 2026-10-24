@@ -140,6 +140,13 @@
     background: rgb(var(--accent) / 0.3);
   }
 
+  /* Set for two frames while the theme changes (Preferences), so every colour switches together. */
+  .theme-switching *,
+  .theme-switching *::before,
+  .theme-switching *::after {
+    transition: none !important;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
